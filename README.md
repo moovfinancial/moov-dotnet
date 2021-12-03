@@ -22,7 +22,7 @@
 
 # moovfinancial/moov-dotnet
 
-Moov's mission is to give developers an easy way to create and integrate bank processing into their own software products. We offer SDKs for our customers to integrate with Moov's APIs.
+Moov's mission is to give developers an easy way to create and integrate bank processing into their own software products. Moov-dotnet is an open source C# library for integrating with Moov's API. 
 
 ## Table of contents
 
@@ -71,7 +71,7 @@ This project uses C# TODO. We highly recommend you use a tagged release for prod
 
 ### Releasing
 
-To make a release of ach simply open a pull request with `CHANGELOG.md` and `TODO` updated with the next version number and details. You'll also need to push the tag (i.e. `git push origin v1.0.0`) to origin in order for CI to make the release.
+To make a release of moov-dotnet, simply open a pull request with `CHANGELOG.md` and `TODO` updated with the next version number and details. You'll also need to push the tag (i.e. `git push origin v1.0.0`) to origin in order for CI to make the release.
 
 ### Testing
 
