@@ -1,0 +1,13 @@
+# CreateIndividualProfile
+
+
+## Fields
+
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 | Example                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `Name`                                                      | [IndividualName](../../Models/Components/IndividualName.md) | :heavy_check_mark:                                          | N/A                                                         |                                                             |
+| `Phone`                                                     | [PhoneNumber](../../Models/Components/PhoneNumber.md)       | :heavy_minus_sign:                                          | N/A                                                         |                                                             |
+| `Email`                                                     | *string*                                                    | :heavy_minus_sign:                                          | N/A                                                         | jordan.lee@classbooker.dev                                  |
+| `Address`                                                   | [Address](../../Models/Components/Address.md)               | :heavy_minus_sign:                                          | N/A                                                         |                                                             |
+| `BirthDate`                                                 | [BirthDate](../../Models/Components/BirthDate.md)           | :heavy_minus_sign:                                          | N/A                                                         |                                                             |
+| `GovernmentID`                                              | [GovernmentID](../../Models/Components/GovernmentID.md)     | :heavy_minus_sign:                                          | N/A                                                         |                                                             |

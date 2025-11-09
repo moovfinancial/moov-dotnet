@@ -1,0 +1,12 @@
+# PatchSweepConfig
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `Status`                                                                        | [Status](../../Models/Components/Status.md)                                     | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `PushPaymentMethodID`                                                           | [PushPaymentMethodIDUnion](../../Models/Components/PushPaymentMethodIDUnion.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `PullPaymentMethodID`                                                           | [PullPaymentMethodIDUnion](../../Models/Components/PullPaymentMethodIDUnion.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `StatementDescriptor`                                                           | [StatementDescriptorUnion](../../Models/Components/StatementDescriptorUnion.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `MinimumBalance`                                                                | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |

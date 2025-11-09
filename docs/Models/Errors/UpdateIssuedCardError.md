@@ -1,0 +1,11 @@
+# UpdateIssuedCardError
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `State`                                                                           | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Memo`                                                                            | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `AuthorizedUser`                                                                  | [CreateAuthorizedUserError](../../Models/Components/CreateAuthorizedUserError.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `HttpMeta`                                                                        | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                           | :heavy_check_mark:                                                                | N/A                                                                               |

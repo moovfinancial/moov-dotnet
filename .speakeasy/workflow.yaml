@@ -1,0 +1,18 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    latest:
+        inputs:
+            - location: registry.speakeasyapi.dev/moov/moov/api-latest
+        registry:
+            location: registry.speakeasyapi.dev/moov/moov/latest
+targets:
+    latest:
+        target: csharp
+        source: latest
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/moov/moov/latest-csharp-code-samples
+            labelOverride:
+                fixedValue: Csharp (SDK)
+            blocking: false

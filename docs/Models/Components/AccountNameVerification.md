@@ -1,0 +1,13 @@
+# AccountNameVerification
+
+The results of submitting cardholder name to a card network for verification.
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 | Example                                                                     |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `FirstName`                                                                 | [CardVerificationResult](../../Models/Components/CardVerificationResult.md) | :heavy_minus_sign:                                                          | N/A                                                                         | match                                                                       |
+| `LastName`                                                                  | [CardVerificationResult](../../Models/Components/CardVerificationResult.md) | :heavy_minus_sign:                                                          | N/A                                                                         | match                                                                       |
+| `MiddleName`                                                                | [CardVerificationResult](../../Models/Components/CardVerificationResult.md) | :heavy_minus_sign:                                                          | N/A                                                                         | match                                                                       |
+| `FullName`                                                                  | [CardVerificationResult](../../Models/Components/CardVerificationResult.md) | :heavy_minus_sign:                                                          | N/A                                                                         | match                                                                       |

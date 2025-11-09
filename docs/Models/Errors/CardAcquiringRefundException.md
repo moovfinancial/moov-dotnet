@@ -1,0 +1,16 @@
+# CardAcquiringRefundException
+
+Details of a card refund.
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `RefundID`                                                                            | *string*                                                                              | :heavy_check_mark:                                                                    | Identifier for the refund.                                                            |
+| `CreatedOn`                                                                           | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `UpdatedOn`                                                                           | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `Status`                                                                              | [RefundStatus](../../Models/Components/RefundStatus.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `Amount`                                                                              | [Amount](../../Models/Components/Amount.md)                                           | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `CardDetails`                                                                         | [RefundCardDetails](../../Models/Components/RefundCardDetails.md)                     | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `HttpMeta`                                                                            | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
