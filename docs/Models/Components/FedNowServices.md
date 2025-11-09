@@ -1,0 +1,10 @@
+# FedNowServices
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `ReceivePayments`                                                      | *bool*                                                                 | :heavy_check_mark:                                                     | Indicates if the institution can receive instant payments.             | true                                                                   |
+| `SendPayments`                                                         | *bool*                                                                 | :heavy_check_mark:                                                     | Indicates if the institution can send instant payments.                | true                                                                   |
+| `RequestForPayment`                                                    | *bool*                                                                 | :heavy_check_mark:                                                     | Indicates if the institution can process request for payment messages. | true                                                                   |

@@ -1,0 +1,12 @@
+# EvidenceTextResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `EvidenceID`                                                                          | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `DisputeID`                                                                           | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `EvidenceType`                                                                        | [EvidenceType](../../Models/Components/EvidenceType.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `Text`                                                                                | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `CreatedOn`                                                                           | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_check_mark:                                                                    | N/A                                                                                   |

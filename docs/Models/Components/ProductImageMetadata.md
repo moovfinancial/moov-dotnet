@@ -1,0 +1,11 @@
+# ProductImageMetadata
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ImageID`                                                         | *string*                                                          | :heavy_check_mark:                                                | Unique identifier for a product or product option image resource. |                                                                   |
+| `AltText`                                                         | *string*                                                          | :heavy_minus_sign:                                                | Alternative text for the image.                                   |                                                                   |
+| `Link`                                                            | *string*                                                          | :heavy_check_mark:                                                | The image's public URL.                                           | https://api.moov.io/images/q7lKWleAy9fUNhEGezQ1g                  |
+| `PublicID`                                                        | *string*                                                          | :heavy_check_mark:                                                | The public ID used to access the image.                           | q7lKWleAy9fUNhEGezQ1g                                             |

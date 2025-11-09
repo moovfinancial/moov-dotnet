@@ -1,0 +1,11 @@
+# SendFundsError
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `Ach`                                                                             | [SendFundsAchError](../../Models/Components/SendFundsAchError.md)                 | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `PushToCard`                                                                      | [SendFundsPushToCardError](../../Models/Components/SendFundsPushToCardError.md)   | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Rtp`                                                                             | [SendFundsRtpError](../../Models/Components/SendFundsRtpError.md)                 | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `InstantBank`                                                                     | [SendFundsInstantBankError](../../Models/Components/SendFundsInstantBankError.md) | :heavy_minus_sign:                                                                | N/A                                                                               |

@@ -1,0 +1,16 @@
+# EvidenceUploadResponse
+
+Details of a successfully uploaded evidence file.
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `EvidenceID`                                                                          | *string*                                                                              | :heavy_check_mark:                                                                    | The ID of the evidence.                                                               |
+| `DisputeID`                                                                           | *string*                                                                              | :heavy_check_mark:                                                                    | The ID of the dispute the evidence is associated with.                                |
+| `Filename`                                                                            | *string*                                                                              | :heavy_check_mark:                                                                    | The name of the evidence file.                                                        |
+| `MimeType`                                                                            | *string*                                                                              | :heavy_check_mark:                                                                    | The MIME type of the evidence file.                                                   |
+| `Size`                                                                                | *long*                                                                                | :heavy_check_mark:                                                                    | The size of the evidence file.                                                        |
+| `EvidenceType`                                                                        | [EvidenceType](../../Models/Components/EvidenceType.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `CreatedOn`                                                                           | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_check_mark:                                                                    | The date and time the evidence was uploaded.                                          |

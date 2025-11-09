@@ -1,0 +1,10 @@
+# GetTerminalConfigurationResponse
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               | Example                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `HttpMeta`                                                                | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                   | :heavy_check_mark:                                                        | N/A                                                                       |                                                                           |
+| `TerminalConfiguration`                                                   | [TerminalConfiguration](../../Models/Components/TerminalConfiguration.md) | :heavy_minus_sign:                                                        | The request completed successfully.                                       | {<br/>"configuration": "Zm9vYmFyCg=="<br/>}                               |
+| `Headers`                                                                 | Dictionary<String, List<*string*>>                                        | :heavy_check_mark:                                                        | N/A                                                                       |                                                                           |

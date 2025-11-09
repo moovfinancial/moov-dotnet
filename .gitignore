@@ -1,0 +1,10 @@
+obj/
+bin/
+debug/
+.DS_Store
+**/.speakeasy/temp/
+**/.speakeasy/logs/
+.env
+.env.local
+.idea
+.vscode

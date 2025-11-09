@@ -1,0 +1,13 @@
+# MoovFee
+
+Moov fee charged to an account involved in a transfer.
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `AccountID`                                                                                    | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the account that fees were charged to.                                                   |
+| `TransferParty`                                                                                | [TransferParty](../../Models/Components/TransferParty.md)                                      | :heavy_check_mark:                                                                             | Indicates whether the account charged was the partner, source, or destination of the transfer. |
+| `TotalAmount`                                                                                  | [AmountDecimal](../../Models/Components/AmountDecimal.md)                                      | :heavy_check_mark:                                                                             | The total amount of fees charged to the account.                                               |
+| `FeeIDs`                                                                                       | List<*string*>                                                                                 | :heavy_check_mark:                                                                             | List of fee IDs that sum to the totalAmount.                                                   |

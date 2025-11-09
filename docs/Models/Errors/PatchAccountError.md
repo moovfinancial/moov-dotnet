@@ -1,0 +1,15 @@
+# PatchAccountError
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `Profile`                                                                 | [CreateProfileError](../../Models/Components/CreateProfileError.md)       | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Metadata`                                                                | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `TermsOfService`                                                          | [TermsOfServiceError](../../Models/Components/TermsOfServiceError.md)     | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `ForeignID`                                                               | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `CustomerSupport`                                                         | [CustomerSupportError](../../Models/Components/CustomerSupportError.md)   | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Settings`                                                                | [CreateAccountSettings](../../Models/Components/CreateAccountSettings.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Error`                                                                   | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `HttpMeta`                                                                | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                   | :heavy_check_mark:                                                        | N/A                                                                       |

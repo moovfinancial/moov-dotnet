@@ -1,0 +1,11 @@
+# WebhookDataTransferCreated
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `AccountID`                                                                       | *string*                                                                          | :heavy_check_mark:                                                                | The accountID which facilitated the transfer.                                     |
+| `TransferID`                                                                      | *string*                                                                          | :heavy_check_mark:                                                                | N/A                                                                               |
+| `Status`                                                                          | [WebhookDataTransferStatus](../../Models/Components/WebhookDataTransferStatus.md) | :heavy_check_mark:                                                                | N/A                                                                               |
+| `ForeignID`                                                                       | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |

@@ -1,0 +1,10 @@
+# CardPaymentSettings
+
+User provided settings to manage card payments. This data is only allowed on a business account.
+
+
+## Fields
+
+| Field                                                                                                                          | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    | Example                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `StatementDescriptor`                                                                                                          | *string*                                                                                                                       | :heavy_minus_sign:                                                                                                             | The description that shows up on credit card transactions. This will default to the accounts display name on account creation. | Whole Body Fitness                                                                                                             |

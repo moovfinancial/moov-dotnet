@@ -1,0 +1,35 @@
+speakeasyVersion: 1.651.0
+sources:
+    latest:
+        sourceNamespace: api-latest
+        sourceRevisionDigest: sha256:11d3029d39fd0d2106618445341edab2971c8111fa60442afea134b2132cf5c3
+        sourceBlobDigest: sha256:fdfe3a1d352ae29c75fd10690f38bd8c2a7d2bb478b4113354417541e1e6822c
+        tags:
+            - latest
+targets:
+    latest:
+        source: latest
+        sourceNamespace: api-latest
+        sourceRevisionDigest: sha256:11d3029d39fd0d2106618445341edab2971c8111fa60442afea134b2132cf5c3
+        sourceBlobDigest: sha256:fdfe3a1d352ae29c75fd10690f38bd8c2a7d2bb478b4113354417541e1e6822c
+        codeSamplesNamespace: latest-csharp-code-samples
+        codeSamplesRevisionDigest: sha256:811a8442de1ab8f65a68218711eab1c3427c7aa9023039cde07482ad4c446dd5
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        latest:
+            inputs:
+                - location: registry.speakeasyapi.dev/moov/moov/api-latest
+            registry:
+                location: registry.speakeasyapi.dev/moov/moov/latest
+    targets:
+        latest:
+            target: csharp
+            source: latest
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/moov/moov/latest-csharp-code-samples
+                labelOverride:
+                    fixedValue: Csharp (SDK)
+                blocking: false

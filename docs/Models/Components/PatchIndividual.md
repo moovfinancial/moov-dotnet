@@ -1,0 +1,15 @@
+# PatchIndividual
+
+Describes the fields available when patching an individual.
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `Name`                                                                  | [IndividualNameUpdate](../../Models/Components/IndividualNameUpdate.md) | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `Phone`                                                                 | [PhoneNumber](../../Models/Components/PhoneNumber.md)                   | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `Email`                                                                 | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     | jordan.lee@classbooker.dev                                              |
+| `Address`                                                               | [AddressUpdate](../../Models/Components/AddressUpdate.md)               | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `BirthDate`                                                             | [BirthDateUpdate](../../Models/Components/BirthDateUpdate.md)           | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `GovernmentID`                                                          | [GovernmentID](../../Models/Components/GovernmentID.md)                 | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |

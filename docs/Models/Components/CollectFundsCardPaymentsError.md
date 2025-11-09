@@ -1,0 +1,12 @@
+# CollectFundsCardPaymentsError
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `CardAcceptanceMethods`                                                             | [CardAcceptanceMethodsError](../../Models/Components/CardAcceptanceMethodsError.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `CurrentlyAcceptsCards`                                                             | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `EstimatedActivity`                                                                 | [EstimatedActivityError](../../Models/Components/EstimatedActivityError.md)         | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Fulfillment`                                                                       | [FulfillmentError](../../Models/Components/FulfillmentError.md)                     | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `RefundPolicy`                                                                      | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |

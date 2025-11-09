@@ -1,0 +1,17 @@
+# InstantPaymentFees
+
+A detailed breakdown of instant payment fees.
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `RtpCreditTransaction`                                                    | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_check_mark:                                                        | Fees for RTP credit transactions.                                         |
+| `RtpDecline`                                                              | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_minus_sign:                                                        | Fees for RTP declines.                                                    |
+| `PushToCardTransaction`                                                   | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_check_mark:                                                        | Fees for push-to-card transactions.                                       |
+| `PushToCardDecline`                                                       | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_minus_sign:                                                        | Fees for push-to-card declines.                                           |
+| `PullFromCardTransaction`                                                 | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_check_mark:                                                        | Fees for pull-from-card transactions.                                     |
+| `PullFromCardDecline`                                                     | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_minus_sign:                                                        | Fees for pull-from-card declines.                                         |
+| `PullFromCardRefund`                                                      | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_minus_sign:                                                        | Fees for pull-from-card refunds.                                          |
+| `Total`                                                                   | [BillingCountAndAmount](../../Models/Components/BillingCountAndAmount.md) | :heavy_check_mark:                                                        | Total instant payment fees.                                               |

@@ -1,0 +1,12 @@
+# WebhookDataWalletTransactionUpdated
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `AccountID`                                                                   | *string*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `WalletID`                                                                    | *string*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `TransactionID`                                                               | *string*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           |
+| `Status`                                                                      | [WalletTransactionStatus](../../Models/Components/WalletTransactionStatus.md) | :heavy_check_mark:                                                            | N/A                                                                           |
+| `AvailableBalance`                                                            | [WalletAvailableBalance](../../Models/Components/WalletAvailableBalance.md)   | :heavy_minus_sign:                                                            | N/A                                                                           |

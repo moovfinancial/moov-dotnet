@@ -1,0 +1,10 @@
+# FileUploadValidationError
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `EvidenceType`                                                                            | *string*                                                                                  | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `File`                                                                                    | [FileUploadValidationErrorFile](../../Models/Components/FileUploadValidationErrorFile.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `HttpMeta`                                                                                | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                                   | :heavy_check_mark:                                                                        | N/A                                                                                       |
