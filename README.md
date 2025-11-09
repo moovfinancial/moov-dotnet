@@ -1,6 +1,6 @@
-# Moov.Sdk
+# Moov SDK
 
-Developer-friendly & type-safe Csharp SDK specifically catered to leverage *Moov.Sdk* API.
+Developer-friendly & type-safe Csharp SDK specifically catered to leverage *Moov* API.
 
 <div align="left" style="margin-bottom: 0;">
     <a href="https://www.speakeasy.com/?utm_source=moov-sdk&utm_campaign=csharp" class="badge-link">
@@ -35,7 +35,7 @@ works at a high level, read our [concepts](https://docs.moov.io/guides/get-start
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [Moov.Sdk](#moovsdk)
+* [Moov](#moov)
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
@@ -67,7 +67,7 @@ dotnet add reference src/Moov/Moov.csproj
 using Moov;
 using Moov.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient();
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
     AccountType = CreateAccountType.Business,
@@ -102,8 +102,7 @@ var sdk = new MoovClient(
     security: new Security() {
         Username = "",
         Password = "",
-    },
-    xMoovVersion: "<value>"
+    }
 );
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
@@ -1108,7 +1107,7 @@ using Moov;
 using Moov.Models.Components;
 using Moov.Models.Errors;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient();
 
 try
 {
@@ -1231,8 +1230,7 @@ using Moov;
 using Moov.Models.Components;
 
 var sdk = new MoovClient(
-    serverUrl: "https://api.moov.io",
-    xMoovVersion: "<value>"
+    serverUrl: "https://api.moov.io"
 );
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
@@ -1410,96 +1408,3 @@ While we value open-source contributions to this SDK, this library is generated 
 We look forward to hearing your feedback. Feel free to open a PR or an issue with a proof of concept and we'll do our best to include it in a future release. 
 
 ### SDK Created by [Speakeasy](https://www.speakeasy.com/?utm_source=moov-sdk&utm_campaign=csharp)
-
-<style>
-  :root {
-    --badge-gray-bg: #f3f4f6;
-    --badge-gray-border: #d1d5db;
-    --badge-gray-text: #374151;
-    --badge-blue-bg: #eff6ff;
-    --badge-blue-border: #3b82f6;
-    --badge-blue-text: #3b82f6;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --badge-gray-bg: #374151;
-      --badge-gray-border: #4b5563;
-      --badge-gray-text: #f3f4f6;
-      --badge-blue-bg: #1e3a8a;
-      --badge-blue-border: #3b82f6;
-      --badge-blue-text: #93c5fd;
-    }
-  }
-  
-  h1 {
-    border-bottom: none !important;
-    margin-bottom: 4px;
-    margin-top: 0;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-  }
-  
-  .badge-text {
-    letter-spacing: 1px;
-    font-weight: 300;
-  }
-  
-  .badge-container {
-    display: inline-flex;
-    align-items: center;
-    background: var(--badge-gray-bg);
-    border: 1px solid var(--badge-gray-border);
-    border-radius: 6px;
-    overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    font-size: 11px;
-    text-decoration: none;
-    vertical-align: middle;
-  }
-
-  .badge-container.blue {
-    background: var(--badge-blue-bg);
-    border-color: var(--badge-blue-border);
-  }
-
-  .badge-icon-section {
-    padding: 4px 8px;
-    border-right: 1px solid var(--badge-gray-border);
-    display: flex;
-    align-items: center;
-  }
-
-  .badge-text-section {
-    padding: 4px 10px;
-    color: var(--badge-gray-text);
-    font-weight: 400;
-  }
-
-  .badge-container.blue .badge-text-section {
-    color: var(--badge-blue-text);
-  }
-  
-  .badge-link {
-    text-decoration: none;
-    margin-left: 8px;
-    display: inline-flex;
-    vertical-align: middle;
-  }
-
-  .badge-link:hover {
-    text-decoration: none;
-  }
-  
-  .badge-link:first-child {
-    margin-left: 0;
-  }
-  
-  .badge-icon-section svg {
-    color: var(--badge-gray-text);
-  }
-
-  .badge-container.blue .badge-icon-section svg {
-    color: var(--badge-blue-text);
-  }
-</style> 
