@@ -33,8 +33,8 @@ namespace Moov.Models.Components
         [JsonProperty("metadata")]
         public Dictionary<string, string>? Metadata { get; set; } = null;
 
-        [JsonProperty("termsOfService", NullValueHandling = NullValueHandling.Include)]
-        public PatchAccountTermsOfService? TermsOfService { get; set; }
+        [JsonProperty("termsOfService")]
+        public TermsOfServicePayloadUpdate? TermsOfService { get; set; }
 
         [JsonProperty("foreignID")]
         public string? ForeignID { get; set; }

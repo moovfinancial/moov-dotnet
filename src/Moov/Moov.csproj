@@ -3,10 +3,12 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>Moov</PackageId>
-    <Version>0.1.2</Version>
+    <Version>0.1.3</Version>
     <TargetFramework>net8.0</TargetFramework>
     <Authors>Speakeasy</Authors>
     <Copyright>Copyright (c) Speakeasy 2025</Copyright>
+    <RepositoryUrl>https://github.com/moovfinancial/moov-dotnet.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <Description>Moov API: Moov is a platform that enables developers to integrate all aspects of money movement with ease and speed.<br/>
 The Moov API makes it simple for platforms to send, receive, and store money. Our API is based upon REST<br/>
 principles, returns JSON responses, and uses standard HTTP response codes. To learn more about how Moov<br/>

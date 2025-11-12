@@ -1,0 +1,9 @@
+# TermsOfServicePayload
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `Token`                                                                                            | [TermsOfServiceToken](../../Models/Components/TermsOfServiceToken.md)                              | :heavy_minus_sign:                                                                                 | An encrypted value used to record acceptance of Moov's Terms of Service.                           |
+| `Manual`                                                                                           | [ManualTermsOfService](../../Models/Components/ManualTermsOfService.md)                            | :heavy_minus_sign:                                                                                 | Describes the acceptance of the Terms of Service. All data is required, and must be from the user. |

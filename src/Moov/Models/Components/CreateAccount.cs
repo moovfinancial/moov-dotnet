@@ -29,8 +29,8 @@ namespace Moov.Models.Components
         [JsonProperty("metadata")]
         public Dictionary<string, string>? Metadata { get; set; }
 
-        [JsonProperty("termsOfService", NullValueHandling = NullValueHandling.Include)]
-        public CreateAccountTermsOfService? TermsOfService { get; set; }
+        [JsonProperty("termsOfService")]
+        public TermsOfServicePayload? TermsOfService { get; set; }
 
         /// <summary>
         /// Optional alias from a foreign/external system which can be used to reference this resource.

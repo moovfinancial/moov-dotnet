@@ -35,7 +35,7 @@ works at a high level, read our [concepts](https://docs.moov.io/guides/get-start
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [Moov](#moov)
+* [Moov SDK](#moov-sdk)
   * [SDK Installation](#sdk-installation)
   * [SDK Example Usage](#sdk-example-usage)
   * [Authentication](#authentication)
@@ -67,7 +67,7 @@ dotnet add reference src/Moov/Moov.csproj
 using Moov;
 using Moov.Models.Components;
 
-var sdk = new MoovClient();
+var sdk = new MoovClient(xMoovVersion: "<value>");
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
     AccountType = CreateAccountType.Business,
@@ -102,7 +102,8 @@ var sdk = new MoovClient(
     security: new Security() {
         Username = "",
         Password = "",
-    }
+    },
+    xMoovVersion: "<value>"
 );
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
@@ -1107,7 +1108,7 @@ using Moov;
 using Moov.Models.Components;
 using Moov.Models.Errors;
 
-var sdk = new MoovClient();
+var sdk = new MoovClient(xMoovVersion: "<value>");
 
 try
 {
@@ -1230,7 +1231,8 @@ using Moov;
 using Moov.Models.Components;
 
 var sdk = new MoovClient(
-    serverUrl: "https://api.moov.io"
+    serverUrl: "https://api.moov.io",
+    xMoovVersion: "<value>"
 );
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
