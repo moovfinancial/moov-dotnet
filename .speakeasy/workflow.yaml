@@ -10,6 +10,9 @@ targets:
     latest:
         target: csharp
         source: latest
+        publish:
+            nuget:
+                apiKey: $nuget_api_key
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/moov/moov/latest-csharp-code-samples
