@@ -20,8 +20,8 @@ Allows clients to notify the authorization server that a previously obtained ref
 
 <!-- UsageSnippet language="csharp" operationID="revokeAccessToken" method="post" path="/oauth2/revoke" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -47,11 +47,11 @@ var res = await sdk.Authentication.RevokeAccessTokenAsync(body: new RevokeTokenR
 
 ### Errors
 
-| Error Type                                 | Status Code                                | Content Type                               |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| Moov.Models.Errors.GenericError            | 400                                        | application/json                           |
-| Moov.Models.Errors.RevokeTokenRequestError | 422                                        | application/json                           |
-| Moov.Models.Errors.APIException            | 4XX, 5XX                                   | \*/\*                                      |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400                                            | application/json                               |
+| Moov.Sdk.Models.Errors.RevokeTokenRequestError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |
 
 ## CreateAccessToken
 
@@ -61,8 +61,8 @@ Create or refresh an access token.
 
 <!-- UsageSnippet language="csharp" operationID="createAccessToken" method="post" path="/oauth2/token" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -90,8 +90,8 @@ var res = await sdk.Authentication.CreateAccessTokenAsync(body: new AuthTokenReq
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Moov.Models.Errors.GenericError          | 400                                      | application/json                         |
-| Moov.Models.Errors.AuthTokenRequestError | 422                                      | application/json                         |
-| Moov.Models.Errors.APIException          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError          | 400                                          | application/json                             |
+| Moov.Sdk.Models.Errors.AuthTokenRequestError | 422                                          | application/json                             |
+| Moov.Sdk.Models.Errors.APIException          | 4XX, 5XX                                     | \*/\*                                        |

@@ -27,7 +27,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.1.5
+  version: 0.1.6
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
@@ -53,7 +53,7 @@ csharp:
   maxMethodParams: 4
   methodArguments: infer-optional-args
   outputModelSuffix: output
-  packageName: Moov
+  packageName: Moov.Sdk
   packageTags: ""
   responseFormat: envelope-http
   sourceDirectory: src

@@ -21,7 +21,7 @@ you'll need to specify the `/profile-enrichment.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getAvatar" method="get" path="/avatars/{uniqueID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -43,6 +43,6 @@ var res = await sdk.Avatars.GetAsync(uniqueID: "<id>");
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

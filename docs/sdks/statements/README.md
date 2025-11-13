@@ -27,8 +27,8 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listStatements" method="get" path="/accounts/{accountID}/statements" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -55,10 +55,10 @@ var res = await sdk.Statements.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400                             | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -73,7 +73,7 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getStatement" method="get" path="/accounts/{accountID}/statements/{statementID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -99,6 +99,6 @@ var res = await sdk.Statements.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

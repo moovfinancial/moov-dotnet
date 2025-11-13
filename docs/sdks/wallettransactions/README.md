@@ -31,8 +31,8 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listWalletTransactions" method="get" path="/accounts/{accountID}/wallets/{walletID}/transactions" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -60,10 +60,10 @@ var res = await sdk.WalletTransactions.ListAsync(req);
 
 ### Errors
 
-| Error Type                                               | Status Code                                              | Content Type                                             |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| Moov.Models.Errors.ListWalletTransactionsValidationError | 422                                                      | application/json                                         |
-| Moov.Models.Errors.APIException                          | 4XX, 5XX                                                 | \*/\*                                                    |
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Moov.Sdk.Models.Errors.ListWalletTransactionsValidationError | 422                                                          | application/json                                             |
+| Moov.Sdk.Models.Errors.APIException                          | 4XX, 5XX                                                     | \*/\*                                                        |
 
 ## Get
 
@@ -78,7 +78,7 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getWalletTransaction" method="get" path="/accounts/{accountID}/wallets/{walletID}/transactions/{transactionID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -106,6 +106,6 @@ var res = await sdk.WalletTransactions.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

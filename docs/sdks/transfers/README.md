@@ -90,8 +90,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createTransferOptions" method="post" path="/accounts/{accountID}/transfer-options" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -124,11 +124,11 @@ var res = await sdk.Transfers.GenerateOptionsAsync(
 
 ### Errors
 
-| Error Type                                        | Status Code                                       | Content Type                                      |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| Moov.Models.Errors.GenericError                   | 400                                               | application/json                                  |
-| Moov.Models.Errors.TransferOptionsValidationError | 422                                               | application/json                                  |
-| Moov.Models.Errors.APIException                   | 4XX, 5XX                                          | \*/\*                                             |
+| Error Type                                            | Status Code                                           | Content Type                                          |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                   | 400                                                   | application/json                                      |
+| Moov.Sdk.Models.Errors.TransferOptionsValidationError | 422                                                   | application/json                                      |
+| Moov.Sdk.Models.Errors.APIException                   | 4XX, 5XX                                              | \*/\*                                                 |
 
 ## Create
 
@@ -143,9 +143,9 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createTransfer" method="post" path="/accounts/{accountID}/transfers" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -188,12 +188,12 @@ var res = await sdk.Transfers.CreateAsync(req);
 
 ### Errors
 
-| Error Type                                 | Status Code                                | Content Type                               |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| Moov.Models.Errors.GenericError            | 400                                        | application/json                           |
-| Moov.Models.Errors.TransferException       | 409                                        | application/json                           |
-| Moov.Models.Errors.TransferValidationError | 422                                        | application/json                           |
-| Moov.Models.Errors.APIException            | 4XX, 5XX                                   | \*/\*                                      |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400                                            | application/json                               |
+| Moov.Sdk.Models.Errors.TransferException       | 409                                            | application/json                               |
+| Moov.Sdk.Models.Errors.TransferValidationError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |
 
 ## List
 
@@ -213,8 +213,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listTransfers" method="get" path="/accounts/{accountID}/transfers" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -241,10 +241,10 @@ var res = await sdk.Transfers.ListAsync(req);
 
 ### Errors
 
-| Error Type                                      | Status Code                                     | Content Type                                    |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| Moov.Models.Errors.ListTransfersValidationError | 422                                             | application/json                                |
-| Moov.Models.Errors.APIException                 | 4XX, 5XX                                        | \*/\*                                           |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| Moov.Sdk.Models.Errors.ListTransfersValidationError | 422                                                 | application/json                                    |
+| Moov.Sdk.Models.Errors.APIException                 | 4XX, 5XX                                            | \*/\*                                               |
 
 ## Get
 
@@ -260,7 +260,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getTransfer" method="get" path="/accounts/{accountID}/transfers/{transferID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -286,9 +286,9 @@ var res = await sdk.Transfers.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -303,8 +303,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateTransfer" method="patch" path="/accounts/{accountID}/transfers/{transferID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -337,10 +337,10 @@ var res = await sdk.Transfers.UpdateAsync(
 
 ### Errors
 
-| Error Type                                      | Status Code                                     | Content Type                                    |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| Moov.Models.Errors.PatchTransferValidationError | 422                                             | application/json                                |
-| Moov.Models.Errors.APIException                 | 4XX, 5XX                                        | \*/\*                                           |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| Moov.Sdk.Models.Errors.PatchTransferValidationError | 422                                                 | application/json                                    |
+| Moov.Sdk.Models.Errors.APIException                 | 4XX, 5XX                                            | \*/\*                                               |
 
 ## CreateCancellation
 
@@ -353,7 +353,7 @@ var res = await sdk.Transfers.UpdateAsync(
 
 <!-- UsageSnippet language="csharp" operationID="createCancellation" method="post" path="/accounts/{accountID}/transfers/{transferID}/cancellations" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -379,10 +379,10 @@ var res = await sdk.Transfers.CreateCancellationAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400                             | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetCancellation
 
@@ -395,7 +395,7 @@ var res = await sdk.Transfers.CreateCancellationAsync(
 
 <!-- UsageSnippet language="csharp" operationID="getCancellation" method="get" path="/accounts/{accountID}/transfers/{transferID}/cancellations/{cancellationID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -423,9 +423,9 @@ var res = await sdk.Transfers.GetCancellationAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## InitiateRefund
 
@@ -441,9 +441,9 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="initiateRefund" method="post" path="/accounts/{accountID}/transfers/{transferID}/refunds" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -473,12 +473,12 @@ var res = await sdk.Transfers.InitiateRefundAsync(req);
 
 ### Errors
 
-| Error Type                                      | Status Code                                     | Content Type                                    |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| Moov.Models.Errors.GenericError                 | 400                                             | application/json                                |
-| Moov.Models.Errors.CardAcquiringRefundException | 409                                             | application/json                                |
-| Moov.Models.Errors.RefundValidationError        | 422                                             | application/json                                |
-| Moov.Models.Errors.APIException                 | 4XX, 5XX                                        | \*/\*                                           |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                 | 400                                                 | application/json                                    |
+| Moov.Sdk.Models.Errors.CardAcquiringRefundException | 409                                                 | application/json                                    |
+| Moov.Sdk.Models.Errors.RefundValidationError        | 422                                                 | application/json                                    |
+| Moov.Sdk.Models.Errors.APIException                 | 4XX, 5XX                                            | \*/\*                                               |
 
 ## ListRefunds
 
@@ -491,7 +491,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listRefunds" method="get" path="/accounts/{accountID}/transfers/{transferID}/refunds" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -517,9 +517,9 @@ var res = await sdk.Transfers.ListRefundsAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetRefund
 
@@ -532,7 +532,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getRefund" method="get" path="/accounts/{accountID}/transfers/{transferID}/refunds/{refundID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -560,9 +560,9 @@ var res = await sdk.Transfers.GetRefundAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## CreateReversal
 
@@ -577,9 +577,9 @@ to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createReversal" method="post" path="/accounts/{accountID}/transfers/{transferID}/reversals" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -609,8 +609,8 @@ var res = await sdk.Transfers.CreateReversalAsync(req);
 
 ### Errors
 
-| Error Type                                 | Status Code                                | Content Type                               |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| Moov.Models.Errors.GenericError            | 400, 409                                   | application/json                           |
-| Moov.Models.Errors.ReversalValidationError | 422                                        | application/json                           |
-| Moov.Models.Errors.APIException            | 4XX, 5XX                                   | \*/\*                                      |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400, 409                                       | application/json                               |
+| Moov.Sdk.Models.Errors.ReversalValidationError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |

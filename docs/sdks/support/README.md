@@ -55,8 +55,8 @@ specify the `/accounts/{partnerAccountID}/tickets.write` and `/accounts/{account
 
 <!-- UsageSnippet language="csharp" operationID="createTicket" method="post" path="/accounts/{accountID}/tickets" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -88,11 +88,11 @@ var res = await sdk.Support.CreateTicketAsync(
 
 ### Errors
 
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| Moov.Models.Errors.GenericError      | 400, 409                             | application/json                     |
-| Moov.Models.Errors.CreateTicketError | 422                                  | application/json                     |
-| Moov.Models.Errors.APIException      | 4XX, 5XX                             | \*/\*                                |
+| Error Type                               | Status Code                              | Content Type                             |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError      | 400, 409                                 | application/json                         |
+| Moov.Sdk.Models.Errors.CreateTicketError | 422                                      | application/json                         |
+| Moov.Sdk.Models.Errors.APIException      | 4XX, 5XX                                 | \*/\*                                    |
 
 ## ListTickets
 
@@ -108,8 +108,8 @@ specify the `/accounts/{partnerAccountID}/tickets.read` and `/accounts/{accountI
 
 <!-- UsageSnippet language="csharp" operationID="listTickets" method="get" path="/accounts/{accountID}/tickets" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -135,9 +135,9 @@ var res = await sdk.Support.ListTicketsAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetTicket
 
@@ -153,7 +153,7 @@ specify the `/accounts/{partnerAccountID}/tickets.read` and `/accounts/{accountI
 
 <!-- UsageSnippet language="csharp" operationID="getTicket" method="get" path="/accounts/{accountID}/tickets/{ticketID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -179,9 +179,9 @@ var res = await sdk.Support.GetTicketAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## UpdateTicket
 
@@ -197,8 +197,8 @@ specify the `/accounts/{partnerAccountID}/tickets.write` and `/accounts/{account
 
 <!-- UsageSnippet language="csharp" operationID="updateTicket" method="patch" path="/accounts/{accountID}/tickets/{ticketID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -226,11 +226,11 @@ var res = await sdk.Support.UpdateTicketAsync(
 
 ### Errors
 
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| Moov.Models.Errors.GenericError      | 400, 409                             | application/json                     |
-| Moov.Models.Errors.UpdateTicketError | 422                                  | application/json                     |
-| Moov.Models.Errors.APIException      | 4XX, 5XX                             | \*/\*                                |
+| Error Type                               | Status Code                              | Content Type                             |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError      | 400, 409                                 | application/json                         |
+| Moov.Sdk.Models.Errors.UpdateTicketError | 422                                      | application/json                         |
+| Moov.Sdk.Models.Errors.APIException      | 4XX, 5XX                                 | \*/\*                                    |
 
 ## ListTicketMessages
 
@@ -246,7 +246,7 @@ specify the `/accounts/{partnerAccountID}/tickets.read` and `/accounts/{accountI
 
 <!-- UsageSnippet language="csharp" operationID="listTicketMessages" method="get" path="/accounts/{accountID}/tickets/{ticketID}/messages" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -272,6 +272,6 @@ var res = await sdk.Support.ListTicketMessagesAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

@@ -37,7 +37,7 @@ you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listCapabilities" method="get" path="/accounts/{accountID}/capabilities" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -59,9 +59,9 @@ var res = await sdk.Capabilities.ListAsync(accountID: "1a50ab1c-1714-49e7-a016-c
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Request
 
@@ -74,8 +74,8 @@ you'll need to specify the `/accounts/{accountID}/capabilities.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="requestCapabilities" method="post" path="/accounts/{accountID}/capabilities" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -106,11 +106,11 @@ var res = await sdk.Capabilities.RequestAsync(
 
 ### Errors
 
-| Error Type                              | Status Code                             | Content Type                            |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| Moov.Models.Errors.GenericError         | 400, 409                                | application/json                        |
-| Moov.Models.Errors.AddCapabilitiesError | 422                                     | application/json                        |
-| Moov.Models.Errors.APIException         | 4XX, 5XX                                | \*/\*                                   |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError         | 400, 409                                    | application/json                            |
+| Moov.Sdk.Models.Errors.AddCapabilitiesError | 422                                         | application/json                            |
+| Moov.Sdk.Models.Errors.APIException         | 4XX, 5XX                                    | \*/\*                                       |
 
 ## Get
 
@@ -123,8 +123,8 @@ you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getCapability" method="get" path="/accounts/{accountID}/capabilities/{capabilityID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -150,9 +150,9 @@ var res = await sdk.Capabilities.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Disable
 
@@ -165,8 +165,8 @@ you'll need to specify the `/accounts/{accountID}/capabilities.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="disableCapability" method="delete" path="/accounts/{accountID}/capabilities/{capabilityID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -192,7 +192,7 @@ var res = await sdk.Capabilities.DisableAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

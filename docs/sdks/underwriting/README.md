@@ -37,7 +37,7 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getUnderwriting" method="get" path="/accounts/{accountID}/underwriting" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -59,9 +59,9 @@ var res = await sdk.Underwriting.GetAsync(accountID: "efe07546-f697-4da5-bf73-d9
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Save
 
@@ -76,8 +76,8 @@ you'll need to specify the `/accounts/{accountID}/profile.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="saveUnderwriting" method="post" path="/accounts/{accountID}/underwriting" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -103,11 +103,11 @@ var res = await sdk.Underwriting.SaveAsync(
 
 ### Errors
 
-| Error Type                                 | Status Code                                | Content Type                               |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| Moov.Models.Errors.GenericError            | 400, 409                                   | application/json                           |
-| Moov.Models.Errors.UpsertUnderwritingError | 422                                        | application/json                           |
-| Moov.Models.Errors.APIException            | 4XX, 5XX                                   | \*/\*                                      |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400, 409                                       | application/json                               |
+| Moov.Sdk.Models.Errors.UpsertUnderwritingError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |
 
 ## Upsert
 
@@ -122,8 +122,8 @@ you'll need to specify the `/accounts/{accountID}/profile.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="upsertUnderwriting" method="put" path="/accounts/{accountID}/underwriting" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -169,8 +169,8 @@ var res = await sdk.Underwriting.UpsertAsync(
 
 ### Errors
 
-| Error Type                                 | Status Code                                | Content Type                               |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| Moov.Models.Errors.GenericError            | 400, 409                                   | application/json                           |
-| Moov.Models.Errors.UpdateUnderwritingError | 422                                        | application/json                           |
-| Moov.Models.Errors.APIException            | 4XX, 5XX                                   | \*/\*                                      |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400, 409                                       | application/json                               |
+| Moov.Sdk.Models.Errors.UpdateUnderwritingError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |

@@ -25,8 +25,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createReceipts" method="post" path="/receipts" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -49,10 +49,10 @@ var res = await sdk.Receipts.CreateAsync(body: new List<ReceiptRequest>() {});
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## List
 
@@ -65,7 +65,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listReceipts" method="get" path="/receipts" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -87,6 +87,6 @@ var res = await sdk.Receipts.ListAsync(id: "8508cf6c-9ce4-4e35-84c1-4b77320a620b
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

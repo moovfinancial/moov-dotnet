@@ -35,8 +35,8 @@ you'll need to specify the `/accounts/{accountID}/files.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="uploadFile" method="post" path="/accounts/{accountID}/files" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -69,11 +69,11 @@ var res = await sdk.Files.UploadAsync(
 
 ### Errors
 
-| Error Type                             | Status Code                            | Content Type                           |
-| -------------------------------------- | -------------------------------------- | -------------------------------------- |
-| Moov.Models.Errors.GenericError        | 400, 409                               | application/json                       |
-| Moov.Models.Errors.FileValidationError | 422                                    | application/json                       |
-| Moov.Models.Errors.APIException        | 4XX, 5XX                               | \*/\*                                  |
+| Error Type                                 | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| Moov.Sdk.Models.Errors.GenericError        | 400, 409                                   | application/json                           |
+| Moov.Sdk.Models.Errors.FileValidationError | 422                                        | application/json                           |
+| Moov.Sdk.Models.Errors.APIException        | 4XX, 5XX                                   | \*/\*                                      |
 
 ## List
 
@@ -86,7 +86,7 @@ you'll need to specify the `/accounts/{accountID}/files.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listFiles" method="get" path="/accounts/{accountID}/files" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -108,9 +108,9 @@ var res = await sdk.Files.ListAsync(accountID: "d1133bf2-4853-4436-9a03-23739895
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -123,7 +123,7 @@ you'll need to specify the `/accounts/{accountID}/files.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getFileDetails" method="get" path="/accounts/{accountID}/files/{fileID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -149,6 +149,6 @@ var res = await sdk.Files.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

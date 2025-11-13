@@ -7,8 +7,8 @@
 ### Example
 
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -38,8 +38,8 @@ This SDK supports the following security scheme globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(
     security: new Security() {
@@ -65,7 +65,7 @@ var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-[`MoovException`](./src/Moov/Models/Errors/MoovException.cs) is the base exception class for all HTTP error responses. It has the following properties:
+[`MoovException`](./src/Moov/Sdk/Models/Errors/MoovException.cs) is the base exception class for all HTTP error responses. It has the following properties:
 
 | Property      | Type                  | Description           |
 |---------------|-----------------------|-----------------------|
@@ -78,9 +78,9 @@ Some exceptions in this SDK include an additional `Payload` field, which will co
 ### Example
 
 ```csharp
-using Moov;
-using Moov.Models.Components;
-using Moov.Models.Errors;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Errors;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -135,60 +135,60 @@ catch (System.Net.Http.HttpRequestException ex)
 ### Error Classes
 
 **Primary exception:**
-* [`MoovException`](./src/Moov/Models/Errors/MoovException.cs): The base class for HTTP error responses.
+* [`MoovException`](./src/Moov/Sdk/Models/Errors/MoovException.cs): The base class for HTTP error responses.
 
 <details><summary>Less common exceptions (48)</summary>
 
 * [`System.Net.Http.HttpRequestException`](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httprequestexception): Network connectivity error. For more details about the underlying cause, inspect the `ex.InnerException`.
 
-* Inheriting from [`MoovException`](./src/Moov/Models/Errors/MoovException.cs):
-  * [`GenericError`](./src/Moov/Models/Errors/GenericError.cs): Applicable to 72 of 162 methods.*
-  * [`BrandValidationError`](./src/Moov/Models/Errors/BrandValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 3 of 162 methods.*
-  * [`ImageRequestValidationError`](./src/Moov/Models/Errors/ImageRequestValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
-  * [`ProductRequestValidationError`](./src/Moov/Models/Errors/ProductRequestValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
-  * [`ScheduleValidationError`](./src/Moov/Models/Errors/ScheduleValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
-  * [`TerminalApplicationError`](./src/Moov/Models/Errors/TerminalApplicationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
-  * [`TransferException`](./src/Moov/Models/Errors/TransferException.cs): Details of a Transfer. Status code `409`. Applicable to 1 of 162 methods.*
-  * [`CardAcquiringRefundException`](./src/Moov/Models/Errors/CardAcquiringRefundException.cs): Details of a card refund. Status code `409`. Applicable to 1 of 162 methods.*
-  * [`CreateAccountError`](./src/Moov/Models/Errors/CreateAccountError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`PatchAccountError`](./src/Moov/Models/Errors/PatchAccountError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`AssignCountriesError`](./src/Moov/Models/Errors/AssignCountriesError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`LinkApplePayError`](./src/Moov/Models/Errors/LinkApplePayError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`BankAccountValidationError`](./src/Moov/Models/Errors/BankAccountValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`MicroDepositValidationError`](./src/Moov/Models/Errors/MicroDepositValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`AddCapabilitiesError`](./src/Moov/Models/Errors/AddCapabilitiesError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`LinkCardError`](./src/Moov/Models/Errors/LinkCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`UpdateCardError`](./src/Moov/Models/Errors/UpdateCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`FileUploadValidationError`](./src/Moov/Models/Errors/FileUploadValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`FeePlanAgreementError`](./src/Moov/Models/Errors/FeePlanAgreementError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`FileValidationError`](./src/Moov/Models/Errors/FileValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`ImageMetadataValidationError`](./src/Moov/Models/Errors/ImageMetadataValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`CreatePaymentLinkError`](./src/Moov/Models/Errors/CreatePaymentLinkError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`UpdatePaymentLinkError`](./src/Moov/Models/Errors/UpdatePaymentLinkError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`RepresentativeValidationError`](./src/Moov/Models/Errors/RepresentativeValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`CreateSweepConfigError`](./src/Moov/Models/Errors/CreateSweepConfigError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`PatchSweepConfigError`](./src/Moov/Models/Errors/PatchSweepConfigError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`AccountTerminalApplicationError`](./src/Moov/Models/Errors/AccountTerminalApplicationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`CreateTicketError`](./src/Moov/Models/Errors/CreateTicketError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`UpdateTicketError`](./src/Moov/Models/Errors/UpdateTicketError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`TransferOptionsValidationError`](./src/Moov/Models/Errors/TransferOptionsValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`TransferValidationError`](./src/Moov/Models/Errors/TransferValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`ListTransfersValidationError`](./src/Moov/Models/Errors/ListTransfersValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`PatchTransferValidationError`](./src/Moov/Models/Errors/PatchTransferValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`RefundValidationError`](./src/Moov/Models/Errors/RefundValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`ReversalValidationError`](./src/Moov/Models/Errors/ReversalValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`UpsertUnderwritingError`](./src/Moov/Models/Errors/UpsertUnderwritingError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`UpdateUnderwritingError`](./src/Moov/Models/Errors/UpdateUnderwritingError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`CreateWalletValidationError`](./src/Moov/Models/Errors/CreateWalletValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`ListWalletsValidationError`](./src/Moov/Models/Errors/ListWalletsValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`PatchWalletValidationError`](./src/Moov/Models/Errors/PatchWalletValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`ListWalletTransactionsValidationError`](./src/Moov/Models/Errors/ListWalletTransactionsValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`RequestCardError`](./src/Moov/Models/Errors/RequestCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`UpdateIssuedCardError`](./src/Moov/Models/Errors/UpdateIssuedCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`RevokeTokenRequestError`](./src/Moov/Models/Errors/RevokeTokenRequestError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`AuthTokenRequestError`](./src/Moov/Models/Errors/AuthTokenRequestError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`OnboardingInviteError`](./src/Moov/Models/Errors/OnboardingInviteError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
-  * [`ResponseValidationError`](./src/Moov/Models/Errors/ResponseValidationError.cs): Thrown when the response data could not be deserialized into the expected type.
+* Inheriting from [`MoovException`](./src/Moov/Sdk/Models/Errors/MoovException.cs):
+  * [`GenericError`](./src/Moov/Sdk/Models/Errors/GenericError.cs): Applicable to 72 of 162 methods.*
+  * [`BrandValidationError`](./src/Moov/Sdk/Models/Errors/BrandValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 3 of 162 methods.*
+  * [`ImageRequestValidationError`](./src/Moov/Sdk/Models/Errors/ImageRequestValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
+  * [`ProductRequestValidationError`](./src/Moov/Sdk/Models/Errors/ProductRequestValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
+  * [`ScheduleValidationError`](./src/Moov/Sdk/Models/Errors/ScheduleValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
+  * [`TerminalApplicationError`](./src/Moov/Sdk/Models/Errors/TerminalApplicationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 2 of 162 methods.*
+  * [`TransferException`](./src/Moov/Sdk/Models/Errors/TransferException.cs): Details of a Transfer. Status code `409`. Applicable to 1 of 162 methods.*
+  * [`CardAcquiringRefundException`](./src/Moov/Sdk/Models/Errors/CardAcquiringRefundException.cs): Details of a card refund. Status code `409`. Applicable to 1 of 162 methods.*
+  * [`CreateAccountError`](./src/Moov/Sdk/Models/Errors/CreateAccountError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`PatchAccountError`](./src/Moov/Sdk/Models/Errors/PatchAccountError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`AssignCountriesError`](./src/Moov/Sdk/Models/Errors/AssignCountriesError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`LinkApplePayError`](./src/Moov/Sdk/Models/Errors/LinkApplePayError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`BankAccountValidationError`](./src/Moov/Sdk/Models/Errors/BankAccountValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`MicroDepositValidationError`](./src/Moov/Sdk/Models/Errors/MicroDepositValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`AddCapabilitiesError`](./src/Moov/Sdk/Models/Errors/AddCapabilitiesError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`LinkCardError`](./src/Moov/Sdk/Models/Errors/LinkCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`UpdateCardError`](./src/Moov/Sdk/Models/Errors/UpdateCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`FileUploadValidationError`](./src/Moov/Sdk/Models/Errors/FileUploadValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`FeePlanAgreementError`](./src/Moov/Sdk/Models/Errors/FeePlanAgreementError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`FileValidationError`](./src/Moov/Sdk/Models/Errors/FileValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`ImageMetadataValidationError`](./src/Moov/Sdk/Models/Errors/ImageMetadataValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`CreatePaymentLinkError`](./src/Moov/Sdk/Models/Errors/CreatePaymentLinkError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`UpdatePaymentLinkError`](./src/Moov/Sdk/Models/Errors/UpdatePaymentLinkError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`RepresentativeValidationError`](./src/Moov/Sdk/Models/Errors/RepresentativeValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`CreateSweepConfigError`](./src/Moov/Sdk/Models/Errors/CreateSweepConfigError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`PatchSweepConfigError`](./src/Moov/Sdk/Models/Errors/PatchSweepConfigError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`AccountTerminalApplicationError`](./src/Moov/Sdk/Models/Errors/AccountTerminalApplicationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`CreateTicketError`](./src/Moov/Sdk/Models/Errors/CreateTicketError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`UpdateTicketError`](./src/Moov/Sdk/Models/Errors/UpdateTicketError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`TransferOptionsValidationError`](./src/Moov/Sdk/Models/Errors/TransferOptionsValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`TransferValidationError`](./src/Moov/Sdk/Models/Errors/TransferValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`ListTransfersValidationError`](./src/Moov/Sdk/Models/Errors/ListTransfersValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`PatchTransferValidationError`](./src/Moov/Sdk/Models/Errors/PatchTransferValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`RefundValidationError`](./src/Moov/Sdk/Models/Errors/RefundValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`ReversalValidationError`](./src/Moov/Sdk/Models/Errors/ReversalValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`UpsertUnderwritingError`](./src/Moov/Sdk/Models/Errors/UpsertUnderwritingError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`UpdateUnderwritingError`](./src/Moov/Sdk/Models/Errors/UpdateUnderwritingError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`CreateWalletValidationError`](./src/Moov/Sdk/Models/Errors/CreateWalletValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`ListWalletsValidationError`](./src/Moov/Sdk/Models/Errors/ListWalletsValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`PatchWalletValidationError`](./src/Moov/Sdk/Models/Errors/PatchWalletValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`ListWalletTransactionsValidationError`](./src/Moov/Sdk/Models/Errors/ListWalletTransactionsValidationError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`RequestCardError`](./src/Moov/Sdk/Models/Errors/RequestCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`UpdateIssuedCardError`](./src/Moov/Sdk/Models/Errors/UpdateIssuedCardError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`RevokeTokenRequestError`](./src/Moov/Sdk/Models/Errors/RevokeTokenRequestError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`AuthTokenRequestError`](./src/Moov/Sdk/Models/Errors/AuthTokenRequestError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`OnboardingInviteError`](./src/Moov/Sdk/Models/Errors/OnboardingInviteError.cs): The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Status code `422`. Applicable to 1 of 162 methods.*
+  * [`ResponseValidationError`](./src/Moov/Sdk/Models/Errors/ResponseValidationError.cs): Thrown when the response data could not be deserialized into the expected type.
 </details>
 
 \* Refer to the [relevant documentation](#available-resources-and-operations) to determine whether an exception applies to a specific operation.
@@ -201,8 +201,8 @@ catch (System.Net.Http.HttpRequestException ex)
 
 The default server can be overridden globally by passing a URL to the `serverUrl: string` optional parameter when initializing the SDK client instance. For example:
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(
     serverUrl: "https://api.moov.io",
@@ -237,8 +237,8 @@ connection pooling, and other HTTP client settings.
 The following example shows how to create a custom HTTP client with request modification and error handling:
 
 ```csharp
-using Moov;
-using Moov.Utils;
+using Moov.Sdk;
+using Moov.Sdk.Utils;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -290,7 +290,7 @@ var sdk = new MoovClient(client: customHttpClient);
 <summary>You can also provide a completely custom HTTP client with your own configuration:</summary>
 
 ```csharp
-using Moov.Utils;
+using Moov.Sdk.Utils;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;

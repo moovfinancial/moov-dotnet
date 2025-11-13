@@ -41,8 +41,8 @@ you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createSweepConfig" method="post" path="/accounts/{accountID}/sweep-configs" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -73,11 +73,11 @@ var res = await sdk.Sweeps.CreateConfigAsync(
 
 ### Errors
 
-| Error Type                                | Status Code                               | Content Type                              |
-| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| Moov.Models.Errors.GenericError           | 400, 409                                  | application/json                          |
-| Moov.Models.Errors.CreateSweepConfigError | 422                                       | application/json                          |
-| Moov.Models.Errors.APIException           | 4XX, 5XX                                  | \*/\*                                     |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError           | 400, 409                                      | application/json                              |
+| Moov.Sdk.Models.Errors.CreateSweepConfigError | 422                                           | application/json                              |
+| Moov.Sdk.Models.Errors.APIException           | 4XX, 5XX                                      | \*/\*                                         |
 
 ## ListConfigs
 
@@ -90,7 +90,7 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listSweepConfigs" method="get" path="/accounts/{accountID}/sweep-configs" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -112,9 +112,9 @@ var res = await sdk.Sweeps.ListConfigsAsync(accountID: "ed67e4c8-03d3-4d88-ba38-
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetConfig
 
@@ -127,7 +127,7 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getSweepConfig" method="get" path="/accounts/{accountID}/sweep-configs/{sweepConfigID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -153,9 +153,9 @@ var res = await sdk.Sweeps.GetConfigAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## UpdateConfig
 
@@ -168,8 +168,8 @@ you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateSweepConfig" method="patch" path="/accounts/{accountID}/sweep-configs/{sweepConfigID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -199,11 +199,11 @@ var res = await sdk.Sweeps.UpdateConfigAsync(
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Moov.Models.Errors.GenericError          | 400, 409                                 | application/json                         |
-| Moov.Models.Errors.PatchSweepConfigError | 422                                      | application/json                         |
-| Moov.Models.Errors.APIException          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError          | 400, 409                                     | application/json                             |
+| Moov.Sdk.Models.Errors.PatchSweepConfigError | 422                                          | application/json                             |
+| Moov.Sdk.Models.Errors.APIException          | 4XX, 5XX                                     | \*/\*                                        |
 
 ## List
 
@@ -216,8 +216,8 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listSweeps" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -245,9 +245,9 @@ var res = await sdk.Sweeps.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -260,7 +260,7 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getSweep" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -288,6 +288,6 @@ var res = await sdk.Sweeps.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

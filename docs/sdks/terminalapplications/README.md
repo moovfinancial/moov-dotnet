@@ -37,8 +37,8 @@ you'll need to specify the `/terminal-applications.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createTerminalApplication" method="post" path="/terminal-applications" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -65,11 +65,11 @@ var res = await sdk.TerminalApplications.CreateAsync(body: new CreateTerminalApp
 
 ### Errors
 
-| Error Type                                  | Status Code                                 | Content Type                                |
-| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| Moov.Models.Errors.GenericError             | 400, 409                                    | application/json                            |
-| Moov.Models.Errors.TerminalApplicationError | 422                                         | application/json                            |
-| Moov.Models.Errors.APIException             | 4XX, 5XX                                    | \*/\*                                       |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError             | 400, 409                                        | application/json                                |
+| Moov.Sdk.Models.Errors.TerminalApplicationError | 422                                             | application/json                                |
+| Moov.Sdk.Models.Errors.APIException             | 4XX, 5XX                                        | \*/\*                                           |
 
 ## List
 
@@ -82,7 +82,7 @@ you'll need to specify the `/terminal-applications.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listTerminalApplications" method="get" path="/terminal-applications" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -103,9 +103,9 @@ var res = await sdk.TerminalApplications.ListAsync();
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -118,7 +118,7 @@ you'll need to specify the `/terminal-applications.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getTerminalApplication" method="get" path="/terminal-applications/{terminalApplicationID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -140,9 +140,9 @@ var res = await sdk.TerminalApplications.GetAsync(terminalApplicationID: "123456
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Delete
 
@@ -155,7 +155,7 @@ you'll need to specify the `/terminal-applications.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="deleteTerminalApplication" method="delete" path="/terminal-applications/{terminalApplicationID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -177,10 +177,10 @@ var res = await sdk.TerminalApplications.DeleteAsync(terminalApplicationID: "123
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## CreateVersion
 
@@ -193,8 +193,8 @@ you'll need to specify the `/terminal-applications.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createTerminalApplicationVersion" method="post" path="/terminal-applications/{terminalApplicationID}/versions" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -222,8 +222,8 @@ var res = await sdk.TerminalApplications.CreateVersionAsync(
 
 ### Errors
 
-| Error Type                                  | Status Code                                 | Content Type                                |
-| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| Moov.Models.Errors.GenericError             | 400, 409                                    | application/json                            |
-| Moov.Models.Errors.TerminalApplicationError | 422                                         | application/json                            |
-| Moov.Models.Errors.APIException             | 4XX, 5XX                                    | \*/\*                                       |
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError             | 400, 409                                        | application/json                                |
+| Moov.Sdk.Models.Errors.TerminalApplicationError | 422                                             | application/json                                |
+| Moov.Sdk.Models.Errors.APIException             | 4XX, 5XX                                        | \*/\*                                           |

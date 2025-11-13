@@ -109,8 +109,8 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="linkBankAccount" method="post" path="/accounts/{accountID}/bank-accounts" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -143,11 +143,11 @@ var res = await sdk.BankAccounts.LinkAsync(
 
 ### Errors
 
-| Error Type                                    | Status Code                                   | Content Type                                  |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| Moov.Models.Errors.GenericError               | 400, 409                                      | application/json                              |
-| Moov.Models.Errors.BankAccountValidationError | 422                                           | application/json                              |
-| Moov.Models.Errors.APIException               | 4XX, 5XX                                      | \*/\*                                         |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError               | 400, 409                                          | application/json                                  |
+| Moov.Sdk.Models.Errors.BankAccountValidationError | 422                                               | application/json                                  |
+| Moov.Sdk.Models.Errors.APIException               | 4XX, 5XX                                          | \*/\*                                             |
 
 ## List
 
@@ -162,7 +162,7 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listBankAccounts" method="get" path="/accounts/{accountID}/bank-accounts" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -184,9 +184,9 @@ var res = await sdk.BankAccounts.ListAsync(accountID: "85539920-22dd-4900-a07e-7
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -201,7 +201,7 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getBankAccount" method="get" path="/accounts/{accountID}/bank-accounts/{bankAccountID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -227,9 +227,9 @@ var res = await sdk.BankAccounts.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Disable
 
@@ -242,7 +242,7 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="disableBankAccount" method="delete" path="/accounts/{accountID}/bank-accounts/{bankAccountID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -268,10 +268,10 @@ var res = await sdk.BankAccounts.DisableAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## InitiateMicroDeposits
 
@@ -295,7 +295,7 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="initiateMicroDeposits" method="post" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/micro-deposits" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -321,10 +321,10 @@ var res = await sdk.BankAccounts.InitiateMicroDepositsAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## CompleteMicroDeposits
 
@@ -337,8 +337,8 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="completeMicroDeposits" method="put" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/micro-deposits" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -372,11 +372,11 @@ var res = await sdk.BankAccounts.CompleteMicroDepositsAsync(
 
 ### Errors
 
-| Error Type                                     | Status Code                                    | Content Type                                   |
-| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| Moov.Models.Errors.GenericError                | 400, 409                                       | application/json                               |
-| Moov.Models.Errors.MicroDepositValidationError | 422                                            | application/json                               |
-| Moov.Models.Errors.APIException                | 4XX, 5XX                                       | \*/\*                                          |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                | 400, 409                                           | application/json                                   |
+| Moov.Sdk.Models.Errors.MicroDepositValidationError | 422                                                | application/json                                   |
+| Moov.Sdk.Models.Errors.APIException                | 4XX, 5XX                                           | \*/\*                                              |
 
 ## GetVerification
 
@@ -398,7 +398,7 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getBankAccountVerification" method="get" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/verify" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -424,9 +424,9 @@ var res = await sdk.BankAccounts.GetVerificationAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## InitiateVerification
 
@@ -454,7 +454,7 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="initiateBankAccountVerification" method="post" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/verify" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -481,10 +481,10 @@ var res = await sdk.BankAccounts.InitiateVerificationAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## CompleteVerification
 
@@ -504,8 +504,8 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="completeBankAccountVerification" method="put" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/verify" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -535,7 +535,7 @@ var res = await sdk.BankAccounts.CompleteVerificationAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409, 422                   | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409, 422                       | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

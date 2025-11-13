@@ -21,7 +21,7 @@ List active (non-disabled) products for an account.
 
 <!-- UsageSnippet language="csharp" operationID="listProducts" method="get" path="/accounts/{accountID}/products" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -49,9 +49,9 @@ var res = await sdk.Products.ListAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Create
 
@@ -61,8 +61,8 @@ Creates a new product for the specified account.
 
 <!-- UsageSnippet language="csharp" operationID="createProduct" method="post" path="/accounts/{accountID}/products" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -163,11 +163,11 @@ var res = await sdk.Products.CreateAsync(
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| Moov.Models.Errors.GenericError                  | 400, 409                                         | application/json                                 |
-| Moov.Models.Errors.ProductRequestValidationError | 422                                              | application/json                                 |
-| Moov.Models.Errors.APIException                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                  | 400, 409                                             | application/json                                     |
+| Moov.Sdk.Models.Errors.ProductRequestValidationError | 422                                                  | application/json                                     |
+| Moov.Sdk.Models.Errors.APIException                  | 4XX, 5XX                                             | \*/\*                                                |
 
 ## Get
 
@@ -177,7 +177,7 @@ Retrieve a product by ID.
 
 <!-- UsageSnippet language="csharp" operationID="getProduct" method="get" path="/accounts/{accountID}/products/{productID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -203,9 +203,9 @@ var res = await sdk.Products.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -215,8 +215,8 @@ Update a product and its options.
 
 <!-- UsageSnippet language="csharp" operationID="updateProduct" method="put" path="/accounts/{accountID}/products/{productID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -259,11 +259,11 @@ var res = await sdk.Products.UpdateAsync(
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| Moov.Models.Errors.GenericError                  | 400, 409                                         | application/json                                 |
-| Moov.Models.Errors.ProductRequestValidationError | 422                                              | application/json                                 |
-| Moov.Models.Errors.APIException                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                  | 400, 409                                             | application/json                                     |
+| Moov.Sdk.Models.Errors.ProductRequestValidationError | 422                                                  | application/json                                     |
+| Moov.Sdk.Models.Errors.APIException                  | 4XX, 5XX                                             | \*/\*                                                |
 
 ## Disable
 
@@ -275,7 +275,7 @@ The product will no longer be available, but will remain in the system for histo
 
 <!-- UsageSnippet language="csharp" operationID="disableProduct" method="delete" path="/accounts/{accountID}/products/{productID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -301,7 +301,7 @@ var res = await sdk.Products.DisableAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

@@ -37,8 +37,8 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listIssuedCardAuthorizations" method="get" path="/issuing/{accountID}/authorizations" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -65,9 +65,9 @@ var res = await sdk.IssuingTransactions.ListAuthorizationsAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetAuthorization
 
@@ -80,7 +80,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getIssuedCardAuthorization" method="get" path="/issuing/{accountID}/authorizations/{authorizationID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -106,9 +106,9 @@ var res = await sdk.IssuingTransactions.GetAuthorizationAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## ListAuthorizationEvents
 
@@ -121,8 +121,8 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listIssuedCardAuthorizationEvents" method="get" path="/issuing/{accountID}/authorizations/{authorizationID}/events" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -150,9 +150,9 @@ var res = await sdk.IssuingTransactions.ListAuthorizationEventsAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## List
 
@@ -165,8 +165,8 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listIssuedCardTransactions" method="get" path="/issuing/{accountID}/card-transactions" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -193,9 +193,9 @@ var res = await sdk.IssuingTransactions.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -208,7 +208,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getIssuedCardTransaction" method="get" path="/issuing/{accountID}/card-transactions/{cardTransactionID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -234,6 +234,6 @@ var res = await sdk.IssuingTransactions.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

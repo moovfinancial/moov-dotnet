@@ -27,7 +27,7 @@ you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listPaymentMethods" method="get" path="/accounts/{accountID}/payment-methods" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -51,9 +51,9 @@ var res = await sdk.PaymentMethods.ListAsync(accountID: "f5503781-dfe4-4bcd-9487
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -66,7 +66,7 @@ you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getPaymentMethod" method="get" path="/accounts/{accountID}/payment-methods/{paymentMethodID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -92,6 +92,6 @@ var res = await sdk.PaymentMethods.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

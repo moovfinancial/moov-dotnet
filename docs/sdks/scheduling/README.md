@@ -41,8 +41,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createSchedule" method="post" path="/accounts/{accountID}/schedules" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System;
 using System.Collections.Generic;
 
@@ -137,11 +137,11 @@ var res = await sdk.Scheduling.CreateAsync(
 
 ### Errors
 
-| Error Type                                 | Status Code                                | Content Type                               |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| Moov.Models.Errors.GenericError            | 400, 409                                   | application/json                           |
-| Moov.Models.Errors.ScheduleValidationError | 422                                        | application/json                           |
-| Moov.Models.Errors.APIException            | 4XX, 5XX                                   | \*/\*                                      |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400, 409                                       | application/json                               |
+| Moov.Sdk.Models.Errors.ScheduleValidationError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |
 
 ## List
 
@@ -154,8 +154,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listSchedules" method="get" path="/accounts/{accountID}/schedules" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -182,9 +182,9 @@ var res = await sdk.Scheduling.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -197,8 +197,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateSchedule" method="put" path="/accounts/{accountID}/schedules/{scheduleID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System;
 using System.Collections.Generic;
 
@@ -295,11 +295,11 @@ var res = await sdk.Scheduling.UpdateAsync(
 
 ### Errors
 
-| Error Type                                 | Status Code                                | Content Type                               |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| Moov.Models.Errors.GenericError            | 400, 409                                   | application/json                           |
-| Moov.Models.Errors.ScheduleValidationError | 422                                        | application/json                           |
-| Moov.Models.Errors.APIException            | 4XX, 5XX                                   | \*/\*                                      |
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400, 409                                       | application/json                               |
+| Moov.Sdk.Models.Errors.ScheduleValidationError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |
 
 ## Get
 
@@ -312,7 +312,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getSchedules" method="get" path="/accounts/{accountID}/schedules/{scheduleID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -338,9 +338,9 @@ var res = await sdk.Scheduling.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Cancel
 
@@ -353,7 +353,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="cancelSchedule" method="delete" path="/accounts/{accountID}/schedules/{scheduleID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -379,10 +379,10 @@ var res = await sdk.Scheduling.CancelAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetOccurrance
 
@@ -395,7 +395,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getScheduledOccurrence" method="get" path="/accounts/{accountID}/schedules/{scheduleID}/occurrences/{occurrenceFilter}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -423,6 +423,6 @@ var res = await sdk.Scheduling.GetOccurranceAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

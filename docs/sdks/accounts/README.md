@@ -92,8 +92,8 @@ to specify the `/accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createAccount" method="post" path="/accounts" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -122,11 +122,11 @@ var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
 
 ### Errors
 
-| Error Type                            | Status Code                           | Content Type                          |
-| ------------------------------------- | ------------------------------------- | ------------------------------------- |
-| Moov.Models.Errors.GenericError       | 400, 409                              | application/json                      |
-| Moov.Models.Errors.CreateAccountError | 422                                   | application/json                      |
-| Moov.Models.Errors.APIException       | 4XX, 5XX                              | \*/\*                                 |
+| Error Type                                | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError       | 400, 409                                  | application/json                          |
+| Moov.Sdk.Models.Errors.CreateAccountError | 422                                       | application/json                          |
+| Moov.Sdk.Models.Errors.APIException       | 4XX, 5XX                                  | \*/\*                                     |
 
 ## List
 
@@ -143,8 +143,8 @@ to specify the `/accounts.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listAccounts" method="get" path="/accounts" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -170,9 +170,9 @@ var res = await sdk.Accounts.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -185,7 +185,7 @@ to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getAccount" method="get" path="/accounts/{accountID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -207,9 +207,9 @@ var res = await sdk.Accounts.GetAsync(accountID: "2f93a6cf-3b3b-4c17-8d3b-110dfa
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -230,8 +230,8 @@ to specify the `/accounts/{accountID}/profile.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateAccount" method="patch" path="/accounts/{accountID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -341,11 +341,11 @@ var res = await sdk.Accounts.UpdateAsync(
 
 ### Errors
 
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| Moov.Models.Errors.GenericError      | 400, 409                             | application/json                     |
-| Moov.Models.Errors.PatchAccountError | 422                                  | application/json                     |
-| Moov.Models.Errors.APIException      | 4XX, 5XX                             | \*/\*                                |
+| Error Type                               | Status Code                              | Content Type                             |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError      | 400, 409                                 | application/json                         |
+| Moov.Sdk.Models.Errors.PatchAccountError | 422                                      | application/json                         |
+| Moov.Sdk.Models.Errors.APIException      | 4XX, 5XX                                 | \*/\*                                    |
 
 ## Disconnect
 
@@ -360,7 +360,7 @@ you'll need to specify the `/accounts/{accountID}/profile.disconnect` scope.
 
 <!-- UsageSnippet language="csharp" operationID="disconnectAccount" method="delete" path="/accounts/{accountID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -382,10 +382,10 @@ var res = await sdk.Accounts.DisconnectAsync(accountID: "cfdfea7d-f185-4de5-ba90
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetCountries
 
@@ -398,7 +398,7 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getAccountCountries" method="get" path="/accounts/{accountID}/countries" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -420,9 +420,9 @@ var res = await sdk.Accounts.GetCountriesAsync(accountID: "a2026036-cc26-42c1-be
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## AssignCountries
 
@@ -437,8 +437,8 @@ you'll need to specify the `/accounts/{accountID}/profile.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="assignAccountCountries" method="put" path="/accounts/{accountID}/countries" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -469,11 +469,11 @@ var res = await sdk.Accounts.AssignCountriesAsync(
 
 ### Errors
 
-| Error Type                              | Status Code                             | Content Type                            |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| Moov.Models.Errors.GenericError         | 400, 409                                | application/json                        |
-| Moov.Models.Errors.AssignCountriesError | 422                                     | application/json                        |
-| Moov.Models.Errors.APIException         | 4XX, 5XX                                | \*/\*                                   |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError         | 400, 409                                    | application/json                            |
+| Moov.Sdk.Models.Errors.AssignCountriesError | 422                                         | application/json                            |
+| Moov.Sdk.Models.Errors.APIException         | 4XX, 5XX                                    | \*/\*                                       |
 
 ## GetMerchantProcessingAgreement
 
@@ -486,7 +486,7 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getMerchantProcessingAgreement" method="get" path="/accounts/{accountID}/merchant-agreement" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -508,9 +508,9 @@ var res = await sdk.Accounts.GetMerchantProcessingAgreementAsync(accountID: "618
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetTermsOfServiceToken
 
@@ -524,7 +524,7 @@ token patched to the account. Read more in our [documentation](https://docs.moov
 
 <!-- UsageSnippet language="csharp" operationID="getTermsOfServiceToken" method="get" path="/tos-token" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -547,6 +547,6 @@ var res = await sdk.Accounts.GetTermsOfServiceTokenAsync();
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

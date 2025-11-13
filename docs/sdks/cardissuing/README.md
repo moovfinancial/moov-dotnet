@@ -39,8 +39,8 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="requestCard" method="post" path="/issuing/{accountID}/issued-cards" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -91,11 +91,11 @@ var res = await sdk.CardIssuing.RequestAsync(
 
 ### Errors
 
-| Error Type                          | Status Code                         | Content Type                        |
-| ----------------------------------- | ----------------------------------- | ----------------------------------- |
-| Moov.Models.Errors.GenericError     | 400                                 | application/json                    |
-| Moov.Models.Errors.RequestCardError | 422                                 | application/json                    |
-| Moov.Models.Errors.APIException     | 4XX, 5XX                            | \*/\*                               |
+| Error Type                              | Status Code                             | Content Type                            |
+| --------------------------------------- | --------------------------------------- | --------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError     | 400                                     | application/json                        |
+| Moov.Sdk.Models.Errors.RequestCardError | 422                                     | application/json                        |
+| Moov.Sdk.Models.Errors.APIException     | 4XX, 5XX                                | \*/\*                                   |
 
 ## List
 
@@ -108,8 +108,8 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listIssuedCards" method="get" path="/issuing/{accountID}/issued-cards" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -136,9 +136,9 @@ var res = await sdk.CardIssuing.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -151,7 +151,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getIssuedCard" method="get" path="/issuing/{accountID}/issued-cards/{issuedCardID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -177,9 +177,9 @@ var res = await sdk.CardIssuing.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -192,8 +192,8 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateIssuedCard" method="patch" path="/issuing/{accountID}/issued-cards/{issuedCardID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -229,11 +229,11 @@ var res = await sdk.CardIssuing.UpdateAsync(
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Moov.Models.Errors.GenericError          | 400, 409                                 | application/json                         |
-| Moov.Models.Errors.UpdateIssuedCardError | 422                                      | application/json                         |
-| Moov.Models.Errors.APIException          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError          | 400, 409                                     | application/json                             |
+| Moov.Sdk.Models.Errors.UpdateIssuedCardError | 422                                          | application/json                             |
+| Moov.Sdk.Models.Errors.APIException          | 4XX, 5XX                                     | \*/\*                                        |
 
 ## GetFull
 
@@ -248,7 +248,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read-secure` scop
 
 <!-- UsageSnippet language="csharp" operationID="getFullIssuedCard" method="get" path="/issuing/{accountID}/issued-cards/{issuedCardID}/details" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -274,6 +274,6 @@ var res = await sdk.CardIssuing.GetFullAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

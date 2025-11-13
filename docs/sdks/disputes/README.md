@@ -88,8 +88,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listDisputes" method="get" path="/accounts/{accountID}/disputes" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -116,10 +116,10 @@ var res = await sdk.Disputes.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -134,7 +134,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getDispute" method="get" path="/accounts/{accountID}/disputes/{disputeID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -160,9 +160,9 @@ var res = await sdk.Disputes.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Accept
 
@@ -177,7 +177,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="acceptDispute" method="post" path="/accounts/{accountID}/disputes/{disputeID}/accept" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -203,10 +203,10 @@ var res = await sdk.Disputes.AcceptAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## ListEvidence
 
@@ -221,7 +221,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listDisputeEvidence" method="get" path="/accounts/{accountID}/disputes/{disputeID}/evidence" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -247,9 +247,9 @@ var res = await sdk.Disputes.ListEvidenceAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## UploadEvidenceFile
 
@@ -264,8 +264,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="uploadDisputeEvidenceFile" method="post" path="/accounts/{accountID}/disputes/{disputeID}/evidence-file" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -299,11 +299,11 @@ var res = await sdk.Disputes.UploadEvidenceFileAsync(
 
 ### Errors
 
-| Error Type                                   | Status Code                                  | Content Type                                 |
-| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-| Moov.Models.Errors.GenericError              | 400, 409                                     | application/json                             |
-| Moov.Models.Errors.FileUploadValidationError | 422                                          | application/json                             |
-| Moov.Models.Errors.APIException              | 4XX, 5XX                                     | \*/\*                                        |
+| Error Type                                       | Status Code                                      | Content Type                                     |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| Moov.Sdk.Models.Errors.GenericError              | 400, 409                                         | application/json                                 |
+| Moov.Sdk.Models.Errors.FileUploadValidationError | 422                                              | application/json                                 |
+| Moov.Sdk.Models.Errors.APIException              | 4XX, 5XX                                         | \*/\*                                            |
 
 ## UploadEvidenceText
 
@@ -318,8 +318,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="uploadDisputeEvidenceText" method="post" path="/accounts/{accountID}/disputes/{disputeID}/evidence-text" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -350,10 +350,10 @@ var res = await sdk.Disputes.UploadEvidenceTextAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## SubmitEvidence
 
@@ -371,7 +371,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="submitDisputeEvidence" method="post" path="/accounts/{accountID}/disputes/{disputeID}/evidence/submit" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -397,10 +397,10 @@ var res = await sdk.Disputes.SubmitEvidenceAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetEvidence
 
@@ -415,7 +415,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getDisputeEvidence" method="get" path="/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -443,9 +443,9 @@ var res = await sdk.Disputes.GetEvidenceAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## UpdateEvidence
 
@@ -460,9 +460,9 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateDisputeEvidence" method="patch" path="/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -490,10 +490,10 @@ var res = await sdk.Disputes.UpdateEvidenceAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400                             | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## DeleteEvidence
 
@@ -508,7 +508,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="deleteDisputeEvidenceFile" method="delete" path="/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -536,10 +536,10 @@ var res = await sdk.Disputes.DeleteEvidenceAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 409                             | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 409                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetEvidenceData
 
@@ -554,7 +554,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getDisputeEvidenceData" method="get" path="/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}/data" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -582,6 +582,6 @@ var res = await sdk.Disputes.GetEvidenceDataAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
