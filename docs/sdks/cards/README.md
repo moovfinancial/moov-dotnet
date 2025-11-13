@@ -78,8 +78,8 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="linkCard" method="post" path="/accounts/{accountID}/cards" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -118,11 +118,11 @@ var res = await sdk.Cards.LinkAsync(
 
 ### Errors
 
-| Error Type                       | Status Code                      | Content Type                     |
-| -------------------------------- | -------------------------------- | -------------------------------- |
-| Moov.Models.Errors.GenericError  | 400                              | application/json                 |
-| Moov.Models.Errors.LinkCardError | 422                              | application/json                 |
-| Moov.Models.Errors.APIException  | 4XX, 5XX                         | \*/\*                            |
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| Moov.Sdk.Models.Errors.GenericError  | 400                                  | application/json                     |
+| Moov.Sdk.Models.Errors.LinkCardError | 422                                  | application/json                     |
+| Moov.Sdk.Models.Errors.APIException  | 4XX, 5XX                             | \*/\*                                |
 
 ## List
 
@@ -137,7 +137,7 @@ you'll need to specify the `/accounts/{accountID}/cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listCards" method="get" path="/accounts/{accountID}/cards" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -159,9 +159,9 @@ var res = await sdk.Cards.ListAsync(accountID: "b902712f-8ab9-47ba-b39f-5ccfbcac
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -176,7 +176,7 @@ you'll need to specify the `/accounts/{accountID}/cards.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getCard" method="get" path="/accounts/{accountID}/cards/{cardID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -202,9 +202,9 @@ var res = await sdk.Cards.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -226,8 +226,8 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateCard" method="patch" path="/accounts/{accountID}/cards/{cardID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -257,11 +257,11 @@ var res = await sdk.Cards.UpdateAsync(
 
 ### Errors
 
-| Error Type                         | Status Code                        | Content Type                       |
-| ---------------------------------- | ---------------------------------- | ---------------------------------- |
-| Moov.Models.Errors.GenericError    | 400, 409                           | application/json                   |
-| Moov.Models.Errors.UpdateCardError | 422                                | application/json                   |
-| Moov.Models.Errors.APIException    | 4XX, 5XX                           | \*/\*                              |
+| Error Type                             | Status Code                            | Content Type                           |
+| -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError    | 400, 409                               | application/json                       |
+| Moov.Sdk.Models.Errors.UpdateCardError | 422                                    | application/json                       |
+| Moov.Sdk.Models.Errors.APIException    | 4XX, 5XX                               | \*/\*                                  |
 
 ## Disable
 
@@ -274,7 +274,7 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="disableCard" method="delete" path="/accounts/{accountID}/cards/{cardID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -300,7 +300,7 @@ var res = await sdk.Cards.DisableAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

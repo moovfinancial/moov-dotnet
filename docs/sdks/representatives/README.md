@@ -57,8 +57,8 @@ you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createRepresentative" method="post" path="/accounts/{accountID}/representatives" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -113,11 +113,11 @@ var res = await sdk.Representatives.CreateAsync(
 
 ### Errors
 
-| Error Type                                       | Status Code                                      | Content Type                                     |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| Moov.Models.Errors.GenericError                  | 400, 409                                         | application/json                                 |
-| Moov.Models.Errors.RepresentativeValidationError | 422                                              | application/json                                 |
-| Moov.Models.Errors.APIException                  | 4XX, 5XX                                         | \*/\*                                            |
+| Error Type                                           | Status Code                                          | Content Type                                         |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                  | 400, 409                                             | application/json                                     |
+| Moov.Sdk.Models.Errors.RepresentativeValidationError | 422                                                  | application/json                                     |
+| Moov.Sdk.Models.Errors.APIException                  | 4XX, 5XX                                             | \*/\*                                                |
 
 ## List
 
@@ -133,7 +133,7 @@ you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listRepresentatives" method="get" path="/accounts/{accountID}/representatives" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -155,9 +155,9 @@ var res = await sdk.Representatives.ListAsync(accountID: "aa071158-7ed6-4c18-af3
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Delete
 
@@ -170,7 +170,7 @@ you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="deleteRepresentative" method="delete" path="/accounts/{accountID}/representatives/{representativeID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -196,10 +196,10 @@ var res = await sdk.Representatives.DeleteAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -212,7 +212,7 @@ you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getRepresentative" method="get" path="/accounts/{accountID}/representatives/{representativeID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -238,9 +238,9 @@ var res = await sdk.Representatives.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -266,8 +266,8 @@ you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateRepresentative" method="patch" path="/accounts/{accountID}/representatives/{representativeID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -319,7 +319,7 @@ var res = await sdk.Representatives.UpdateAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

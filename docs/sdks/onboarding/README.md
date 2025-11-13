@@ -33,8 +33,8 @@ you'll need to specify the `/accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createOnboardingInvite" method="post" path="/onboarding-invites" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -75,11 +75,11 @@ var res = await sdk.Onboarding.CreateInviteAsync(body: new OnboardingInviteReque
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Moov.Models.Errors.GenericError          | 400, 409                                 | application/json                         |
-| Moov.Models.Errors.OnboardingInviteError | 422                                      | application/json                         |
-| Moov.Models.Errors.APIException          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError          | 400, 409                                     | application/json                             |
+| Moov.Sdk.Models.Errors.OnboardingInviteError | 422                                          | application/json                             |
+| Moov.Sdk.Models.Errors.APIException          | 4XX, 5XX                                     | \*/\*                                        |
 
 ## ListInvites
 
@@ -92,7 +92,7 @@ you'll need to specify the `/accounts.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listOnboardingInvites" method="get" path="/onboarding-invites" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -113,9 +113,9 @@ var res = await sdk.Onboarding.ListInvitesAsync();
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetInvite
 
@@ -128,7 +128,7 @@ you'll need to specify the `/accounts.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getOnboardingInvite" method="get" path="/onboarding-invites/{code}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -150,9 +150,9 @@ var res = await sdk.Onboarding.GetInviteAsync(code: "N1IA5eWYNh");
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## RevokeInvite
 
@@ -165,7 +165,7 @@ you'll need to specify the `/accounts.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="revokeOnboardingInvite" method="delete" path="/onboarding-invites/{code}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -187,6 +187,6 @@ var res = await sdk.Onboarding.RevokeInviteAsync(code: "N1IA5eWYNh");
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

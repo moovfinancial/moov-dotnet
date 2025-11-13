@@ -58,8 +58,8 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listFeePlanAgreements" method="get" path="/accounts/{accountID}/fee-plan-agreements" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -86,9 +86,9 @@ var res = await sdk.FeePlans.ListFeePlanAgreementsAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## CreateFeePlanAgreements
 
@@ -101,8 +101,8 @@ you'll need to specify the `/accounts/{accountID}/profile.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createFeePlanAgreements" method="post" path="/accounts/{accountID}/fee-plan-agreements" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -130,11 +130,11 @@ var res = await sdk.FeePlans.CreateFeePlanAgreementsAsync(
 
 ### Errors
 
-| Error Type                               | Status Code                              | Content Type                             |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| Moov.Models.Errors.GenericError          | 400, 409                                 | application/json                         |
-| Moov.Models.Errors.FeePlanAgreementError | 422                                      | application/json                         |
-| Moov.Models.Errors.APIException          | 4XX, 5XX                                 | \*/\*                                    |
+| Error Type                                   | Status Code                                  | Content Type                                 |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError          | 400, 409                                     | application/json                             |
+| Moov.Sdk.Models.Errors.FeePlanAgreementError | 422                                          | application/json                             |
+| Moov.Sdk.Models.Errors.APIException          | 4XX, 5XX                                     | \*/\*                                        |
 
 ## ListFeePlans
 
@@ -148,7 +148,7 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listFeePlans" method="get" path="/accounts/{accountID}/fee-plans" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -171,9 +171,9 @@ var res = await sdk.FeePlans.ListFeePlansAsync(accountID: "b3d59179-f74e-4ee8-b1
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## RetrieveFees
 
@@ -186,8 +186,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="retrieveFees" method="get" path="/accounts/{accountID}/fees" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -214,9 +214,9 @@ var res = await sdk.FeePlans.RetrieveFeesAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## ListFeesFetch
 
@@ -229,7 +229,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listFeesFetch" method="post" path="/accounts/{accountID}/fees/.fetch" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -252,9 +252,9 @@ var res = await sdk.FeePlans.ListFeesFetchAsync(accountID: "55c34e26-269d-4872-8
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## ListPartnerPricing
 
@@ -267,7 +267,7 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listPartnerPricing" method="get" path="/accounts/{accountID}/partner-pricing" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -290,9 +290,9 @@ var res = await sdk.FeePlans.ListPartnerPricingAsync(accountID: "600637f9-c38a-4
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## ListPartnerPricingAgreements
 
@@ -305,8 +305,8 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listPartnerPricingAgreements" method="get" path="/accounts/{accountID}/partner-pricing-agreements" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -333,9 +333,9 @@ var res = await sdk.FeePlans.ListPartnerPricingAgreementsAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## ListResiduals
 
@@ -348,8 +348,8 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listResiduals" method="get" path="/accounts/{accountID}/residuals" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -376,9 +376,9 @@ var res = await sdk.FeePlans.ListResidualsAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetResidual
 
@@ -391,7 +391,7 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getResidual" method="get" path="/accounts/{accountID}/residuals/{residualID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -417,9 +417,9 @@ var res = await sdk.FeePlans.GetResidualAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## ListResidualFees
 
@@ -432,8 +432,8 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listResidualFees" method="get" path="/accounts/{accountID}/residuals/{residualID}/fees" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -461,6 +461,6 @@ var res = await sdk.FeePlans.ListResidualFeesAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

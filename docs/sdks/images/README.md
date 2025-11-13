@@ -26,7 +26,7 @@ List metadata for all images in the specified account.
 
 <!-- UsageSnippet language="csharp" operationID="listImageMetadata" method="get" path="/accounts/{accountID}/images" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -54,9 +54,9 @@ var res = await sdk.Images.ListAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Upload
 
@@ -67,8 +67,8 @@ var res = await sdk.Images.ListAsync(
 
 <!-- UsageSnippet language="csharp" operationID="uploadImage" method="post" path="/accounts/{accountID}/images" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -99,11 +99,11 @@ var res = await sdk.Images.UploadAsync(
 
 ### Errors
 
-| Error Type                                     | Status Code                                    | Content Type                                   |
-| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| Moov.Models.Errors.GenericError                | 400, 409                                       | application/json                               |
-| Moov.Models.Errors.ImageRequestValidationError | 422                                            | application/json                               |
-| Moov.Models.Errors.APIException                | 4XX, 5XX                                       | \*/\*                                          |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                | 400, 409                                           | application/json                                   |
+| Moov.Sdk.Models.Errors.ImageRequestValidationError | 422                                                | application/json                                   |
+| Moov.Sdk.Models.Errors.APIException                | 4XX, 5XX                                           | \*/\*                                              |
 
 ## GetMetadata
 
@@ -113,7 +113,7 @@ Retrieve metadata for a specific image by its ID.
 
 <!-- UsageSnippet language="csharp" operationID="getImageMetadata" method="get" path="/accounts/{accountID}/images/{imageID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -139,9 +139,9 @@ var res = await sdk.Images.GetMetadataAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -155,8 +155,8 @@ Duplicate images, and requests larger than 16MB will be rejected.
 
 <!-- UsageSnippet language="csharp" operationID="updateImage" method="put" path="/accounts/{accountID}/images/{imageID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -189,11 +189,11 @@ var res = await sdk.Images.UpdateAsync(
 
 ### Errors
 
-| Error Type                                     | Status Code                                    | Content Type                                   |
-| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| Moov.Models.Errors.GenericError                | 400, 409                                       | application/json                               |
-| Moov.Models.Errors.ImageRequestValidationError | 422                                            | application/json                               |
-| Moov.Models.Errors.APIException                | 4XX, 5XX                                       | \*/\*                                          |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                | 400, 409                                           | application/json                                   |
+| Moov.Sdk.Models.Errors.ImageRequestValidationError | 422                                                | application/json                                   |
+| Moov.Sdk.Models.Errors.APIException                | 4XX, 5XX                                           | \*/\*                                              |
 
 ## Delete
 
@@ -203,7 +203,7 @@ Permanently delete an image by its ID.
 
 <!-- UsageSnippet language="csharp" operationID="deleteImage" method="delete" path="/accounts/{accountID}/images/{imageID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -229,10 +229,10 @@ var res = await sdk.Images.DeleteAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409                        | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## UpdateMetadata
 
@@ -242,8 +242,8 @@ Replace the metadata for an existing image.
 
 <!-- UsageSnippet language="csharp" operationID="updateImageMetadata" method="put" path="/accounts/{accountID}/images/{imageID}/metadata" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -271,11 +271,11 @@ var res = await sdk.Images.UpdateMetadataAsync(
 
 ### Errors
 
-| Error Type                                      | Status Code                                     | Content Type                                    |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| Moov.Models.Errors.GenericError                 | 400, 409                                        | application/json                                |
-| Moov.Models.Errors.ImageMetadataValidationError | 422                                             | application/json                                |
-| Moov.Models.Errors.APIException                 | 4XX, 5XX                                        | \*/\*                                           |
+| Error Type                                          | Status Code                                         | Content Type                                        |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                 | 400, 409                                            | application/json                                    |
+| Moov.Sdk.Models.Errors.ImageMetadataValidationError | 422                                                 | application/json                                    |
+| Moov.Sdk.Models.Errors.APIException                 | 4XX, 5XX                                            | \*/\*                                               |
 
 ## GetPublic
 
@@ -285,7 +285,7 @@ Get an image by its public ID.
 
 <!-- UsageSnippet language="csharp" operationID="getPublicImage" method="get" path="/images/{publicID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient();
 
@@ -311,6 +311,6 @@ var res = await sdk.Images.GetPublicAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

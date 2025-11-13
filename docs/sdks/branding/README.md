@@ -33,8 +33,8 @@ you'll need to specify the `/accounts/{accountID}/branding.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createBrand" method="post" path="/accounts/{accountID}/branding" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -69,11 +69,11 @@ var res = await sdk.Branding.CreateAsync(
 
 ### Errors
 
-| Error Type                              | Status Code                             | Content Type                            |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| Moov.Models.Errors.GenericError         | 400, 409                                | application/json                        |
-| Moov.Models.Errors.BrandValidationError | 422                                     | application/json                        |
-| Moov.Models.Errors.APIException         | 4XX, 5XX                                | \*/\*                                   |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError         | 400, 409                                    | application/json                            |
+| Moov.Sdk.Models.Errors.BrandValidationError | 422                                         | application/json                            |
+| Moov.Sdk.Models.Errors.APIException         | 4XX, 5XX                                    | \*/\*                                       |
 
 ## Upsert
 
@@ -86,8 +86,8 @@ you'll need to specify the `/accounts/{accountID}/branding.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="upsertBrand" method="put" path="/accounts/{accountID}/branding" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -122,11 +122,11 @@ var res = await sdk.Branding.UpsertAsync(
 
 ### Errors
 
-| Error Type                              | Status Code                             | Content Type                            |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| Moov.Models.Errors.GenericError         | 400, 409                                | application/json                        |
-| Moov.Models.Errors.BrandValidationError | 422                                     | application/json                        |
-| Moov.Models.Errors.APIException         | 4XX, 5XX                                | \*/\*                                   |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError         | 400, 409                                    | application/json                            |
+| Moov.Sdk.Models.Errors.BrandValidationError | 422                                         | application/json                            |
+| Moov.Sdk.Models.Errors.APIException         | 4XX, 5XX                                    | \*/\*                                       |
 
 ## Get
 
@@ -139,7 +139,7 @@ you'll need to specify the `/accounts/{accountID}/branding.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getBrand" method="get" path="/accounts/{accountID}/branding" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -161,9 +161,9 @@ var res = await sdk.Branding.GetAsync(accountID: "8a4ec43e-d45f-481d-a291-683cb2
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -176,8 +176,8 @@ you'll need to specify the `/accounts/{accountID}/branding.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateBrand" method="patch" path="/accounts/{accountID}/branding" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -203,8 +203,8 @@ var res = await sdk.Branding.UpdateAsync(
 
 ### Errors
 
-| Error Type                              | Status Code                             | Content Type                            |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| Moov.Models.Errors.GenericError         | 400, 409                                | application/json                        |
-| Moov.Models.Errors.BrandValidationError | 422                                     | application/json                        |
-| Moov.Models.Errors.APIException         | 4XX, 5XX                                | \*/\*                                   |
+| Error Type                                  | Status Code                                 | Content Type                                |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError         | 400, 409                                    | application/json                            |
+| Moov.Sdk.Models.Errors.BrandValidationError | 422                                         | application/json                            |
+| Moov.Sdk.Models.Errors.APIException         | 4XX, 5XX                                    | \*/\*                                       |

@@ -22,8 +22,8 @@ you'll need to specify the `/ping.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="testEndToEndToken" method="post" path="/debug/end-to-end-token" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -47,10 +47,10 @@ var res = await sdk.EndToEndEncryption.TestEncryptedTokenAsync(body: new E2EETok
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400                             | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GenerateKey
 
@@ -60,7 +60,7 @@ Generates a public key used to create a JWE token for passing secure authenticat
 
 <!-- UsageSnippet language="csharp" operationID="generateEndToEndKey" method="post" path="/end-to-end-keys" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -81,6 +81,6 @@ var res = await sdk.EndToEndEncryption.GenerateKeyAsync();
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

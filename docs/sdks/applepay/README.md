@@ -54,8 +54,8 @@ you'll need to specify the `/accounts/{accountID}/apple-pay.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="registerApplePayMerchantDomains" method="post" path="/accounts/{accountID}/apple-pay/domains" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -86,10 +86,10 @@ var res = await sdk.ApplePay.RegisterMerchantDomainsAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400                             | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## UpdateMerchantDomains
 
@@ -105,8 +105,8 @@ you'll need to specify the `/accounts/{accountID}/apple-pay.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateApplePayMerchantDomains" method="patch" path="/accounts/{accountID}/apple-pay/domains" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -140,10 +140,10 @@ var res = await sdk.ApplePay.UpdateMerchantDomainsAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400                             | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetMerchantDomains
 
@@ -158,7 +158,7 @@ you'll need to specify the `/accounts/{accountID}/apple-pay.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getApplePayMerchantDomains" method="get" path="/accounts/{accountID}/apple-pay/domains" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -180,9 +180,9 @@ var res = await sdk.ApplePay.GetMerchantDomainsAsync(accountID: "28704d00-d07b-4
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## CreateSession
 
@@ -198,8 +198,8 @@ you'll need to specify the `/accounts/{accountID}/apple-pay.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createApplePaySession" method="post" path="/accounts/{accountID}/apple-pay/sessions" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -228,10 +228,10 @@ var res = await sdk.ApplePay.CreateSessionAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.GenericError | 400, 409, 422                   | application/json                |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409, 422                       | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## LinkToken
 
@@ -247,8 +247,8 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="linkApplePayToken" method="post" path="/accounts/{accountID}/apple-pay/tokens" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -303,8 +303,8 @@ var res = await sdk.ApplePay.LinkTokenAsync(
 
 ### Errors
 
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| Moov.Models.Errors.GenericError      | 400, 409                             | application/json                     |
-| Moov.Models.Errors.LinkApplePayError | 422                                  | application/json                     |
-| Moov.Models.Errors.APIException      | 4XX, 5XX                             | \*/\*                                |
+| Error Type                               | Status Code                              | Content Type                             |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError      | 400, 409                                 | application/json                         |
+| Moov.Sdk.Models.Errors.LinkApplePayError | 422                                      | application/json                         |
+| Moov.Sdk.Models.Errors.APIException      | 4XX, 5XX                                 | \*/\*                                    |

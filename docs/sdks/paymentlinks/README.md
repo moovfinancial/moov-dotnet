@@ -43,8 +43,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createPaymentLink" method="post" path="/accounts/{accountID}/payment-links" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -92,11 +92,11 @@ var res = await sdk.PaymentLinks.CreateAsync(
 
 ### Errors
 
-| Error Type                                | Status Code                               | Content Type                              |
-| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| Moov.Models.Errors.GenericError           | 400, 409                                  | application/json                          |
-| Moov.Models.Errors.CreatePaymentLinkError | 422                                       | application/json                          |
-| Moov.Models.Errors.APIException           | 4XX, 5XX                                  | \*/\*                                     |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError           | 400, 409                                      | application/json                              |
+| Moov.Sdk.Models.Errors.CreatePaymentLinkError | 422                                           | application/json                              |
+| Moov.Sdk.Models.Errors.APIException           | 4XX, 5XX                                      | \*/\*                                         |
 
 ## List
 
@@ -109,8 +109,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listPaymentLinks" method="get" path="/accounts/{accountID}/payment-links" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -137,9 +137,9 @@ var res = await sdk.PaymentLinks.ListAsync(req);
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -152,7 +152,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getPaymentLink" method="get" path="/accounts/{accountID}/payment-links/{paymentLinkCode}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -178,9 +178,9 @@ var res = await sdk.PaymentLinks.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -193,8 +193,8 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updatePaymentLink" method="patch" path="/accounts/{accountID}/payment-links/{paymentLinkCode}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -231,11 +231,11 @@ var res = await sdk.PaymentLinks.UpdateAsync(
 
 ### Errors
 
-| Error Type                                | Status Code                               | Content Type                              |
-| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| Moov.Models.Errors.GenericError           | 400, 409                                  | application/json                          |
-| Moov.Models.Errors.UpdatePaymentLinkError | 422                                       | application/json                          |
-| Moov.Models.Errors.APIException           | 4XX, 5XX                                  | \*/\*                                     |
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError           | 400, 409                                      | application/json                              |
+| Moov.Sdk.Models.Errors.UpdatePaymentLinkError | 422                                           | application/json                              |
+| Moov.Sdk.Models.Errors.APIException           | 4XX, 5XX                                      | \*/\*                                         |
 
 ## Disable
 
@@ -248,7 +248,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="disablePaymentLink" method="delete" path="/accounts/{accountID}/payment-links/{paymentLinkCode}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -274,9 +274,9 @@ var res = await sdk.PaymentLinks.DisableAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetQRCode
 
@@ -291,7 +291,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getPaymentLinkQRCode" method="get" path="/accounts/{accountID}/payment-links/{paymentLinkCode}/qrcode" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -317,6 +317,6 @@ var res = await sdk.PaymentLinks.GetQRCodeAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

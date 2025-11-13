@@ -33,8 +33,8 @@ you'll need to specify the `/accounts/{accountID}/terminal-applications.write` s
 
 <!-- UsageSnippet language="csharp" operationID="linkAccountTerminalApplication" method="post" path="/accounts/{accountID}/terminal-applications" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -62,11 +62,11 @@ var res = await sdk.AccountTerminalApplications.LinkAsync(
 
 ### Errors
 
-| Error Type                                         | Status Code                                        | Content Type                                       |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| Moov.Models.Errors.GenericError                    | 400, 409                                           | application/json                                   |
-| Moov.Models.Errors.AccountTerminalApplicationError | 422                                                | application/json                                   |
-| Moov.Models.Errors.APIException                    | 4XX, 5XX                                           | \*/\*                                              |
+| Error Type                                             | Status Code                                            | Content Type                                           |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| Moov.Sdk.Models.Errors.GenericError                    | 400, 409                                               | application/json                                       |
+| Moov.Sdk.Models.Errors.AccountTerminalApplicationError | 422                                                    | application/json                                       |
+| Moov.Sdk.Models.Errors.APIException                    | 4XX, 5XX                                               | \*/\*                                                  |
 
 ## List
 
@@ -79,7 +79,7 @@ you'll need to specify the `/accounts/{accountID}/terminal-applications.read` sc
 
 <!-- UsageSnippet language="csharp" operationID="listAccountTerminalApplications" method="get" path="/accounts/{accountID}/terminal-applications" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -101,9 +101,9 @@ var res = await sdk.AccountTerminalApplications.ListAsync(accountID: "76d4c8a0-1
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
@@ -116,7 +116,7 @@ you'll need to specify the `/accounts/{accountID}/terminal-applications.read` sc
 
 <!-- UsageSnippet language="csharp" operationID="getAccountTerminalApplication" method="get" path="/accounts/{accountID}/terminal-applications/{terminalApplicationID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -142,9 +142,9 @@ var res = await sdk.AccountTerminalApplications.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetConfiguration
 
@@ -157,7 +157,7 @@ you'll need to specify the `/accounts/{accountID}/terminal-configuration.read` s
 
 <!-- UsageSnippet language="csharp" operationID="getTerminalConfiguration" method="get" path="/accounts/{accountID}/terminal-applications/{terminalApplicationID}/configuration" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -183,6 +183,6 @@ var res = await sdk.AccountTerminalApplications.GetConfigurationAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

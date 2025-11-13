@@ -43,8 +43,8 @@ you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="createWallet" method="post" path="/accounts/{accountID}/wallets" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -77,11 +77,11 @@ var res = await sdk.Wallets.CreateAsync(
 
 ### Errors
 
-| Error Type                                     | Status Code                                    | Content Type                                   |
-| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| Moov.Models.Errors.GenericError                | 400, 409                                       | application/json                               |
-| Moov.Models.Errors.CreateWalletValidationError | 422                                            | application/json                               |
-| Moov.Models.Errors.APIException                | 4XX, 5XX                                       | \*/\*                                          |
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                | 400, 409                                           | application/json                                   |
+| Moov.Sdk.Models.Errors.CreateWalletValidationError | 422                                                | application/json                                   |
+| Moov.Sdk.Models.Errors.APIException                | 4XX, 5XX                                           | \*/\*                                              |
 
 ## List
 
@@ -96,8 +96,8 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="listWallets" method="get" path="/accounts/{accountID}/wallets" -->
 ```csharp
-using Moov;
-using Moov.Models.Requests;
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -124,10 +124,10 @@ var res = await sdk.Wallets.ListAsync(req);
 
 ### Errors
 
-| Error Type                                    | Status Code                                   | Content Type                                  |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| Moov.Models.Errors.ListWalletsValidationError | 422                                           | application/json                              |
-| Moov.Models.Errors.APIException               | 4XX, 5XX                                      | \*/\*                                         |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| Moov.Sdk.Models.Errors.ListWalletsValidationError | 422                                               | application/json                                  |
+| Moov.Sdk.Models.Errors.APIException               | 4XX, 5XX                                          | \*/\*                                             |
 
 ## Get
 
@@ -142,7 +142,7 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 <!-- UsageSnippet language="csharp" operationID="getWallet" method="get" path="/accounts/{accountID}/wallets/{walletID}" -->
 ```csharp
-using Moov;
+using Moov.Sdk;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -168,9 +168,9 @@ var res = await sdk.Wallets.GetAsync(
 
 ### Errors
 
-| Error Type                      | Status Code                     | Content Type                    |
-| ------------------------------- | ------------------------------- | ------------------------------- |
-| Moov.Models.Errors.APIException | 4XX, 5XX                        | \*/\*                           |
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Update
 
@@ -185,8 +185,8 @@ you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 
 <!-- UsageSnippet language="csharp" operationID="updateWallet" method="patch" path="/accounts/{accountID}/wallets/{walletID}" -->
 ```csharp
-using Moov;
-using Moov.Models.Components;
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -221,8 +221,8 @@ var res = await sdk.Wallets.UpdateAsync(
 
 ### Errors
 
-| Error Type                                    | Status Code                                   | Content Type                                  |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| Moov.Models.Errors.GenericError               | 400, 409                                      | application/json                              |
-| Moov.Models.Errors.PatchWalletValidationError | 422                                           | application/json                              |
-| Moov.Models.Errors.APIException               | 4XX, 5XX                                      | \*/\*                                         |
+| Error Type                                        | Status Code                                       | Content Type                                      |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError               | 400, 409                                          | application/json                                  |
+| Moov.Sdk.Models.Errors.PatchWalletValidationError | 422                                               | application/json                                  |
+| Moov.Sdk.Models.Errors.APIException               | 4XX, 5XX                                          | \*/\*                                             |
