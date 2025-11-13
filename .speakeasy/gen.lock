@@ -1,18 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: dbf9285d901b681d6f1e2f0996878db3
+  docChecksum: a5aa5aac83eed84d358c6b58b53a6c95
   docVersion: latest
-  speakeasyVersion: 1.656.0
-  generationVersion: 2.752.0
-  releaseVersion: 0.1.3
-  configChecksum: 77111291907444e45f47d9f547e3a3af
+  speakeasyVersion: 1.656.1
+  generationVersion: 2.753.1
+  releaseVersion: 0.1.5
+  configChecksum: 61d64aef605f0a2667f3b2edc1847a98
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
+  published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.15.3
+    core: 3.15.4
     decimal: 0.1.0
     deprecations: 2.81.2
     flattening: 2.81.3
@@ -31,6 +32,7 @@ features:
 generatedFiles:
   - .gitattributes
   - Moov.sln
+  - NUGET.md
   - USAGE.md
   - docs/Models/Components/ACHException.md
   - docs/Models/Components/ACHFees.md
@@ -3762,4 +3764,3 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `MoovClient.Accounts.Create()`: \n  *  `request.body.TermsOfService` **Changed** **Breaking** :warning:\n* `MoovClient.Accounts.Update()`: \n  *  `request.body.TermsOfService` **Changed** **Breaking** :warning:\n* `MoovClient.Onboarding.CreateInvite()`: \n  *  `request.body.Prefill.TermsOfService` **Changed** **Breaking** :warning:\n  *  `response.prefill.TermsOfService` **Changed** **Breaking** :warning:\n* `MoovClient.Onboarding.ListInvites()`:  `response.[].Prefill.TermsOfService` **Changed** **Breaking** :warning:\n* `MoovClient.Onboarding.GetInvite()`:  `response.prefill.TermsOfService` **Changed** **Breaking** :warning:\n"
