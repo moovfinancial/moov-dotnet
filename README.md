@@ -11,9 +11,9 @@ Developer-friendly & type-safe Csharp SDK specifically catered to leverage *Moov
             <span class="badge-text badge-text-section">BUILT BY SPEAKEASY</span>
         </span>
     </a>
-    <a href="https://opensource.org/licenses/MIT" class="badge-link">
+    <a href="https://opensource.org/licenses/Apache-2.0" class="badge-link">
         <span class="badge-container blue">
-            <span class="badge-text badge-text-section">LICENSE // MIT</span>
+            <span class="badge-text badge-text-section">LICENSE // Apache 2.0</span>
         </span>
     </a>
 </div>
