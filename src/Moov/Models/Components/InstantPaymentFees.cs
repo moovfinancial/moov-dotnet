@@ -62,6 +62,12 @@ namespace Moov.Models.Components
         public BillingCountAndAmount? PullFromCardRefund { get; set; }
 
         /// <summary>
+        /// Fees for instant payment verifications.
+        /// </summary>
+        [JsonProperty("instantVerification")]
+        public BillingCountAndAmount InstantVerification { get; set; } = default!;
+
+        /// <summary>
         /// Total instant payment fees.
         /// </summary>
         [JsonProperty("total")]
