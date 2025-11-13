@@ -5,8 +5,8 @@ management:
   docVersion: latest
   speakeasyVersion: 1.656.1
   generationVersion: 2.753.1
-  releaseVersion: 0.1.5
-  configChecksum: 61d64aef605f0a2667f3b2edc1847a98
+  releaseVersion: 0.1.4
+  configChecksum: eff8def1ddd87a0b5f44597c9e14b6ad
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 features:

@@ -13,7 +13,7 @@ targets:
         sourceRevisionDigest: sha256:133f92f0f6e8319b71e5ee1a3aab5b8c9e43f098f54c181e03519c240a95abe7
         sourceBlobDigest: sha256:50fdc61172493f4ebae56f6f2197b467d9d02924e4fca2f6910687fa26805302
         codeSamplesNamespace: latest-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:a2d6740379849784404d29fd4e9e4e983d474e93e680a893f6846430b4c20e69
+        codeSamplesRevisionDigest: sha256:5e02ceb5cac502a703cac72a8ac4a79a139f8f342cf530290bc383da201d07db
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
