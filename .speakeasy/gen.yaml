@@ -27,7 +27,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.1.3
+  version: 0.1.4
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
@@ -36,7 +36,7 @@ csharp:
   disableNamespacePascalCasingApr2024: true
   dotnetVersion: net8.0
   enableCancellationToken: true
-  enableSourceLink: false
+  enableSourceLink: true
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first
   httpClientPrefix: ""
@@ -48,7 +48,7 @@ csharp:
       operations: Models/Requests
       shared: Models/Components
       webhooks: Models/Webhooks
-  includeDebugSymbols: false
+  includeDebugSymbols: true
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: infer-optional-args

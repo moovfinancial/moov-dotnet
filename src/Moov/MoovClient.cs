@@ -29,6 +29,8 @@ namespace Moov
     /// principles, returns JSON responses, and uses standard HTTP response codes. To learn more about how Moov<br/>
     /// works at a high level, read our <a href="https://docs.moov.io/guides/get-started/glossary/">concepts</a> guide.
     /// </remarks>
+    /// 
+    /// <see>https://docs.moov.io/} - Moov Guides and API Documentation</see>
     /// </summary>
     public interface IMoovClient
     {
@@ -80,14 +82,16 @@ namespace Moov
     /// principles, returns JSON responses, and uses standard HTTP response codes. To learn more about how Moov<br/>
     /// works at a high level, read our <a href="https://docs.moov.io/guides/get-started/glossary/">concepts</a> guide.
     /// </remarks>
+    /// 
+    /// <see>https://docs.moov.io/} - Moov Guides and API Documentation</see>
     /// </summary>
     public class MoovClient: IMoovClient
     {
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.3";
-        private const string _sdkGenVersion = "2.752.0";
+        private const string _sdkVersion = "0.1.4";
+        private const string _sdkGenVersion = "2.753.1";
         private const string _openapiDocVersion = "latest";
         public IAccounts Accounts { get; private set; }
         public IAdjustments Adjustments { get; private set; }

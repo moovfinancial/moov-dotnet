@@ -30,6 +30,8 @@ Moov API: Moov is a platform that enables developers to integrate all aspects of
 The Moov API makes it simple for platforms to send, receive, and store money. Our API is based upon REST
 principles, returns JSON responses, and uses standard HTTP response codes. To learn more about how Moov
 works at a high level, read our [concepts](https://docs.moov.io/guides/get-started/glossary/) guide.
+
+For more information about the API: [Moov Guides and API Documentation](https://docs.moov.io/)
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
@@ -51,6 +53,15 @@ works at a high level, read our [concepts](https://docs.moov.io/guides/get-start
 
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+### NuGet
+
+To add the [NuGet](https://www.nuget.org/) package to a .NET project:
+```bash
+dotnet add package Moov
+```
+
+### Locally
 
 To add a reference to a local instance of the SDK in a .NET project:
 ```bash

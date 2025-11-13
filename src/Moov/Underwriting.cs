@@ -61,8 +61,8 @@ namespace Moov
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.3";
-        private const string _sdkGenVersion = "2.752.0";
+        private const string _sdkVersion = "0.1.4";
+        private const string _sdkGenVersion = "2.753.1";
         private const string _openapiDocVersion = "latest";
 
         public Underwriting(SDKConfig config)
