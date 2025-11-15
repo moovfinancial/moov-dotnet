@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: b56d5bd7af7647cfaa486eec41482745
+  docChecksum: 92e0b9d7fa9d6498793ee82a0728d51e
   docVersion: latest
-  speakeasyVersion: 1.656.3
-  generationVersion: 2.753.7
-  releaseVersion: 0.1.8
-  configChecksum: 299fb24277b1d6fa963d4f9e848d0973
+  speakeasyVersion: 1.657.0
+  generationVersion: 2.755.0
+  releaseVersion: 0.1.9
+  configChecksum: 69c64882b53234e0cf6ff01f2b846c22
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 features:
@@ -493,7 +493,6 @@ generatedFiles:
   - docs/Models/Components/TermsOfServicePayload.md
   - docs/Models/Components/TermsOfServicePayloadUpdate.md
   - docs/Models/Components/TermsOfServiceToken.md
-  - docs/Models/Components/TermsOfServiceTokenUpdate.md
   - docs/Models/Components/Ticket.md
   - docs/Models/Components/TicketContact.md
   - docs/Models/Components/TicketMessage.md
@@ -1491,7 +1490,6 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/TermsOfServicePayload.cs
   - src/Moov/Sdk/Models/Components/TermsOfServicePayloadUpdate.cs
   - src/Moov/Sdk/Models/Components/TermsOfServiceToken.cs
-  - src/Moov/Sdk/Models/Components/TermsOfServiceTokenUpdate.cs
   - src/Moov/Sdk/Models/Components/Ticket.cs
   - src/Moov/Sdk/Models/Components/TicketContact.cs
   - src/Moov/Sdk/Models/Components/TicketMessage.cs
@@ -2044,7 +2042,7 @@ examples:
         path:
           accountID: "433cb9d1-5943-4fd5-91b4-2aef5b30e2e7"
       requestBody:
-        application/json: {"profile": {"individual": {"name": {"firstName": "Jordan", "middleName": "Reese", "lastName": "Lee", "suffix": "Jr"}, "phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}, "birthDate": {"day": 9, "month": 11, "year": 1989}}, "business": {"businessType": "llc", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}, "phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "taxID": {"ein": {"number": "12-3456789"}}, "industryCodes": {"naics": "713940", "sic": "7991", "mcc": "7997"}, "industry": "electronics-appliances"}}, "metadata": {"optional": "metadata"}, "termsOfService": {"token": {"token": "kgT1uxoMAk7QKuyJcmQE8nqW_HjpyuXBabiXPi6T83fUQoxsyWYPcYzuHQTqrt7YRp4gCwyDQvb6U5REM9Pgl2EloCe35t-eiMAbUWGo3Kerxme6aqNcKrP_6-v0MTXViOEJ96IBxPFTvMV7EROI2dq3u4e-x4BbGSCedAX-ViAQND6hcreCDXwrO6sHuzh5Xi2IzSqZHxaovnWEboaxuZKRJkA3dsFID6fzitMpm2qrOh4"}, "manual": {"acceptedIP": "172.217.2.46", "acceptedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36"}}, "customerSupport": {"phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}}}
+        application/json: {"profile": {"individual": {"name": {"firstName": "Jordan", "middleName": "Reese", "lastName": "Lee", "suffix": "Jr"}, "phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}, "birthDate": {"day": 9, "month": 11, "year": 1989}}, "business": {"businessType": "llc", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}, "phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "taxID": {"ein": {"number": "12-3456789"}}, "industryCodes": {"naics": "713940", "sic": "7991", "mcc": "7997"}, "industry": "electronics-appliances"}}, "metadata": {"optional": "metadata"}, "termsOfService": {"manual": {"acceptedIP": "172.217.2.46", "acceptedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36"}}, "customerSupport": {"phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}}}
       responses:
         "200":
           application/json: {"accountID": "53ca67ea-6fd3-423f-9544-ce2404159d33", "mode": "sandbox", "accountType": "business", "displayName": "Whole Body Fitness LLC", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC", "ownersProvided": false}}, "verification": {"verificationStatus": "unverified", "status": "unverified"}, "settings": {"cardPayment": {"statementDescriptor": "Whole Body Fitness LLC"}, "achPayment": {"companyName": "Whole Body Fitne"}}, "createdOn": "2024-12-16T17:55:20.557151867Z", "updatedOn": "2024-12-16T17:55:20.557151867Z"}
@@ -3764,3 +3762,4 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
+releaseNotes: "## Csharp SDK Changes Detected:\n* `MoovClient.Accounts.Create()`: \n  *  `request.body.TermsOfService.Token` **Changed** **Breaking** :warning:\n* `MoovClient.Accounts.Update()`: \n  *  `request.body.TermsOfService.Token` **Changed** **Breaking** :warning:\n* `MoovClient.Onboarding.CreateInvite()`: \n  *  `request.body.Prefill.TermsOfService.Token` **Changed** **Breaking** :warning:\n  *  `response.prefill.TermsOfService.Token` **Changed** **Breaking** :warning:\n* `MoovClient.Onboarding.ListInvites()`:  `response.[].Prefill.TermsOfService.Token` **Changed** **Breaking** :warning:\n* `MoovClient.Onboarding.GetInvite()`:  `response.prefill.TermsOfService.Token` **Changed** **Breaking** :warning:\n"

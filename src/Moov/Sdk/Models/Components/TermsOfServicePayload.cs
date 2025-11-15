@@ -16,11 +16,8 @@ namespace Moov.Sdk.Models.Components
     public class TermsOfServicePayload
     {
 
-        /// <summary>
-        /// An encrypted value used to record acceptance of Moov&apos;s Terms of Service.
-        /// </summary>
         [JsonProperty("token")]
-        public TermsOfServiceToken? Token { get; set; }
+        public string? Token { get; set; }
 
         /// <summary>
         /// Describes the acceptance of the Terms of Service. All data is required, and must be from the user.
