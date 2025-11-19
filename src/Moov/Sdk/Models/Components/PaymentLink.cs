@@ -48,6 +48,12 @@ namespace Moov.Sdk.Models.Components
         public string MerchantAccountID { get; set; } = default!;
 
         /// <summary>
+        /// The payment link&apos;s owner&apos;s Moov account ID.
+        /// </summary>
+        [JsonProperty("ownerAccountID")]
+        public string OwnerAccountID { get; set; } = default!;
+
+        /// <summary>
         /// The merchant&apos;s preferred payment method ID. Must be a wallet payment method.
         /// </summary>
         [JsonProperty("merchantPaymentMethodID")]

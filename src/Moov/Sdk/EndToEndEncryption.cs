@@ -44,8 +44,8 @@ namespace Moov.Sdk
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.9";
-        private const string _sdkGenVersion = "2.755.0";
+        private const string _sdkVersion = "0.1.10";
+        private const string _sdkGenVersion = "2.755.9";
         private const string _openapiDocVersion = "latest";
 
         public EndToEndEncryption(SDKConfig config)

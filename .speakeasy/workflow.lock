@@ -1,20 +1,20 @@
-speakeasyVersion: 1.657.0
+speakeasyVersion: 1.658.2
 sources:
     latest:
         sourceNamespace: api-latest
-        sourceRevisionDigest: sha256:cc856e0c47e82394d29660ac108ae178d80e71c9b839157b7528f192e6371d91
-        sourceBlobDigest: sha256:931d00281ccd0031b02d288cdb86a3e39ed3f24dc597377840304859b4c9b310
+        sourceRevisionDigest: sha256:82b99769660b76e3b99cc8e8e1b40b8ceafbba7be038e36d7cd9c1a0a837724b
+        sourceBlobDigest: sha256:f664330916c45a5869cf5748c3389e768827a107ee68e96f19dd38fb3a99d530
         tags:
             - latest
-            - speakeasy-sdk-regen-1763166482
+            - speakeasy-sdk-regen-1763512167
 targets:
     latest:
         source: latest
         sourceNamespace: api-latest
-        sourceRevisionDigest: sha256:cc856e0c47e82394d29660ac108ae178d80e71c9b839157b7528f192e6371d91
-        sourceBlobDigest: sha256:931d00281ccd0031b02d288cdb86a3e39ed3f24dc597377840304859b4c9b310
+        sourceRevisionDigest: sha256:82b99769660b76e3b99cc8e8e1b40b8ceafbba7be038e36d7cd9c1a0a837724b
+        sourceBlobDigest: sha256:f664330916c45a5869cf5748c3389e768827a107ee68e96f19dd38fb3a99d530
         codeSamplesNamespace: latest-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:83c6c78de921ac59a71eefa22fa40d0e5991e66a6ec0e7f699be9b08796a6fd4
+        codeSamplesRevisionDigest: sha256:2b4cff93a34dbd1bd0e177a0702c86a2ce3c2b0b7a748782b91ba8e188deaab7
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
