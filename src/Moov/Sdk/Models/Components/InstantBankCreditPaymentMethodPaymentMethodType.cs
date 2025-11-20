@@ -13,47 +13,22 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     
-    /// <summary>
-    /// The payment method type that represents a payment rail and directionality
-    /// </summary>
-    public enum PaymentMethodType
+    public enum InstantBankCreditPaymentMethodPaymentMethodType
     {
-        [JsonProperty("moov-wallet")]
-        MoovWallet,
-        [JsonProperty("ach-debit-fund")]
-        AchDebitFund,
-        [JsonProperty("ach-debit-collect")]
-        AchDebitCollect,
-        [JsonProperty("ach-credit-standard")]
-        AchCreditStandard,
-        [JsonProperty("ach-credit-same-day")]
-        AchCreditSameDay,
-        [JsonProperty("rtp-credit")]
-        RtpCredit,
-        [JsonProperty("card-payment")]
-        CardPayment,
-        [JsonProperty("push-to-card")]
-        PushToCard,
-        [JsonProperty("pull-from-card")]
-        PullFromCard,
-        [JsonProperty("apple-pay")]
-        ApplePay,
-        [JsonProperty("card-present-payment")]
-        CardPresentPayment,
         [JsonProperty("instant-bank-credit")]
         InstantBankCredit,
     }
 
-    public static class PaymentMethodTypeExtension
+    public static class InstantBankCreditPaymentMethodPaymentMethodTypeExtension
     {
-        public static string Value(this PaymentMethodType value)
+        public static string Value(this InstantBankCreditPaymentMethodPaymentMethodType value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static PaymentMethodType ToEnum(this string value)
+        public static InstantBankCreditPaymentMethodPaymentMethodType ToEnum(this string value)
         {
-            foreach(var field in typeof(PaymentMethodType).GetFields())
+            foreach(var field in typeof(InstantBankCreditPaymentMethodPaymentMethodType).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -66,14 +41,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is PaymentMethodType)
+                    if (enumVal is InstantBankCreditPaymentMethodPaymentMethodType)
                     {
-                        return (PaymentMethodType)enumVal;
+                        return (InstantBankCreditPaymentMethodPaymentMethodType)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum PaymentMethodType");
+            throw new Exception($"Unknown value {value} for enum InstantBankCreditPaymentMethodPaymentMethodType");
         }
     }
 

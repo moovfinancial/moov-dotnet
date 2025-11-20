@@ -52,7 +52,15 @@ namespace Moov.Sdk
         Task<ListFeePlansResponse> ListFeePlansAsync(string accountID, string? xMoovVersion = null, List<string>? planIDs = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// Retrieve fees associated with an account.<br/>
+        /// Used by a partner. Retrieve revenue generated from merchant fees.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        Task<ListFeeRevenueResponse> ListFeeRevenueAsync(ListFeeRevenueRequest request, CancellationToken? cancellationToken = null);
+
+        /// <summary>
+        /// Retrieve fees assessed to an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.read` scope.
@@ -112,7 +120,7 @@ namespace Moov.Sdk
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.10";
+        private const string _sdkVersion = "0.1.11";
         private const string _sdkGenVersion = "2.755.9";
         private const string _openapiDocVersion = "latest";
 
@@ -473,6 +481,111 @@ namespace Moov.Sdk
                         }
                     };
                     response.FeePlans = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{401, 403, 429}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{500, 504}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+        public async Task<ListFeeRevenueResponse> ListFeeRevenueAsync(ListFeeRevenueRequest request, CancellationToken? cancellationToken = null)
+        {
+            if (request == null)
+            {
+                request = new ListFeeRevenueRequest();
+            }
+            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
+            
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/fee-revenue", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listFeeRevenue", null, SDKConfiguration.SecuritySource, cancellationToken);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<IncurredFee> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<IncurredFee>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<IncurredFee>.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListFeeRevenueResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        }
+                    };
+                    response.IncurredFees = obj;
                     return response;
                 }
 

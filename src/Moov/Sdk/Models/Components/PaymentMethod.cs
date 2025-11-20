@@ -46,6 +46,8 @@ namespace Moov.Sdk.Models.Components
 
         public static PaymentMethodUnionType CardPresentPayment { get { return new PaymentMethodUnionType("card-present-payment"); } }
 
+        public static PaymentMethodUnionType InstantBankCredit { get { return new PaymentMethodUnionType("instant-bank-credit"); } }
+
         public override string ToString() { return Value; }
         public static implicit operator String(PaymentMethodUnionType v) { return v.Value; }
         public static PaymentMethodUnionType FromString(string v) {
@@ -61,6 +63,7 @@ namespace Moov.Sdk.Models.Components
                 case "pull-from-card": return PullFromCard;
                 case "apple-pay": return ApplePay;
                 case "card-present-payment": return CardPresentPayment;
+                case "instant-bank-credit": return InstantBankCredit;
                 default: throw new ArgumentException("Invalid value for PaymentMethodUnionType");
             }
         }
@@ -123,6 +126,9 @@ namespace Moov.Sdk.Models.Components
 
         [SpeakeasyMetadata("form:explode=true")]
         public CardPresentPaymentPaymentMethod? CardPresentPaymentPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public InstantBankCreditPaymentMethod? InstantBankCreditPaymentMethod { get; set; }
 
         public PaymentMethodUnionType Type { get; set; }
 
@@ -236,6 +242,16 @@ namespace Moov.Sdk.Models.Components
             return res;
         }
 
+        public static PaymentMethod CreateInstantBankCredit(InstantBankCreditPaymentMethod instantBankCredit)
+        {
+            PaymentMethodUnionType typ = PaymentMethodUnionType.InstantBankCredit;
+            string typStr = PaymentMethodUnionType.InstantBankCredit.ToString();
+            instantBankCredit.PaymentMethodType = InstantBankCreditPaymentMethodPaymentMethodTypeExtension.ToEnum(PaymentMethodUnionType.InstantBankCredit.ToString());
+            PaymentMethod res = new PaymentMethod(typ);
+            res.InstantBankCreditPaymentMethod = instantBankCredit;
+            return res;
+        }
+
         public class PaymentMethodConverter : JsonConverter
         {
             public override bool CanConvert(System.Type objectType) => objectType == typeof(PaymentMethod);
@@ -305,6 +321,11 @@ namespace Moov.Sdk.Models.Components
                 {
                     CardPresentPaymentPaymentMethod cardPresentPaymentPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<CardPresentPaymentPaymentMethod>(jo.ToString());
                     return CreateCardPresentPayment(cardPresentPaymentPaymentMethod);
+                }
+                if (discriminator == PaymentMethodUnionType.InstantBankCredit.ToString())
+                {
+                    InstantBankCreditPaymentMethod instantBankCreditPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<InstantBankCreditPaymentMethod>(jo.ToString());
+                    return CreateInstantBankCredit(instantBankCreditPaymentMethod);
                 }
 
                 throw new InvalidOperationException("Could not deserialize into any supported types.");
@@ -382,6 +403,12 @@ namespace Moov.Sdk.Models.Components
                 if (res.CardPresentPaymentPaymentMethod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CardPresentPaymentPaymentMethod));
+                    return;
+                }
+
+                if (res.InstantBankCreditPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.InstantBankCreditPaymentMethod));
                     return;
                 }
             }

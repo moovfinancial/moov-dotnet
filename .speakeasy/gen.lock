@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 4f3b278bf62da40ab5294f0fcc939518
+  docChecksum: 7e819af1320c3ccb843bdabe1ddf255c
   docVersion: latest
   speakeasyVersion: 1.658.2
   generationVersion: 2.755.9
-  releaseVersion: 0.1.10
-  configChecksum: eb27c279706debcd87e3d6b208e17ee5
+  releaseVersion: 0.1.11
+  configChecksum: 222b71bdabede4eacad0ca90e5577dcc
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 features:
@@ -292,6 +292,8 @@ generatedFiles:
   - docs/Models/Components/IndividualProfile.md
   - docs/Models/Components/IndustryCodes.md
   - docs/Models/Components/IndustryTaxonomy.md
+  - docs/Models/Components/InstantBankCreditPaymentMethod.md
+  - docs/Models/Components/InstantBankCreditPaymentMethodPaymentMethodType.md
   - docs/Models/Components/InstantPaymentFees.md
   - docs/Models/Components/InstitutionsSearchResponse.md
   - docs/Models/Components/IssuedCard.md
@@ -843,6 +845,8 @@ generatedFiles:
   - docs/Models/Requests/ListFeePlanAgreementsResponse.md
   - docs/Models/Requests/ListFeePlansRequest.md
   - docs/Models/Requests/ListFeePlansResponse.md
+  - docs/Models/Requests/ListFeeRevenueRequest.md
+  - docs/Models/Requests/ListFeeRevenueResponse.md
   - docs/Models/Requests/ListFeesFetchRequest.md
   - docs/Models/Requests/ListFeesFetchResponse.md
   - docs/Models/Requests/ListFilesRequest.md
@@ -1289,6 +1293,8 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/IndividualProfile.cs
   - src/Moov/Sdk/Models/Components/IndustryCodes.cs
   - src/Moov/Sdk/Models/Components/IndustryTaxonomy.cs
+  - src/Moov/Sdk/Models/Components/InstantBankCreditPaymentMethod.cs
+  - src/Moov/Sdk/Models/Components/InstantBankCreditPaymentMethodPaymentMethodType.cs
   - src/Moov/Sdk/Models/Components/InstantPaymentFees.cs
   - src/Moov/Sdk/Models/Components/InstitutionsSearchResponse.cs
   - src/Moov/Sdk/Models/Components/IssuedCard.cs
@@ -1843,6 +1849,8 @@ generatedFiles:
   - src/Moov/Sdk/Models/Requests/ListFeePlanAgreementsResponse.cs
   - src/Moov/Sdk/Models/Requests/ListFeePlansRequest.cs
   - src/Moov/Sdk/Models/Requests/ListFeePlansResponse.cs
+  - src/Moov/Sdk/Models/Requests/ListFeeRevenueRequest.cs
+  - src/Moov/Sdk/Models/Requests/ListFeeRevenueResponse.cs
   - src/Moov/Sdk/Models/Requests/ListFeesFetchRequest.cs
   - src/Moov/Sdk/Models/Requests/ListFeesFetchResponse.cs
   - src/Moov/Sdk/Models/Requests/ListFilesRequest.cs
@@ -3761,10 +3769,16 @@ examples:
           application/json: {"error": "<value>"}
         "422":
           application/json: {}
+  listFeeRevenue:
+    speakeasy-default-list-fee-revenue:
+      parameters:
+        path:
+          accountID: "795465fb-f955-40e7-9d48-4a6d6fbdbdf2"
+        query:
+          skip: 60
+          count: 20
+      responses:
+        "200":
+          application/json: [{"amount": {"currency": "USD", "valueDecimal": "12.987654321"}}]
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Csharp SDK Changes Detected:
-  * `MoovClient.PaymentLinks.Create()`:  `response.ownerAccountId` **Added**
-  * `MoovClient.PaymentLinks.List()`:  `response.[].OwnerAccountId` **Added**
-  * `MoovClient.PaymentLinks.Get()`:  `response.ownerAccountId` **Added**
-  * `MoovClient.PaymentLinks.Update()`:  `response.ownerAccountId` **Added**
+releaseNotes: "## Csharp SDK Changes Detected:\n* `MoovClient.FeePlans.ListFeeRevenue()`: **Added**\n* `MoovClient.PaymentMethods.List()`: \n  *  `request.paymentMethodType` **Changed**\n  *  `response.[].[instant-Bank-Credit]` **Added**\n* `MoovClient.PaymentMethods.Get()`:  `response.[instant-bank-credit]` **Added**\n* `MoovClient.Transfers.GenerateOptions()`:  `response.sourceOptions.[].[instant-Bank-Credit]` **Added**\n"

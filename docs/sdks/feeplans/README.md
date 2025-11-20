@@ -18,7 +18,11 @@ selecting a fee plan to apply to a connected account.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/profile.read` scope.
-* [RetrieveFees](#retrievefees) - Retrieve fees associated with an account.
+* [ListFeeRevenue](#listfeerevenue) - Used by a partner. Retrieve revenue generated from merchant fees.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+* [RetrieveFees](#retrievefees) - Retrieve fees assessed to an account.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
@@ -175,9 +179,52 @@ var res = await sdk.FeePlans.ListFeePlansAsync(accountID: "b3d59179-f74e-4ee8-b1
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
+## ListFeeRevenue
+
+Used by a partner. Retrieve revenue generated from merchant fees.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listFeeRevenue" method="get" path="/accounts/{accountID}/fee-revenue" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Requests;
+
+var sdk = new MoovClient(xMoovVersion: "<value>");
+
+ListFeeRevenueRequest req = new ListFeeRevenueRequest() {
+    Skip = 60,
+    Count = 20,
+    AccountID = "795465fb-f955-40e7-9d48-4a6d6fbdbdf2",
+};
+
+var res = await sdk.FeePlans.ListFeeRevenueAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [ListFeeRevenueRequest](../../Models/Requests/ListFeeRevenueRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+
+### Response
+
+**[ListFeeRevenueResponse](../../Models/Requests/ListFeeRevenueResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
 ## RetrieveFees
 
-Retrieve fees associated with an account.
+Retrieve fees assessed to an account.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/transfers.read` scope.

@@ -18,3 +18,4 @@ The payment method type that represents a payment rail and directionality
 | `PullFromCard`       | pull-from-card       |
 | `ApplePay`           | apple-pay            |
 | `CardPresentPayment` | card-present-payment |
+| `InstantBankCredit`  | instant-bank-credit  |
