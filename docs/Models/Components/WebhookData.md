@@ -89,6 +89,18 @@ WebhookData.CreateWebhookDataDisputeCreated(/* values here */);
 WebhookData.CreateWebhookDataDisputeUpdated(/* values here */);
 ```
 
+### WebhookDataInvoiceCreated
+
+```csharp
+WebhookData.CreateWebhookDataInvoiceCreated(/* values here */);
+```
+
+### WebhookDataInvoiceUpdated
+
+```csharp
+WebhookData.CreateWebhookDataInvoiceUpdated(/* values here */);
+```
+
 ### WebhookDataNetworkIDUpdated
 
 ```csharp

@@ -1,0 +1,11 @@
+# InvoiceLineItemOptionValidationError
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Name`                                                                                  | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `Group`                                                                                 | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `PriceModifier`                                                                         | [AmountDecimalValidationError](../../Models/Components/AmountDecimalValidationError.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `Quantity`                                                                              | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |

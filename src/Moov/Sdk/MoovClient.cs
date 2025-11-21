@@ -45,6 +45,7 @@ namespace Moov.Sdk
         public IFeePlans FeePlans { get; }
         public IFiles Files { get; }
         public IImages Images { get; }
+        public IInvoices Invoices { get; }
         public IPaymentLinks PaymentLinks { get; }
         public IPaymentMethods PaymentMethods { get; }
         public IProducts Products { get; }
@@ -90,7 +91,7 @@ namespace Moov.Sdk
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.11";
+        private const string _sdkVersion = "0.1.12";
         private const string _sdkGenVersion = "2.755.9";
         private const string _openapiDocVersion = "latest";
         public IAccounts Accounts { get; private set; }
@@ -104,6 +105,7 @@ namespace Moov.Sdk
         public IFeePlans FeePlans { get; private set; }
         public IFiles Files { get; private set; }
         public IImages Images { get; private set; }
+        public IInvoices Invoices { get; private set; }
         public IPaymentLinks PaymentLinks { get; private set; }
         public IPaymentMethods PaymentMethods { get; private set; }
         public IProducts Products { get; private set; }
@@ -157,6 +159,8 @@ namespace Moov.Sdk
             Files = new Files(SDKConfiguration);
 
             Images = new Images(SDKConfiguration);
+
+            Invoices = new Invoices(SDKConfiguration);
 
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 
@@ -283,6 +287,8 @@ namespace Moov.Sdk
             Files = new Files(SDKConfiguration);
 
             Images = new Images(SDKConfiguration);
+
+            Invoices = new Invoices(SDKConfiguration);
 
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 

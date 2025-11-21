@@ -1,0 +1,9 @@
+# InvoiceTransferPayment
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `PaymentType`                                                                                     | [InvoiceTransferPaymentPaymentType](../../Models/Components/InvoiceTransferPaymentPaymentType.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `TransferID`                                                                                      | *string*                                                                                          | :heavy_check_mark:                                                                                | N/A                                                                                               |

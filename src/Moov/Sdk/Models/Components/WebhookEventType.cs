@@ -48,6 +48,10 @@ namespace Moov.Sdk.Models.Components
         DisputeCreated,
         [JsonProperty("dispute.updated")]
         DisputeUpdated,
+        [JsonProperty("invoice.created")]
+        InvoiceCreated,
+        [JsonProperty("invoice.updated")]
+        InvoiceUpdated,
         [JsonProperty("networkID.updated")]
         NetworkIDUpdated,
         [JsonProperty("paymentMethod.enabled")]
