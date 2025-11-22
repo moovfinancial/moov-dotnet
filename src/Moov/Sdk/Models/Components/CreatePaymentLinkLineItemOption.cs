@@ -17,7 +17,7 @@ namespace Moov.Sdk.Models.Components
     /// <summary>
     /// Represents a modifier or option applied to a line item.
     /// </summary>
-    public class PaymentLinkLineItemOption
+    public class CreatePaymentLinkLineItemOption
     {
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace Moov.Sdk.Models.Components
         /// <summary>
         /// Optional list of images associated with this line item option.
         /// </summary>
-        [JsonProperty("images")]
-        public List<PaymentLinkLineItemImageMetadata>? Images { get; set; }
+        [JsonProperty("imageIDs")]
+        public List<string>? ImageIDs { get; set; }
 
         /// <summary>
         /// Optional group identifier to categorize related options (e.g., &apos;toppings&apos;).

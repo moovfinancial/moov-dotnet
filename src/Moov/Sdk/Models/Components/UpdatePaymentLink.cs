@@ -49,6 +49,6 @@ namespace Moov.Sdk.Models.Components
         /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
-        public PaymentLinkLineItemsUpdate? LineItems { get; set; }
+        public CreatePaymentLinkLineItemsUpdate? LineItems { get; set; }
     }
 }

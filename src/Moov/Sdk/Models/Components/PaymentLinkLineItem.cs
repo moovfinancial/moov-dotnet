@@ -45,6 +45,12 @@ namespace Moov.Sdk.Models.Components
         public List<PaymentLinkLineItemOption>? Options { get; set; }
 
         /// <summary>
+        /// Optional list of images associated with this line item.
+        /// </summary>
+        [JsonProperty("images")]
+        public List<PaymentLinkLineItemImageMetadata>? Images { get; set; }
+
+        /// <summary>
         /// Optional unique identifier associating the line item with a product.
         /// </summary>
         [JsonProperty("productID")]

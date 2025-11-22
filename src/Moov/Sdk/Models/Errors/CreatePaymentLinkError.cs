@@ -42,7 +42,7 @@ namespace Moov.Sdk.Models.Errors
         public PayoutDetailsError? Payout { get; set; }
 
         [JsonProperty("lineItems")]
-        public PaymentLinkLineItemsValidationError? LineItems { get; set; }
+        public CreatePaymentLinkLineItemsValidationError? LineItems { get; set; }
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -80,7 +80,7 @@ namespace Moov.Sdk.Models.Errors
         public PayoutDetailsError? Payout { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.LineItems instead.")]
-        public PaymentLinkLineItemsValidationError? LineItems { get; set; }
+        public CreatePaymentLinkLineItemsValidationError? LineItems { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;

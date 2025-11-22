@@ -12,18 +12,22 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     
-    public class PaymentLinkLineItemOptionValidationError
+    public class CreatePaymentLinkLineItemValidationError
     {
+
+        [JsonProperty("productID")]
+        public string? ProductID { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
-        [JsonProperty("group")]
-        public string? Group { get; set; }
+        [JsonProperty("basePrice")]
+        public AmountDecimalValidationError? BasePrice { get; set; }
 
-        [JsonProperty("priceModifier")]
-        public AmountDecimalValidationError? PriceModifier { get; set; }
+        [JsonProperty("options")]
+        public Dictionary<string, CreatePaymentLinkLineItemOptionValidationError>? Options { get; set; }
 
         [JsonProperty("quantity")]
         public string? Quantity { get; set; }

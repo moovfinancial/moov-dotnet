@@ -1,4 +1,4 @@
-# PaymentLinkLineItemOptionValidationError
+# CreatePaymentLinkLineItemOptionValidationError
 
 
 ## Fields

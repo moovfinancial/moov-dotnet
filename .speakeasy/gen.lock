@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 9debdf4d029f2d45c8703da3770d5954
+  docChecksum: 4118d9fa14f2cb49d8d7a649bffbb371
   docVersion: latest
-  speakeasyVersion: 1.659.0
-  generationVersion: 2.755.9
-  releaseVersion: 0.1.12
-  configChecksum: bef0936cab0f354ee59ab52e70c797f7
+  speakeasyVersion: 1.660.0
+  generationVersion: 2.760.2
+  releaseVersion: 0.1.13
+  configChecksum: e332e3e00a641f4ad6830802e656aae7
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 features:
@@ -194,6 +194,13 @@ generatedFiles:
   - docs/Models/Components/CreateIndividualProfile.md
   - docs/Models/Components/CreateInvoice.md
   - docs/Models/Components/CreatePaymentLink.md
+  - docs/Models/Components/CreatePaymentLinkLineItem.md
+  - docs/Models/Components/CreatePaymentLinkLineItemOption.md
+  - docs/Models/Components/CreatePaymentLinkLineItemOptionValidationError.md
+  - docs/Models/Components/CreatePaymentLinkLineItemValidationError.md
+  - docs/Models/Components/CreatePaymentLinkLineItems.md
+  - docs/Models/Components/CreatePaymentLinkLineItemsUpdate.md
+  - docs/Models/Components/CreatePaymentLinkLineItemsValidationError.md
   - docs/Models/Components/CreateProductOption.md
   - docs/Models/Components/CreateProductOptionGroup.md
   - docs/Models/Components/CreateProfile.md
@@ -388,12 +395,9 @@ generatedFiles:
   - docs/Models/Components/PaymentLinkDisplayOptions.md
   - docs/Models/Components/PaymentLinkDisplayOptionsUpdate.md
   - docs/Models/Components/PaymentLinkLineItem.md
+  - docs/Models/Components/PaymentLinkLineItemImageMetadata.md
   - docs/Models/Components/PaymentLinkLineItemOption.md
-  - docs/Models/Components/PaymentLinkLineItemOptionValidationError.md
-  - docs/Models/Components/PaymentLinkLineItemValidationError.md
   - docs/Models/Components/PaymentLinkLineItems.md
-  - docs/Models/Components/PaymentLinkLineItemsUpdate.md
-  - docs/Models/Components/PaymentLinkLineItemsValidationError.md
   - docs/Models/Components/PaymentLinkPaymentDetails.md
   - docs/Models/Components/PaymentLinkPaymentDetailsUpdate.md
   - docs/Models/Components/PaymentLinkPayoutDetails.md
@@ -1231,6 +1235,13 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/CreateIndividualProfile.cs
   - src/Moov/Sdk/Models/Components/CreateInvoice.cs
   - src/Moov/Sdk/Models/Components/CreatePaymentLink.cs
+  - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItem.cs
+  - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItemOption.cs
+  - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItemOptionValidationError.cs
+  - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItemValidationError.cs
+  - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItems.cs
+  - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItemsUpdate.cs
+  - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItemsValidationError.cs
   - src/Moov/Sdk/Models/Components/CreateProductOption.cs
   - src/Moov/Sdk/Models/Components/CreateProductOptionGroup.cs
   - src/Moov/Sdk/Models/Components/CreateProfile.cs
@@ -1425,12 +1436,9 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/PaymentLinkDisplayOptions.cs
   - src/Moov/Sdk/Models/Components/PaymentLinkDisplayOptionsUpdate.cs
   - src/Moov/Sdk/Models/Components/PaymentLinkLineItem.cs
+  - src/Moov/Sdk/Models/Components/PaymentLinkLineItemImageMetadata.cs
   - src/Moov/Sdk/Models/Components/PaymentLinkLineItemOption.cs
-  - src/Moov/Sdk/Models/Components/PaymentLinkLineItemOptionValidationError.cs
-  - src/Moov/Sdk/Models/Components/PaymentLinkLineItemValidationError.cs
   - src/Moov/Sdk/Models/Components/PaymentLinkLineItems.cs
-  - src/Moov/Sdk/Models/Components/PaymentLinkLineItemsUpdate.cs
-  - src/Moov/Sdk/Models/Components/PaymentLinkLineItemsValidationError.cs
   - src/Moov/Sdk/Models/Components/PaymentLinkPaymentDetails.cs
   - src/Moov/Sdk/Models/Components/PaymentLinkPaymentDetailsUpdate.cs
   - src/Moov/Sdk/Models/Components/PaymentLinkPayoutDetails.cs
@@ -3917,10 +3925,4 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Csharp SDK Changes Detected:
-  * `MoovClient.Invoices.CreateInvoice()`: **Added**
-  * `MoovClient.Invoices.ListInvoices()`: **Added**
-  * `MoovClient.Invoices.GetInvoice()`: **Added**
-  * `MoovClient.Invoices.UpdateInvoice()`: **Added**
-  * `MoovClient.Invoices.MarkPaidInvoice()`: **Added**
+releaseNotes: "## Csharp SDK Changes Detected:\n* `MoovClient.PaymentLinks.Create()`: \n  *  `request.body.LineItems.Items.[]` **Changed**\n  *  `response.lineItems.Items.[]` **Changed**\n* `MoovClient.PaymentLinks.List()`:  `response.[].LineItems.Items.[]` **Changed**\n* `MoovClient.PaymentLinks.Get()`:  `response.lineItems.Items.[]` **Changed**\n* `MoovClient.PaymentLinks.Update()`: \n  *  `request.body.LineItems.Items.[]` **Changed**\n  *  `response.lineItems.Items.[]` **Changed**\n"

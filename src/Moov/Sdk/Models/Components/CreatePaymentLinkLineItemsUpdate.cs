@@ -14,22 +14,20 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     
-    public class PaymentLinkLineItemValidationError
+    /// <summary>
+    /// An optional collection of line items for a payment link.<br/>
+    /// 
+    /// <remarks>
+    /// When line items are provided, their total plus sales tax must equal the payment link amount.
+    /// </remarks>
+    /// </summary>
+    public class CreatePaymentLinkLineItemsUpdate
     {
 
-        [JsonProperty("productID")]
-        public string? ProductID { get; set; }
-
-        [JsonProperty("name")]
-        public string? Name { get; set; }
-
-        [JsonProperty("basePrice")]
-        public AmountDecimalValidationError? BasePrice { get; set; }
-
-        [JsonProperty("options")]
-        public Dictionary<string, PaymentLinkLineItemOptionValidationError>? Options { get; set; }
-
-        [JsonProperty("quantity")]
-        public string? Quantity { get; set; }
+        /// <summary>
+        /// The list of line items.
+        /// </summary>
+        [JsonProperty("items")]
+        public List<CreatePaymentLinkLineItem>? Items { get; set; }
     }
 }

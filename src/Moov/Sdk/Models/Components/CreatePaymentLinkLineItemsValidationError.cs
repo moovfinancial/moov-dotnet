@@ -14,10 +14,10 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     
-    public class PaymentLinkLineItemsValidationError
+    public class CreatePaymentLinkLineItemsValidationError
     {
 
         [JsonProperty("items")]
-        public Dictionary<string, PaymentLinkLineItemValidationError>? Items { get; set; }
+        public Dictionary<string, CreatePaymentLinkLineItemValidationError>? Items { get; set; }
     }
 }
