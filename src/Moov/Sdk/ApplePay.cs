@@ -38,12 +38,12 @@ namespace Moov.Sdk
         Task<RegisterApplePayMerchantDomainsResponse> RegisterMerchantDomainsAsync(string accountID, RegisterApplePayMerchantDomains body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// Add or remove domains to be registered with Apple Pay. <br/>
+        /// Add or remove domains to be registered with Apple Pay.<br/>
         /// <br/>
-        /// Any domains that will be used to accept payments must first be <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">verified</a> <br/>
+        /// Any domains that will be used to accept payments must first be <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">verified</a><br/>
         /// with Apple.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a><br/>
         /// you&apos;ll need to specify the `/accounts/{accountID}/apple-pay.write` scope.
         /// </summary>
         Task<UpdateApplePayMerchantDomainsResponse> UpdateMerchantDomainsAsync(string accountID, UpdateApplePayMerchantDomains body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
@@ -84,10 +84,11 @@ namespace Moov.Sdk
     public class ApplePay: IApplePay
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.13";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "latest";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public ApplePay(SDKConfig config)
         {

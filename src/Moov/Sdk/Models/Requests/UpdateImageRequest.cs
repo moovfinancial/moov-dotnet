@@ -40,6 +40,6 @@ namespace Moov.Sdk.Models.Requests
         public string ImageID { get; set; } = default!;
 
         [SpeakeasyMetadata("request:mediaType=multipart/form-data")]
-        public ImageUpdateRequestMultiPart Body { get; set; } = default!;
+        public ImageUploadRequestMultiPart Body { get; set; } = default!;
     }
 }

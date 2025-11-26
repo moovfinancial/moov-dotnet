@@ -11,7 +11,13 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     
-    public class PullPaymentMethodID
+    public class Image
     {
+
+        [SpeakeasyMetadata("multipartForm:name=fileName")]
+        public string FileName { get; set; } = default!;
+
+        [SpeakeasyMetadata("multipartForm:content")]
+        public byte[] Content { get; set; } = default!;
     }
 }

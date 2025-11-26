@@ -42,7 +42,7 @@ to specify the `/accounts/{accountID}/profile.read` scope.
 
 If you need to update information in a locked state, please contact Moov support.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need
 to specify the `/accounts/{accountID}/profile.write` scope.
 * [Disconnect](#disconnect) - This will sever the connection between you and the account specified and it will no longer be listed as 
 active in the list of accounts. This also means you'll only have read-only access to the account going 
@@ -223,7 +223,7 @@ When **can** profile data be updated:
 
 If you need to update information in a locked state, please contact Moov support.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need
 to specify the `/accounts/{accountID}/profile.write` scope.
 
 ### Example Usage

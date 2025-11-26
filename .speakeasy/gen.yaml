@@ -27,7 +27,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.1.13
+  version: 0.1.14
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
@@ -49,6 +49,7 @@ csharp:
       shared: Models/Components
       webhooks: Models/Webhooks
   includeDebugSymbols: true
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: infer-optional-args

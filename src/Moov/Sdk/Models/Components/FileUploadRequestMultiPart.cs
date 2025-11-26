@@ -12,9 +12,6 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     
-    /// <summary>
-    /// Request to upload a file for an account.
-    /// </summary>
     public class FileUploadRequestMultiPart
     {
 
@@ -25,7 +22,7 @@ namespace Moov.Sdk.Models.Components
         public FileUploadRequestMultiPartFile File { get; set; } = default!;
 
         /// <summary>
-        /// The file&apos;s purpose.
+        /// The purpose of the file being uploaded.
         /// </summary>
         [SpeakeasyMetadata("multipartForm:name=filePurpose")]
         public FilePurpose FilePurpose { get; set; } = default!;

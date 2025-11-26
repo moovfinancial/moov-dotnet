@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 4118d9fa14f2cb49d8d7a649bffbb371
+  docChecksum: 3e0f6c361e1dcd63e8d7ecd80166ec5a
   docVersion: latest
-  speakeasyVersion: 1.660.0
-  generationVersion: 2.760.2
-  releaseVersion: 0.1.13
-  configChecksum: e332e3e00a641f4ad6830802e656aae7
+  speakeasyVersion: 1.661.2
+  generationVersion: 2.763.3
+  releaseVersion: 0.1.14
+  configChecksum: 32faffe5646d4a6bd384b082de6ac298
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.15.4
+    core: 3.15.5
     decimal: 0.1.0
     deprecations: 2.81.2
     flattening: 2.81.3
@@ -239,8 +239,6 @@ generatedFiles:
   - docs/Models/Components/DomesticPushToCard.md
   - docs/Models/Components/E2EEToken.md
   - docs/Models/Components/E2EETokenUpdate.md
-  - docs/Models/Components/Email.md
-  - docs/Models/Components/EmailUnion.md
   - docs/Models/Components/End2EndEncryptionError.md
   - docs/Models/Components/EnrichedAddressResponse.md
   - docs/Models/Components/EnrichedBusinessProfile.md
@@ -287,13 +285,11 @@ generatedFiles:
   - docs/Models/Components/GrantType.md
   - docs/Models/Components/GuestProfile.md
   - docs/Models/Components/HTTPMetadata.md
+  - docs/Models/Components/Image.md
   - docs/Models/Components/ImageMetadata.md
   - docs/Models/Components/ImageMetadataRequest.md
   - docs/Models/Components/ImageMetadataValidationError.md
-  - docs/Models/Components/ImageUpdateRequestMultiPart.md
-  - docs/Models/Components/ImageUpdateRequestMultiPartImage.md
   - docs/Models/Components/ImageUploadRequestMultiPart.md
-  - docs/Models/Components/ImageUploadRequestMultiPartImage.md
   - docs/Models/Components/IncurredFee.md
   - docs/Models/Components/IndividualName.md
   - docs/Models/Components/IndividualNameError.md
@@ -353,7 +349,6 @@ generatedFiles:
   - docs/Models/Components/ManualTermsOfService.md
   - docs/Models/Components/ManualTermsOfServiceUpdate.md
   - docs/Models/Components/MarkInvoicePaid.md
-  - docs/Models/Components/Metadata.md
   - docs/Models/Components/MicroDepositStatus.md
   - docs/Models/Components/MinimumCommitment.md
   - docs/Models/Components/Mode.md
@@ -432,10 +427,6 @@ generatedFiles:
   - docs/Models/Components/Profile.md
   - docs/Models/Components/PullFromCardPaymentMethod.md
   - docs/Models/Components/PullFromCardPaymentMethodPaymentMethodType.md
-  - docs/Models/Components/PullPaymentMethodID.md
-  - docs/Models/Components/PullPaymentMethodIDUnion.md
-  - docs/Models/Components/PushPaymentMethodID.md
-  - docs/Models/Components/PushPaymentMethodIDUnion.md
   - docs/Models/Components/PushToCardPaymentMethod.md
   - docs/Models/Components/PushToCardPaymentMethodPaymentMethodType.md
   - docs/Models/Components/QRCode.md
@@ -491,8 +482,6 @@ generatedFiles:
   - docs/Models/Components/Settings.md
   - docs/Models/Components/SourceDestinationOptions.md
   - docs/Models/Components/Statement.md
-  - docs/Models/Components/StatementDescriptor.md
-  - docs/Models/Components/StatementDescriptorUnion.md
   - docs/Models/Components/Status.md
   - docs/Models/Components/SubmissionIntent.md
   - docs/Models/Components/Sweep.md
@@ -1280,8 +1269,6 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/DomesticPushToCard.cs
   - src/Moov/Sdk/Models/Components/E2EEToken.cs
   - src/Moov/Sdk/Models/Components/E2EETokenUpdate.cs
-  - src/Moov/Sdk/Models/Components/Email.cs
-  - src/Moov/Sdk/Models/Components/EmailUnion.cs
   - src/Moov/Sdk/Models/Components/End2EndEncryptionError.cs
   - src/Moov/Sdk/Models/Components/EnrichedAddressResponse.cs
   - src/Moov/Sdk/Models/Components/EnrichedBusinessProfile.cs
@@ -1328,13 +1315,11 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/GrantType.cs
   - src/Moov/Sdk/Models/Components/GuestProfile.cs
   - src/Moov/Sdk/Models/Components/HTTPMetadata.cs
+  - src/Moov/Sdk/Models/Components/Image.cs
   - src/Moov/Sdk/Models/Components/ImageMetadata.cs
   - src/Moov/Sdk/Models/Components/ImageMetadataRequest.cs
   - src/Moov/Sdk/Models/Components/ImageMetadataValidationError.cs
-  - src/Moov/Sdk/Models/Components/ImageUpdateRequestMultiPart.cs
-  - src/Moov/Sdk/Models/Components/ImageUpdateRequestMultiPartImage.cs
   - src/Moov/Sdk/Models/Components/ImageUploadRequestMultiPart.cs
-  - src/Moov/Sdk/Models/Components/ImageUploadRequestMultiPartImage.cs
   - src/Moov/Sdk/Models/Components/IncurredFee.cs
   - src/Moov/Sdk/Models/Components/IndividualName.cs
   - src/Moov/Sdk/Models/Components/IndividualNameError.cs
@@ -1394,7 +1379,6 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/ManualTermsOfService.cs
   - src/Moov/Sdk/Models/Components/ManualTermsOfServiceUpdate.cs
   - src/Moov/Sdk/Models/Components/MarkInvoicePaid.cs
-  - src/Moov/Sdk/Models/Components/Metadata.cs
   - src/Moov/Sdk/Models/Components/MicroDepositStatus.cs
   - src/Moov/Sdk/Models/Components/MinimumCommitment.cs
   - src/Moov/Sdk/Models/Components/Mode.cs
@@ -1473,10 +1457,6 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/Profile.cs
   - src/Moov/Sdk/Models/Components/PullFromCardPaymentMethod.cs
   - src/Moov/Sdk/Models/Components/PullFromCardPaymentMethodPaymentMethodType.cs
-  - src/Moov/Sdk/Models/Components/PullPaymentMethodID.cs
-  - src/Moov/Sdk/Models/Components/PullPaymentMethodIDUnion.cs
-  - src/Moov/Sdk/Models/Components/PushPaymentMethodID.cs
-  - src/Moov/Sdk/Models/Components/PushPaymentMethodIDUnion.cs
   - src/Moov/Sdk/Models/Components/PushToCardPaymentMethod.cs
   - src/Moov/Sdk/Models/Components/PushToCardPaymentMethodPaymentMethodType.cs
   - src/Moov/Sdk/Models/Components/QRCode.cs
@@ -1532,8 +1512,6 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/Settings.cs
   - src/Moov/Sdk/Models/Components/SourceDestinationOptions.cs
   - src/Moov/Sdk/Models/Components/Statement.cs
-  - src/Moov/Sdk/Models/Components/StatementDescriptor.cs
-  - src/Moov/Sdk/Models/Components/StatementDescriptorUnion.cs
   - src/Moov/Sdk/Models/Components/Status.cs
   - src/Moov/Sdk/Models/Components/SubmissionIntent.cs
   - src/Moov/Sdk/Models/Components/Sweep.cs
@@ -2075,6 +2053,7 @@ generatedFiles:
   - src/Moov/Sdk/Underwriting.cs
   - src/Moov/Sdk/Utils/AnyDeserializer.cs
   - src/Moov/Sdk/Utils/BigIntStrConverter.cs
+  - src/Moov/Sdk/Utils/Constants.cs
   - src/Moov/Sdk/Utils/DecimalStrConverter.cs
   - src/Moov/Sdk/Utils/EnumConverter.cs
   - src/Moov/Sdk/Utils/FlexibleObjectDeserializer.cs
@@ -2732,7 +2711,7 @@ examples:
         path:
           accountID: "221c30bd-2551-4ae4-9a14-07bf6599b728"
       requestBody:
-        multipart/form-data: {"file": "x-file: example.file", "filePurpose": "representative_verification", "metadata": "{\"requirement_id\": \"document.individual.verification\"}"}
+        multipart/form-data: {"file": "x-file: example.file", "filePurpose": "representative_verification"}
       responses:
         "200":
           application/json: {"fileID": "439b7a22-ec06-4993-9b21-f4f92a2aa577", "fileName": "logo.png", "accountID": "33e8f6ef-7edf-4b9a-8905-6b0649ccb34c", "filePurpose": "representative_verification", "fileStatus": "pending", "metadata": "{\"error_code\": \"document-name-mismatch\", \"requirement_id\": \"document.individual.verification\", \"representative_id\": \"c63ab175-251d-497e-a267-7346d087e180\", \"comment\": \"testing comment\"", "decisionReason": "not correct file", "fileSizeBytes": 777701, "createdOn": "2024-11-19T16:40:47.855Z", "updatedOn": "2024-06-23T05:31:09.268Z"}
@@ -3029,7 +3008,7 @@ examples:
           accountID: "76647e2b-97ea-4551-8275-7153219f3317"
           representativeID: "e89d3d0d-fbe3-4df6-8b18-d7cbcb761161"
       requestBody:
-        application/json: {"name": {"firstName": "Jordan", "middleName": "Reese", "lastName": "Lee", "suffix": "Jr"}, "phone": {"number": "8185551212", "countryCode": "1"}, "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}, "birthDate": null, "responsibilities": {"ownershipPercentage": 38, "jobTitle": "CEO"}}
+        application/json: {"name": {"firstName": "Jordan", "middleName": "Reese", "lastName": "Lee", "suffix": "Jr"}, "phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}, "birthDate": null, "responsibilities": {"ownershipPercentage": 38, "jobTitle": "CEO"}}
       responses:
         "200":
           application/json: {"representativeID": "d7cd54cf-a231-46bb-b1ac-c6cdafa8219e", "name": {"firstName": "Jordan", "middleName": "Reese", "lastName": "Lee", "suffix": "Jr"}, "phone": {"number": "8185551212", "countryCode": "1"}, "email": "jordan.lee@classbooker.dev", "address": {"addressLine1": "123 Main Street", "addressLine2": "Apt 302", "city": "Boulder", "stateOrProvince": "CO", "postalCode": "80301", "country": "US"}, "responsibilities": {"ownershipPercentage": 38, "jobTitle": "CEO"}, "createdOn": "2025-06-02T03:39:27.129Z", "updatedOn": "2024-06-29T17:50:33.922Z"}
@@ -3925,4 +3904,4 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `MoovClient.PaymentLinks.Create()`: \n  *  `request.body.LineItems.Items.[]` **Changed**\n  *  `response.lineItems.Items.[]` **Changed**\n* `MoovClient.PaymentLinks.List()`:  `response.[].LineItems.Items.[]` **Changed**\n* `MoovClient.PaymentLinks.Get()`:  `response.lineItems.Items.[]` **Changed**\n* `MoovClient.PaymentLinks.Update()`: \n  *  `request.body.LineItems.Items.[]` **Changed**\n  *  `response.lineItems.Items.[]` **Changed**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `MoovClient.Images.Update()`: \n  *  `request.body.Metadata` **Changed** **Breaking** :warning:\n* `MoovClient.Representatives.Update()`: \n  *  `request.body.Email` **Changed** **Breaking** :warning:\n* `MoovClient.Sweeps.UpdateConfig()`:  `request.body` **Changed** **Breaking** :warning:\n"

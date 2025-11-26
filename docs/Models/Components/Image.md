@@ -1,4 +1,4 @@
-# ImageUpdateRequestMultiPartImage
+# Image
 
 
 ## Fields

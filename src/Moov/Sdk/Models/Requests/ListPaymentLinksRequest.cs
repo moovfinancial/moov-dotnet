@@ -45,6 +45,9 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=status")]
         public PaymentLinkStatus? Status { get; set; }
 
+        /// <summary>
+        /// The merchant account ID.
+        /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
     }

@@ -12,14 +12,14 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     
-    /// <summary>
-    /// Multipart request body for uploading an image with optional metadata.
-    /// </summary>
     public class ImageUploadRequestMultiPart
     {
 
+        /// <summary>
+        /// A PNG, JPEG, or WebP image file to upload.
+        /// </summary>
         [SpeakeasyMetadata("multipartForm:file,name=image")]
-        public ImageUploadRequestMultiPartImage Image { get; set; } = default!;
+        public Image Image { get; set; } = default!;
 
         /// <summary>
         /// Optional, json-encoded metadata to associate with the uploaded image.

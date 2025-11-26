@@ -64,7 +64,7 @@ namespace Moov.Sdk
         Task<GetRepresentativeResponse> GetAsync(string accountID, string representativeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// If a representative&apos;s information has changed you can patch the information associated with a specific representative ID. <br/>
+        /// If a representative&apos;s information has changed you can patch the information associated with a specific representative ID.<br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
         /// <br/>
         /// When **can** profile data be updated:<br/>
@@ -79,7 +79,7 @@ namespace Moov.Sdk
         /// <br/>
         /// If you need to update information in a locked state, please contact Moov support.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a><br/>
         /// you&apos;ll need to specify the `/accounts/{accountID}/representatives.write` scope.
         /// </summary>
         Task<UpdateRepresentativeResponse> UpdateAsync(string accountID, string representativeID, UpdateRepresentative body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
@@ -88,10 +88,11 @@ namespace Moov.Sdk
     public class Representatives: IRepresentatives
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.13";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "latest";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Representatives(SDKConfig config)
         {

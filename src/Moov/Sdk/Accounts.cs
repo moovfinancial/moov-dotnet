@@ -76,7 +76,7 @@ namespace Moov.Sdk
         /// <br/>
         /// If you need to update information in a locked state, please contact Moov support.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> you&apos;ll need <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> you&apos;ll need<br/>
         /// to specify the `/accounts/{accountID}/profile.write` scope.
         /// </summary>
         Task<UpdateAccountResponse> UpdateAsync(string accountID, PatchAccount body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
@@ -130,10 +130,11 @@ namespace Moov.Sdk
     public class Accounts: IAccounts
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.13";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "latest";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Accounts(SDKConfig config)
         {

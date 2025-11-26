@@ -46,10 +46,9 @@ namespace Moov.Sdk
         /// Replace an existing image and, optionally, its metadata.<br/>
         /// <br/>
         /// This endpoint replaces the existing image with the new PNG, JPEG, or WebP. Omit<br/>
-        /// the metadata form section to keep existing metadata, or send `null` to clear it. <br/>
-        /// Duplicate images, and requests larger than 16MB will be rejected.
+        /// the metadata form section to keep existing metadata. Duplicate images, and requests larger than 16MB will be rejected.
         /// </summary>
-        Task<UpdateImageResponse> UpdateAsync(string accountID, string imageID, ImageUpdateRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        Task<UpdateImageResponse> UpdateAsync(string accountID, string imageID, ImageUploadRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
         /// Permanently delete an image by its ID.
@@ -70,10 +69,11 @@ namespace Moov.Sdk
     public class Images: IImages
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.13";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "latest";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Images(SDKConfig config)
         {
@@ -460,7 +460,7 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<UpdateImageResponse> UpdateAsync(string accountID, string imageID, ImageUpdateRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+        public async Task<UpdateImageResponse> UpdateAsync(string accountID, string imageID, ImageUploadRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
             var request = new UpdateImageRequest()
             {

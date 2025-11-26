@@ -21,7 +21,7 @@ namespace Moov.Sdk.Models.Requests
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// The request completed successfully.
+        /// The request has succeeded.
         /// </summary>
         public string? ApplePaySession { get; set; }
 

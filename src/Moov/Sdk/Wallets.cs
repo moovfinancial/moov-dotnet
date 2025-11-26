@@ -61,7 +61,7 @@ namespace Moov.Sdk
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/sources/wallets/">Moov wallets guide</a> to learn more.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a><br/>
         /// you&apos;ll need to specify the `/accounts/{accountID}/wallets.write` scope.
         /// </summary>
         Task<UpdateWalletResponse> UpdateAsync(string walletID, string accountID, PatchWallet body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
@@ -70,10 +70,11 @@ namespace Moov.Sdk
     public class Wallets: IWallets
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.13";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "latest";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Wallets(SDKConfig config)
         {

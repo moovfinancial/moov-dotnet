@@ -32,6 +32,9 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
         public string? XMoovVersion { get; set; }
 
+        /// <summary>
+        /// The merchant account ID.
+        /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
 

@@ -19,7 +19,7 @@ To access this endpoint using an [access token](https://docs.moov.io/api/authent
 you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 * [Update](#update) - Update a Moov issued card.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 * [GetFull](#getfull) - Get issued card with PAN, CVV, and expiration. 
 
@@ -185,7 +185,7 @@ var res = await sdk.CardIssuing.GetAsync(
 
 Update a Moov issued card.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 
 ### Example Usage

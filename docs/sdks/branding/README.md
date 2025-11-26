@@ -19,7 +19,7 @@ To access this endpoint using an [access token](https://docs.moov.io/api/authent
 you'll need to specify the `/accounts/{accountID}/branding.read` scope.
 * [Update](#update) - Updates the brand properties for the specified account.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/branding.write` scope.
 
 ## Create
@@ -169,7 +169,7 @@ var res = await sdk.Branding.GetAsync(accountID: "8a4ec43e-d45f-481d-a291-683cb2
 
 Updates the brand properties for the specified account.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/branding.write` scope.
 
 ### Example Usage

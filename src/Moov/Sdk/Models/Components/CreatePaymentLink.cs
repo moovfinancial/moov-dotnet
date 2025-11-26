@@ -22,8 +22,7 @@ namespace Moov.Sdk.Models.Components
     /// A payment link must include either `payment` or `payout` details, but not both. For payout payment links,<br/>
     /// `maxUses` will automatically be set to 1, as these are intended for a one-time disbursement<br/>
     /// to a specific recipient.<br/>
-    /// <br/>
-    /// **Note:** The `payout` option is currently under development and is not yet available for general use.
+    /// 
     /// </remarks>
     /// </summary>
     public class CreatePaymentLink

@@ -69,18 +69,18 @@ namespace Moov.Sdk
         Task<GetCardResponse> GetAsync(string accountID, string cardID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// Update a linked card and/or resubmit it for verification. <br/>
+        /// Update a linked card and/or resubmit it for verification.<br/>
         /// <br/>
-        /// If a value is provided for CVV, a new verification ($0 authorization) will be submitted for the card. Updating the expiration <br/>
-        /// date or <br/>
+        /// If a value is provided for CVV, a new verification ($0 authorization) will be submitted for the card. Updating the expiration<br/>
+        /// date or<br/>
         /// address will update the information stored on file for the card but will not be verified.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/sources/cards/accept-card-payments/#reverify-a-card">accept card payments guide</a> to learn <br/>
+        /// Read our <a href="https://docs.moov.io/guides/sources/cards/accept-card-payments/#reverify-a-card">accept card payments guide</a> to learn<br/>
         /// more.<br/>
         /// <br/>
-        /// Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance. <br/>
+        /// Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a><br/>
         /// you&apos;ll need to specify the `/accounts/{accountID}/cards.write` scope.
         /// </summary>
         Task<UpdateCardResponse> UpdateAsync(string accountID, string cardID, UpdateCard body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
@@ -97,10 +97,11 @@ namespace Moov.Sdk
     public class Cards: ICards
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.13";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "latest";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Cards(SDKConfig config)
         {

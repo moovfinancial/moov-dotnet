@@ -19,14 +19,14 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("status")]
         public Status? Status { get; set; } = null;
 
-        [JsonProperty("pushPaymentMethodID", NullValueHandling = NullValueHandling.Include)]
-        public PushPaymentMethodIDUnion? PushPaymentMethodID { get; set; } = null;
+        [JsonProperty("pushPaymentMethodID")]
+        public string? PushPaymentMethodID { get; set; } = null;
 
-        [JsonProperty("pullPaymentMethodID", NullValueHandling = NullValueHandling.Include)]
-        public PullPaymentMethodIDUnion? PullPaymentMethodID { get; set; } = null;
+        [JsonProperty("pullPaymentMethodID")]
+        public string? PullPaymentMethodID { get; set; } = null;
 
-        [JsonProperty("statementDescriptor", NullValueHandling = NullValueHandling.Include)]
-        public StatementDescriptorUnion? StatementDescriptor { get; set; } = null;
+        [JsonProperty("statementDescriptor")]
+        public string? StatementDescriptor { get; set; } = null;
 
         [JsonProperty("minimumBalance")]
         public string? MinimumBalance { get; set; } = null;

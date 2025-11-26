@@ -48,7 +48,6 @@ var res = await sdk.Files.UploadAsync(
             Content = System.IO.File.ReadAllBytes("example.file"),
         },
         FilePurpose = FilePurpose.RepresentativeVerification,
-        Metadata = "{\"requirement_id\": \"document.individual.verification\"}",
     }
 );
 

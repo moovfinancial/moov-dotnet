@@ -26,7 +26,7 @@ you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
-* [Update](#update) - If a representative's information has changed you can patch the information associated with a specific representative ID. 
+* [Update](#update) - If a representative's information has changed you can patch the information associated with a specific representative ID.
 Read our [business representatives guide](https://docs.moov.io/guides/accounts/requirements/business-representatives/) to learn more.
 
 When **can** profile data be updated:
@@ -41,7 +41,7 @@ When **can't** profile data be updated:
 
 If you need to update information in a locked state, please contact Moov support.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 
 ## Create
@@ -244,7 +244,7 @@ var res = await sdk.Representatives.GetAsync(
 
 ## Update
 
-If a representative's information has changed you can patch the information associated with a specific representative ID. 
+If a representative's information has changed you can patch the information associated with a specific representative ID.
 Read our [business representatives guide](https://docs.moov.io/guides/accounts/requirements/business-representatives/) to learn more.
 
 When **can** profile data be updated:
@@ -259,7 +259,7 @@ When **can't** profile data be updated:
 
 If you need to update information in a locked state, please contact Moov support.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 
 ### Example Usage
@@ -285,6 +285,7 @@ var res = await sdk.Representatives.UpdateAsync(
             Number = "8185551212",
             CountryCode = "1",
         },
+        Email = "jordan.lee@classbooker.dev",
         Address = new UpdateRepresentativeAddress() {
             AddressLine1 = "123 Main Street",
             AddressLine2 = "Apt 302",

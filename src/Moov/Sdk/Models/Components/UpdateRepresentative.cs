@@ -22,8 +22,8 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("phone")]
         public Phone? Phone { get; set; } = null;
 
-        [JsonProperty("email", NullValueHandling = NullValueHandling.Include)]
-        public EmailUnion? Email { get; set; } = null;
+        [JsonProperty("email")]
+        public string? Email { get; set; } = null;
 
         [JsonProperty("address")]
         public UpdateRepresentativeAddress? Address { get; set; } = null;

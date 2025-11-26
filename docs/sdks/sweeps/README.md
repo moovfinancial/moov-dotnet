@@ -19,7 +19,7 @@ To access this endpoint using an [access token](https://docs.moov.io/api/authent
 you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 * [UpdateConfig](#updateconfig) - Update settings on a sweep config.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 * [List](#list) - List sweeps associated with a wallet.
 
@@ -161,7 +161,7 @@ var res = await sdk.Sweeps.GetConfigAsync(
 
 Update settings on a sweep config.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 
 ### Example Usage

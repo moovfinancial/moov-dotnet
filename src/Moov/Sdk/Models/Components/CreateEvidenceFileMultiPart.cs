@@ -20,7 +20,7 @@ namespace Moov.Sdk.Models.Components
         /// 
         /// <remarks>
         /// <br/>
-        /// The `Content-Type` header for this form part must be one of the following:<br/>
+        ///     The `Content-Type` header for this form part must be one of the following:<br/>
         ///   - `image/jpeg`<br/>
         ///   - `image/tiff`<br/>
         ///   - `application/pdf`

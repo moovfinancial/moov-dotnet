@@ -76,11 +76,11 @@ namespace Moov.Sdk
         Task<GetTransferResponse> GetAsync(string transferID, string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// Update the metadata contained on a transfer. <br/>
+        /// Update the metadata contained on a transfer.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a><br/>
         /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
         Task<UpdateTransferResponse> UpdateAsync(string transferID, string accountID, PatchTransfer body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
@@ -142,10 +142,11 @@ namespace Moov.Sdk
     public class Transfers: ITransfers
     {
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.13";
-        private const string _sdkGenVersion = "2.760.2";
-        private const string _openapiDocVersion = "latest";
+
+        private const string _language = Constants.Language;
+        private const string _sdkVersion = Constants.SdkVersion;
+        private const string _sdkGenVersion = Constants.SdkGenVersion;
+        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Transfers(SDKConfig config)
         {

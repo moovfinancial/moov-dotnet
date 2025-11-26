@@ -35,18 +35,18 @@ Read our [accept card payments guide](https://docs.moov.io/guides/sources/cards/
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/cards.read` scope.
-* [Update](#update) - Update a linked card and/or resubmit it for verification. 
+* [Update](#update) - Update a linked card and/or resubmit it for verification.
 
-If a value is provided for CVV, a new verification ($0 authorization) will be submitted for the card. Updating the expiration 
-date or 
+If a value is provided for CVV, a new verification ($0 authorization) will be submitted for the card. Updating the expiration
+date or
 address will update the information stored on file for the card but will not be verified.
 
-Read our [accept card payments guide](https://docs.moov.io/guides/sources/cards/accept-card-payments/#reverify-a-card) to learn 
+Read our [accept card payments guide](https://docs.moov.io/guides/sources/cards/accept-card-payments/#reverify-a-card) to learn
 more.
 
-Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance. 
+Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 * [Disable](#disable) - Disables a card associated with a Moov account.
 
@@ -208,18 +208,18 @@ var res = await sdk.Cards.GetAsync(
 
 ## Update
 
-Update a linked card and/or resubmit it for verification. 
+Update a linked card and/or resubmit it for verification.
 
-If a value is provided for CVV, a new verification ($0 authorization) will be submitted for the card. Updating the expiration 
-date or 
+If a value is provided for CVV, a new verification ($0 authorization) will be submitted for the card. Updating the expiration
+date or
 address will update the information stored on file for the card but will not be verified.
 
-Read our [accept card payments guide](https://docs.moov.io/guides/sources/cards/accept-card-payments/#reverify-a-card) to learn 
+Read our [accept card payments guide](https://docs.moov.io/guides/sources/cards/accept-card-payments/#reverify-a-card) to learn
 more.
 
-Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance. 
+Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 ### Example Usage
