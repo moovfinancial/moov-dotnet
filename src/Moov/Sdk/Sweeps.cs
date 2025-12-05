@@ -100,7 +100,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -264,7 +264,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -371,7 +371,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs/{sweepConfigID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs/{sweepConfigID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -479,7 +479,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs/{sweepConfigID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/sweep-configs/{sweepConfigID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -642,7 +642,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/sweeps", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/sweeps", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -750,7 +750,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

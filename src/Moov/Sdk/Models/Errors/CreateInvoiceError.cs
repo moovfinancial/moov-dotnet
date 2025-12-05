@@ -24,7 +24,7 @@ namespace Moov.Sdk.Models.Errors
         public string? Description { get; set; }
 
         [JsonProperty("lineItems")]
-        public InvoiceLineItemsValidationError? LineItems { get; set; }
+        public CreateInvoiceLineItemsValidationError? LineItems { get; set; }
 
         [JsonProperty("invoiceDate")]
         public string? InvoiceDate { get; set; }
@@ -53,7 +53,7 @@ namespace Moov.Sdk.Models.Errors
         public string? Description { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.LineItems instead.")]
-        public InvoiceLineItemsValidationError? LineItems { get; set; }
+        public CreateInvoiceLineItemsValidationError? LineItems { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.InvoiceDate instead.")]
         public string? InvoiceDate { get; set; }

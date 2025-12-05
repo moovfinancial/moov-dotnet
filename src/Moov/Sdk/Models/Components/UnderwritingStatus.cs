@@ -26,8 +26,8 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("notRequested")]
         NotRequested,
     }
-
 #pragma warning disable 0618
+
     public static class UnderwritingStatusExtension
     {
         public static string Value(this UnderwritingStatus value)

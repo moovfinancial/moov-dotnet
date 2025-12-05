@@ -70,7 +70,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/transactions", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/transactions", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -204,7 +204,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/transactions/{transactionID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/wallets/{walletID}/transactions/{transactionID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

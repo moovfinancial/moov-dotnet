@@ -14,16 +14,10 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     
-    /// <summary>
-    /// A collection of line items for an invoice.
-    /// </summary>
-    public class InvoiceLineItemsUpdate
+    public class CreateInvoiceLineItemsValidationError
     {
 
-        /// <summary>
-        /// The list of line items.
-        /// </summary>
         [JsonProperty("items")]
-        public List<InvoiceLineItem>? Items { get; set; }
+        public Dictionary<string, CreateInvoiceLineItemValidationError>? Items { get; set; }
     }
 }

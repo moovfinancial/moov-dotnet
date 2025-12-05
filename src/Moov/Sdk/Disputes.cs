@@ -163,7 +163,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -296,7 +296,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -403,7 +403,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/accept", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/accept", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -536,7 +536,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -644,7 +644,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence-file", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence-file", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -810,7 +810,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence-text", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence-text", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -949,7 +949,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/submit", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/submit", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1083,7 +1083,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1188,7 +1188,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1328,7 +1328,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -1444,7 +1444,7 @@ namespace Moov.Sdk
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}/data", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}/data", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

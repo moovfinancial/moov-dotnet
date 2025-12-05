@@ -49,8 +49,8 @@ var res = await sdk.Invoices.CreateInvoiceAsync(
     body: new CreateInvoice() {
         CustomerAccountID = "<id>",
         Description = "austere gah under ew failing provided repeatedly pick onto",
-        LineItems = new InvoiceLineItems() {
-            Items = new List<InvoiceLineItem>() {},
+        LineItems = new CreateInvoiceLineItems() {
+            Items = new List<CreateInvoiceLineItem>() {},
         },
         TaxAmount = new AmountDecimal() {
             Currency = "USD",
@@ -188,17 +188,17 @@ var res = await sdk.Invoices.UpdateInvoiceAsync(
     accountID: "ce46d65a-8504-4afa-b3f7-303401bd08b3",
     invoiceID: "ef510999-370a-4350-87d5-bc81fc02a2ea",
     body: new UpdateInvoice() {
-        LineItems = new InvoiceLineItemsUpdate() {
-            Items = new List<InvoiceLineItem>() {
-                new InvoiceLineItem() {
+        LineItems = new CreateInvoiceLineItemsUpdate() {
+            Items = new List<CreateInvoiceLineItem>() {
+                new CreateInvoiceLineItem() {
                     Name = "<value>",
                     BasePrice = new AmountDecimal() {
                         Currency = "USD",
                         ValueDecimal = "12.987654321",
                     },
                     Quantity = 984515,
-                    Options = new List<InvoiceLineItemOption>() {
-                        new InvoiceLineItemOption() {
+                    Options = new List<CreateInvoiceLineItemOption>() {
+                        new CreateInvoiceLineItemOption() {
                             Name = "<value>",
                             Quantity = 761923,
                             PriceModifier = new AmountDecimal() {

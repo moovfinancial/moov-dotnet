@@ -24,7 +24,7 @@ namespace Moov.Sdk.Models.Components
         /// A collection of line items for an invoice.
         /// </summary>
         [JsonProperty("lineItems")]
-        public InvoiceLineItemsUpdate? LineItems { get; set; }
+        public CreateInvoiceLineItemsUpdate? LineItems { get; set; }
 
         [JsonProperty("invoiceDate")]
         public DateTime? InvoiceDate { get; set; } = null;

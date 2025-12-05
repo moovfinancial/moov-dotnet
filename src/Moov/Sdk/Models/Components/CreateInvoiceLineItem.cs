@@ -17,7 +17,7 @@ namespace Moov.Sdk.Models.Components
     /// <summary>
     /// Represents a single item in an invoice, including optional modifiers and quantity.
     /// </summary>
-    public class InvoiceLineItem
+    public class CreateInvoiceLineItem
     {
 
         /// <summary>
@@ -48,12 +48,12 @@ namespace Moov.Sdk.Models.Components
         /// Optional list of modifiers applied to this item (e.g., toppings, upgrades, customizations).
         /// </summary>
         [JsonProperty("options")]
-        public List<InvoiceLineItemOption>? Options { get; set; }
+        public List<CreateInvoiceLineItemOption>? Options { get; set; }
 
         /// <summary>
         /// Optional list of images associated with this line item.
         /// </summary>
-        [JsonProperty("images")]
-        public List<InvoiceLineItemImageMetadata>? Images { get; set; }
+        [JsonProperty("imageIDs")]
+        public List<string>? ImageIDs { get; set; }
     }
 }

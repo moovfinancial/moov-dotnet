@@ -31,8 +31,8 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("failed")]
         Failed,
     }
-
 #pragma warning disable 0618
+
     public static class AccountVerificationStatusExtension
     {
         public static string Value(this AccountVerificationStatus value)

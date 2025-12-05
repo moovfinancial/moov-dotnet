@@ -15,45 +15,39 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
     
     /// <summary>
-    /// Represents a single item in an invoice, including optional modifiers and quantity.
+    /// Represents a modifier or option applied to a line item.
     /// </summary>
-    public class InvoiceLineItem
+    public class CreateInvoiceLineItemOption
     {
 
         /// <summary>
-        /// The name of the item.
+        /// The name of the option or modifier.
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The base price of the item before applying option modifiers.
-        /// </summary>
-        [JsonProperty("basePrice")]
-        public AmountDecimal BasePrice { get; set; } = default!;
-
-        /// <summary>
-        /// The quantity of this item.
+        /// The quantity of this option.
         /// </summary>
         [JsonProperty("quantity")]
         public int Quantity { get; set; } = default!;
 
         /// <summary>
-        /// Optional unique identifier associating the line item with a product.
+        /// Optional price modification applied by this option. Can be positive, negative, or zero.
         /// </summary>
-        [JsonProperty("productID")]
-        public string? ProductID { get; set; }
+        [JsonProperty("priceModifier")]
+        public AmountDecimal? PriceModifier { get; set; }
 
         /// <summary>
-        /// Optional list of modifiers applied to this item (e.g., toppings, upgrades, customizations).
+        /// Optional group identifier to categorize related options (e.g., &apos;toppings&apos;).
         /// </summary>
-        [JsonProperty("options")]
-        public List<InvoiceLineItemOption>? Options { get; set; }
+        [JsonProperty("group")]
+        public string? Group { get; set; }
 
         /// <summary>
         /// Optional list of images associated with this line item.
         /// </summary>
-        [JsonProperty("images")]
-        public List<InvoiceLineItemImageMetadata>? Images { get; set; }
+        [JsonProperty("imageIDs")]
+        public List<string>? ImageIDs { get; set; }
     }
 }

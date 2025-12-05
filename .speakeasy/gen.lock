@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 3e0f6c361e1dcd63e8d7ecd80166ec5a
+  docChecksum: dc987cf87d17146ae09fbcdeecc27ceb
   docVersion: latest
-  speakeasyVersion: 1.661.2
-  generationVersion: 2.763.3
-  releaseVersion: 0.1.14
-  configChecksum: 32faffe5646d4a6bd384b082de6ac298
+  speakeasyVersion: 1.668.0
+  generationVersion: 2.770.0
+  releaseVersion: 0.2.0
+  configChecksum: 6ed9e0d5887ca7348ab362b3de1af262
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.15.5
+    core: 3.15.7
     decimal: 0.1.0
     deprecations: 2.81.2
     flattening: 2.81.3
@@ -27,7 +27,7 @@ features:
     nameOverrides: 2.81.2
     nullables: 0.1.1
     responseFormat: 0.0.4
-    sdkHooks: 0.2.0
+    sdkHooks: 0.3.0
     unions: 1.1.0
 generatedFiles:
   - .gitattributes
@@ -193,6 +193,13 @@ generatedFiles:
   - docs/Models/Components/CreateIndividualErrorSsn.md
   - docs/Models/Components/CreateIndividualProfile.md
   - docs/Models/Components/CreateInvoice.md
+  - docs/Models/Components/CreateInvoiceLineItem.md
+  - docs/Models/Components/CreateInvoiceLineItemOption.md
+  - docs/Models/Components/CreateInvoiceLineItemOptionValidationError.md
+  - docs/Models/Components/CreateInvoiceLineItemValidationError.md
+  - docs/Models/Components/CreateInvoiceLineItems.md
+  - docs/Models/Components/CreateInvoiceLineItemsUpdate.md
+  - docs/Models/Components/CreateInvoiceLineItemsValidationError.md
   - docs/Models/Components/CreatePaymentLink.md
   - docs/Models/Components/CreatePaymentLinkLineItem.md
   - docs/Models/Components/CreatePaymentLinkLineItemOption.md
@@ -305,11 +312,11 @@ generatedFiles:
   - docs/Models/Components/InvoiceExternalPayment.md
   - docs/Models/Components/InvoiceExternalPaymentPaymentType.md
   - docs/Models/Components/InvoiceLineItem.md
+  - docs/Models/Components/InvoiceLineItemImageMetadata.md
   - docs/Models/Components/InvoiceLineItemOption.md
   - docs/Models/Components/InvoiceLineItemOptionValidationError.md
   - docs/Models/Components/InvoiceLineItemValidationError.md
   - docs/Models/Components/InvoiceLineItems.md
-  - docs/Models/Components/InvoiceLineItemsUpdate.md
   - docs/Models/Components/InvoiceLineItemsValidationError.md
   - docs/Models/Components/InvoicePayment.md
   - docs/Models/Components/InvoiceStatus.md
@@ -1223,6 +1230,13 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/CreateIndividualErrorSsn.cs
   - src/Moov/Sdk/Models/Components/CreateIndividualProfile.cs
   - src/Moov/Sdk/Models/Components/CreateInvoice.cs
+  - src/Moov/Sdk/Models/Components/CreateInvoiceLineItem.cs
+  - src/Moov/Sdk/Models/Components/CreateInvoiceLineItemOption.cs
+  - src/Moov/Sdk/Models/Components/CreateInvoiceLineItemOptionValidationError.cs
+  - src/Moov/Sdk/Models/Components/CreateInvoiceLineItemValidationError.cs
+  - src/Moov/Sdk/Models/Components/CreateInvoiceLineItems.cs
+  - src/Moov/Sdk/Models/Components/CreateInvoiceLineItemsUpdate.cs
+  - src/Moov/Sdk/Models/Components/CreateInvoiceLineItemsValidationError.cs
   - src/Moov/Sdk/Models/Components/CreatePaymentLink.cs
   - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItem.cs
   - src/Moov/Sdk/Models/Components/CreatePaymentLinkLineItemOption.cs
@@ -1335,11 +1349,11 @@ generatedFiles:
   - src/Moov/Sdk/Models/Components/InvoiceExternalPayment.cs
   - src/Moov/Sdk/Models/Components/InvoiceExternalPaymentPaymentType.cs
   - src/Moov/Sdk/Models/Components/InvoiceLineItem.cs
+  - src/Moov/Sdk/Models/Components/InvoiceLineItemImageMetadata.cs
   - src/Moov/Sdk/Models/Components/InvoiceLineItemOption.cs
   - src/Moov/Sdk/Models/Components/InvoiceLineItemOptionValidationError.cs
   - src/Moov/Sdk/Models/Components/InvoiceLineItemValidationError.cs
   - src/Moov/Sdk/Models/Components/InvoiceLineItems.cs
-  - src/Moov/Sdk/Models/Components/InvoiceLineItemsUpdate.cs
   - src/Moov/Sdk/Models/Components/InvoiceLineItemsValidationError.cs
   - src/Moov/Sdk/Models/Components/InvoicePayment.cs
   - src/Moov/Sdk/Models/Components/InvoiceStatus.cs
@@ -3904,4 +3918,4 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes Detected:\n* `MoovClient.Images.Update()`: \n  *  `request.body.Metadata` **Changed** **Breaking** :warning:\n* `MoovClient.Representatives.Update()`: \n  *  `request.body.Email` **Changed** **Breaking** :warning:\n* `MoovClient.Sweeps.UpdateConfig()`:  `request.body` **Changed** **Breaking** :warning:\n"
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Invoices.CreateInvoice()`: \n  *  `request.body.LineItems.Items.[]` **Changed**\n  *  `response.lineItems.Items.[].Images` **Added**\n* `MoovClient.Invoices.ListInvoices()`:  `response.[].LineItems.Items.[].Images` **Added**\n* `MoovClient.Invoices.GetInvoice()`:  `response.lineItems.Items.[].Images` **Added**\n* `MoovClient.Invoices.UpdateInvoice()`: \n  *  `request.body.LineItems.Items.[]` **Changed**\n  *  `response.lineItems.Items.[].Images` **Added**\n* `MoovClient.Invoices.MarkPaidInvoice()`:  `response.lineItems.Items.[].Images` **Added**\n"
