@@ -1,5 +1,4 @@
 # EnrichedAddress
-(*EnrichedAddress*)
 
 ## Overview
 

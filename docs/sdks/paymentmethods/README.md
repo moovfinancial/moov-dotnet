@@ -1,5 +1,4 @@
 # PaymentMethods
-(*PaymentMethods*)
 
 ## Overview
 

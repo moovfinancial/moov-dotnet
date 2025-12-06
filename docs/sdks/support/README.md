@@ -1,5 +1,4 @@
 # Support
-(*Support*)
 
 ## Overview
 

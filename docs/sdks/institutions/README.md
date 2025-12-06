@@ -1,5 +1,4 @@
 # Institutions
-(*Institutions*)
 
 ## Overview
 

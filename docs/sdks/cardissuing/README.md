@@ -1,5 +1,4 @@
 # CardIssuing
-(*CardIssuing*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # Disputes
-(*Disputes*)
 
 ## Overview
 

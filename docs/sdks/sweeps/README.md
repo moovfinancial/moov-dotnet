@@ -1,5 +1,4 @@
 # Sweeps
-(*Sweeps*)
 
 ## Overview
 

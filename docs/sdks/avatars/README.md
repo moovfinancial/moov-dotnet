@@ -1,5 +1,4 @@
 # Avatars
-(*Avatars*)
 
 ## Overview
 

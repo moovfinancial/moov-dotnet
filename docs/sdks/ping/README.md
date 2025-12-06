@@ -1,5 +1,4 @@
 # Ping
-(*Ping*)
 
 ## Overview
 

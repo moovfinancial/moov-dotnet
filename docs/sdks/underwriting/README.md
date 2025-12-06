@@ -1,5 +1,4 @@
 # Underwriting
-(*Underwriting*)
 
 ## Overview
 

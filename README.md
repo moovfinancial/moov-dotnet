@@ -136,6 +136,25 @@ var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
 <details open>
 <summary>Available methods</summary>
 
+### [AccountTerminalApplications](docs/sdks/accountterminalapplications/README.md)
+
+* [Link](docs/sdks/accountterminalapplications/README.md#link) - Link an account with a terminal application.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/terminal-applications.write` scope.
+* [List](docs/sdks/accountterminalapplications/README.md#list) - Retrieve all terminal applications linked to a specific account.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/terminal-applications.read` scope.
+* [Get](docs/sdks/accountterminalapplications/README.md#get) - Verifies if a specific Terminal Application is linked to an Account. This endpoint acts as a validation check for the link's existence.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/terminal-applications.read` scope.
+* [GetConfiguration](docs/sdks/accountterminalapplications/README.md#getconfiguration) - Fetch the configuration for a given Terminal Application linked to a specific Account.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/terminal-configuration.read` scope.
+
 ### [Accounts](docs/sdks/accounts/README.md)
 
 * [Create](docs/sdks/accounts/README.md#create) - You can create **business** or **individual** accounts for your users (i.e., customers, merchants) by passing the required
@@ -202,25 +221,6 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 This token can only be generated via API. Any Moov account requesting the collect funds, send funds, wallet, 
 or card issuing capabilities must accept Moov's terms of service, then have the generated terms of service 
 token patched to the account. Read more in our [documentation](https://docs.moov.io/guides/accounts/requirements/platform-agreement/).
-
-### [AccountTerminalApplications](docs/sdks/accountterminalapplications/README.md)
-
-* [Link](docs/sdks/accountterminalapplications/README.md#link) - Link an account with a terminal application.
-
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
-you'll need to specify the `/accounts/{accountID}/terminal-applications.write` scope.
-* [List](docs/sdks/accountterminalapplications/README.md#list) - Retrieve all terminal applications linked to a specific account.
-
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
-you'll need to specify the `/accounts/{accountID}/terminal-applications.read` scope.
-* [Get](docs/sdks/accountterminalapplications/README.md#get) - Verifies if a specific Terminal Application is linked to an Account. This endpoint acts as a validation check for the link's existence.
-
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
-you'll need to specify the `/accounts/{accountID}/terminal-applications.read` scope.
-* [GetConfiguration](docs/sdks/accountterminalapplications/README.md#getconfiguration) - Fetch the configuration for a given Terminal Application linked to a specific Account.
-
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
-you'll need to specify the `/accounts/{accountID}/terminal-configuration.read` scope.
 
 ### [Adjustments](docs/sdks/adjustments/README.md)
 
@@ -1081,6 +1081,21 @@ Read our [underwriting guide](https://docs.moov.io/guides/accounts/requirements/
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/profile.write` scope.
 
+### [WalletTransactions](docs/sdks/wallettransactions/README.md)
+
+* [List](docs/sdks/wallettransactions/README.md#list) - List all the transactions associated with a particular Moov wallet. 
+
+Read our [wallet transactions guide](https://docs.moov.io/guides/sources/wallets/transactions/) to learn more.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
+* [Get](docs/sdks/wallettransactions/README.md#get) - Get details on a specific wallet transaction. 
+
+Read our [wallet transactions guide](https://docs.moov.io/guides/sources/wallets/transactions/) to learn more.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
+
 ### [Wallets](docs/sdks/wallets/README.md)
 
 * [Create](docs/sdks/wallets/README.md#create) - Create a new wallet for an account. You can specify optional attributes such as a display name and description to specify the intended use of the wallet. This will generate a new moov-wallet payment method.
@@ -1107,21 +1122,6 @@ Read our [Moov wallets guide](https://docs.moov.io/guides/sources/wallets/) to l
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
-
-### [WalletTransactions](docs/sdks/wallettransactions/README.md)
-
-* [List](docs/sdks/wallettransactions/README.md#list) - List all the transactions associated with a particular Moov wallet. 
-
-Read our [wallet transactions guide](https://docs.moov.io/guides/sources/wallets/transactions/) to learn more.
-
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
-you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
-* [Get](docs/sdks/wallettransactions/README.md#get) - Get details on a specific wallet transaction. 
-
-Read our [wallet transactions guide](https://docs.moov.io/guides/sources/wallets/transactions/) to learn more.
-
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
-you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
 </details>
 <!-- End Available Resources and Operations [operations] -->

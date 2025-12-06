@@ -1,5 +1,4 @@
 # Receipts
-(*Receipts*)
 
 ## Overview
 
