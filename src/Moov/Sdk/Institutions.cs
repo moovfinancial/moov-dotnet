@@ -39,6 +39,8 @@ namespace Moov.Sdk
         Task<SearchInstitutionsResponse> SearchInstitutionsAsync(string? xMoovVersion = null, string? name = null, string? routingNumber = null, long? limit = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
+        /// This endpoint has been deprecated and will be removed in a future release. Use <a href="https://docs.moov.io/api/enrichment/form-shortening/institutions/get/">/institutions</a>.<br/>
+        /// <br/>
         /// Search for institutions by either their name or routing number.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
@@ -169,6 +171,7 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
+        [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async Task<ListInstitutionsResponse> SearchAsync(ListInstitutionsRequest? request = null, CancellationToken? cancellationToken = null)
         {
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
