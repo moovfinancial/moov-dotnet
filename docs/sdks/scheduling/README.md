@@ -91,6 +91,10 @@ var res = await sdk.Scheduling.CreateAsync(
                     Currency = "USD",
                     Value = 1204,
                 },
+                SalesTaxAmount = new Amount() {
+                    Currency = "USD",
+                    Value = 1204,
+                },
                 Destination = new SchedulePaymentMethod() {
                     PaymentMethodID = "c520f1b9-0ba7-42f5-b977-248cdbe41c69",
                     AchDetails = new AchDetails() {
@@ -245,6 +249,10 @@ var res = await sdk.Scheduling.UpdateAsync(
             RecurrenceRule = "<value>",
             RunTransfer = new RunTransfer() {
                 Amount = new Amount() {
+                    Currency = "USD",
+                    Value = 1204,
+                },
+                SalesTaxAmount = new Amount() {
                     Currency = "USD",
                     Value = 1204,
                 },

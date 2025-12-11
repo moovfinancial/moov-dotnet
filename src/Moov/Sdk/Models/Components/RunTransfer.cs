@@ -22,6 +22,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("amount")]
         public Amount Amount { get; set; } = default!;
 
+        /// <summary>
+        /// Optional sales tax amount. This amount is included in the total transfer amount.
+        /// </summary>
+        [JsonProperty("salesTaxAmount")]
+        public Amount? SalesTaxAmount { get; set; }
+
         [JsonProperty("destination")]
         public SchedulePaymentMethod Destination { get; set; } = default!;
 
