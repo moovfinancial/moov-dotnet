@@ -12,31 +12,29 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System;
     
     /// <summary>
-    /// A detailed breakdown of platform fees. This field is deprecated and will be removed in a future release. Use accountFees.
+    /// Monthly partner costs that are charged separately and not included in residual subtotal (e.g. platform fees, minimums).
     /// </summary>
-    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
-    public class PlatformFees
+    public class PartnerFees
     {
 
         /// <summary>
-        /// Fees associated with wallet services.
+        /// The minimum spending amount that must be met in the billing period. If actual usage is below the minimum amount, account is charged the difference.
         /// </summary>
-        [JsonProperty("walletFee")]
-        public AmountDecimal WalletFee { get; set; } = default!;
+        [JsonProperty("minimumCommitment")]
+        public BillingCountAndAmount? MinimumCommitment { get; set; }
 
         /// <summary>
-        /// Fees for PCI compliance.
+        /// Fixed recurring fee for the billing period regardless of usage.
         /// </summary>
-        [JsonProperty("merchantPCIFee")]
-        public AmountDecimal MerchantPCIFee { get; set; } = default!;
+        [JsonProperty("monthlyPlatform")]
+        public BillingCountAndAmount? MonthlyPlatform { get; set; }
 
         /// <summary>
-        /// Total platform fees.
+        /// Total partner fees.
         /// </summary>
         [JsonProperty("total")]
-        public AmountDecimal Total { get; set; } = default!;
+        public BillingCountAndAmount Total { get; set; } = default!;
     }
 }

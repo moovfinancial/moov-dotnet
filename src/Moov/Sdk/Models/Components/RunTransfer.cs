@@ -42,5 +42,15 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("description")]
         public string Description { get; set; } = default!;
+
+        /// <summary>
+        /// An optional collection of line items for a scheduled transfer.<br/>
+        /// 
+        /// <remarks>
+        /// When line items are provided their total must equal `amount` minus `salesTaxAmount`.
+        /// </remarks>
+        /// </summary>
+        [JsonProperty("lineItems")]
+        public ScheduledTransferLineItems? LineItems { get; set; }
     }
 }

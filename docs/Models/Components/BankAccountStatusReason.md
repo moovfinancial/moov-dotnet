@@ -18,6 +18,7 @@ The reason the bank account status changed to the current value.
 | `AchDebitReturn`                | ach-debit-return                |
 | `AchCreditReturn`               | ach-credit-return               |
 | `RtpCreditFailure`              | rtp-credit-failure              |
+| `FednowCreditFailure`           | fednow-credit-failure           |
 | `MicroDepositReturn`            | micro-deposit-return            |
 | `AdminAction`                   | admin-action                    |
 | `Other`                         | other                           |

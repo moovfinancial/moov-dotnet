@@ -9,34 +9,32 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
     
     /// <summary>
-    /// A detailed breakdown of platform fees. This field is deprecated and will be removed in a future release. Use accountFees.
+    /// The total transaction volume amount. This field is deprecated and will be removed in a future release.
     /// </summary>
     [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
-    public class PlatformFees
+    public class BillingSummaryVolumeAmount
     {
 
         /// <summary>
-        /// Fees associated with wallet services.
+        /// A 3-letter ISO 4217 currency code.
         /// </summary>
-        [JsonProperty("walletFee")]
-        public AmountDecimal WalletFee { get; set; } = default!;
+        [JsonProperty("currency")]
+        public string Currency { get; set; } = default!;
 
         /// <summary>
-        /// Fees for PCI compliance.
+        /// A decimal-formatted numerical string that represents up to 9 decimal place precision. <br/>
+        /// 
+        /// <remarks>
+        /// <br/>
+        /// For example, $12.987654321 is &apos;12.987654321&apos;.
+        /// </remarks>
         /// </summary>
-        [JsonProperty("merchantPCIFee")]
-        public AmountDecimal MerchantPCIFee { get; set; } = default!;
-
-        /// <summary>
-        /// Total platform fees.
-        /// </summary>
-        [JsonProperty("total")]
-        public AmountDecimal Total { get; set; } = default!;
+        [JsonProperty("valueDecimal")]
+        public string ValueDecimal { get; set; } = default!;
     }
 }

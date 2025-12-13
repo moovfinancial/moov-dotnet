@@ -12,22 +12,22 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
     
-    /// <summary>
-    /// Details of volume and fees for a specific payment method.
-    /// </summary>
     public class BillingSummaryDetails
     {
 
         /// <summary>
-        /// The total transaction volume amount.
+        /// The total transaction volume amount. This field is deprecated and will be removed in a future release.
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("volumeAmount")]
-        public AmountDecimal? VolumeAmount { get; set; }
+        public BillingSummaryDetailsVolumeAmount? VolumeAmount { get; set; }
 
         /// <summary>
-        /// The total number of transactions.
+        /// The total number of transactions. This field is deprecated and will be removed in a future release.
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("volumeCount")]
         public long? VolumeCount { get; set; }
 
@@ -36,5 +36,23 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("feeAmount")]
         public AmountDecimal? FeeAmount { get; set; }
+
+        /// <summary>
+        /// Total fee revenue collected from merchants.
+        /// </summary>
+        [JsonProperty("merchantFeesCollected")]
+        public AmountDecimal? MerchantFeesCollected { get; set; }
+
+        /// <summary>
+        /// Total fee costs incurred by the partner.
+        /// </summary>
+        [JsonProperty("partnerFeesAssessed")]
+        public AmountDecimal? PartnerFeesAssessed { get; set; }
+
+        /// <summary>
+        /// Net revenue after deducting partner fee costs.
+        /// </summary>
+        [JsonProperty("netIncome")]
+        public AmountDecimal? NetIncome { get; set; }
     }
 }

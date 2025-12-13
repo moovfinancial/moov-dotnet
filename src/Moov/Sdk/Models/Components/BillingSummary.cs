@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
     
     /// <summary>
     /// A summary of all fees included in a statement.
@@ -20,45 +21,90 @@ namespace Moov.Sdk.Models.Components
     {
 
         /// <summary>
-        /// A summary of card acquiring volume and fees.
+        /// A summary of card acquiring fees.
         /// </summary>
         [JsonProperty("cardAcquiring")]
         public CardAcquiring? CardAcquiring { get; set; }
 
         /// <summary>
-        /// A summary of ACH volume and fees.
+        /// A summary of ACH fees.
         /// </summary>
         [JsonProperty("ach")]
         public BillingSummaryDetails? Ach { get; set; }
 
         /// <summary>
-        /// A summary of instant payment volume and fees.
+        /// A summary of instant payment fees.
         /// </summary>
         [JsonProperty("instantPayments")]
         public BillingSummaryDetails? InstantPayments { get; set; }
 
         /// <summary>
-        /// The total amount of platform fees.
+        /// The total amount of platform fees. This field is deprecated and will be removed in a future release. Use summary.accountFees.
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("platformFees")]
-        public AmountDecimal? PlatformFees { get; set; }
+        public BillingSummaryPlatformFees? PlatformFees { get; set; }
 
         /// <summary>
-        /// The total amount of adjustment fees.
+        /// A summary of account fees.
         /// </summary>
+        [JsonProperty("accountFees")]
+        public BillingSummaryDetails? AccountFees { get; set; }
+
+        /// <summary>
+        /// The total amount of adjustment fees. This field is deprecated and will be removed in a future release.
+        /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("adjustmentFees")]
-        public AmountDecimal? AdjustmentFees { get; set; }
+        public AdjustmentFees? AdjustmentFees { get; set; }
 
         /// <summary>
-        /// The total amount of other fees.
+        /// The total amount of other card fees. This field is deprecated and will be removed in a future release. Use summary.otherCardFees.
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("otherFees")]
-        public AmountDecimal? OtherFees { get; set; }
+        public OtherFees? OtherFees { get; set; }
+
+        /// <summary>
+        /// A summary of other card fees.
+        /// </summary>
+        [JsonProperty("otherCardFees")]
+        public BillingSummaryDetails? OtherCardFees { get; set; }
 
         /// <summary>
         /// The total amount of all fees.
         /// </summary>
         [JsonProperty("total")]
         public AmountDecimal? Total { get; set; }
+
+        /// <summary>
+        /// Total net revenue after deducting total partner fees.
+        /// </summary>
+        [JsonProperty("netIncomeSubtotal")]
+        public BillingSummaryDetails? NetIncomeSubtotal { get; set; }
+
+        /// <summary>
+        /// Partner’s share of the net income, expressed as a percentage.
+        /// </summary>
+        [JsonProperty("revenueShare")]
+        public string? RevenueShare { get; set; }
+
+        /// <summary>
+        /// The portion of net income allocated to the partner before monthly partner costs.
+        /// </summary>
+        [JsonProperty("residualSubtotal")]
+        public AmountDecimal? ResidualSubtotal { get; set; }
+
+        /// <summary>
+        /// Monthly partner costs that are charged separately and not included in residual subtotal (e.g. platform fees, minimums).
+        /// </summary>
+        [JsonProperty("monthlyPartnerCosts")]
+        public PartnerFees? MonthlyPartnerCosts { get; set; }
+
+        /// <summary>
+        /// Final partner payment after deducting monthlyPartnerCosts.
+        /// </summary>
+        [JsonProperty("netPartnerPayment")]
+        public AmountDecimal? NetPartnerPayment { get; set; }
     }
 }

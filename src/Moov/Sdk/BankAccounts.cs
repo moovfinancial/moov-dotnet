@@ -95,7 +95,7 @@ namespace Moov.Sdk
         Task<CompleteMicroDepositsResponse> CompleteMicroDepositsAsync(string accountID, string bankAccountID, CompleteMicroDeposits body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// Retrieve the current status and details of an instant verification, including whether the verification method was instant or same-day <br/>
+        /// Retrieve the current status and details of an instant verification, including whether the verification method was instant (RTP or FedNow) or same-day<br/>
         /// ACH. This helps track the verification process in real-time and provides details in case of exceptions.<br/>
         /// <br/>
         /// The status will indicate the following:<br/>
@@ -114,14 +114,14 @@ namespace Moov.Sdk
         /// <summary>
         /// Instant micro-deposit verification offers a quick and efficient way to verify bank account ownership. <br/>
         /// <br/>
-        /// Send a $0.01 credit with a unique verification code via RTP or same-day ACH, depending on the receiving bank&apos;s capabilities. This<br/>
+        /// Send a $0.01 credit with a unique verification code via RTP, FedNow, or same-day ACH, depending on the receiving bank&apos;s capabilities. This<br/>
         /// feature provides a faster alternative to traditional methods, allowing verification in a single session.<br/>
         /// <br/>
         /// It is recommended to use the `X-Wait-For: rail-response` header to synchronously receive the outcome of the instant credit in the<br/>
         ///   response payload.<br/>
         /// <br/>
         /// Possible verification methods:<br/>
-        ///   - `instant`: Real-time verification credit sent via RTP<br/>
+        ///   - `instant`: Real-time verification credit sent via RTP or FedNow<br/>
         ///   - `ach`: Verification credit sent via same-day ACH<br/>
         /// <br/>
         /// Possible statuses:<br/>

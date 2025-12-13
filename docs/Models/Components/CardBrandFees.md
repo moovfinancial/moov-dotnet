@@ -1,7 +1,5 @@
 # CardBrandFees
 
-A detailed breakdown of fees for a specific card brand.
-
 
 ## Fields
 

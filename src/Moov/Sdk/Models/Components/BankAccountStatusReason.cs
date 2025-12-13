@@ -40,6 +40,8 @@ namespace Moov.Sdk.Models.Components
         AchCreditReturn,
         [JsonProperty("rtp-credit-failure")]
         RtpCreditFailure,
+        [JsonProperty("fednow-credit-failure")]
+        FednowCreditFailure,
         [JsonProperty("micro-deposit-return")]
         MicroDepositReturn,
         [JsonProperty("admin-action")]

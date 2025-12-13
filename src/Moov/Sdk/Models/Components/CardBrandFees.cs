@@ -14,9 +14,6 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     
-    /// <summary>
-    /// A detailed breakdown of fees for a specific card brand.
-    /// </summary>
     public class CardBrandFees
     {
 

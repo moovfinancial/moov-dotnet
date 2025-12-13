@@ -12,13 +12,11 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System;
     
     /// <summary>
-    /// A detailed breakdown of platform fees. This field is deprecated and will be removed in a future release. Use accountFees.
+    /// A detailed breakdown of account fees.
     /// </summary>
-    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
-    public class PlatformFees
+    public class AccountFees
     {
 
         /// <summary>
@@ -32,6 +30,24 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("merchantPCIFee")]
         public AmountDecimal MerchantPCIFee { get; set; } = default!;
+
+        /// <summary>
+        /// Fees for business verification.
+        /// </summary>
+        [JsonProperty("kybFee")]
+        public AmountDecimal? KybFee { get; set; }
+
+        /// <summary>
+        /// Fees for customer verification.
+        /// </summary>
+        [JsonProperty("kycFee")]
+        public AmountDecimal? KycFee { get; set; }
+
+        /// <summary>
+        /// Fees for transaction risk monitoring.
+        /// </summary>
+        [JsonProperty("transactionMonitoringFee")]
+        public AmountDecimal? TransactionMonitoringFee { get; set; }
 
         /// <summary>
         /// Total platform fees.

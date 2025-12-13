@@ -64,13 +64,13 @@ namespace Moov.Sdk.Models.Components
         public List<string> SubscriptionIDs { get; set; } = default!;
 
         /// <summary>
-        /// A summary of all fees included in this statement.
+        /// A summary of all fees included in a statement.
         /// </summary>
         [JsonProperty("summary")]
         public BillingSummary Summary { get; set; } = default!;
 
         /// <summary>
-        /// A detailed breakdown of card acquiring fees.
+        /// A detailed breakdown of card acquiring fees by card brand.
         /// </summary>
         [JsonProperty("cardAcquiringFees")]
         public CardAcquiringFees? CardAcquiringFees { get; set; }
@@ -88,16 +88,29 @@ namespace Moov.Sdk.Models.Components
         public InstantPaymentFees? InstantPaymentFees { get; set; }
 
         /// <summary>
-        /// A detailed breakdown of platform fees.
+        /// A detailed breakdown of platform fees. This field is deprecated and will be removed in a future release. Use accountFees.
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("platformFees")]
         public PlatformFees? PlatformFees { get; set; }
+
+        /// <summary>
+        /// A detailed breakdown of account fees.
+        /// </summary>
+        [JsonProperty("accountFees")]
+        public AccountFees? AccountFees { get; set; }
 
         /// <summary>
         /// A detailed breakdown of other card-related fees.
         /// </summary>
         [JsonProperty("otherCardFees")]
         public OtherCardFees? OtherCardFees { get; set; }
+
+        /// <summary>
+        /// Monthly partner costs that are charged separately and not included in residual subtotal (e.g. platform fees, minimums).
+        /// </summary>
+        [JsonProperty("partnerFees")]
+        public PartnerFees? PartnerFees { get; set; }
 
         /// <summary>
         /// The date and time the statement was created.

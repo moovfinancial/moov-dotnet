@@ -117,6 +117,9 @@ var res = await sdk.Scheduling.CreateAsync(
                     },
                 },
                 Description = "er mob marathon lest optimistically responsible",
+                LineItems = new ScheduledTransferLineItems() {
+                    Items = new List<ScheduledTransferLineItem>() {},
+                },
             },
             Start = System.DateTime.Parse("2009-11-10T23:00:00Z"),
         },
@@ -278,6 +281,28 @@ var res = await sdk.Scheduling.UpdateAsync(
                     },
                 },
                 Description = "yum who queasily bemuse ick dull almighty incidentally er despite",
+                LineItems = new ScheduledTransferLineItems() {
+                    Items = new List<ScheduledTransferLineItem>() {
+                        new ScheduledTransferLineItem() {
+                            Name = "<value>",
+                            BasePrice = new AmountDecimal() {
+                                Currency = "USD",
+                                ValueDecimal = "12.987654321",
+                            },
+                            Quantity = 973458,
+                            Options = new List<ScheduledTransferLineItemOption>() {
+                                new ScheduledTransferLineItemOption() {
+                                    Name = "<value>",
+                                    Quantity = 221042,
+                                    PriceModifier = new AmountDecimal() {
+                                        Currency = "USD",
+                                        ValueDecimal = "12.987654321",
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
             },
             Start = System.DateTime.Parse("2009-11-10T23:00:00Z"),
         },

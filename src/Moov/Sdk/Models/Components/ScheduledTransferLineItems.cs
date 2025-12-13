@@ -12,20 +12,22 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     
-    public class BillingCountAndAmount
+    /// <summary>
+    /// An optional collection of line items for a scheduled transfer.<br/>
+    /// 
+    /// <remarks>
+    /// When line items are provided their total must equal `amount` minus `salesTaxAmount`.
+    /// </remarks>
+    /// </summary>
+    public class ScheduledTransferLineItems
     {
 
         /// <summary>
-        /// The number of items.
+        /// The list of line items.
         /// </summary>
-        [JsonProperty("count")]
-        public long Count { get; set; } = default!;
-
-        /// <summary>
-        /// The total amount.
-        /// </summary>
-        [JsonProperty("amount")]
-        public AmountDecimal Amount { get; set; } = default!;
+        [JsonProperty("items")]
+        public List<ScheduledTransferLineItem> Items { get; set; } = default!;
     }
 }

@@ -67,6 +67,34 @@ namespace Moov.Sdk.Models.Components
         public RTPRejectionCode? RtpRejectionCode { get; set; }
 
         /// <summary>
+        /// The rejection code of a FedNow transaction that caused the bank account status to change.<br/>
+        /// 
+        /// <remarks>
+        /// <br/>
+        /// - AC02: Debtor account is invalid<br/>
+        /// - AC03: Creditor account is invalid<br/>
+        /// - AC04: Account closed<br/>
+        /// - AC06: Account is blocked<br/>
+        /// - AC07: Creditor account closed<br/>
+        /// - AC10: Debtor account currency is invalid or missing<br/>
+        /// - AC11: Creditor account currency is invalid or missing<br/>
+        /// - AC13: Debtor account type missing or invalid<br/>
+        /// - AC14: Creditor account type missing or invalid<br/>
+        /// - AG01: Transaction is forbidden on this type of account<br/>
+        /// - AG03: Transaction type is not supported/authorized on this account<br/>
+        /// - BE06: End customer specified is not known at associated Sort/National Bank Code or no longer exists in the books<br/>
+        /// - DUPL: Payment is a duplicate of another payment<br/>
+        /// - MD07: End customer is deceased<br/>
+        /// - NOAT: Receiving customer account does not support/accept this message type<br/>
+        /// - RC02: Bank identifier is invalid or missing<br/>
+        /// - RC03: Debtor FI identifier is invalid or missing<br/>
+        /// - RC04: Creditor FI identifier is invalid or missing
+        /// </remarks>
+        /// </summary>
+        [JsonProperty("fednowRejectionCode")]
+        public string? FednowRejectionCode { get; set; }
+
+        /// <summary>
         /// Details related to an `errored` or `verificationFailed` bank account status.
         /// </summary>
         [JsonProperty("description")]
