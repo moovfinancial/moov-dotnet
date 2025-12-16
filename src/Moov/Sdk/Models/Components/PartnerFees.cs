@@ -23,18 +23,18 @@ namespace Moov.Sdk.Models.Components
         /// The minimum spending amount that must be met in the billing period. If actual usage is below the minimum amount, account is charged the difference.
         /// </summary>
         [JsonProperty("minimumCommitment")]
-        public BillingCountAndAmount? MinimumCommitment { get; set; }
+        public AmountDecimal MinimumCommitment { get; set; } = default!;
 
         /// <summary>
         /// Fixed recurring fee for the billing period regardless of usage.
         /// </summary>
         [JsonProperty("monthlyPlatform")]
-        public BillingCountAndAmount? MonthlyPlatform { get; set; }
+        public AmountDecimal MonthlyPlatform { get; set; } = default!;
 
         /// <summary>
         /// Total partner fees.
         /// </summary>
         [JsonProperty("total")]
-        public BillingCountAndAmount Total { get; set; } = default!;
+        public AmountDecimal Total { get; set; } = default!;
     }
 }
