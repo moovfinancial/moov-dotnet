@@ -69,6 +69,12 @@ namespace Moov.Sdk.Models.Components
         public Amount Amount { get; set; } = default!;
 
         /// <summary>
+        /// Optional sales tax amount.
+        /// </summary>
+        [JsonProperty("salesTaxAmount")]
+        public Amount? SalesTaxAmount { get; set; }
+
+        /// <summary>
         /// The number of times this payment link has been used.
         /// </summary>
         [JsonProperty("uses")]

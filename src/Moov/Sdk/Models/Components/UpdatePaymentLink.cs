@@ -20,6 +20,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("amount")]
         public AmountUpdate? Amount { get; set; }
 
+        [JsonProperty("salesTaxAmount")]
+        public AmountUpdate? SalesTaxAmount { get; set; }
+
         [JsonProperty("expiresOn")]
         public DateTime? ExpiresOn { get; set; } = null;
 

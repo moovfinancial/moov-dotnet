@@ -1,16 +1,12 @@
 # InvoicePayment
 
+Payment made towards an invoice, will be either a transfer or an external payment.
 
-## Supported Types
 
-### Transfer
+## Fields
 
-```csharp
-InvoicePayment.CreateTransfer(/* values here */);
-```
-
-### External
-
-```csharp
-InvoicePayment.CreateExternal(/* values here */);
-```
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `PaymentType`                                                               | [InvoicePaymentType](../../Models/Components/InvoicePaymentType.md)         | :heavy_check_mark:                                                          | N/A                                                                         |
+| `Transfer`                                                                  | [InvoiceTransferPayment](../../Models/Components/InvoiceTransferPayment.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `External`                                                                  | [InvoiceExternalPayment](../../Models/Components/InvoiceExternalPayment.md) | :heavy_minus_sign:                                                          | N/A                                                                         |

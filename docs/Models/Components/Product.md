@@ -1,6 +1,6 @@
 # Product
 
-A product available for purchase, which may have optional configuration options.
+A good or service offered by a merchant.
 
 
 ## Fields

@@ -43,6 +43,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("amount")]
         public Amount Amount { get; set; } = default!;
 
+        [JsonProperty("salesTaxAmount")]
+        public Amount? SalesTaxAmount { get; set; }
+
         /// <summary>
         /// An optional limit on the number of times this payment link can be used. <br/>
         /// 

@@ -19,7 +19,7 @@ namespace Moov.Sdk.Models.Components
         /// External identifier used to identify the merchant with the card brand.
         /// </summary>
         [JsonProperty("networkID")]
-        public string? NetworkID { get; set; }
+        public string NetworkID { get; set; } = default!;
 
         /// <summary>
         /// Name of the merchant.
@@ -37,7 +37,7 @@ namespace Moov.Sdk.Models.Components
         /// Two-letter country code.
         /// </summary>
         [JsonProperty("country")]
-        public string? Country { get; set; }
+        public string Country { get; set; } = default!;
 
         /// <summary>
         /// The merchant&apos;s five-digit postal code.
@@ -55,6 +55,6 @@ namespace Moov.Sdk.Models.Components
         /// The Merchant Category Code.
         /// </summary>
         [JsonProperty("mcc")]
-        public string? Mcc { get; set; }
+        public string Mcc { get; set; } = default!;
     }
 }

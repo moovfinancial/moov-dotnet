@@ -16,7 +16,7 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
     
     /// <summary>
-    /// A product available for purchase, which may have optional configuration options.
+    /// A good or service offered by a merchant.
     /// </summary>
     public class Product
     {

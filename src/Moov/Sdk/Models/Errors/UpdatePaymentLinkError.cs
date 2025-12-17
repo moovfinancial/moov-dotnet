@@ -20,6 +20,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amount")]
         public AmountValidationError? Amount { get; set; }
 
+        [JsonProperty("salesTaxAmount")]
+        public AmountValidationError? SalesTaxAmount { get; set; }
+
         [JsonProperty("expiresOn")]
         public string? ExpiresOn { get; set; }
 
@@ -48,6 +51,9 @@ namespace Moov.Sdk.Models.Errors
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdatePaymentLinkError.Payload.Amount instead.")]
         public AmountValidationError? Amount { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdatePaymentLinkError.Payload.SalesTaxAmount instead.")]
+        public AmountValidationError? SalesTaxAmount { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdatePaymentLinkError.Payload.ExpiresOn instead.")]
         public string? ExpiresOn { get; set; }
@@ -78,6 +84,7 @@ namespace Moov.Sdk.Models.Errors
 
            #pragma warning disable CS0618
            Amount = payload.Amount;
+           SalesTaxAmount = payload.SalesTaxAmount;
            ExpiresOn = payload.ExpiresOn;
            Display = payload.Display;
            Payment = payload.Payment;
