@@ -12,20 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     
-    public class TransferLineItemOptionValidationError
+    public class CreateTransferLineItemsValidationError
     {
 
-        [JsonProperty("name")]
-        public string? Name { get; set; }
-
-        [JsonProperty("group")]
-        public string? Group { get; set; }
-
-        [JsonProperty("priceModifier")]
-        public AmountDecimalValidationError? PriceModifier { get; set; }
-
-        [JsonProperty("quantity")]
-        public string? Quantity { get; set; }
+        [JsonProperty("items")]
+        public Dictionary<string, CreateTransferLineItemValidationError>? Items { get; set; }
     }
 }

@@ -1,0 +1,14 @@
+# CreateTransferLineItemOption
+
+Represents a modifier or option applied to a line item.
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Name`                                                                                  | *string*                                                                                | :heavy_check_mark:                                                                      | The name of the option or modifier.                                                     |
+| `Quantity`                                                                              | *int*                                                                                   | :heavy_check_mark:                                                                      | The quantity of this option.                                                            |
+| `PriceModifier`                                                                         | [AmountDecimal](../../Models/Components/AmountDecimal.md)                               | :heavy_minus_sign:                                                                      | Optional price modification applied by this option. Can be positive, negative, or zero. |
+| `ImageIDs`                                                                              | List<*string*>                                                                          | :heavy_minus_sign:                                                                      | Optional list of images associated with this line item option.                          |
+| `Group`                                                                                 | *string*                                                                                | :heavy_minus_sign:                                                                      | Optional group identifier to categorize related options (e.g., 'toppings').             |

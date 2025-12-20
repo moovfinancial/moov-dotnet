@@ -14,7 +14,7 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     
-    public class TransferLineItemValidationError
+    public class CreateTransferLineItemValidationError
     {
 
         [JsonProperty("productID")]
@@ -27,9 +27,12 @@ namespace Moov.Sdk.Models.Components
         public AmountDecimalValidationError? BasePrice { get; set; }
 
         [JsonProperty("options")]
-        public Dictionary<string, TransferLineItemOptionValidationError>? Options { get; set; }
+        public Dictionary<string, CreateTransferLineItemOptionValidationError>? Options { get; set; }
 
         [JsonProperty("quantity")]
         public string? Quantity { get; set; }
+
+        [JsonProperty("imageIDs")]
+        public string? ImageIDs { get; set; }
     }
 }

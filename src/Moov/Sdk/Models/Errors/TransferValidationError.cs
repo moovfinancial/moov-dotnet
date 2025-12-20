@@ -48,7 +48,7 @@ namespace Moov.Sdk.Models.Errors
         public string? ForeignID { get; set; }
 
         [JsonProperty("lineItems")]
-        public TransferLineItemsValidationError? LineItems { get; set; }
+        public CreateTransferLineItemsValidationError? LineItems { get; set; }
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -92,7 +92,7 @@ namespace Moov.Sdk.Models.Errors
         public string? ForeignID { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.LineItems instead.")]
-        public TransferLineItemsValidationError? LineItems { get; set; }
+        public CreateTransferLineItemsValidationError? LineItems { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;

@@ -250,7 +250,7 @@ you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="markPaidInvoice" method="put" path="/accounts/{accountID}/invoices/{invoiceID}/mark-paid" -->
+<!-- UsageSnippet language="csharp" operationID="markPaidInvoice" method="post" path="/accounts/{accountID}/invoices/{invoiceID}/mark-paid" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;

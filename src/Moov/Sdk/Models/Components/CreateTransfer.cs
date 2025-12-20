@@ -70,6 +70,6 @@ namespace Moov.Sdk.Models.Components
         /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
-        public TransferLineItems? LineItems { get; set; }
+        public CreateTransferLineItems? LineItems { get; set; }
     }
 }

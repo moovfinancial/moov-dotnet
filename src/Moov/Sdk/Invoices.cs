@@ -665,7 +665,7 @@ namespace Moov.Sdk
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/invoices/{invoiceID}/mark-paid", request, null);
 
-            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
             HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 

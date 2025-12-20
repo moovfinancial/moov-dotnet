@@ -1,4 +1,4 @@
-# TransferLineItemOptionValidationError
+# CreateTransferLineItemOptionValidationError
 
 
 ## Fields
@@ -9,3 +9,4 @@
 | `Group`                                                                                 | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |
 | `PriceModifier`                                                                         | [AmountDecimalValidationError](../../Models/Components/AmountDecimalValidationError.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
 | `Quantity`                                                                              | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `ImageIDs`                                                                              | *string*                                                                                | :heavy_minus_sign:                                                                      | N/A                                                                                     |

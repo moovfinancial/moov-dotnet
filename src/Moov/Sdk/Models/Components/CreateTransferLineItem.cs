@@ -17,7 +17,7 @@ namespace Moov.Sdk.Models.Components
     /// <summary>
     /// Represents a single item in a transfer, including optional modifiers and quantity.
     /// </summary>
-    public class TransferLineItem
+    public class CreateTransferLineItem
     {
 
         /// <summary>
@@ -42,13 +42,13 @@ namespace Moov.Sdk.Models.Components
         /// Optional list of modifiers applied to this item (e.g., toppings, upgrades, customizations).
         /// </summary>
         [JsonProperty("options")]
-        public List<TransferLineItemOption>? Options { get; set; }
+        public List<CreateTransferLineItemOption>? Options { get; set; }
 
         /// <summary>
         /// Optional list of images associated with this line item.
         /// </summary>
-        [JsonProperty("images")]
-        public List<TransferLineItemImageMetadata>? Images { get; set; }
+        [JsonProperty("imageIDs")]
+        public List<string>? ImageIDs { get; set; }
 
         /// <summary>
         /// Optional unique identifier associating the line item with a product.
