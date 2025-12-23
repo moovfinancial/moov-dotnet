@@ -51,7 +51,10 @@ namespace Moov.Sdk
         Task<UpdateImageResponse> UpdateAsync(string accountID, string imageID, ImageUploadRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// Permanently delete an image by its ID.
+        ///   Disable an image by its ID.<br/>
+        ///   <br/>
+        ///   Disabled images are still be accessible via their public URL, and cannot be assigned<br/>
+        ///   to products or line-items.
         /// </summary>
         Task<DeleteImageResponse> DeleteAsync(string accountID, string imageID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
 

@@ -49,5 +49,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("updatedOn")]
         public DateTime UpdatedOn { get; set; } = default!;
+
+        [JsonProperty("disabledOn")]
+        public DateTime? DisabledOn { get; set; }
     }
 }
