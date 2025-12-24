@@ -147,5 +147,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }
+
+        /// <summary>
+        /// ID of the invoice that the transfer is associated with.
+        /// </summary>
+        [JsonProperty("invoiceID")]
+        public string? InvoiceID { get; set; }
     }
 }
