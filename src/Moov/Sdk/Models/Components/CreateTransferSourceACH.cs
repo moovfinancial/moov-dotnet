@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     
     public class CreateTransferSourceACH
     {
@@ -39,5 +40,8 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("secCode")]
         public SECCode? SecCode { get; set; }
+
+        [JsonProperty("addenda")]
+        public List<CreateTransferACHAddendaRecord>? Addenda { get; set; }
     }
 }

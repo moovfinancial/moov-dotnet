@@ -13,6 +13,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     
     /// <summary>
     /// ACH specific details about the transaction.
@@ -79,5 +80,8 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("debitHoldPeriod")]
         public DebitHoldPeriod? DebitHoldPeriod { get; set; }
+
+        [JsonProperty("addenda")]
+        public List<TransferACHAddendaRecord>? Addenda { get; set; }
     }
 }

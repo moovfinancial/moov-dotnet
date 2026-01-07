@@ -9,8 +9,10 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     
     public class CreateTransferDestinationACH
     {
@@ -26,5 +28,8 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("originatingCompanyName")]
         public string? OriginatingCompanyName { get; set; }
+
+        [JsonProperty("addenda")]
+        public List<CreateTransferACHAddendaRecord>? Addenda { get; set; }
     }
 }
