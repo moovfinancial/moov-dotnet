@@ -63,6 +63,7 @@ namespace Moov.Sdk
         public IEndToEndEncryption EndToEndEncryption { get; }
         public IEnrichedAddress EnrichedAddress { get; }
         public IEnrichedProfile EnrichedProfile { get; }
+        public IWebhooks Webhooks { get; }
         public IIndustries Industries { get; }
         public IInstitutions Institutions { get; }
         public IIssuingTransactions IssuingTransactions { get; }
@@ -123,6 +124,7 @@ namespace Moov.Sdk
         public IEndToEndEncryption EndToEndEncryption { get; private set; }
         public IEnrichedAddress EnrichedAddress { get; private set; }
         public IEnrichedProfile EnrichedProfile { get; private set; }
+        public IWebhooks Webhooks { get; private set; }
         public IIndustries Industries { get; private set; }
         public IInstitutions Institutions { get; private set; }
         public IIssuingTransactions IssuingTransactions { get; private set; }
@@ -195,6 +197,8 @@ namespace Moov.Sdk
             EnrichedAddress = new EnrichedAddress(SDKConfiguration);
 
             EnrichedProfile = new EnrichedProfile(SDKConfiguration);
+
+            Webhooks = new Webhooks(SDKConfiguration);
 
             Industries = new Industries(SDKConfiguration);
 
@@ -323,6 +327,8 @@ namespace Moov.Sdk
             EnrichedAddress = new EnrichedAddress(SDKConfiguration);
 
             EnrichedProfile = new EnrichedProfile(SDKConfiguration);
+
+            Webhooks = new Webhooks(SDKConfiguration);
 
             Industries = new Industries(SDKConfiguration);
 

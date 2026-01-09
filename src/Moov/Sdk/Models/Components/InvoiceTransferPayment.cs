@@ -9,15 +9,11 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     
     public class InvoiceTransferPayment
     {
-
-        [JsonProperty("paymentType")]
-        public InvoiceTransferPaymentPaymentType PaymentType { get; set; } = default!;
 
         [JsonProperty("transferID")]
         public string TransferID { get; set; } = default!;

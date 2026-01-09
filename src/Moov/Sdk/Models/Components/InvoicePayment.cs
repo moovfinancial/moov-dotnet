@@ -19,8 +19,11 @@ namespace Moov.Sdk.Models.Components
     public class InvoicePayment
     {
 
-        [JsonProperty("paymentType")]
-        public InvoicePaymentType PaymentType { get; set; } = default!;
+        [JsonProperty("invoicePaymentID")]
+        public string InvoicePaymentID { get; set; } = default!;
+
+        [JsonProperty("invoicePaymentType")]
+        public InvoicePaymentType InvoicePaymentType { get; set; } = default!;
 
         [JsonProperty("transfer")]
         public InvoiceTransferPayment? Transfer { get; set; }

@@ -17,9 +17,6 @@ namespace Moov.Sdk.Models.Components
     public class InvoiceExternalPayment
     {
 
-        [JsonProperty("paymentType")]
-        public InvoiceExternalPaymentPaymentType PaymentType { get; set; } = default!;
-
         [JsonProperty("description")]
         public string Description { get; set; } = default!;
 

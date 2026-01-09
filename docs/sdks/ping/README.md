@@ -37,7 +37,7 @@ var res = await sdk.Ping.PingAsync();
 
 ### Response
 
-**[PingResponse](../../Models/Requests/PingResponse.md)**
+**[Models.Requests.PingResponse](../../Models/Requests/PingResponse.md)**
 
 ### Errors
 

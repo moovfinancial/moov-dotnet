@@ -31,7 +31,7 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you&apos;ll need to specify the `/ping.read` scope.
         /// </summary>
-        Task<PingResponse> PingAsync(string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        Task<Models.Requests.PingResponse> PingAsync(string? xMoovVersion = null, CancellationToken? cancellationToken = null);
     }
 
     public class Ping: IPing
@@ -48,7 +48,7 @@ namespace Moov.Sdk
             SDKConfiguration = config;
         }
 
-        public async Task<PingResponse> PingAsync(string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+        public async Task<Models.Requests.PingResponse> PingAsync(string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
             var request = new PingRequest()
             {
@@ -107,7 +107,7 @@ namespace Moov.Sdk
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {
-                return new PingResponse()
+                return new Models.Requests.PingResponse()
                 {
                     HttpMeta = new Models.Components.HTTPMetadata()
                     {

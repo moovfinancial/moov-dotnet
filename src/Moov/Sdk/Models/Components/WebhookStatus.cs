@@ -13,22 +13,27 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     
-    public enum InvoiceTransferPaymentPaymentType
+    /// <summary>
+    /// The status of a webhook.
+    /// </summary>
+    public enum WebhookStatus
     {
-        [JsonProperty("transfer")]
-        Transfer,
+        [JsonProperty("enabled")]
+        Enabled,
+        [JsonProperty("disabled")]
+        Disabled,
     }
 
-    public static class InvoiceTransferPaymentPaymentTypeExtension
+    public static class WebhookStatusExtension
     {
-        public static string Value(this InvoiceTransferPaymentPaymentType value)
+        public static string Value(this WebhookStatus value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static InvoiceTransferPaymentPaymentType ToEnum(this string value)
+        public static WebhookStatus ToEnum(this string value)
         {
-            foreach(var field in typeof(InvoiceTransferPaymentPaymentType).GetFields())
+            foreach(var field in typeof(WebhookStatus).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -41,14 +46,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is InvoiceTransferPaymentPaymentType)
+                    if (enumVal is WebhookStatus)
                     {
-                        return (InvoiceTransferPaymentPaymentType)enumVal;
+                        return (WebhookStatus)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum InvoiceTransferPaymentPaymentType");
+            throw new Exception($"Unknown value {value} for enum WebhookStatus");
         }
     }
 
