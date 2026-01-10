@@ -21,7 +21,7 @@ namespace Moov.Sdk.Models.Components
         public string CustomerAccountID { get; set; } = default!;
 
         [JsonProperty("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         /// <summary>
         /// A collection of line items for an invoice.

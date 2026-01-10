@@ -45,6 +45,24 @@ namespace Moov.Sdk.Models.Requests
         public string AccountID { get; set; } = default!;
 
         /// <summary>
+        /// Optional transfer ID to filter the results by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=transferID")]
+        public string? TransferID { get; set; }
+
+        /// <summary>
+        /// Optional dispute ID to filter the results by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=disputeID")]
+        public string? DisputeID { get; set; }
+
+        /// <summary>
+        /// Optional residual ID to filter the results by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=residualID")]
+        public string? ResidualID { get; set; }
+
+        /// <summary>
         /// Optional date-time to inclusively filter all fees created after this date-time.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=startDateTime")]

@@ -46,5 +46,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("feeGroup")]
         public string? FeeGroup { get; set; }
+
+        [JsonProperty("residualID")]
+        public string? ResidualID { get; set; }
     }
 }

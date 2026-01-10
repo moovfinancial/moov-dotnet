@@ -14,14 +14,11 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     
-    /// <summary>
-    /// Defines configuration for recurring transfers.
-    /// </summary>
-    public class Recur
+    public class RecurResponse
     {
 
         /// <summary>
-        ///   RRule as defined by RFC 5545 (https://www.rfc-editor.org/rfc/rfc5545#section-3.3.10). <br/>
+        ///   RRule as defined by RFC 5545 (https://www.rfc-editor.org/rfc/rfc5545#section-3.3.10).<br/>
         /// 
         /// <remarks>
         ///   Generators available online at the following sites - https://freetools.textmagic.com/rrule-generator, https://jkbrzt.github.io/rrule/
@@ -30,11 +27,8 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("recurrenceRule")]
         public string RecurrenceRule { get; set; } = default!;
 
-        /// <summary>
-        /// Defines the attributes of a transfer.
-        /// </summary>
         [JsonProperty("runTransfer")]
-        public CreateRunTransfer RunTransfer { get; set; } = default!;
+        public RunTransfer RunTransfer { get; set; } = default!;
 
         /// <summary>
         /// True if the RRule set runs indefinitely.

@@ -25,6 +25,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("invoicePaymentType")]
         public InvoicePaymentType InvoicePaymentType { get; set; } = default!;
 
+        [JsonProperty("amount")]
+        public AmountDecimal Amount { get; set; } = default!;
+
         [JsonProperty("transfer")]
         public InvoiceTransferPayment? Transfer { get; set; }
 

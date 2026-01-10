@@ -17,7 +17,7 @@ namespace Moov.Sdk.Models.Components
     /// <summary>
     /// Represents a modifier or option applied to a scheduled transfer line item.
     /// </summary>
-    public class ScheduledTransferLineItemOption
+    public class CreateScheduledTransferLineItemOption
     {
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Moov.Sdk.Models.Components
         /// <summary>
         /// Optional list of images associated with this line item.
         /// </summary>
-        [JsonProperty("images")]
-        public List<ScheduledTransferImageMetadata>? Images { get; set; }
+        [JsonProperty("imageIDs")]
+        public List<string>? ImageIDs { get; set; }
     }
 }

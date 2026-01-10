@@ -47,9 +47,6 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("runOn")]
         public DateTime RunOn { get; set; } = default!;
 
-        /// <summary>
-        /// Defines the attributes of a transfer.
-        /// </summary>
         [JsonProperty("runTransfer")]
         public RunTransfer RunTransfer { get; set; } = default!;
 

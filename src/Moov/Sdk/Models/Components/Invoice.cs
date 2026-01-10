@@ -25,7 +25,7 @@ namespace Moov.Sdk.Models.Components
         public string InvoiceNumber { get; set; } = default!;
 
         [JsonProperty("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         [JsonProperty("customerAccountID")]
         public string CustomerAccountID { get; set; } = default!;
@@ -81,8 +81,8 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("paymentLinkCode")]
         public string? PaymentLinkCode { get; set; }
 
-        [JsonProperty("payments")]
-        public List<InvoicePayment>? Payments { get; set; }
+        [JsonProperty("invoicePayments")]
+        public List<InvoicePayment>? InvoicePayments { get; set; }
 
         [JsonProperty("createdOn")]
         public DateTime CreatedOn { get; set; } = default!;

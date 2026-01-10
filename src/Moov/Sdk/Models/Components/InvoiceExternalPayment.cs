@@ -9,7 +9,6 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
@@ -18,15 +17,12 @@ namespace Moov.Sdk.Models.Components
     {
 
         [JsonProperty("description")]
-        public string Description { get; set; } = default!;
+        public string? Description { get; set; }
 
         [JsonProperty("foreignID")]
         public string? ForeignID { get; set; }
 
         [JsonProperty("paymentDate")]
         public DateTime? PaymentDate { get; set; }
-
-        [JsonProperty("amount")]
-        public AmountDecimal Amount { get; set; } = default!;
     }
 }

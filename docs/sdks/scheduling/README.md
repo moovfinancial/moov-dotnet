@@ -54,7 +54,7 @@ var res = await sdk.Scheduling.CreateAsync(
             new Occurrence() {
                 OccurrenceID = "c520f1b9-0ba7-42f5-b977-248cdbe41c69",
                 RunOn = System.DateTime.Parse("2009-11-10T23:00:00Z"),
-                RunTransfer = new RunTransfer() {
+                RunTransfer = new CreateRunTransfer() {
                     Amount = new Amount() {
                         Currency = "USD",
                         Value = 1204,
@@ -86,7 +86,7 @@ var res = await sdk.Scheduling.CreateAsync(
         },
         Recur = new Recur() {
             RecurrenceRule = "<value>",
-            RunTransfer = new RunTransfer() {
+            RunTransfer = new CreateRunTransfer() {
                 Amount = new Amount() {
                     Currency = "USD",
                     Value = 1204,
@@ -117,8 +117,8 @@ var res = await sdk.Scheduling.CreateAsync(
                     },
                 },
                 Description = "er mob marathon lest optimistically responsible",
-                LineItems = new ScheduledTransferLineItems() {
-                    Items = new List<ScheduledTransferLineItem>() {},
+                LineItems = new CreateScheduledTransferLineItems() {
+                    Items = new List<CreateScheduledTransferLineItem>() {},
                 },
             },
             Start = System.DateTime.Parse("2009-11-10T23:00:00Z"),
@@ -218,7 +218,7 @@ var res = await sdk.Scheduling.UpdateAsync(
             new Occurrence() {
                 OccurrenceID = "c520f1b9-0ba7-42f5-b977-248cdbe41c69",
                 RunOn = System.DateTime.Parse("2009-11-10T23:00:00Z"),
-                RunTransfer = new RunTransfer() {
+                RunTransfer = new CreateRunTransfer() {
                     Amount = new Amount() {
                         Currency = "USD",
                         Value = 1204,
@@ -250,7 +250,7 @@ var res = await sdk.Scheduling.UpdateAsync(
         },
         Recur = new Recur() {
             RecurrenceRule = "<value>",
-            RunTransfer = new RunTransfer() {
+            RunTransfer = new CreateRunTransfer() {
                 Amount = new Amount() {
                     Currency = "USD",
                     Value = 1204,
@@ -281,17 +281,17 @@ var res = await sdk.Scheduling.UpdateAsync(
                     },
                 },
                 Description = "yum who queasily bemuse ick dull almighty incidentally er despite",
-                LineItems = new ScheduledTransferLineItems() {
-                    Items = new List<ScheduledTransferLineItem>() {
-                        new ScheduledTransferLineItem() {
+                LineItems = new CreateScheduledTransferLineItems() {
+                    Items = new List<CreateScheduledTransferLineItem>() {
+                        new CreateScheduledTransferLineItem() {
                             Name = "<value>",
                             BasePrice = new AmountDecimal() {
                                 Currency = "USD",
                                 ValueDecimal = "12.987654321",
                             },
                             Quantity = 973458,
-                            Options = new List<ScheduledTransferLineItemOption>() {
-                                new ScheduledTransferLineItemOption() {
+                            Options = new List<CreateScheduledTransferLineItemOption>() {
+                                new CreateScheduledTransferLineItemOption() {
                                     Name = "<value>",
                                     Quantity = 221042,
                                     PriceModifier = new AmountDecimal() {

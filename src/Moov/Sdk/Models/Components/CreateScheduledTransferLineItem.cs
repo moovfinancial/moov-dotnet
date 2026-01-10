@@ -15,39 +15,45 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
     
     /// <summary>
-    /// Represents a modifier or option applied to a scheduled transfer line item.
+    /// Represents a single item in a scheduled transfer, including optional modifiers and quantity.
     /// </summary>
-    public class ScheduledTransferLineItemOption
+    public class CreateScheduledTransferLineItem
     {
 
         /// <summary>
-        /// The name of the option or modifier.
+        /// The name of the item.
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The quantity of this option.
+        /// The base price of the item before applying option modifiers.
+        /// </summary>
+        [JsonProperty("basePrice")]
+        public AmountDecimal BasePrice { get; set; } = default!;
+
+        /// <summary>
+        /// The quantity of this item.
         /// </summary>
         [JsonProperty("quantity")]
         public int Quantity { get; set; } = default!;
 
         /// <summary>
-        /// Optional price modification applied by this option. Can be positive, negative, or zero.
+        /// Optional list of modifiers applied to this item (e.g., toppings, upgrades, customizations).
         /// </summary>
-        [JsonProperty("priceModifier")]
-        public AmountDecimal? PriceModifier { get; set; }
+        [JsonProperty("options")]
+        public List<CreateScheduledTransferLineItemOption>? Options { get; set; }
 
         /// <summary>
-        /// Optional group identifier to categorize related options (e.g., &apos;toppings&apos;).
+        /// Optional unique identifier associating the line item with a product.
         /// </summary>
-        [JsonProperty("group")]
-        public string? Group { get; set; }
+        [JsonProperty("productID")]
+        public string? ProductID { get; set; }
 
         /// <summary>
         /// Optional list of images associated with this line item.
         /// </summary>
-        [JsonProperty("images")]
-        public List<ScheduledTransferImageMetadata>? Images { get; set; }
+        [JsonProperty("imageIDs")]
+        public List<string>? ImageIDs { get; set; }
     }
 }

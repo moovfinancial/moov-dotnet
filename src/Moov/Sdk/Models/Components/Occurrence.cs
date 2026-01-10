@@ -46,6 +46,6 @@ namespace Moov.Sdk.Models.Components
         /// Defines the attributes of a transfer.
         /// </summary>
         [JsonProperty("runTransfer")]
-        public RunTransfer? RunTransfer { get; set; }
+        public CreateRunTransfer? RunTransfer { get; set; }
     }
 }

@@ -42,11 +42,8 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("partnerAccountID")]
         public string PartnerAccountID { get; set; } = default!;
 
-        /// <summary>
-        /// Defines configuration for recurring transfers.
-        /// </summary>
         [JsonProperty("recur")]
-        public Recur? Recur { get; set; }
+        public RecurResponse? Recur { get; set; }
 
         [JsonProperty("scheduleID")]
         public string ScheduleID { get; set; } = default!;

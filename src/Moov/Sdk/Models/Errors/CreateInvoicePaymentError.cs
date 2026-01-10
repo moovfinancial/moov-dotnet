@@ -17,6 +17,9 @@ namespace Moov.Sdk.Models.Errors
 
     public class CreateInvoicePaymentErrorPayload
     {
+        [JsonProperty("amount")]
+        public AmountDecimalValidationError? Amount { get; set; }
+
         [JsonProperty("foreignID")]
         public string? ForeignID { get; set; }
 
@@ -36,6 +39,9 @@ namespace Moov.Sdk.Models.Errors
         ///  The original data that was passed to this exception.
         /// </summary>
         public CreateInvoicePaymentErrorPayload Payload { get; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoicePaymentError.Payload.Amount instead.")]
+        public AmountDecimalValidationError? Amount { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoicePaymentError.Payload.ForeignID instead.")]
         public string? ForeignID { get; set; }
@@ -59,6 +65,7 @@ namespace Moov.Sdk.Models.Errors
            Payload = payload;
 
            #pragma warning disable CS0618
+           Amount = payload.Amount;
            ForeignID = payload.ForeignID;
            Description = payload.Description;
            PaymentDate = payload.PaymentDate;

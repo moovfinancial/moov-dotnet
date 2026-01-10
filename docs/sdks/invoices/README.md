@@ -51,7 +51,6 @@ var res = await sdk.Invoices.CreateInvoiceAsync(
     accountID: "241bf524-e777-4941-a5e4-d7f3f34d7a00",
     body: new CreateInvoice() {
         CustomerAccountID = "<id>",
-        Description = "austere gah under ew failing provided repeatedly pick onto",
         LineItems = new CreateInvoiceLineItems() {
             Items = new List<CreateInvoiceLineItem>() {},
         },
@@ -264,7 +263,12 @@ var sdk = new MoovClient(xMoovVersion: "<value>");
 var res = await sdk.Invoices.CreateInvoicePaymentAsync(
     accountID: "e02333e4-a835-46d1-8d02-9af7a405e65f",
     invoiceID: "99e7ebb0-9996-49b2-98f0-304c7332ece6",
-    body: new CreateInvoicePayment() {}
+    body: new CreateInvoicePayment() {
+        Amount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "12.987654321",
+        },
+    }
 );
 
 // handle response

@@ -15,15 +15,19 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
     
     /// <summary>
-    /// Line items for a scheduled transfer.
+    /// An optional collection of line items for a scheduled transfer.<br/>
+    /// 
+    /// <remarks>
+    /// When line items are provided their total must equal `amount` minus `salesTaxAmount`.
+    /// </remarks>
     /// </summary>
-    public class ScheduledTransferLineItems
+    public class CreateScheduledTransferLineItems
     {
 
         /// <summary>
         /// The list of line items.
         /// </summary>
         [JsonProperty("items")]
-        public List<ScheduledTransferLineItem> Items { get; set; } = default!;
+        public List<CreateScheduledTransferLineItem> Items { get; set; } = default!;
     }
 }
