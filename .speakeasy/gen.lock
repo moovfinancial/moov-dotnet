@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 124c8e996e0529dbe24c3a9a9aaadbca
+  docChecksum: b7b033372765a34ca897596f25beb355
   docVersion: latest
-  speakeasyVersion: 1.684.0
-  generationVersion: 2.793.0
-  releaseVersion: 0.2.15
-  configChecksum: 9cee279419aa1fac255f254d1dfd2de3
+  speakeasyVersion: 1.685.0
+  generationVersion: 2.794.1
+  releaseVersion: 0.2.16
+  configChecksum: 0589bdae257cc17d4846179085f2d1f3
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 persistentEdits:
-  generation_id: 7ed29062-c7ca-4ca2-a82b-64789d1c9400
-  pristine_commit_hash: 8bd624d35120b892c16a6ebc4e24e23185401376
-  pristine_tree_hash: 025270a14ba006c6937b0fa14b5bed8f6478a91b
+  generation_id: e95ddf8a-c739-4a43-821f-d1658e2ab491
+  pristine_commit_hash: b6c71b4453ea225190bf556d770c5b3d5067db99
+  pristine_tree_hash: b2f10adac398aef428b4bda86b09a3cf9ddf810a
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -8512,8 +8512,8 @@ trackedFiles:
     pristine_git_object: 6ea8dd657cab8263cdcc5c3b47a642c9c6ca6fcd
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:b8bafcca4970ec90bcc973c71f35915aa25c67a1
-    pristine_git_object: 4c6f1b27d592d7585b39f6ea5cb464caf5aafd86
+    last_write_checksum: sha1:5a8212218d0cff273dc88cf9228d60aa571a84ad
+    pristine_git_object: 9e899d66ff77fb488803ada20f2ed00c54578964
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:2e86b9869d6bcc90cffd2720c501770928162573
@@ -8548,8 +8548,8 @@ trackedFiles:
     pristine_git_object: 05645a2e5d3ae8ceae85cfd40808a9de82e766d4
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:e74c596a5e17fe4e30ed7b0ea43f6d90c4f50260
-    pristine_git_object: be7340fb1d031b45435e29501b03f5e684478cfe
+    last_write_checksum: sha1:69881aec97140413f12b7104feb70abdfa17c4ab
+    pristine_git_object: a12e8a17814d0833d53e2b98f44f246351da0077
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:0f481e63a26662221fa65ce00c56aaf082671e8b
@@ -8588,8 +8588,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:7873bac86f7a600ba2868b80e1dd4efc8ab32aec
-    pristine_git_object: 89cf7f9e311531d27097368ef68abe3d228f955c
+    last_write_checksum: sha1:902f34fae697c12feac9fdfbd61e59c3ec1a1b80
+    pristine_git_object: e3b2439a5e2bdc16cd11fcdfddcaa7e444723355
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -10612,7 +10612,6 @@ examples:
         "200":
           application/json: {"secret": "<value>"}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Invoices.ListInvoicePayments()`:  `response.[]` **Changed** **Breaking** :warning:\n* `MoovClient.Invoices.UpdateInvoice()`:  `response` **Changed** **Breaking** :warning:\n* `MoovClient.Invoices.CreateInvoicePayment()`: \n  *  `request.body.Amount` **Added** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n  *  `error.amount` **Added**\n* `MoovClient.Invoices.GetInvoice()`:  `response` **Changed** **Breaking** :warning:\n* `MoovClient.Invoices.CreateInvoice()`: \n  *  `request.body.Description` **Changed**\n  *  `response` **Changed** **Breaking** :warning:\n* `MoovClient.Invoices.ListInvoices()`:  `response.[]` **Changed** **Breaking** :warning:\n* `MoovClient.FeePlans.RetrieveFees()`: \n  *  `request.ResidualId` **Added**\n  *  `response.[].ResidualId` **Added**\n* `MoovClient.Scheduling.Create()`: \n  *  `request.body.Occurrences.[].RunTransfer.LineItems.Items.[]` **Changed**\n  *  `response.occurrences.[].RunTransfer.LineItems.Items.[]` **Changed**\n* `MoovClient.FeePlans.ListResidualFees()`:  `response.[].ResidualId` **Added**\n* `MoovClient.FeePlans.ListFeeRevenue()`: \n  *  `request` **Changed**\n  *  `response.[].ResidualId` **Added**\n* `MoovClient.FeePlans.ListFeesFetch()`:  `response.[].ResidualId` **Added**\n* `MoovClient.Scheduling.List()`:  `response.[].Occurrences.[].RunTransfer.LineItems.Items.[]` **Changed**\n* `MoovClient.Scheduling.Update()`: \n  *  `request.body.Occurrences.[].RunTransfer.LineItems.Items.[]` **Changed**\n  *  `response.occurrences.[].RunTransfer.LineItems.Items.[]` **Changed**\n* `MoovClient.Scheduling.Get()`:  `response.occurrences.[].RunTransfer.LineItems.Items.[]` **Changed**\n* `MoovClient.Scheduling.GetOccurrance()`:  `response.runTransfer.LineItems.Items.[]` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
