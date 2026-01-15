@@ -35,6 +35,12 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
 
+        /// <summary>
+        /// Allows filtering products by title. This supports partial matches and is case-insensitive
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=title")]
+        public string? Title { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=skip")]
         public long? Skip { get; set; }
 

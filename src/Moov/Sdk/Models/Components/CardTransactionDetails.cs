@@ -24,7 +24,7 @@ namespace Moov.Sdk.Models.Components
         /// Status of a transaction within the card payment lifecycle.
         /// </summary>
         [JsonProperty("status")]
-        public CardTransactionStatus Status { get; set; } = default!;
+        public CardTransactionStatus? Status { get; set; }
 
         [JsonProperty("failureCode")]
         public CardTransactionFailureCode? FailureCode { get; set; }

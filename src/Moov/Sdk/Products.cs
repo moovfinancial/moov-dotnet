@@ -29,7 +29,7 @@ namespace Moov.Sdk
         /// <summary>
         /// List active (non-disabled) products for an account.
         /// </summary>
-        Task<ListProductsResponse> ListAsync(string accountID, string? xMoovVersion = null, long? skip = null, long? count = null, CancellationToken? cancellationToken = null);
+        Task<ListProductsResponse> ListAsync(ListProductsRequest request, CancellationToken? cancellationToken = null);
 
         /// <summary>
         /// Creates a new product for the specified account.
@@ -68,15 +68,12 @@ namespace Moov.Sdk
             SDKConfiguration = config;
         }
 
-        public async Task<ListProductsResponse> ListAsync(string accountID, string? xMoovVersion = null, long? skip = null, long? count = null, CancellationToken? cancellationToken = null)
+        public async Task<ListProductsResponse> ListAsync(ListProductsRequest request, CancellationToken? cancellationToken = null)
         {
-            var request = new ListProductsRequest()
+            if (request == null)
             {
-                AccountID = accountID,
-                XMoovVersion = xMoovVersion,
-                Skip = skip,
-                Count = count,
-            };
+                request = new ListProductsRequest();
+            }
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();

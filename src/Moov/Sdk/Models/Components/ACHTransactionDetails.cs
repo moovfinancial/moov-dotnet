@@ -25,10 +25,10 @@ namespace Moov.Sdk.Models.Components
         /// Status of a transaction within the ACH lifecycle.
         /// </summary>
         [JsonProperty("status")]
-        public ACHTransactionStatus Status { get; set; } = default!;
+        public ACHTransactionStatus? Status { get; set; }
 
         [JsonProperty("traceNumber")]
-        public string TraceNumber { get; set; } = default!;
+        public string? TraceNumber { get; set; }
 
         [JsonProperty("return")]
         public ACHException? Return { get; set; }

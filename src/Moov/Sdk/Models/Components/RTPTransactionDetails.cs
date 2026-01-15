@@ -24,7 +24,7 @@ namespace Moov.Sdk.Models.Components
         /// Status of a transaction within the RTP lifecycle.
         /// </summary>
         [JsonProperty("status")]
-        public RTPTransactionStatus Status { get; set; } = default!;
+        public RTPTransactionStatus? Status { get; set; }
 
         /// <summary>
         /// Response code returned by network on failure.
