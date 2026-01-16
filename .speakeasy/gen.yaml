@@ -13,6 +13,7 @@ generation:
     requestResponseComponentNamesFeb2024: true
     securityFeb2025: true
     sharedErrorComponentsApr2025: true
+    sharedNestedComponentsJan2026: false
   auth:
     oAuth2ClientCredentialsEnabled: true
     oAuth2PasswordEnabled: true
@@ -28,7 +29,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 0.2.17
+  version: 0.2.18
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException

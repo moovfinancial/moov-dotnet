@@ -56,6 +56,12 @@ namespace Moov.Sdk.Models.Components
         public BillingCountAndAmount NoticeOfChange { get; set; } = default!;
 
         /// <summary>
+        /// Fees for successful bank account verifications via Plaid or MX.
+        /// </summary>
+        [JsonProperty("bankAccountVerification")]
+        public BillingCountAndAmount BankAccountVerification { get; set; } = default!;
+
+        /// <summary>
         /// Total ACH fees.
         /// </summary>
         [JsonProperty("total")]

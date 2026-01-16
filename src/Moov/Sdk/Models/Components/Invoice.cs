@@ -81,6 +81,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("paymentLinkCode")]
         public string? PaymentLinkCode { get; set; }
 
+        /// <summary>
+        /// Payment made towards an invoice, will be either a transfer or an external payment.
+        /// </summary>
         [JsonProperty("invoicePayments")]
         public List<InvoicePayment>? InvoicePayments { get; set; }
 
