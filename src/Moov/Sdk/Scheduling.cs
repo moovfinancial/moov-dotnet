@@ -91,6 +91,9 @@ namespace Moov.Sdk
 
         public async Task<CreateScheduleResponse> CreateAsync(string accountID, UpsertSchedule body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateScheduleRequest()
             {
                 AccountID = accountID,
@@ -256,10 +259,8 @@ namespace Moov.Sdk
 
         public async Task<ListSchedulesResponse> ListAsync(ListSchedulesRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListSchedulesRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -361,6 +362,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateScheduleResponse> UpdateAsync(string accountID, string scheduleID, UpsertSchedule body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (scheduleID == null) throw new ArgumentNullException(nameof(scheduleID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateScheduleRequest()
             {
                 AccountID = accountID,
@@ -527,6 +532,9 @@ namespace Moov.Sdk
 
         public async Task<GetSchedulesResponse> GetAsync(string accountID, string scheduleID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (scheduleID == null) throw new ArgumentNullException(nameof(scheduleID));
+
             var request = new GetSchedulesRequest()
             {
                 AccountID = accountID,
@@ -634,6 +642,9 @@ namespace Moov.Sdk
 
         public async Task<CancelScheduleResponse> CancelAsync(string accountID, string scheduleID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (scheduleID == null) throw new ArgumentNullException(nameof(scheduleID));
+
             var request = new CancelScheduleRequest()
             {
                 AccountID = accountID,
@@ -749,6 +760,10 @@ namespace Moov.Sdk
 
         public async Task<GetScheduledOccurrenceResponse> GetOccurranceAsync(string accountID, string scheduleID, string occurrenceFilter, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (scheduleID == null) throw new ArgumentNullException(nameof(scheduleID));
+            if (occurrenceFilter == null) throw new ArgumentNullException(nameof(occurrenceFilter));
+
             var request = new GetScheduledOccurrenceRequest()
             {
                 AccountID = accountID,

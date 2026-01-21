@@ -50,6 +50,8 @@ namespace Moov.Sdk
 
         public async Task<GetAvatarResponse> GetAsync(string uniqueID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (uniqueID == null) throw new ArgumentNullException(nameof(uniqueID));
+
             var request = new GetAvatarRequest()
             {
                 UniqueID = uniqueID,

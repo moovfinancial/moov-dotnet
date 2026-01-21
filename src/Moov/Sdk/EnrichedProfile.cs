@@ -51,6 +51,8 @@ namespace Moov.Sdk
 
         public async Task<GetEnrichmentProfileResponse> GetAsync(string email, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (email == null) throw new ArgumentNullException(nameof(email));
+
             var request = new GetEnrichmentProfileRequest()
             {
                 Email = email,

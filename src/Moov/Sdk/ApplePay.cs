@@ -97,6 +97,9 @@ namespace Moov.Sdk
 
         public async Task<RegisterApplePayMerchantDomainsResponse> RegisterMerchantDomainsAsync(string accountID, RegisterApplePayMerchantDomains body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new RegisterApplePayMerchantDomainsRequest()
             {
                 AccountID = accountID,
@@ -236,6 +239,9 @@ namespace Moov.Sdk
 
         public async Task<UpdateApplePayMerchantDomainsResponse> UpdateMerchantDomainsAsync(string accountID, UpdateApplePayMerchantDomains body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateApplePayMerchantDomainsRequest()
             {
                 AccountID = accountID,
@@ -357,6 +363,8 @@ namespace Moov.Sdk
 
         public async Task<GetApplePayMerchantDomainsResponse> GetMerchantDomainsAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetApplePayMerchantDomainsRequest()
             {
                 AccountID = accountID,
@@ -463,6 +471,9 @@ namespace Moov.Sdk
 
         public async Task<CreateApplePaySessionResponse> CreateSessionAsync(string accountID, CreateApplePaySession body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateApplePaySessionRequest()
             {
                 AccountID = accountID,
@@ -602,6 +613,9 @@ namespace Moov.Sdk
 
         public async Task<LinkApplePayTokenResponse> LinkTokenAsync(string accountID, LinkApplePay body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new LinkApplePayTokenRequest()
             {
                 AccountID = accountID,

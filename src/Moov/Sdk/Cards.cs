@@ -110,6 +110,9 @@ namespace Moov.Sdk
 
         public async Task<LinkCardResponse> LinkAsync(string accountID, LinkCard body, string? xMoovVersion = null, LinkCardWaitFor? xWaitFor = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new LinkCardRequest()
             {
                 AccountID = accountID,
@@ -276,6 +279,8 @@ namespace Moov.Sdk
 
         public async Task<ListCardsResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListCardsRequest()
             {
                 AccountID = accountID,
@@ -382,6 +387,9 @@ namespace Moov.Sdk
 
         public async Task<GetCardResponse> GetAsync(string accountID, string cardID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (cardID == null) throw new ArgumentNullException(nameof(cardID));
+
             var request = new GetCardRequest()
             {
                 AccountID = accountID,
@@ -489,6 +497,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateCardResponse> UpdateAsync(string accountID, string cardID, UpdateCard body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (cardID == null) throw new ArgumentNullException(nameof(cardID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateCardRequest()
             {
                 AccountID = accountID,
@@ -655,6 +667,9 @@ namespace Moov.Sdk
 
         public async Task<DisableCardResponse> DisableAsync(string accountID, string cardID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (cardID == null) throw new ArgumentNullException(nameof(cardID));
+
             var request = new DisableCardRequest()
             {
                 AccountID = accountID,

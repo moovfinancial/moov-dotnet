@@ -295,6 +295,8 @@ namespace Moov.Sdk
 
         public async Task<CreateWebhookResponse> CreateAsync(CreateWebhook body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateWebhookRequest()
             {
                 Body = body,
@@ -460,6 +462,8 @@ namespace Moov.Sdk
 
         public async Task<GetWebhookResponse> GetAsync(string webhookID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (webhookID == null) throw new ArgumentNullException(nameof(webhookID));
+
             var request = new GetWebhookRequest()
             {
                 WebhookID = webhookID,
@@ -566,6 +570,9 @@ namespace Moov.Sdk
 
         public async Task<UpdateWebhookResponse> UpdateAsync(string webhookID, UpdateWebhook body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (webhookID == null) throw new ArgumentNullException(nameof(webhookID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateWebhookRequest()
             {
                 WebhookID = webhookID,
@@ -731,6 +738,8 @@ namespace Moov.Sdk
 
         public async Task<DisableWebhookResponse> DisableAsync(string webhookID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (webhookID == null) throw new ArgumentNullException(nameof(webhookID));
+
             var request = new DisableWebhookRequest()
             {
                 WebhookID = webhookID,
@@ -845,6 +854,8 @@ namespace Moov.Sdk
 
         public async Task<PingWebhookResponse> PingAsync(string webhookID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (webhookID == null) throw new ArgumentNullException(nameof(webhookID));
+
             var request = new PingWebhookRequest()
             {
                 WebhookID = webhookID,
@@ -951,6 +962,8 @@ namespace Moov.Sdk
 
         public async Task<GetWebhookSecretResponse> GetSecretAsync(string webhookID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (webhookID == null) throw new ArgumentNullException(nameof(webhookID));
+
             var request = new GetWebhookSecretRequest()
             {
                 WebhookID = webhookID,

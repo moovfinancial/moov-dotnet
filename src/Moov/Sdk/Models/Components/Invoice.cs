@@ -18,6 +18,9 @@ namespace Moov.Sdk.Models.Components
     public class Invoice
     {
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("invoiceID")]
         public string InvoiceID { get; set; } = default!;
 
@@ -27,9 +30,15 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("customerAccountID")]
         public string CustomerAccountID { get; set; } = default!;
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("partnerAccountID")]
         public string PartnerAccountID { get; set; } = default!;
 

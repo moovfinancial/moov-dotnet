@@ -61,10 +61,8 @@ namespace Moov.Sdk
 
         public async Task<ListStatementsResponse> ListAsync(ListStatementsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListStatementsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -192,6 +190,9 @@ namespace Moov.Sdk
 
         public async Task<GetStatementResponse> GetAsync(string accountID, string statementID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (statementID == null) throw new ArgumentNullException(nameof(statementID));
+
             var request = new GetStatementRequest()
             {
                 AccountID = accountID,

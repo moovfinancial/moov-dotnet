@@ -155,6 +155,9 @@ namespace Moov.Sdk
 
         public async Task<CreateTransferOptionsResponse> GenerateOptionsAsync(string accountID, CreateTransferOptions body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateTransferOptionsRequest()
             {
                 AccountID = accountID,
@@ -320,10 +323,8 @@ namespace Moov.Sdk
 
         public async Task<CreateTransferResponse> CreateAsync(CreateTransferRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new CreateTransferRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -567,10 +568,8 @@ namespace Moov.Sdk
 
         public async Task<ListTransfersResponse> ListAsync(ListTransfersRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListTransfersRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -698,6 +697,9 @@ namespace Moov.Sdk
 
         public async Task<GetTransferResponse> GetAsync(string transferID, string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (transferID == null) throw new ArgumentNullException(nameof(transferID));
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetTransferRequest()
             {
                 TransferID = transferID,
@@ -805,6 +807,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateTransferResponse> UpdateAsync(string transferID, string accountID, PatchTransfer body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (transferID == null) throw new ArgumentNullException(nameof(transferID));
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateTransferRequest()
             {
                 TransferID = transferID,
@@ -945,6 +951,9 @@ namespace Moov.Sdk
 
         public async Task<CreateCancellationResponse> CreateCancellationAsync(string accountID, string transferID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (transferID == null) throw new ArgumentNullException(nameof(transferID));
+
             var request = new CreateCancellationRequest()
             {
                 AccountID = accountID,
@@ -1078,6 +1087,10 @@ namespace Moov.Sdk
 
         public async Task<GetCancellationResponse> GetCancellationAsync(string accountID, string transferID, string cancellationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (transferID == null) throw new ArgumentNullException(nameof(transferID));
+            if (cancellationID == null) throw new ArgumentNullException(nameof(cancellationID));
+
             var request = new GetCancellationRequest()
             {
                 AccountID = accountID,
@@ -1186,10 +1199,8 @@ namespace Moov.Sdk
 
         public async Task<InitiateRefundResponse> InitiateRefundAsync(InitiateRefundRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new InitiateRefundRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1404,6 +1415,9 @@ namespace Moov.Sdk
 
         public async Task<ListRefundsResponse> ListRefundsAsync(string accountID, string transferID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (transferID == null) throw new ArgumentNullException(nameof(transferID));
+
             var request = new ListRefundsRequest()
             {
                 AccountID = accountID,
@@ -1511,6 +1525,10 @@ namespace Moov.Sdk
 
         public async Task<GetRefundResponse> GetRefundAsync(string transferID, string accountID, string refundID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (transferID == null) throw new ArgumentNullException(nameof(transferID));
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (refundID == null) throw new ArgumentNullException(nameof(refundID));
+
             var request = new GetRefundRequest()
             {
                 TransferID = transferID,
@@ -1619,10 +1637,8 @@ namespace Moov.Sdk
 
         public async Task<CreateReversalResponse> CreateReversalAsync(CreateReversalRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new CreateReversalRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();

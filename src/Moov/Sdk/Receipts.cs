@@ -59,6 +59,8 @@ namespace Moov.Sdk
 
         public async Task<CreateReceiptsResponse> CreateAsync(List<ReceiptRequest> body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateReceiptsRequest()
             {
                 Body = body,
@@ -198,6 +200,8 @@ namespace Moov.Sdk
 
         public async Task<ListReceiptsResponse> ListAsync(string id, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
             var request = new ListReceiptsRequest()
             {
                 Id = id,

@@ -132,10 +132,8 @@ namespace Moov.Sdk
 
         public async Task<ListFeePlanAgreementsResponse> ListFeePlanAgreementsAsync(ListFeePlanAgreementsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListFeePlanAgreementsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -237,6 +235,9 @@ namespace Moov.Sdk
 
         public async Task<CreateFeePlanAgreementsResponse> CreateFeePlanAgreementsAsync(string accountID, CreateFeePlanAgreement body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateFeePlanAgreementsRequest()
             {
                 AccountID = accountID,
@@ -402,6 +403,8 @@ namespace Moov.Sdk
 
         public async Task<ListFeePlansResponse> ListFeePlansAsync(string accountID, string? xMoovVersion = null, List<string>? planIDs = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListFeePlansRequest()
             {
                 AccountID = accountID,
@@ -509,10 +512,8 @@ namespace Moov.Sdk
 
         public async Task<ListFeeRevenueResponse> ListFeeRevenueAsync(ListFeeRevenueRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListFeeRevenueRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -614,10 +615,8 @@ namespace Moov.Sdk
 
         public async Task<RetrieveFeesResponse> RetrieveFeesAsync(RetrieveFeesRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new RetrieveFeesRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -719,6 +718,8 @@ namespace Moov.Sdk
 
         public async Task<ListFeesFetchResponse> ListFeesFetchAsync(string accountID, string? xMoovVersion = null, Models.Components.ListFeesFetchRequest? body = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new Models.Requests.ListFeesFetchRequest()
             {
                 AccountID = accountID,
@@ -832,6 +833,8 @@ namespace Moov.Sdk
 
         public async Task<ListPartnerPricingResponse> ListPartnerPricingAsync(string accountID, string? xMoovVersion = null, List<string>? planIDs = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListPartnerPricingRequest()
             {
                 AccountID = accountID,
@@ -939,10 +942,8 @@ namespace Moov.Sdk
 
         public async Task<ListPartnerPricingAgreementsResponse> ListPartnerPricingAgreementsAsync(ListPartnerPricingAgreementsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListPartnerPricingAgreementsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1044,10 +1045,8 @@ namespace Moov.Sdk
 
         public async Task<ListResidualsResponse> ListResidualsAsync(ListResidualsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListResidualsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1149,6 +1148,9 @@ namespace Moov.Sdk
 
         public async Task<GetResidualResponse> GetResidualAsync(string accountID, string residualID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (residualID == null) throw new ArgumentNullException(nameof(residualID));
+
             var request = new GetResidualRequest()
             {
                 AccountID = accountID,
@@ -1256,10 +1258,8 @@ namespace Moov.Sdk
 
         public async Task<ListResidualFeesResponse> ListResidualFeesAsync(ListResidualFeesRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListResidualFeesRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();

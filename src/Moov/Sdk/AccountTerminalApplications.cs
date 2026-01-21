@@ -75,6 +75,9 @@ namespace Moov.Sdk
 
         public async Task<LinkAccountTerminalApplicationResponse> LinkAsync(string accountID, LinkAccountTerminalApplication body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new LinkAccountTerminalApplicationRequest()
             {
                 AccountID = accountID,
@@ -240,6 +243,8 @@ namespace Moov.Sdk
 
         public async Task<ListAccountTerminalApplicationsResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListAccountTerminalApplicationsRequest()
             {
                 AccountID = accountID,
@@ -346,6 +351,9 @@ namespace Moov.Sdk
 
         public async Task<GetAccountTerminalApplicationResponse> GetAsync(string accountID, string terminalApplicationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (terminalApplicationID == null) throw new ArgumentNullException(nameof(terminalApplicationID));
+
             var request = new GetAccountTerminalApplicationRequest()
             {
                 AccountID = accountID,
@@ -453,6 +461,9 @@ namespace Moov.Sdk
 
         public async Task<GetTerminalConfigurationResponse> GetConfigurationAsync(string accountID, string terminalApplicationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (terminalApplicationID == null) throw new ArgumentNullException(nameof(terminalApplicationID));
+
             var request = new GetTerminalConfigurationRequest()
             {
                 AccountID = accountID,

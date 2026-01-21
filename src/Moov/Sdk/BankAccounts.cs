@@ -166,6 +166,9 @@ namespace Moov.Sdk
 
         public async Task<LinkBankAccountResponse> LinkAsync(string accountID, LinkBankAccount body, string? xMoovVersion = null, BankAccountWaitFor? xWaitFor = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new LinkBankAccountRequest()
             {
                 AccountID = accountID,
@@ -332,6 +335,8 @@ namespace Moov.Sdk
 
         public async Task<ListBankAccountsResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListBankAccountsRequest()
             {
                 AccountID = accountID,
@@ -438,6 +443,9 @@ namespace Moov.Sdk
 
         public async Task<GetBankAccountResponse> GetAsync(string accountID, string bankAccountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+
             var request = new GetBankAccountRequest()
             {
                 AccountID = accountID,
@@ -545,6 +553,9 @@ namespace Moov.Sdk
 
         public async Task<DisableBankAccountResponse> DisableAsync(string accountID, string bankAccountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+
             var request = new DisableBankAccountRequest()
             {
                 AccountID = accountID,
@@ -660,6 +671,9 @@ namespace Moov.Sdk
 
         public async Task<InitiateMicroDepositsResponse> InitiateMicroDepositsAsync(string accountID, string bankAccountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+
             var request = new InitiateMicroDepositsRequest()
             {
                 AccountID = accountID,
@@ -775,6 +789,10 @@ namespace Moov.Sdk
 
         public async Task<CompleteMicroDepositsResponse> CompleteMicroDepositsAsync(string accountID, string bankAccountID, CompleteMicroDeposits body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CompleteMicroDepositsRequest()
             {
                 AccountID = accountID,
@@ -941,6 +959,9 @@ namespace Moov.Sdk
 
         public async Task<GetBankAccountVerificationResponse> GetVerificationAsync(string accountID, string bankAccountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+
             var request = new GetBankAccountVerificationRequest()
             {
                 AccountID = accountID,
@@ -1048,6 +1069,9 @@ namespace Moov.Sdk
 
         public async Task<InitiateBankAccountVerificationResponse> InitiateVerificationAsync(string accountID, string bankAccountID, string? xMoovVersion = null, BankAccountWaitFor? xWaitFor = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+
             var request = new InitiateBankAccountVerificationRequest()
             {
                 AccountID = accountID,
@@ -1182,6 +1206,10 @@ namespace Moov.Sdk
 
         public async Task<CompleteBankAccountVerificationResponse> CompleteVerificationAsync(string accountID, string bankAccountID, CompleteBankAccountVerification body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CompleteBankAccountVerificationRequest()
             {
                 AccountID = accountID,

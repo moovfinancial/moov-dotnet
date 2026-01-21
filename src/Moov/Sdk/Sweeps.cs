@@ -91,6 +91,9 @@ namespace Moov.Sdk
 
         public async Task<CreateSweepConfigResponse> CreateConfigAsync(string accountID, CreateSweepConfig body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateSweepConfigRequest()
             {
                 AccountID = accountID,
@@ -256,6 +259,8 @@ namespace Moov.Sdk
 
         public async Task<ListSweepConfigsResponse> ListConfigsAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListSweepConfigsRequest()
             {
                 AccountID = accountID,
@@ -362,6 +367,9 @@ namespace Moov.Sdk
 
         public async Task<GetSweepConfigResponse> GetConfigAsync(string accountID, string sweepConfigID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (sweepConfigID == null) throw new ArgumentNullException(nameof(sweepConfigID));
+
             var request = new GetSweepConfigRequest()
             {
                 AccountID = accountID,
@@ -469,6 +477,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateSweepConfigResponse> UpdateConfigAsync(string accountID, string sweepConfigID, PatchSweepConfig body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (sweepConfigID == null) throw new ArgumentNullException(nameof(sweepConfigID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateSweepConfigRequest()
             {
                 AccountID = accountID,
@@ -635,10 +647,8 @@ namespace Moov.Sdk
 
         public async Task<ListSweepsResponse> ListAsync(ListSweepsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListSweepsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -740,6 +750,10 @@ namespace Moov.Sdk
 
         public async Task<GetSweepResponse> GetAsync(string accountID, string walletID, string sweepID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (walletID == null) throw new ArgumentNullException(nameof(walletID));
+            if (sweepID == null) throw new ArgumentNullException(nameof(sweepID));
+
             var request = new GetSweepRequest()
             {
                 AccountID = accountID,

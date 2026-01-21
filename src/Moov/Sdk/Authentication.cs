@@ -55,6 +55,8 @@ namespace Moov.Sdk
 
         public async Task<RevokeAccessTokenResponse> RevokeAccessTokenAsync(RevokeTokenRequest body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new RevokeAccessTokenRequest()
             {
                 Body = body,
@@ -202,6 +204,8 @@ namespace Moov.Sdk
 
         public async Task<CreateAccessTokenResponse> CreateAccessTokenAsync(AuthTokenRequest body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateAccessTokenRequest()
             {
                 Body = body,

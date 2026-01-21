@@ -63,10 +63,8 @@ namespace Moov.Sdk
 
         public async Task<ListWalletTransactionsResponse> ListAsync(ListWalletTransactionsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListWalletTransactionsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -194,6 +192,10 @@ namespace Moov.Sdk
 
         public async Task<GetWalletTransactionResponse> GetAsync(string accountID, string walletID, string transactionID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (walletID == null) throw new ArgumentNullException(nameof(walletID));
+            if (transactionID == null) throw new ArgumentNullException(nameof(transactionID));
+
             var request = new GetWalletTransactionRequest()
             {
                 AccountID = accountID,

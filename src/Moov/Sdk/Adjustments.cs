@@ -59,6 +59,8 @@ namespace Moov.Sdk
 
         public async Task<ListAdjustmentsResponse> ListAsync(string accountID, string? xMoovVersion = null, string? walletID = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListAdjustmentsRequest()
             {
                 AccountID = accountID,
@@ -166,6 +168,9 @@ namespace Moov.Sdk
 
         public async Task<GetAdjustmentResponse> GetAsync(string accountID, string adjustmentID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (adjustmentID == null) throw new ArgumentNullException(nameof(adjustmentID));
+
             var request = new GetAdjustmentRequest()
             {
                 AccountID = accountID,

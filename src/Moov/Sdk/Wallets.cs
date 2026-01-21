@@ -83,6 +83,9 @@ namespace Moov.Sdk
 
         public async Task<CreateWalletResponse> CreateAsync(string accountID, CreateWallet body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateWalletRequest()
             {
                 AccountID = accountID,
@@ -248,10 +251,8 @@ namespace Moov.Sdk
 
         public async Task<ListWalletsResponse> ListAsync(ListWalletsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListWalletsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -379,6 +380,9 @@ namespace Moov.Sdk
 
         public async Task<GetWalletResponse> GetAsync(string accountID, string walletID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (walletID == null) throw new ArgumentNullException(nameof(walletID));
+
             var request = new GetWalletRequest()
             {
                 AccountID = accountID,
@@ -486,6 +490,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateWalletResponse> UpdateAsync(string walletID, string accountID, PatchWallet body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (walletID == null) throw new ArgumentNullException(nameof(walletID));
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateWalletRequest()
             {
                 WalletID = walletID,

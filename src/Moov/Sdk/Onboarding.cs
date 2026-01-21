@@ -75,6 +75,8 @@ namespace Moov.Sdk
 
         public async Task<CreateOnboardingInviteResponse> CreateInviteAsync(OnboardingInviteRequest body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateOnboardingInviteRequest()
             {
                 Body = body,
@@ -346,6 +348,8 @@ namespace Moov.Sdk
 
         public async Task<GetOnboardingInviteResponse> GetInviteAsync(string code, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (code == null) throw new ArgumentNullException(nameof(code));
+
             var request = new GetOnboardingInviteRequest()
             {
                 Code = code,
@@ -452,6 +456,8 @@ namespace Moov.Sdk
 
         public async Task<RevokeOnboardingInviteResponse> RevokeInviteAsync(string code, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (code == null) throw new ArgumentNullException(nameof(code));
+
             var request = new RevokeOnboardingInviteRequest()
             {
                 Code = code,

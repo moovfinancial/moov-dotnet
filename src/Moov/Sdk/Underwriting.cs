@@ -73,6 +73,8 @@ namespace Moov.Sdk
 
         public async Task<GetUnderwritingResponse> GetAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetUnderwritingRequest()
             {
                 AccountID = accountID,
@@ -179,6 +181,9 @@ namespace Moov.Sdk
 
         public async Task<SaveUnderwritingResponse> SaveAsync(string accountID, UpsertUnderwriting body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new SaveUnderwritingRequest()
             {
                 AccountID = accountID,
@@ -344,6 +349,9 @@ namespace Moov.Sdk
 
         public async Task<UpsertUnderwritingResponse> UpsertAsync(string accountID, UpdateUnderwriting body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpsertUnderwritingRequest()
             {
                 AccountID = accountID,

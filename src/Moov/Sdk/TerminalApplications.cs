@@ -83,6 +83,8 @@ namespace Moov.Sdk
 
         public async Task<CreateTerminalApplicationResponse> CreateAsync(CreateTerminalApplication body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateTerminalApplicationRequest()
             {
                 Body = body,
@@ -354,6 +356,8 @@ namespace Moov.Sdk
 
         public async Task<GetTerminalApplicationResponse> GetAsync(string terminalApplicationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (terminalApplicationID == null) throw new ArgumentNullException(nameof(terminalApplicationID));
+
             var request = new GetTerminalApplicationRequest()
             {
                 TerminalApplicationID = terminalApplicationID,
@@ -460,6 +464,8 @@ namespace Moov.Sdk
 
         public async Task<DeleteTerminalApplicationResponse> DeleteAsync(string terminalApplicationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (terminalApplicationID == null) throw new ArgumentNullException(nameof(terminalApplicationID));
+
             var request = new DeleteTerminalApplicationRequest()
             {
                 TerminalApplicationID = terminalApplicationID,
@@ -574,6 +580,9 @@ namespace Moov.Sdk
 
         public async Task<CreateTerminalApplicationVersionResponse> CreateVersionAsync(string terminalApplicationID, TerminalApplicationVersion body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (terminalApplicationID == null) throw new ArgumentNullException(nameof(terminalApplicationID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateTerminalApplicationVersionRequest()
             {
                 TerminalApplicationID = terminalApplicationID,

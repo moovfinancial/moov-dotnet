@@ -98,6 +98,9 @@ namespace Moov.Sdk
 
         public async Task<CreateTicketResponse> CreateTicketAsync(string accountID, CreateTicket body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateTicketRequest()
             {
                 AccountID = accountID,
@@ -263,10 +266,8 @@ namespace Moov.Sdk
 
         public async Task<ListTicketsResponse> ListTicketsAsync(ListTicketsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListTicketsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -368,6 +369,9 @@ namespace Moov.Sdk
 
         public async Task<GetTicketResponse> GetTicketAsync(string accountID, string ticketID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (ticketID == null) throw new ArgumentNullException(nameof(ticketID));
+
             var request = new GetTicketRequest()
             {
                 AccountID = accountID,
@@ -475,6 +479,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateTicketResponse> UpdateTicketAsync(string accountID, string ticketID, UpdateTicket body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (ticketID == null) throw new ArgumentNullException(nameof(ticketID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateTicketRequest()
             {
                 AccountID = accountID,
@@ -641,6 +649,9 @@ namespace Moov.Sdk
 
         public async Task<ListTicketMessagesResponse> ListTicketMessagesAsync(string accountID, string ticketID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (ticketID == null) throw new ArgumentNullException(nameof(ticketID));
+
             var request = new ListTicketMessagesRequest()
             {
                 AccountID = accountID,

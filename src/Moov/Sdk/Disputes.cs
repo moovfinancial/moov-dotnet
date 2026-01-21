@@ -156,10 +156,8 @@ namespace Moov.Sdk
 
         public async Task<ListDisputesResponse> ListAsync(ListDisputesRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListDisputesRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -287,6 +285,9 @@ namespace Moov.Sdk
 
         public async Task<GetDisputeResponse> GetAsync(string accountID, string disputeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+
             var request = new GetDisputeRequest()
             {
                 AccountID = accountID,
@@ -394,6 +395,9 @@ namespace Moov.Sdk
 
         public async Task<AcceptDisputeResponse> AcceptAsync(string accountID, string disputeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+
             var request = new AcceptDisputeRequest()
             {
                 AccountID = accountID,
@@ -527,6 +531,9 @@ namespace Moov.Sdk
 
         public async Task<ListDisputeEvidenceResponse> ListEvidenceAsync(string accountID, string disputeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+
             var request = new ListDisputeEvidenceRequest()
             {
                 AccountID = accountID,
@@ -634,6 +641,10 @@ namespace Moov.Sdk
 
         public async Task<UploadDisputeEvidenceFileResponse> UploadEvidenceFileAsync(string accountID, string disputeID, CreateEvidenceFileMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UploadDisputeEvidenceFileRequest()
             {
                 AccountID = accountID,
@@ -800,6 +811,10 @@ namespace Moov.Sdk
 
         public async Task<UploadDisputeEvidenceTextResponse> UploadEvidenceTextAsync(string accountID, string disputeID, CreateEvidenceText body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UploadDisputeEvidenceTextRequest()
             {
                 AccountID = accountID,
@@ -940,6 +955,9 @@ namespace Moov.Sdk
 
         public async Task<SubmitDisputeEvidenceResponse> SubmitEvidenceAsync(string accountID, string disputeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+
             var request = new SubmitDisputeEvidenceRequest()
             {
                 AccountID = accountID,
@@ -1073,6 +1091,10 @@ namespace Moov.Sdk
 
         public async Task<GetDisputeEvidenceResponse> GetEvidenceAsync(string accountID, string disputeID, string evidenceID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+            if (evidenceID == null) throw new ArgumentNullException(nameof(evidenceID));
+
             var request = new GetDisputeEvidenceRequest()
             {
                 AccountID = accountID,
@@ -1181,10 +1203,8 @@ namespace Moov.Sdk
 
         public async Task<UpdateDisputeEvidenceResponse> UpdateEvidenceAsync(UpdateDisputeEvidenceRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new UpdateDisputeEvidenceRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1318,6 +1338,10 @@ namespace Moov.Sdk
 
         public async Task<DeleteDisputeEvidenceFileResponse> DeleteEvidenceAsync(string accountID, string disputeID, string evidenceID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+            if (evidenceID == null) throw new ArgumentNullException(nameof(evidenceID));
+
             var request = new DeleteDisputeEvidenceFileRequest()
             {
                 AccountID = accountID,
@@ -1434,6 +1458,10 @@ namespace Moov.Sdk
 
         public async Task<GetDisputeEvidenceDataResponse> GetEvidenceDataAsync(string accountID, string disputeID, string evidenceID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (disputeID == null) throw new ArgumentNullException(nameof(disputeID));
+            if (evidenceID == null) throw new ArgumentNullException(nameof(evidenceID));
+
             var request = new GetDisputeEvidenceDataRequest()
             {
                 AccountID = accountID,

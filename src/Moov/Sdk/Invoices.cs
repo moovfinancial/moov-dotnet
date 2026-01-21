@@ -92,6 +92,9 @@ namespace Moov.Sdk
 
         public async Task<CreateInvoiceResponse> CreateInvoiceAsync(string accountID, CreateInvoice body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateInvoiceRequest()
             {
                 AccountID = accountID,
@@ -257,10 +260,8 @@ namespace Moov.Sdk
 
         public async Task<ListInvoicesResponse> ListInvoicesAsync(ListInvoicesRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListInvoicesRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -388,6 +389,9 @@ namespace Moov.Sdk
 
         public async Task<GetInvoiceResponse> GetInvoiceAsync(string accountID, string invoiceID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (invoiceID == null) throw new ArgumentNullException(nameof(invoiceID));
+
             var request = new GetInvoiceRequest()
             {
                 AccountID = accountID,
@@ -495,6 +499,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateInvoiceResponse> UpdateInvoiceAsync(string accountID, string invoiceID, UpdateInvoice body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (invoiceID == null) throw new ArgumentNullException(nameof(invoiceID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateInvoiceRequest()
             {
                 AccountID = accountID,
@@ -661,6 +669,10 @@ namespace Moov.Sdk
 
         public async Task<CreateInvoicePaymentResponse> CreateInvoicePaymentAsync(string accountID, string invoiceID, CreateInvoicePayment body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (invoiceID == null) throw new ArgumentNullException(nameof(invoiceID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateInvoicePaymentRequest()
             {
                 AccountID = accountID,
@@ -827,6 +839,9 @@ namespace Moov.Sdk
 
         public async Task<ListInvoicePaymentsResponse> ListInvoicePaymentsAsync(string accountID, string invoiceID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (invoiceID == null) throw new ArgumentNullException(nameof(invoiceID));
+
             var request = new ListInvoicePaymentsRequest()
             {
                 AccountID = accountID,

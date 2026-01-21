@@ -56,6 +56,8 @@ namespace Moov.Sdk
 
         public async Task<TestEndToEndTokenResponse> TestEncryptedTokenAsync(E2EEToken body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new TestEndToEndTokenRequest()
             {
                 Body = body,

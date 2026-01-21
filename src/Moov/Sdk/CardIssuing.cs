@@ -85,6 +85,9 @@ namespace Moov.Sdk
 
         public async Task<RequestCardResponse> RequestAsync(string accountID, RequestCard body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new RequestCardRequest()
             {
                 AccountID = accountID,
@@ -250,10 +253,8 @@ namespace Moov.Sdk
 
         public async Task<ListIssuedCardsResponse> ListAsync(ListIssuedCardsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListIssuedCardsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -355,6 +356,9 @@ namespace Moov.Sdk
 
         public async Task<GetIssuedCardResponse> GetAsync(string accountID, string issuedCardID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (issuedCardID == null) throw new ArgumentNullException(nameof(issuedCardID));
+
             var request = new GetIssuedCardRequest()
             {
                 AccountID = accountID,
@@ -462,6 +466,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateIssuedCardResponse> UpdateAsync(string accountID, string issuedCardID, UpdateIssuedCard body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (issuedCardID == null) throw new ArgumentNullException(nameof(issuedCardID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateIssuedCardRequest()
             {
                 AccountID = accountID,
@@ -610,6 +618,9 @@ namespace Moov.Sdk
 
         public async Task<GetFullIssuedCardResponse> GetFullAsync(string accountID, string issuedCardID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (issuedCardID == null) throw new ArgumentNullException(nameof(issuedCardID));
+
             var request = new GetFullIssuedCardRequest()
             {
                 AccountID = accountID,

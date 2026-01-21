@@ -101,6 +101,9 @@ namespace Moov.Sdk
 
         public async Task<CreateRepresentativeResponse> CreateAsync(string accountID, CreateRepresentative body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateRepresentativeRequest()
             {
                 AccountID = accountID,
@@ -266,6 +269,8 @@ namespace Moov.Sdk
 
         public async Task<ListRepresentativesResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListRepresentativesRequest()
             {
                 AccountID = accountID,
@@ -372,6 +377,9 @@ namespace Moov.Sdk
 
         public async Task<DeleteRepresentativeResponse> DeleteAsync(string accountID, string representativeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (representativeID == null) throw new ArgumentNullException(nameof(representativeID));
+
             var request = new DeleteRepresentativeRequest()
             {
                 AccountID = accountID,
@@ -487,6 +495,9 @@ namespace Moov.Sdk
 
         public async Task<GetRepresentativeResponse> GetAsync(string accountID, string representativeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (representativeID == null) throw new ArgumentNullException(nameof(representativeID));
+
             var request = new GetRepresentativeRequest()
             {
                 AccountID = accountID,
@@ -594,6 +605,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateRepresentativeResponse> UpdateAsync(string accountID, string representativeID, UpdateRepresentative body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (representativeID == null) throw new ArgumentNullException(nameof(representativeID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateRepresentativeRequest()
             {
                 AccountID = accountID,

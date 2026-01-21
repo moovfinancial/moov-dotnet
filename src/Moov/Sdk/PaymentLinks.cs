@@ -93,6 +93,9 @@ namespace Moov.Sdk
 
         public async Task<CreatePaymentLinkResponse> CreateAsync(string accountID, CreatePaymentLink body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreatePaymentLinkRequest()
             {
                 AccountID = accountID,
@@ -258,10 +261,8 @@ namespace Moov.Sdk
 
         public async Task<ListPaymentLinksResponse> ListAsync(ListPaymentLinksRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListPaymentLinksRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -363,6 +364,9 @@ namespace Moov.Sdk
 
         public async Task<GetPaymentLinkResponse> GetAsync(string accountID, string paymentLinkCode, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (paymentLinkCode == null) throw new ArgumentNullException(nameof(paymentLinkCode));
+
             var request = new GetPaymentLinkRequest()
             {
                 AccountID = accountID,
@@ -470,6 +474,10 @@ namespace Moov.Sdk
 
         public async Task<UpdatePaymentLinkResponse> UpdateAsync(string accountID, string paymentLinkCode, UpdatePaymentLink body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (paymentLinkCode == null) throw new ArgumentNullException(nameof(paymentLinkCode));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdatePaymentLinkRequest()
             {
                 AccountID = accountID,
@@ -636,6 +644,9 @@ namespace Moov.Sdk
 
         public async Task<DisablePaymentLinkResponse> DisableAsync(string accountID, string paymentLinkCode, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (paymentLinkCode == null) throw new ArgumentNullException(nameof(paymentLinkCode));
+
             var request = new DisablePaymentLinkRequest()
             {
                 AccountID = accountID,
@@ -725,6 +736,9 @@ namespace Moov.Sdk
 
         public async Task<GetPaymentLinkQRCodeResponse> GetQRCodeAsync(string accountID, string paymentLinkCode, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (paymentLinkCode == null) throw new ArgumentNullException(nameof(paymentLinkCode));
+
             var request = new GetPaymentLinkQRCodeRequest()
             {
                 AccountID = accountID,

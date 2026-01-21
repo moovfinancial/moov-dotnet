@@ -60,6 +60,8 @@ namespace Moov.Sdk
 
         public async Task<ListPaymentMethodsResponse> ListAsync(string accountID, string? xMoovVersion = null, string? sourceID = null, PaymentMethodType? paymentMethodType = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListPaymentMethodsRequest()
             {
                 AccountID = accountID,
@@ -168,6 +170,9 @@ namespace Moov.Sdk
 
         public async Task<GetPaymentMethodResponse> GetAsync(string accountID, string paymentMethodID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (paymentMethodID == null) throw new ArgumentNullException(nameof(paymentMethodID));
+
             var request = new GetPaymentMethodRequest()
             {
                 AccountID = accountID,

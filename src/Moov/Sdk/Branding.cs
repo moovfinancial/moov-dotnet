@@ -67,6 +67,9 @@ namespace Moov.Sdk
 
         public async Task<CreateBrandResponse> CreateAsync(string accountID, BrandProperties body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateBrandRequest()
             {
                 AccountID = accountID,
@@ -232,6 +235,9 @@ namespace Moov.Sdk
 
         public async Task<UpsertBrandResponse> UpsertAsync(string accountID, BrandProperties body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpsertBrandRequest()
             {
                 AccountID = accountID,
@@ -397,6 +403,8 @@ namespace Moov.Sdk
 
         public async Task<GetBrandResponse> GetAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetBrandRequest()
             {
                 AccountID = accountID,

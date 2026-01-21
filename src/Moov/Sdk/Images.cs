@@ -85,6 +85,8 @@ namespace Moov.Sdk
 
         public async Task<ListImageMetadataResponse> ListAsync(string accountID, string? xMoovVersion = null, long? skip = null, long? count = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListImageMetadataRequest()
             {
                 AccountID = accountID,
@@ -193,6 +195,9 @@ namespace Moov.Sdk
 
         public async Task<UploadImageResponse> UploadAsync(string accountID, ImageUploadRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UploadImageRequest()
             {
                 AccountID = accountID,
@@ -358,6 +363,9 @@ namespace Moov.Sdk
 
         public async Task<GetImageMetadataResponse> GetMetadataAsync(string accountID, string imageID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (imageID == null) throw new ArgumentNullException(nameof(imageID));
+
             var request = new GetImageMetadataRequest()
             {
                 AccountID = accountID,
@@ -465,6 +473,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateImageResponse> UpdateAsync(string accountID, string imageID, ImageUploadRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (imageID == null) throw new ArgumentNullException(nameof(imageID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateImageRequest()
             {
                 AccountID = accountID,
@@ -631,6 +643,9 @@ namespace Moov.Sdk
 
         public async Task<DeleteImageResponse> DeleteAsync(string accountID, string imageID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (imageID == null) throw new ArgumentNullException(nameof(imageID));
+
             var request = new DeleteImageRequest()
             {
                 AccountID = accountID,
@@ -746,6 +761,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateImageMetadataResponse> UpdateMetadataAsync(string accountID, string imageID, ImageMetadataRequest body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (imageID == null) throw new ArgumentNullException(nameof(imageID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateImageMetadataRequest()
             {
                 AccountID = accountID,
@@ -912,6 +931,8 @@ namespace Moov.Sdk
 
         public async Task<GetPublicImageResponse> GetPublicAsync(string publicID, string? ifNoneMatch = null, string? size = "400x400", CancellationToken? cancellationToken = null)
         {
+            if (publicID == null) throw new ArgumentNullException(nameof(publicID));
+
             var request = new GetPublicImageRequest()
             {
                 PublicID = publicID,

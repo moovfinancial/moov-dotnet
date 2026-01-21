@@ -51,10 +51,8 @@ namespace Moov.Sdk
 
         public async Task<GetEnrichmentAddressResponse> GetAsync(GetEnrichmentAddressRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new GetEnrichmentAddressRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();

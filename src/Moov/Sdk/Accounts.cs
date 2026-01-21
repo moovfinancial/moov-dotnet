@@ -161,6 +161,8 @@ namespace Moov.Sdk
 
         public async Task<CreateAccountResponse> CreateAsync(CreateAccount body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateAccountRequest()
             {
                 Body = body,
@@ -326,6 +328,10 @@ namespace Moov.Sdk
 
         public async Task<ListAccountsResponse> ListAsync(ListAccountsRequest? request = null, CancellationToken? cancellationToken = null)
         {
+            if (request == null)
+            {
+                request = new ListAccountsRequest();
+            }
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -427,6 +433,8 @@ namespace Moov.Sdk
 
         public async Task<GetAccountResponse> GetAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetAccountRequest()
             {
                 AccountID = accountID,
@@ -533,6 +541,9 @@ namespace Moov.Sdk
 
         public async Task<UpdateAccountResponse> UpdateAsync(string accountID, PatchAccount body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateAccountRequest()
             {
                 AccountID = accountID,
@@ -698,6 +709,8 @@ namespace Moov.Sdk
 
         public async Task<DisconnectAccountResponse> DisconnectAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new DisconnectAccountRequest()
             {
                 AccountID = accountID,
@@ -812,10 +825,8 @@ namespace Moov.Sdk
 
         public async Task<ListConnectedAccountsForAccountResponse> ListConnectedAsync(ListConnectedAccountsForAccountRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListConnectedAccountsForAccountRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -917,6 +928,9 @@ namespace Moov.Sdk
 
         public async Task<ConnectAccountResponse> ConnectAsync(string accountID, ShareScopes body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new ConnectAccountRequest()
             {
                 AccountID = accountID,
@@ -1064,6 +1078,8 @@ namespace Moov.Sdk
 
         public async Task<GetAccountCountriesResponse> GetCountriesAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetAccountCountriesRequest()
             {
                 AccountID = accountID,
@@ -1170,6 +1186,9 @@ namespace Moov.Sdk
 
         public async Task<AssignAccountCountriesResponse> AssignCountriesAsync(string accountID, AccountCountries body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new AssignAccountCountriesRequest()
             {
                 AccountID = accountID,
@@ -1335,6 +1354,8 @@ namespace Moov.Sdk
 
         public async Task<GetMerchantProcessingAgreementResponse> GetMerchantProcessingAgreementAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetMerchantProcessingAgreementRequest()
             {
                 AccountID = accountID,

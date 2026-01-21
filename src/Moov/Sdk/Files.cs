@@ -70,6 +70,9 @@ namespace Moov.Sdk
 
         public async Task<UploadFileResponse> UploadAsync(string accountID, FileUploadRequestMultiPart body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UploadFileRequest()
             {
                 AccountID = accountID,
@@ -235,6 +238,8 @@ namespace Moov.Sdk
 
         public async Task<ListFilesResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListFilesRequest()
             {
                 AccountID = accountID,
@@ -341,6 +346,9 @@ namespace Moov.Sdk
 
         public async Task<GetFileDetailsResponse> GetAsync(string accountID, string fileID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (fileID == null) throw new ArgumentNullException(nameof(fileID));
+
             var request = new GetFileDetailsRequest()
             {
                 AccountID = accountID,

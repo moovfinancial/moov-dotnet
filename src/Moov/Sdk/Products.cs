@@ -70,10 +70,8 @@ namespace Moov.Sdk
 
         public async Task<ListProductsResponse> ListAsync(ListProductsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListProductsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -175,6 +173,9 @@ namespace Moov.Sdk
 
         public async Task<CreateProductResponse> CreateAsync(string accountID, ProductRequest body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new CreateProductRequest()
             {
                 AccountID = accountID,
@@ -340,6 +341,9 @@ namespace Moov.Sdk
 
         public async Task<GetProductResponse> GetAsync(string accountID, string productID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (productID == null) throw new ArgumentNullException(nameof(productID));
+
             var request = new GetProductRequest()
             {
                 AccountID = accountID,
@@ -447,6 +451,10 @@ namespace Moov.Sdk
 
         public async Task<UpdateProductResponse> UpdateAsync(string accountID, string productID, ProductRequest body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (productID == null) throw new ArgumentNullException(nameof(productID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new UpdateProductRequest()
             {
                 AccountID = accountID,
@@ -613,6 +621,9 @@ namespace Moov.Sdk
 
         public async Task<DisableProductResponse> DisableAsync(string accountID, string productID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (productID == null) throw new ArgumentNullException(nameof(productID));
+
             var request = new DisableProductRequest()
             {
                 AccountID = accountID,

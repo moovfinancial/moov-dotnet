@@ -83,10 +83,8 @@ namespace Moov.Sdk
 
         public async Task<ListIssuedCardAuthorizationsResponse> ListAuthorizationsAsync(ListIssuedCardAuthorizationsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListIssuedCardAuthorizationsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -188,6 +186,9 @@ namespace Moov.Sdk
 
         public async Task<GetIssuedCardAuthorizationResponse> GetAuthorizationAsync(string accountID, string authorizationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (authorizationID == null) throw new ArgumentNullException(nameof(authorizationID));
+
             var request = new GetIssuedCardAuthorizationRequest()
             {
                 AccountID = accountID,
@@ -295,10 +296,8 @@ namespace Moov.Sdk
 
         public async Task<ListIssuedCardAuthorizationEventsResponse> ListAuthorizationEventsAsync(ListIssuedCardAuthorizationEventsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListIssuedCardAuthorizationEventsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -400,10 +399,8 @@ namespace Moov.Sdk
 
         public async Task<ListIssuedCardTransactionsResponse> ListAsync(ListIssuedCardTransactionsRequest request, CancellationToken? cancellationToken = null)
         {
-            if (request == null)
-            {
-                request = new ListIssuedCardTransactionsRequest();
-            }
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -505,6 +502,9 @@ namespace Moov.Sdk
 
         public async Task<GetIssuedCardTransactionResponse> GetAsync(string accountID, string cardTransactionID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (cardTransactionID == null) throw new ArgumentNullException(nameof(cardTransactionID));
+
             var request = new GetIssuedCardTransactionRequest()
             {
                 AccountID = accountID,

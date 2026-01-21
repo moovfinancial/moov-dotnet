@@ -77,6 +77,8 @@ namespace Moov.Sdk
 
         public async Task<ListCapabilitiesResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new ListCapabilitiesRequest()
             {
                 AccountID = accountID,
@@ -183,6 +185,9 @@ namespace Moov.Sdk
 
         public async Task<RequestCapabilitiesResponse> RequestAsync(string accountID, AddCapabilities body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
             var request = new RequestCapabilitiesRequest()
             {
                 AccountID = accountID,
@@ -348,6 +353,8 @@ namespace Moov.Sdk
 
         public async Task<GetCapabilityResponse> GetAsync(string accountID, CapabilityID capabilityID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new GetCapabilityRequest()
             {
                 AccountID = accountID,
@@ -455,6 +462,8 @@ namespace Moov.Sdk
 
         public async Task<DisableCapabilityResponse> DisableAsync(string accountID, CapabilityID capabilityID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
         {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+
             var request = new DisableCapabilityRequest()
             {
                 AccountID = accountID,

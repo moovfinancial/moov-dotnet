@@ -174,6 +174,10 @@ namespace Moov.Sdk
         [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async Task<ListInstitutionsResponse> SearchAsync(ListInstitutionsRequest? request = null, CancellationToken? cancellationToken = null)
         {
+            if (request == null)
+            {
+                request = new ListInstitutionsRequest();
+            }
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
             
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
