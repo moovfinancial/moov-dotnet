@@ -11,6 +11,7 @@ namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
+    using System;
     
     public class ListInvoicesRequest
     {
@@ -44,6 +45,18 @@ namespace Moov.Sdk.Models.Requests
 
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=customerAccountID")]
         public string? CustomerAccountID { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=createdStartDateTime")]
+        public DateTime? CreatedStartDateTime { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=createdEndDateTime")]
+        public DateTime? CreatedEndDateTime { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=dueStartDateTime")]
+        public DateTime? DueStartDateTime { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=dueEndDateTime")]
+        public DateTime? DueEndDateTime { get; set; }
 
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;

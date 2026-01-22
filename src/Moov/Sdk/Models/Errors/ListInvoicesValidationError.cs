@@ -23,6 +23,18 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("customerAccountID")]
         public string? CustomerAccountID { get; set; }
 
+        [JsonProperty("createdStartDateTime")]
+        public string? CreatedStartDateTime { get; set; }
+
+        [JsonProperty("createdEndDateTime")]
+        public string? CreatedEndDateTime { get; set; }
+
+        [JsonProperty("dueStartDateTime")]
+        public string? DueStartDateTime { get; set; }
+
+        [JsonProperty("dueEndDateTime")]
+        public string? DueEndDateTime { get; set; }
+
         [JsonProperty("skip")]
         public string? Skip { get; set; }
 
@@ -46,6 +58,18 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListInvoicesValidationError.Payload.CustomerAccountID instead.")]
         public string? CustomerAccountID { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListInvoicesValidationError.Payload.CreatedStartDateTime instead.")]
+        public string? CreatedStartDateTime { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListInvoicesValidationError.Payload.CreatedEndDateTime instead.")]
+        public string? CreatedEndDateTime { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListInvoicesValidationError.Payload.DueStartDateTime instead.")]
+        public string? DueStartDateTime { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListInvoicesValidationError.Payload.DueEndDateTime instead.")]
+        public string? DueEndDateTime { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListInvoicesValidationError.Payload.Skip instead.")]
         public string? Skip { get; set; }
 
@@ -67,6 +91,10 @@ namespace Moov.Sdk.Models.Errors
            #pragma warning disable CS0618
            Status = payload.Status;
            CustomerAccountID = payload.CustomerAccountID;
+           CreatedStartDateTime = payload.CreatedStartDateTime;
+           CreatedEndDateTime = payload.CreatedEndDateTime;
+           DueStartDateTime = payload.DueStartDateTime;
+           DueEndDateTime = payload.DueEndDateTime;
            Skip = payload.Skip;
            Count = payload.Count;
            HttpMeta = payload.HttpMeta;
