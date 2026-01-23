@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class QRCode
     {
-
         /// <summary>
         /// A base64-encoded PNG image of the QR code.
         /// </summary>

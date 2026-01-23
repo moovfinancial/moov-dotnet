@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A detailed breakdown of card acquiring fees by card brand.
     /// </summary>
     public class CardAcquiringFees
     {
-
         /// <summary>
         /// Fees associated with Visa transactions.
         /// </summary>

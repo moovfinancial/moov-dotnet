@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The final stage of a transfer and the ultimate recipient of the funds.
     /// </summary>
     public class CreateTransferDestination
     {
-
         [JsonProperty("paymentMethodID")]
         public string PaymentMethodID { get; set; } = default!;
 

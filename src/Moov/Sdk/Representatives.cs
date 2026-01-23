@@ -25,46 +25,150 @@ namespace Moov.Sdk
 
     public interface IRepresentatives
     {
-
         /// <summary>
         /// Moov accounts associated with businesses require information regarding individuals who represent the business. <br/>
         /// You can provide this information by creating a representative. Each account is allowed a maximum of 7 representatives. <br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/representatives.write` scope.
+        /// you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
         /// </summary>
-        Task<CreateRepresentativeResponse> CreateAsync(string accountID, CreateRepresentative body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="body">A <see cref="CreateRepresentative"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="RepresentativeValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateRepresentativeResponse> CreateAsync(
+            string accountID,
+            CreateRepresentative body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
-        /// A Moov account may have multiple representatives depending on the associated business&apos;s ownership and management structure. <br/>
+        /// A Moov account may have multiple representatives depending on the associated business's ownership and management structure. <br/>
         /// You can use this method to list all the representatives for a given Moov account. <br/>
         /// Note that Moov accounts associated with an individual do not have representatives. <br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/representatives.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
         /// </summary>
-        Task<ListRepresentativesResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListRepresentativesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListRepresentativesResponse> ListAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Deletes a business representative associated with a Moov account. Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/representatives.write` scope.
+        /// you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
         /// </summary>
-        Task<DeleteRepresentativeResponse> DeleteAsync(string accountID, string representativeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="representativeID">ID of the representative.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="DeleteRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="representativeID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<DeleteRepresentativeResponse> DeleteAsync(
+            string accountID,
+            string representativeID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Retrieve a specific representative associated with a given Moov account. Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/representatives.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
         /// </summary>
-        Task<GetRepresentativeResponse> GetAsync(string accountID, string representativeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="representativeID">ID of the representative.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="representativeID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetRepresentativeResponse> GetAsync(
+            string accountID,
+            string representativeID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
-        /// If a representative&apos;s information has changed you can patch the information associated with a specific representative ID.<br/>
+        /// If a representative's information has changed you can patch the information associated with a specific representative ID.<br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
         /// <br/>
         /// When **can** profile data be updated:<br/>
@@ -73,33 +177,97 @@ namespace Moov.Sdk
         /// - During the verification process, missing or incomplete profile data can be edited.<br/>
         /// - Verified representatives can only add missing profile data.<br/>
         /// <br/>
-        /// When **can&apos;t** profile data be updated:<br/>
+        /// When **can't** profile data be updated:<br/>
         /// <br/>
         /// - Verified representatives cannot change any existing profile data.<br/>
         /// <br/>
         /// If you need to update information in a locked state, please contact Moov support.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a><br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/representatives.write` scope.
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
         /// </summary>
-        Task<UpdateRepresentativeResponse> UpdateAsync(string accountID, string representativeID, UpdateRepresentative body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="representativeID">ID of the representative.</param>
+        /// <param name="body">A <see cref="UpdateRepresentative"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="representativeID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<UpdateRepresentativeResponse> UpdateAsync(
+            string accountID,
+            string representativeID,
+            UpdateRepresentative body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
     }
 
     public class Representatives: IRepresentatives
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Representatives(SDKConfig config)
         {
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepresentativeResponse> CreateAsync(string accountID, CreateRepresentative body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+        /// <summary>
+        /// Moov accounts associated with businesses require information regarding individuals who represent the business. <br/>
+        /// You can provide this information by creating a representative. Each account is allowed a maximum of 7 representatives. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
+        /// </summary>
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="body">A <see cref="CreateRepresentative"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="RepresentativeValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateRepresentativeResponse> CreateAsync(
+            string accountID,
+            CreateRepresentative body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (body == null) throw new ArgumentNullException(nameof(body));
@@ -111,7 +279,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/representatives", request, null);
 
@@ -140,7 +308,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 409 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -267,7 +435,41 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListRepresentativesResponse> ListAsync(string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// A Moov account may have multiple representatives depending on the associated business's ownership and management structure. <br/>
+        /// You can use this method to list all the representatives for a given Moov account. <br/>
+        /// Note that Moov accounts associated with an individual do not have representatives. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
+        /// </summary>
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListRepresentativesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListRepresentativesResponse> ListAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
 
@@ -277,7 +479,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/representatives", request, null);
 
@@ -300,7 +502,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -375,7 +577,41 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<DeleteRepresentativeResponse> DeleteAsync(string accountID, string representativeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Deletes a business representative associated with a Moov account. Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
+        /// </summary>
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="representativeID">ID of the representative.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="DeleteRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="representativeID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<DeleteRepresentativeResponse> DeleteAsync(
+            string accountID,
+            string representativeID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (representativeID == null) throw new ArgumentNullException(nameof(representativeID));
@@ -387,7 +623,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/representatives/{representativeID}", request, null);
 
@@ -410,7 +646,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 409 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -493,7 +729,40 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<GetRepresentativeResponse> GetAsync(string accountID, string representativeID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Retrieve a specific representative associated with a given Moov account. Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
+        /// </summary>
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="representativeID">ID of the representative.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="representativeID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetRepresentativeResponse> GetAsync(
+            string accountID,
+            string representativeID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (representativeID == null) throw new ArgumentNullException(nameof(representativeID));
@@ -505,7 +774,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/representatives/{representativeID}", request, null);
 
@@ -528,7 +797,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -603,7 +872,56 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<UpdateRepresentativeResponse> UpdateAsync(string accountID, string representativeID, UpdateRepresentative body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// If a representative's information has changed you can patch the information associated with a specific representative ID.<br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/requirements/business-representatives/">business representatives guide</a> to learn more.<br/>
+        /// <br/>
+        /// When **can** profile data be updated:<br/>
+        /// <br/>
+        /// - For unverified representatives, all profile data can be edited.<br/>
+        /// - During the verification process, missing or incomplete profile data can be edited.<br/>
+        /// - Verified representatives can only add missing profile data.<br/>
+        /// <br/>
+        /// When **can't** profile data be updated:<br/>
+        /// <br/>
+        /// - Verified representatives cannot change any existing profile data.<br/>
+        /// <br/>
+        /// If you need to update information in a locked state, please contact Moov support.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
+        /// </summary>
+        /// <param name="accountID">ID of the account.</param>
+        /// <param name="representativeID">ID of the representative.</param>
+        /// <param name="body">A <see cref="UpdateRepresentative"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateRepresentativeResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="representativeID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<UpdateRepresentativeResponse> UpdateAsync(
+            string accountID,
+            string representativeID,
+            UpdateRepresentative body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (representativeID == null) throw new ArgumentNullException(nameof(representativeID));
@@ -617,7 +935,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/representatives/{representativeID}", request, null);
 
@@ -646,7 +964,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 409 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -746,5 +1064,6 @@ namespace Moov.Sdk
 
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
+
     }
 }

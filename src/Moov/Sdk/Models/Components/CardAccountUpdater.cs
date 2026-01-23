@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The results of the most recent card update request.
     /// </summary>
     public class CardAccountUpdater
     {
-
         [JsonProperty("updatedOn")]
         public DateTime? UpdatedOn { get; set; }
 

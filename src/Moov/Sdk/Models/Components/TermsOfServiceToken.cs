@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    /// An encrypted value used to record acceptance of Moov&apos;s Terms of Service.
+    /// An encrypted value used to record acceptance of Moov's Terms of Service.
     /// </summary>
     public class TermsOfServiceToken
     {
-
         [JsonProperty("token")]
         public string Token { get; set; } = default!;
     }

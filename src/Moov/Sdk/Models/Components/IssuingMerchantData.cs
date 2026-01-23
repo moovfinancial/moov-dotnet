@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class IssuingMerchantData
     {
-
         /// <summary>
         /// External identifier used to identify the merchant with the card brand.
         /// </summary>
@@ -28,7 +27,7 @@ namespace Moov.Sdk.Models.Components
         public string? Name { get; set; }
 
         /// <summary>
-        /// The merchant&apos;s location.
+        /// The merchant's location.
         /// </summary>
         [JsonProperty("city")]
         public string? City { get; set; }
@@ -40,13 +39,13 @@ namespace Moov.Sdk.Models.Components
         public string Country { get; set; } = default!;
 
         /// <summary>
-        /// The merchant&apos;s five-digit postal code.
+        /// The merchant's five-digit postal code.
         /// </summary>
         [JsonProperty("postalCode")]
         public string? PostalCode { get; set; }
 
         /// <summary>
-        /// The merchant&apos;s two-letter state abbreviation.
+        /// The merchant's two-letter state abbreviation.
         /// </summary>
         [JsonProperty("state")]
         public string? State { get; set; }

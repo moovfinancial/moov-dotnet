@@ -94,5 +94,4 @@ namespace Moov.Sdk.Models.Errors
            #pragma warning restore CS0618
         }
     }
-
 }

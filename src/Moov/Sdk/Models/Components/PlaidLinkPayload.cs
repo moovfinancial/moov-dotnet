@@ -12,31 +12,24 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// This is used by Moov.js with a Plaid reseller relationship. <br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// Describes the account to link to the Moov account using a Plaid using a Plaid public token.
-    /// </remarks>
     /// </summary>
     public class PlaidLinkPayload
     {
-
         /// <summary>
         /// This is used by Moov.js with a Plaid reseller relationship. The details of a Plaid link integration for a linked funding source.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// You can simulate linking bank accounts with Plaid in test mode. See our <a href="https://docs.moov.io/guides/get-started/test-mode/#plaid">test mode</a><br/>
+        /// You can simulate linking bank accounts with Plaid in test mode. See our <a href="https://docs.moov.io/guides/get-started/test-mode/#plaid">test mode</a>
         /// guide for more information.<br/>
         /// <br/>
-        /// Plaid&apos;s `sandbox` environment - (requires Plaid reseller setup with Moov). When linking a bank account to a `sandbox` account using a Plaid <br/>
-        /// public token it will utilize Plaid&apos;s sandbox environment. The Plaid public token provided must be generated from Plaid&apos;s sandbox environment. <br/>
-        /// Please see &lt;a href=&quot;https://plaid.com/docs/api/sandbox/#sandboxpublic_tokencreate&quot; target=&quot;_blank&quot;&gt;Plaid&apos;s sandbox documentation&lt;/a&gt; for more <br/>
+        /// Plaid's `sandbox` environment - (requires Plaid reseller setup with Moov). When linking a bank account to a `sandbox` account using a Plaid <br/>
+        /// public token it will utilize Plaid's sandbox environment. The Plaid public token provided must be generated from Plaid's sandbox environment. <br/>
+        /// Please see <a href="https://plaid.com/docs/api/sandbox/#sandboxpublic_tokencreate" target="_blank">Plaid's sandbox documentation</a> for more <br/>
         /// details.
-        /// </remarks>
         /// </summary>
         [JsonProperty("plaidLink")]
         public PlaidLinkIntegration PlaidLink { get; set; } = default!;

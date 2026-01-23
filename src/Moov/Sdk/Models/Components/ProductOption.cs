@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents a single product option within a group.
     /// </summary>
     public class ProductOption
     {
-
         /// <summary>
         /// The display name of a product option.
         /// </summary>
@@ -28,19 +27,16 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// A detailed description of the option.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - Must be valid UTF-8 text<br/>
         /// - Supports Markdown for formatting<br/>
-        /// - HTML is not permitted and will be rejected
-        /// </remarks>
+        /// - HTML is not permitted and will be rejected.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// The adjustment applied to a product&apos;s base price by this option. Can be negative, positive, or zero.
+        /// The adjustment applied to a product's base price by this option. Can be negative, positive, or zero.
         /// </summary>
         [JsonProperty("priceModifier")]
         public AmountDecimal? PriceModifier { get; set; }

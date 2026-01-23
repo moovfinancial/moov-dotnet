@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    
+
     public class ImageUploadRequestMultiPart
     {
-
         /// <summary>
         /// A PNG, JPEG, or WebP image file to upload.
         /// </summary>

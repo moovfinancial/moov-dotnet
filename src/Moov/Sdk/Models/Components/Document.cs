@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class Document
     {
-
         [JsonProperty("documentID")]
         public string DocumentID { get; set; } = default!;
 
@@ -28,7 +27,7 @@ namespace Moov.Sdk.Models.Components
         public DocumentType Type { get; set; } = default!;
 
         /// <summary>
-        /// The document&apos;s MIME type.
+        /// The document's MIME type.
         /// </summary>
         [JsonProperty("contentType")]
         public string ContentType { get; set; } = default!;

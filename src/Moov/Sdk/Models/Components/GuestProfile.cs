@@ -12,19 +12,15 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes a guest account profile.
     /// </summary>
     public class GuestProfile
     {
-
         /// <summary>
         /// The name associated with the guest account.<br/>
-        /// 
-        /// <remarks>
-        /// This will default to &quot;Guest {accountIDfirst8}&quot; if no other name is provided.
-        /// </remarks>
+        /// This will default to "Guest {accountIDfirst8}" if no other name is provided.
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;

@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class CreateTransferDestinationACH
     {
-
         /// <summary>
         /// An optional override of the default NACHA company entry description for a transfer.
         /// </summary>

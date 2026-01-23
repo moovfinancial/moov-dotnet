@@ -157,7 +157,6 @@ namespace Moov.Sdk.Models.Components
         }
     }
 
-
     /// <summary>
     /// The data for the webhook event. The contents are based on the event type.
     /// </summary>

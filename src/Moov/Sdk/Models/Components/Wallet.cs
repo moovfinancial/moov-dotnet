@@ -14,13 +14,12 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// A Moov wallet to store funds for transfers.
     /// </summary>
     public class Wallet
     {
-
         [JsonProperty("walletID")]
         public string WalletID { get; set; } = default!;
 
@@ -31,35 +30,29 @@ namespace Moov.Sdk.Models.Components
         public string PartnerAccountID { get; set; } = default!;
 
         /// <summary>
-        /// Name of the wallet
+        /// Name of the wallet.
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Status of a wallet.<br/>
-        /// 
-        /// <remarks>
         ///   - `active`: The wallet is available for use and has an enabled payment method.<br/>
         ///   - `closed`: The wallet is no longer active and the corresponding payment method has been disabled.
-        /// </remarks>
         /// </summary>
         [JsonProperty("status")]
         public WalletStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Type of a wallet.<br/>
-        /// 
-        /// <remarks>
         ///   - `default`: The system-generated wallet automatically created when an account is granted the wallet capability.<br/>
         ///   - `general`: An additional, user-defined wallet created via API or Dashboard.
-        /// </remarks>
         /// </summary>
         [JsonProperty("walletType")]
         public WalletType WalletType { get; set; } = default!;
 
         /// <summary>
-        /// Description of the wallet
+        /// Description of the wallet.
         /// </summary>
         [JsonProperty("description")]
         public string Description { get; set; } = default!;

@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Options for payment links used to collect payment.
     /// </summary>
     public class PaymentLinkPaymentDetailsUpdate
     {
-
         /// <summary>
         /// A list of payment methods that should be supported for this payment link.
         /// </summary>

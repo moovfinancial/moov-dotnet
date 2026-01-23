@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes link between an account and a terminal application.
     /// </summary>
     public class AccountTerminalApplication
     {
-
         /// <summary>
         /// ID of the merchant account.
         /// </summary>

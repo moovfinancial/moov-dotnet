@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class WebhookDataTransferUpdated
     {
-
         /// <summary>
         /// The accountID which facilitated the transfer.
         /// </summary>

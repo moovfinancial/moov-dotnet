@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Request body for creating or updating image metadata.
     /// </summary>
     public class ImageMetadataRequest
     {
-
         /// <summary>
         /// Alternative text for the image.
         /// </summary>

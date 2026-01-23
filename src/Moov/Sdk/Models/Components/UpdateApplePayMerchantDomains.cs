@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class UpdateApplePayMerchantDomains
     {
-
         /// <summary>
         /// A unique list of fully-qualified, top-level or sub-domain names to add.
         /// </summary>

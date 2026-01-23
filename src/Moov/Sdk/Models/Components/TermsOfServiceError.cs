@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class TermsOfServiceError
     {
-
         [JsonProperty("token")]
         public string? Token { get; set; }
 

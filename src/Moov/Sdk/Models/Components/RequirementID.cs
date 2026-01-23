@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The unique ID of what the requirement is asking to be filled out.
     /// </summary>
@@ -270,5 +270,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum RequirementID");
         }
     }
-
 }

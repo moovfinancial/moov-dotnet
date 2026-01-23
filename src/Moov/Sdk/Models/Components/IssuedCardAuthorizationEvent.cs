@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class IssuedCardAuthorizationEvent
     {
-
         /// <summary>
         /// The identifier for this event. Use the `eventType` field to determine what resource is identified by this ID (`authorization`, `reversal`, etc.).
         /// </summary>

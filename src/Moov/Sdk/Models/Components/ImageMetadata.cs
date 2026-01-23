@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Metadata about an uploaded image.
     /// </summary>
     public class ImageMetadata
     {
-
         [JsonProperty("imageID")]
         public string ImageID { get; set; } = default!;
 
@@ -36,10 +35,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// A public URL to access the image. An optional `size={width}x{height}` <br/>
-        /// 
-        /// <remarks>
         /// query parameter can be provided to resize the image.
-        /// </remarks>
         /// </summary>
         [JsonProperty("link")]
         public string Link { get; set; } = default!;

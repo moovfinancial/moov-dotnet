@@ -11,12 +11,11 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CompleteBankAccountVerification
     {
-
         /// <summary>
-        /// Code provided by user from their bank account transactions
+        /// Code provided by user from their bank account transactions.
         /// </summary>
         [JsonProperty("code")]
         public string Code { get; set; } = default!;

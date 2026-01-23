@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AmountUpdate
     {
-
         /// <summary>
         /// A 3-letter ISO 4217 currency code.
         /// </summary>
@@ -23,11 +22,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Quantity in the smallest unit of the specified currency. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// In USD this is cents, for example, $12.04 is 1204 and $0.99 is 99.
-        /// </remarks>
         /// </summary>
         [JsonProperty("value")]
         public long? Value { get; set; }

@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Describes a file linked to a Moov account.
     /// </summary>
     public class FileDetails
     {
-
         [JsonProperty("fileID")]
         public string FileID { get; set; } = default!;
 
@@ -30,13 +29,13 @@ namespace Moov.Sdk.Models.Components
         public string AccountID { get; set; } = default!;
 
         /// <summary>
-        /// The file&apos;s purpose.
+        /// The file's purpose.
         /// </summary>
         [JsonProperty("filePurpose")]
         public FilePurpose FilePurpose { get; set; } = default!;
 
         /// <summary>
-        /// The file&apos;s status.
+        /// The file's status.
         /// </summary>
         [JsonProperty("fileStatus")]
         public FileStatus FileStatus { get; set; } = default!;

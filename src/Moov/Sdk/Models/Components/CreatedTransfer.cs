@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class CreatedTransfer
     {
-
         [JsonProperty("transferID")]
         public string TransferID { get; set; } = default!;
 
@@ -40,7 +39,7 @@ namespace Moov.Sdk.Models.Components
         public TransferStatus? Status { get; set; }
 
         /// <summary>
-        /// Reason for a transfer&apos;s failure.
+        /// Reason for a transfer's failure.
         /// </summary>
         [JsonProperty("failureReason")]
         public TransferFailureReason? FailureReason { get; set; }
@@ -128,10 +127,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a transfer.<br/>
-        /// 
-        /// <remarks>
         /// When line items are provided, their total plus sales tax must equal the transfer amount.
-        /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }

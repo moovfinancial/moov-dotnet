@@ -25,40 +25,137 @@ namespace Moov.Sdk
 
     public interface IPaymentMethods
     {
-
         /// <summary>
-        /// Retrieve a list of payment methods associated with a Moov account. Read our [payment methods <br/>
-        /// guide](https://docs.moov.io/guides/money-movement/payment-methods/) to learn more.<br/>
+        /// Retrieve a list of payment methods associated with a Moov account. Read our <a href="https://docs.moov.io/guides/money-movement/payment-methods/">payment methods <br/>
+        /// guide</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
         /// </summary>
-        Task<ListPaymentMethodsResponse> ListAsync(string accountID, string? xMoovVersion = null, string? sourceID = null, PaymentMethodType? paymentMethodType = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="sourceID">
+        /// Optional parameter to filter the account's payment methods by source ID. <br/>
+        /// <br/>
+        /// A source ID can be a <a href="https://docs.moov.io/api/sources/wallets/list/">walletID</a>, <a href="https://docs.moov.io/api/sources/cards/list/">cardID</a>, <br/>
+        /// or <a href="https://docs.moov.io/api/sources/bank-accounts/list/">bankAccountID</a>.
+        /// </param>
+        /// <param name="paymentMethodType">Optional parameter to filter the account's payment methods by payment method type.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPaymentMethodsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListPaymentMethodsResponse> ListAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            string? sourceID = null,
+            PaymentMethodType? paymentMethodType = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Get the specified payment method associated with a Moov account. Read our <a href="https://docs.moov.io/guides/money-movement/payment-methods/">payment methods guide</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
         /// </summary>
-        Task<GetPaymentMethodResponse> GetAsync(string accountID, string paymentMethodID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="paymentMethodID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetPaymentMethodResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="paymentMethodID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetPaymentMethodResponse> GetAsync(
+            string accountID,
+            string paymentMethodID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
     }
 
     public class PaymentMethods: IPaymentMethods
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public PaymentMethods(SDKConfig config)
         {
             SDKConfiguration = config;
         }
 
-        public async Task<ListPaymentMethodsResponse> ListAsync(string accountID, string? xMoovVersion = null, string? sourceID = null, PaymentMethodType? paymentMethodType = null, CancellationToken? cancellationToken = null)
+        /// <summary>
+        /// Retrieve a list of payment methods associated with a Moov account. Read our <a href="https://docs.moov.io/guides/money-movement/payment-methods/">payment methods <br/>
+        /// guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="sourceID">
+        /// Optional parameter to filter the account's payment methods by source ID. <br/>
+        /// <br/>
+        /// A source ID can be a <a href="https://docs.moov.io/api/sources/wallets/list/">walletID</a>, <a href="https://docs.moov.io/api/sources/cards/list/">cardID</a>, <br/>
+        /// or <a href="https://docs.moov.io/api/sources/bank-accounts/list/">bankAccountID</a>.
+        /// </param>
+        /// <param name="paymentMethodType">Optional parameter to filter the account's payment methods by payment method type.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPaymentMethodsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListPaymentMethodsResponse> ListAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            string? sourceID = null,
+            PaymentMethodType? paymentMethodType = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
 
@@ -70,7 +167,7 @@ namespace Moov.Sdk
                 PaymentMethodType = paymentMethodType,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/payment-methods", request, null);
 
@@ -93,7 +190,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -168,7 +265,40 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<GetPaymentMethodResponse> GetAsync(string accountID, string paymentMethodID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Get the specified payment method associated with a Moov account. Read our <a href="https://docs.moov.io/guides/money-movement/payment-methods/">payment methods guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="paymentMethodID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetPaymentMethodResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="paymentMethodID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetPaymentMethodResponse> GetAsync(
+            string accountID,
+            string paymentMethodID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (paymentMethodID == null) throw new ArgumentNullException(nameof(paymentMethodID));
@@ -180,7 +310,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/payment-methods/{paymentMethodID}", request, null);
 
@@ -203,7 +333,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -277,5 +407,6 @@ namespace Moov.Sdk
 
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
+
     }
 }

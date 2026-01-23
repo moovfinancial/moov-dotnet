@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The expiration date of the card or token.
     /// </summary>
     public class CardExpiration
     {
-
         [JsonProperty("month")]
         public string Month { get; set; } = default!;
 

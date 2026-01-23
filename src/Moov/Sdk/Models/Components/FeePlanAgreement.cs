@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class FeePlanAgreement
     {
-
         [JsonProperty("agreementID")]
         public string AgreementID { get; set; } = default!;
 
@@ -46,7 +45,7 @@ namespace Moov.Sdk.Models.Components
         public FeePlanAgreementStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// Specifies the card processing pricing model
+        /// Specifies the card processing pricing model.
         /// </summary>
         [JsonProperty("cardAcquiringModel")]
         public CardAcquiringModel CardAcquiringModel { get; set; } = default!;

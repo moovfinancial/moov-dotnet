@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class PaymentLinkPayoutDetails
     {
-
         /// <summary>
         /// A list of payment methods that should be supported for this payment link.
         /// </summary>
@@ -25,12 +24,9 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Specify the intended recipient of the payout.<br/>
-        /// 
-        /// <remarks>
         /// Either `email` or `phone` must be specified, but not both.<br/>
         /// <br/>
         /// This information will be used to authenticate the end user when they follow the payment link.
-        /// </remarks>
         /// </summary>
         [JsonProperty("recipient")]
         public PayoutRecipient Recipient { get; set; } = default!;

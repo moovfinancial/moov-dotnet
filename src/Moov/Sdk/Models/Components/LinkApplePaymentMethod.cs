@@ -11,19 +11,15 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    ///   Provides information about the underlying card.<br/>
-    /// 
-    /// <remarks>
+    /// Provides information about the underlying card.<br/>
     /// <br/>
-    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916113-paymentmethod">Apple&apos;s documentation</a> <br/>
+    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916113-paymentmethod">Apple's documentation</a> <br/>
     ///   for more information.
-    /// </remarks>
     /// </summary>
     public class LinkApplePaymentMethod
     {
-
         /// <summary>
         /// A display-friendly discription of the card.
         /// </summary>
@@ -31,7 +27,7 @@ namespace Moov.Sdk.Models.Components
         public string DisplayName { get; set; } = default!;
 
         /// <summary>
-        /// The card&apos;s payment network.
+        /// The card's payment network.
         /// </summary>
         [JsonProperty("network")]
         public string Network { get; set; } = default!;

@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class ScheduleResponse
     {
-
         /// <summary>
         /// Simple description to place on the transfer.
         /// </summary>

@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class UpdateRepresentativeGovernmentID
     {
-
         [JsonProperty("ssn")]
         public UpdateRepresentativeSsn? Ssn { get; set; }
 

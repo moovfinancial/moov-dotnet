@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The entity that generated the fee.
     /// </summary>
     public class GeneratedBy
     {
-
         [JsonProperty("transferID")]
         public string? TransferID { get; set; }
 

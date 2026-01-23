@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class IssuingControls
     {
-
         /// <summary>
         /// Indicates if the card is single-use. If true, the card closes after the first authorization.
         /// </summary>

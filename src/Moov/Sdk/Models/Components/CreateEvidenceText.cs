@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CreateEvidenceText
     {
-
         /// <summary>
         /// The text to associate with the dispute as evidence.
         /// </summary>

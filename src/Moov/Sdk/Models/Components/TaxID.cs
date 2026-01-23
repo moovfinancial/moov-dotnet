@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// An EIN (employer identification number) for the business. For sole proprietors, an SSN can be used as the EIN.
     /// </summary>
     public class TaxID
     {
-
         [JsonProperty("ein")]
         public TaxIDEin Ein { get; set; } = default!;
     }

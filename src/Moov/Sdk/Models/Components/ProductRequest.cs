@@ -13,31 +13,27 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Request to create or update a product.
     /// </summary>
     public class ProductRequest
     {
-
         [JsonProperty("title")]
         public string Title { get; set; } = default!;
 
         /// <summary>
         /// A detailed description of the product.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - Must be valid UTF-8 text<br/>
         /// - Supports Markdown for formatting<br/>
-        /// - HTML is not permitted and will be rejected
-        /// </remarks>
+        /// - HTML is not permitted and will be rejected.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// A product&apos;s starting price, before applying modifiers.
+        /// A product's starting price, before applying modifiers.
         /// </summary>
         [JsonProperty("basePrice")]
         public AmountDecimal BasePrice { get; set; } = default!;

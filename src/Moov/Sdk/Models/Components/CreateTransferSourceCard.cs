@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CreateTransferSourceCard
     {
-
         /// <summary>
         /// An optional override of the default card statement descriptor for a transfer. Accounts must be enabled by Moov to set this field.
         /// </summary>
@@ -24,12 +23,9 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Specifies the nature and initiator of a transaction. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// Crucial for recurring and merchant-initiated transactions as per card scheme rules. <br/>
         /// Omit for customer-initiated e-commerce transactions.
-        /// </remarks>
         /// </summary>
         [JsonProperty("transactionSource")]
         public TransactionSource? TransactionSource { get; set; }

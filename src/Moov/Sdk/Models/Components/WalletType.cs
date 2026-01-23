@@ -12,14 +12,11 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Type of a wallet.<br/>
-    /// 
-    /// <remarks>
     ///   - `default`: The system-generated wallet automatically created when an account is granted the wallet capability.<br/>
     ///   - `general`: An additional, user-defined wallet created via API or Dashboard.
-    /// </remarks>
     /// </summary>
     public enum WalletType
     {
@@ -61,5 +58,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum WalletType");
         }
     }
-
 }

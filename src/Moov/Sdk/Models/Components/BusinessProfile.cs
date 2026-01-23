@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Describes a business.
     /// </summary>
     public class BusinessProfile
     {
-
         /// <summary>
         /// The legal name under which the entity is registered.
         /// </summary>

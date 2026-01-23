@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class CreateTransfer
     {
-
         /// <summary>
         /// Where funds for a transfer originate. For the source, you must include either a `paymentMethodID` or a `transferID`.
         /// </summary>
@@ -64,10 +63,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a transfer.<br/>
-        /// 
-        /// <remarks>
         /// When line items are provided, their total plus sales tax must equal the transfer amount.
-        /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
         public CreateTransferLineItems? LineItems { get; set; }

@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The reason the bank account status changed to the current value.
     /// </summary>
@@ -82,5 +82,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum BankAccountStatusReason");
         }
     }
-
 }

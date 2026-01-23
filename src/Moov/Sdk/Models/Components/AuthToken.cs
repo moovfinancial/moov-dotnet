@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AuthToken
     {
-
         /// <summary>
         /// An <a href="https://www.rfc-editor.org/rfc/rfc6750#section-6.1">RFC 6750</a> token type.
         /// </summary>

@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// User provided settings to manage card payments. This data is only allowed on a business account.
     /// </summary>
     public class CardPaymentSettings
     {
-
         /// <summary>
         /// The description that shows up on credit card transactions. This will default to the accounts display name on account creation.
         /// </summary>

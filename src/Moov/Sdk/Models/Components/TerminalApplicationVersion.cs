@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes a terminal application version.
     /// </summary>
     public class TerminalApplicationVersion
     {
-
         /// <summary>
         /// The app version of the terminal application (version code for Android terminal application).
         /// </summary>

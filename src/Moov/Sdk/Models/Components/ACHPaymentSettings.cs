@@ -11,12 +11,11 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class ACHPaymentSettings
     {
-
         /// <summary>
-        /// The description that shows up on ACH transactions. This will default to the account&apos;s display name on account creation.
+        /// The description that shows up on ACH transactions. This will default to the account's display name on account creation.
         /// </summary>
         [JsonProperty("companyName")]
         public string CompanyName { get; set; } = default!;

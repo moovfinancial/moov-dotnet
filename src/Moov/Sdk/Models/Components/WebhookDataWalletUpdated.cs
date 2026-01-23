@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class WebhookDataWalletUpdated
     {
-
         [JsonProperty("accountID")]
         public string AccountID { get; set; } = default!;
 
@@ -24,11 +23,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Status of a wallet.<br/>
-        /// 
-        /// <remarks>
         ///   - `active`: The wallet is available for use and has an enabled payment method.<br/>
         ///   - `closed`: The wallet is no longer active and the corresponding payment method has been disabled.
-        /// </remarks>
         /// </summary>
         [JsonProperty("status")]
         public WalletStatus Status { get; set; } = default!;

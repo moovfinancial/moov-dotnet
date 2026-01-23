@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class Residual
     {
-
         [JsonProperty("residualID")]
         public string ResidualID { get; set; } = default!;
 
@@ -39,12 +38,9 @@ namespace Moov.Sdk.Models.Components
         public AmountDecimal NetIncome { get; set; } = default!;
 
         /// <summary>
-        ///   The decimal-formatted numerical string of the revenue split for partner.<br/>
-        /// 
-        /// <remarks>
+        /// The decimal-formatted numerical string of the revenue split for partner.<br/>
         ///   <br/>
-        ///   For example, 2.25% is &apos;2.25&apos;.
-        /// </remarks>
+        ///   For example, 2.25% is '2.25'.
         /// </summary>
         [JsonProperty("revenueShare")]
         public string RevenueShare { get; set; } = default!;

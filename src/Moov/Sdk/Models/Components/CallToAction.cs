@@ -12,15 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
-    /// The text to be displayed on web form&apos;s submit button.<br/>
-    /// 
-    /// <remarks>
+    /// The text to be displayed on web form's submit button.<br/>
     /// <br/>
-    /// If set to &quot;auto&quot; the UI will automatically select between <br/>
-    /// &quot;pay&quot; and &quot;confirm&quot; for payments and payouts respectively.
-    /// </remarks>
+    /// If set to "auto" the UI will automatically select between <br/>
+    /// "pay" and "confirm" for payments and payouts respectively.
     /// </summary>
     public enum CallToAction
     {
@@ -70,5 +67,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum CallToAction");
         }
     }
-
 }

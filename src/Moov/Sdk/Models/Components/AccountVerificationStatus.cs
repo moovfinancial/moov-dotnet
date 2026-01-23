@@ -12,10 +12,11 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Possible states an account verification can be in.
-    /// </summary>    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
+    /// </summary>
+    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public enum AccountVerificationStatus
     {
         [JsonProperty("unverified")]
@@ -66,5 +67,4 @@ namespace Moov.Sdk.Models.Components
         }
     }
 #pragma warning restore 0618
-
 }

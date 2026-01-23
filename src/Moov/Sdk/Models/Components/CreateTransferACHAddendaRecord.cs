@@ -11,15 +11,14 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    /// An addenda record to be added to an ACH transfer
+    /// An addenda record to be added to an ACH transfer.
     /// </summary>
     public class CreateTransferACHAddendaRecord
     {
-
         /// <summary>
-        /// The raw ACH addenda record. Must only contain valid NACHA characters
+        /// The raw ACH addenda record. Must only contain valid NACHA characters.
         /// </summary>
         [JsonProperty("record")]
         public string Record { get; set; } = default!;

@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class Cancellation
     {
-
         [JsonProperty("cancellationID")]
         public string CancellationID { get; set; } = default!;
 

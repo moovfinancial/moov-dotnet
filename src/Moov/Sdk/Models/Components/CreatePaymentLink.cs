@@ -13,29 +13,24 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Request to create a new payment link.<br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// A payment link must include either `payment` or `payout` details, but not both. For payout payment links,<br/>
     /// `maxUses` will automatically be set to 1, as these are intended for a one-time disbursement<br/>
-    /// to a specific recipient.<br/>
-    /// 
-    /// </remarks>
+    /// to a specific recipient.
     /// </summary>
     public class CreatePaymentLink
     {
-
         /// <summary>
-        /// The partner&apos;s Moov account ID.
+        /// The partner's Moov account ID.
         /// </summary>
         [JsonProperty("partnerAccountID")]
         public string PartnerAccountID { get; set; } = default!;
 
         /// <summary>
-        /// The merchant&apos;s preferred payment method ID. Must be a wallet payment method.
+        /// The merchant's preferred payment method ID. Must be a wallet payment method.
         /// </summary>
         [JsonProperty("merchantPaymentMethodID")]
         public string MerchantPaymentMethodID { get; set; } = default!;
@@ -48,11 +43,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional limit on the number of times this payment link can be used. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// **For payouts, `maxUses` is always 1.**
-        /// </remarks>
         /// </summary>
         [JsonProperty("maxUses")]
         public long? MaxUses { get; set; }
@@ -83,10 +75,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a payment link.<br/>
-        /// 
-        /// <remarks>
         /// When line items are provided, their total plus sales tax must equal the payment link amount.
-        /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
         public CreatePaymentLinkLineItems? LineItems { get; set; }

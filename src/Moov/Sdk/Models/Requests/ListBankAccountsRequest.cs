@@ -10,14 +10,11 @@
 namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Utils;
-    
+
     public class ListBankAccountsRequest
     {
-
         /// <summary>
         /// Specify an API version.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
         ///   - `YYYY` is the year<br/>
@@ -27,7 +24,6 @@ namespace Moov.Sdk.Models.Requests
         /// <br/>
         /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
         public string? XMoovVersion { get; set; }

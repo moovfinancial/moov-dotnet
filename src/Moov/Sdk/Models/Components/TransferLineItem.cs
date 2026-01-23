@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents a single item in a transfer, including optional modifiers and quantity.
     /// </summary>
     public class TransferLineItem
     {
-
         /// <summary>
         /// The name of the item.
         /// </summary>

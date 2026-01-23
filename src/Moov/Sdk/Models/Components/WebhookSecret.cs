@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The secret used to verify webhook payloads.
     /// </summary>
     public class WebhookSecret
     {
-
         /// <summary>
         /// The secret key used to sign webhook payloads. Use this to verify the authenticity of incoming webhooks.
         /// </summary>

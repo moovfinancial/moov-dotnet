@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Describes the acceptance of the Terms of Service.
     /// </summary>
     public class TermsOfService
     {
-
         /// <summary>
         /// The date and time the terms of service were accepted.
         /// </summary>

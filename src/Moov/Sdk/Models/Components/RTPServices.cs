@@ -11,18 +11,17 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class RTPServices
     {
-
         /// <summary>
-        /// Can the institution receive payments
+        /// Can the institution receive payments.
         /// </summary>
         [JsonProperty("receivePayments")]
         public bool ReceivePayments { get; set; } = default!;
 
         /// <summary>
-        /// Can the institution receive request for payment messages
+        /// Can the institution receive request for payment messages.
         /// </summary>
         [JsonProperty("receiveRequestForPayment")]
         public bool ReceiveRequestForPayment { get; set; } = default!;

@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Occurrences to either create or modify.
     /// </summary>
     public class Occurrence
     {
-
         /// <summary>
         /// If set to true, will cancel the occurrence. If set false will resume the occurrence. If unset leaves the value unchanged.
         /// </summary>
@@ -27,11 +26,8 @@ namespace Moov.Sdk.Models.Components
         public bool? Canceled { get; set; }
 
         /// <summary>
-        ///   If set this defines what occurrence to modify, if invalid will fail the request. <br/>
-        /// 
-        /// <remarks>
-        ///   If null or &quot;&quot; it defines to add a new occurrence.
-        /// </remarks>
+        /// If set this defines what occurrence to modify, if invalid will fail the request. <br/>
+        ///   If null or "" it defines to add a new occurrence.
         /// </summary>
         [JsonProperty("occurrenceID")]
         public string? OccurrenceID { get; set; }

@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents a modifier or option applied to a line item.
     /// </summary>
     public class TransferLineItemOption
     {
-
         /// <summary>
         /// The name of the option or modifier.
         /// </summary>
@@ -45,7 +44,7 @@ namespace Moov.Sdk.Models.Components
         public List<TransferLineItemImageMetadata>? Images { get; set; }
 
         /// <summary>
-        /// Optional group identifier to categorize related options (e.g., &apos;toppings&apos;).
+        /// Optional group identifier to categorize related options (e.g., 'toppings').
         /// </summary>
         [JsonProperty("group")]
         public string? Group { get; set; }

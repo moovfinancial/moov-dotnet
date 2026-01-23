@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents a single item in an invoice, including optional modifiers and quantity.
     /// </summary>
     public class InvoiceLineItem
     {
-
         /// <summary>
         /// The name of the item.
         /// </summary>

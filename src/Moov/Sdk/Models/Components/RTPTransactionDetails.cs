@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// RTP specific details about the transaction.
     /// </summary>
     public class RTPTransactionDetails
     {
-
         /// <summary>
         /// Status of a transaction within the RTP lifecycle.
         /// </summary>

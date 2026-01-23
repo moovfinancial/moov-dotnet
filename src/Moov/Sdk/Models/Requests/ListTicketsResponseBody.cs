@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Requests
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// A paginated list of items. The `nextPage` field is omitted if there are no more pages available.
     /// </summary>
     public class ListTicketsResponseBody
     {
-
         [JsonProperty("items")]
         public List<Ticket> Items { get; set; } = default!;
 

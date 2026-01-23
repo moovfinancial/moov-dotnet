@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Brand colors for light and dark modes.
     /// </summary>
     public class BrandColors
     {
-
         [JsonProperty("dark")]
         public BrandColor Dark { get; set; } = default!;
 

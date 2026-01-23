@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Options for payment links used to collect a card payment.
     /// </summary>
     public class CardPaymentDetails
     {
-
         /// <summary>
         /// An optional override of the default card statement descriptor for a transfer. Accounts must be enabled by Moov to set this field.
         /// </summary>

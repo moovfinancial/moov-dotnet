@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Monthly partner costs that are charged separately and not included in residual subtotal (e.g. platform fees, minimums).
     /// </summary>
     public class PartnerFees
     {
-
         /// <summary>
         /// The minimum spending amount that must be met in the billing period. If actual usage is below the minimum amount, account is charged the difference.
         /// </summary>

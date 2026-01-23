@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes a create terminal application request.
     /// </summary>
     public class CreateTerminalApplication
     {
-
         /// <summary>
         /// Platform of the terminal application.
         /// </summary>

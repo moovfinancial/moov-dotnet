@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public enum CardTransactionFailureCode
     {
         [JsonProperty("call-issuer")]
@@ -99,5 +99,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum CardTransactionFailureCode");
         }
     }
-
 }

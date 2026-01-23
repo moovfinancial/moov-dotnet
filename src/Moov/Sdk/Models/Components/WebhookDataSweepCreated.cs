@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class WebhookDataSweepCreated
     {
-
         [JsonProperty("walletID")]
         public string WalletID { get; set; } = default!;
 

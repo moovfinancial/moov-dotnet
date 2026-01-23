@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class PatchBusiness
     {
-
         [JsonProperty("legalBusinessName")]
         public string? LegalBusinessName { get; set; }
 

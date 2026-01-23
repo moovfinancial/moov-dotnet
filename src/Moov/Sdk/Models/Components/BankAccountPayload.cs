@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes the bank account to link to the Moov account.
     /// </summary>
     public class BankAccountPayload
     {
-
         [JsonProperty("account")]
         public BankAccountIntegration Account { get; set; } = default!;
     }

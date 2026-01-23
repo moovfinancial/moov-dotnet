@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AmountDecimalUpdate
     {
-
         /// <summary>
         /// A 3-letter ISO 4217 currency code.
         /// </summary>
@@ -23,11 +22,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// A decimal-formatted numerical string that represents up to 9 decimal place precision. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// For example, $12.987654321 is &apos;12.987654321&apos;.
-        /// </remarks>
+        /// For example, $12.987654321 is '12.987654321'.
         /// </summary>
         [JsonProperty("valueDecimal")]
         public string? ValueDecimal { get; set; }

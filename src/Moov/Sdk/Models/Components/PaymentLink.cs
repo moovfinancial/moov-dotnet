@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class PaymentLink
     {
-
         /// <summary>
         /// Unique code identifying this payment link.
         /// </summary>
@@ -36,25 +35,25 @@ namespace Moov.Sdk.Models.Components
         public PaymentLinkStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// The partner&apos;s Moov account ID.
+        /// The partner's Moov account ID.
         /// </summary>
         [JsonProperty("partnerAccountID")]
         public string PartnerAccountID { get; set; } = default!;
 
         /// <summary>
-        /// The merchant&apos;s Moov account ID.
+        /// The merchant's Moov account ID.
         /// </summary>
         [JsonProperty("merchantAccountID")]
         public string MerchantAccountID { get; set; } = default!;
 
         /// <summary>
-        /// The payment link&apos;s owner&apos;s Moov account ID.
+        /// The payment link's owner's Moov account ID.
         /// </summary>
         [JsonProperty("ownerAccountID")]
         public string OwnerAccountID { get; set; } = default!;
 
         /// <summary>
-        /// The merchant&apos;s preferred payment method ID. Must be a wallet payment method.
+        /// The merchant's preferred payment method ID. Must be a wallet payment method.
         /// </summary>
         [JsonProperty("merchantPaymentMethodID")]
         public string MerchantPaymentMethodID { get; set; } = default!;
@@ -82,11 +81,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional limit on the number of times this payment link can be used. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// **For payouts, `maxUses` is always 1.**
-        /// </remarks>
         /// </summary>
         [JsonProperty("maxUses")]
         public long? MaxUses { get; set; }
@@ -123,10 +119,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a payment link.<br/>
-        /// 
-        /// <remarks>
         /// When line items are provided, their total plus sales tax must equal the payment link amount.
-        /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
         public PaymentLinkLineItems? LineItems { get; set; }

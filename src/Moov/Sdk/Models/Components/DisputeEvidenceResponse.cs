@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class DisputeEvidenceResponse
     {
-
         [JsonProperty("evidenceID")]
         public string EvidenceID { get; set; } = default!;
 

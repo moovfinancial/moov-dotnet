@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class EnrichedAddressResponse
     {
-
         [JsonProperty("suggestions")]
         public List<AddressSuggestion> Suggestions { get; set; } = default!;
     }

@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes a business representative to create.
     /// </summary>
     public class CreateRepresentative
     {
-
         [JsonProperty("name")]
         public IndividualName Name { get; set; } = default!;
 

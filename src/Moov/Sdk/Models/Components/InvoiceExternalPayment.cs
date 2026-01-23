@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class InvoiceExternalPayment
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

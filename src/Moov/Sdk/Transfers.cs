@@ -25,19 +25,46 @@ namespace Moov.Sdk
 
     public interface ITransfers
     {
-
         /// <summary>
         /// Generate available payment method options for one or multiple transfer participants depending on the accountID or paymentMethodID you <br/>
         /// supply in the request body.<br/>
         /// <br/>
-        /// The accountID in the route should the partner&apos;s accountID.<br/>
+        /// The accountID in the route should the partner's accountID.<br/>
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        Task<CreateTransferOptionsResponse> GenerateOptionsAsync(string accountID, CreateTransferOptions body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">The partner's Moov account ID.</param>
+        /// <param name="body">A <see cref="CreateTransferOptions"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateTransferOptionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="TransferOptionsValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateTransferOptionsResponse> GenerateOptionsAsync(
+            string accountID,
+            CreateTransferOptions body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Move money by providing the source, destination, and amount in the request body.<br/>
@@ -45,9 +72,23 @@ namespace Moov.Sdk
         /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more. <br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        Task<CreateTransferResponse> CreateAsync(CreateTransferRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="CreateTransferRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateTransferResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="TransferException">The transfer was created, but rail-specific details may not be available within the 15 second timeout window. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="TransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateTransferResponse> CreateAsync(
+            CreateTransferRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// List all the transfers associated with a particular Moov account. <br/>
@@ -57,12 +98,24 @@ namespace Moov.Sdk
         /// When you run this request, you retrieve 200 transfers at a time. You can advance past a results set of 200 transfers by using the `skip` parameter (for example, <br/>
         /// if you set `skip`= 10, you will see a results set of 200 transfers after the first 10). If you are searching a high volume of transfers, the request will likely <br/>
         /// process very slowly. To achieve faster performance, restrict the data as much as you can by using the `StartDateTime` and `EndDateTime` parameters for a limited <br/>
-        /// period of time. You can run multiple requests in smaller time window increments until you&apos;ve retrieved all the transfers you need.<br/>
+        /// period of time. You can run multiple requests in smaller time window increments until you've retrieved all the transfers you need.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
-        Task<ListTransfersResponse> ListAsync(ListTransfersRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="ListTransfersRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListTransfersResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="ListTransfersValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListTransfersResponse> ListAsync(
+            ListTransfersRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Retrieve full transfer details for an individual transfer of a particular Moov account. <br/>
@@ -71,35 +124,145 @@ namespace Moov.Sdk
         /// to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
-        Task<GetTransferResponse> GetAsync(string transferID, string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetTransferResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/> or <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetTransferResponse> GetAsync(
+            string transferID,
+            string accountID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Update the metadata contained on a transfer.<br/>
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a><br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        Task<UpdateTransferResponse> UpdateAsync(string transferID, string accountID, PatchTransfer body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="body">A <see cref="PatchTransfer"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateTransferResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="PatchTransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<UpdateTransferResponse> UpdateAsync(
+            string transferID,
+            string accountID,
+            PatchTransfer body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
-        ///   Initiate a cancellation for a card, ACH, or queued transfer.<br/>
+        /// Initiate a cancellation for a card, ACH, or queued transfer.<br/>
         ///   <br/>
-        ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you&apos;ll need <br/>
+        ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        Task<CreateCancellationResponse> CreateCancellationAsync(string accountID, string transferID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">The partner's Moov account ID.</param>
+        /// <param name="transferID">The transfer ID to cancel.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateCancellationResponse> CreateCancellationAsync(
+            string accountID,
+            string transferID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
-        ///   Get details of a cancellation for a transfer.<br/>
+        /// Get details of a cancellation for a transfer.<br/>
         ///   <br/>
-        ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you&apos;ll need <br/>
+        ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
-        Task<GetCancellationResponse> GetCancellationAsync(string accountID, string transferID, string cancellationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Moov account ID of the partner or transfer's source or destination.</param>
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="cancellationID">Identifier for the cancellation.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetCancellationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="cancellationID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetCancellationResponse> GetCancellationAsync(
+            string accountID,
+            string transferID,
+            string cancellationID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Initiate a refund for a card transfer.<br/>
@@ -108,52 +271,171 @@ namespace Moov.Sdk
         /// See the <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals</a> guide for more information. <br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        Task<InitiateRefundResponse> InitiateRefundAsync(InitiateRefundRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="InitiateRefundRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="InitiateRefundResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="CardAcquiringRefundException">A refund was successfully created but an error occurred while waiting for a synchronous response. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="RefundValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<InitiateRefundResponse> InitiateRefundAsync(
+            InitiateRefundRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Get a list of refunds for a card transfer.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
-        Task<ListRefundsResponse> ListRefundsAsync(string accountID, string transferID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListRefundsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListRefundsResponse> ListRefundsAsync(
+            string accountID,
+            string transferID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Get details of a refund for a card transfer.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
-        Task<GetRefundResponse> GetRefundAsync(string transferID, string accountID, string refundID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="refundID">Identifier for the refund.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetRefundResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="refundID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetRefundResponse> GetRefundAsync(
+            string transferID,
+            string accountID,
+            string refundID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Reverses a card transfer by initiating a cancellation or refund depending on the transaction status. <br/>
         /// Read our <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals guide</a> <br/>
         /// to learn more.<br/>
         /// <br/>
-        /// To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you&apos;ll need <br/>
+        /// To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         /// to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        Task<CreateReversalResponse> CreateReversalAsync(CreateReversalRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="CreateReversalRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateReversalResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="ReversalValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateReversalResponse> CreateReversalAsync(
+            CreateReversalRequest request,
+            CancellationToken? cancellationToken = null
+        );
     }
 
     public class Transfers: ITransfers
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public Transfers(SDKConfig config)
         {
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTransferOptionsResponse> GenerateOptionsAsync(string accountID, CreateTransferOptions body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+        /// <summary>
+        /// Generate available payment method options for one or multiple transfer participants depending on the accountID or paymentMethodID you <br/>
+        /// supply in the request body.<br/>
+        /// <br/>
+        /// The accountID in the route should the partner's accountID.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// </summary>
+        /// <param name="accountID">The partner's Moov account ID.</param>
+        /// <param name="body">A <see cref="CreateTransferOptions"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateTransferOptionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="TransferOptionsValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateTransferOptionsResponse> GenerateOptionsAsync(
+            string accountID,
+            CreateTransferOptions body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (body == null) throw new ArgumentNullException(nameof(body));
@@ -165,7 +447,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfer-options", request, null);
 
@@ -194,7 +476,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -321,12 +603,34 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<CreateTransferResponse> CreateAsync(CreateTransferRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Move money by providing the source, destination, and amount in the request body.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more. <br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="CreateTransferRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateTransferResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="TransferException">The transfer was created, but rail-specific details may not be available within the 15 second timeout window. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="TransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateTransferResponse> CreateAsync(
+            CreateTransferRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers", request, null);
 
@@ -355,7 +659,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 404 || _statusCode == 409 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -566,12 +870,37 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListTransfersResponse> ListAsync(ListTransfersRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// List all the transfers associated with a particular Moov account. <br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more. <br/>
+        /// <br/>
+        /// When you run this request, you retrieve 200 transfers at a time. You can advance past a results set of 200 transfers by using the `skip` parameter (for example, <br/>
+        /// if you set `skip`= 10, you will see a results set of 200 transfers after the first 10). If you are searching a high volume of transfers, the request will likely <br/>
+        /// process very slowly. To achieve faster performance, restrict the data as much as you can by using the `StartDateTime` and `EndDateTime` parameters for a limited <br/>
+        /// period of time. You can run multiple requests in smaller time window increments until you've retrieved all the transfers you need.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="ListTransfersRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListTransfersResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="ListTransfersValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListTransfersResponse> ListAsync(
+            ListTransfersRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers", request, null);
 
@@ -594,7 +923,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -695,7 +1024,43 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<GetTransferResponse> GetAsync(string transferID, string accountID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Retrieve full transfer details for an individual transfer of a particular Moov account. <br/>
+        /// <br/>
+        /// Payment rail-specific details are included in the source and destination. Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> <br/>
+        /// to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// </summary>
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetTransferResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/> or <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetTransferResponse> GetAsync(
+            string transferID,
+            string accountID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (transferID == null) throw new ArgumentNullException(nameof(transferID));
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
@@ -707,7 +1072,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}", request, null);
 
@@ -730,7 +1095,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -805,7 +1170,45 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<UpdateTransferResponse> UpdateAsync(string transferID, string accountID, PatchTransfer body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Update the metadata contained on a transfer.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/money-movement/overview/">transfers overview guide</a> to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// </summary>
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="body">A <see cref="PatchTransfer"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateTransferResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="PatchTransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<UpdateTransferResponse> UpdateAsync(
+            string transferID,
+            string accountID,
+            PatchTransfer body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (transferID == null) throw new ArgumentNullException(nameof(transferID));
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
@@ -819,7 +1222,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}", request, null);
 
@@ -848,7 +1251,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -949,7 +1352,41 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<CreateCancellationResponse> CreateCancellationAsync(string accountID, string transferID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Initiate a cancellation for a card, ACH, or queued transfer.<br/>
+        ///   <br/>
+        ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
+        ///   to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// </summary>
+        /// <param name="accountID">The partner's Moov account ID.</param>
+        /// <param name="transferID">The transfer ID to cancel.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateCancellationResponse> CreateCancellationAsync(
+            string accountID,
+            string transferID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (transferID == null) throw new ArgumentNullException(nameof(transferID));
@@ -961,7 +1398,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/cancellations", request, null);
 
@@ -984,7 +1421,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1085,7 +1522,42 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<GetCancellationResponse> GetCancellationAsync(string accountID, string transferID, string cancellationID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Get details of a cancellation for a transfer.<br/>
+        ///   <br/>
+        ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
+        ///   to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// </summary>
+        /// <param name="accountID">Moov account ID of the partner or transfer's source or destination.</param>
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="cancellationID">Identifier for the cancellation.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetCancellationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="cancellationID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetCancellationResponse> GetCancellationAsync(
+            string accountID,
+            string transferID,
+            string cancellationID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (transferID == null) throw new ArgumentNullException(nameof(transferID));
@@ -1099,7 +1571,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/cancellations/{cancellationID}", request, null);
 
@@ -1122,7 +1594,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1197,12 +1669,35 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<InitiateRefundResponse> InitiateRefundAsync(InitiateRefundRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Initiate a refund for a card transfer.<br/>
+        /// <br/>
+        /// **Use the <a href="https://docs.moov.io/api/money-movement/refunds/cancel/">Cancel or refund a card transfer</a> endpoint for more comprehensive cancel and refund options.**    <br/>
+        /// See the <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals</a> guide for more information. <br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="InitiateRefundRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="InitiateRefundResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="CardAcquiringRefundException">A refund was successfully created but an error occurred while waiting for a synchronous response. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="RefundValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<InitiateRefundResponse> InitiateRefundAsync(
+            InitiateRefundRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/refunds", request, null);
 
@@ -1231,7 +1726,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 404 || _statusCode == 409 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1413,7 +1908,40 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListRefundsResponse> ListRefundsAsync(string accountID, string transferID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Get a list of refunds for a card transfer.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListRefundsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListRefundsResponse> ListRefundsAsync(
+            string accountID,
+            string transferID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (transferID == null) throw new ArgumentNullException(nameof(transferID));
@@ -1425,7 +1953,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/refunds", request, null);
 
@@ -1448,7 +1976,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1523,7 +2051,42 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<GetRefundResponse> GetRefundAsync(string transferID, string accountID, string refundID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Get details of a refund for a card transfer.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// </summary>
+        /// <param name="transferID">Identifier for the transfer.</param>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="refundID">Identifier for the refund.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetRefundResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="refundID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetRefundResponse> GetRefundAsync(
+            string transferID,
+            string accountID,
+            string refundID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (transferID == null) throw new ArgumentNullException(nameof(transferID));
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
@@ -1537,7 +2100,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/refunds/{refundID}", request, null);
 
@@ -1560,7 +2123,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1635,12 +2198,33 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<CreateReversalResponse> CreateReversalAsync(CreateReversalRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Reverses a card transfer by initiating a cancellation or refund depending on the transaction status. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals guide</a> <br/>
+        /// to learn more.<br/>
+        /// <br/>
+        /// To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
+        /// to specify the `/accounts/{accountID}/transfers.write` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="CreateReversalRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateReversalResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="ReversalValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateReversalResponse> CreateReversalAsync(
+            CreateReversalRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/reversals", request, null);
 
@@ -1669,7 +2253,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 409 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1795,5 +2379,6 @@ namespace Moov.Sdk
 
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
+
     }
 }

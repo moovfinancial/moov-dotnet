@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class PartnerPricing
     {
-
         [JsonProperty("planID")]
         public string PlanID { get; set; } = default!;
 
@@ -34,18 +33,15 @@ namespace Moov.Sdk.Models.Components
         public string? Description { get; set; }
 
         /// <summary>
-        ///   The decimal-formatted numerical string of the revenue split for partner.<br/>
-        /// 
-        /// <remarks>
+        /// The decimal-formatted numerical string of the revenue split for partner.<br/>
         ///   <br/>
-        ///   For example, 2.25% is &apos;2.25&apos;.
-        /// </remarks>
+        ///   For example, 2.25% is '2.25'.
         /// </summary>
         [JsonProperty("revenueShare")]
         public string RevenueShare { get; set; } = default!;
 
         /// <summary>
-        /// Specifies the card processing pricing model
+        /// Specifies the card processing pricing model.
         /// </summary>
         [JsonProperty("cardAcquiringModel")]
         public CardAcquiringModel CardAcquiringModel { get; set; } = default!;

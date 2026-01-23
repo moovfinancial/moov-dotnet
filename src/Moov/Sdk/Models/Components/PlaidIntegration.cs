@@ -11,26 +11,22 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The details of a Plaid processor integration for a linked funding source. <br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// `sandbox` - When linking a bank account to a `sandbox` account using a Plaid processor token a default bank account<br/>
     /// response will be used. The following default data will be used to generate the bank account in this flow:<br/>
     /// <br/>
     /// ```<br/>
-    ///   RoutingNumber: &quot;011401533&quot;,<br/>
-    ///   AccountNumber: &quot;1111222233330000&quot;,<br/>
-    ///   AccountType:   &quot;checking&quot;,<br/>
-    ///   Mask:          &quot;0000&quot;<br/>
+    ///   RoutingNumber: "011401533",<br/>
+    ///   AccountNumber: "1111222233330000",<br/>
+    ///   AccountType:   "checking",<br/>
+    ///   Mask:          "0000"<br/>
     /// ```
-    /// </remarks>
     /// </summary>
     public class PlaidIntegration
     {
-
         [JsonProperty("token")]
         public string Token { get; set; } = default!;
     }

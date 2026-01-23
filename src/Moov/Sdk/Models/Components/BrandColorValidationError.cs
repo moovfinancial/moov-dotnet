@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class BrandColorValidationError
     {
-
         [JsonProperty("accent")]
         public string? Accent { get; set; }
     }

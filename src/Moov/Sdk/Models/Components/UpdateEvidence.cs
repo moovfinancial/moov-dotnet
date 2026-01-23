@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class UpdateEvidence
     {
-
         [JsonProperty("evidenceType")]
         public EvidenceType? EvidenceType { get; set; }
 

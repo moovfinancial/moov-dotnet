@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class ScheduledTransferImageMetadata
     {
-
         /// <summary>
         /// Unique identifier for a image resource.
         /// </summary>
@@ -28,7 +27,7 @@ namespace Moov.Sdk.Models.Components
         public string? AltText { get; set; }
 
         /// <summary>
-        /// The image&apos;s public URL.
+        /// The image's public URL.
         /// </summary>
         [JsonProperty("link")]
         public string Link { get; set; } = default!;

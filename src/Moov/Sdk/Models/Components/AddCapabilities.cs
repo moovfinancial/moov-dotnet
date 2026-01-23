@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class AddCapabilities
     {
-
         [JsonProperty("capabilities")]
         public List<CapabilityID> Capabilities { get; set; } = default!;
     }

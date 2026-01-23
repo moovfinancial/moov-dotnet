@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Describes the scopes being shared from a subject account to a principal account.
     /// </summary>
     public class ShareScopes
     {
-
         /// <summary>
         /// The account ID that will receive access to the scopes.
         /// </summary>

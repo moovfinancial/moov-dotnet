@@ -25,117 +25,329 @@ namespace Moov.Sdk
 
     public interface IFeePlans
     {
-
         /// <summary>
         /// List all fee plan agreements associated with an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<ListFeePlanAgreementsResponse> ListFeePlanAgreementsAsync(ListFeePlanAgreementsRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="ListFeePlanAgreementsRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeePlanAgreementsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListFeePlanAgreementsResponse> ListFeePlanAgreementsAsync(
+            ListFeePlanAgreementsRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Creates the subscription of a fee plan to a merchant account. Merchants are required to accept the fee plan terms prior to activation.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.write` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.write` scope.
         /// </summary>
-        Task<CreateFeePlanAgreementsResponse> CreateFeePlanAgreementsAsync(string accountID, CreateFeePlanAgreement body, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="body">A <see cref="CreateFeePlanAgreement"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateFeePlanAgreementsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="FeePlanAgreementError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateFeePlanAgreementsResponse> CreateFeePlanAgreementsAsync(
+            string accountID,
+            CreateFeePlanAgreement body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// List all fee plans available for use by an account. This is intended to be used by an account when <br/>
         /// selecting a fee plan to apply to a connected account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<ListFeePlansResponse> ListFeePlansAsync(string accountID, string? xMoovVersion = null, List<string>? planIDs = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="planIDs">A comma-separated list of plan IDs to filter the results by.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeePlansResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListFeePlansResponse> ListFeePlansAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            List<string>? planIDs = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Used by a partner. Retrieve revenue generated from merchant fees.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<ListFeeRevenueResponse> ListFeeRevenueAsync(ListFeeRevenueRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="ListFeeRevenueRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeeRevenueResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListFeeRevenueResponse> ListFeeRevenueAsync(
+            ListFeeRevenueRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Retrieve fees assessed to an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
-        Task<RetrieveFeesResponse> RetrieveFeesAsync(RetrieveFeesRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="RetrieveFeesRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="RetrieveFeesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<RetrieveFeesResponse> RetrieveFeesAsync(
+            RetrieveFeesRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// List fees associated with an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
-        Task<ListFeesFetchResponse> ListFeesFetchAsync(string accountID, string? xMoovVersion = null, Models.Components.ListFeesFetchRequest? body = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="body">A <see cref="Moov.Sdk.Models.Components.ListFeesFetchRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeesFetchResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListFeesFetchResponse> ListFeesFetchAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            Models.Components.ListFeesFetchRequest? body = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// List all partner pricing plans available for use by an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<ListPartnerPricingResponse> ListPartnerPricingAsync(string accountID, string? xMoovVersion = null, List<string>? planIDs = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="planIDs">A comma-separated list of plan IDs to filter the results by.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPartnerPricingResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListPartnerPricingResponse> ListPartnerPricingAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            List<string>? planIDs = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// List all partner pricing agreements associated with an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<ListPartnerPricingAgreementsResponse> ListPartnerPricingAgreementsAsync(ListPartnerPricingAgreementsRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="ListPartnerPricingAgreementsRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPartnerPricingAgreementsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListPartnerPricingAgreementsResponse> ListPartnerPricingAgreementsAsync(
+            ListPartnerPricingAgreementsRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// List all residuals associated with an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<ListResidualsResponse> ListResidualsAsync(ListResidualsRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="ListResidualsRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListResidualsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListResidualsResponse> ListResidualsAsync(
+            ListResidualsRequest request,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// Get a residual associated with an account.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<GetResidualResponse> GetResidualAsync(string accountID, string residualID, string? xMoovVersion = null, CancellationToken? cancellationToken = null);
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="residualID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetResidualResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="residualID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetResidualResponse> GetResidualAsync(
+            string accountID,
+            string residualID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        );
 
         /// <summary>
         /// List all fees associated with a residual.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you&apos;ll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
-        Task<ListResidualFeesResponse> ListResidualFeesAsync(ListResidualFeesRequest request, CancellationToken? cancellationToken = null);
+        /// <param name="request">A <see cref="ListResidualFeesRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListResidualFeesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListResidualFeesResponse> ListResidualFeesAsync(
+            ListResidualFeesRequest request,
+            CancellationToken? cancellationToken = null
+        );
     }
 
     public class FeePlans: IFeePlans
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
 
         public FeePlans(SDKConfig config)
         {
             SDKConfiguration = config;
         }
 
-        public async Task<ListFeePlanAgreementsResponse> ListFeePlanAgreementsAsync(ListFeePlanAgreementsRequest request, CancellationToken? cancellationToken = null)
+        /// <summary>
+        /// List all fee plan agreements associated with an account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="ListFeePlanAgreementsRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeePlanAgreementsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListFeePlanAgreementsResponse> ListFeePlanAgreementsAsync(
+            ListFeePlanAgreementsRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/fee-plan-agreements", request, null);
 
@@ -158,7 +370,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -233,7 +445,42 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<CreateFeePlanAgreementsResponse> CreateFeePlanAgreementsAsync(string accountID, CreateFeePlanAgreement body, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Creates the subscription of a fee plan to a merchant account. Merchants are required to accept the fee plan terms prior to activation.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.write` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="body">A <see cref="CreateFeePlanAgreement"/> parameter.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateFeePlanAgreementsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="FeePlanAgreementError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateFeePlanAgreementsResponse> CreateFeePlanAgreementsAsync(
+            string accountID,
+            CreateFeePlanAgreement body,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (body == null) throw new ArgumentNullException(nameof(body));
@@ -245,7 +492,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/fee-plan-agreements", request, null);
 
@@ -274,7 +521,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 400 || _statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 409 || _statusCode == 422 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -401,7 +648,41 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListFeePlansResponse> ListFeePlansAsync(string accountID, string? xMoovVersion = null, List<string>? planIDs = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// List all fee plans available for use by an account. This is intended to be used by an account when <br/>
+        /// selecting a fee plan to apply to a connected account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="planIDs">A comma-separated list of plan IDs to filter the results by.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeePlansResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListFeePlansResponse> ListFeePlansAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            List<string>? planIDs = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
 
@@ -412,7 +693,7 @@ namespace Moov.Sdk
                 PlanIDs = planIDs,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/fee-plans", request, null);
 
@@ -435,7 +716,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -510,12 +791,29 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListFeeRevenueResponse> ListFeeRevenueAsync(ListFeeRevenueRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Used by a partner. Retrieve revenue generated from merchant fees.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="ListFeeRevenueRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeeRevenueResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListFeeRevenueResponse> ListFeeRevenueAsync(
+            ListFeeRevenueRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/fee-revenue", request, null);
 
@@ -538,7 +836,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -613,12 +911,29 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<RetrieveFeesResponse> RetrieveFeesAsync(RetrieveFeesRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Retrieve fees assessed to an account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="RetrieveFeesRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="RetrieveFeesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<RetrieveFeesResponse> RetrieveFeesAsync(
+            RetrieveFeesRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/fees", request, null);
 
@@ -641,7 +956,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -716,7 +1031,40 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListFeesFetchResponse> ListFeesFetchAsync(string accountID, string? xMoovVersion = null, Models.Components.ListFeesFetchRequest? body = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// List fees associated with an account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="body">A <see cref="Moov.Sdk.Models.Components.ListFeesFetchRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListFeesFetchResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListFeesFetchResponse> ListFeesFetchAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            Models.Components.ListFeesFetchRequest? body = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
 
@@ -727,7 +1075,7 @@ namespace Moov.Sdk
                 Body = body,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/fees/.fetch", request, null);
 
@@ -756,7 +1104,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -831,7 +1179,40 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListPartnerPricingResponse> ListPartnerPricingAsync(string accountID, string? xMoovVersion = null, List<string>? planIDs = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// List all partner pricing plans available for use by an account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="planIDs">A comma-separated list of plan IDs to filter the results by.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPartnerPricingResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListPartnerPricingResponse> ListPartnerPricingAsync(
+            string accountID,
+            string? xMoovVersion = null,
+            List<string>? planIDs = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
 
@@ -842,7 +1223,7 @@ namespace Moov.Sdk
                 PlanIDs = planIDs,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/partner-pricing", request, null);
 
@@ -865,7 +1246,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -940,12 +1321,29 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListPartnerPricingAgreementsResponse> ListPartnerPricingAgreementsAsync(ListPartnerPricingAgreementsRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// List all partner pricing agreements associated with an account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="ListPartnerPricingAgreementsRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPartnerPricingAgreementsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListPartnerPricingAgreementsResponse> ListPartnerPricingAgreementsAsync(
+            ListPartnerPricingAgreementsRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/partner-pricing-agreements", request, null);
 
@@ -968,7 +1366,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1043,12 +1441,29 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListResidualsResponse> ListResidualsAsync(ListResidualsRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// List all residuals associated with an account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="ListResidualsRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListResidualsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListResidualsResponse> ListResidualsAsync(
+            ListResidualsRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/residuals", request, null);
 
@@ -1071,7 +1486,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1146,7 +1561,40 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<GetResidualResponse> GetResidualAsync(string accountID, string residualID, string? xMoovVersion = null, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// Get a residual associated with an account.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="residualID">Description not available.</param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetResidualResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="residualID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetResidualResponse> GetResidualAsync(
+            string accountID,
+            string residualID,
+            string? xMoovVersion = null,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (residualID == null) throw new ArgumentNullException(nameof(residualID));
@@ -1158,7 +1606,7 @@ namespace Moov.Sdk
                 XMoovVersion = xMoovVersion,
             };
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/residuals/{residualID}", request, null);
 
@@ -1181,7 +1629,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 404 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1256,12 +1704,29 @@ namespace Moov.Sdk
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
 
-        public async Task<ListResidualFeesResponse> ListResidualFeesAsync(ListResidualFeesRequest request, CancellationToken? cancellationToken = null)
+
+        /// <summary>
+        /// List all fees associated with a residual.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
+        /// </summary>
+        /// <param name="request">A <see cref="ListResidualFeesRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListResidualFeesResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListResidualFeesResponse> ListResidualFeesAsync(
+            ListResidualFeesRequest request,
+            CancellationToken? cancellationToken = null
+        )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-
             request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-            
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/residuals/{residualID}/fees", request, null);
 
@@ -1284,7 +1749,7 @@ namespace Moov.Sdk
                 httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
                 int _statusCode = (int)httpResponse.StatusCode;
 
-                if (_statusCode == 401 || _statusCode == 403 || _statusCode == 429 || _statusCode >= 400 && _statusCode < 500 || _statusCode == 500 || _statusCode == 504 || _statusCode >= 500 && _statusCode < 600)
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
                     var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
@@ -1358,5 +1823,6 @@ namespace Moov.Sdk
 
             throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
         }
+
     }
 }

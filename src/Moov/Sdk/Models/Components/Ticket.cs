@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class Ticket
     {
-
         [JsonProperty("ticketID")]
         public string TicketID { get; set; } = default!;
 

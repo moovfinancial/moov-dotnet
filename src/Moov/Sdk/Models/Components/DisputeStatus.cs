@@ -12,14 +12,11 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The status of a particular dispute. <br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// Read our <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/disputes/#dispute-statuses">disputes guide</a> to learn what each status means.
-    /// </remarks>
     /// </summary>
     public enum DisputeStatus
     {
@@ -73,5 +70,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum DisputeStatus");
         }
     }
-
 }

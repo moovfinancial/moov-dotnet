@@ -12,39 +12,29 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    ///   Contains the user&apos;s payment information as returned from Apple Pay.<br/>
-    /// 
-    /// <remarks>
+    /// Contains the user's payment information as returned from Apple Pay.<br/>
     /// <br/>
-    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken">Apple&apos;s documentation</a> <br/>
+    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken">Apple's documentation</a> <br/>
     ///   for more information.
-    /// </remarks>
     /// </summary>
     public class LinkApplePayToken
     {
-
         /// <summary>
-        ///   Contains the encrypted payment data.<br/>
-        /// 
-        /// <remarks>
+        /// Contains the encrypted payment data.<br/>
         /// <br/>
-        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata">Apple&apos;s documentation</a> <br/>
+        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata">Apple's documentation</a> <br/>
         ///   for more information.
-        /// </remarks>
         /// </summary>
         [JsonProperty("paymentData")]
         public LinkApplePaymentData PaymentData { get; set; } = default!;
 
         /// <summary>
-        ///   Provides information about the underlying card.<br/>
-        /// 
-        /// <remarks>
+        /// Provides information about the underlying card.<br/>
         /// <br/>
-        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916113-paymentmethod">Apple&apos;s documentation</a> <br/>
+        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916113-paymentmethod">Apple's documentation</a> <br/>
         ///   for more information.
-        /// </remarks>
         /// </summary>
         [JsonProperty("paymentMethod")]
         public LinkApplePaymentMethod PaymentMethod { get; set; } = default!;

@@ -13,19 +13,15 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Describes the fields available when patching a Moov account.
     /// </summary>
     public class PatchAccount
     {
-
         /// <summary>
         /// Describes the fields available when patching a profile.<br/>
-        /// 
-        /// <remarks>
         /// Each object can be patched independent of patching the other fields.
-        /// </remarks>
         /// </summary>
         [JsonProperty("profile")]
         public PatchProfile? Profile { get; set; }

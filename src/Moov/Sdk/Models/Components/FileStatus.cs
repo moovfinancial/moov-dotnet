@@ -12,9 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
-    /// The file&apos;s status.
+    /// The file's status.
     /// </summary>
     public enum FileStatus
     {
@@ -58,5 +58,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum FileStatus");
         }
     }
-
 }

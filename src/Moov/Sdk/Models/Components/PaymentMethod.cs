@@ -82,9 +82,8 @@ namespace Moov.Sdk.Models.Components
         }
     }
 
-
     /// <summary>
-    /// A method of moving money
+    /// A method of moving money.
     /// </summary>
     [JsonConverter(typeof(PaymentMethod.PaymentMethodConverter))]
     public class PaymentMethod

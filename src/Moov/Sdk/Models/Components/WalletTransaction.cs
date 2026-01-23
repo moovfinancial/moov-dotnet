@@ -14,13 +14,12 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// A transaction that funds or deducts from the wallet.
     /// </summary>
     public class WalletTransaction
     {
-
         [JsonProperty("walletID")]
         public string WalletID { get; set; } = default!;
 
@@ -91,25 +90,25 @@ namespace Moov.Sdk.Models.Components
         public string FeeDecimal { get; set; } = default!;
 
         /// <summary>
-        /// Net amount is the gross amount less fees paid, and the amount that affects the wallet&apos;s balance. The amount is in the smallest unit of the specified currency. In USD this is cents, for example, $12.04 is 1204 and $0.99 is 99.
+        /// Net amount is the gross amount less fees paid, and the amount that affects the wallet's balance. The amount is in the smallest unit of the specified currency. In USD this is cents, for example, $12.04 is 1204 and $0.99 is 99.
         /// </summary>
         [JsonProperty("netAmount")]
         public long NetAmount { get; set; } = default!;
 
         /// <summary>
-        /// Net amount is the gross amount less fees paid, and the amount that affects the wallet&apos;s balance. Same as `netAmount`, but a decimal-formatted numerical string that represents up to 9 decimal place precision. In USD for example, 12.987654321 is $12.987654321 and 0.9987634521 is $0.9987634521.
+        /// Net amount is the gross amount less fees paid, and the amount that affects the wallet's balance. Same as `netAmount`, but a decimal-formatted numerical string that represents up to 9 decimal place precision. In USD for example, 12.987654321 is $12.987654321 and 0.9987634521 is $0.9987634521.
         /// </summary>
         [JsonProperty("netAmountDecimal")]
         public string NetAmountDecimal { get; set; } = default!;
 
         /// <summary>
-        /// The wallet&apos;s total available balance after recording a completed transaction. The value is in the smallest unit of the specified currency. In USD this is cents, for example, $12.04 is 1204 and $0.99 is 99.
+        /// The wallet's total available balance after recording a completed transaction. The value is in the smallest unit of the specified currency. In USD this is cents, for example, $12.04 is 1204 and $0.99 is 99.
         /// </summary>
         [JsonProperty("availableBalance")]
         public long? AvailableBalance { get; set; }
 
         /// <summary>
-        /// The wallet&apos;s total available balance after recording a completed transaction. Same as `availableBalance`, but a decimal-formatted numerical string that represents up to 9 decimal place precision. In USD for example, 12.987654321 is $12.987654321 and 0.9987634521 is $0.9987634521.
+        /// The wallet's total available balance after recording a completed transaction. Same as `availableBalance`, but a decimal-formatted numerical string that represents up to 9 decimal place precision. In USD for example, 12.987654321 is $12.987654321 and 0.9987634521 is $0.9987634521.
         /// </summary>
         [JsonProperty("availableBalanceDecimal")]
         public string? AvailableBalanceDecimal { get; set; }

@@ -12,14 +12,13 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The total amount of adjustment fees. This field is deprecated and will be removed in a future release.
     /// </summary>
     [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public class AdjustmentFees
     {
-
         /// <summary>
         /// A 3-letter ISO 4217 currency code.
         /// </summary>
@@ -28,11 +27,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// A decimal-formatted numerical string that represents up to 9 decimal place precision. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// For example, $12.987654321 is &apos;12.987654321&apos;.
-        /// </remarks>
+        /// For example, $12.987654321 is '12.987654321'.
         /// </summary>
         [JsonProperty("valueDecimal")]
         public string ValueDecimal { get; set; } = default!;

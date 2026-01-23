@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class CreateAccount
     {
-
         [JsonProperty("accountType")]
         public CreateAccountType AccountType { get; set; } = default!;
 
@@ -40,10 +39,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// User-provided information that can be displayed on credit card transactions for customers to use when<br/>
-        /// 
-        /// <remarks>
         /// contacting a customer support team. This data is only allowed on a business account.
-        /// </remarks>
         /// </summary>
         [JsonProperty("customerSupport")]
         public CustomerSupport? CustomerSupport { get; set; }

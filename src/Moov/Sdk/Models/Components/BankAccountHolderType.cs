@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The type of holder on a funding source.
     /// </summary>
@@ -58,5 +58,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum BankAccountHolderType");
         }
     }
-
 }

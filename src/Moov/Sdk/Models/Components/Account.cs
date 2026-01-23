@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class Account
     {
-
         /// <summary>
         /// Unique identifier for this account.
         /// </summary>
@@ -40,7 +39,7 @@ namespace Moov.Sdk.Models.Components
         public string DisplayName { get; set; } = default!;
 
         /// <summary>
-        /// Describes a Moov account profile. A profile will have a business, individual, or guest depending on the account&apos;s type.
+        /// Describes a Moov account profile. A profile will have a business, individual, or guest depending on the account's type.
         /// </summary>
         [JsonProperty("profile")]
         public Profile Profile { get; set; } = default!;
@@ -74,10 +73,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// User-provided information that can be displayed on credit card transactions for customers to use when<br/>
-        /// 
-        /// <remarks>
         /// contacting a customer support team. This data is only allowed on a business account.
-        /// </remarks>
         /// </summary>
         [JsonProperty("customerSupport")]
         public CustomerSupport? CustomerSupport { get; set; }

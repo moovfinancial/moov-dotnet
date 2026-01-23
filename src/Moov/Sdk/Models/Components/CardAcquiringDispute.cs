@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Details of a card dispute.
     /// </summary>
     public class CardAcquiringDispute
     {
-
         [JsonProperty("disputeID")]
         public string DisputeID { get; set; } = default!;
 

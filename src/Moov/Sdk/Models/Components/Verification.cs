@@ -14,13 +14,12 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Describes identity verification status and relevant identity verification documents.
     /// </summary>
     public class Verification
     {
-
         /// <summary>
         /// Possible states an account verification can be in.
         /// </summary>

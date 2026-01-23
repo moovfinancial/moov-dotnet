@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Request to create an onboarding invite.
     /// </summary>
     public class OnboardingInviteRequest
     {
-
         /// <summary>
         /// Optional URL to redirect the user to after they complete the onboarding process.
         /// </summary>
@@ -27,27 +26,21 @@ namespace Moov.Sdk.Models.Components
         public string? ReturnURL { get; set; }
 
         /// <summary>
-        /// Optional URL to your organization&apos;s terms of service.
+        /// Optional URL to your organization's terms of service.
         /// </summary>
         [JsonProperty("termsOfServiceURL")]
         public string? TermsOfServiceURL { get; set; }
 
         /// <summary>
-        ///   List of <a href="https://docs.moov.io/api/authentication/scopes/">scopes</a> you request to use on this<br/>
-        /// 
-        /// <remarks>
+        /// List of <a href="https://docs.moov.io/api/authentication/scopes/">scopes</a> you request to use on this<br/>
         ///   account. These values are used to determine what can be done with the account onboarded.
-        /// </remarks>
         /// </summary>
         [JsonProperty("scopes")]
         public List<ApplicationScope> Scopes { get; set; } = default!;
 
         /// <summary>
-        ///   List of <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities</a> you intend to request for this<br/>
-        /// 
-        /// <remarks>
+        /// List of <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities</a> you intend to request for this<br/>
         ///   account. These values are used to determine what information to collect from the user during onboarding.
-        /// </remarks>
         /// </summary>
         [JsonProperty("capabilities")]
         public List<CapabilityID> Capabilities { get; set; } = default!;

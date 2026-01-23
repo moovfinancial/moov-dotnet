@@ -11,20 +11,16 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    
+
     public class CreateEvidenceFileMultiPart
     {
-
         /// <summary>
         /// The file to upload as evidence. Valid types are [jpeg, tiff, pdf] with a limit of 4MB per file.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         ///     The `Content-Type` header for this form part must be one of the following:<br/>
         ///   - `image/jpeg`<br/>
         ///   - `image/tiff`<br/>
         ///   - `application/pdf`
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("multipartForm:file,name=file")]
         public CreateEvidenceFileMultiPartFile File { get; set; } = default!;

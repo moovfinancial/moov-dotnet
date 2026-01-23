@@ -13,23 +13,19 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// A bank account as contained within a payment method.
     /// </summary>
     public class PaymentMethodsBankAccount
     {
-
         [JsonProperty("bankAccountID")]
         public string BankAccountID { get; set; } = default!;
 
         /// <summary>
-        /// Once the bank account is linked, we don&apos;t reveal the full bank account number.<br/>
-        /// 
-        /// <remarks>
+        /// Once the bank account is linked, we don't reveal the full bank account number.<br/>
         /// <br/>
         /// The fingerprint acts as a way to identify whether two linked bank accounts are the same.
-        /// </remarks>
         /// </summary>
         [JsonProperty("fingerprint")]
         public string Fingerprint { get; set; } = default!;

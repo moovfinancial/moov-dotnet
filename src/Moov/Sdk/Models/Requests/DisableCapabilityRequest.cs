@@ -11,14 +11,11 @@ namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    
+
     public class DisableCapabilityRequest
     {
-
         /// <summary>
         /// Specify an API version.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
         ///   - `YYYY` is the year<br/>
@@ -28,7 +25,6 @@ namespace Moov.Sdk.Models.Requests
         /// <br/>
         /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
         public string? XMoovVersion { get; set; }
@@ -38,11 +34,8 @@ namespace Moov.Sdk.Models.Requests
 
         /// <summary>
         /// Moov account capabilities.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in your list. These are read-only capabilities that Moov requests and uses for account verification purposes. These capabilities remains active with your account and require no additional action.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=capabilityID")]
         public CapabilityID CapabilityID { get; set; } = default!;

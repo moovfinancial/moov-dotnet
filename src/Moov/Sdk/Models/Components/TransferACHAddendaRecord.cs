@@ -11,21 +11,20 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    /// An addenda record which was added to an ACH transfer
+    /// An addenda record which was added to an ACH transfer.
     /// </summary>
     public class TransferACHAddendaRecord
     {
-
         /// <summary>
-        /// The ACH addenda record, which may have masked PII
+        /// The ACH addenda record, which may have masked PII.
         /// </summary>
         [JsonProperty("record")]
         public string Record { get; set; } = default!;
 
         /// <summary>
-        /// Flag indicating whether or not this record has been masked
+        /// Flag indicating whether or not this record has been masked.
         /// </summary>
         [JsonProperty("isMasked")]
         public bool IsMasked { get; set; } = default!;

@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class BasicPaymentMethod
     {
-
         /// <summary>
         /// ID of the payment method.
         /// </summary>
@@ -23,7 +22,7 @@ namespace Moov.Sdk.Models.Components
         public string PaymentMethodID { get; set; } = default!;
 
         /// <summary>
-        /// The payment method type that represents a payment rail and directionality
+        /// The payment method type that represents a payment rail and directionality.
         /// </summary>
         [JsonProperty("paymentMethodType")]
         public PaymentMethodType PaymentMethodType { get; set; } = default!;

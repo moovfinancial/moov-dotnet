@@ -11,20 +11,16 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Specifies a partial amount to refund. <br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// This request body is optional, an empty body will issue a refund for the full amount of the original transfer.
-    /// </remarks>
     /// </summary>
     public class CreateRefund
     {
-
         /// <summary>
-        /// Amount to refund in cents. If null, the original transfer&apos;s full amount will be refunded.
+        /// Amount to refund in cents. If null, the original transfer's full amount will be refunded.
         /// </summary>
         [JsonProperty("amount")]
         public long? Amount { get; set; }

@@ -12,9 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
-    /// Reason for a transfer&apos;s failure.
+    /// Reason for a transfer's failure.
     /// </summary>
     public enum TransferFailureReason
     {
@@ -62,5 +62,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum TransferFailureReason");
         }
     }
-
 }

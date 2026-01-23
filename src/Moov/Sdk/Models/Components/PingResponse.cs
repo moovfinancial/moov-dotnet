@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Response from pinging a webhook.
     /// </summary>
     public class PingResponse
     {
-
         /// <summary>
         /// The webhook that was pinged.
         /// </summary>

@@ -11,19 +11,15 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The authorization code of a MX account which allows a processor to retrieve a linked payment account. <br/>
-    /// 
-    /// <remarks>
     /// <br/>
-    /// `sandbox` - When linking a bank account to a `sandbox` account using a MX authorization code it will utilize MX&apos;s sandbox environment. <br/>
-    /// The MX authorization code provided must be generated from MX&apos;s sandbox environment.
-    /// </remarks>
+    /// `sandbox` - When linking a bank account to a `sandbox` account using a MX authorization code it will utilize MX's sandbox environment. <br/>
+    /// The MX authorization code provided must be generated from MX's sandbox environment.
     /// </summary>
     public class MXAuthorizationCode
     {
-
         [JsonProperty("authorizationCode")]
         public string AuthorizationCode { get; set; } = default!;
     }

@@ -10,10 +10,9 @@
 namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
-    
+
     public class CreateEvidenceFileMultiPartFile
     {
-
         [SpeakeasyMetadata("multipartForm:name=fileName")]
         public string FileName { get; set; } = default!;
 

@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// A summary of card acquiring fees.
     /// </summary>
     public class CardAcquiring
     {
-
         /// <summary>
         /// The total transaction volume amount. This field is deprecated and will be removed in a future release.
         /// </summary>

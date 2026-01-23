@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class BirthDateUpdate
     {
-
         [JsonProperty("day")]
         public long? Day { get; set; }
 

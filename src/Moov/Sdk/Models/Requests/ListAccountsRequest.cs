@@ -11,14 +11,11 @@ namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    
+
     public class ListAccountsRequest
     {
-
         /// <summary>
         /// Specify an API version.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
         ///   - `YYYY` is the year<br/>
@@ -28,15 +25,12 @@ namespace Moov.Sdk.Models.Requests
         /// <br/>
         /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
         public string? XMoovVersion { get; set; }
 
         /// <summary>
         /// Filter connected accounts by name.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// If provided, this query will attempt to find matches against the following Account and Profile fields:<br/>
         /// &lt;ul&gt;<br/>
@@ -46,62 +40,52 @@ namespace Moov.Sdk.Models.Requests
         /// &lt;/ul&gt;<br/>
         /// <br/>
         /// Filtering by Guest Profile `name` is not currently supported.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=name")]
         public string? Name { get; set; }
 
         /// <summary>
-        ///   Filter connected accounts by email address.<br/>
-        /// 
-        /// <remarks>
+        /// Filter connected accounts by email address.<br/>
         /// <br/>
         ///   Provide the full email address to filter by email.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=email")]
         public string? Email { get; set; }
 
         /// <summary>
-        ///   Filter connected accounts by AccountType.<br/>
-        /// 
-        /// <remarks>
+        /// Filter connected accounts by AccountType.<br/>
         /// <br/>
-        ///   If the `type` parameter is used in combination with `name`, only the corresponding type&apos;s name fields will<br/>
+        ///   If the `type` parameter is used in combination with `name`, only the corresponding type's name fields will<br/>
         ///   be searched. For example, if `type=business` and `name=moov`, the search will attempt to find matches against<br/>
         ///   the display name and Business Profile name fields (`legalBusinessName`, and `doingBusinessAs`).<br/>
         /// <br/>
         ///   Filtering by `type=guest` is not currently supported.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=type")]
         public CreateAccountType? Type { get; set; }
 
         /// <summary>
-        ///   Serves as an optional alias from a foreign/external system which can be used to reference this resource.
+        /// Serves as an optional alias from a foreign/external system which can be used to reference this resource.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=foreignID")]
         public string? ForeignID { get; set; }
 
         /// <summary>
         /// Filter disconnected accounts.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// If true, the response will include disconnected accounts.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=includeDisconnected")]
         public bool? IncludeDisconnected { get; set; }
 
         /// <summary>
-        ///   Filter connected accounts by the capability.
+        /// Filter connected accounts by the capability.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=capability")]
         public CapabilityID? Capability { get; set; }
 
         /// <summary>
-        ///   Filter connected accounts by the capability.
+        /// Filter connected accounts by the capability.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=capabilityStatus")]
         public CapabilityStatus? CapabilityStatus { get; set; }

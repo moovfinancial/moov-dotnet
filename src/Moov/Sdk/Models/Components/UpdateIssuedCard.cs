@@ -12,16 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class UpdateIssuedCard
     {
-
         /// <summary>
         /// Updates the state of a Moov issued card.<br/>
-        /// 
-        /// <remarks>
         /// - `closed`: The card is permanently deactivated and cannot approve authorizations. A card can be closed by request or when it expires.
-        /// </remarks>
         /// </summary>
         [JsonProperty("state")]
         public UpdateIssuedCardState? State { get; set; }

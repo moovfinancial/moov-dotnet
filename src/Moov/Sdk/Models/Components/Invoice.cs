@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class Invoice
     {
-
         /// <summary>
         /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
         /// </summary>
@@ -58,31 +57,31 @@ namespace Moov.Sdk.Models.Components
         public AmountDecimal TaxAmount { get; set; } = default!;
 
         /// <summary>
-        /// Total amount of the invoice, sum of subTotalAmount and taxAmount
+        /// Total amount of the invoice, sum of subTotalAmount and taxAmount.
         /// </summary>
         [JsonProperty("totalAmount")]
         public AmountDecimal TotalAmount { get; set; } = default!;
 
         /// <summary>
-        /// Total amount of pending transfers paid towards the invoice
+        /// Total amount of pending transfers paid towards the invoice.
         /// </summary>
         [JsonProperty("pendingAmount")]
         public AmountDecimal PendingAmount { get; set; } = default!;
 
         /// <summary>
-        /// Total amount of completed transfers paid towards the invoice
+        /// Total amount of completed transfers paid towards the invoice.
         /// </summary>
         [JsonProperty("paidAmount")]
         public AmountDecimal PaidAmount { get; set; } = default!;
 
         /// <summary>
-        /// Total amount of refunds initiated against transfers paid towards the invoice
+        /// Total amount of refunds initiated against transfers paid towards the invoice.
         /// </summary>
         [JsonProperty("refundedAmount")]
         public AmountDecimal RefundedAmount { get; set; } = default!;
 
         /// <summary>
-        /// Total amount of disputes initiated against transfers paid towards the invoice
+        /// Total amount of disputes initiated against transfers paid towards the invoice.
         /// </summary>
         [JsonProperty("disputedAmount")]
         public AmountDecimal DisputedAmount { get; set; } = default!;

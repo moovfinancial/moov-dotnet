@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class BillingSummaryDetails
     {
-
         /// <summary>
         /// The total transaction volume amount. This field is deprecated and will be removed in a future release.
         /// </summary>

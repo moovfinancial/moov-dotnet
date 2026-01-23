@@ -12,11 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The rejection code of an RTP transaction that caused the bank account status to change.<br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// - AC03: Account Invalid<br/>
     /// - AC04: Account Closed<br/>
@@ -24,8 +22,7 @@ namespace Moov.Sdk.Models.Components
     /// - AC14: Creditor Account Type Invalid<br/>
     /// - AG01: Transactions Forbidden On Account<br/>
     /// - AG03: Transaction Type Not Supported<br/>
-    /// - MD07: Customer Deceased
-    /// </remarks>
+    /// - MD07: Customer Deceased.
     /// </summary>
     public enum RTPRejectionCode
     {
@@ -77,5 +74,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum RTPRejectionCode");
         }
     }
-
 }

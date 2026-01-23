@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Card-specific details about the transaction.
     /// </summary>
     public class CardTransactionDetails
     {
-
         /// <summary>
         /// Status of a transaction within the card payment lifecycle.
         /// </summary>
@@ -37,12 +36,9 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Specifies the nature and initiator of a transaction. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// Crucial for recurring and merchant-initiated transactions as per card scheme rules. <br/>
         /// Omit for customer-initiated e-commerce transactions.
-        /// </remarks>
         /// </summary>
         [JsonProperty("transactionSource")]
         public TransactionSource? TransactionSource { get; set; }

@@ -11,19 +11,15 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Information needed to decrypt Apple Pay payment data.<br/>
-    /// 
-    /// <remarks>
     /// <br/>
-    /// Refer to <a href="https://developer.apple.com/documentation/passkit/payment-token-format-reference#Header-keys-and-values">Apple&apos;s documentation</a> <br/>
+    /// Refer to <a href="https://developer.apple.com/documentation/passkit/payment-token-format-reference#Header-keys-and-values">Apple's documentation</a> <br/>
     /// for more information.
-    /// </remarks>
     /// </summary>
     public class ApplePayHeader
     {
-
         /// <summary>
         /// Base64-encoded ephemeral public key, used for ECC-encrypted payment data.
         /// </summary>
@@ -31,7 +27,7 @@ namespace Moov.Sdk.Models.Components
         public string? EphemeralPublicKey { get; set; }
 
         /// <summary>
-        /// A base64-encoded, SHA-256 hash of the merchant&apos;s public key.
+        /// A base64-encoded, SHA-256 hash of the merchant's public key.
         /// </summary>
         [JsonProperty("publicKeyHash")]
         public string PublicKeyHash { get; set; } = default!;

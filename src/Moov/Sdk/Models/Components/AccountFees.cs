@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A detailed breakdown of account fees.
     /// </summary>
     public class AccountFees
     {
-
         /// <summary>
         /// Fees associated with wallet services.
         /// </summary>

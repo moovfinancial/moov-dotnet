@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class UpdatePaymentLink
     {
-
         [JsonProperty("amount")]
         public AmountUpdate? Amount { get; set; }
 
@@ -46,10 +45,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a payment link.<br/>
-        /// 
-        /// <remarks>
         /// When line items are provided, their total plus sales tax must equal the payment link amount.
-        /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
         public CreatePaymentLinkLineItemsUpdate? LineItems { get; set; }

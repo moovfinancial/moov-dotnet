@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes an individual.
     /// </summary>
     public class IndividualProfile
     {
-
         [JsonProperty("name")]
         public IndividualName Name { get; set; } = default!;
 
@@ -32,7 +31,7 @@ namespace Moov.Sdk.Models.Components
         public Address? Address { get; set; }
 
         /// <summary>
-        /// Indicates whether this individual&apos;s birth date has been provided.
+        /// Indicates whether this individual's birth date has been provided.
         /// </summary>
         [JsonProperty("birthDateProvided")]
         public bool? BirthDateProvided { get; set; }

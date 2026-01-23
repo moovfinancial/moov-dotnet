@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class SentReceipt
     {
-
         /// <summary>
         /// Unique identifier for the receipt.
         /// </summary>

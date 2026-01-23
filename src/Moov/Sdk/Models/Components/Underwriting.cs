@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Describes underwriting values (in USD) used for card payment acceptance.
     /// </summary>
     public class Underwriting
     {
-
         [JsonProperty("averageTransactionSize")]
         public long? AverageTransactionSize { get; set; }
 

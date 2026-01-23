@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class GovernmentIDErrorSsn
     {
-
         [JsonProperty("full")]
         public string? Full { get; set; }
 

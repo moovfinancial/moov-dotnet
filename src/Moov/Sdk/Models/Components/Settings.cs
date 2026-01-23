@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// User provided settings to manage an account.
     /// </summary>
     public class Settings
     {
-
         /// <summary>
         /// User provided settings to manage card payments. This data is only allowed on a business account.
         /// </summary>

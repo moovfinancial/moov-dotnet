@@ -11,24 +11,23 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class WireServices
     {
-
         /// <summary>
-        /// The institution&apos;s capability to process standard Fedwire funds transfers.
+        /// The institution's capability to process standard Fedwire funds transfers.
         /// </summary>
         [JsonProperty("fundsTransferStatus")]
         public bool FundsTransferStatus { get; set; } = default!;
 
         /// <summary>
-        /// The institution&apos;s capability for settlement-only transfers.
+        /// The institution's capability for settlement-only transfers.
         /// </summary>
         [JsonProperty("fundsSettlementOnlyStatus")]
         public bool FundsSettlementOnlyStatus { get; set; } = default!;
 
         /// <summary>
-        /// The institution&apos;s capability to handle transfers of securities.
+        /// The institution's capability to handle transfers of securities.
         /// </summary>
         [JsonProperty("bookEntrySecuritiesTransferStatus")]
         public bool BookEntrySecuritiesTransferStatus { get; set; } = default!;

@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class RefundCardDetails
     {
-
         [JsonProperty("status")]
         public RefundCardStatus Status { get; set; } = default!;
 

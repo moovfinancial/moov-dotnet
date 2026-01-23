@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class InvoiceLineItemImageMetadata
     {
-
         /// <summary>
         /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
         /// </summary>
@@ -28,7 +27,7 @@ namespace Moov.Sdk.Models.Components
         public string? AltText { get; set; }
 
         /// <summary>
-        /// The image&apos;s public URL.
+        /// The image's public URL.
         /// </summary>
         [JsonProperty("link")]
         public string Link { get; set; } = default!;

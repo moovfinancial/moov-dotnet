@@ -6,35 +6,35 @@
 
 * [CreateInvoice](#createinvoice) - Create an invoice for a Moov account.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 * [ListInvoices](#listinvoices) - List all the invoices created under a Moov account.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 * [GetInvoice](#getinvoice) - Retrieve an invoice by ID.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 * [UpdateInvoice](#updateinvoice) - Updates an invoice.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 * [CreateInvoicePayment](#createinvoicepayment) - Creates a payment resource to represent that an invoice was paid outside of the Moov platform.
 If a payment link was created for the invoice, the corresponding payment link is canceled, but a receipt is still sent.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 * [ListInvoicePayments](#listinvoicepayments) - List all the payments made towards an invoice.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 
 ## CreateInvoice
 
 Create an invoice for a Moov account.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 
 ### Example Usage
@@ -43,6 +43,7 @@ you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
+using System;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -50,13 +51,25 @@ var sdk = new MoovClient(xMoovVersion: "<value>");
 var res = await sdk.Invoices.CreateInvoiceAsync(
     accountID: "241bf524-e777-4941-a5e4-d7f3f34d7a00",
     body: new CreateInvoice() {
-        CustomerAccountID = "<id>",
+        CustomerAccountID = "3dfff852-927d-47e8-822c-2fffc57ff6b9",
+        Description = "Professional services for Q1 2026",
         LineItems = new CreateInvoiceLineItems() {
-            Items = new List<CreateInvoiceLineItem>() {},
+            Items = new List<CreateInvoiceLineItem>() {
+                new CreateInvoiceLineItem() {
+                    Name = "Professional Services",
+                    BasePrice = new AmountDecimal() {
+                        Currency = "USD",
+                        ValueDecimal = "1000.00",
+                    },
+                    Quantity = 1,
+                },
+            },
         },
+        InvoiceDate = System.DateTime.Parse("2026-01-15T00:00:00Z"),
+        DueDate = System.DateTime.Parse("2026-02-15T00:00:00Z"),
         TaxAmount = new AmountDecimal() {
             Currency = "USD",
-            ValueDecimal = "12.987654321",
+            ValueDecimal = "80.00",
         },
     }
 );
@@ -88,7 +101,7 @@ var res = await sdk.Invoices.CreateInvoiceAsync(
 
 List all the invoices created under a Moov account.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 
 ### Example Usage
@@ -132,7 +145,7 @@ var res = await sdk.Invoices.ListInvoicesAsync(req);
 
 Retrieve an invoice by ID.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 
 ### Example Usage
@@ -173,7 +186,7 @@ var res = await sdk.Invoices.GetInvoiceAsync(
 
 Updates an invoice.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 
 ### Example Usage
@@ -182,6 +195,7 @@ you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
+using System;
 using System.Collections.Generic;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
@@ -190,32 +204,21 @@ var res = await sdk.Invoices.UpdateInvoiceAsync(
     accountID: "ce46d65a-8504-4afa-b3f7-303401bd08b3",
     invoiceID: "ef510999-370a-4350-87d5-bc81fc02a2ea",
     body: new UpdateInvoice() {
+        Description = "Updated professional services for Q1 2026",
         LineItems = new CreateInvoiceLineItemsUpdate() {
             Items = new List<CreateInvoiceLineItem>() {
                 new CreateInvoiceLineItem() {
-                    Name = "<value>",
+                    Name = "Professional Services",
                     BasePrice = new AmountDecimal() {
                         Currency = "USD",
-                        ValueDecimal = "12.987654321",
+                        ValueDecimal = "1000.00",
                     },
-                    Quantity = 984515,
-                    Options = new List<CreateInvoiceLineItemOption>() {
-                        new CreateInvoiceLineItemOption() {
-                            Name = "<value>",
-                            Quantity = 761923,
-                            PriceModifier = new AmountDecimal() {
-                                Currency = "USD",
-                                ValueDecimal = "12.987654321",
-                            },
-                        },
-                    },
+                    Quantity = 1,
                 },
             },
         },
-        TaxAmount = new AmountDecimalUpdate() {
-            Currency = "USD",
-            ValueDecimal = "12.987654321",
-        },
+        InvoiceDate = System.DateTime.Parse("2026-01-16T00:00:00Z"),
+        DueDate = System.DateTime.Parse("2026-02-16T00:00:00Z"),
     }
 );
 
@@ -248,7 +251,7 @@ var res = await sdk.Invoices.UpdateInvoiceAsync(
 Creates a payment resource to represent that an invoice was paid outside of the Moov platform.
 If a payment link was created for the invoice, the corresponding payment link is canceled, but a receipt is still sent.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 
 ### Example Usage
@@ -257,6 +260,7 @@ you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
+using System;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
@@ -264,10 +268,13 @@ var res = await sdk.Invoices.CreateInvoicePaymentAsync(
     accountID: "e02333e4-a835-46d1-8d02-9af7a405e65f",
     invoiceID: "99e7ebb0-9996-49b2-98f0-304c7332ece6",
     body: new CreateInvoicePayment() {
+        ForeignID = "EXT-PAY-12345",
         Amount = new AmountDecimal() {
             Currency = "USD",
-            ValueDecimal = "12.987654321",
+            ValueDecimal = "500.00",
         },
+        Description = "Payment received via wire transfer",
+        PaymentDate = System.DateTime.Parse("2026-01-20T14:45:00Z"),
     }
 );
 
@@ -299,7 +306,7 @@ var res = await sdk.Invoices.CreateInvoicePaymentAsync(
 
 List all the payments made towards an invoice.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 
 ### Example Usage

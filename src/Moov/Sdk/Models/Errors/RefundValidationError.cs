@@ -21,7 +21,7 @@ namespace Moov.Sdk.Models.Errors
         public string? Amount { get; set; }
 
         /// <summary>
-        /// Used for generic errors when invalid request data isn&apos;t attributed to a single request field.
+        /// Used for generic errors when invalid request data isn't attributed to a single request field.
         /// </summary>
         [JsonProperty("error")]
         public string? Error { get; set; }
@@ -62,5 +62,4 @@ namespace Moov.Sdk.Models.Errors
            #pragma warning restore CS0618
         }
     }
-
 }

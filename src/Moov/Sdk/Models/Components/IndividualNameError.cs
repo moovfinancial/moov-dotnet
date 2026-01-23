@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class IndividualNameError
     {
-
         [JsonProperty("firstName")]
         public string? FirstName { get; set; }
 

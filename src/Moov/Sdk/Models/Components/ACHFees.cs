@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A detailed breakdown of ACH fees.
     /// </summary>
     public class ACHFees
     {
-
         /// <summary>
         /// Fees for standard credit transfers.
         /// </summary>

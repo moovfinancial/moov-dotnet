@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public enum InstantBankCreditPaymentMethodPaymentMethodType
     {
         [JsonProperty("instant-bank-credit")]
@@ -51,5 +51,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum InstantBankCreditPaymentMethodPaymentMethodType");
         }
     }
-
 }

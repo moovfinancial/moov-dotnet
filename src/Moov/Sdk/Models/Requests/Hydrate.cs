@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Requests
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public enum Hydrate
     {
         [JsonProperty("accounts")]
@@ -51,5 +51,4 @@ namespace Moov.Sdk.Models.Requests
             throw new Exception($"Unknown value {value} for enum Hydrate");
         }
     }
-
 }

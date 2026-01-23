@@ -12,9 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
-    /// The file&apos;s purpose.
+    /// The file's purpose.
     /// </summary>
     public enum FilePurpose
     {
@@ -64,5 +64,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum FilePurpose");
         }
     }
-
 }

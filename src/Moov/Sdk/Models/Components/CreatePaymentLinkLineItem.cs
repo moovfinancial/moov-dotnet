@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents a single line item in a payment link, including optional modifiers and quantity.
     /// </summary>
     public class CreatePaymentLinkLineItem
     {
-
         /// <summary>
         /// The name of the item.
         /// </summary>

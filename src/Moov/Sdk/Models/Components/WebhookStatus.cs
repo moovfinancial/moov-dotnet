@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The status of a webhook.
     /// </summary>
@@ -56,5 +56,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum WebhookStatus");
         }
     }
-
 }

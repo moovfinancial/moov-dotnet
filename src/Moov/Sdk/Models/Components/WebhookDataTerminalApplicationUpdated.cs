@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class WebhookDataTerminalApplicationUpdated
     {
-
         [JsonProperty("terminalApplicationID")]
         public string TerminalApplicationID { get; set; } = default!;
 

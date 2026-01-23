@@ -10,10 +10,9 @@
 namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
-    
+
     public class Security
     {
-
         [SpeakeasyMetadata("security:scheme=true,type=http,subType=basic,name=username")]
         public string? Username { get; set; }
 

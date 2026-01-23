@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Details of a specific interchange program fee.
     /// </summary>
     public class BillingInterchangeProgramFee
     {
-
         /// <summary>
         /// The name of the interchange program.
         /// </summary>

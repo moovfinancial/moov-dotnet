@@ -20,121 +20,268 @@ namespace Moov.Sdk
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
-
     /// <summary>
     /// Moov API: Moov is a platform that enables developers to integrate all aspects of money movement with ease and speed.<br/>
-    /// 
-    /// <remarks>
     /// The Moov API makes it simple for platforms to send, receive, and store money. Our API is based upon REST<br/>
     /// principles, returns JSON responses, and uses standard HTTP response codes. To learn more about how Moov<br/>
-    /// works at a high level, read our <a href="https://docs.moov.io/guides/get-started/glossary/">concepts</a> guide.
-    /// </remarks>
-    /// 
+    /// works at a high level, read our <a href="https://docs.moov.io/guides/get-started/glossary/">concepts</a> guide.<br/>
     /// <see href="https://docs.moov.io/">Moov Guides and API Documentation</see>
     /// </summary>
     public interface IMoovClient
     {
         public IAccounts Accounts { get; }
+
         public IAdjustments Adjustments { get; }
+
         public IApplePay ApplePay { get; }
+
         public IBankAccounts BankAccounts { get; }
+
         public IBranding Branding { get; }
+
         public ICapabilities Capabilities { get; }
+
         public ICards Cards { get; }
+
         public IDisputes Disputes { get; }
+
         public IFeePlans FeePlans { get; }
+
         public IFiles Files { get; }
+
         public IImages Images { get; }
+
         public IInvoices Invoices { get; }
+
         public IPaymentLinks PaymentLinks { get; }
+
         public IPaymentMethods PaymentMethods { get; }
+
         public IProducts Products { get; }
+
         public IRepresentatives Representatives { get; }
+
         public IScheduling Scheduling { get; }
+
         public IStatements Statements { get; }
+
         public ISweeps Sweeps { get; }
+
         public IAccountTerminalApplications AccountTerminalApplications { get; }
+
         public ISupport Support { get; }
+
         public ITransfers Transfers { get; }
+
         public IUnderwriting Underwriting { get; }
+
         public IWallets Wallets { get; }
+
         public IWalletTransactions WalletTransactions { get; }
+
         public IAvatars Avatars { get; }
+
         public IEndToEndEncryption EndToEndEncryption { get; }
+
         public IEnrichedAddress EnrichedAddress { get; }
+
         public IEnrichedProfile EnrichedProfile { get; }
+
         public IWebhooks Webhooks { get; }
+
         public IIndustries Industries { get; }
+
         public IInstitutions Institutions { get; }
+
         public IIssuingTransactions IssuingTransactions { get; }
+
         public ICardIssuing CardIssuing { get; }
+
         public IAuthentication Authentication { get; }
+
         public IOnboarding Onboarding { get; }
+
         public IPing Ping { get; }
+
         public IReceipts Receipts { get; }
+
         public ITerminalApplications TerminalApplications { get; }
     }
 
-
     /// <summary>
     /// Moov API: Moov is a platform that enables developers to integrate all aspects of money movement with ease and speed.<br/>
-    /// 
-    /// <remarks>
     /// The Moov API makes it simple for platforms to send, receive, and store money. Our API is based upon REST<br/>
     /// principles, returns JSON responses, and uses standard HTTP response codes. To learn more about how Moov<br/>
-    /// works at a high level, read our <a href="https://docs.moov.io/guides/get-started/glossary/">concepts</a> guide.
-    /// </remarks>
-    /// 
+    /// works at a high level, read our <a href="https://docs.moov.io/guides/get-started/glossary/">concepts</a> guide.<br/>
     /// <see href="https://docs.moov.io/">Moov Guides and API Documentation</see>
     /// </summary>
     public class MoovClient: IMoovClient
     {
+        /// <summary>
+        /// The main SDK Configuration.
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-
-        private const string _language = Constants.Language;
-        private const string _sdkVersion = Constants.SdkVersion;
-        private const string _sdkGenVersion = Constants.SdkGenVersion;
-        private const string _openapiDocVersion = Constants.OpenApiDocVersion;
+        /// <summary>
+        /// The Accounts sub-SDK.
+        /// </summary>
         public IAccounts Accounts { get; private set; }
+        /// <summary>
+        /// The Adjustments sub-SDK.
+        /// </summary>
         public IAdjustments Adjustments { get; private set; }
+        /// <summary>
+        /// The ApplePay sub-SDK.
+        /// </summary>
         public IApplePay ApplePay { get; private set; }
+        /// <summary>
+        /// The BankAccounts sub-SDK.
+        /// </summary>
         public IBankAccounts BankAccounts { get; private set; }
+        /// <summary>
+        /// The Branding sub-SDK.
+        /// </summary>
         public IBranding Branding { get; private set; }
+        /// <summary>
+        /// The Capabilities sub-SDK.
+        /// </summary>
         public ICapabilities Capabilities { get; private set; }
+        /// <summary>
+        /// The Cards sub-SDK.
+        /// </summary>
         public ICards Cards { get; private set; }
+        /// <summary>
+        /// The Disputes sub-SDK.
+        /// </summary>
         public IDisputes Disputes { get; private set; }
+        /// <summary>
+        /// The FeePlans sub-SDK.
+        /// </summary>
         public IFeePlans FeePlans { get; private set; }
+        /// <summary>
+        /// The Files sub-SDK.
+        /// </summary>
         public IFiles Files { get; private set; }
+        /// <summary>
+        /// The Images sub-SDK.
+        /// </summary>
         public IImages Images { get; private set; }
+        /// <summary>
+        /// The Invoices sub-SDK.
+        /// </summary>
         public IInvoices Invoices { get; private set; }
+        /// <summary>
+        /// The PaymentLinks sub-SDK.
+        /// </summary>
         public IPaymentLinks PaymentLinks { get; private set; }
+        /// <summary>
+        /// The PaymentMethods sub-SDK.
+        /// </summary>
         public IPaymentMethods PaymentMethods { get; private set; }
+        /// <summary>
+        /// The Products sub-SDK.
+        /// </summary>
         public IProducts Products { get; private set; }
+        /// <summary>
+        /// The Representatives sub-SDK.
+        /// </summary>
         public IRepresentatives Representatives { get; private set; }
+        /// <summary>
+        /// The Scheduling sub-SDK.
+        /// </summary>
         public IScheduling Scheduling { get; private set; }
+        /// <summary>
+        /// The Statements sub-SDK.
+        /// </summary>
         public IStatements Statements { get; private set; }
+        /// <summary>
+        /// The Sweeps sub-SDK.
+        /// </summary>
         public ISweeps Sweeps { get; private set; }
+        /// <summary>
+        /// The AccountTerminalApplications sub-SDK.
+        /// </summary>
         public IAccountTerminalApplications AccountTerminalApplications { get; private set; }
+        /// <summary>
+        /// The Support sub-SDK.
+        /// </summary>
         public ISupport Support { get; private set; }
+        /// <summary>
+        /// The Transfers sub-SDK.
+        /// </summary>
         public ITransfers Transfers { get; private set; }
+        /// <summary>
+        /// The Underwriting sub-SDK.
+        /// </summary>
         public IUnderwriting Underwriting { get; private set; }
+        /// <summary>
+        /// The Wallets sub-SDK.
+        /// </summary>
         public IWallets Wallets { get; private set; }
+        /// <summary>
+        /// The WalletTransactions sub-SDK.
+        /// </summary>
         public IWalletTransactions WalletTransactions { get; private set; }
+        /// <summary>
+        /// The Avatars sub-SDK.
+        /// </summary>
         public IAvatars Avatars { get; private set; }
+        /// <summary>
+        /// The EndToEndEncryption sub-SDK.
+        /// </summary>
         public IEndToEndEncryption EndToEndEncryption { get; private set; }
+        /// <summary>
+        /// The EnrichedAddress sub-SDK.
+        /// </summary>
         public IEnrichedAddress EnrichedAddress { get; private set; }
+        /// <summary>
+        /// The EnrichedProfile sub-SDK.
+        /// </summary>
         public IEnrichedProfile EnrichedProfile { get; private set; }
+        /// <summary>
+        /// The Webhooks sub-SDK.
+        /// </summary>
         public IWebhooks Webhooks { get; private set; }
+        /// <summary>
+        /// The Industries sub-SDK.
+        /// </summary>
         public IIndustries Industries { get; private set; }
+        /// <summary>
+        /// The Institutions sub-SDK.
+        /// </summary>
         public IInstitutions Institutions { get; private set; }
+        /// <summary>
+        /// The IssuingTransactions sub-SDK.
+        /// </summary>
         public IIssuingTransactions IssuingTransactions { get; private set; }
+        /// <summary>
+        /// The CardIssuing sub-SDK.
+        /// </summary>
         public ICardIssuing CardIssuing { get; private set; }
+        /// <summary>
+        /// The Authentication sub-SDK.
+        /// </summary>
         public IAuthentication Authentication { get; private set; }
+        /// <summary>
+        /// The Onboarding sub-SDK.
+        /// </summary>
         public IOnboarding Onboarding { get; private set; }
+        /// <summary>
+        /// The Ping sub-SDK.
+        /// </summary>
         public IPing Ping { get; private set; }
+        /// <summary>
+        /// The Receipts sub-SDK.
+        /// </summary>
         public IReceipts Receipts { get; private set; }
+        /// <summary>
+        /// The TerminalApplications sub-SDK.
+        /// </summary>
         public ITerminalApplications TerminalApplications { get; private set; }
 
+        /// <summary>
+        /// Initializes a new instance of the SDK based on a <see cref="SDKConfig"/> configuration object.
+        /// </summary>
+        /// <param name="config">The SDK configuration object.</param>
         public MoovClient(SDKConfig config)
         {
             SDKConfiguration = config;
@@ -224,20 +371,40 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="security">The security configuration to use for API requests. If provided, this will be used as a static security configuration.</param>
         /// <param name="securitySource">A function that returns the security configuration dynamically. This takes precedence over the static security parameter if both are provided.</param>
-        /// <param name="xMoovVersion">Specify an API version.<br/></param>
+        /// <param name="xMoovVersion">
+        /// Specify an API version.<br/>
+        /// <br/>
+        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
+        ///   - `YYYY` is the year<br/>
+        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
+        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
+        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
+        /// <br/>
+        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// When no version is specified, the API defaults to `v2024.01.00`.
+        /// </param>
         /// <param name="serverIndex">The index of the server to use from the predefined server list. Must be between 0 and the length of the server list. Defaults to 0 if not specified.</param>
         /// <param name="serverUrl">A custom server URL to use instead of the predefined server list. If provided with urlParams, the URL will be templated with the provided parameters.</param>
         /// <param name="urlParams">A dictionary of parameters to use for templating the serverUrl. Only used when serverUrl is provided.</param>
         /// <param name="client">A custom HTTP client implementation to use for making API requests. If not provided, the default MoovClientHttpClient will be used.</param>
         /// <param name="retryConfig">Configuration for retry behavior when API requests fail. Defines retry strategies, backoff policies, and maximum retry attempts.</param>
-        /// <exception cref="Exception">Thrown when the serverIndex is out of range (less than 0 or greater than or equal to the server list length).</exception>
-        public MoovClient(Moov.Sdk.Models.Components.Security? security = null, Func<Moov.Sdk.Models.Components.Security>? securitySource = null, string? xMoovVersion = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, IMoovClientHttpClient? client = null, RetryConfig? retryConfig = null)
+        /// <exception cref="ArgumentOutOfRangeException">Invalid value provided for <paramref name="serverIndex"/>: must be between 0 (inclusive) and 1 (exclusive).</exception>
+        public MoovClient(
+            Moov.Sdk.Models.Components.Security? security = null,
+            Func<Moov.Sdk.Models.Components.Security>? securitySource = null,
+            string? xMoovVersion = null,
+            int? serverIndex = null,
+            string? serverUrl = null,
+            Dictionary<string, string>? urlParams = null,
+            IMoovClientHttpClient? client = null,
+            RetryConfig? retryConfig = null
+        )
         {
             if (serverIndex != null)
             {
                 if (serverIndex.Value < 0 || serverIndex.Value >= SDKConfig.ServerList.Length)
                 {
-                    throw new Exception($"Invalid server index {serverIndex.Value}");
+                    throw new ArgumentOutOfRangeException($"Invalid server index {serverIndex}: must be between 0 (inclusive) and {SDKConfig.ServerList.Length} (exclusive)." );
                 }
             }
 
@@ -354,22 +521,31 @@ namespace Moov.Sdk
             SDKConfiguration = SDKConfiguration.Hooks.SDKInit(SDKConfiguration);
         }
 
+        /// <summary>
+        /// Builder class for constructing an instance of the SDK.
+        /// </summary>
         public class SDKBuilder
         {
             private SDKConfig _sdkConfig = new SDKConfig(client: new MoovClientHttpClient());
 
             public SDKBuilder() { }
 
+            /// <summary>
+            /// Overrides the default server by index.
+            /// </summary>
             public SDKBuilder WithServerIndex(int serverIndex)
             {
                 if (serverIndex < 0 || serverIndex >= SDKConfig.ServerList.Length)
                 {
-                    throw new Exception($"Invalid server index {serverIndex}");
+                    throw new ArgumentOutOfRangeException($"Invalid server index {serverIndex}: must be between 0 (inclusive) and {SDKConfig.ServerList.Length} (exclusive)." );
                 }
                 _sdkConfig.ServerIndex = serverIndex;
                 return this;
             }
 
+            /// <summary>
+            /// Overrides the default server URL for the SDK.
+            /// </summary>
             public SDKBuilder WithServerUrl(string serverUrl, Dictionary<string, string>? serverVariables = null)
             {
                 if (serverVariables != null)
@@ -379,37 +555,54 @@ namespace Moov.Sdk
                 _sdkConfig.ServerUrl = serverUrl;
                 return this;
             }
-
+            /// <summary>
+            /// Sets the XMoovVersion global parameter for the SDK.
+            /// </summary>
             public SDKBuilder WithXMoovVersion(string xMoovVersion)
             {
                 _sdkConfig.XMoovVersion = xMoovVersion;
                 return this;
             }
 
+            /// <summary>
+            /// Sets the securitySource security parameter for the SDK.
+            /// </summary>
             public SDKBuilder WithSecuritySource(Func<Moov.Sdk.Models.Components.Security> securitySource)
             {
                 _sdkConfig.SecuritySource = securitySource;
                 return this;
             }
 
+            /// <summary>
+            /// Sets the security security parameter for the SDK.
+            /// </summary>
             public SDKBuilder WithSecurity(Moov.Sdk.Models.Components.Security security)
             {
                 _sdkConfig.SecuritySource = () => security;
                 return this;
             }
 
+            /// <summary>
+            /// Sets a custom HTTP client to be used by the SDK.
+            /// </summary>
             public SDKBuilder WithClient(IMoovClientHttpClient client)
             {
                 _sdkConfig.Client = client;
                 return this;
             }
 
+            /// <summary>
+            /// Sets the retry configuration for the SDK.
+            /// </summary>
             public SDKBuilder WithRetryConfig(RetryConfig retryConfig)
             {
                 _sdkConfig.RetryConfig = retryConfig;
                 return this;
             }
 
+            /// <summary>
+            /// Builds and returns the SDK instance.
+            /// </summary>
             public MoovClient Build()
             {
               return new MoovClient(_sdkConfig);

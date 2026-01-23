@@ -12,18 +12,14 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AuthTokenRequest
     {
-
         /// <summary>
         /// The type of grant being requested.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         ///   - `client_credentials`: A grant type used by clients to obtain an access token<br/>
-        ///   - `refresh_token`: A grant type used by clients to obtain a new access token using a refresh token
-        /// </remarks>
+        ///   - `refresh_token`: A grant type used by clients to obtain a new access token using a refresh token.
         /// </summary>
         [JsonProperty("grant_type")]
         [SpeakeasyMetadata("form:name=grant_type")]

@@ -11,12 +11,11 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class DisputeTransferDetails
     {
-
         /// <summary>
-        /// The disputed transfer&apos;s ID.
+        /// The disputed transfer's ID.
         /// </summary>
         [JsonProperty("transferID")]
         public string TransferID { get; set; } = default!;

@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class PaymentLinkCustomerOptions
     {
-
         /// <summary>
         /// If true, a billing address is required when completing the payment form.
         /// </summary>

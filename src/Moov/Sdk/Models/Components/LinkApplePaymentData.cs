@@ -12,21 +12,17 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    ///   Contains the encrypted payment data.<br/>
-    /// 
-    /// <remarks>
+    /// Contains the encrypted payment data.<br/>
     /// <br/>
-    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata">Apple&apos;s documentation</a> <br/>
+    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata">Apple's documentation</a> <br/>
     ///   for more information.
-    /// </remarks>
     /// </summary>
     public class LinkApplePaymentData
     {
-
         /// <summary>
-        /// Specifies the encryption used for the payment token (&quot;EC_v1&quot; or &quot;RSA_v1&quot;).
+        /// Specifies the encryption used for the payment token ("EC_v1" or "RSA_v1").
         /// </summary>
         [JsonProperty("version")]
         public string Version { get; set; } = default!;
@@ -45,12 +41,9 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Information needed to decrypt Apple Pay payment data.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// Refer to <a href="https://developer.apple.com/documentation/passkit/payment-token-format-reference#Header-keys-and-values">Apple&apos;s documentation</a> <br/>
+        /// Refer to <a href="https://developer.apple.com/documentation/passkit/payment-token-format-reference#Header-keys-and-values">Apple's documentation</a> <br/>
         /// for more information.
-        /// </remarks>
         /// </summary>
         [JsonProperty("header")]
         public ApplePayHeader Header { get; set; } = default!;

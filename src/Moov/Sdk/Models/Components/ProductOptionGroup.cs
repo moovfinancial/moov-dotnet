@@ -13,36 +13,29 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents a group of product configuration options, such as size or color.
     /// </summary>
     public class ProductOptionGroup
     {
-
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// A detailed description of the option group.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - Must be valid UTF-8 text<br/>
         /// - Supports Markdown for formatting<br/>
-        /// - HTML is not permitted and will be rejected
-        /// </remarks>
+        /// - HTML is not permitted and will be rejected.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
         /// The minimum number of options that must be selected from this group.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// A value of 0 indicates that no selection from this group is required.
-        /// </remarks>
         /// </summary>
         [JsonProperty("minSelect")]
         public int MinSelect { get; set; } = default!;

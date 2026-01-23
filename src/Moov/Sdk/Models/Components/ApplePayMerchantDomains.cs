@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class ApplePayMerchantDomains
     {
-
         [JsonProperty("accountID")]
         public string AccountID { get; set; } = default!;
 

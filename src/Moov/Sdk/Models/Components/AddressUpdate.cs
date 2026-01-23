@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AddressUpdate
     {
-
         [JsonProperty("addressLine1")]
         public string? AddressLine1 { get; set; }
 

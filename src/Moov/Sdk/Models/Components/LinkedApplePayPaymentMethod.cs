@@ -12,18 +12,17 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class LinkedApplePayPaymentMethod
     {
-
         /// <summary>
-        /// The new payment method&apos;s ID.
+        /// The new payment method's ID.
         /// </summary>
         [JsonProperty("paymentMethodID")]
         public string PaymentMethodID { get; set; } = default!;
 
         /// <summary>
-        /// The payment method type that represents a payment rail and directionality
+        /// The payment method type that represents a payment rail and directionality.
         /// </summary>
         [JsonProperty("paymentMethodType")]
         public PaymentMethodType PaymentMethodType { get; set; } = default!;

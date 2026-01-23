@@ -11,12 +11,11 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CreateApplePaySession
     {
-
         /// <summary>
-        /// A fully qualified top-level or sub-domain name where you will accept Apple Pay. Should not include &quot;https&quot;.
+        /// A fully qualified top-level or sub-domain name where you will accept Apple Pay. Should not include "https".
         /// </summary>
         [JsonProperty("domain")]
         public string Domain { get; set; } = default!;

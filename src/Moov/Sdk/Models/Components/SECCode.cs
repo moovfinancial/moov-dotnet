@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Code used to identify the ACH authorization method.
     /// </summary>
@@ -60,5 +60,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum SECCode");
         }
     }
-
 }

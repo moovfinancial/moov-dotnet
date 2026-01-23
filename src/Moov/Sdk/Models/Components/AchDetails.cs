@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AchDetails
     {
-
         /// <summary>
         /// An optional override of the default NACHA company entry description for a transfer.
         /// </summary>

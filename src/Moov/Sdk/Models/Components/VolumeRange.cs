@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Defines the volume ranges for tiered pricing models.
     /// </summary>
     public class VolumeRange
     {
-
         /// <summary>
         /// Specifies the lower value of a tier for the fee.
         /// </summary>

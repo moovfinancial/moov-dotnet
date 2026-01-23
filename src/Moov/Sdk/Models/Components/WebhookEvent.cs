@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Webhook events are sent to your webhook URL when certain actions occur in the Moov API. You can subscribe to these events to receive real-time notifications.
     /// </summary>
     public class WebhookEvent
     {
-
         /// <summary>
         /// Unique identifier for the webhook event.
         /// </summary>

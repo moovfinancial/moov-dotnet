@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Payment method details for the source or destination of a transfer.
     /// </summary>
     public class WebhookTransferPaymentMethodDetails
     {
-
         [JsonProperty("accountID")]
         public string AccountID { get; set; } = default!;
 

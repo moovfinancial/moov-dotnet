@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class RegisterApplePayMerchantDomains
     {
-
         /// <summary>
         /// A UTF-8 string to display in the Buy button.
         /// </summary>

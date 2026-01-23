@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    
+
     public class FileUploadRequestMultiPart
     {
-
         /// <summary>
         /// The file to be added. Valid types are `csv`, `png`, `jpeg`, `pdf`.
         /// </summary>
@@ -29,11 +28,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Additional metadata to be stored with the file, formatted as a JSON string.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// Valid keys are `representative_id`, `comment`, `requirement_id`, `error_code`.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("multipartForm:name=metadata")]
         public string? Metadata { get; set; }

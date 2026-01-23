@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes a request to link an account with a terminal application.
     /// </summary>
     public class LinkAccountTerminalApplication
     {
-
         /// <summary>
         /// ID of the terminal application.
         /// </summary>

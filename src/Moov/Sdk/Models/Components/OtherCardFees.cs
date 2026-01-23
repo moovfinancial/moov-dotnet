@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A detailed breakdown of other card-related fees.
     /// </summary>
     public class OtherCardFees
     {
-
         /// <summary>
         /// Fees for disputes.
         /// </summary>

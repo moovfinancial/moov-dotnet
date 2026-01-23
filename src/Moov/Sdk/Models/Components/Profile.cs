@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    /// Describes a Moov account profile. A profile will have a business, individual, or guest depending on the account&apos;s type.
+    /// Describes a Moov account profile. A profile will have a business, individual, or guest depending on the account's type.
     /// </summary>
     public class Profile
     {
-
         /// <summary>
         /// Describes an individual.
         /// </summary>

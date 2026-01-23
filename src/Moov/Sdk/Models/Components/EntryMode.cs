@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// How the card information was entered into the point of sale terminal.
     /// </summary>
@@ -54,5 +54,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum EntryMode");
         }
     }
-
 }

@@ -11,24 +11,23 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class IndividualName
     {
-
         /// <summary>
-        /// The individual&apos;s first given name.
+        /// The individual's first given name.
         /// </summary>
         [JsonProperty("firstName")]
         public string FirstName { get; set; } = default!;
 
         /// <summary>
-        /// The individual&apos;s second given name, if any.
+        /// The individual's second given name, if any.
         /// </summary>
         [JsonProperty("middleName")]
         public string? MiddleName { get; set; }
 
         /// <summary>
-        /// The individual&apos;s family name.
+        /// The individual's family name.
         /// </summary>
         [JsonProperty("lastName")]
         public string LastName { get; set; } = default!;

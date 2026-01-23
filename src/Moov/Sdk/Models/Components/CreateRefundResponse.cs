@@ -52,7 +52,6 @@ namespace Moov.Sdk.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CreateRefundResponse.CreateRefundResponseConverter))]
     public class CreateRefundResponse
     {

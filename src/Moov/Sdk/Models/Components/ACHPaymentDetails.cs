@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Options for payment links used to collect an ACH payment.
     /// </summary>
     public class ACHPaymentDetails
     {
-
         /// <summary>
         /// An optional override of the default NACHA company entry description for a transfer.
         /// </summary>

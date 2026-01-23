@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public enum BankAccountStatus
     {
         [JsonProperty("new")]
@@ -59,5 +59,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum BankAccountStatus");
         }
     }
-
 }

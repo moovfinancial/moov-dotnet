@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Defines the attributes of a transfer.
     /// </summary>
     public class CreateRunTransfer
     {
-
         [JsonProperty("amount")]
         public Amount Amount { get; set; } = default!;
 
@@ -45,10 +44,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a scheduled transfer.<br/>
-        /// 
-        /// <remarks>
         /// When line items are provided their total must equal `amount` minus `salesTaxAmount`.
-        /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
         public CreateScheduledTransferLineItems? LineItems { get; set; }

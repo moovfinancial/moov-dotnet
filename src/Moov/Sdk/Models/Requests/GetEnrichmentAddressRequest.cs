@@ -10,14 +10,11 @@
 namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Utils;
-    
+
     public class GetEnrichmentAddressRequest
     {
-
         /// <summary>
         /// Specify an API version.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
         ///   - `YYYY` is the year<br/>
@@ -27,7 +24,6 @@ namespace Moov.Sdk.Models.Requests
         /// <br/>
         /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
         public string? XMoovVersion { get; set; }
@@ -93,12 +89,9 @@ namespace Moov.Sdk.Models.Requests
         public long? PreferRatio { get; set; }
 
         /// <summary>
-        ///   If omitted or set to `city`, it uses the sender&apos;s IP address to determine location, then automatically adds the city and state <br/>
-        /// 
-        /// <remarks>
+        /// If omitted or set to `city`, it uses the sender's IP address to determine location, then automatically adds the city and state <br/>
         ///   to the preferCities value. This parameter takes precedence over other `include` or `exclude` parameters meaning that if it is <br/>
         ///   not set to `none`, you may see addresses from areas you do not wish to see.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=preferGeolocation")]
         public string? PreferGeolocation { get; set; }

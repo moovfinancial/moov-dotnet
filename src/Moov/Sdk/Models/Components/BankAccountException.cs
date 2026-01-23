@@ -12,17 +12,14 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Reason for, and details related to, an `errored` or `verificationFailed` bank account status.
     /// </summary>
     public class BankAccountException
     {
-
         /// <summary>
         /// The return code of an ACH transaction that caused the bank account status to change.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - R02: Account Closed<br/>
         /// - R03: No Account/Unable to Locate Account<br/>
@@ -43,16 +40,13 @@ namespace Moov.Sdk.Models.Components
         /// - R29: Corporate customer advises not authorized<br/>
         /// - R34: Limited participation RDFI<br/>
         /// - R38: Stop Payment on Source Document (Adjustment Entry)<br/>
-        /// - R39: Improper Source Document
-        /// </remarks>
+        /// - R39: Improper Source Document.
         /// </summary>
         [JsonProperty("achReturnCode")]
         public ACHReturnCode? AchReturnCode { get; set; }
 
         /// <summary>
         /// The rejection code of an RTP transaction that caused the bank account status to change.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - AC03: Account Invalid<br/>
         /// - AC04: Account Closed<br/>
@@ -60,16 +54,13 @@ namespace Moov.Sdk.Models.Components
         /// - AC14: Creditor Account Type Invalid<br/>
         /// - AG01: Transactions Forbidden On Account<br/>
         /// - AG03: Transaction Type Not Supported<br/>
-        /// - MD07: Customer Deceased
-        /// </remarks>
+        /// - MD07: Customer Deceased.
         /// </summary>
         [JsonProperty("rtpRejectionCode")]
         public RTPRejectionCode? RtpRejectionCode { get; set; }
 
         /// <summary>
         /// The rejection code of a FedNow transaction that caused the bank account status to change.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - AC02: Debtor account is invalid<br/>
         /// - AC03: Creditor account is invalid<br/>
@@ -88,8 +79,7 @@ namespace Moov.Sdk.Models.Components
         /// - NOAT: Receiving customer account does not support/accept this message type<br/>
         /// - RC02: Bank identifier is invalid or missing<br/>
         /// - RC03: Debtor FI identifier is invalid or missing<br/>
-        /// - RC04: Creditor FI identifier is invalid or missing
-        /// </remarks>
+        /// - RC04: Creditor FI identifier is invalid or missing.
         /// </summary>
         [JsonProperty("fednowRejectionCode")]
         public string? FednowRejectionCode { get; set; }

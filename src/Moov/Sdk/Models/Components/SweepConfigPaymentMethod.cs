@@ -12,17 +12,13 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The payment method used to push or pull funds to a bank account.<br/>
-    /// 
-    /// <remarks>
     /// The push payment method can only be ach-credit-standard, ach-credit-same-day, or rtp-credit. The pull payment method can only be ach-debit-fund.
-    /// </remarks>
     /// </summary>
     public class SweepConfigPaymentMethod
     {
-
         /// <summary>
         /// ID of the payment method.
         /// </summary>

@@ -13,20 +13,16 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     public class PatchWallet
     {
-
         [JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Status of a wallet.<br/>
-        /// 
-        /// <remarks>
         ///   - `active`: The wallet is available for use and has an enabled payment method.<br/>
         ///   - `closed`: The wallet is no longer active and the corresponding payment method has been disabled.
-        /// </remarks>
         /// </summary>
         [JsonProperty("status")]
         public WalletStatus? Status { get; set; }

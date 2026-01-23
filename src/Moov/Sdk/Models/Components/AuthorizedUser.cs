@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Fields for identifying an authorized individual.
     /// </summary>
     public class AuthorizedUser
     {
-
         [JsonProperty("firstName")]
         public string FirstName { get; set; } = default!;
 

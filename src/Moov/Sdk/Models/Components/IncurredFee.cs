@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// A fee incurred by a user.
     /// </summary>
     public class IncurredFee
     {
-
         [JsonProperty("feeID")]
         public string? FeeID { get; set; }
 

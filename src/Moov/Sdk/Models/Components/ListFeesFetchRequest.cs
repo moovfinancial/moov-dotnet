@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Array of fee IDs to fetch.
     /// </summary>
     public class ListFeesFetchRequest
     {
-
         [JsonProperty("feeIDs")]
         public List<string>? FeeIDs { get; set; }
     }

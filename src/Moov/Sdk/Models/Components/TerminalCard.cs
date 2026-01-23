@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes payment card details captured with tap or in-person payment.
     /// </summary>
     public class TerminalCard
     {
-
         /// <summary>
         /// How the card information was entered into the point of sale terminal.
         /// </summary>
@@ -48,11 +47,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Uniquely identifies a linked payment card or token.<br/>
-        /// 
-        /// <remarks>
-        /// For Apple Pay, the fingerprint is based on the tokenized card number and may vary based on the user&apos;s device.<br/>
+        /// For Apple Pay, the fingerprint is based on the tokenized card number and may vary based on the user's device.<br/>
         /// This field can be used to identify specific payment methods across multiple accounts on your platform.
-        /// </remarks>
         /// </summary>
         [JsonProperty("fingerprint")]
         public string? Fingerprint { get; set; }
@@ -76,7 +72,7 @@ namespace Moov.Sdk.Models.Components
         public string? IssuerCountry { get; set; }
 
         /// <summary>
-        /// Last four digits of the card number
+        /// Last four digits of the card number.
         /// </summary>
         [JsonProperty("lastFourCardNumber")]
         public string? LastFourCardNumber { get; set; }

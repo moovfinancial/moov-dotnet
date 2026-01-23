@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Request body for creating a new webhook.
     /// </summary>
     public class CreateWebhook
     {
-
         /// <summary>
         /// The URL where webhook events will be sent.
         /// </summary>

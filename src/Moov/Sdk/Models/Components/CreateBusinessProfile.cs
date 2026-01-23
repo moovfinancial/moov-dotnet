@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CreateBusinessProfile
     {
-
         /// <summary>
         /// The legal name under which the entity is registered.
         /// </summary>

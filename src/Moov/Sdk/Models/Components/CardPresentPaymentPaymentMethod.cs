@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A card used at point of sale terminal for a card present transaction as contained within a payment method.
     /// </summary>
     public class CardPresentPaymentPaymentMethod
     {
-
         /// <summary>
         /// ID of the payment method.
         /// </summary>

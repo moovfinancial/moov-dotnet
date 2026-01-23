@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Processing and pass-through costs that add up to the moovFee.
     /// </summary>
     public class MoovFeeDetails
     {
-
         /// <summary>
         /// Card scheme fees accrued during authorization and settlement. String type represents dollars with up to 9 decimal place precision.
         /// </summary>

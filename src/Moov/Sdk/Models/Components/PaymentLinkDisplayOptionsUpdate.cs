@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Customizable display options for a payment link.
     /// </summary>
     public class PaymentLinkDisplayOptionsUpdate
     {
-
         /// <summary>
         /// The payment page title displayed to the user.
         /// </summary>
@@ -32,13 +31,10 @@ namespace Moov.Sdk.Models.Components
         public string? Description { get; set; }
 
         /// <summary>
-        /// The text to be displayed on web form&apos;s submit button.<br/>
-        /// 
-        /// <remarks>
+        /// The text to be displayed on web form's submit button.<br/>
         /// <br/>
-        /// If set to &quot;auto&quot; the UI will automatically select between <br/>
-        /// &quot;pay&quot; and &quot;confirm&quot; for payments and payouts respectively.
-        /// </remarks>
+        /// If set to "auto" the UI will automatically select between <br/>
+        /// "pay" and "confirm" for payments and payouts respectively.
         /// </summary>
         [JsonProperty("callToAction")]
         public CallToAction? CallToAction { get; set; }

@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class WebhookDataCapabilityRequested
     {
-
         [JsonProperty("accountID")]
         public string AccountID { get; set; } = default!;
 
@@ -24,11 +23,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Moov account capabilities.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in your list. These are read-only capabilities that Moov requests and uses for account verification purposes. These capabilities remains active with your account and require no additional action.
-        /// </remarks>
         /// </summary>
         [JsonProperty("capabilityID")]
         public CapabilityID CapabilityID { get; set; } = default!;

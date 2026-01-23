@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class BrandColor
     {
-
         /// <summary>
         /// A CSS hex color representing an accent color.
         /// </summary>

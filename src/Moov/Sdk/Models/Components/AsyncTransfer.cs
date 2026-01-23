@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class AsyncTransfer
     {
-
         [JsonProperty("transferID")]
         public string TransferID { get; set; } = default!;
 

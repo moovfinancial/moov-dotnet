@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class SweepSubtotal
     {
-
         /// <summary>
         /// The type of wallet transaction the subtotal is for.
         /// </summary>

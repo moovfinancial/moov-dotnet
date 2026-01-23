@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CreateReversal
     {
-
         /// <summary>
         /// Amount to reverse in cents. Partial amounts will automatically trigger a refund instead of a cancellation.
         /// </summary>

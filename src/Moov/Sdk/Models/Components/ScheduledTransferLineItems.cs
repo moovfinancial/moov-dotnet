@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Line items for a scheduled transfer.
     /// </summary>
     public class ScheduledTransferLineItems
     {
-
         /// <summary>
         /// The list of line items.
         /// </summary>

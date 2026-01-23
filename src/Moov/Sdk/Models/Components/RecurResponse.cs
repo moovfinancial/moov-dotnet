@@ -13,16 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class RecurResponse
     {
-
         /// <summary>
-        ///   RRule as defined by RFC 5545 (https://www.rfc-editor.org/rfc/rfc5545#section-3.3.10).<br/>
-        /// 
-        /// <remarks>
+        /// RRule as defined by RFC 5545 (https://www.rfc-editor.org/rfc/rfc5545#section-3.3.10).<br/>
         ///   Generators available online at the following sites - https://freetools.textmagic.com/rrule-generator, https://jkbrzt.github.io/rrule/
-        /// </remarks>
         /// </summary>
         [JsonProperty("recurrenceRule")]
         public string RecurrenceRule { get; set; } = default!;

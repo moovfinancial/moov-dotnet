@@ -14,13 +14,12 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// A good or service offered by a merchant.
     /// </summary>
     public class Product
     {
-
         /// <summary>
         /// Unique identifier for a product.
         /// </summary>
@@ -32,19 +31,16 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// A detailed description of the product.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - Must be valid UTF-8 text<br/>
         /// - Supports Markdown for formatting<br/>
-        /// - HTML is not permitted and will be rejected
-        /// </remarks>
+        /// - HTML is not permitted and will be rejected.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// A product&apos;s starting price, before applying modifiers.
+        /// A product's starting price, before applying modifiers.
         /// </summary>
         [JsonProperty("basePrice")]
         public AmountDecimal BasePrice { get; set; } = default!;

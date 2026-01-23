@@ -12,19 +12,15 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Where funds for a transfer originate. For the source, you must include either a `paymentMethodID` or a `transferID`.
     /// </summary>
     public class CreateTransferSource
     {
-
         /// <summary>
         /// A `transferID` is used to create a <a href="https://docs.moov.io/guides/money-movement/transfer-groups/">transfer group</a>,<br/>
-        /// 
-        /// <remarks>
         /// associating the new transfer with a parent transfer.
-        /// </remarks>
         /// </summary>
         [JsonProperty("transferID")]
         public string? TransferID { get; set; }

@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Details of a successfully uploaded evidence file.
     /// </summary>
     public class EvidenceUploadResponse
     {
-
         /// <summary>
         /// The ID of the evidence.
         /// </summary>

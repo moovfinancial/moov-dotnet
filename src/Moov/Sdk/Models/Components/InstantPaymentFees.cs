@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A detailed breakdown of instant payment fees.
     /// </summary>
     public class InstantPaymentFees
     {
-
         /// <summary>
         /// Fees for RTP credit transactions.
         /// </summary>

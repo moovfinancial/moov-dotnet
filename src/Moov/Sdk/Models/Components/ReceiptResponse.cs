@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class ReceiptResponse
     {
-
         /// <summary>
         /// Unique identifier for the receipt request.
         /// </summary>
@@ -44,50 +43,35 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The email address the receipt is sent to.<br/>
-        /// 
-        /// <remarks>
         /// Either email or emailAccountID will be in the response, but not both.
-        /// </remarks>
         /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; }
 
         /// <summary>
         /// The accountID the receipt is sent to.<br/>
-        /// 
-        /// <remarks>
         /// Either email or emailAccountID will be in the response, but not both.
-        /// </remarks>
         /// </summary>
         [JsonProperty("emailAccountID")]
         public string? EmailAccountID { get; set; }
 
         /// <summary>
         /// The ID of the transfer associated with this receipt.<br/>
-        /// 
-        /// <remarks>
         /// Exactly one of forTransferID, forScheduleID, or forOccurrenceID must be provided.
-        /// </remarks>
         /// </summary>
         [JsonProperty("forTransferID")]
         public string? ForTransferID { get; set; }
 
         /// <summary>
         /// The ID of the schedule associated with this receipt.<br/>
-        /// 
-        /// <remarks>
         /// Exactly one of forTransferID, forScheduleID, or forOccurrenceID must be provided.
-        /// </remarks>
         /// </summary>
         [JsonProperty("forScheduleID")]
         public string? ForScheduleID { get; set; }
 
         /// <summary>
         /// The ID of the schedule occurrence associated with this receipt.<br/>
-        /// 
-        /// <remarks>
         /// Exactly one of forTransferID, forScheduleID, or forOccurrenceID must be provided.
-        /// </remarks>
         /// </summary>
         [JsonProperty("forOccurrenceID")]
         public string? ForOccurrenceID { get; set; }

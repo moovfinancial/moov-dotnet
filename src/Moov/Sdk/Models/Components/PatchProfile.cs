@@ -12,17 +12,13 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes the fields available when patching a profile.<br/>
-    /// 
-    /// <remarks>
     /// Each object can be patched independent of patching the other fields.
-    /// </remarks>
     /// </summary>
     public class PatchProfile
     {
-
         /// <summary>
         /// Describes the fields available when patching an individual.
         /// </summary>

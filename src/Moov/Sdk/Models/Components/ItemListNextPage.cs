@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class ItemListNextPage
     {
-
         /// <summary>
         /// The cursor value to use for the next page of items.
         /// </summary>

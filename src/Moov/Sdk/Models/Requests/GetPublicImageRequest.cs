@@ -10,10 +10,9 @@
 namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Utils;
-    
+
     public class GetPublicImageRequest
     {
-
         [SpeakeasyMetadata("header:style=simple,explode=false,name=if-none-match")]
         public string? IfNoneMatch { get; set; }
 
@@ -22,13 +21,10 @@ namespace Moov.Sdk.Models.Requests
 
         /// <summary>
         /// Optional parameter to request a resized version of the image (WxH).<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// If either dimension is 0, the image will be scaled proportionally based on<br/>
         /// the non-zero dimension. Dimensions are capped at 2048 pixels. A default size<br/>
         /// of 400x400 will be used if this parameter is omitted.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=size")]
         public string? Size { get; set; } = "400x400";

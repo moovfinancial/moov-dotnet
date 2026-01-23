@@ -12,19 +12,15 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Specify the intended recipient of the payout.<br/>
-    /// 
-    /// <remarks>
     /// Either `email` or `phone` must be specified, but not both.<br/>
     /// <br/>
     /// This information will be used to authenticate the end user when they follow the payment link.
-    /// </remarks>
     /// </summary>
     public class PayoutRecipient
     {
-
         [JsonProperty("email")]
         public string? Email { get; set; }
 

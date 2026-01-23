@@ -12,39 +12,29 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
-    ///   The JSON structure returned from Apple Pay when authorizing a payment session.<br/>
-    /// 
-    /// <remarks>
+    /// The JSON structure returned from Apple Pay when authorizing a payment session.<br/>
     /// <br/>
-    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment">Apple&apos;s documentation</a> <br/>
+    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment">Apple's documentation</a> <br/>
     ///   for more information.
-    /// </remarks>
     /// </summary>
     public class LinkApplePay
     {
-
         /// <summary>
-        ///   Contains the user&apos;s payment information as returned from Apple Pay.<br/>
-        /// 
-        /// <remarks>
+        /// Contains the user's payment information as returned from Apple Pay.<br/>
         /// <br/>
-        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken">Apple&apos;s documentation</a> <br/>
+        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken">Apple's documentation</a> <br/>
         ///   for more information.
-        /// </remarks>
         /// </summary>
         [JsonProperty("token")]
         public LinkApplePayToken Token { get; set; } = default!;
 
         /// <summary>
-        ///   Billing contact information as returned from Apple Pay.<br/>
-        /// 
-        /// <remarks>
+        /// Billing contact information as returned from Apple Pay.<br/>
         ///   <br/>
-        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentcontact">Apple&apos;s documentation</a> <br/>
+        ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentcontact">Apple's documentation</a> <br/>
         ///   for more information.
-        /// </remarks>
         /// </summary>
         [JsonProperty("billingContact")]
         public AppleBillingContact? BillingContact { get; set; }

@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class Logo
     {
-
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 

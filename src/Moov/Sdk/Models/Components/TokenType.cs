@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// An <a href="https://www.rfc-editor.org/rfc/rfc6750#section-6.1">RFC 6750</a> token type.
     /// </summary>
@@ -54,5 +54,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum TokenType");
         }
     }
-
 }

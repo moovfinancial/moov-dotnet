@@ -14,13 +14,12 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// A configured webhook endpoint that receives event notifications.
     /// </summary>
     public class Webhook
     {
-
         /// <summary>
         /// Unique identifier for the webhook.
         /// </summary>

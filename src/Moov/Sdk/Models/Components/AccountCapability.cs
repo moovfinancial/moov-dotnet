@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes an action or set of actions that an account is permitted to perform.
     /// </summary>
     public class AccountCapability
     {
-
         [JsonProperty("capability")]
         public string Capability { get; set; } = default!;
 

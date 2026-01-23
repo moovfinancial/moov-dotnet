@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Details of a card refund.
     /// </summary>
     public class CardAcquiringRefund
     {
-
         /// <summary>
         /// Identifier for the refund.
         /// </summary>

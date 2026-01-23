@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class IssuedCardAuthorization
     {
-
         [JsonProperty("authorizationID")]
         public string AuthorizationID { get; set; } = default!;
 

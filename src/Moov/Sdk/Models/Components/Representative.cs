@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Describes a business representative.
     /// </summary>
     public class Representative
     {
-
         /// <summary>
         /// Unique identifier for this representative.
         /// </summary>
@@ -39,7 +38,7 @@ namespace Moov.Sdk.Models.Components
         public Address? Address { get; set; }
 
         /// <summary>
-        /// Indicates whether this representative&apos;s birth date has been provided.
+        /// Indicates whether this representative's birth date has been provided.
         /// </summary>
         [JsonProperty("birthDateProvided")]
         public bool? BirthDateProvided { get; set; }

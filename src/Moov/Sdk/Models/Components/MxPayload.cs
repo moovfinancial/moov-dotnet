@@ -12,32 +12,25 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes the account to link to the Moov account using a MX processor token. <br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// `sandbox` - When linking a bank account to a `sandbox` account using an MX authorization token a default bank account routing number will<br/>
     /// be used. The following default data will be used to generate the bank account in this flow:<br/>
     /// <br/>
     /// ```<br/>
-    ///   RoutingNumber: &quot;123456780&quot;,<br/>
-    ///   BankName: &quot;Gringotts Bank&quot;<br/>
+    ///   RoutingNumber: "123456780",<br/>
+    ///   BankName: "Gringotts Bank"<br/>
     /// ```
-    /// </remarks>
     /// </summary>
     public class MxPayload
     {
-
         /// <summary>
         /// The authorization code of a MX account which allows a processor to retrieve a linked payment account. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// `sandbox` - When linking a bank account to a `sandbox` account using a MX authorization code it will utilize MX&apos;s sandbox environment. <br/>
-        /// The MX authorization code provided must be generated from MX&apos;s sandbox environment.
-        /// </remarks>
+        /// `sandbox` - When linking a bank account to a `sandbox` account using a MX authorization code it will utilize MX's sandbox environment. <br/>
+        /// The MX authorization code provided must be generated from MX's sandbox environment.
         /// </summary>
         [JsonProperty("mx")]
         public MXAuthorizationCode Mx { get; set; } = default!;

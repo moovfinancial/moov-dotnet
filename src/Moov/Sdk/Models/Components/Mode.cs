@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The operating mode for an account.
     /// </summary>
@@ -56,5 +56,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum Mode");
         }
     }
-
 }

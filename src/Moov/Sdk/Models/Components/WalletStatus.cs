@@ -12,14 +12,11 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Status of a wallet.<br/>
-    /// 
-    /// <remarks>
     ///   - `active`: The wallet is available for use and has an enabled payment method.<br/>
     ///   - `closed`: The wallet is no longer active and the corresponding payment method has been disabled.
-    /// </remarks>
     /// </summary>
     public enum WalletStatus
     {
@@ -61,5 +58,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum WalletStatus");
         }
     }
-
 }

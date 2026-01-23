@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A summary of interchange fees by card brand.
     /// </summary>
     public class BillingSummaryInterchange
     {
-
         /// <summary>
         /// Total interchange fees for Visa.
         /// </summary>

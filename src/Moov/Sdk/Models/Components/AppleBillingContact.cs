@@ -12,19 +12,15 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
-    ///   Billing contact information as returned from Apple Pay.<br/>
-    /// 
-    /// <remarks>
+    /// Billing contact information as returned from Apple Pay.<br/>
     ///   <br/>
-    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentcontact">Apple&apos;s documentation</a> <br/>
+    ///   Refer to <a href="https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentcontact">Apple's documentation</a> <br/>
     ///   for more information.
-    /// </remarks>
     /// </summary>
     public class AppleBillingContact
     {
-
         /// <summary>
         /// Address lines 1 and 2 for the contact.
         /// </summary>
@@ -32,25 +28,25 @@ namespace Moov.Sdk.Models.Components
         public List<string>? AddressLines { get; set; }
 
         /// <summary>
-        /// The contact&apos;s city.
+        /// The contact's city.
         /// </summary>
         [JsonProperty("locality")]
         public string? Locality { get; set; }
 
         /// <summary>
-        /// The contact&apos;s postal code.
+        /// The contact's postal code.
         /// </summary>
         [JsonProperty("postalCode")]
         public string? PostalCode { get; set; }
 
         /// <summary>
-        /// The contact&apos;s two-letter state code.
+        /// The contact's two-letter state code.
         /// </summary>
         [JsonProperty("administrativeArea")]
         public string? AdministrativeArea { get; set; }
 
         /// <summary>
-        /// The contact&apos;s two-letter ISO 3166
+        /// The contact's two-letter ISO 3166.
         /// </summary>
         [JsonProperty("countryCode")]
         public string? CountryCode { get; set; }

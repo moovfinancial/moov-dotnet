@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// The countries in which an account operates.
     /// </summary>
     public class AccountCountries
     {
-
         [JsonProperty("countries")]
         public List<string> Countries { get; set; } = default!;
     }

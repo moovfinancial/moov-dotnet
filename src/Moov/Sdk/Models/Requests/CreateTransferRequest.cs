@@ -11,14 +11,11 @@ namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    
+
     public class CreateTransferRequest
     {
-
         /// <summary>
         /// Specify an API version.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
         ///   - `YYYY` is the year<br/>
@@ -28,27 +25,20 @@ namespace Moov.Sdk.Models.Requests
         /// <br/>
         /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
         public string? XMoovVersion { get; set; }
 
         /// <summary>
         /// Identifies a unique request to create a transfer.<br/>
-        /// 
-        /// <remarks>
         /// In order to avoid creating duplicate transfers, the same idempotency key should be reused when retrying a request.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-idempotency-key")]
         public string XIdempotencyKey { get; set; } = default!;
 
         /// <summary>
         /// Optional header that indicates whether to return a synchronous response that includes full transfer and rail-specific details or an <br/>
-        /// 
-        /// <remarks>
         /// asynchronous response indicating the transfer was created (this is the default response if the header is omitted). A timeout will occur after 15 seconds.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-wait-for")]
         public TransferWaitFor? XWaitFor { get; set; }

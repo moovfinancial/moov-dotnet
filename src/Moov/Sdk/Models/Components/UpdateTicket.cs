@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Request to update a support ticket.
     /// </summary>
     public class UpdateTicket
     {
-
         [JsonProperty("status")]
         public UpdateTicketStatus? Status { get; set; }
     }

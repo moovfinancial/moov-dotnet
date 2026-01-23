@@ -12,15 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The type of grant being requested.<br/>
-    /// 
-    /// <remarks>
     /// <br/>
     ///   - `client_credentials`: A grant type used by clients to obtain an access token<br/>
-    ///   - `refresh_token`: A grant type used by clients to obtain a new access token using a refresh token
-    /// </remarks>
+    ///   - `refresh_token`: A grant type used by clients to obtain a new access token using a refresh token.
     /// </summary>
     public enum GrantType
     {
@@ -62,5 +59,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum GrantType");
         }
     }
-
 }

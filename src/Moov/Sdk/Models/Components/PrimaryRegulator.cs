@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// If the business is a financial institution, this field describes its primary regulator.
     /// </summary>
@@ -62,5 +62,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum PrimaryRegulator");
         }
     }
-
 }

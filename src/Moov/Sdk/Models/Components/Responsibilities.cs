@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes the job responsibilities of a business representative.
     /// </summary>
     public class Responsibilities
     {
-
         /// <summary>
         /// Indicates whether this individual has significant management responsibilities within the business.
         /// </summary>
@@ -26,10 +25,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// If `true`, this field indicates that the individual has a business ownership stake of at least 25% in the<br/>
-        /// 
-        /// <remarks>
         /// business. If the representative does not own at least 25% of the business, this field should be `false`.
-        /// </remarks>
         /// </summary>
         [JsonProperty("isOwner")]
         public bool? IsOwner { get; set; }

@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes a terminal configuration.
     /// </summary>
     public class TerminalConfiguration
     {
-
         [JsonProperty("configuration")]
         public string Configuration { get; set; } = default!;
     }

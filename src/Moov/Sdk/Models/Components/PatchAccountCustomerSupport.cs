@@ -12,17 +12,13 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// User-provided information that can be displayed on credit card transactions for customers to use when<br/>
-    /// 
-    /// <remarks>
     /// contacting a customer support team. This data is only allowed on a business account.
-    /// </remarks>
     /// </summary>
     public class PatchAccountCustomerSupport
     {
-
         [JsonProperty("phone")]
         public PhoneNumber? Phone { get; set; }
 

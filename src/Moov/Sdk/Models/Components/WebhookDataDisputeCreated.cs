@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class WebhookDataDisputeCreated
     {
-
         [JsonProperty("accountID")]
         public string AccountID { get; set; } = default!;
 
@@ -30,11 +29,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The status of a particular dispute. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/disputes/#dispute-statuses">disputes guide</a> to learn what each status means.
-        /// </remarks>
         /// </summary>
         [JsonProperty("status")]
         public DisputeStatus Status { get; set; } = default!;

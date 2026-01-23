@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// A summary of all fees included in a statement.
     /// </summary>
     public class BillingSummary
     {
-
         /// <summary>
         /// A summary of card acquiring fees.
         /// </summary>

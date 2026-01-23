@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class Sweep
     {
-
         [JsonProperty("sweepID")]
         public string SweepID { get; set; } = default!;
 
@@ -82,7 +81,7 @@ namespace Moov.Sdk.Models.Components
         public string? StatementDescriptor { get; set; }
 
         /// <summary>
-        /// The subtotal of each transaction type contributing to the sweep&apos;s accrued amount.
+        /// The subtotal of each transaction type contributing to the sweep's accrued amount.
         /// </summary>
         [JsonProperty("subtotals")]
         public List<SweepSubtotal>? Subtotals { get; set; }

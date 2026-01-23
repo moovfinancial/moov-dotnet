@@ -12,14 +12,11 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Moov account capabilities.<br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in your list. These are read-only capabilities that Moov requests and uses for account verification purposes. These capabilities remains active with your account and require no additional action.
-    /// </remarks>
     /// </summary>
     public enum CapabilityID
     {
@@ -91,5 +88,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum CapabilityID");
         }
     }
-
 }

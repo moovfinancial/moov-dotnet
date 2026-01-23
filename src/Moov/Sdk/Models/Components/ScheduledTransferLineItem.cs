@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents a single item in a scheduled transfer, including optional modifiers and quantity.
     /// </summary>
     public class ScheduledTransferLineItem
     {
-
         /// <summary>
         /// The name of the item.
         /// </summary>

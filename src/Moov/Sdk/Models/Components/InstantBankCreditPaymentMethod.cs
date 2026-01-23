@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Instantly send funds to a bank account.
     /// </summary>
     public class InstantBankCreditPaymentMethod
     {
-
         /// <summary>
         /// ID of the payment method.
         /// </summary>

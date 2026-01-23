@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes an available event type that can be subscribed to.
     /// </summary>
     public class EventType
     {
-
         /// <summary>
         /// Unique identifier for the event type.
         /// </summary>

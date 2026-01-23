@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// A collection of line items for an invoice.
     /// </summary>
     public class InvoiceLineItems
     {
-
         /// <summary>
         /// The list of line items.
         /// </summary>

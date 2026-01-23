@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes the fields available when patching an individual.
     /// </summary>
     public class PatchIndividual
     {
-
         [JsonProperty("name")]
         public IndividualNameUpdate? Name { get; set; }
 

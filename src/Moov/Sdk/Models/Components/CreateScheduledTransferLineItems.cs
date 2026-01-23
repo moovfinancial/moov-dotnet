@@ -13,17 +13,13 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// An optional collection of line items for a scheduled transfer.<br/>
-    /// 
-    /// <remarks>
     /// When line items are provided their total must equal `amount` minus `salesTaxAmount`.
-    /// </remarks>
     /// </summary>
     public class CreateScheduledTransferLineItems
     {
-
         /// <summary>
         /// The list of line items.
         /// </summary>

@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class UpdateInvoice
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -34,11 +33,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The status can be updated to one of the following values under specific conditions:<br/>
-        /// 
-        /// <remarks>
         /// - `canceled`: Can only be set if the current status is `draft`, `unpaid`, or `overdue`.<br/>
         /// - `unpaid`: Can only be set if the current status is `draft`. Setting the status to `unpaid` finalizes the invoice and sends an email with a payment link to the customer.
-        /// </remarks>
         /// </summary>
         [JsonProperty("status")]
         public InvoiceStatus? Status { get; set; }

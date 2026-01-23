@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Contains details on why the occurrence errored.
     /// </summary>
     public class OccurrencesResponseError
     {
-
         [JsonProperty("message")]
         public string? Message { get; set; }
     }

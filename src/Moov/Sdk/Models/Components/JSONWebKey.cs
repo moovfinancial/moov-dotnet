@@ -13,33 +13,32 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Describes an <a href="https://datatracker.ietf.org/doc/html/rfc7517">RFC7517</a> web key.
     /// </summary>
     public class JSONWebKey
     {
-
         /// <summary>
-        /// The cryptographic algorithm family used with the key (e.g., &apos;RSA&apos;, &apos;EC&apos;, &apos;oct&apos;).
+        /// The cryptographic algorithm family used with the key (e.g., 'RSA', 'EC', 'oct').
         /// </summary>
         [JsonProperty("kty")]
         public string Kty { get; set; } = default!;
 
         /// <summary>
-        /// The intended use of the key. &apos;sig&apos; for signature, &apos;enc&apos; for encryption.
+        /// The intended use of the key. 'sig' for signature, 'enc' for encryption.
         /// </summary>
         [JsonProperty("use")]
         public Use? Use { get; set; }
 
         /// <summary>
-        /// The permitted operations for the key, e.g., &apos;sign&apos;, &apos;verify&apos;, &apos;encrypt&apos;, &apos;decrypt&apos;.
+        /// The permitted operations for the key, e.g., 'sign', 'verify', 'encrypt', 'decrypt'.
         /// </summary>
         [JsonProperty("key_ops")]
         public List<string>? KeyOps { get; set; }
 
         /// <summary>
-        /// The algorithm intended for use with the key, e.g., &apos;RS256&apos; or &apos;ES256&apos;.
+        /// The algorithm intended for use with the key, e.g., 'RS256' or 'ES256'.
         /// </summary>
         [JsonProperty("alg")]
         public string? Alg { get; set; }
@@ -51,56 +50,41 @@ namespace Moov.Sdk.Models.Components
         public string? Kid { get; set; }
 
         /// <summary>
-        /// The curve for Elliptic Curve keys, e.g., &apos;P-256&apos;, &apos;P-384&apos;, or &apos;P-521&apos;.<br/>
-        /// 
-        /// <remarks>
+        /// The curve for Elliptic Curve keys, e.g., 'P-256', 'P-384', or 'P-521'.<br/>
         /// <br/>
-        /// This field is required when `kty` is &apos;EC&apos;.
-        /// </remarks>
+        /// This field is required when `kty` is 'EC'.
         /// </summary>
         [JsonProperty("crv")]
         public string? Crv { get; set; }
 
         /// <summary>
         /// The x coordinate for Elliptic Curve keys.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// This field is required when `kty` is &apos;EC&apos;.
-        /// </remarks>
+        /// This field is required when `kty` is 'EC'.
         /// </summary>
         [JsonProperty("x")]
         public string? X { get; set; }
 
         /// <summary>
         /// The y coordinate for Elliptic Curve keys.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// This field is required when `kty` is &apos;EC&apos;.
-        /// </remarks>
+        /// This field is required when `kty` is 'EC'.
         /// </summary>
         [JsonProperty("y")]
         public string? Y { get; set; }
 
         /// <summary>
         /// The modulus value for RSA keys.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// This field is required when `kty` is &apos;RSA&apos;.
-        /// </remarks>
+        /// This field is required when `kty` is 'RSA'.
         /// </summary>
         [JsonProperty("n")]
         public string? N { get; set; }
 
         /// <summary>
         /// The exponent value for RSA keys.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// This field is required when `kty` is &apos;RSA&apos;.
-        /// </remarks>
+        /// This field is required when `kty` is 'RSA'.
         /// </summary>
         [JsonProperty("e")]
         public string? E { get; set; }

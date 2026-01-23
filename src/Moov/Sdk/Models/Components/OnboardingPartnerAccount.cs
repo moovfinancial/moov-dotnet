@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The account that created the onboarding invite.
     /// </summary>
     public class OnboardingPartnerAccount
     {
-
         /// <summary>
         /// The account ID of the partner that created the invite.
         /// </summary>

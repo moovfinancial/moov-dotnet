@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The full details of an issued card, including PAN and CVV.
     /// </summary>
     public class FullIssuedCard
     {
-
         [JsonProperty("issuedCardID")]
         public string IssuedCardID { get; set; } = default!;
 
@@ -58,14 +57,11 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The `state` represents the operational status of an issued card. A card can only approve incoming authorizations if it is in an active state.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// - `active`: The card is operational and approves authorizations. Generally becomes active shortly after card creation.<br/>
         /// - `inactive`: The card cannot approve authorizations. This is currently a temporary state assigned post-creation during the activation process.<br/>
         /// - `closed`: The card is permanently deactivated and cannot approve authorizations. A card can be closed by request or when it expires.<br/>
         /// - `pending-verification`: Awaiting additional authorized user verification before the card can be activated.
-        /// </remarks>
         /// </summary>
         [JsonProperty("state")]
         public IssuedCardState State { get; set; } = default!;
@@ -83,13 +79,13 @@ namespace Moov.Sdk.Models.Components
         public DateTime CreatedOn { get; set; } = default!;
 
         /// <summary>
-        /// The issued card&apos;s Primary Account Number (PAN)
+        /// The issued card's Primary Account Number (PAN).
         /// </summary>
         [JsonProperty("pan")]
         public string Pan { get; set; } = default!;
 
         /// <summary>
-        /// The issued card&apos;s 3- or 4-digit Card Verification Value (CVV).
+        /// The issued card's 3- or 4-digit Card Verification Value (CVV).
         /// </summary>
         [JsonProperty("cvv")]
         public string Cvv { get; set; } = default!;

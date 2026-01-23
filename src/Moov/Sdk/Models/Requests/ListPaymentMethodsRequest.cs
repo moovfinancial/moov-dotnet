@@ -11,14 +11,11 @@ namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    
+
     public class ListPaymentMethodsRequest
     {
-
         /// <summary>
         /// Specify an API version.<br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
         ///   - `YYYY` is the year<br/>
@@ -28,7 +25,6 @@ namespace Moov.Sdk.Models.Requests
         /// <br/>
         /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
         public string? XMoovVersion { get; set; }
@@ -37,19 +33,16 @@ namespace Moov.Sdk.Models.Requests
         public string AccountID { get; set; } = default!;
 
         /// <summary>
-        /// Optional parameter to filter the account&apos;s payment methods by source ID. <br/>
-        /// 
-        /// <remarks>
+        /// Optional parameter to filter the account's payment methods by source ID. <br/>
         /// <br/>
         /// A source ID can be a <a href="https://docs.moov.io/api/sources/wallets/list/">walletID</a>, <a href="https://docs.moov.io/api/sources/cards/list/">cardID</a>, <br/>
         /// or <a href="https://docs.moov.io/api/sources/bank-accounts/list/">bankAccountID</a>.
-        /// </remarks>
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=sourceID")]
         public string? SourceID { get; set; }
 
         /// <summary>
-        /// Optional parameter to filter the account&apos;s payment methods by payment method type.
+        /// Optional parameter to filter the account's payment methods by payment method type.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=paymentMethodType")]
         public PaymentMethodType? PaymentMethodType { get; set; }

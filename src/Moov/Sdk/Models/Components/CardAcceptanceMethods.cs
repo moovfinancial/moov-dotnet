@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes the distribution of card transactions by payment method.
     /// </summary>
     public class CardAcceptanceMethods
     {
-
         /// <summary>
         /// Percentage of card transactions that are in-person payments. Minimum value is 0, maximum is 100.
         /// </summary>

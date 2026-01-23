@@ -14,13 +14,12 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// A billing statement for a Moov account.
     /// </summary>
     public class Statement
     {
-
         /// <summary>
         /// The unique identifier for the statement.
         /// </summary>

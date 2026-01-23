@@ -40,7 +40,7 @@ namespace Moov.Sdk.Models.Errors
         public TransferStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// Reason for a transfer&apos;s failure.
+        /// Reason for a transfer's failure.
         /// </summary>
         [JsonProperty("failureReason")]
         public TransferFailureReason? FailureReason { get; set; }
@@ -137,10 +137,7 @@ namespace Moov.Sdk.Models.Errors
 
         /// <summary>
         /// An optional collection of line items for a transfer.<br/>
-        /// 
-        /// <remarks>
         /// When line items are provided, their total plus sales tax must equal the transfer amount.
-        /// </remarks>
         /// </summary>
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }
@@ -298,5 +295,4 @@ namespace Moov.Sdk.Models.Errors
            #pragma warning restore CS0618
         }
     }
-
 }

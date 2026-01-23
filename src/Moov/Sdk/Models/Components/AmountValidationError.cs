@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AmountValidationError
     {
-
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 

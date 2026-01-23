@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Request to create a new support ticket.
     /// </summary>
     public class CreateTicket
     {
-
         [JsonProperty("title")]
         public string Title { get; set; } = default!;
 

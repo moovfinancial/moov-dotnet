@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Details of a card transaction dispute.
     /// </summary>
     public class Dispute
     {
-
         [JsonProperty("disputeID")]
         public string DisputeID { get; set; } = default!;
 
@@ -30,18 +29,15 @@ namespace Moov.Sdk.Models.Components
         public Amount Amount { get; set; } = default!;
 
         /// <summary>
-        /// Indicates the card network&apos;s category for the dispute. <br/>
-        /// 
-        /// <remarks>
+        /// Indicates the card network's category for the dispute. <br/>
         /// <br/>
         /// These codes may differ between card brands. You can find more information on the code from the networkReasonDescription field.
-        /// </remarks>
         /// </summary>
         [JsonProperty("networkReasonCode")]
         public string NetworkReasonCode { get; set; } = default!;
 
         /// <summary>
-        /// Provides detail on the card network&apos;s categorization of the dispute.
+        /// Provides detail on the card network's categorization of the dispute.
         /// </summary>
         [JsonProperty("networkReasonDescription")]
         public string? NetworkReasonDescription { get; set; }
@@ -54,11 +50,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The status of a particular dispute. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/disputes/#dispute-statuses">disputes guide</a> to learn what each status means.
-        /// </remarks>
         /// </summary>
         [JsonProperty("status")]
         public DisputeStatus Status { get; set; } = default!;

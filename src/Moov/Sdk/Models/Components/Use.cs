@@ -12,9 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
-    /// The intended use of the key. &apos;sig&apos; for signature, &apos;enc&apos; for encryption.
+    /// The intended use of the key. 'sig' for signature, 'enc' for encryption.
     /// </summary>
     public enum Use
     {
@@ -56,5 +56,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum Use");
         }
     }
-
 }

@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class RequirementError
     {
-
         /// <summary>
         /// The unique ID of what the requirement is asking to be filled out.
         /// </summary>

@@ -12,17 +12,13 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class LinkCard
     {
-
         /// <summary>
         /// Wraps a compact-serialized JSON Web Encryption (JWE) token used for secure transmission of sensitive data (e.g., PCI information) through intermediaries. <br/>
-        /// 
-        /// <remarks>
         /// This token is encrypted using the public key from /end-to-end-keys and wraps an AES key. For details and examples, refer to our <br/>
         /// <a href="https://github.com/moovfinancial/moov-go/blob/main/examples/e2ee/e2ee_test.go">GitHub repository</a>.
-        /// </remarks>
         /// </summary>
         [JsonProperty("e2ee")]
         public E2EEToken? E2ee { get; set; }

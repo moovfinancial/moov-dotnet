@@ -58,7 +58,6 @@ namespace Moov.Sdk.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(LinkBankAccount.LinkBankAccountConverter))]
     public class LinkBankAccount
     {

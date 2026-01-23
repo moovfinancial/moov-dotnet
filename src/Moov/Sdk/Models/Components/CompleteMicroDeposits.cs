@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Request to complete the micro-deposit verification workflow.
     /// </summary>
     public class CompleteMicroDeposits
     {
-
         /// <summary>
         /// Two positive integers, in cents, equal to the values of the micro-deposits sent to the bank account.
         /// </summary>

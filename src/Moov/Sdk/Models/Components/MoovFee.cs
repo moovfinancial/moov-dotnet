@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Moov fee charged to an account involved in a transfer.
     /// </summary>
     public class MoovFee
     {
-
         /// <summary>
         /// ID of the account that fees were charged to.
         /// </summary>

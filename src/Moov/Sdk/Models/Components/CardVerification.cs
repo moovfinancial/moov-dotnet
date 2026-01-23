@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// The results of submitting cardholder data to a card network for verification.
     /// </summary>
     public class CardVerification
     {
-
         [JsonProperty("cvv")]
         public CardVerificationResult Cvv { get; set; } = default!;
 

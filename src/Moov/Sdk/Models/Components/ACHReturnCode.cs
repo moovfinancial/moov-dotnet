@@ -12,11 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// The return code of an ACH transaction that caused the bank account status to change.<br/>
-    /// 
-    /// <remarks>
     /// <br/>
     /// - R02: Account Closed<br/>
     /// - R03: No Account/Unable to Locate Account<br/>
@@ -37,8 +35,7 @@ namespace Moov.Sdk.Models.Components
     /// - R29: Corporate customer advises not authorized<br/>
     /// - R34: Limited participation RDFI<br/>
     /// - R38: Stop Payment on Source Document (Adjustment Entry)<br/>
-    /// - R39: Improper Source Document
-    /// </remarks>
+    /// - R39: Improper Source Document.
     /// </summary>
     public enum ACHReturnCode
     {
@@ -116,5 +113,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum ACHReturnCode");
         }
     }
-
 }

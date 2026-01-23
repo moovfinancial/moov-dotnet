@@ -11,13 +11,12 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// A structured industry taxonomy entry with category and mapped to a default MCC code.
     /// </summary>
     public class IndustryTaxonomy
     {
-
         /// <summary>
         /// Classification identifier for the industry.
         /// </summary>
@@ -25,25 +24,25 @@ namespace Moov.Sdk.Models.Components
         public string Industry { get; set; } = default!;
 
         /// <summary>
-        /// Display name of the industry
+        /// Display name of the industry.
         /// </summary>
         [JsonProperty("displayName")]
         public string DisplayName { get; set; } = default!;
 
         /// <summary>
-        /// Category slug
+        /// Category slug.
         /// </summary>
         [JsonProperty("category")]
         public string Category { get; set; } = default!;
 
         /// <summary>
-        /// Human-readable category label
+        /// Human-readable category label.
         /// </summary>
         [JsonProperty("categoryDisplayName")]
         public string CategoryDisplayName { get; set; } = default!;
 
         /// <summary>
-        /// Default Merchant Category Code
+        /// Default Merchant Category Code.
         /// </summary>
         [JsonProperty("defaultMcc")]
         public string DefaultMcc { get; set; } = default!;

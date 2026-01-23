@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class PaymentMethodsWallet
     {
-
         [JsonProperty("walletID")]
         public string WalletID { get; set; } = default!;
 
@@ -24,11 +23,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Type of a wallet.<br/>
-        /// 
-        /// <remarks>
         ///   - `default`: The system-generated wallet automatically created when an account is granted the wallet capability.<br/>
         ///   - `general`: An additional, user-defined wallet created via API or Dashboard.
-        /// </remarks>
         /// </summary>
         [JsonProperty("walletType")]
         public WalletType WalletType { get; set; } = default!;

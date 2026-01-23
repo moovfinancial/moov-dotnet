@@ -14,10 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     public class SweepConfig
     {
-
         [JsonProperty("sweepConfigID")]
         public string SweepConfigID { get; set; } = default!;
 
@@ -29,20 +28,14 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The payment method used to push or pull funds to a bank account.<br/>
-        /// 
-        /// <remarks>
         /// The push payment method can only be ach-credit-standard, ach-credit-same-day, or rtp-credit. The pull payment method can only be ach-debit-fund.
-        /// </remarks>
         /// </summary>
         [JsonProperty("pushPaymentMethod")]
         public SweepConfigPaymentMethod PushPaymentMethod { get; set; } = default!;
 
         /// <summary>
         /// The payment method used to push or pull funds to a bank account.<br/>
-        /// 
-        /// <remarks>
         /// The push payment method can only be ach-credit-standard, ach-credit-same-day, or rtp-credit. The pull payment method can only be ach-debit-fund.
-        /// </remarks>
         /// </summary>
         [JsonProperty("pullPaymentMethod")]
         public SweepConfigPaymentMethod PullPaymentMethod { get; set; } = default!;

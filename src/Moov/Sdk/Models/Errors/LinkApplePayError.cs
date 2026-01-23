@@ -18,7 +18,7 @@ namespace Moov.Sdk.Models.Errors
     public class LinkApplePayErrorPayload
     {
         /// <summary>
-        /// Describes an error that wasn&apos;t attributable to a single request field.
+        /// Describes an error that wasn't attributable to a single request field.
         /// </summary>
         [JsonProperty("error")]
         public string? Error { get; set; }
@@ -85,5 +85,4 @@ namespace Moov.Sdk.Models.Errors
            #pragma warning restore CS0618
         }
     }
-
 }

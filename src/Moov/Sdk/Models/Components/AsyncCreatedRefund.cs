@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
-    /// Asynchronous refund response
+    /// Asynchronous refund response.
     /// </summary>
     public class AsyncCreatedRefund
     {
-
         [JsonProperty("refundID")]
         public string RefundID { get; set; } = default!;
 

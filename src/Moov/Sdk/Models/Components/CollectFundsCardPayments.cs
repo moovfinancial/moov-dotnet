@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CollectFundsCardPayments
     {
-
         /// <summary>
         /// Describes the distribution of card transactions by payment method.
         /// </summary>

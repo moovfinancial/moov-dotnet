@@ -12,13 +12,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     /// <summary>
     /// Describes an Apple Pay token on a Moov account.
     /// </summary>
     public class ApplePayResponse
     {
-
         /// <summary>
         /// The card brand.
         /// </summary>
@@ -32,24 +31,18 @@ namespace Moov.Sdk.Models.Components
         public CardType CardType { get; set; } = default!;
 
         /// <summary>
-        ///   User-friendly name of the tokenized card returned by Apple.<br/>
-        /// 
-        /// <remarks>
+        /// User-friendly name of the tokenized card returned by Apple.<br/>
         ///   <br/>
         ///   It usually contains the brand and the last four digits of the underlying card.<br/>
         ///   There is no standard format.
-        /// </remarks>
         /// </summary>
         [JsonProperty("cardDisplayName")]
         public string CardDisplayName { get; set; } = default!;
 
         /// <summary>
         /// Uniquely identifies a linked payment card or token.<br/>
-        /// 
-        /// <remarks>
-        /// For Apple Pay, the fingerprint is based on the tokenized card number and may vary based on the user&apos;s device.<br/>
+        /// For Apple Pay, the fingerprint is based on the tokenized card number and may vary based on the user's device.<br/>
         /// This field can be used to identify specific payment methods across multiple accounts on your platform.
-        /// </remarks>
         /// </summary>
         [JsonProperty("fingerprint")]
         public string Fingerprint { get; set; } = default!;
@@ -61,7 +54,7 @@ namespace Moov.Sdk.Models.Components
         public CardExpiration Expiration { get; set; } = default!;
 
         /// <summary>
-        /// The last four digits of the Apple Pay token, which may differ from the tokenized card&apos;s last four digits.
+        /// The last four digits of the Apple Pay token, which may differ from the tokenized card's last four digits.
         /// </summary>
         [JsonProperty("dynamicLastFour")]
         public string DynamicLastFour { get; set; } = default!;

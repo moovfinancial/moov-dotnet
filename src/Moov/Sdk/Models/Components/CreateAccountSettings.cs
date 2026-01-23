@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class CreateAccountSettings
     {
-
         [JsonProperty("cardPayment")]
         public CardPayment? CardPayment { get; set; }
 

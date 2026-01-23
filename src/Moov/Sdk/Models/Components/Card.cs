@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Describes a card on a Moov account.
     /// </summary>
     public class Card
     {
-
         /// <summary>
         /// ID of the card.
         /// </summary>
@@ -28,11 +27,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Uniquely identifies a linked payment card or token.<br/>
-        /// 
-        /// <remarks>
-        /// For Apple Pay, the fingerprint is based on the tokenized card number and may vary based on the user&apos;s device.<br/>
+        /// For Apple Pay, the fingerprint is based on the tokenized card number and may vary based on the user's device.<br/>
         /// This field can be used to identify specific payment methods across multiple accounts on your platform.
-        /// </remarks>
         /// </summary>
         [JsonProperty("fingerprint")]
         public string Fingerprint { get; set; } = default!;
@@ -51,16 +47,13 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The category or level of the card defined by the issuer.<br/>
-        /// 
-        /// <remarks>
-        /// Examples include, but not limited to, &quot;REWARDS&quot;, &quot;TRADITIONAL REWARDS&quot;, &quot;CLASSIC&quot;, and &quot;CORPORATE PURCHASING&quot;.
-        /// </remarks>
+        /// Examples include, but not limited to, "REWARDS", "TRADITIONAL REWARDS", "CLASSIC", and "CORPORATE PURCHASING".
         /// </summary>
         [JsonProperty("cardCategory")]
         public string? CardCategory { get; set; }
 
         /// <summary>
-        /// Last four digits of the card number
+        /// Last four digits of the card number.
         /// </summary>
         [JsonProperty("lastFourCardNumber")]
         public string LastFourCardNumber { get; set; } = default!;
@@ -118,20 +111,14 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// If true, the card is for commercial use, or associated with a business.<br/>
-        /// 
-        /// <remarks>
         /// If false, the card is associated with a general consumer.
-        /// </remarks>
         /// </summary>
         [JsonProperty("commercial")]
         public bool? Commercial { get; set; }
 
         /// <summary>
         /// If true, the card issuing bank is regulated, and the scheme fees for debit transactions will be limited based on the Durbin Amendment.<br/>
-        /// 
-        /// <remarks>
         /// If false, the card issuing bank is not regulated, and the scheme fees will not be limited.
-        /// </remarks>
         /// </summary>
         [JsonProperty("regulated")]
         public bool? Regulated { get; set; }
@@ -164,12 +151,9 @@ namespace Moov.Sdk.Models.Components
         public DomesticPullFromCard? DomesticPullFromCard { get; set; }
 
         /// <summary>
-        ///   Includes any payment methods created as a result of linking a card with the `x-wait-for` header set to `payment-method`.<br/>
-        /// 
-        /// <remarks>
+        /// Includes any payment methods created as a result of linking a card with the `x-wait-for` header set to `payment-method`.<br/>
         /// <br/>
         ///   Only returned by the link card endpoint; not included when getting or listing cards.
-        /// </remarks>
         /// </summary>
         [JsonProperty("paymentMethods")]
         public List<BasicPaymentMethod>? PaymentMethods { get; set; }

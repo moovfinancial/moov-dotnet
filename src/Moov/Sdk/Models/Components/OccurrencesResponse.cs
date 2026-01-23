@@ -13,10 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     public class OccurrencesResponse
     {
-
         [JsonProperty("scheduleID")]
         public string? ScheduleID { get; set; }
 

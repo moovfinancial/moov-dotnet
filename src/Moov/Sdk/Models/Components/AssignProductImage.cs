@@ -11,10 +11,9 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class AssignProductImage
     {
-
         /// <summary>
         /// Unique identifier for a product or product option image resource.
         /// </summary>

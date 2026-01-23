@@ -12,10 +12,9 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    
+
     public class GovernmentIDError
     {
-
         [JsonProperty("ssn")]
         public GovernmentIDErrorSsn? Ssn { get; set; }
 

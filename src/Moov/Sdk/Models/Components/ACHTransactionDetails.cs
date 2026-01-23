@@ -14,13 +14,12 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// ACH specific details about the transaction.
     /// </summary>
     public class ACHTransactionDetails
     {
-
         /// <summary>
         /// Status of a transaction within the ACH lifecycle.
         /// </summary>

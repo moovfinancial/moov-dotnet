@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// An adjustment to a wallet.
     /// </summary>
     public class Adjustment
     {
-
         [JsonProperty("adjustmentID")]
         public string AdjustmentID { get; set; } = default!;
 

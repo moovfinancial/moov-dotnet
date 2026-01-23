@@ -12,10 +12,11 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// Additional detail for a verification status.
-    /// </summary>    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
+    /// </summary>
+    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public enum VerificationStatusDetail
     {
         [JsonProperty("failedAutoVerify")]
@@ -74,5 +75,4 @@ namespace Moov.Sdk.Models.Components
         }
     }
 #pragma warning restore 0618
-
 }

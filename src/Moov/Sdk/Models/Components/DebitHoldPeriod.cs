@@ -12,7 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
-    
+
     /// <summary>
     /// An optional override of your default ACH hold period in banking days. The hold period must be longer than or equal to your default setting.
     /// </summary>
@@ -58,5 +58,4 @@ namespace Moov.Sdk.Models.Components
             throw new Exception($"Unknown value {value} for enum DebitHoldPeriod");
         }
     }
-
 }

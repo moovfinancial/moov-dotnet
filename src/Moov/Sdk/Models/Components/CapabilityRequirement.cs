@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Represents individual and business data necessary to facilitate the enabling of a capability for an account.
     /// </summary>
     public class CapabilityRequirement
     {
-
         [JsonProperty("currentlyDue")]
         public List<RequirementID>? CurrentlyDue { get; set; }
 

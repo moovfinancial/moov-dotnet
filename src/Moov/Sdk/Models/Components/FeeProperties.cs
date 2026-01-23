@@ -13,13 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Defines the specific parameters used for fee calculation.
     /// </summary>
     public class FeeProperties
     {
-
         /// <summary>
         /// A fixed fee that is applied to the amount of each transaction in the `fixed` and `blended` fee models.
         /// </summary>
@@ -28,11 +27,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// A percentage fee that is applied to the amount of each transaction in the `blended` fee model, expressed as a decimal. <br/>
-        /// 
-        /// <remarks>
         /// <br/>
-        /// For example, 0.05% is &apos;0.05&apos;.
-        /// </remarks>
+        /// For example, 0.05% is '0.05'.
         /// </summary>
         [JsonProperty("variableRate")]
         public string? VariableRate { get; set; }

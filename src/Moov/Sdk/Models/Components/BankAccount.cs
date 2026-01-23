@@ -14,23 +14,19 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+
     /// <summary>
     /// Describes a bank account linked to a Moov account.
     /// </summary>
     public class BankAccount
     {
-
         [JsonProperty("bankAccountID")]
         public string BankAccountID { get; set; } = default!;
 
         /// <summary>
-        /// Once the bank account is linked, we don&apos;t reveal the full bank account number.<br/>
-        /// 
-        /// <remarks>
+        /// Once the bank account is linked, we don't reveal the full bank account number.<br/>
         /// <br/>
         /// The fingerprint acts as a way to identify whether two linked bank accounts are the same.
-        /// </remarks>
         /// </summary>
         [JsonProperty("fingerprint")]
         public string Fingerprint { get; set; } = default!;
@@ -79,12 +75,9 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Includes any payment methods generated for a newly created bank account, removing the need to<br/>
-        /// 
-        /// <remarks>
         /// call the List Payment Methods endpoint following a successful Create BankAccount request.<br/>
         /// <br/>
         /// **NOTE: This field is only populated for Create BankAccount requests made with the `X-Wait-For` header.**
-        /// </remarks>
         /// </summary>
         [JsonProperty("paymentMethods")]
         public List<BasicPaymentMethod>? PaymentMethods { get; set; }
