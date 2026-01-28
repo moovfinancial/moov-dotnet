@@ -42,6 +42,9 @@ var res = await sdk.Onboarding.CreateInviteAsync(body: new OnboardingInviteReque
     Scopes = new List<ApplicationScope>() {
         ApplicationScope.AccountsRead,
     },
+    GrantScopes = new List<ApplicationScope>() {
+        ApplicationScope.TransfersWrite,
+    },
     Capabilities = new List<CapabilityID>() {
         CapabilityID.Transfers,
     },

@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 82a3a468be914fa4df92034f13c8f805
+  docChecksum: 901eedb2cf769175b2418371990af1ed
   docVersion: latest
-  speakeasyVersion: 1.696.0
-  generationVersion: 2.799.0
-  releaseVersion: 0.2.21
-  configChecksum: acc27458bedd2ebd4233f749f8960f14
+  speakeasyVersion: 1.700.1
+  generationVersion: 2.801.0
+  releaseVersion: 0.2.22
+  configChecksum: 0e5548747906de5f8970bc0bf59c39e9
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 persistentEdits:
-  generation_id: 469631b2-48ee-40dd-92e9-8f0f691a9c26
-  pristine_commit_hash: 046ed28fc5e57cb540e8142e4c25df1c3ed99ae8
-  pristine_tree_hash: ba5d644f7fee434878ae781b5bc584c7c57000ad
+  generation_id: 90b36d74-0e08-4a27-8eae-e83c5ac54bf3
+  pristine_commit_hash: 438043ae6d5fae95864ca62e10db40fba78b9c3f
+  pristine_tree_hash: d53cc6aba3fea34704152ba0b3c07b464b59aa86
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -1488,12 +1488,12 @@ trackedFiles:
     pristine_git_object: 091e8e713771382224ed482edf6a554deb90eeb3
   docs/Models/Components/OnboardingInvite.md:
     id: 94eafb195bca
-    last_write_checksum: sha1:f455e1242f14752cc734560ac000aacba2017aba
-    pristine_git_object: 57b79164d31e186ee05ed2dc11ef52f8ada34011
+    last_write_checksum: sha1:a93d322bf523b70c73a57961aba8549f1a352d61
+    pristine_git_object: 23b2fed8673911a43710e912a6c57dfb23f4dc35
   docs/Models/Components/OnboardingInviteRequest.md:
     id: 9c0a5800e782
-    last_write_checksum: sha1:216f5afa594d65cbff209cd2616b63d78ab9c33f
-    pristine_git_object: c2ec8531d82146e2ee29e6d545641f8feca884f6
+    last_write_checksum: sha1:25e0c3d2a966892c8f961518c3fb0aabb2534837
+    pristine_git_object: 3a1fd03228e3b2d92731d7a36a9226aba0d460b5
   docs/Models/Components/OnboardingPartnerAccount.md:
     id: 6c29bcef2de5
     last_write_checksum: sha1:75921fb3933e78705c3b1c3e6e9b7a2e5a5b1a43
@@ -4236,8 +4236,8 @@ trackedFiles:
     pristine_git_object: 620d85438fa485af4775846411177b43ea189649
   docs/sdks/onboarding/README.md:
     id: 395b30e93e5f
-    last_write_checksum: sha1:299f4b819f56c61b3f16725f41dfd7e10026c06c
-    pristine_git_object: 3ba74963167fad50b1760c6f53b65fb88549d47b
+    last_write_checksum: sha1:a324985210bd045da5402e6ca9cd17898d0af68a
+    pristine_git_object: ac953148f8cbef7257abd619c60ab0ff84959973
   docs/sdks/paymentlinks/README.md:
     id: 35777159619c
     last_write_checksum: sha1:6d4e7a9fc3c29c115ec56d8d52148a55e934230f
@@ -5840,12 +5840,12 @@ trackedFiles:
     pristine_git_object: 723eb07bb6b43eba5eeff3914673c848f2298b5a
   src/Moov/Sdk/Models/Components/OnboardingInvite.cs:
     id: 490bfb18d5da
-    last_write_checksum: sha1:07563e1f16918711706e80aaf38656406e8ae484
-    pristine_git_object: 7b47897361af6564ba51717a89bade6d64330e48
+    last_write_checksum: sha1:d0b7cd0324e0b306459a9671e977c71d5b649066
+    pristine_git_object: 9dae00568091f013b9a32910691d4fa38e816fcc
   src/Moov/Sdk/Models/Components/OnboardingInviteRequest.cs:
     id: 1434769a2fd0
-    last_write_checksum: sha1:bbbd3e866782b49e7aeb527fb6fe03f4fe00026f
-    pristine_git_object: 11263dcc29695e4956be404768fd9389fa118ab8
+    last_write_checksum: sha1:f574fc13a38fceb8f2b6986dbe11eccf8a223fa9
+    pristine_git_object: 5e63862bc7772067eb2ee5a9c321a404ef6c1859
   src/Moov/Sdk/Models/Components/OnboardingPartnerAccount.cs:
     id: 79883d1ae2aa
     last_write_checksum: sha1:fca5db1334e2cf309fac17e3836f1096f54dbf5f
@@ -8512,8 +8512,8 @@ trackedFiles:
     pristine_git_object: 3d1da2bff5d4ec4308e0c3fd9252399a3e716b15
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:fbea6d6cbf5b713be7a99d3a9eb43d9729693582
-    pristine_git_object: 9791519c6ef00ef08e3b598c3177e1542082d3fd
+    last_write_checksum: sha1:2caca7f64b7ff0559679684d4e186a2a54bf1e55
+    pristine_git_object: c2c40a293a86e6d7ab89f1e5d35c4f37e876a931
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:cbe2bf26756e8eea8fe4f6f5021a43e5aeb7d165
@@ -8548,8 +8548,8 @@ trackedFiles:
     pristine_git_object: 1ec0d018f11ab282e710816e6e114ea5dd7a790e
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:79394dfb1d19639ad211f2168341a6bf5f443a85
-    pristine_git_object: f6a39a676404b74d7f61f74698c9fe566e453eca
+    last_write_checksum: sha1:5e9118773fdeb378daca3f1d7cf35aec51218eff
+    pristine_git_object: 825962611241cb41626f5a91b13c330d95301072
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:c4a3de93ff5bd5e3b8bf3a5b26519c90435c4c36
@@ -8588,8 +8588,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:ef15571d6e089dbbb3df7dcac145571b54a3f617
-    pristine_git_object: 748f412fad8166a47ef993a0918d240d46812d49
+    last_write_checksum: sha1:e0a92766f73f1ff9a1c367660adfd5beee2267e2
+    pristine_git_object: 01d9f3fdf08b1575c5fc18ccdbcbc884ed6c5cfe
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -10330,10 +10330,10 @@ examples:
   createOnboardingInvite:
     speakeasy-default-create-onboarding-invite:
       requestBody:
-        application/json: {"scopes": ["accounts.read"], "capabilities": ["transfers"], "feePlanCodes": ["merchant-direct"], "prefill": {"accountType": "business", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC"}}}}
+        application/json: {"scopes": ["accounts.read"], "grantScopes": ["transfers.write"], "capabilities": ["transfers"], "feePlanCodes": ["merchant-direct"], "prefill": {"accountType": "business", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC"}}}}
       responses:
         "200":
-          application/json: {"code": "N1IA5eWYNh", "link": "https://failing-wasabi.com", "scopes": ["accounts.read"], "capabilities": ["transfers"], "feePlanCodes": ["merchant-direct"], "prefill": {"accountType": "business", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC"}}}, "partner": {"accountID": "ee73fe4c-8ea3-4469-a841-92278013c9ea", "accountMode": "production", "displayName": "Bob's Widgets"}, "createdOn": "2024-05-08T22:53:24.634Z"}
+          application/json: {"code": "N1IA5eWYNh", "link": "https://failing-wasabi.com", "scopes": ["accounts.read"], "grantScopes": ["transfers.write"], "capabilities": ["transfers"], "feePlanCodes": ["merchant-direct"], "prefill": {"accountType": "business", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC"}}}, "partner": {"accountID": "ee73fe4c-8ea3-4469-a841-92278013c9ea", "accountMode": "production", "displayName": "Bob's Widgets"}, "createdOn": "2024-05-08T22:53:24.634Z"}
         "400":
           application/json: {"error": "<value>"}
         "422":
@@ -10350,7 +10350,7 @@ examples:
           code: "N1IA5eWYNh"
       responses:
         "200":
-          application/json: {"code": "N1IA5eWYNh", "link": "https://austere-cappelletti.com", "scopes": ["accounts.read"], "capabilities": ["transfers"], "feePlanCodes": ["merchant-direct"], "prefill": {"accountType": "business", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC"}}}, "partner": {"accountID": "056b20bf-2d5d-4e89-9317-29958a4e4a82", "accountMode": "production", "displayName": "Bob's Widgets"}, "createdOn": "2025-08-08T10:05:08.362Z"}
+          application/json: {"code": "N1IA5eWYNh", "link": "https://austere-cappelletti.com", "scopes": ["accounts.read"], "grantScopes": ["transfers.write"], "capabilities": ["transfers"], "feePlanCodes": ["merchant-direct"], "prefill": {"accountType": "business", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC"}}}, "partner": {"accountID": "056b20bf-2d5d-4e89-9317-29958a4e4a82", "accountMode": "production", "displayName": "Bob's Widgets"}, "createdOn": "2025-08-08T10:05:08.362Z"}
   revokeOnboardingInvite:
     speakeasy-default-revoke-onboarding-invite:
       parameters:
@@ -10667,6 +10667,7 @@ examples:
         "200":
           application/json: {"secret": "<value>"}
 examplesVersion: 1.0.2
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Onboarding.CreateInvite()`: \n  *  `request.body.GrantScopes` **Added**\n  *  `response.grantScopes` **Added**\n* `MoovClient.Onboarding.ListInvites()`:  `response.[].GrantScopes` **Added**\n* `MoovClient.Onboarding.GetInvite()`:  `response.grantScopes` **Added**\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln

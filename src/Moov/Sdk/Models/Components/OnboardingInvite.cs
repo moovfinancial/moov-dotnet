@@ -49,6 +49,13 @@ namespace Moov.Sdk.Models.Components
         public List<ApplicationScope> Scopes { get; set; } = default!;
 
         /// <summary>
+        /// List of <a href="https://docs.moov.io/api/authentication/scopes/">scopes</a> you grant to allow being used <br/>
+        ///   by the new account on yourself. These values are used to determine what the account onboarded can do.
+        /// </summary>
+        [JsonProperty("grantScopes")]
+        public List<ApplicationScope>? GrantScopes { get; set; }
+
+        /// <summary>
         /// List of <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities</a> you intend to request for this<br/>
         ///   account. These values are used to determine what information to collect from the user during onboarding.
         /// </summary>
