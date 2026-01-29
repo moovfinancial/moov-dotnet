@@ -1,10 +1,12 @@
-namespace Moov.Hooks
+namespace Moov.Sdk.Hooks
 {
+    using Moov.Sdk.Utils;
+
     public class MoovVersion : ISDKInitHook
     {
         public SDKConfig SDKInit(SDKConfig config)
         {
-            config.XMoovVersion = "latest";
+            config.XMoovVersion = Constants.OpenApiDocVersion;
             return config;
         }
     }
