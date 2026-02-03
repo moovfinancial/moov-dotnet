@@ -22,30 +22,51 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("feeID")]
         public string? FeeID { get; set; }
 
+        /// <summary>
+        /// Account ID the fee belongs to.
+        /// </summary>
         [JsonProperty("accountID")]
         public string? AccountID { get; set; }
 
+        /// <summary>
+        /// Wallet ID associated with the fee.
+        /// </summary>
         [JsonProperty("walletID")]
         public string? WalletID { get; set; }
 
+        /// <summary>
+        /// Timestamp when the fee was created.
+        /// </summary>
         [JsonProperty("createdOn")]
         public DateTime? CreatedOn { get; set; }
 
+        /// <summary>
+        /// Name of the fee.
+        /// </summary>
         [JsonProperty("feeName")]
         public string? FeeName { get; set; }
 
+        /// <summary>
+        /// The fee amount.
+        /// </summary>
         [JsonProperty("amount")]
         public AmountDecimal? Amount { get; set; }
 
         /// <summary>
-        /// The entity that generated the fee.
+        /// Object indicating what generated the fee (TransferID, CardID, DisputeID, AccountID, or BankAccountID).
         /// </summary>
         [JsonProperty("generatedBy")]
         public GeneratedBy? GeneratedBy { get; set; }
 
+        /// <summary>
+        /// Describes the source of the fee, such as a Moov-set processing fee, a network pass-through fee, or an interchange or discount fee.
+        /// </summary>
         [JsonProperty("feeGroup")]
         public string? FeeGroup { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this residual payment calculation.
+        /// </summary>
         [JsonProperty("residualID")]
         public string? ResidualID { get; set; }
     }

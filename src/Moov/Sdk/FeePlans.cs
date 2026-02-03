@@ -266,7 +266,7 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="residualID">Description not available.</param>
+        /// <param name="residualID">Unique identifier for this residual payment calculation.</param>
         /// <param name="xMoovVersion">
         /// Specify an API version.<br/>
         /// <br/>
@@ -1569,7 +1569,7 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="residualID">Description not available.</param>
+        /// <param name="residualID">Unique identifier for this residual payment calculation.</param>
         /// <param name="xMoovVersion">
         /// Specify an API version.<br/>
         /// <br/>

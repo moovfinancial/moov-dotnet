@@ -16,44 +16,69 @@ namespace Moov.Sdk.Models.Components
 
     public class Residual
     {
+        /// <summary>
+        /// Unique identifier for this residual payment calculation.
+        /// </summary>
         [JsonProperty("residualID")]
         public string ResidualID { get; set; } = default!;
 
+        /// <summary>
+        /// The partner account ID this residual belongs to.
+        /// </summary>
         [JsonProperty("partnerAccountID")]
         public string PartnerAccountID { get; set; } = default!;
 
+        /// <summary>
+        /// Start date and time of the residual calculation period.
+        /// </summary>
         [JsonProperty("periodStart")]
         public DateTime PeriodStart { get; set; } = default!;
 
+        /// <summary>
+        /// End date and time of the residual calculation period.
+        /// </summary>
         [JsonProperty("periodEnd")]
         public DateTime PeriodEnd { get; set; } = default!;
 
+        /// <summary>
+        /// Total amount of merchant fees collected during the period. This represents the partner's revenue from merchant fees.
+        /// </summary>
         [JsonProperty("merchantFees")]
         public AmountDecimal MerchantFees { get; set; } = default!;
 
+        /// <summary>
+        /// Partner's total cost (buy rate) during the period.
+        /// </summary>
         [JsonProperty("partnerCost")]
         public AmountDecimal PartnerCost { get; set; } = default!;
 
+        /// <summary>
+        /// Net income calculated as merchant fee revenue minus partner costs.
+        /// </summary>
         [JsonProperty("netIncome")]
         public AmountDecimal NetIncome { get; set; } = default!;
 
         /// <summary>
-        /// The decimal-formatted numerical string of the revenue split for partner.<br/>
-        ///   <br/>
-        ///   For example, 2.25% is '2.25'.
+        /// The revenue share percentage the partner receives, expressed as a decimal string (e.g., "25.00" for 25%).
         /// </summary>
         [JsonProperty("revenueShare")]
         public string RevenueShare { get; set; } = default!;
 
+        /// <summary>
+        /// The amount the partner receives as their share of the net income (netIncome × revenueShare).
+        /// </summary>
         [JsonProperty("residualAmount")]
         public AmountDecimal ResidualAmount { get; set; } = default!;
 
-        [JsonProperty("moovShare")]
-        public AmountDecimal MoovShare { get; set; } = default!;
-
+        /// <summary>
+        /// Timestamp when the residual was created.
+        /// </summary>
         [JsonProperty("createdOn")]
         public DateTime CreatedOn { get; set; } = default!;
 
+        /// <summary>
+        /// Timestamp when the residual was last updated.
+        /// </summary>
         [JsonProperty("updatedOn")]
         public DateTime UpdatedOn { get; set; } = default!;
     }

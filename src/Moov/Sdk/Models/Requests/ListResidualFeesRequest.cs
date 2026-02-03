@@ -37,6 +37,9 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
 
+        /// <summary>
+        /// Unique identifier for this residual payment calculation.
+        /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=residualID")]
         public string ResidualID { get; set; } = default!;
 
