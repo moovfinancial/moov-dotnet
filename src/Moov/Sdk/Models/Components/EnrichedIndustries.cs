@@ -17,6 +17,6 @@ namespace Moov.Sdk.Models.Components
     public class EnrichedIndustries
     {
         [JsonProperty("industries")]
-        public List<IndustryTaxonomy> Industries { get; set; } = default!;
+        public List<EnrichedIndustry> Industries { get; set; } = default!;
     }
 }

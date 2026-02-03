@@ -7,22 +7,11 @@ The `production-app`, `platform.production-app`, and / or `platform.wallet-trans
 
 ## Values
 
-| Name                          | Value                         |
-| ----------------------------- | ----------------------------- |
-| `Transfers`                   | transfers                     |
-| `SendFunds`                   | send-funds                    |
-| `SendFundsPushToCard`         | send-funds.push-to-card       |
-| `MoneyTransferPushToCard`     | money-transfer.push-to-card   |
-| `SendFundsAch`                | send-funds.ach                |
-| `SendFundsRtp`                | send-funds.rtp                |
-| `SendFundsInstantBank`        | send-funds.instant-bank       |
-| `CollectFunds`                | collect-funds                 |
-| `CollectFundsCardPayments`    | collect-funds.card-payments   |
-| `MoneyTransferPullFromCard`   | money-transfer.pull-from-card |
-| `CollectFundsAch`             | collect-funds.ach             |
-| `Wallet`                      | wallet                        |
-| `WalletBalance`               | wallet.balance                |
-| `CardIssuing`                 | card-issuing                  |
-| `ProductionApp`               | production-app                |
-| `PlatformProductionApp`       | platform.production-app       |
-| `PlatformWalletTransfers`     | platform.wallet-transfers     |
+| Name            | Value           |
+| --------------- | --------------- |
+| `Transfers`     | transfers       |
+| `SendFunds`     | send-funds      |
+| `CollectFunds`  | collect-funds   |
+| `Wallet`        | wallet          |
+| `CardIssuing`   | card-issuing    |
+| `ProductionApp` | production-app  |

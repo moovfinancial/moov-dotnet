@@ -20,46 +20,25 @@ namespace Moov.Sdk.Models.Components
     public class Underwriting
     {
         [JsonProperty("averageTransactionSize")]
-        public long? AverageTransactionSize { get; set; }
+        public long AverageTransactionSize { get; set; } = default!;
 
         [JsonProperty("maxTransactionSize")]
-        public long? MaxTransactionSize { get; set; }
+        public long MaxTransactionSize { get; set; } = default!;
 
         [JsonProperty("averageMonthlyTransactionVolume")]
-        public long? AverageMonthlyTransactionVolume { get; set; }
+        public long AverageMonthlyTransactionVolume { get; set; } = default!;
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("status")]
-        public UnderwritingStatus? Status { get; set; }
+        public UnderwritingStatus Status { get; set; } = default!;
 
         [JsonProperty("volumeByCustomerType")]
-        public VolumeByCustomerType? VolumeByCustomerType { get; set; }
+        public VolumeByCustomerType VolumeByCustomerType { get; set; } = default!;
 
         [JsonProperty("cardVolumeDistribution")]
-        public CardVolumeDistribution? CardVolumeDistribution { get; set; }
+        public CardVolumeDistribution CardVolumeDistribution { get; set; } = default!;
 
         [JsonProperty("fulfillment")]
-        public FulfillmentDetails? Fulfillment { get; set; }
-
-        [JsonProperty("geographicReach")]
-        public GeographicReach? GeographicReach { get; set; }
-
-        [JsonProperty("businessPresence")]
-        public BusinessPresence? BusinessPresence { get; set; }
-
-        [JsonProperty("pendingLitigation")]
-        public PendingLitigation? PendingLitigation { get; set; }
-
-        [JsonProperty("volumeShareByCustomerType")]
-        public VolumeShareByCustomerType? VolumeShareByCustomerType { get; set; }
-
-        [JsonProperty("collectFunds")]
-        public CollectFunds? CollectFunds { get; set; }
-
-        [JsonProperty("moneyTransfer")]
-        public MoneyTransfer? MoneyTransfer { get; set; }
-
-        [JsonProperty("sendFunds")]
-        public SendFunds? SendFunds { get; set; }
+        public FulfillmentDetails Fulfillment { get; set; } = default!;
     }
 }

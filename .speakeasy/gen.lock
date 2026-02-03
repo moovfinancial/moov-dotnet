@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: fe16991a0e880603ece0ddd7107307c9
-  docVersion: latest
+  docChecksum: 894006cc93c75887cfd6a0851625f56e
+  docVersion: v2025.01.00
   speakeasyVersion: 1.700.2
   generationVersion: 2.801.2
-  releaseVersion: 0.2.23
-  configChecksum: 1f6e7c3e4ff569a79db8af9b7e18df2b
+  releaseVersion: 25.1.0-dev.0
+  configChecksum: a665da1ba42b51c25e6aa0aa657b2654
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   published: true
 persistentEdits:
-  generation_id: 64d2e578-4e29-443e-bac8-9fc234444403
-  pristine_commit_hash: 710544d31e7bce0e7bcbfc25bfbcfe24e15991fa
-  pristine_tree_hash: afa2f781f9e8a08f113914779b1141ac323f83d2
+  generation_id: 97902a2f-b800-4292-9396-fac07339321e
+  pristine_commit_hash: 41d876f2fd0a8dbccce74a11893c285dd12c913f
+  pristine_tree_hash: b6047c3a04306608392cc706dbcfb2212ddcabfc
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -44,12 +44,12 @@ trackedFiles:
     pristine_git_object: 17cd07534a010956957d0508809f8996108ea0f4
   NUGET.md:
     id: f4c8a442a6e5
-    last_write_checksum: sha1:a939113423706a14f613372963def24708ee2da6
-    pristine_git_object: a4e0263cd8d09dc7d20aff00937f5d630e8643f7
+    last_write_checksum: sha1:53700ca017868a77b3e3906469371aba44a2a0cf
+    pristine_git_object: 37e3c8e323c4f485acf6fc3a57bb19638ef1e908
   USAGE.md:
     id: 3aed33ce6e6f
-    last_write_checksum: sha1:89f80cc728dd9e5e715519db65cc7103bc3f4b42
-    pristine_git_object: 1df7cb89ffcbd9a83330d249c1bcd109cecc8a28
+    last_write_checksum: sha1:72972a559f268fd566197f7c1ca6b0ce69900f65
+    pristine_git_object: 314c4b0cc775c490a4b1eab6b8ec049ce9604030
   docs/Models/Components/ACHException.md:
     id: 01e00b0b4068
     last_write_checksum: sha1:3275e2e7654bda215667c5f1d1c926cea8d4fd1e
@@ -112,8 +112,8 @@ trackedFiles:
     pristine_git_object: c955ed08113e06d9ee8bc9cd0503cecc1bc8ff1e
   docs/Models/Components/AccountType.md:
     id: 2b954dbcc0b2
-    last_write_checksum: sha1:96c54586dc62f34b7d34e4b8c6be779c551bbc2b
-    pristine_git_object: 477f68e8d7321d5758ad49d8b87cec00938ed808
+    last_write_checksum: sha1:2dac89f47fb7997e1d3250e8d593c645df07095d
+    pristine_git_object: 4fe2c1e278c9e79fe7491c2ac90940456dada48e
   docs/Models/Components/AccountVerificationStatus.md:
     id: 1bcdac5614ef
     last_write_checksum: sha1:5cc34bc50f866cebd1715b247704c7f68c755cac
@@ -202,10 +202,6 @@ trackedFiles:
     id: fbecbe65645a
     last_write_checksum: sha1:4d6c937d4e7e4a69cde8eadb5f70a26b49d468a0
     pristine_git_object: 2f25560170aaf98b990584603aea43a20f8d6347
-  docs/Models/Components/AmountDecimalUpdate.md:
-    id: f189522e604e
-    last_write_checksum: sha1:260212f1c1e7d3efb7468574926c655792b7ba16
-    pristine_git_object: ce4c0f9b0a29ac5d52cb57af38644333279cc2e0
   docs/Models/Components/AmountDecimalValidationError.md:
     id: 9b296c38f3eb
     last_write_checksum: sha1:f2611b39a42acd6dbcfc20fe8cd4a790fd0cbdd6
@@ -284,8 +280,8 @@ trackedFiles:
     pristine_git_object: c0d8d3156261d5b145e957260d30d727cdfe1aa8
   docs/Models/Components/BankAccountHolderType.md:
     id: bbbdd089ec01
-    last_write_checksum: sha1:b92162ca9fa27873358ff09cd79635b11c67b19a
-    pristine_git_object: 839b745b9862b4e4b1e72ee35e0be31a5c1c20e4
+    last_write_checksum: sha1:9575dbb83bebba3dad39b2c0ba8bf0e0b6080ae0
+    pristine_git_object: 896bf0f2d86cc1ae432379bc382663384bb3444a
   docs/Models/Components/BankAccountIntegration.md:
     id: 338a2efdb135
     last_write_checksum: sha1:8a9d89e1cea465fb6a84b2f368e9acceb0cc5961
@@ -398,10 +394,6 @@ trackedFiles:
     id: b1cc3dcc936b
     last_write_checksum: sha1:ed961bb23b7a68b63ca35517dabb36fc58f4a463
     pristine_git_object: 90eeb3f7d31962a5958b2c7bb110c915ebf7118c
-  docs/Models/Components/BusinessPresence.md:
-    id: 9baf997a2081
-    last_write_checksum: sha1:327e7d99d66b77f5bcfc354d4d3b5dd51932e9cf
-    pristine_git_object: 33c7a6582fa0cecad75a71a79509de3b9be74100
   docs/Models/Components/BusinessProfile.md:
     id: d4af0827d1fd
     last_write_checksum: sha1:8a65c45884de9a70d329fe44c57774869b03f087
@@ -428,8 +420,8 @@ trackedFiles:
     pristine_git_object: e41da6405d8888ea716adc327dc4e12106439bda
   docs/Models/Components/CapabilityID.md:
     id: 747b09dbc220
-    last_write_checksum: sha1:1467acf466cbb302b3f96e90a98852af27ff1343
-    pristine_git_object: c883e2be84604e7904ea1c2edcf228aa9989d310
+    last_write_checksum: sha1:4657febd5d102631e41fdb14f6415c5d1b67bd65
+    pristine_git_object: e792554799ee35faaf91326e4e926aef74e4a18a
   docs/Models/Components/CapabilityRequirement.md:
     id: 7fe8f7800ec3
     last_write_checksum: sha1:fec62bbc6f170082e1e208109290d2ef13198cf6
@@ -442,14 +434,6 @@ trackedFiles:
     id: 289510ae7884
     last_write_checksum: sha1:ee1a466d52b02214554e1045bf1f3c440b3ffd60
     pristine_git_object: fe01d96c9a85e4333e9d8b3753415a5521c18bdd
-  docs/Models/Components/CardAcceptanceMethods.md:
-    id: efe86e61e64c
-    last_write_checksum: sha1:a85e3a6cd6dbe0cc6911b9072dca51ed3ffb94d1
-    pristine_git_object: 0a2a7f64b1383b5ba90b3c882ccced82d79618e0
-  docs/Models/Components/CardAcceptanceMethodsError.md:
-    id: acf2c103a2f7
-    last_write_checksum: sha1:20f29d9e73a0e1111b513b674440405497d7d6cf
-    pristine_git_object: d6af102226297d662bc0999b014aec7ca95fb6be
   docs/Models/Components/CardAccountUpdater.md:
     id: e82e0e58fdc7
     last_write_checksum: sha1:476744b6f46e0f9f1216e9e094ff211e2223d3da
@@ -526,14 +510,6 @@ trackedFiles:
     id: 4963f3d1dc0c
     last_write_checksum: sha1:82270b2036e3585a5842a2dc7b99c399826e2bb0
     pristine_git_object: f617d90069d44d3bc096b7d7dc6748f69cf0c9ef
-  docs/Models/Components/CardPresentPaymentPaymentMethod.md:
-    id: a4a4d28ba994
-    last_write_checksum: sha1:79799a32b61efd80b806795f4801ec08d8b04be7
-    pristine_git_object: 65565bcc01564ae4432662fa4f2caf63052eb8dd
-  docs/Models/Components/CardPresentPaymentPaymentMethodPaymentMethodType.md:
-    id: 8b77d061c284
-    last_write_checksum: sha1:1d74b3cef3120a91f7e038c38c6c1ccb5b172236
-    pristine_git_object: 99d2f432924cc29e14341672198c538b8b788733
   docs/Models/Components/CardTransactionDetails.md:
     id: 25ca9fa66c84
     last_write_checksum: sha1:9b37a27c7063c6f241132c808bdada663216d8e3
@@ -570,30 +546,6 @@ trackedFiles:
     id: 84dd4d3e2c9c
     last_write_checksum: sha1:218450b54b45efff47a690901de28529765eef88
     pristine_git_object: 83355a97acfa975d629333d353b5536c2038f228
-  docs/Models/Components/CollectFunds.md:
-    id: 75dbbdf1c788
-    last_write_checksum: sha1:e79744f39646da8e793aab3c43b54376c954cdd0
-    pristine_git_object: 4cc88b9f3b610b60cc1a3cf13cc0f6ee7e189e7b
-  docs/Models/Components/CollectFundsAch.md:
-    id: 2a618fcd0188
-    last_write_checksum: sha1:83f84140ab4544cd2553e6112cb4aa11892c97f0
-    pristine_git_object: cfd48397a8e7b17dd24b0bdf5d7d574fabae8c3d
-  docs/Models/Components/CollectFundsAchError.md:
-    id: 0c99a4b8ed13
-    last_write_checksum: sha1:77fb83c3f4933fb6639a2bf4bf63b623072165da
-    pristine_git_object: aa8b4ae69a2d1f709b100c2c769b75775a68f3ee
-  docs/Models/Components/CollectFundsCardPayments.md:
-    id: 2052f3c5d481
-    last_write_checksum: sha1:a570716664656dd8cc3c2a36fae13ed7b4026f41
-    pristine_git_object: aee78234934149fdb159191f96b575a26a8c8a0c
-  docs/Models/Components/CollectFundsCardPaymentsError.md:
-    id: b3fef5ac2cf6
-    last_write_checksum: sha1:99aa181c8c7fa4eae6e72b5cce9045e86354e71b
-    pristine_git_object: 56ad8277e82f4bbbe41aa97d2762b262dc99f7f4
-  docs/Models/Components/CollectFundsError.md:
-    id: 950403b84be9
-    last_write_checksum: sha1:99e1cd7766babb78e6c425025343d8cb5f477dce
-    pristine_git_object: 2555f030fa6eb7eb9aba4c9d198f611ad07d943e
   docs/Models/Components/CollectionPaymentMethodType.md:
     id: 9a6da0c29551
     last_write_checksum: sha1:72603d250c5684d71c44613bb82929ee5cb21278
@@ -620,16 +572,12 @@ trackedFiles:
     pristine_git_object: 154406a1ddcdd15cdfcb322952a306bcf0b026f7
   docs/Models/Components/CreateAccount.md:
     id: 1d9c54340a13
-    last_write_checksum: sha1:084b562f9dd0a656d67896694f8902ef4eb441d0
-    pristine_git_object: bd5fbcf742bd815fec39e6f23e96bbf0c8db1fb5
+    last_write_checksum: sha1:e0d48ee2b4b70020ebe25dc898894fab0558f6f1
+    pristine_git_object: ccc3dfd9f5670ee90674447605bd644be53e4c06
   docs/Models/Components/CreateAccountSettings.md:
     id: 5a59827c3eb0
     last_write_checksum: sha1:ab50fd3b51eea2b3ba9db461edceeaa1e4f2cc74
     pristine_git_object: b1ac42c90366f4ea95e76412a125b7333c3b57b7
-  docs/Models/Components/CreateAccountType.md:
-    id: 9739a6540568
-    last_write_checksum: sha1:df959510938b5d49190902363c3a55070f8d829c
-    pristine_git_object: eb86b20b33c1f20e3e11360c186f4aaf0ba51ccd
   docs/Models/Components/CreateApplePaySession.md:
     id: bee3649a3263
     last_write_checksum: sha1:6a0de22fded50375f4b57ddef517f6d75a0ea5ea
@@ -702,42 +650,6 @@ trackedFiles:
     id: d953d140d19c
     last_write_checksum: sha1:4b997aedacafc7328e20353b751d97ac5589cf5b
     pristine_git_object: 56ae0cb896e8eea07f3f61ae743a3c13b8caaf30
-  docs/Models/Components/CreateInvoice.md:
-    id: 8a2ed469bf75
-    last_write_checksum: sha1:41ef5457f65f21608518e01c802a1223c7b20b4c
-    pristine_git_object: ae54a9eb502e787e657b4d44c74b4044978785fa
-  docs/Models/Components/CreateInvoiceLineItem.md:
-    id: 6bf0e99fc44c
-    last_write_checksum: sha1:e655d5b86aadb0b3585496633147c71a73650e89
-    pristine_git_object: e955fe9cbe46f03815499687cf82e958b66798aa
-  docs/Models/Components/CreateInvoiceLineItemOption.md:
-    id: 4a9c5b226761
-    last_write_checksum: sha1:15e81f9556b955c77d8f3be6dbe03198ca5a7d27
-    pristine_git_object: 476ed99934214f63b97fe9cc286e3096aee08a8b
-  docs/Models/Components/CreateInvoiceLineItemOptionValidationError.md:
-    id: ebd82aa2e731
-    last_write_checksum: sha1:225a452c5761540999f1907d0fcfd487a0a95031
-    pristine_git_object: 7aee78c37121fa2dd83f0e4477bd8acf50a102d7
-  docs/Models/Components/CreateInvoiceLineItemValidationError.md:
-    id: 980cb61cd3d1
-    last_write_checksum: sha1:a9f5d41fd4f634768df79699b2a7068cde17eaf0
-    pristine_git_object: 095a2b4b44ddf60b8a565415ececdc2edca3f2e1
-  docs/Models/Components/CreateInvoiceLineItems.md:
-    id: 6763e09082ab
-    last_write_checksum: sha1:e8d53357ff4b06d4c48708ea52c877c7ce06f924
-    pristine_git_object: 91640a241661d57c699a177b5dd60f68b4a36093
-  docs/Models/Components/CreateInvoiceLineItemsUpdate.md:
-    id: 514a73cffe91
-    last_write_checksum: sha1:0cc441fd8836d729145dcf4d4d73d68cc0bb4041
-    pristine_git_object: e54c40f004bad6c8c7530e45f7b7232bd06987b7
-  docs/Models/Components/CreateInvoiceLineItemsValidationError.md:
-    id: f95ba8b0a3b7
-    last_write_checksum: sha1:c68e929101554c2665239d170efc7b44526335a4
-    pristine_git_object: f7b907d4076abb45fc19d33af77353884bf4c3ed
-  docs/Models/Components/CreateInvoicePayment.md:
-    id: 86f402bff027
-    last_write_checksum: sha1:d1986d0ea31cc113d6d5ead6566bdaf356354de9
-    pristine_git_object: fd67e98f3e8a722866c0d638f243fba58a26809f
   docs/Models/Components/CreatePaymentLink.md:
     id: 0acb6f951bb9
     last_write_checksum: sha1:68c5115b2ceebc0ecec014c9d280bcb052776038
@@ -826,14 +738,6 @@ trackedFiles:
     id: 888ede5df3a2
     last_write_checksum: sha1:cf25bf3281c0b7ef09b426013a079904b633cbf3
     pristine_git_object: 8d2d7943cf1673d278dfbf4e0b6931348d266a06
-  docs/Models/Components/CreateTicket.md:
-    id: 72437d9ad98e
-    last_write_checksum: sha1:0ab526c61ef63a5499871b1153cf02ec40d60ab6
-    pristine_git_object: b3374e2288abe45ac0b3b5072d700bf6d5c776cc
-  docs/Models/Components/CreateTicketContactError.md:
-    id: cdc2f6975cd8
-    last_write_checksum: sha1:9d56b5715eb37ae5eca132d37c3b9085ffb02537
-    pristine_git_object: dc7b12fdfe62343410b799f514fd0820e2e997ea
   docs/Models/Components/CreateTransfer.md:
     id: e2fd435e8496
     last_write_checksum: sha1:d22003eeec420981c525863dd34dfcd3696df773
@@ -988,24 +892,16 @@ trackedFiles:
     pristine_git_object: 62c8f39170812596d44cf520ce6013ec70506c5b
   docs/Models/Components/EnrichedIndustries.md:
     id: 525db065b281
-    last_write_checksum: sha1:3b82bb2a42fa09448524efc877970968d76ee6d7
-    pristine_git_object: 578350930d1f1fc32b25f297b056219f00e1d1c0
+    last_write_checksum: sha1:88fbbe5b7615a3afdfa2e9b44c752b7c9ef6398a
+    pristine_git_object: 02afcdc5541d3b7680dd56c049b3ed5fc1d53a6e
+  docs/Models/Components/EnrichedIndustry.md:
+    id: 2d7cb36f49f2
+    last_write_checksum: sha1:be4eae8da39c90f520a66d5435f55b6b395e284e
+    pristine_git_object: 39e51b2495950029cdf0d9d1eddb9d5e3fa22662
   docs/Models/Components/EnrichedIndustryCodes.md:
     id: 3f1eb327739b
     last_write_checksum: sha1:178e10f80f4ef05de2e18924c40574b72cf2a6a5
     pristine_git_object: d10b1d713aff2fda9ef5cad2697d1c7171d749c6
-  docs/Models/Components/EntryMode.md:
-    id: 604aa5576a00
-    last_write_checksum: sha1:31e22f3dc1280b3936ebc332ba3cb84f1562e541
-    pristine_git_object: f10d2403a02ab66a61740ddd49cd7ba893336fe2
-  docs/Models/Components/EstimatedActivity.md:
-    id: 046f3463058f
-    last_write_checksum: sha1:1fe85eddbaed5d9dfda3c02624e1d85f90b79edc
-    pristine_git_object: 3cb4dcb5395ec355527102a9a50888ae986d8a36
-  docs/Models/Components/EstimatedActivityError.md:
-    id: 19ed36e22df6
-    last_write_checksum: sha1:cd9d2b029c9141a6b81fb2da0d169d0f56d2ef09
-    pristine_git_object: 21ebbf18406567257f5c5a5fee380fa02df7ac8e
   docs/Models/Components/EventType.md:
     id: d42f430d4f89
     last_write_checksum: sha1:f118cc27b55590fed08498a9a33024ed0f20bcff
@@ -1086,10 +982,6 @@ trackedFiles:
     id: 59f05b2cd739
     last_write_checksum: sha1:f244585108f302352849970122d003db8ed73f39
     pristine_git_object: fe5d28a71d2b69b88ad467579dd9bd05c03d1af6
-  docs/Models/Components/Fulfillment.md:
-    id: cda72ecd6d37
-    last_write_checksum: sha1:ec3cbdcd6e5c501ad983429debcf7fa6a89c483b
-    pristine_git_object: 9aab8767aa394590ceed898aa97b17535dd94aff
   docs/Models/Components/FulfillmentDetails.md:
     id: 3f63f9bf13f1
     last_write_checksum: sha1:50a4b90f9ae267df9eef7b613037aa3a3bf00a1e
@@ -1098,18 +990,6 @@ trackedFiles:
     id: 628254c1658f
     last_write_checksum: sha1:b72bcce1c9baef02d07abf18c6deff68fd0ac049
     pristine_git_object: a7ee05c74c48cca319d7e09d4cf640afaef8fed8
-  docs/Models/Components/FulfillmentError.md:
-    id: 0b7332b53f9b
-    last_write_checksum: sha1:bc66c45d75a232892d2a5ef3c1a489a248b0d4e9
-    pristine_git_object: ed03e6b3b2d04c46745f71f24e20e287c00d5186
-  docs/Models/Components/FulfillmentMethod.md:
-    id: 70e7de377681
-    last_write_checksum: sha1:e1a6b7665474aafef0b0b89abda3bece95d268b5
-    pristine_git_object: 81d4dc36eaf34964700989323901081e3cea9fba
-  docs/Models/Components/FulfillmentTimeframe.md:
-    id: 9e14fd3bd8c5
-    last_write_checksum: sha1:bf18b3960fcab9a3e59982b8f0a2a3c0efc31b49
-    pristine_git_object: f7ded3d8add39bebc3f8d6c0dcccc8bd2117fcc3
   docs/Models/Components/FullIssuedCard.md:
     id: 43758b059845
     last_write_checksum: sha1:f4771fac262cf97b4bf5fbc21f251a6d1f6a056a
@@ -1118,10 +998,6 @@ trackedFiles:
     id: 87da9b82fd9f
     last_write_checksum: sha1:50103d4e9f1cd7af838a49cd2366172d1fca9e6e
     pristine_git_object: 1714265fe0ed7916956251b62ce3c27cfefcbea1
-  docs/Models/Components/GeographicReach.md:
-    id: 4b2cfae01c56
-    last_write_checksum: sha1:d3efe15a8d2229ed46f9ab6569ef3c27df027d7a
-    pristine_git_object: 72730f5063ad73ba44cfd27c7309f4da129cb74c
   docs/Models/Components/GovernmentID.md:
     id: a17925762b6f
     last_write_checksum: sha1:d7a1451e3ef90822b7d8b93651530ff0b3fbb436
@@ -1150,10 +1026,6 @@ trackedFiles:
     id: a9698dc54e52
     last_write_checksum: sha1:36665f28e940e8540f4975f709b15a592abe2c7a
     pristine_git_object: d50daf4fc55d8afdc83a8639344337dc2451d2fa
-  docs/Models/Components/GuestProfile.md:
-    id: 85015408f788
-    last_write_checksum: sha1:8ee496737ce55816865815af4ffe99eafeee7d54
-    pristine_git_object: fc22abbcc7aa75ae4c90a88edbaab7c0f046645d
   docs/Models/Components/HTTPMetadata.md:
     id: 05de2fd15279
     last_write_checksum: sha1:08fe4d295519e310847d7500b27fd60eb5124293
@@ -1202,18 +1074,6 @@ trackedFiles:
     id: c465b951fb38
     last_write_checksum: sha1:288393cd8b9fefdd79d3ac4971edc2d423ffbd49
     pristine_git_object: 1a6cbe3101b9d7492dfb4a7ed0be34ccbc1a2546
-  docs/Models/Components/IndustryTaxonomy.md:
-    id: 7aeffb7bd2fc
-    last_write_checksum: sha1:1243baa60cf96dbd00859e4787f7725d377b436c
-    pristine_git_object: 8e74538b2c6396e5985eb4ad4751b5d02b40f89b
-  docs/Models/Components/InstantBankCreditPaymentMethod.md:
-    id: 08ac5a181dec
-    last_write_checksum: sha1:496bf3c19bb37ab1f672012f79b98870f7eea9d2
-    pristine_git_object: c5fbbeb7e2af3918e1332b233d340127a066f977
-  docs/Models/Components/InstantBankCreditPaymentMethodPaymentMethodType.md:
-    id: 0755147758bd
-    last_write_checksum: sha1:3992af37280f237842d608a14a8b897cb13b5456
-    pristine_git_object: dc6982f1de58178e71ccfe03c939f56b453741e4
   docs/Models/Components/InstantPaymentFees.md:
     id: 9583a093d337
     last_write_checksum: sha1:c6606458416eb7dbbb1c0955358d1b370816a872
@@ -1222,58 +1082,10 @@ trackedFiles:
     id: ab7ccfccda85
     last_write_checksum: sha1:f27963928e93c1afea2b23a7a40f55a6c7ba88e9
     pristine_git_object: d08ffa3d5c07dfd19f088df31e26a0b7b8e82ec0
-  docs/Models/Components/Invoice.md:
-    id: ba7358ee6e48
-    last_write_checksum: sha1:fc426801c0529245558e285649ecd257a44bd856
-    pristine_git_object: a196a4bca919ff096fa0cd8423c73419ca910d22
-  docs/Models/Components/InvoiceExternalPayment.md:
-    id: 355f31d8abd2
-    last_write_checksum: sha1:ac6d8289ebe58a72cd706db18a5fc2addb827f7a
-    pristine_git_object: 480727ce6ed34dd833b35527678ec7eaa26d9291
-  docs/Models/Components/InvoiceLineItem.md:
-    id: 3c0bc78c8116
-    last_write_checksum: sha1:99b9e06424b88af22fa3b30c23171188a57fa100
-    pristine_git_object: 6b0a0b4279274034b341ffeed592ba8ca87f9bcd
-  docs/Models/Components/InvoiceLineItemImageMetadata.md:
-    id: c2b6d961a57c
-    last_write_checksum: sha1:5cc0ee9ca28930f1f34aca0a1fe0fb07a446b3e8
-    pristine_git_object: 186a85b903421cc3bfc69e7740a3218c0597cfc8
-  docs/Models/Components/InvoiceLineItemOption.md:
-    id: 74a37a4f1d37
-    last_write_checksum: sha1:c567c19346e5d693193fc6aeebd6a44e3792efef
-    pristine_git_object: 1800f1089379f845381a13ece6f7ffab1aa835cb
-  docs/Models/Components/InvoiceLineItemOptionValidationError.md:
-    id: 0e61e7cf8024
-    last_write_checksum: sha1:bd7b176eed5db086d8eee1580d16d1b17605e6a7
-    pristine_git_object: e8053af1e51f0d608c73ed01fd80f0b27efbf09c
-  docs/Models/Components/InvoiceLineItemValidationError.md:
-    id: 059b864932e1
-    last_write_checksum: sha1:bfad92d5a305892d5ec7b14a112c264652de256e
-    pristine_git_object: 7933013051170af117280a691a7d05ed9e9fd891
-  docs/Models/Components/InvoiceLineItems.md:
-    id: 074fd1ca700d
-    last_write_checksum: sha1:7e66d484aae772303382ff2fe488518e26a3dfa6
-    pristine_git_object: 3d6d017739a1c3029acf9a29cd6809930714b416
-  docs/Models/Components/InvoiceLineItemsValidationError.md:
-    id: d021232cd084
-    last_write_checksum: sha1:4371b3e452f24c7e2343f8e6ec3c46dce985ed31
-    pristine_git_object: a9e6a5e6678f83010b8a88adde00dc4177d4b17c
-  docs/Models/Components/InvoicePayment.md:
-    id: 411ff508bd20
-    last_write_checksum: sha1:7d69f516b1b1807128ef908e0a3f4c4b011416ba
-    pristine_git_object: a83521f844148e48aa869bafc1101c385e94b343
-  docs/Models/Components/InvoicePaymentType.md:
-    id: 3e0bdd200f5e
-    last_write_checksum: sha1:8b0576a1496ac88eb41e3fa600a883acf675823a
-    pristine_git_object: 4e164dc5f38780a529fef34959ff3103bdca58ea
   docs/Models/Components/InvoiceStatus.md:
     id: 5138cb519dd5
     last_write_checksum: sha1:8a06aa16b81df7eb45666a33da537659c08af7a6
     pristine_git_object: 38cea1464b025bc3ec1e305e9902783e1962bfd1
-  docs/Models/Components/InvoiceTransferPayment.md:
-    id: f01ff2d0eb38
-    last_write_checksum: sha1:f88fc2a0b2cbd1b61da180eea703219997601cf4
-    pristine_git_object: 42a15a4272ba9c6f26df1747a0fabd67b2b3ca12
   docs/Models/Components/IssuedCard.md:
     id: c3cea048cad8
     last_write_checksum: sha1:b670247efa9ac2e78a56026bd089e4870b05ce9f
@@ -1334,10 +1146,6 @@ trackedFiles:
     id: c5a44c4b4fef
     last_write_checksum: sha1:187e15527e70bac52cc5ff40eb419f3577d7b201
     pristine_git_object: 247bbd373fca5abf811963a8c768612ba415b494
-  docs/Models/Components/ItemListNextPage.md:
-    id: 5b35f14cde9f
-    last_write_checksum: sha1:c038738f92c68afb54612bb82ee98b236e574ac9
-    pristine_git_object: 7c7acb60516cefe5120f8fe42b4403882473b8bb
   docs/Models/Components/JSONWebKey.md:
     id: 0fd06f64bf65
     last_write_checksum: sha1:70ecdfbfefc0527604610cf287148b7502a02dd3
@@ -1418,38 +1226,10 @@ trackedFiles:
     id: 5799fab3f7eb
     last_write_checksum: sha1:4f433a87afaa81e76eb13290c6aa558c8251ac86
     pristine_git_object: 02eb969503514cba0b400472920d34c9034c2c52
-  docs/Models/Components/MoneyTransfer.md:
-    id: d87bf99b6fae
-    last_write_checksum: sha1:1e910e2f91a4d100d8224a35b68fac8cd337e729
-    pristine_git_object: 63f332b21ca89c8fc7feb083c031df2d3fd32d7f
-  docs/Models/Components/MoneyTransferError.md:
-    id: f16156a67152
-    last_write_checksum: sha1:0e45f56ec40396d03b376ee62faffd28b2555d10
-    pristine_git_object: d0a01e8457e1641198f5d2892ad722a6697466f4
-  docs/Models/Components/MoneyTransferPullFromCard.md:
-    id: 5bd2d55512dd
-    last_write_checksum: sha1:73722e9b500ad70de6fa9d150a043347b5dea623
-    pristine_git_object: 61aa6721e2a56a98306694a733dc1bf25dea1f08
-  docs/Models/Components/MoneyTransferPullFromCardError.md:
-    id: 47a1c93e66df
-    last_write_checksum: sha1:9c9299cb048d4d5f527b283d830f891df8b85a3b
-    pristine_git_object: 581a01eac42318dbea4a7d5dbe2e5a4895de899b
-  docs/Models/Components/MoneyTransferPushToCard.md:
-    id: 25cc521e6ac4
-    last_write_checksum: sha1:46f7235b753d5e87eaa2a827f55f0f1d570e9f1e
-    pristine_git_object: baf594ff9c56a939afb418efc1bc218ecbdb8ce8
-  docs/Models/Components/MoneyTransferPushToCardError.md:
-    id: 1b373704130e
-    last_write_checksum: sha1:c73a01fed2bad6333af56ef080e6d5061912940e
-    pristine_git_object: e7cca28fde198e2127d1b8f99abd7e9f830e70f3
   docs/Models/Components/MonthlyPlatformFee.md:
     id: bc7c3acba3e5
     last_write_checksum: sha1:290f73386307a987cfe43b7de77d9d4536bd1aa5
     pristine_git_object: 3376dd66b2bc10f556a5bf2f741d332d7a065b01
-  docs/Models/Components/MonthlyVolumeRange.md:
-    id: 9d792d91693c
-    last_write_checksum: sha1:17e26d8026b6165b0c3cc625488e60f3deca85b2
-    pristine_git_object: 1c7296f790eda7262494b4bec24e3aaeab9fbfa4
   docs/Models/Components/MoovFee.md:
     id: a3ad467815e4
     last_write_checksum: sha1:f3df92698033fa619e786f3ce7d3c6e6d950718f
@@ -1616,12 +1396,12 @@ trackedFiles:
     pristine_git_object: 8e0778b6204a0e1acec7a18a39e9764d2e8dc375
   docs/Models/Components/PaymentMethod.md:
     id: 5da8df995e06
-    last_write_checksum: sha1:05cfd6ec79fb970dfa32675ad3082fc0b6ff1a40
-    pristine_git_object: 3a68b542a0d199af153143cb24c8c32bcd4d36ed
+    last_write_checksum: sha1:7dbcbf9e622c33b34d8d25e45f81878abdb67abe
+    pristine_git_object: 590147ca17416a51e6d083fcd1fc96dc1948910d
   docs/Models/Components/PaymentMethodType.md:
     id: 678b6207c307
-    last_write_checksum: sha1:42d08c3dcd98149669fda2ebb28daf33c7ae3838
-    pristine_git_object: 1a9ed007b4c7b348f9fc999d905e5fa7666c2d04
+    last_write_checksum: sha1:bd2ab51f974504bfc0114122a97482ce0b422560
+    pristine_git_object: 6cad701d0dfb47a1f1a0ae534a559cb1b7fd7b90
   docs/Models/Components/PaymentMethodsBankAccount.md:
     id: c804eb41c602
     last_write_checksum: sha1:0236c1ee474c7e1a1b4a0cb0901d0f142af27e1f
@@ -1646,10 +1426,6 @@ trackedFiles:
     id: 531b7803a071
     last_write_checksum: sha1:f346532c27eb9a7a5cbf8508abba684e2b08e078
     pristine_git_object: 49fe76404f625d76a0eeb68c943b8afd332d28eb
-  docs/Models/Components/PendingLitigation.md:
-    id: f966f45d2170
-    last_write_checksum: sha1:c96f319d2311b04543380dee844962b46b6d8ba5
-    pristine_git_object: cf2b2da76cfb5da09090d1039d7e3b49005056b1
   docs/Models/Components/Phone.md:
     id: 368a6b60a20e
     last_write_checksum: sha1:080f49db2dcb3d45170954039acd65296e164214
@@ -1720,8 +1496,8 @@ trackedFiles:
     pristine_git_object: b1a1604a22d3ef661e90a2e8cbd91aed008c3191
   docs/Models/Components/Profile.md:
     id: 2e9600dccc7b
-    last_write_checksum: sha1:d4cfc1914dc2b79730d2c4a986b3f16230f05a6a
-    pristine_git_object: 95b1d6a9e85da471c109a1417e165eddb2212cbe
+    last_write_checksum: sha1:40ed7f30a1f237b86e94eafacce834e96237d35d
+    pristine_git_object: aa753244cc52109d1dfc952b7012eeaa420249bb
   docs/Models/Components/PullFromCardPaymentMethod.md:
     id: 2597da818a28
     last_write_checksum: sha1:c08ed1c93d8d4baf5d87132555b95141a2117c49
@@ -1794,10 +1570,6 @@ trackedFiles:
     id: 369055e7f589
     last_write_checksum: sha1:9771b242356bdf0940168eb56f3d717bbeb615be
     pristine_git_object: d3d92607acada00d64b506f17ce32ca2ad04a44c
-  docs/Models/Components/RefundPolicy.md:
-    id: 5841fe1459e4
-    last_write_checksum: sha1:fc16a2caf9c7aee4b5d015cead6edceb006921ae
-    pristine_git_object: 1c8dce2f431c888ce47bf2fabcda3fe10092abb7
   docs/Models/Components/RefundStatus.md:
     id: 71e703ebbb2a
     last_write_checksum: sha1:2503ada8b8a85ecb5d2d5b4119c3f6bc667a7e53
@@ -1836,8 +1608,8 @@ trackedFiles:
     pristine_git_object: 1541d3a524b7623b9fd762bc8ae403039e3dda35
   docs/Models/Components/RequirementID.md:
     id: ee95ded761d1
-    last_write_checksum: sha1:27025507e9c07f79d72c6d91ab54acc0c6ffb540
-    pristine_git_object: 1202f4cb2480b5e07a3e96b5387179a3c38132b7
+    last_write_checksum: sha1:5955b28828ce7779d077f984cda1eb083afb1550
+    pristine_git_object: d0d417c7b09ac6daccd95bd228538c80baa91e82
   docs/Models/Components/Residual.md:
     id: f1b15c452770
     last_write_checksum: sha1:ceadb026970b7d4d9f807cfd935d29374d40db0e
@@ -1914,46 +1686,6 @@ trackedFiles:
     id: 7bcd54fda13a
     last_write_checksum: sha1:9a99c154a4e3ed9ba917027c4b4ecbccec1cefcf
     pristine_git_object: f5e0d507eab948fc8b1400c073b8879ce3360b76
-  docs/Models/Components/SendFunds.md:
-    id: a7f317db06b1
-    last_write_checksum: sha1:98e746e7ea914065d9d745aba329ffc18eb37efa
-    pristine_git_object: 1ec226414504a8b6538002d262dcd8629d6f3f80
-  docs/Models/Components/SendFundsAch.md:
-    id: 4e4f06141043
-    last_write_checksum: sha1:eb5bfaa0a092cc082a8b87aecd14b3a231095151
-    pristine_git_object: d12dba42017b9c89bf1d936b3bfa16616534e410
-  docs/Models/Components/SendFundsAchError.md:
-    id: 4ab81497b606
-    last_write_checksum: sha1:20ca5b7556349c77de3c723d76669739a414399f
-    pristine_git_object: 6563f703d569c25572d2c4d5b7aad94004f6b090
-  docs/Models/Components/SendFundsError.md:
-    id: 8d4d83a5aa00
-    last_write_checksum: sha1:2c07a11669b64f1d8795e54aefb137d4924561e1
-    pristine_git_object: 064218e8f200b3a435ea24d1e91193d13eec16ec
-  docs/Models/Components/SendFundsInstantBank.md:
-    id: e078b490816a
-    last_write_checksum: sha1:e97b4351edbf428f9826fe19ed2860b650447651
-    pristine_git_object: a6a0caa3359172a76f9876cd521857c53c391dba
-  docs/Models/Components/SendFundsInstantBankError.md:
-    id: 424f7fa9fb56
-    last_write_checksum: sha1:36440522933e4f51e07550efda9ac0061cdf62a4
-    pristine_git_object: 8e90db847c1239c8571f9a45a071c81a3fe8997b
-  docs/Models/Components/SendFundsPushToCard.md:
-    id: 73912b1654e7
-    last_write_checksum: sha1:48e464e653d9efafabfa41d123be009c6160ca1d
-    pristine_git_object: ec229fb5a01ff0c063571a036ba7e8d4f33caf56
-  docs/Models/Components/SendFundsPushToCardError.md:
-    id: fe6a1d813e92
-    last_write_checksum: sha1:7053fea379668058f50f28cac5340abaa0d080b5
-    pristine_git_object: 020122ee0d5245bbd75f5a6f18d3f45fe1e47029
-  docs/Models/Components/SendFundsRtp.md:
-    id: add44459bdea
-    last_write_checksum: sha1:04930437bef31a3d8911e339893c337498a44803
-    pristine_git_object: e8e59d87c5dd8f2d715fb43aa337263faf04b26e
-  docs/Models/Components/SendFundsRtpError.md:
-    id: 664ca8b3f36b
-    last_write_checksum: sha1:7412d63f7ee21d3bf1a12da9ef0f5b173ef7a7c2
-    pristine_git_object: bb20caae1977743da2d85b523fac0c0da38aeb62
   docs/Models/Components/SentReceipt.md:
     id: 96f8b4aef115
     last_write_checksum: sha1:57bb6fbb8290da1a213942cf48e57de8633ded51
@@ -1978,10 +1710,6 @@ trackedFiles:
     id: 71d0264ee613
     last_write_checksum: sha1:3fad2054c97ba8bf53772403774a8f33da274e8a
     pristine_git_object: 8534827b5577adc046a022f276a578082ff6b6e9
-  docs/Models/Components/SubmissionIntent.md:
-    id: dfacb83f3365
-    last_write_checksum: sha1:ec364566c1aaf21ba5018bf89b3b66f464adca1e
-    pristine_git_object: 23c8ad863aea58178c1ca13b0cdbe9cde35b8c1b
   docs/Models/Components/Sweep.md:
     id: e09d2e0a70da
     last_write_checksum: sha1:e0d4cfb23fe7dfdd761a9e1bf2315fc09204d081
@@ -2038,10 +1766,6 @@ trackedFiles:
     id: 6e772ad4aa1e
     last_write_checksum: sha1:05b183c35123022292ad333b45977735e0e4dfe6
     pristine_git_object: 3f408f97874e5d8d6681e7df87c4c3e9222188e0
-  docs/Models/Components/TerminalCard.md:
-    id: 1029fa93e16e
-    last_write_checksum: sha1:cd2bfe968b3fa78f3e0e612523b2183e728f2508
-    pristine_git_object: 92d45b072e3fe4f8997556f36a2ce5ae18e663df
   docs/Models/Components/TerminalConfiguration.md:
     id: 5bc21727aa17
     last_write_checksum: sha1:d1b7a641f40fc641218ff565e687d59f6d4b1006
@@ -2066,18 +1790,6 @@ trackedFiles:
     id: dab44d23ca36
     last_write_checksum: sha1:851fc24f76cbe1e4fe152c47af7979512e00199a
     pristine_git_object: 22081ddeea59776cc6b1de31e85f7867c574f3c1
-  docs/Models/Components/Ticket.md:
-    id: fd51f3795831
-    last_write_checksum: sha1:1da269d805e410d49ba3672091d9186efdb534df
-    pristine_git_object: 9fefef8db0cf6836d387e42859216baea0c6a158
-  docs/Models/Components/TicketContact.md:
-    id: c8b7fc3ae7c2
-    last_write_checksum: sha1:c27806eb6d6f35f5aaf3aa73fe51d29c459ce3ba
-    pristine_git_object: 5503d55785e61885b0b4317a6edee6f62aa96f86
-  docs/Models/Components/TicketMessage.md:
-    id: 8cc284bd6c2d
-    last_write_checksum: sha1:92d0bcb9d035602085cf169782a95229d93f3dd1
-    pristine_git_object: 2a375349f1e7bd9011c2b711426cb022ede4b3e4
   docs/Models/Components/TicketStatus.md:
     id: f1c81ef3e0a1
     last_write_checksum: sha1:2ae935f2b75291b8cf2ab580bd60484ffe1c461f
@@ -2096,8 +1808,8 @@ trackedFiles:
     pristine_git_object: e6d88adf8ff920b6876c1ef326db4331c11406b5
   docs/Models/Components/Transfer.md:
     id: 477890c615c4
-    last_write_checksum: sha1:460f370535cc42d8927a82b081ea5ecae9462021
-    pristine_git_object: 130ff8a7a988b75df716406f8cbc3260604570b8
+    last_write_checksum: sha1:a088e9cc4bd4ad72de1ca710d74889adadfc6167
+    pristine_git_object: 350c13afe4b04bf4e3e8add827e598b5bb5a85bd
   docs/Models/Components/TransferACHAddendaRecord.md:
     id: c6e5c77f125d
     last_write_checksum: sha1:bf85d938d6dfd0c75a25743dc0744fc1972d1731
@@ -2140,8 +1852,8 @@ trackedFiles:
     pristine_git_object: 378f3354071649c0a4f41a24380077ab8d7aa493
   docs/Models/Components/TransferSource.md:
     id: c16db890849b
-    last_write_checksum: sha1:f192b312466f68dfc3a7bddd13ddcb51421e352c
-    pristine_git_object: 949f0144a4da9878b3e359862d96552fd23fed55
+    last_write_checksum: sha1:584e0cf83a0ec1ed732d474cb46e1492ce7a13ce
+    pristine_git_object: 3786269399512d9ccc32c52e9f9310f37461dc4d
   docs/Models/Components/TransferStatus.md:
     id: 8016d5bfad26
     last_write_checksum: sha1:f35203b0e3b3cfbf2ffb3d1d2a16806e9fe7397f
@@ -2152,8 +1864,8 @@ trackedFiles:
     pristine_git_object: e34d718d9009ad8355e9e79a9d28d3f8ec69b3e6
   docs/Models/Components/Underwriting.md:
     id: fb155f977caf
-    last_write_checksum: sha1:c9a88a3a5b11a1b97a2fe9582b442846136c0ba1
-    pristine_git_object: db46c2d6ddc77190e62f0b634fc6843c75129fd0
+    last_write_checksum: sha1:0c83325f4ed90a14321a9b90c4e808cda3bcd957
+    pristine_git_object: 83b8cc99719bbb24b07b06956a51f5447df797d3
   docs/Models/Components/UnderwritingStatus.md:
     id: fb995cd619b0
     last_write_checksum: sha1:32d8d8afc0eb92f7e09ca8492f99be954325917e
@@ -2178,10 +1890,6 @@ trackedFiles:
     id: b9cf82baa42b
     last_write_checksum: sha1:0fcf8b8e11118ea930eb0cf207eb29080507fa25
     pristine_git_object: 5bd52e84dc165d3a5e3bf2324d6f3d6e2cbaf7cd
-  docs/Models/Components/UpdateInvoice.md:
-    id: c30d640c401a
-    last_write_checksum: sha1:aa4ca4012a7f7acad6cce03be9f38a3751478ec8
-    pristine_git_object: b7f69af0fd17b5c96f6d6e6054e157926d4f9707
   docs/Models/Components/UpdateIssuedCard.md:
     id: 720655aa16dc
     last_write_checksum: sha1:eabead58da0f1e77687d5512e56e035e14e3bfdf
@@ -2218,14 +1926,6 @@ trackedFiles:
     id: 3070d8704592
     last_write_checksum: sha1:9d2ec28b96159a0751c6d340969e148e59ac72a2
     pristine_git_object: 04a7da5cb2b85132d15ea2401b00102bfed9bbe3
-  docs/Models/Components/UpdateTicket.md:
-    id: 2c2e1fe18c0f
-    last_write_checksum: sha1:37817f927b8dee370cb133166585b0cecd596381
-    pristine_git_object: cf3763a6eefd7a92eb79cf11f3213c740a8a2eeb
-  docs/Models/Components/UpdateTicketStatus.md:
-    id: de78ac419530
-    last_write_checksum: sha1:6c418e741157c84006bac3c8aed5fa89b182ec69
-    pristine_git_object: b730a14c048e71be37bc197e9eac91f0fe9809ba
   docs/Models/Components/UpdateUnderwriting.md:
     id: bb0168abe037
     last_write_checksum: sha1:8c0d572d94f4e907a8550f71251676742ee92644
@@ -2242,10 +1942,6 @@ trackedFiles:
     id: 1dd31791a884
     last_write_checksum: sha1:39fa95e77f923fedd1e7c275c7c5fd81579f8ba0
     pristine_git_object: 0622f24509cd7a5529a23f4e7de1b62dc5d43eec
-  docs/Models/Components/UpsertUnderwriting.md:
-    id: d2a481340236
-    last_write_checksum: sha1:1be9179448209921d6972a2ece201a2ac6c51d86
-    pristine_git_object: dc35cd092f6f6691608685c21fc5b389c618ce04
   docs/Models/Components/Use.md:
     id: 636fee87d160
     last_write_checksum: sha1:378bd537653ab43d6e620a53ba4c8f87d9fd4af8
@@ -2274,14 +1970,6 @@ trackedFiles:
     id: 43adfeac789d
     last_write_checksum: sha1:4ede09f59305fa95e6ebe17726ae90fc47132f78
     pristine_git_object: c79944550a15b68ac06ef14415efb4336250c440
-  docs/Models/Components/VolumeShareByCustomerType.md:
-    id: b254deb9a9e8
-    last_write_checksum: sha1:e769e427bf579bfa5978dc90a1e86a7949591f19
-    pristine_git_object: a6fb333b571abd1d3a3fe66dfe72a247a7528cbb
-  docs/Models/Components/VolumeShareByCustomerTypeError.md:
-    id: 3f5db9763398
-    last_write_checksum: sha1:867b856e2ec4fb7b84487cd24003d42224c94197
-    pristine_git_object: e300c059d23cc37e21f92c015825926bd00f493b
   docs/Models/Components/Wallet.md:
     id: 0387164644a3
     last_write_checksum: sha1:49022ac8a0d153c1d974c965dae55206d3d287e1
@@ -2538,14 +2226,6 @@ trackedFiles:
     id: c32663f69115
     last_write_checksum: sha1:0dfedbf3b1d602c65621a4fe3e3d8455c7ae5862
     pristine_git_object: ca8886552634cebd321d6e72c4ceda65a769f18a
-  docs/Models/Errors/CreateInvoiceError.md:
-    id: f6beebd9c6da
-    last_write_checksum: sha1:448b37cb8cb74b26c9e40282ca5c0c81c803604a
-    pristine_git_object: aa0299994920f57e4a94240ac93878df7108ec4f
-  docs/Models/Errors/CreateInvoicePaymentError.md:
-    id: e1ed8c3320d6
-    last_write_checksum: sha1:f895c75f00a05709df2ffe1ac36de1eda372ddc4
-    pristine_git_object: de65359c1190eaf31b20bec570c70c5d9d25dbf2
   docs/Models/Errors/CreatePaymentLinkError.md:
     id: f04fdba7cc63
     last_write_checksum: sha1:1f205c9fe16ed987585b61d3984e46c4e817c81e
@@ -2554,10 +2234,6 @@ trackedFiles:
     id: c4072ef69d25
     last_write_checksum: sha1:c1edc2ae4321e6d983fff577faa2b63e972e5495
     pristine_git_object: 1a04e2f0b57afa8d893d0ae75c922527a508965a
-  docs/Models/Errors/CreateTicketError.md:
-    id: cd193cbd1d1a
-    last_write_checksum: sha1:3ce051699cb42d4f48a04e67dd0cda679add20d7
-    pristine_git_object: 872e53364dc988b4c7f722edc310b5cf58f5944c
   docs/Models/Errors/CreateWalletValidationError.md:
     id: 0c5863be8eee
     last_write_checksum: sha1:ef02095b10cce9b2042c36be04fb528f36061e43
@@ -2598,10 +2274,6 @@ trackedFiles:
     id: 0d94e6b3b6a5
     last_write_checksum: sha1:d0c584649cfae4e01e3d6d9137e3406cf6d828d0
     pristine_git_object: f89f4629a8fc88c0d6ea51d296d4650d08dbed94
-  docs/Models/Errors/ListInvoicesValidationError.md:
-    id: c208077917f1
-    last_write_checksum: sha1:6dc47a5ca829ae300f04db40123e585593d0c482
-    pristine_git_object: c57d603a8badce63caf8bbed8018d185eac5c092
   docs/Models/Errors/ListTransfersValidationError.md:
     id: 09ddf12fc690
     last_write_checksum: sha1:e28583ca6ed700c906ffa608292d92ad2fe2a94d
@@ -2672,8 +2344,8 @@ trackedFiles:
     pristine_git_object: 8fd06c766e4e7603dec98ea2010bbda0985005d4
   docs/Models/Errors/TransferException.md:
     id: a3383813ecaa
-    last_write_checksum: sha1:4b6281ae1a55d6b215214c72832c6ef187dedbf4
-    pristine_git_object: 3f2e31edb14d8a36d90c6d6ac3f86e37403ae12a
+    last_write_checksum: sha1:39d4d9f3a24c3274117e9808486873307a6b6266
+    pristine_git_object: e9c690fe3d25371fbfca03fa90605ae1a5a64991
   docs/Models/Errors/TransferOptionsValidationError.md:
     id: 600112fc5b2d
     last_write_checksum: sha1:259ed74eabed461e5ad6b60c6b230e185fab4f5a
@@ -2686,10 +2358,6 @@ trackedFiles:
     id: 0cdd01f53676
     last_write_checksum: sha1:ceb7b3fd74618605e75f11ceab19a78bec80a668
     pristine_git_object: 0e60a53673577ab2eefc0d4d404cbf9f02e5c44c
-  docs/Models/Errors/UpdateInvoiceError.md:
-    id: f1b1da64000a
-    last_write_checksum: sha1:a67056d7f69c3bee6faabe8b50b2c35feaabb1ad
-    pristine_git_object: 7fd23322a1d416bc300a67d4086cc54a51d92d34
   docs/Models/Errors/UpdateIssuedCardError.md:
     id: c5c276802358
     last_write_checksum: sha1:5f5d139fbf0c812a273dc5fb54ace0ad5fce6ec6
@@ -2698,10 +2366,6 @@ trackedFiles:
     id: 71431e1a2d2a
     last_write_checksum: sha1:1d8e205633f81d961bbca39ea9666aab34ac1ca1
     pristine_git_object: c6b0b26a9516287b515a880e44632ba5c7edf9f5
-  docs/Models/Errors/UpdateTicketError.md:
-    id: e75405b8aa15
-    last_write_checksum: sha1:f2baed2c91634a25406dd45aa097009b8ca62ceb
-    pristine_git_object: 9c4f84567b18d522bd7917936878da1d1f142727
   docs/Models/Errors/UpdateUnderwritingError.md:
     id: 0ace233bb348
     last_write_checksum: sha1:6e13a6497d52781cfab96a005ec94e8f604351c0
@@ -2710,10 +2374,6 @@ trackedFiles:
     id: 27fb8e6b07ca
     last_write_checksum: sha1:0284f5477e66a3403146f3d9fab30dd5dc3b7142
     pristine_git_object: 7f2993f221ded34d5c8edad5c0076cf3251dfc87
-  docs/Models/Errors/UpsertUnderwritingError.md:
-    id: ab591171e5fe
-    last_write_checksum: sha1:2c8311326cc67830042ccefdd694d609c2def416
-    pristine_git_object: b89f07181ee01b34e20b0b3604108e2ef9ce4941
   docs/Models/Requests/AcceptDisputeRequest.md:
     id: ca6cd08657be
     last_write_checksum: sha1:f72aaca4c9ad9e100a7e84ea75204d97f2899747
@@ -2810,22 +2470,6 @@ trackedFiles:
     id: a38c0b52b2d5
     last_write_checksum: sha1:49e922ef7c6c5de05ff5e6c495171494b0496c6c
     pristine_git_object: 1006f64662470e9d1c2fd12b43b1fc1d62c1324e
-  docs/Models/Requests/CreateInvoicePaymentRequest.md:
-    id: 57036eac3112
-    last_write_checksum: sha1:35b80f2b110ecd1c80900767e936fc23a48bd1b1
-    pristine_git_object: 9c75f39c7076cfbc101667ca5539d9b3a871266f
-  docs/Models/Requests/CreateInvoicePaymentResponse.md:
-    id: 36d407c74d86
-    last_write_checksum: sha1:d609a9923a8f3f249bbfd50680cc526e72c4c102
-    pristine_git_object: 0ea58bc1cdc5842966e9b8fd20f3885d4f14d1d5
-  docs/Models/Requests/CreateInvoiceRequest.md:
-    id: 0d8296c7320b
-    last_write_checksum: sha1:2bc9ff57387da9b3b1ff7e42b631d789ddf100b0
-    pristine_git_object: 2686e6f56bb214c3ab74257f21d8ca6be78a500d
-  docs/Models/Requests/CreateInvoiceResponse.md:
-    id: 6a88b4dd8537
-    last_write_checksum: sha1:2991b861deff61d4303b23a23ecc0b4a38f64354
-    pristine_git_object: f46a26b69a3e4c2bcb46a4096abe8949fecedc2a
   docs/Models/Requests/CreateOnboardingInviteRequest.md:
     id: fa1742b7f94e
     last_write_checksum: sha1:f21a797dfb746e0344850edf65ad8ab2fcae09cf
@@ -2906,14 +2550,6 @@ trackedFiles:
     id: 7f7714540bba
     last_write_checksum: sha1:44d909df9c7c936075e30d4f2c3a9d950560d890
     pristine_git_object: 731dd3c20739730466a65e109d5adbbd7d5ccad8
-  docs/Models/Requests/CreateTicketRequest.md:
-    id: d1946d923bcb
-    last_write_checksum: sha1:4aa3339d4e672233632b0ca51db6584ca6b49822
-    pristine_git_object: 9b29b1371f09dc9328c4786c651d23cc5c8eeac9
-  docs/Models/Requests/CreateTicketResponse.md:
-    id: f545980d6381
-    last_write_checksum: sha1:018bd90a6370df8c40bcdf66f7bd4d4d1006b3f6
-    pristine_git_object: c40509ad69ffb152bb99b7633b76ef419f382593
   docs/Models/Requests/CreateTransferOptionsRequest.md:
     id: 67dc9c3f1acc
     last_write_checksum: sha1:5327c96fb7236d00d8ad987b94a7b2c4c2815272
@@ -3202,14 +2838,6 @@ trackedFiles:
     id: f7a02ef45a1d
     last_write_checksum: sha1:da6128f9e833b804a1f64cabe84e93c6f7e3e218
     pristine_git_object: 07c41dc7fc76fdab4aeb3794d3a1a2bbf4bf5d72
-  docs/Models/Requests/GetInvoiceRequest.md:
-    id: b3df6b2cbc12
-    last_write_checksum: sha1:ecc38dc5e504197409b0df1b538fa96dd1f1c363
-    pristine_git_object: f4ba0964af545b6de4e4f68b7942a5b035598a41
-  docs/Models/Requests/GetInvoiceResponse.md:
-    id: a0bb494f21bc
-    last_write_checksum: sha1:2252a5884cd12071af7a985ae85f8f8937fe18c3
-    pristine_git_object: ef65d694a9b4ac71269762b18306757efe59f140
   docs/Models/Requests/GetIssuedCardAuthorizationRequest.md:
     id: 9d82f9ed8145
     last_write_checksum: sha1:71006c2279405c327223bcadc771448222553f7c
@@ -3378,14 +3006,6 @@ trackedFiles:
     id: 936dff3bb463
     last_write_checksum: sha1:a4f4888d7d7ca9f9e28766a6c778a67a9331dc06
     pristine_git_object: e85b139b685357b70932f606b4312e48c9be5d97
-  docs/Models/Requests/GetTicketRequest.md:
-    id: d352035990bd
-    last_write_checksum: sha1:9b8e35a348daa8aaffd03188a50232a1cd703d63
-    pristine_git_object: e547e6fa399e7ab5dceb8b9354e2fbf74282b1d0
-  docs/Models/Requests/GetTicketResponse.md:
-    id: 5bb40574aedc
-    last_write_checksum: sha1:81e3fd2f70710c93d105403d28f8850080037857
-    pristine_git_object: 29882e18f133742dd7455c4be6aa36bb15c713e4
   docs/Models/Requests/GetTransferRequest.md:
     id: aed89a006db9
     last_write_checksum: sha1:6e70c64775d2428b7f082b001e00db736414ef4b
@@ -3504,8 +3124,8 @@ trackedFiles:
     pristine_git_object: e63408d6e9f9fe46c92b1c9a4b3b4eddb78b80dc
   docs/Models/Requests/ListAccountsRequest.md:
     id: a2fb37a1588a
-    last_write_checksum: sha1:587913913e7476762fa34cc54b96a083e2ae44de
-    pristine_git_object: 3bf3df715e8914798c8784f87c77db9a4ebe6aaf
+    last_write_checksum: sha1:7c2115cd22d1120e2714e6fa6027c7f9aff4bc96
+    pristine_git_object: 88cf4d97c7aff1fee045047d0715df727b044ef0
   docs/Models/Requests/ListAccountsResponse.md:
     id: 7f6214b2f8cc
     last_write_checksum: sha1:a60a7d34afb1117637a21aad3d0f502b6c8f2394
@@ -3544,8 +3164,8 @@ trackedFiles:
     pristine_git_object: df519268c41ccc289c6bce37feccfafe3d4998d1
   docs/Models/Requests/ListConnectedAccountsForAccountRequest.md:
     id: cbc438d9df31
-    last_write_checksum: sha1:94ba3804221e4b0ad5791ebabc05f758a21fa917
-    pristine_git_object: b3c6fae3e6ab5c97e4463acb92320500c77afd43
+    last_write_checksum: sha1:66769498cf4d35de9c6c97c0a09e2469f6d10606
+    pristine_git_object: dbb25f8ce2557436bcc67ebbba55b8300ba160b2
   docs/Models/Requests/ListConnectedAccountsForAccountResponse.md:
     id: 388a67617746
     last_write_checksum: sha1:34b9f4a749e804cb553898e46b056276f3fdece0
@@ -3638,22 +3258,6 @@ trackedFiles:
     id: 2c377bd28c1d
     last_write_checksum: sha1:ec1c6a06b9883e28adbc0f94abbba128be8a25d5
     pristine_git_object: c6d356c7574e52b57d207b7710faf72a75a58eb4
-  docs/Models/Requests/ListInvoicePaymentsRequest.md:
-    id: 882184ba8703
-    last_write_checksum: sha1:f7007973036785a828f69fe71d332afb6a9953fe
-    pristine_git_object: 46010c3da528f8f943323b64bb27d3d777d11af5
-  docs/Models/Requests/ListInvoicePaymentsResponse.md:
-    id: 9d9df90bb467
-    last_write_checksum: sha1:55d54a6c2609dc1cf7995fb5c4f5349883b597bd
-    pristine_git_object: fdd1f1f60ffa3759a0951ae6c14901252fb00850
-  docs/Models/Requests/ListInvoicesRequest.md:
-    id: 4c079dd21827
-    last_write_checksum: sha1:e5ea7b7fcea03651af872650da88fab7e6aed68d
-    pristine_git_object: 790bccbbcb406a026e0e750d55e6db92004d5232
-  docs/Models/Requests/ListInvoicesResponse.md:
-    id: 8911e56cd857
-    last_write_checksum: sha1:6d143120d539d8cfcc16f705afe5338626d48f4c
-    pristine_git_object: b5f22a0c88c63088d60209b551363727b3a1811a
   docs/Models/Requests/ListIssuedCardAuthorizationEventsRequest.md:
     id: da1d9ac98bd0
     last_write_checksum: sha1:2b36821611f0455659638f9d30d2561f237ef61e
@@ -3814,26 +3418,6 @@ trackedFiles:
     id: e215e6979835
     last_write_checksum: sha1:51ae53587e35cd5c3b59384af425b02c8257e969
     pristine_git_object: 3550408322356d502ddcba4033619fda75310bb2
-  docs/Models/Requests/ListTicketMessagesRequest.md:
-    id: a6bb013116af
-    last_write_checksum: sha1:e1b23dc334b3bc533c73f94fc96009341f1f850d
-    pristine_git_object: e7e2229235d08a2b36746d50d98c3ad0b25d38cf
-  docs/Models/Requests/ListTicketMessagesResponse.md:
-    id: 8b754141ea29
-    last_write_checksum: sha1:5e6cd6c3b87cecd72d080ae67d0cb58f73c8af30
-    pristine_git_object: f7a466d27b2aee82efc794bd5effbd74c309635d
-  docs/Models/Requests/ListTicketsRequest.md:
-    id: 8f2084f17fee
-    last_write_checksum: sha1:2c95d6b4fa5e3261a89be2f89c0a113b3c929818
-    pristine_git_object: 3cb098926c1181122b7d580641b304d54365f080
-  docs/Models/Requests/ListTicketsResponse.md:
-    id: ac7cfc313c7e
-    last_write_checksum: sha1:f7101513570a66e2a7d3dc9bb40c0db2fc564645
-    pristine_git_object: 853e91d0c3a86b6be9eceeb68c6625cbda31bb61
-  docs/Models/Requests/ListTicketsResponseBody.md:
-    id: 2434a00b6ccc
-    last_write_checksum: sha1:e85f3c4ac24b519a539dfe97948ec7252a74db20
-    pristine_git_object: 28d603a71227f1155dfc999097e08483f2174aa6
   docs/Models/Requests/ListTransfersRequest.md:
     id: 39b5511c9895
     last_write_checksum: sha1:70e3e816e58a845c78224d0402141e922c668f29
@@ -3930,14 +3514,6 @@ trackedFiles:
     id: 1e9d1c76a54a
     last_write_checksum: sha1:56c924a7264bed07dd409a18d9b04df9f8c6c565
     pristine_git_object: a9a3ca15395e9165f56395f591b0fc41a7271ffe
-  docs/Models/Requests/SaveUnderwritingRequest.md:
-    id: 4e3cb51d4c2c
-    last_write_checksum: sha1:a5b493de10eb6d8bcaf689f2a35c2ce13d757ae8
-    pristine_git_object: ab694af74571a4120dbe68d4362f5bfd14f47478
-  docs/Models/Requests/SaveUnderwritingResponse.md:
-    id: 4d9cb9a442bd
-    last_write_checksum: sha1:a819905d6a4e96fc7f3cf45454014a6102fccd89
-    pristine_git_object: d9dc18da76247039dacf125da6a267d15355b7e4
   docs/Models/Requests/SearchInstitutionsRequest.md:
     id: 3e4d395ca9eb
     last_write_checksum: sha1:cfe2b253f4684bf3a2d6890195742658b2842a08
@@ -4010,14 +3586,6 @@ trackedFiles:
     id: d7ecb83a8460
     last_write_checksum: sha1:78c24ec7fc039c64f0f6d76fa178a22ff9f93320
     pristine_git_object: e1b32001fe9ab0a2176a320d0a64c9a322d36b63
-  docs/Models/Requests/UpdateInvoiceRequest.md:
-    id: 60b1a308416c
-    last_write_checksum: sha1:e5a18338f2f855398385f4dcc2143a8c3c6a4cd1
-    pristine_git_object: cd15e674aecc3de41c6c05869aed181e939ba7d0
-  docs/Models/Requests/UpdateInvoiceResponse.md:
-    id: da929ef354a6
-    last_write_checksum: sha1:afaac0a17b2b36605f174c09434d575168ccbf15
-    pristine_git_object: 64bc3f6f03bead90f731b8565ac786b863537428
   docs/Models/Requests/UpdateIssuedCardRequest.md:
     id: f0d090b62abf
     last_write_checksum: sha1:1ebe66863711f9c699c243034b2ef020093ff39f
@@ -4066,14 +3634,6 @@ trackedFiles:
     id: 53b8e2a0c5d4
     last_write_checksum: sha1:2c435cd4a427c94c5fd200b17ef846e1b0780592
     pristine_git_object: f38f1e57f0701b4fa2edec1b6463ab406071b0cb
-  docs/Models/Requests/UpdateTicketRequest.md:
-    id: d3fc4f1f1df5
-    last_write_checksum: sha1:bc1574a45b9274f79160f5d0caa3cbbe2d14fe36
-    pristine_git_object: a7d1ec54c5fb9dc0f70dd307b69abd62d5c335ad
-  docs/Models/Requests/UpdateTicketResponse.md:
-    id: 39deaf459111
-    last_write_checksum: sha1:4cb5ebe9f27565a09022d86bf92653ec68ca4e8d
-    pristine_git_object: 509db3a98ba39acfe5f88826ff65aa906f21c262
   docs/Models/Requests/UpdateTransferRequest.md:
     id: 20815419a1e4
     last_write_checksum: sha1:b93343ee99ebb2b20e45a02cfd437c632ebf3cbb
@@ -4148,8 +3708,8 @@ trackedFiles:
     pristine_git_object: 86d80cef97e9f5c932dc767662f95fa19522ad2a
   docs/sdks/accounts/README.md:
     id: d6c754b1ca96
-    last_write_checksum: sha1:129e3ffac9dda07a8b11a972d54e646b2415c6ba
-    pristine_git_object: 61288d03aea0235d5e8becfedf3e32a14bb5c04f
+    last_write_checksum: sha1:e394a9def61f610ec7c218b3cc9aaa3e29a709d4
+    pristine_git_object: b71fbb3cf4002421a3a3dc676aa862563775403a
   docs/sdks/accountterminalapplications/README.md:
     id: 6ffa432d9156
     last_write_checksum: sha1:07d4139555179af5ef4010298e4b334302e9f2b1
@@ -4180,8 +3740,8 @@ trackedFiles:
     pristine_git_object: 72e216f7aa82b7a3c324cb809df72cd48fe7ecd6
   docs/sdks/capabilities/README.md:
     id: 551490ea0d3d
-    last_write_checksum: sha1:52cded8b7dd2035695f9cb443dcfcd0bc367efb6
-    pristine_git_object: a857b418bf96fe26348b3952177bdd07dccedcfe
+    last_write_checksum: sha1:4cc8c46506b7399c05bfd18fa8ebcf518569060d
+    pristine_git_object: 7a6ad30325c5187587a5d058fff692e7ab445a99
   docs/sdks/cardissuing/README.md:
     id: 1359e7f08e85
     last_write_checksum: sha1:b12ae66d07573555710a5606cd60f292d15b99be
@@ -4226,18 +3786,14 @@ trackedFiles:
     id: 9eeb0b2b49a2
     last_write_checksum: sha1:3c96792df91aa0dbd9a63656a7b13760c39c6cfd
     pristine_git_object: 266e9e9a5559cc5d22348e4d59c0cbbcfc92074b
-  docs/sdks/invoices/README.md:
-    id: a3f76a06eded
-    last_write_checksum: sha1:df21a34f44d17bfb56f23a62aac1b7c5695c7ffb
-    pristine_git_object: 9970863f7e6886bd78cdc8866ff0240e5ecc5e11
   docs/sdks/issuingtransactions/README.md:
     id: 248409a4a639
     last_write_checksum: sha1:948b648b9810466d6d9803af01a2a7ad17299c4b
     pristine_git_object: 620d85438fa485af4775846411177b43ea189649
   docs/sdks/onboarding/README.md:
     id: 395b30e93e5f
-    last_write_checksum: sha1:a324985210bd045da5402e6ca9cd17898d0af68a
-    pristine_git_object: ac953148f8cbef7257abd619c60ab0ff84959973
+    last_write_checksum: sha1:a335509ead624f031d0273e8d637be29ae164aec
+    pristine_git_object: a5f9559ea5e67eed5c3620d8e667f9aed762144a
   docs/sdks/paymentlinks/README.md:
     id: 35777159619c
     last_write_checksum: sha1:6d4e7a9fc3c29c115ec56d8d52148a55e934230f
@@ -4270,10 +3826,6 @@ trackedFiles:
     id: 077d45e19c3c
     last_write_checksum: sha1:13d2e8f39f7f461a58a69846bcad78ca107dd6f5
     pristine_git_object: 5f04f6a5b3a76f0aa4b4259049d695b8c039dab4
-  docs/sdks/support/README.md:
-    id: 5517927f181b
-    last_write_checksum: sha1:e830a6fddf2303cb5a83922956645f55ab43c78b
-    pristine_git_object: 17400c886b7b5bc57e9458acc5a67debe746b0a9
   docs/sdks/sweeps/README.md:
     id: f69902cdea4e
     last_write_checksum: sha1:8caca519a2ddac59a81adcd428478ab58a893e08
@@ -4288,8 +3840,8 @@ trackedFiles:
     pristine_git_object: d9c4cf311e92d9d5a1c4240b4452d961e8466365
   docs/sdks/underwriting/README.md:
     id: ef972250826e
-    last_write_checksum: sha1:cebaac61faa43663dc9ce364f75705ebaeebca20
-    pristine_git_object: 5399b05fd0084c48a8d0571d6fdaaee52728ecab
+    last_write_checksum: sha1:014e72777da199150d8168e38fbc3b0a81b6887a
+    pristine_git_object: da5b950273ea9fdb9719a16d3fe853125eb243be
   docs/sdks/wallets/README.md:
     id: d9388c541e1a
     last_write_checksum: sha1:71d00925c3015b191387751133f11a75dddac633
@@ -4394,10 +3946,6 @@ trackedFiles:
     id: cc8304f307c7
     last_write_checksum: sha1:8b811823d344a06a0993a15ccff0b7a0474e1fbb
     pristine_git_object: f2f5412a07d368a4c91a118d885d370a8e294293
-  src/Moov/Sdk/Invoices.cs:
-    id: 99d04f767b9b
-    last_write_checksum: sha1:de8db0e7feb2191a261dad120cf68357c41d61f5
-    pristine_git_object: 6c44cc51075c3a0bb3503de24fe04d51a3378905
   src/Moov/Sdk/IssuingTransactions.cs:
     id: 0f836d31872d
     last_write_checksum: sha1:1b40516234b14f5351a3ef46fa48856af9d50c05
@@ -4464,8 +4012,8 @@ trackedFiles:
     pristine_git_object: c7d0d5bef8c1306d5bfa2ec4596f3a33fc6efb42
   src/Moov/Sdk/Models/Components/AccountType.cs:
     id: fabd063cefbc
-    last_write_checksum: sha1:fd4a1a86cc9de575843c894db836ec4a47b6de35
-    pristine_git_object: ba5695d3d4a326ae14f882bef414b2080130327f
+    last_write_checksum: sha1:1ba166896f6030c175357c546701033d6b5354fd
+    pristine_git_object: ba275164d1d622a44e7839a77daaf54c54c7a247
   src/Moov/Sdk/Models/Components/AccountVerificationStatus.cs:
     id: 57fd4f718b5f
     last_write_checksum: sha1:98b628e417b493eb8ae4a48bb3bbf6c9d72ea084
@@ -4554,10 +4102,6 @@ trackedFiles:
     id: f325b2bec4e1
     last_write_checksum: sha1:3de16d09d385186021fc97ac0f3aaceae5c9cef2
     pristine_git_object: 704bd77d1e82c9147025618e8f91980753825c96
-  src/Moov/Sdk/Models/Components/AmountDecimalUpdate.cs:
-    id: 3bf4942760c5
-    last_write_checksum: sha1:2b96c156dfb3e239dac09fe7f562b77984ab4a55
-    pristine_git_object: ce9ea525a62b71ce0f607129f08328a24922d571
   src/Moov/Sdk/Models/Components/AmountDecimalValidationError.cs:
     id: 9f5c70104f62
     last_write_checksum: sha1:34a82e5a2f83fd07d42b3ccad508ad702a106b99
@@ -4636,8 +4180,8 @@ trackedFiles:
     pristine_git_object: 35246621a111aeda45500eef5d59debeebd63a06
   src/Moov/Sdk/Models/Components/BankAccountHolderType.cs:
     id: "216095472144"
-    last_write_checksum: sha1:734505b3c0a4d08df80766369aba031991794182
-    pristine_git_object: fd3f5aa2b0d79efd743a2f6acc87bcd55925161e
+    last_write_checksum: sha1:77355391340a87287da1d072c32ed7ee77f3513d
+    pristine_git_object: cccee47ec124260f9ebbec84c673163c10395527
   src/Moov/Sdk/Models/Components/BankAccountIntegration.cs:
     id: 56d40a332487
     last_write_checksum: sha1:1ec5ac8d3322a07987e4d71049759840bf1e2c3a
@@ -4750,10 +4294,6 @@ trackedFiles:
     id: ec6a0a379c15
     last_write_checksum: sha1:69f208259912db6cbb2d3c10cdfa2362250fbf23
     pristine_git_object: 87da97e65a04fe8063c6410b9cd38cd357efafa9
-  src/Moov/Sdk/Models/Components/BusinessPresence.cs:
-    id: 346a78201cdb
-    last_write_checksum: sha1:a4ee48465bd823c760ba0dda3b458e1005b92786
-    pristine_git_object: ae87f82e546c32b75e4cdd35a11c1381f767bc58
   src/Moov/Sdk/Models/Components/BusinessProfile.cs:
     id: 73416343085d
     last_write_checksum: sha1:28e1a6003f60e10d9c3334ea74ec70808595d6d2
@@ -4780,8 +4320,8 @@ trackedFiles:
     pristine_git_object: 9ee4c0b141f7ed91e0657e66e813f8656e158808
   src/Moov/Sdk/Models/Components/CapabilityID.cs:
     id: 12d092cc596c
-    last_write_checksum: sha1:fc3b89738862ae55b267032c20521470384a6f39
-    pristine_git_object: 72319c1fbf1b5e4141ee490693cda62c75927754
+    last_write_checksum: sha1:060383b452e11a9d9fe6bbfc48dabee744085feb
+    pristine_git_object: e86c66b6dbf9d7afd03669cec9a48c508e04ccb0
   src/Moov/Sdk/Models/Components/CapabilityRequirement.cs:
     id: b5aca8014030
     last_write_checksum: sha1:a028ba395e123c5a8ed324e6068c34ca83588e4c
@@ -4794,14 +4334,6 @@ trackedFiles:
     id: 4bba5b883429
     last_write_checksum: sha1:1ada7cf03b73c6891bd8e1aa3774e2174b55f3d5
     pristine_git_object: 867001031930e08bf5b9b10d38d8ccf2ec24b90c
-  src/Moov/Sdk/Models/Components/CardAcceptanceMethods.cs:
-    id: 97595cbee7ec
-    last_write_checksum: sha1:87017af11a08ab519dbd8a701975a348b9888b91
-    pristine_git_object: 2a7e061fe05807688720e862d281dd5a8fec9123
-  src/Moov/Sdk/Models/Components/CardAcceptanceMethodsError.cs:
-    id: e6dacba4eba0
-    last_write_checksum: sha1:3a808b2c0774d27a13929729f7bdf8b88bc21d5f
-    pristine_git_object: 968e138b2f8acf43545dea7f92d5e8811ca2adc3
   src/Moov/Sdk/Models/Components/CardAccountUpdater.cs:
     id: 8d8ca69d1068
     last_write_checksum: sha1:9ac72822c10ce7a764cd86410269f5110351313c
@@ -4878,14 +4410,6 @@ trackedFiles:
     id: 6e4f1f8fe316
     last_write_checksum: sha1:4d926d583711f170ec9f2c027bb2713fc3c87083
     pristine_git_object: e0e2b9b610082222734d07604cd95a92c6dc8f86
-  src/Moov/Sdk/Models/Components/CardPresentPaymentPaymentMethod.cs:
-    id: 1210ee553c54
-    last_write_checksum: sha1:219bb40256fa271942e34892bc0a2608001fc1a3
-    pristine_git_object: 02ea024d534c54eaa6260c54b6c4672a518e4ab6
-  src/Moov/Sdk/Models/Components/CardPresentPaymentPaymentMethodPaymentMethodType.cs:
-    id: c873534e8103
-    last_write_checksum: sha1:e4740618bcd5734febb9d6786574d5609f5328bf
-    pristine_git_object: 0356a415bbe4e63bb7de6e259db5a26734c94626
   src/Moov/Sdk/Models/Components/CardTransactionDetails.cs:
     id: 1e8cd3afeab5
     last_write_checksum: sha1:c0c802e03b5eb0d7f391b4c0f33b1d28ebe68e98
@@ -4922,30 +4446,6 @@ trackedFiles:
     id: 2d930e85f455
     last_write_checksum: sha1:b82556778ef295febce44e4dddd4797a1abe399b
     pristine_git_object: 5d68da14b01be32e851e0af47d232a113ac5e525
-  src/Moov/Sdk/Models/Components/CollectFunds.cs:
-    id: f500237bbfb3
-    last_write_checksum: sha1:9c4af2b15d8a4fd4a76efb9384964bb34daa0ea6
-    pristine_git_object: fbface36fb303b8a9a29f607c82f2f8d9fdebb1d
-  src/Moov/Sdk/Models/Components/CollectFundsAch.cs:
-    id: c4eb82209232
-    last_write_checksum: sha1:e48a4ae01562571cd8e497d1845fe368763587a0
-    pristine_git_object: 3b1551f5ddc2be057334700b637537d1fca089b0
-  src/Moov/Sdk/Models/Components/CollectFundsAchError.cs:
-    id: 70f0873d7621
-    last_write_checksum: sha1:2b090f9ab6b0a89fc756d3fda74ef1e93ab81684
-    pristine_git_object: dcd675ee8acad9e95dbf58697f6682f85fc8f1ca
-  src/Moov/Sdk/Models/Components/CollectFundsCardPayments.cs:
-    id: dca97c057cd7
-    last_write_checksum: sha1:1be814c664b8a956943cdbcec61e6df74e865844
-    pristine_git_object: df437b8e4299d4625ed8377adc55da8ea8a0c72a
-  src/Moov/Sdk/Models/Components/CollectFundsCardPaymentsError.cs:
-    id: 36975b635106
-    last_write_checksum: sha1:e32360a771ab7d8440043592559a0e8ff2b640cb
-    pristine_git_object: f9f9a98dca6b9b1c82b4029a8c408c63b987571e
-  src/Moov/Sdk/Models/Components/CollectFundsError.cs:
-    id: 090465562eda
-    last_write_checksum: sha1:00db492a63931c4a86b3451bb333353b2d18a4ad
-    pristine_git_object: b9021711e51c3313cfe7b69dd39dcb71b575dda8
   src/Moov/Sdk/Models/Components/CollectionPaymentMethodType.cs:
     id: 43786a323373
     last_write_checksum: sha1:26687e3aaa835b24b97887842dcba41d2ae0219f
@@ -4972,16 +4472,12 @@ trackedFiles:
     pristine_git_object: 12d1fe3d7032a2b32bb8d12b00e9f6f85ab31418
   src/Moov/Sdk/Models/Components/CreateAccount.cs:
     id: 8ba5e607a240
-    last_write_checksum: sha1:a5258c8c82b48d8aba1010455c16c98c66d8b316
-    pristine_git_object: 902769cb17043b497f9401bed23e6620ad489d89
+    last_write_checksum: sha1:e7b205fa50aec5136b9bdadcf76f922e0e0efac9
+    pristine_git_object: a3fd6f6d6b8e1bf932a43efbce085952196d27e2
   src/Moov/Sdk/Models/Components/CreateAccountSettings.cs:
     id: 289f2d7397fa
     last_write_checksum: sha1:f56889a8f206446ae849d4b872542eb4d0e52704
     pristine_git_object: 684806a3861787e334ffa7c152f0d687d247f7b7
-  src/Moov/Sdk/Models/Components/CreateAccountType.cs:
-    id: af2bf9625efe
-    last_write_checksum: sha1:545b091059d2a15e89f0b206283f943fef853a7a
-    pristine_git_object: f156b84f41061ce9c419eda46cae5e49bd696d94
   src/Moov/Sdk/Models/Components/CreateApplePaySession.cs:
     id: e82e93c64379
     last_write_checksum: sha1:c1941c1d80beb98cc30f4d6e2aeae12d8716176a
@@ -5054,42 +4550,6 @@ trackedFiles:
     id: 21043845398a
     last_write_checksum: sha1:e342d969352814f44f08a5b493a83077513a6e86
     pristine_git_object: 4cecffb758d885486aeef7f2befcfc174597aa6d
-  src/Moov/Sdk/Models/Components/CreateInvoice.cs:
-    id: 5f94485686fe
-    last_write_checksum: sha1:8e552febdbd458addff1c274b89330cd70b2f785
-    pristine_git_object: 70b7ee8df1296a7c9b0f4031fa31022bdec4fba4
-  src/Moov/Sdk/Models/Components/CreateInvoiceLineItem.cs:
-    id: d7c96c86c613
-    last_write_checksum: sha1:9853a1d69aef23e7717f56e2ca9ded8d297a223b
-    pristine_git_object: d8c6e0bb0b819c95df6b7cc2e8093370b35d93dc
-  src/Moov/Sdk/Models/Components/CreateInvoiceLineItemOption.cs:
-    id: 258f96c3084b
-    last_write_checksum: sha1:4b1dba51e4e9a37fb7a3794a99f24fc833db628c
-    pristine_git_object: 307af5cf09109324058136fdb9907b545823e715
-  src/Moov/Sdk/Models/Components/CreateInvoiceLineItemOptionValidationError.cs:
-    id: 032d2b4c142d
-    last_write_checksum: sha1:3dbf8076c4fe351bf43f8b436544c90f8db8bedf
-    pristine_git_object: 3a1cd1bc07bacd7b295a5aa7a6cfe0926df12d51
-  src/Moov/Sdk/Models/Components/CreateInvoiceLineItemValidationError.cs:
-    id: 0ba535b52cbc
-    last_write_checksum: sha1:c81b06d085851115180ee4245c4c134c4cbc396e
-    pristine_git_object: feb59f80a3b7c37b6b2758a54f6a73af8990b1fd
-  src/Moov/Sdk/Models/Components/CreateInvoiceLineItems.cs:
-    id: b81036f94c52
-    last_write_checksum: sha1:12addc98d36c777b40c6039d4723bca994f3ed4e
-    pristine_git_object: 4f38284553e2ac0376bae14a41abb9c91c6ab4a6
-  src/Moov/Sdk/Models/Components/CreateInvoiceLineItemsUpdate.cs:
-    id: 417f629b7efc
-    last_write_checksum: sha1:c15935ec10322d8b3a3a3bca9f9fca0f88bf6e50
-    pristine_git_object: c7d56f3b4872fd858900951290acacc2815c401d
-  src/Moov/Sdk/Models/Components/CreateInvoiceLineItemsValidationError.cs:
-    id: f4fac7ce9eef
-    last_write_checksum: sha1:31dfea314e818b4d7ababaafe0cee4e3560ff28a
-    pristine_git_object: f142de9791d7fa16603787062bcdcd50a8de8569
-  src/Moov/Sdk/Models/Components/CreateInvoicePayment.cs:
-    id: 1bb98c3fdaab
-    last_write_checksum: sha1:40546f3184c455e948fdf510efa479dee44d364c
-    pristine_git_object: c98ac9e584b363138a013f61a21bf553b54afb29
   src/Moov/Sdk/Models/Components/CreatePaymentLink.cs:
     id: ac968af71b67
     last_write_checksum: sha1:549689b51ef35a324ced795dd55ecee16d3e6a25
@@ -5178,14 +4638,6 @@ trackedFiles:
     id: 6d66fdd07993
     last_write_checksum: sha1:9f04fd00d8d331320ebd79530aab97dde00b0914
     pristine_git_object: 8c37e18a8380536bf22452e26e28ff21d41da463
-  src/Moov/Sdk/Models/Components/CreateTicket.cs:
-    id: 56ddbc920839
-    last_write_checksum: sha1:b02edceb926ee6240ec19f6ae35de73aded9ff8e
-    pristine_git_object: e9b0620172ad818c37419dd2229794f457a9bc19
-  src/Moov/Sdk/Models/Components/CreateTicketContactError.cs:
-    id: d1b04d6d59e0
-    last_write_checksum: sha1:87676268aea25143843cbdc7e3bf92f98ec7d81e
-    pristine_git_object: 6ad6703833531a93d1b3e42d4a010c5e25bb44d5
   src/Moov/Sdk/Models/Components/CreateTransfer.cs:
     id: a1c69dd333ed
     last_write_checksum: sha1:b1c7d9959131cc45d7dc05788ab13b88a18e3e7c
@@ -5340,24 +4792,16 @@ trackedFiles:
     pristine_git_object: fa647eefa412957ddb12b9216823658adbae7388
   src/Moov/Sdk/Models/Components/EnrichedIndustries.cs:
     id: 3a8ca2d9d931
-    last_write_checksum: sha1:e28f7d21d47178eaaf208c9f32b8ed75012ac197
-    pristine_git_object: b04ba77a53b5c921de5baa81af15d68cbf78ef2c
+    last_write_checksum: sha1:0bc41214cf0439673ca2f4d05892622f648239db
+    pristine_git_object: 8c0be1d29edab2ea547f2d81f6f389e74eda0a18
+  src/Moov/Sdk/Models/Components/EnrichedIndustry.cs:
+    id: 9ca964e44b17
+    last_write_checksum: sha1:bd6f01e4dbfb857cc7181f58be3feaf6963af358
+    pristine_git_object: 9ba4b1fea77dd581f8bd657f03431b350c2c7049
   src/Moov/Sdk/Models/Components/EnrichedIndustryCodes.cs:
     id: f3882847227f
     last_write_checksum: sha1:99d9a235e3d2243cbf31502a9514822e82847aef
     pristine_git_object: 8cd52a91105483824976e9aa2082737f0a2d9898
-  src/Moov/Sdk/Models/Components/EntryMode.cs:
-    id: 16942d91e363
-    last_write_checksum: sha1:21b2984aa9302daab1ade4f38702affbbc0ba677
-    pristine_git_object: cd448386fdf7701d9984be6106b35291c7c29752
-  src/Moov/Sdk/Models/Components/EstimatedActivity.cs:
-    id: e7899738d315
-    last_write_checksum: sha1:4a3fcb286ab34135afbfe14046ceb2ce2ebb729e
-    pristine_git_object: b7d82fb15316a00f4cb30c293057170d51a10069
-  src/Moov/Sdk/Models/Components/EstimatedActivityError.cs:
-    id: 5594e462136d
-    last_write_checksum: sha1:8a970d0a09e241f57fa230434510a1464abeeb98
-    pristine_git_object: 24599caff0610fd868a99a7c0947e48676c1f7f6
   src/Moov/Sdk/Models/Components/EventType.cs:
     id: 61d2fd2ed067
     last_write_checksum: sha1:496771922500524a3b3c3ba5d4048c88e456e135
@@ -5438,10 +4882,6 @@ trackedFiles:
     id: 537dd56d70c0
     last_write_checksum: sha1:02154701768906c215cd5ca6c54d552c8b87fab5
     pristine_git_object: 56ce715171e5a776ff65f1d517aa3e404cff14f4
-  src/Moov/Sdk/Models/Components/Fulfillment.cs:
-    id: 68ebcd3d1545
-    last_write_checksum: sha1:b32d34547c677e0ca59b4c69a38180bb3925d105
-    pristine_git_object: e71f10aaf5da98bb101bb76c79b1fd61f1cc479a
   src/Moov/Sdk/Models/Components/FulfillmentDetails.cs:
     id: 61fcf087f7a7
     last_write_checksum: sha1:33e02a0b25cdc7884e6093558e64c42834004ff0
@@ -5450,18 +4890,6 @@ trackedFiles:
     id: 22f676a631f2
     last_write_checksum: sha1:2ed489e46d5cd8c46e0923f3a42b9f6261d12a4d
     pristine_git_object: bb85b369627888ab989051f7ae7cf6fd0ca4e59d
-  src/Moov/Sdk/Models/Components/FulfillmentError.cs:
-    id: 37638b8e8755
-    last_write_checksum: sha1:357a1086fbdef88b4aae989a3a5d6f6189fdd0f4
-    pristine_git_object: 618594f4182177a5b5797e001fb834cd332d9a75
-  src/Moov/Sdk/Models/Components/FulfillmentMethod.cs:
-    id: 79f76fe46876
-    last_write_checksum: sha1:1dc410686f4f9f5bc0b9ef0d7500ee6e80e3f511
-    pristine_git_object: d8fa44116eef6c9dd1a531f9582b9207980d0385
-  src/Moov/Sdk/Models/Components/FulfillmentTimeframe.cs:
-    id: 68042ee1891b
-    last_write_checksum: sha1:49a36e029eb2321bca2bd728696840732a78b422
-    pristine_git_object: 36571600cbd3941622ea4d2aa281163f08f61a02
   src/Moov/Sdk/Models/Components/FullIssuedCard.cs:
     id: 2a9e8f5c0794
     last_write_checksum: sha1:f204a046d5af6ab3edbed878e5332d31e604eacf
@@ -5470,10 +4898,6 @@ trackedFiles:
     id: c8ad328a564f
     last_write_checksum: sha1:a83746665fa4090f775f25bed7596c9b16ddbf7f
     pristine_git_object: e42be2a58a913695cf3d3d941c02273b4090a183
-  src/Moov/Sdk/Models/Components/GeographicReach.cs:
-    id: 2de98e6f7891
-    last_write_checksum: sha1:495f8b0f5555b129548b1f8f18f9bf4e0c047ec4
-    pristine_git_object: c5040fc7fb217d7ca7b750044196e2184bc5d3a0
   src/Moov/Sdk/Models/Components/GovernmentID.cs:
     id: 00ca4649834b
     last_write_checksum: sha1:7f19c9d5d01fa0aebba99a7ea99b9e485fdf1ac0
@@ -5502,10 +4926,6 @@ trackedFiles:
     id: b230b8369b04
     last_write_checksum: sha1:6c05801f982e68e3da13be2ed6341f3ce558384a
     pristine_git_object: 357b325f6d5d1af2e928fdf5aec0632c2c438180
-  src/Moov/Sdk/Models/Components/GuestProfile.cs:
-    id: 78c3a73411c8
-    last_write_checksum: sha1:c3288280c7e14ec1a6aebd2ae201713435e63bf7
-    pristine_git_object: ed5df3e26fadb287a85e2b74d035ca330cb8849d
   src/Moov/Sdk/Models/Components/HTTPMetadata.cs:
     id: ace6d03aba0d
     last_write_checksum: sha1:7166af7914b5ba3c16c3c94413160512f981274d
@@ -5554,18 +4974,6 @@ trackedFiles:
     id: 5bd022f572aa
     last_write_checksum: sha1:dfc8e2e2b96b77ae3c32615c26c8b0bf10e1152c
     pristine_git_object: b89e8ed1b50325328ce52163dda987b888a19310
-  src/Moov/Sdk/Models/Components/IndustryTaxonomy.cs:
-    id: 8748921cb71d
-    last_write_checksum: sha1:c96693b0353b7904e0ca784fe24d987de23b0bc4
-    pristine_git_object: 15d4226e5983b002611aaab6b41cd3156b8d0ad0
-  src/Moov/Sdk/Models/Components/InstantBankCreditPaymentMethod.cs:
-    id: 4c88916cd0e4
-    last_write_checksum: sha1:b46363a59e650651e4b02f058db247b3d011ef99
-    pristine_git_object: 01d131b4fdea221b0628a4d67edf0daed11ca03a
-  src/Moov/Sdk/Models/Components/InstantBankCreditPaymentMethodPaymentMethodType.cs:
-    id: 7cbb942b0266
-    last_write_checksum: sha1:2b4f1df196379194e6b6244b0c8e00f8d8e897e2
-    pristine_git_object: e92e09f1d42388731c52cc8a8e8500330d60746d
   src/Moov/Sdk/Models/Components/InstantPaymentFees.cs:
     id: 1498c0df066d
     last_write_checksum: sha1:3db68d05cb3a5266b2d3a7c22132336e8667214b
@@ -5574,58 +4982,10 @@ trackedFiles:
     id: c9da1c0f509e
     last_write_checksum: sha1:c3b383f5b3ffcf9a6faef51d9e89e65be2588e83
     pristine_git_object: 9e0e0bcc41edcdbdaa1a901ceff87c7a03af6642
-  src/Moov/Sdk/Models/Components/Invoice.cs:
-    id: ff39f1e2901b
-    last_write_checksum: sha1:3282f499e357781814ca7d3587e33b5b822ffb8d
-    pristine_git_object: 7fccbcdba52d56e9c2e1540c5dd27fa7785cd271
-  src/Moov/Sdk/Models/Components/InvoiceExternalPayment.cs:
-    id: 086c018073c9
-    last_write_checksum: sha1:370094ab4322baac1fcb544c6b86467b08da1477
-    pristine_git_object: 05a5f4c22de9f5aed4d999c2e1a077b584017866
-  src/Moov/Sdk/Models/Components/InvoiceLineItem.cs:
-    id: 5c3740c66be8
-    last_write_checksum: sha1:4bc67d560bef49a70635d4e5e54fe22a5bb575d2
-    pristine_git_object: 38f563f3e169d068f41bd22fa60ae8b82689809a
-  src/Moov/Sdk/Models/Components/InvoiceLineItemImageMetadata.cs:
-    id: f31842faa628
-    last_write_checksum: sha1:cd41592182a00f1722e212a8c5357bfbf3ecaa00
-    pristine_git_object: 45df833884960ad994134b5de7286280a241b20f
-  src/Moov/Sdk/Models/Components/InvoiceLineItemOption.cs:
-    id: 9f8a423f0917
-    last_write_checksum: sha1:7be068307debae5ba5dd6ceb2225a540c90fe5be
-    pristine_git_object: 47d3572acbdd22f7146dcfa891e40ed6f879108d
-  src/Moov/Sdk/Models/Components/InvoiceLineItemOptionValidationError.cs:
-    id: 860e5f17e2e6
-    last_write_checksum: sha1:16ad99046a8a10828d9fddf62d07c58faa6da255
-    pristine_git_object: 10f614efbcad505271d6e8e92a034ed8095fc576
-  src/Moov/Sdk/Models/Components/InvoiceLineItemValidationError.cs:
-    id: 7466e3acf425
-    last_write_checksum: sha1:0247f99e48b6f092fce1e8d3a5490170e49d43b8
-    pristine_git_object: 195e562dea034442728ee25fe28ad76bbca54700
-  src/Moov/Sdk/Models/Components/InvoiceLineItems.cs:
-    id: 3e7d73b87b36
-    last_write_checksum: sha1:8ca8851094b11cddac1b23736cacf81174de2d91
-    pristine_git_object: 5628474c142a8cc881b70676d51f8d8139b14583
-  src/Moov/Sdk/Models/Components/InvoiceLineItemsValidationError.cs:
-    id: 6bd1b570b46a
-    last_write_checksum: sha1:f738759b317750e6bf1d56b721bb114a194dac52
-    pristine_git_object: 0ee6e7cb5de47dda61f18516d477d4035145a786
-  src/Moov/Sdk/Models/Components/InvoicePayment.cs:
-    id: df0609a707cf
-    last_write_checksum: sha1:76e1fa9f639717acfd11bbd74b33da8643fd2ba1
-    pristine_git_object: c72211efd13ad07f7910295579c990d60fc06a38
-  src/Moov/Sdk/Models/Components/InvoicePaymentType.cs:
-    id: f1fc467d929c
-    last_write_checksum: sha1:93ce4d7ac74e21b78a7c2d8c9cb6c6eb20546e87
-    pristine_git_object: d3f09de9371667191eef0cc5f1c86c8980d10117
   src/Moov/Sdk/Models/Components/InvoiceStatus.cs:
     id: 71c4a2ac97a7
     last_write_checksum: sha1:dc199a826c550b4a0325a9150c15ae3965b9b78b
     pristine_git_object: 6c68fe3d7dd8cc647cdfff23df31b3e1c7326165
-  src/Moov/Sdk/Models/Components/InvoiceTransferPayment.cs:
-    id: 92ebb23acee0
-    last_write_checksum: sha1:0f586b225ce710ef83906e73c3f2c21fc4063e89
-    pristine_git_object: c5c49460f6830cc307db6fa5142a7dfebf1175ff
   src/Moov/Sdk/Models/Components/IssuedCard.cs:
     id: 2f4adcedeb7c
     last_write_checksum: sha1:f9b38ec61487a771c631d7a44afd4c09879e0738
@@ -5686,10 +5046,6 @@ trackedFiles:
     id: 4fea498599da
     last_write_checksum: sha1:df0cb9d87be49f19e730dd4c10787ba7d2db45b9
     pristine_git_object: 85f98dbcf70bb8943bf0c43cf178903edef03a29
-  src/Moov/Sdk/Models/Components/ItemListNextPage.cs:
-    id: 917b86d8f66c
-    last_write_checksum: sha1:5aa180d9537840fd512110e037c68f6aec5925dd
-    pristine_git_object: 026c78964b49ce102080f6ea752abc7b355821a6
   src/Moov/Sdk/Models/Components/JSONWebKey.cs:
     id: 282dd637ecaa
     last_write_checksum: sha1:434054f6fd18b14631839d4e114093d5f13ad270
@@ -5770,38 +5126,10 @@ trackedFiles:
     id: f3c260cc0941
     last_write_checksum: sha1:09ef05ddd51d720ded7c10beffeaec41acb074ea
     pristine_git_object: 64789fba5d291fdce01d526b6efd27e042990499
-  src/Moov/Sdk/Models/Components/MoneyTransfer.cs:
-    id: 1e990563d990
-    last_write_checksum: sha1:ce778193c106c401279e3c0838f9707dae81701e
-    pristine_git_object: 144ef47621087218bad3c753852ae34112bfe522
-  src/Moov/Sdk/Models/Components/MoneyTransferError.cs:
-    id: b88b2a2d5612
-    last_write_checksum: sha1:5dcba4a337714f5d0b99c4ba0df2dbbe7575b05d
-    pristine_git_object: ec4f7fdc5ed279f5629839784355beb9bc4eb48f
-  src/Moov/Sdk/Models/Components/MoneyTransferPullFromCard.cs:
-    id: b3ccb072c59f
-    last_write_checksum: sha1:849482c1f339eceab0b3b4d9821b8353b0d38d5c
-    pristine_git_object: effb92715c23aaba11913a2572cb562f0aba24aa
-  src/Moov/Sdk/Models/Components/MoneyTransferPullFromCardError.cs:
-    id: 2550a8755060
-    last_write_checksum: sha1:b50cf1333902ba63907512c525364874a7b55def
-    pristine_git_object: 3aaec566ec5616df486942bb9aceedb84e44bddb
-  src/Moov/Sdk/Models/Components/MoneyTransferPushToCard.cs:
-    id: c980b098cf1c
-    last_write_checksum: sha1:2b9295ecccb505e179481fffdf2f1f20d1540bdb
-    pristine_git_object: 7acbef503c1fced85d6d9ee96d7097479a5a9d83
-  src/Moov/Sdk/Models/Components/MoneyTransferPushToCardError.cs:
-    id: b6de376a3698
-    last_write_checksum: sha1:74b832a867cd0af793b00eaa3647d33f53e8d7b5
-    pristine_git_object: 28e6b876eebeca9865d1e26400d1e5e1f492b7fc
   src/Moov/Sdk/Models/Components/MonthlyPlatformFee.cs:
     id: de0ad1924354
     last_write_checksum: sha1:9e4886ecf856c84d5f02d22dc81dbdf84704230a
     pristine_git_object: b50e7baefb16a3ed0d617bc9472114bcff834fa4
-  src/Moov/Sdk/Models/Components/MonthlyVolumeRange.cs:
-    id: 1e507a0ec722
-    last_write_checksum: sha1:0b978b42035b0479287cace40467a4833e25cbf7
-    pristine_git_object: 58e8dd581a02695566d189693239ec9b4e091dc8
   src/Moov/Sdk/Models/Components/MoovFee.cs:
     id: aa2a4dbd40de
     last_write_checksum: sha1:008b8129579b0a5b6a70fc8714b704f0691ad44f
@@ -5968,12 +5296,12 @@ trackedFiles:
     pristine_git_object: 8ff0cda30430844df490fd1817e8e6aaf1a26dd9
   src/Moov/Sdk/Models/Components/PaymentMethod.cs:
     id: 5ec68b4f22d2
-    last_write_checksum: sha1:f94b5667c49c671018712d4ac2bee2a4a3b2d529
-    pristine_git_object: 1784914828821ad8c38b2259fa2d12e1561a0798
+    last_write_checksum: sha1:317db01274e770701156f7c2449360b04e9ea870
+    pristine_git_object: 6e4b3d589d229f82b5993ad9e9ebc0105ee871e3
   src/Moov/Sdk/Models/Components/PaymentMethodType.cs:
     id: b7beaec4ddbc
-    last_write_checksum: sha1:457bb0b2c3cc1fbdef532aea531723fb85de978e
-    pristine_git_object: 9182919a55eefe637dbcc42da3462efecd315c34
+    last_write_checksum: sha1:31f6c73ae2cb0fd3715032e7e0fbf442a8c7a28f
+    pristine_git_object: 4a074eed93ac8eecd4c2fe66355b3b93e911927c
   src/Moov/Sdk/Models/Components/PaymentMethodsBankAccount.cs:
     id: 8d2ad2ff8ef0
     last_write_checksum: sha1:367dd60e4befec104c5d30077fe2e9034be5fd87
@@ -5998,10 +5326,6 @@ trackedFiles:
     id: c0c41768e87e
     last_write_checksum: sha1:92482a7791a47bbd465be5266ab73c1f59df8775
     pristine_git_object: 143c72c7cde387e81975fa1d5be5f6ea8bc7e18e
-  src/Moov/Sdk/Models/Components/PendingLitigation.cs:
-    id: 5445909f4ace
-    last_write_checksum: sha1:72542411c7e99b55afdf53ae75a3ffde090ddf36
-    pristine_git_object: 4045abe1ba1efb2887cf06e0e5cfce66dfb939a0
   src/Moov/Sdk/Models/Components/Phone.cs:
     id: cdd3ddaf56f1
     last_write_checksum: sha1:a509c2985de1fe0f854bcddca5053ff5b6b99253
@@ -6072,8 +5396,8 @@ trackedFiles:
     pristine_git_object: f5c3b51741673ad4bf8c3331fac90b261270f443
   src/Moov/Sdk/Models/Components/Profile.cs:
     id: 62858d6ff792
-    last_write_checksum: sha1:0f58998abf83d99c9527605a16af6c374f1e9929
-    pristine_git_object: cbd1eba7c2e64b739201954a5048f33a1bda0752
+    last_write_checksum: sha1:0d3ff9b90234f5e74e4751fbfdfce337b277149d
+    pristine_git_object: 7b0796223225d9c1c7cecfabccfb2a3af5b22e78
   src/Moov/Sdk/Models/Components/PullFromCardPaymentMethod.cs:
     id: 59207bcd554d
     last_write_checksum: sha1:3f8d00d0875693c7148c9f9dc353fe73e87ae15c
@@ -6146,10 +5470,6 @@ trackedFiles:
     id: d203e99ece2f
     last_write_checksum: sha1:0bc72b24af62c6ffea3fb30f425f0122ee48e335
     pristine_git_object: bb045ab1f351eea3c21d75d96af845f70aaa2862
-  src/Moov/Sdk/Models/Components/RefundPolicy.cs:
-    id: 626ae815638f
-    last_write_checksum: sha1:754a5537ae84284a68903108e87b9c37a155ba6d
-    pristine_git_object: 66902526d84486d288f981d37a637e81bbd23561
   src/Moov/Sdk/Models/Components/RefundStatus.cs:
     id: 0b63c67f8d19
     last_write_checksum: sha1:f986b2d3f850275a0cfccb21aef7ce60726719dc
@@ -6188,8 +5508,8 @@ trackedFiles:
     pristine_git_object: 2c27e353bfe9a25c06cd69327fcd30bb52a94247
   src/Moov/Sdk/Models/Components/RequirementID.cs:
     id: d588b5c41739
-    last_write_checksum: sha1:12349cac58e810e396f596a26b78ab53689abb6a
-    pristine_git_object: ad28146516e371058928c03c4c4324cd3c3e0857
+    last_write_checksum: sha1:1ee9543dcbc9fa7546930eb4c7c94f545df814e0
+    pristine_git_object: 3010565d0c286ac62afbf21605dbd24f8421b903
   src/Moov/Sdk/Models/Components/Residual.cs:
     id: aa07168b5acc
     last_write_checksum: sha1:772dabd050dc6097d1c63a78cc5deed67231a76f
@@ -6266,46 +5586,6 @@ trackedFiles:
     id: a6ab09ca5420
     last_write_checksum: sha1:6fe693bf7d98d9c818ec8c5e94004b628f723c97
     pristine_git_object: 6aab66de4ec831537e4d320044fcffdc08b01ae3
-  src/Moov/Sdk/Models/Components/SendFunds.cs:
-    id: 0be4b778a729
-    last_write_checksum: sha1:b9a739d33736bce38a252be1370206ddaa02ae27
-    pristine_git_object: 7312c5707ca1615b09ddd1e65a38b8dc702f8772
-  src/Moov/Sdk/Models/Components/SendFundsAch.cs:
-    id: f98f5a118162
-    last_write_checksum: sha1:7feb357ddcfda298023ebb059819960b26d64dba
-    pristine_git_object: 4a02d182f659d66d998633324422e0e89a4f3cc6
-  src/Moov/Sdk/Models/Components/SendFundsAchError.cs:
-    id: 368319f46037
-    last_write_checksum: sha1:0bc8caa4da33dfb8fe24f216038a76b2bd1b4c98
-    pristine_git_object: bd50fb90b8ad7e31e77dc83d5493036da6695b13
-  src/Moov/Sdk/Models/Components/SendFundsError.cs:
-    id: 55e1d0db06d4
-    last_write_checksum: sha1:6cf8fc78c4240e0d7f42e6a2b11a90b4662a97e6
-    pristine_git_object: f52c203fdf2c5c47b6db490d836b184c0ddc505a
-  src/Moov/Sdk/Models/Components/SendFundsInstantBank.cs:
-    id: 97eb65df6f73
-    last_write_checksum: sha1:12ad62655ad4b5d321de2b246d23ed649a98b245
-    pristine_git_object: e794f9ec741d49799d84426d190696d5d960cfc7
-  src/Moov/Sdk/Models/Components/SendFundsInstantBankError.cs:
-    id: ccac0cf1c795
-    last_write_checksum: sha1:da7c2151dcdb2ae1a671e5a25788a4bd2544bf03
-    pristine_git_object: ccc1dc61253e70020750845526aec58004133cf3
-  src/Moov/Sdk/Models/Components/SendFundsPushToCard.cs:
-    id: ebe7715fe97b
-    last_write_checksum: sha1:d43b7274c2911d6a3a57e85ae6771536cb794a3c
-    pristine_git_object: 3139ff51b559f0c1721be9388047d0b8569f8d32
-  src/Moov/Sdk/Models/Components/SendFundsPushToCardError.cs:
-    id: b0850246b03a
-    last_write_checksum: sha1:ef5de3cb295d8e4a4148e6b20119eeabc5c284aa
-    pristine_git_object: cdfd9f46ae64f096841ce1ed05cb96935565c76c
-  src/Moov/Sdk/Models/Components/SendFundsRtp.cs:
-    id: 4d8a32305b15
-    last_write_checksum: sha1:eff30d972e06815d96254660351ecbc1d907a53b
-    pristine_git_object: dab94efc54207861ad861af3c46225ba59167632
-  src/Moov/Sdk/Models/Components/SendFundsRtpError.cs:
-    id: 96cc6906d17b
-    last_write_checksum: sha1:e6fd2ac5495c17ddbcdd44f7fb4dcacd6c0a448f
-    pristine_git_object: c32d6c96126e31daf3938f03ce0a3036d323de36
   src/Moov/Sdk/Models/Components/SentReceipt.cs:
     id: 5d213def493d
     last_write_checksum: sha1:86bdffadaf441c4ad118d5b9cb3d4d9274c43103
@@ -6330,10 +5610,6 @@ trackedFiles:
     id: 1f3cd9959cf2
     last_write_checksum: sha1:97dd26aca1237f4899b5fcd89f551ed67053fb61
     pristine_git_object: d3bd1782c008573a45e1d034c7305e61bd4ec037
-  src/Moov/Sdk/Models/Components/SubmissionIntent.cs:
-    id: 92f08f8eebcb
-    last_write_checksum: sha1:4bb63b11055a27c3e39c324c507695cabd4ef5f3
-    pristine_git_object: 75d827a24f87970db184908af7f0f085c4ab085a
   src/Moov/Sdk/Models/Components/Sweep.cs:
     id: 4fd19bb84a8a
     last_write_checksum: sha1:775a0b1a375e7e351e320e4f2632a1c7706452be
@@ -6390,10 +5666,6 @@ trackedFiles:
     id: 736b518bc267
     last_write_checksum: sha1:55797ce7c1a3ca15a8cf91a5a067ffc7b956cab2
     pristine_git_object: e057f6cfe3d6d3b5ff0ea33a355ed399dfae943a
-  src/Moov/Sdk/Models/Components/TerminalCard.cs:
-    id: 0c6a741275d1
-    last_write_checksum: sha1:e9e476cd7c7a0aa5055cd9307badf35fbe49f7ba
-    pristine_git_object: 82da259958f888b762282dc7d71f3f85a13c8058
   src/Moov/Sdk/Models/Components/TerminalConfiguration.cs:
     id: 7b08a045c258
     last_write_checksum: sha1:eca17f26c018e4b66e8036bffbff43e0aa8312f4
@@ -6418,18 +5690,6 @@ trackedFiles:
     id: 8cb9c81a7465
     last_write_checksum: sha1:abfbcf06344441a77815557cddf3c879e7da35a0
     pristine_git_object: 55bc94558159157145e1df63e3cc888124b764a2
-  src/Moov/Sdk/Models/Components/Ticket.cs:
-    id: 2c9cb5f41f5c
-    last_write_checksum: sha1:fefd90caa264b6876ec5117dee507cfa6ab33437
-    pristine_git_object: 4b697e5bb367cff50b9ca05ab1e44850fa88f887
-  src/Moov/Sdk/Models/Components/TicketContact.cs:
-    id: 92d7399d7743
-    last_write_checksum: sha1:2b72a39ab964d81d16439fd35ab5938111dfc6e7
-    pristine_git_object: c7e38a8821bef790167ee96f576c05b655e1de45
-  src/Moov/Sdk/Models/Components/TicketMessage.cs:
-    id: 0a8c00bd642a
-    last_write_checksum: sha1:6b18b759f78cdd258e82ffa7b39597c09900039f
-    pristine_git_object: c76003d7ab90cad9eeade3e8cbc480b56d406081
   src/Moov/Sdk/Models/Components/TicketStatus.cs:
     id: c8290684d7af
     last_write_checksum: sha1:2049c12156ae511d6b820e87a3054778dbc2a0a8
@@ -6448,8 +5708,8 @@ trackedFiles:
     pristine_git_object: 69d873e805aafda1cbdd8fb911794a33b244fe65
   src/Moov/Sdk/Models/Components/Transfer.cs:
     id: c38f4a53dd5d
-    last_write_checksum: sha1:b7a837ed57079158cd53c52e284d51740702685d
-    pristine_git_object: 12f7230413c62eb9d8df6c78d6fa90a2520ec797
+    last_write_checksum: sha1:0d10220c916039dc518a6256ca13d73ff65e93f5
+    pristine_git_object: c150a4b2bd5ddb152a3c9b4c70f5fd99197d855e
   src/Moov/Sdk/Models/Components/TransferACHAddendaRecord.cs:
     id: d14992402cdf
     last_write_checksum: sha1:f7dead88487d6ae81e6cdaa386c799c87da0378f
@@ -6492,8 +5752,8 @@ trackedFiles:
     pristine_git_object: e22ba077ab879827c84c8578901e1756b903b958
   src/Moov/Sdk/Models/Components/TransferSource.cs:
     id: f640edc0838e
-    last_write_checksum: sha1:df1e1c1cf9dc43a275c51420eb94783f3120a2be
-    pristine_git_object: 01413d8d01abd6d8a61733aeb7b90cc39585ff77
+    last_write_checksum: sha1:04fcca13525b77d896b799146dcd5021960d29a8
+    pristine_git_object: 03b3b14cf3500afde080a537b6bbbc3791f8caa8
   src/Moov/Sdk/Models/Components/TransferStatus.cs:
     id: 4c85ab311f99
     last_write_checksum: sha1:55e382d962bb5461a847d9726560b3177d779aff
@@ -6504,8 +5764,8 @@ trackedFiles:
     pristine_git_object: 37ec097cbdd4ff04a7adc47e516f0c4bb1d961f8
   src/Moov/Sdk/Models/Components/Underwriting.cs:
     id: 06d402a1c432
-    last_write_checksum: sha1:0ecdde6af46c945a32039575b0aebb8daae41e4d
-    pristine_git_object: f38353a8c499901565835ee11f27c58e8852177f
+    last_write_checksum: sha1:669f234ad6684b8e2cb2eb9617110761a4bdc410
+    pristine_git_object: 4d05427c68ac83ac59584f8bc0dcafc6c33e8098
   src/Moov/Sdk/Models/Components/UnderwritingStatus.cs:
     id: af20bcbd4b58
     last_write_checksum: sha1:73ae542e751dc9e04163976be87af80b2efea351
@@ -6530,10 +5790,6 @@ trackedFiles:
     id: 4b30b9baa0d8
     last_write_checksum: sha1:8b6be494fb91d7cf7926cb9f6b1b2cb7b4d1e61a
     pristine_git_object: 0eac825c9bbc93138a01040bc2af79393bfeebca
-  src/Moov/Sdk/Models/Components/UpdateInvoice.cs:
-    id: 450bc342ac26
-    last_write_checksum: sha1:10f42b16138dc2e2e949b362310ec50e453e7473
-    pristine_git_object: 24c5587fcc92cca5c0391df34311cc5b845ae8fa
   src/Moov/Sdk/Models/Components/UpdateIssuedCard.cs:
     id: 58e67f8ef639
     last_write_checksum: sha1:ef7b3d6a03c03cab83cf78527855f3c08dd821fa
@@ -6570,14 +5826,6 @@ trackedFiles:
     id: 54e25a16b1d1
     last_write_checksum: sha1:ca096d82fef72930a78f3a4e6bd324d1e95a0bdd
     pristine_git_object: 1aa659cdc1ee4a3b5264465054b55cbd39455ca4
-  src/Moov/Sdk/Models/Components/UpdateTicket.cs:
-    id: 2bc8f691c98d
-    last_write_checksum: sha1:383d09cd3ee9c254e4f79255b037541f1de5e6a7
-    pristine_git_object: 8df032f0ec5c36dab6a768c8623e7970d5a5965d
-  src/Moov/Sdk/Models/Components/UpdateTicketStatus.cs:
-    id: c29e3396ddbd
-    last_write_checksum: sha1:26b7669b1107da5f9042882a4940683b4469ed5f
-    pristine_git_object: 2642b523a0910ebba7432ba6fa49c3b437901fdc
   src/Moov/Sdk/Models/Components/UpdateUnderwriting.cs:
     id: c5b5de968062
     last_write_checksum: sha1:b96bac180c5cef761c889e9f7eb7c4cc9ffa34c4
@@ -6594,10 +5842,6 @@ trackedFiles:
     id: 8eccb4ff2bb9
     last_write_checksum: sha1:34d6529b8d616202e2324045b4b4d57b470be841
     pristine_git_object: fc6920059f6c95eac220fcf3cb31b8e19b914c60
-  src/Moov/Sdk/Models/Components/UpsertUnderwriting.cs:
-    id: ac596ff25fb8
-    last_write_checksum: sha1:c656b13cd5c45885870808baa9fb5126ab741367
-    pristine_git_object: 5c71f7f915de62bff49542c4c12bdbbf36390da3
   src/Moov/Sdk/Models/Components/Use.cs:
     id: f01da7b9ceb9
     last_write_checksum: sha1:9401cc14d7479b570bcc6f495f2b6ee5324838e4
@@ -6626,14 +5870,6 @@ trackedFiles:
     id: 9961459fa4dd
     last_write_checksum: sha1:91c887968c83ee4d8ea20724fd15aab00aff38ee
     pristine_git_object: c9d0aa1f12fe54fe33d405f6bfe8a38dd49fb825
-  src/Moov/Sdk/Models/Components/VolumeShareByCustomerType.cs:
-    id: 87ed0fcf3c85
-    last_write_checksum: sha1:0e89362473027a1a8c34e25f7fdab6472606de78
-    pristine_git_object: 6a8061bfa024c4ec76bc08488659453da2f1d7a1
-  src/Moov/Sdk/Models/Components/VolumeShareByCustomerTypeError.cs:
-    id: 54d9f232a2f5
-    last_write_checksum: sha1:9c0c0e20719905ddc50181661e82642d21dbaa54
-    pristine_git_object: 58680d156743aa2bc87048c33c4c7440174c9c56
   src/Moov/Sdk/Models/Components/Wallet.cs:
     id: "480253892076"
     last_write_checksum: sha1:2d7fe69b4b40d1e14e726969fa971fbbb0723f98
@@ -6894,14 +6130,6 @@ trackedFiles:
     id: 2d8efcdd50cb
     last_write_checksum: sha1:b3fe6ad7630f2fc5d90eaa87003b742bb4fa2f94
     pristine_git_object: d7298aaf07daf7202a1788a3639182b2df08c25e
-  src/Moov/Sdk/Models/Errors/CreateInvoiceError.cs:
-    id: 1e281949ab06
-    last_write_checksum: sha1:bc21cf4b25a3eb0513dba47524d7dcb0537d6f87
-    pristine_git_object: 3dbabe88e8b347c2831d41cea4fff3efa55667cb
-  src/Moov/Sdk/Models/Errors/CreateInvoicePaymentError.cs:
-    id: c5eb47c67d87
-    last_write_checksum: sha1:abc3df68bc98bca18f86437725e19ee99c9e2cdd
-    pristine_git_object: e11e9cbd137b851d7152c5b3cd77f383f400ceb0
   src/Moov/Sdk/Models/Errors/CreatePaymentLinkError.cs:
     id: 4a1078690d30
     last_write_checksum: sha1:df919f7b37fac1c77d138d382894b39f8de03a7f
@@ -6910,10 +6138,6 @@ trackedFiles:
     id: f55603823dcf
     last_write_checksum: sha1:72bcd8ea89a8f6f5f8f706aa099d630a15ccf9a2
     pristine_git_object: c87b9e792a4270a194994086dad07218c4520284
-  src/Moov/Sdk/Models/Errors/CreateTicketError.cs:
-    id: 7d8c868cdf59
-    last_write_checksum: sha1:3c4f4185a09b27909aa1afd77b584b731d5f16c2
-    pristine_git_object: db71030f3f0f7b02d76be5d32517f70cd17b3b1f
   src/Moov/Sdk/Models/Errors/CreateWalletValidationError.cs:
     id: f705f5137fb3
     last_write_checksum: sha1:69c8d62c3f66d962651589dc5cde8137c8d21114
@@ -6954,10 +6178,6 @@ trackedFiles:
     id: 7dd399765bc1
     last_write_checksum: sha1:9bd8a1805c1269ecea93f156f09e64c035a67802
     pristine_git_object: a139ff7169c3fa3772e25e07cc0fc5c07ef63614
-  src/Moov/Sdk/Models/Errors/ListInvoicesValidationError.cs:
-    id: aa1ed03d70c3
-    last_write_checksum: sha1:a49ac1d62dd0af5c2dd416b46748c3513c184c8b
-    pristine_git_object: 9b15889550c30a21f1d43fd248bba54b33c61565
   src/Moov/Sdk/Models/Errors/ListTransfersValidationError.cs:
     id: 6df63c6eb901
     last_write_checksum: sha1:727924fdfee803e251a76e7514c9c3c06bc6683a
@@ -7036,8 +6256,8 @@ trackedFiles:
     pristine_git_object: e674ac09512211653f861b1c024f9020f8a7460b
   src/Moov/Sdk/Models/Errors/TransferException.cs:
     id: a90f2444f872
-    last_write_checksum: sha1:173cd729a5d972869f88c8c23460c6b737d94c8b
-    pristine_git_object: 6036ab9d1c6a13c8b312f7e2062d90283181b08c
+    last_write_checksum: sha1:cd2dcc4155b95659c8df3ac5068a7d96249dc75d
+    pristine_git_object: cd41d65fbfbd6c07b6b086a60109b9a66046572e
   src/Moov/Sdk/Models/Errors/TransferOptionsValidationError.cs:
     id: 94e58d825386
     last_write_checksum: sha1:a4ca75fbd18e55b0d6355b906251357ca815d097
@@ -7050,10 +6270,6 @@ trackedFiles:
     id: 2622accd49ad
     last_write_checksum: sha1:531b5eb8c1515daadaedbc6eac9088b530a6a67f
     pristine_git_object: b95b84672434599aa5df7e8a22c2483c063f8532
-  src/Moov/Sdk/Models/Errors/UpdateInvoiceError.cs:
-    id: 5fa02da84050
-    last_write_checksum: sha1:86ab1b4fbcce102bbed28d1b5286d84dadea1a26
-    pristine_git_object: 49c32286310ae7c090ab16cde3aee9f214bb81ab
   src/Moov/Sdk/Models/Errors/UpdateIssuedCardError.cs:
     id: a45e888f951a
     last_write_checksum: sha1:55401654cdb881f35702eea9555bf25044fb14c0
@@ -7062,10 +6278,6 @@ trackedFiles:
     id: aeedea568cc3
     last_write_checksum: sha1:0a0ce65f39fd05fc70f391cf630d3b3bdd68abb0
     pristine_git_object: 2c0c1674490452dfd7b265ed0c0b65eb1c6ae1ff
-  src/Moov/Sdk/Models/Errors/UpdateTicketError.cs:
-    id: 3112004fd408
-    last_write_checksum: sha1:bf1b7beb6b9fc9226e35822892855049b01ac91f
-    pristine_git_object: 4e4efef64f23cf8d432a82b5787bb233df8b79d2
   src/Moov/Sdk/Models/Errors/UpdateUnderwritingError.cs:
     id: 2399dc2bf94f
     last_write_checksum: sha1:437b2458a0307739ba0cf5c06bd38fe4c38902a4
@@ -7074,10 +6286,6 @@ trackedFiles:
     id: 8ba4e13bae48
     last_write_checksum: sha1:47dabb67869dd3cde5da5df36b083975f9a8d52f
     pristine_git_object: 0425bf5098954f988da741f2648f5b7abe9674f2
-  src/Moov/Sdk/Models/Errors/UpsertUnderwritingError.cs:
-    id: 7453205e8412
-    last_write_checksum: sha1:4c7587a0ed5821f951aca6cf4c9d50f2fadf56a6
-    pristine_git_object: c2082adb38d3dc65a96bf2ac947d908b2af90ad5
   src/Moov/Sdk/Models/Requests/AcceptDisputeRequest.cs:
     id: c38d6da563ce
     last_write_checksum: sha1:aca1d01b26bad2fa88de26e9a3524f09686a811b
@@ -7174,22 +6382,6 @@ trackedFiles:
     id: 9da71975f585
     last_write_checksum: sha1:b771e0808e2f88e125337c630aaf2b234affad4d
     pristine_git_object: 2baf275b649a1e1aa22814bdcd851821ddcd63b9
-  src/Moov/Sdk/Models/Requests/CreateInvoicePaymentRequest.cs:
-    id: 0b22b899d94f
-    last_write_checksum: sha1:63bc28de195ade7c2fc3c30d650d8d23e532d9af
-    pristine_git_object: dd0eafc02dcfe97aeabad739cbdf35d4db55a65f
-  src/Moov/Sdk/Models/Requests/CreateInvoicePaymentResponse.cs:
-    id: 0287ad4116c1
-    last_write_checksum: sha1:015468bcb1bb65b749eba20969e3d541d1be3490
-    pristine_git_object: 159332617c25fed3c02f17a92bc12d6e466f86f3
-  src/Moov/Sdk/Models/Requests/CreateInvoiceRequest.cs:
-    id: 7a436cd5d477
-    last_write_checksum: sha1:9bb127b75c3b9940bfce6a282ab9fd9ed0762cd2
-    pristine_git_object: 484fbc01f48c2ec928843a20dfd66ac6669c9149
-  src/Moov/Sdk/Models/Requests/CreateInvoiceResponse.cs:
-    id: 8a075815b721
-    last_write_checksum: sha1:1e86d06410e648c54180b62a8f342151ddd4d90c
-    pristine_git_object: c9e1eb4f42dc8f647ebf5268b11350f564903d10
   src/Moov/Sdk/Models/Requests/CreateOnboardingInviteRequest.cs:
     id: 8672a2f317d8
     last_write_checksum: sha1:2c2980d461f0b97bc3c9762b09d1f6fda15a320f
@@ -7270,14 +6462,6 @@ trackedFiles:
     id: aa621ecd0c84
     last_write_checksum: sha1:3343674864701bd018e72006bbad7c68eb09d6e9
     pristine_git_object: 18398eb1a8f4b74e64e99e7360e3ab44ec3ca0d1
-  src/Moov/Sdk/Models/Requests/CreateTicketRequest.cs:
-    id: ce27a023cdeb
-    last_write_checksum: sha1:7d8e8e5d4630819b2182769b81ac691b66bbb030
-    pristine_git_object: c1a4bcebe42266f74a5790d4428c43c8206e1bd8
-  src/Moov/Sdk/Models/Requests/CreateTicketResponse.cs:
-    id: 684a1d7491b3
-    last_write_checksum: sha1:ea2da1ffc735e446c4bb5e7e67b69e6d5924ba05
-    pristine_git_object: 6b42402f4cd1be72a6d2366950fdcee50077dfb6
   src/Moov/Sdk/Models/Requests/CreateTransferOptionsRequest.cs:
     id: 1c8a1cba305d
     last_write_checksum: sha1:f4bdf92c7bba1b3f7bcaca75c75ca8624f08195e
@@ -7566,14 +6750,6 @@ trackedFiles:
     id: 2dd43e32e4f4
     last_write_checksum: sha1:f0e7b42fcfca1bc53923b7e97266a6242af99b8a
     pristine_git_object: bdce18cb69eedaae62c67c826e67dc27f00584e8
-  src/Moov/Sdk/Models/Requests/GetInvoiceRequest.cs:
-    id: b5adef86c256
-    last_write_checksum: sha1:bf64d599b88bfe65704d6a6091673aeb50c05707
-    pristine_git_object: 00439efe0294c24881e3b034497e9b8bc413eb52
-  src/Moov/Sdk/Models/Requests/GetInvoiceResponse.cs:
-    id: d7fa7c7bdd6c
-    last_write_checksum: sha1:e67848dba7bf7e1bad2ef0f3e635735a9298e552
-    pristine_git_object: e46cb4df7e0c2b034e35fcc91cb9d4bfb8fc98e8
   src/Moov/Sdk/Models/Requests/GetIssuedCardAuthorizationRequest.cs:
     id: 8518ad88ba13
     last_write_checksum: sha1:821cee987cda42aa97e14ac93f8d451fb8ae267a
@@ -7636,8 +6812,8 @@ trackedFiles:
     pristine_git_object: 0f061b659a8638d9bce2d0af0597580d09c4bfdc
   src/Moov/Sdk/Models/Requests/GetPaymentMethodResponse.cs:
     id: d0817aa8b9a4
-    last_write_checksum: sha1:60e23577ebfe5e75566e2fa6e08fc8166f8e7dca
-    pristine_git_object: b0531d26a8b722bbaa9d13ca521002e963a24e17
+    last_write_checksum: sha1:bde6f48ab30603aa5035295faa9d9966a3de5b40
+    pristine_git_object: 8b70b584991728cc6b20c8a865a7eb57ff515f0f
   src/Moov/Sdk/Models/Requests/GetProductRequest.cs:
     id: 58f3143f6735
     last_write_checksum: sha1:557e0e48fe29e7e8d1639910fadbd97c0fa73e65
@@ -7742,14 +6918,6 @@ trackedFiles:
     id: c6679e8e7ad7
     last_write_checksum: sha1:f0af3ec274ec6bc37dc117180788cc313d8337a0
     pristine_git_object: 35cdbbbebaedd80f65cde3ceae878ee00b8eb07a
-  src/Moov/Sdk/Models/Requests/GetTicketRequest.cs:
-    id: 6f36a8522227
-    last_write_checksum: sha1:789876d07da661b729ef4c15a30b727e51bbf8fd
-    pristine_git_object: ca8e6900e7dc33501d24358a0922f12f6e31bf43
-  src/Moov/Sdk/Models/Requests/GetTicketResponse.cs:
-    id: 8a709e58ab75
-    last_write_checksum: sha1:dbb52215d3bb5e8fbfabdd49746dce2add04cb3e
-    pristine_git_object: 3203f306d9dacddfa46e3c8739a682fd333986dc
   src/Moov/Sdk/Models/Requests/GetTransferRequest.cs:
     id: 13113d702281
     last_write_checksum: sha1:53b7eed88665645b580945b36d22addc56983bad
@@ -7868,8 +7036,8 @@ trackedFiles:
     pristine_git_object: 5bfbf88c2360fb63da820af727104f3ea06c9463
   src/Moov/Sdk/Models/Requests/ListAccountsRequest.cs:
     id: a11d6c36272a
-    last_write_checksum: sha1:ac70e2643192f3dafbe93dc766a53e46faf3a99f
-    pristine_git_object: be0b4db7cce37ea349a9aaa06888ee48a4a6cf79
+    last_write_checksum: sha1:415a372ffb682bfdc85e360472d68c5d7c5dbd38
+    pristine_git_object: 9576d2b2af54443ac9fd76f44a4e29c8d0cad073
   src/Moov/Sdk/Models/Requests/ListAccountsResponse.cs:
     id: b1582951bf66
     last_write_checksum: sha1:ae134290135d455b959952ff3a3c2fa48a977e23
@@ -7908,8 +7076,8 @@ trackedFiles:
     pristine_git_object: 59ce27da63b7a93730bf9a0ad50e6d2397852514
   src/Moov/Sdk/Models/Requests/ListConnectedAccountsForAccountRequest.cs:
     id: c8fe672d1d78
-    last_write_checksum: sha1:37e57b7d288f1c63dea4b7f1379335e5231c0fdc
-    pristine_git_object: 203ac6d8533f6ac26057d55feefc029e7ecab5fc
+    last_write_checksum: sha1:483e3bc1ea5b01d4cf67bf80d27fb8afcb6e517d
+    pristine_git_object: fc7e1856c7ef123d618fde1bf3fe948373884504
   src/Moov/Sdk/Models/Requests/ListConnectedAccountsForAccountResponse.cs:
     id: 7d43730a6a53
     last_write_checksum: sha1:466e41da78533eb4391626444b2a4dbfe702c7b0
@@ -8002,22 +7170,6 @@ trackedFiles:
     id: e9d0a8ec56e5
     last_write_checksum: sha1:5bb2b160b9d7053267a7c44c677b3ede8e4f01dc
     pristine_git_object: 1d56c99aad80e77d78a502c8eea60b3eda1009da
-  src/Moov/Sdk/Models/Requests/ListInvoicePaymentsRequest.cs:
-    id: ff91ffd3af5d
-    last_write_checksum: sha1:0da0d6819630ad784aa865413696c30811579451
-    pristine_git_object: 1a7a5d00e598b7d99eb894bc2fab85197bf45249
-  src/Moov/Sdk/Models/Requests/ListInvoicePaymentsResponse.cs:
-    id: d2a5dbf011fe
-    last_write_checksum: sha1:b29a66282129fbc635bc4b68b6a2a8edef2fa273
-    pristine_git_object: eb7528befedb14f7febb6f50b8623d52b219c91b
-  src/Moov/Sdk/Models/Requests/ListInvoicesRequest.cs:
-    id: 7284aef52cd8
-    last_write_checksum: sha1:5e46d81612c16cc1b37a2fbdbbd2b85362c0eac0
-    pristine_git_object: c031fe8356c6e2b01f899980cff1ce64171fd739
-  src/Moov/Sdk/Models/Requests/ListInvoicesResponse.cs:
-    id: cfd22e66726d
-    last_write_checksum: sha1:77b0460b777248443da7b9413fd78094370a1300
-    pristine_git_object: 90bca0739970771d7ff52637a00da58cd18b26e2
   src/Moov/Sdk/Models/Requests/ListIssuedCardAuthorizationEventsRequest.cs:
     id: 35f363c82603
     last_write_checksum: sha1:cc5cad29cf9d313a54bc39c931527210e84eb08b
@@ -8178,26 +7330,6 @@ trackedFiles:
     id: 48c1178f6581
     last_write_checksum: sha1:35b4daea29e446e14d9013ad6de0086be1dacdfa
     pristine_git_object: b9fd1ebf3858ca36f355cadffcdfbe2fe641d715
-  src/Moov/Sdk/Models/Requests/ListTicketMessagesRequest.cs:
-    id: 069670bdb276
-    last_write_checksum: sha1:d71671fefbeb872f3c582f94511e4497047ed81c
-    pristine_git_object: 8585925fa41656e8bd809cd63d67d22339f060d2
-  src/Moov/Sdk/Models/Requests/ListTicketMessagesResponse.cs:
-    id: 78d6e0a3e45c
-    last_write_checksum: sha1:3c4f1488b9abf760ecc5cc38d149f734d664c1a4
-    pristine_git_object: 5923f8bb80b2b591751f2e0474a4b4f8b1591d97
-  src/Moov/Sdk/Models/Requests/ListTicketsRequest.cs:
-    id: e857dd25b738
-    last_write_checksum: sha1:25a1d412ce6a01fd4c86bd9a0c1c17b4721e6b16
-    pristine_git_object: 84232f5b6eeff9406411ccd4c551f8a97d5e8e0f
-  src/Moov/Sdk/Models/Requests/ListTicketsResponse.cs:
-    id: e3bc92aee54f
-    last_write_checksum: sha1:60578c43b761b7110cfe6cd12e97cfa7afa0d15d
-    pristine_git_object: 2ec94a3fe924151aee74720ce9ea8399f5f78966
-  src/Moov/Sdk/Models/Requests/ListTicketsResponseBody.cs:
-    id: d32fac0b7b0f
-    last_write_checksum: sha1:335d0b3edf8e8808100bc5b5ba00e0f76c81b771
-    pristine_git_object: dbedc2699c0945cc594021d5e06fd1e11e9698f4
   src/Moov/Sdk/Models/Requests/ListTransfersRequest.cs:
     id: a374530853de
     last_write_checksum: sha1:fcb83a27f3d338d283939c200173a2833ebf442f
@@ -8294,14 +7426,6 @@ trackedFiles:
     id: de65201864d3
     last_write_checksum: sha1:10709cc8c00eebe7ae498b37b2161cd949071740
     pristine_git_object: 6e6c8aa528dcdb949f21ef499ee7e677256b2d2b
-  src/Moov/Sdk/Models/Requests/SaveUnderwritingRequest.cs:
-    id: b190dc4b60fc
-    last_write_checksum: sha1:6c3ede842a3122b9c40e142d2878c7045963dc82
-    pristine_git_object: 7c44133f084eda21b350b05d9778b71cd6555aa6
-  src/Moov/Sdk/Models/Requests/SaveUnderwritingResponse.cs:
-    id: 6a5e616ff3e4
-    last_write_checksum: sha1:a2e7331f70c50ea458833f70b1a908956313cdf4
-    pristine_git_object: 761b68fff3707da32fb8a444b00c26de7695c368
   src/Moov/Sdk/Models/Requests/SearchInstitutionsRequest.cs:
     id: cd1e6fc5f02e
     last_write_checksum: sha1:749a335cb9009619ae66d8c468e60cf20e6568b3
@@ -8374,14 +7498,6 @@ trackedFiles:
     id: a95cc95b487b
     last_write_checksum: sha1:cc6739e7c59a1d5d3e8e03bf8b710c8e18a46fa1
     pristine_git_object: 5b34cd57804f1bb3638e913930c5b2a724916aeb
-  src/Moov/Sdk/Models/Requests/UpdateInvoiceRequest.cs:
-    id: ab2ad7f09677
-    last_write_checksum: sha1:e2efc8d010292be736258f7967e498dc28fcf989
-    pristine_git_object: 7ae34a5b312a6f43f7b9408842ff739c22f58595
-  src/Moov/Sdk/Models/Requests/UpdateInvoiceResponse.cs:
-    id: fc92cd8d7072
-    last_write_checksum: sha1:9d5c63f28e6b99c0e9e1c70cedd69136aefcd60e
-    pristine_git_object: f7239f55b881245af90b7ffc9df17109c607f35c
   src/Moov/Sdk/Models/Requests/UpdateIssuedCardRequest.cs:
     id: 9744815e227c
     last_write_checksum: sha1:b4e7b24381fc47a2e75c8c23032bd894eda25262
@@ -8430,14 +7546,6 @@ trackedFiles:
     id: 1eb23e73de88
     last_write_checksum: sha1:edafaa366773debb0a0fc6456ebe22e2fa2d7351
     pristine_git_object: 043bae97042d8d1600dc1e570c100d2fce0b7317
-  src/Moov/Sdk/Models/Requests/UpdateTicketRequest.cs:
-    id: 3f04865dae2f
-    last_write_checksum: sha1:aba6a28cd8c602887e3f6d02ecc4daee4de7c958
-    pristine_git_object: bfb7557b009cc87fc2a54d9b7925c4a702177d69
-  src/Moov/Sdk/Models/Requests/UpdateTicketResponse.cs:
-    id: 60054399a3ff
-    last_write_checksum: sha1:b8b6cd68f7aa55c724594048e7628e291cc80915
-    pristine_git_object: 061e47d6f940d2a7091a1f6d38e70f2489401168
   src/Moov/Sdk/Models/Requests/UpdateTransferRequest.cs:
     id: a91e9da3f322
     last_write_checksum: sha1:a62499f78ddb9cfc266b8269ca1074e921a1caa1
@@ -8512,12 +7620,12 @@ trackedFiles:
     pristine_git_object: 3d1da2bff5d4ec4308e0c3fd9252399a3e716b15
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:ff22654d20f77471ba9fa82323518eb114e6f41a
-    pristine_git_object: a4efff1737da0181b51e2c0d9acbbf12da45b836
+    last_write_checksum: sha1:4089209a2708c1a4f6608548c201821d38212042
+    pristine_git_object: 2038fa841cf9e7bfc198b5c59869deb8db2ee507
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
-    last_write_checksum: sha1:cbe2bf26756e8eea8fe4f6f5021a43e5aeb7d165
-    pristine_git_object: 8972241e40e526ec512e36dfe50dafc0bf07479a
+    last_write_checksum: sha1:2632b38ca2981e90b9c33c80967c1cc8695e548c
+    pristine_git_object: 1b2b859b617e16ddbdffbd6784bf26b520f40ec5
   src/Moov/Sdk/Onboarding.cs:
     id: ee8b02a5deca
     last_write_checksum: sha1:4dc0617dfad055e706dff0b366d769bf5f6231a0
@@ -8548,8 +7656,8 @@ trackedFiles:
     pristine_git_object: 1ec0d018f11ab282e710816e6e114ea5dd7a790e
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:480920ba4efa6397e242718af32e5541544c6af6
-    pristine_git_object: 8d727e4c9f7b792225f3ce56e59b56702df13d26
+    last_write_checksum: sha1:262c8af74267ef8f014171ae81a145ee431a82c8
+    pristine_git_object: ba16072c9856e328973c74109b1d27e17830d76b
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:c4a3de93ff5bd5e3b8bf3a5b26519c90435c4c36
@@ -8558,10 +7666,6 @@ trackedFiles:
     id: fb6728b32750
     last_write_checksum: sha1:335e798c9334e45236719cce4794b4f23ca70759
     pristine_git_object: f2e3fb8df9852b3a799e9761c247a58327251764
-  src/Moov/Sdk/Support.cs:
-    id: 42dc8f40c13d
-    last_write_checksum: sha1:71c681b193f04b287a4f6278c6393aa3dcc32fdf
-    pristine_git_object: ddc5d4687de840522ec5b0e468a1a5adc79ec9df
   src/Moov/Sdk/Sweeps.cs:
     id: 1c7f5cc0c212
     last_write_checksum: sha1:ce0301888491865ff9502b1415ceec7f7887e7c7
@@ -8576,8 +7680,8 @@ trackedFiles:
     pristine_git_object: 7d0c1479aeae68b22212584b15a711380e13ca8d
   src/Moov/Sdk/Underwriting.cs:
     id: 47d3d473eb9c
-    last_write_checksum: sha1:5f978d336518d5965dbe71cdcfc03cbc87885660
-    pristine_git_object: d109e2982de6bbd09678001b2d0cff33dfa7d6f1
+    last_write_checksum: sha1:0acc3c3cdfdf1206547da4da30d51a38fe5f9960
+    pristine_git_object: ba1a53d238e8e75d0f17f0e2b25bd52c9ca1c41f
   src/Moov/Sdk/Utils/AnyDeserializer.cs:
     id: ad29a758c9ea
     last_write_checksum: sha1:801af402df32be66e287a85426fc8dcde2d4a1d9
@@ -8588,8 +7692,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:e9f29960d1e312cdee492ceeb96615276f4b9be5
-    pristine_git_object: 8d03d80cabd188f4337fb836dd65d7d92754c9ea
+    last_write_checksum: sha1:1c289ae4c8e513e5ec4e28f384f7401ed1b9af49
+    pristine_git_object: 66742b6224cb340b4941dbaf5db025ba1e8a852e
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -8684,6 +7788,7 @@ examples:
         query:
           skip: 60
           count: 20
+          type: "business"
       responses:
         "200":
           application/json: [{"accountID": "53ca67ea-6fd3-423f-9544-ce2404159d33", "mode": "sandbox", "accountType": "business", "displayName": "Whole Body Fitness LLC", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC", "ownersProvided": false}}, "verification": {"verificationStatus": "unverified", "status": "unverified"}, "settings": {"cardPayment": {"statementDescriptor": "Whole Body Fitness LLC"}, "achPayment": {"companyName": "Whole Body Fitne"}}, "createdOn": "2024-12-16T17:55:20.557151867Z", "updatedOn": "2024-12-16T17:55:20.557151867Z"}]
@@ -8989,7 +8094,7 @@ examples:
         application/json: {"capabilities": []}
       responses:
         "200":
-          application/json: [{"capability": "collect-funds.ach", "accountID": "2e510c5d-4d85-48f7-970c-ad78e7480e4e", "status": "pending", "createdOn": "2024-08-06T15:28:41.745Z", "updatedOn": "2024-10-15T15:39:15.277Z"}]
+          application/json: [{"capability": "transfers", "accountID": "2e510c5d-4d85-48f7-970c-ad78e7480e4e", "status": "pending", "createdOn": "2024-08-06T15:28:41.745Z", "updatedOn": "2024-10-15T15:39:15.277Z"}]
         "400":
           application/json: {"error": "<value>"}
         "422":
@@ -8999,7 +8104,7 @@ examples:
       parameters:
         path:
           accountID: "c1697ea6-c984-4ba1-9b81-93e5e18660af"
-          capabilityID: "send-funds.rtp"
+          capabilityID: "card-issuing"
       responses:
         "200":
           application/json: {"capability": "send-funds", "accountID": "eb8b26fe-83f5-4e63-8e2c-7eb0c94d312a", "status": "enabled", "createdOn": "2023-09-10T00:14:30.908Z", "updatedOn": "2024-03-19T19:49:37.863Z"}
@@ -9882,7 +8987,7 @@ examples:
         application/json: {"source": {}, "destination": {}, "amount": {"currency": "USD", "value": 1204}}
       responses:
         "200":
-          application/json: {"sourceOptions": [{"paymentMethodID": "06287f32-e5bd-4cce-9122-3c1e09a4eca7", "paymentMethodType": "apple-pay", "applePay": {"brand": "Visa", "cardType": "credit", "cardDisplayName": "Visa 1256", "fingerprint": "9948962d92a1ce40c9f918cd9ece3a22bde62fb325a2f1fe2e833969de672ba3", "expiration": {"month": "01", "year": "21"}, "dynamicLastFour": "<value>", "issuerCountry": "US"}}], "destinationOptions": [{"paymentMethodID": "831f8e2a-3f07-44d0-9bbb-536ec71aa4b9", "paymentMethodType": "rtp-credit", "bankAccount": {"bankAccountID": "19c9fe6e-3dfb-4e64-9bd6-ff679eb9a9bb", "fingerprint": "<value>", "status": "errored", "holderName": "<value>", "holderType": "guest", "bankName": "<value>", "bankAccountType": "general-ledger", "routingNumber": "<value>", "lastFourAccountNumber": "<value>", "updatedOn": "2025-03-01T02:25:18.394Z"}}]}
+          application/json: {"sourceOptions": [{"paymentMethodID": "06287f32-e5bd-4cce-9122-3c1e09a4eca7", "paymentMethodType": "apple-pay", "applePay": {"brand": "Visa", "cardType": "credit", "cardDisplayName": "Visa 1256", "fingerprint": "9948962d92a1ce40c9f918cd9ece3a22bde62fb325a2f1fe2e833969de672ba3", "expiration": {"month": "01", "year": "21"}, "dynamicLastFour": "<value>", "issuerCountry": "US"}}], "destinationOptions": [{"paymentMethodID": "831f8e2a-3f07-44d0-9bbb-536ec71aa4b9", "paymentMethodType": "rtp-credit", "bankAccount": {"bankAccountID": "19c9fe6e-3dfb-4e64-9bd6-ff679eb9a9bb", "fingerprint": "<value>", "status": "errored", "holderName": "<value>", "holderType": "business", "bankName": "<value>", "bankAccountType": "general-ledger", "routingNumber": "<value>", "lastFourAccountNumber": "<value>", "updatedOn": "2025-03-01T02:25:18.394Z"}}]}
         "400":
           application/json: {"error": "<value>"}
         "422":
@@ -10040,7 +9145,7 @@ examples:
           accountID: "efe07546-f697-4da5-bf73-d9987efd4cdd"
       responses:
         "200":
-          application/json: {}
+          application/json: {"averageTransactionSize": 894306, "maxTransactionSize": 962466, "averageMonthlyTransactionVolume": 875375, "status": "approved", "volumeByCustomerType": {"businessToBusinessPercentage": 489490, "consumerToBusinessPercentage": 373287}, "cardVolumeDistribution": {"ecommercePercentage": 303549, "cardPresentPercentage": 420937, "mailOrPhonePercentage": 958692, "debtRepaymentPercentage": 381530}, "fulfillment": {"hasPhysicalGoods": false, "isShippingProduct": true, "shipmentDurationDays": 866025, "returnPolicy": "withinThirtyDays"}}
   saveUnderwriting:
     speakeasy-default-save-underwriting:
       parameters:
@@ -10064,7 +9169,7 @@ examples:
         application/json: {"averageTransactionSize": 622191, "maxTransactionSize": 123692, "averageMonthlyTransactionVolume": 438164, "volumeByCustomerType": {"businessToBusinessPercentage": 671399, "consumerToBusinessPercentage": 482010}, "cardVolumeDistribution": {"ecommercePercentage": 47450, "cardPresentPercentage": 146275, "mailOrPhonePercentage": 309315, "debtRepaymentPercentage": 990303}, "fulfillment": {"hasPhysicalGoods": true, "isShippingProduct": true, "shipmentDurationDays": 388451, "returnPolicy": "other"}}
       responses:
         "200":
-          application/json: {}
+          application/json: {"averageTransactionSize": 622191, "maxTransactionSize": 123692, "averageMonthlyTransactionVolume": 438164, "status": "pending", "volumeByCustomerType": {"businessToBusinessPercentage": 671399, "consumerToBusinessPercentage": 482010}, "cardVolumeDistribution": {"ecommercePercentage": 47450, "cardPresentPercentage": 146275, "mailOrPhonePercentage": 309315, "debtRepaymentPercentage": 990303}, "fulfillment": {"hasPhysicalGoods": true, "isShippingProduct": true, "shipmentDurationDays": 388451, "returnPolicy": "other"}}
         "400":
           application/json: {"error": "<value>"}
         "422":
@@ -10542,6 +9647,7 @@ examples:
         query:
           skip: 60
           count: 20
+          type: "business"
       responses:
         "200":
           application/json: [{"accountID": "53ca67ea-6fd3-423f-9544-ce2404159d33", "mode": "sandbox", "accountType": "business", "displayName": "Whole Body Fitness LLC", "profile": {"business": {"legalBusinessName": "Whole Body Fitness LLC", "ownersProvided": false}}, "verification": {"verificationStatus": "unverified", "status": "unverified"}, "settings": {"cardPayment": {"statementDescriptor": "Whole Body Fitness LLC"}, "achPayment": {"companyName": "Whole Body Fitne"}}, "createdOn": "2024-12-16T17:55:20.557151867Z", "updatedOn": "2024-12-16T17:55:20.557151867Z"}]
@@ -10667,10 +9773,7 @@ examples:
         "200":
           application/json: {"secret": "<value>"}
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Csharp SDK Changes:
-  * `MoovClient.FeePlans.ListResiduals()`:  `response.[].MoovShare` **Removed** **Breaking** ⚠️
-  * `MoovClient.FeePlans.GetResidual()`:  `response.moovShare` **Removed** **Breaking** ⚠️
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.PaymentMethods.Get()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Transfers.GenerateOptions()`:  `response.sourceOptions[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Capabilities.Request()`: \n  *  `request.body.Capabilities[]` **Changed** **Breaking** ⚠️\n  *  `response.[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Onboarding.GetInvite()`:  `response.capabilities[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Onboarding.ListInvites()`:  `response.[].Capabilities[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Onboarding.CreateInvite()`: \n  *  `request.body.Capabilities[]` **Changed** **Breaking** ⚠️\n  *  `response.capabilities[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Industries.List()`:  `response.industries[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Underwriting.Upsert()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Underwriting.Get()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Transfers.Update()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Transfers.Get()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Transfers.List()`:  `response.[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Accounts.Create()`: \n  *  `request.body.Capabilities[]` **Changed** **Breaking** ⚠️\n  *  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Accounts.List()`: \n  *  `request.Capability` **Changed** **Breaking** ⚠️\n  *  `response.[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Accounts.Get()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Accounts.Update()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Accounts.ListConnected()`: \n  *  `request.Capability` **Changed** **Breaking** ⚠️\n  *  `response.[]` **Changed** **Breaking** ⚠️\n* `MoovClient.ApplePay.LinkToken()`:  `response.paymentMethodType` **Changed** **Breaking** ⚠️\n* `MoovClient.BankAccounts.Link()`: \n  *  `request.body.union(BankAccountPayload).Account.HolderType.Enum(guest)` **Removed** **Breaking** ⚠️\n  *  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.BankAccounts.List()`:  `response.[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Transfers.Create()`: \n  *  `response` **Changed** **Breaking** ⚠️\n  *  `error` **Changed** **Breaking** ⚠️\n* `MoovClient.Capabilities.List()`:  `response.[]` **Changed** **Breaking** ⚠️\n* `MoovClient.BankAccounts.Get()`:  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Capabilities.Get()`: \n  *  `request.capabilityId` **Changed** **Breaking** ⚠️\n  *  `response` **Changed** **Breaking** ⚠️\n* `MoovClient.Capabilities.Disable()`:  `request.capabilityId` **Changed** **Breaking** ⚠️\n* `MoovClient.Cards.Link()`:  `response.paymentMethods[].PaymentMethodType` **Changed** **Breaking** ⚠️\n* `MoovClient.Cards.List()`:  `response.[].PaymentMethods[].PaymentMethodType` **Changed** **Breaking** ⚠️\n* `MoovClient.Cards.Get()`:  `response.paymentMethods[].PaymentMethodType` **Changed** **Breaking** ⚠️\n* `MoovClient.Cards.Update()`:  `response.paymentMethods[].PaymentMethodType` **Changed** **Breaking** ⚠️\n* `MoovClient.PaymentMethods.List()`: \n  *  `request.paymentMethodType` **Changed** **Breaking** ⚠️\n  *  `response.[]` **Changed** **Breaking** ⚠️\n* `MoovClient.Invoices.CreateInvoice()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Invoices.GetInvoice()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Invoices.ListInvoices()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Underwriting.Save()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Support.ListTicketMessages()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Support.UpdateTicket()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Support.GetTicket()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Support.ListTickets()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Support.CreateTicket()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Invoices.ListInvoicePayments()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Invoices.CreateInvoicePayment()`: **Removed** **Breaking** ⚠️\n* `MoovClient.Invoices.UpdateInvoice()`: **Removed** **Breaking** ⚠️\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
