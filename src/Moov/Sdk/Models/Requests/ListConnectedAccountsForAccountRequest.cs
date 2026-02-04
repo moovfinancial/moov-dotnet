@@ -65,7 +65,7 @@ namespace Moov.Sdk.Models.Requests
         ///   Filtering by `type=guest` is not currently supported.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=type")]
-        public CreateAccountType? Type { get; set; }
+        public AccountType? Type { get; set; }
 
         /// <summary>
         /// Serves as an optional alias from a foreign/external system which can be used to reference this resource.

@@ -9,4 +9,3 @@ The type of holder on a funding source.
 | ------------ | ------------ |
 | `Individual` | individual   |
 | `Business`   | business     |
-| `Guest`      | guest        |

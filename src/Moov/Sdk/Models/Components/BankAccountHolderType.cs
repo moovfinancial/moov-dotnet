@@ -22,8 +22,6 @@ namespace Moov.Sdk.Models.Components
         Individual,
         [JsonProperty("business")]
         Business,
-        [JsonProperty("guest")]
-        Guest,
     }
 
     public static class BankAccountHolderTypeExtension

@@ -24,36 +24,14 @@ namespace Moov.Sdk.Models.Components
         Transfers,
         [JsonProperty("send-funds")]
         SendFunds,
-        [JsonProperty("send-funds.push-to-card")]
-        SendFundsPushToCard,
-        [JsonProperty("money-transfer.push-to-card")]
-        MoneyTransferPushToCard,
-        [JsonProperty("send-funds.ach")]
-        SendFundsAch,
-        [JsonProperty("send-funds.rtp")]
-        SendFundsRtp,
-        [JsonProperty("send-funds.instant-bank")]
-        SendFundsInstantBank,
         [JsonProperty("collect-funds")]
         CollectFunds,
-        [JsonProperty("collect-funds.card-payments")]
-        CollectFundsCardPayments,
-        [JsonProperty("money-transfer.pull-from-card")]
-        MoneyTransferPullFromCard,
-        [JsonProperty("collect-funds.ach")]
-        CollectFundsAch,
         [JsonProperty("wallet")]
         Wallet,
-        [JsonProperty("wallet.balance")]
-        WalletBalance,
         [JsonProperty("card-issuing")]
         CardIssuing,
         [JsonProperty("production-app")]
         ProductionApp,
-        [JsonProperty("platform.production-app")]
-        PlatformProductionApp,
-        [JsonProperty("platform.wallet-transfers")]
-        PlatformWalletTransfers,
     }
 
     public static class CapabilityIDExtension

@@ -16,8 +16,11 @@ namespace Moov.Sdk.Models.Components
 
     public class CreateAccount
     {
+        /// <summary>
+        /// The type of entity represented by this account.
+        /// </summary>
         [JsonProperty("accountType")]
-        public CreateAccountType AccountType { get; set; } = default!;
+        public AccountType AccountType { get; set; } = default!;
 
         [JsonProperty("profile")]
         public CreateProfile Profile { get; set; } = default!;

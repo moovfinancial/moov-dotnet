@@ -51,8 +51,6 @@ namespace Moov.Sdk
 
         public IImages Images { get; }
 
-        public IInvoices Invoices { get; }
-
         public IPaymentLinks PaymentLinks { get; }
 
         public IPaymentMethods PaymentMethods { get; }
@@ -68,8 +66,6 @@ namespace Moov.Sdk
         public ISweeps Sweeps { get; }
 
         public IAccountTerminalApplications AccountTerminalApplications { get; }
-
-        public ISupport Support { get; }
 
         public ITransfers Transfers { get; }
 
@@ -166,10 +162,6 @@ namespace Moov.Sdk
         /// </summary>
         public IImages Images { get; private set; }
         /// <summary>
-        /// The Invoices sub-SDK.
-        /// </summary>
-        public IInvoices Invoices { get; private set; }
-        /// <summary>
         /// The PaymentLinks sub-SDK.
         /// </summary>
         public IPaymentLinks PaymentLinks { get; private set; }
@@ -201,10 +193,6 @@ namespace Moov.Sdk
         /// The AccountTerminalApplications sub-SDK.
         /// </summary>
         public IAccountTerminalApplications AccountTerminalApplications { get; private set; }
-        /// <summary>
-        /// The Support sub-SDK.
-        /// </summary>
-        public ISupport Support { get; private set; }
         /// <summary>
         /// The Transfers sub-SDK.
         /// </summary>
@@ -309,8 +297,6 @@ namespace Moov.Sdk
 
             Images = new Images(SDKConfiguration);
 
-            Invoices = new Invoices(SDKConfiguration);
-
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 
             PaymentMethods = new PaymentMethods(SDKConfiguration);
@@ -326,8 +312,6 @@ namespace Moov.Sdk
             Sweeps = new Sweeps(SDKConfiguration);
 
             AccountTerminalApplications = new AccountTerminalApplications(SDKConfiguration);
-
-            Support = new Support(SDKConfiguration);
 
             Transfers = new Transfers(SDKConfiguration);
 
@@ -459,8 +443,6 @@ namespace Moov.Sdk
 
             Images = new Images(SDKConfiguration);
 
-            Invoices = new Invoices(SDKConfiguration);
-
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 
             PaymentMethods = new PaymentMethods(SDKConfiguration);
@@ -476,8 +458,6 @@ namespace Moov.Sdk
             Sweeps = new Sweeps(SDKConfiguration);
 
             AccountTerminalApplications = new AccountTerminalApplications(SDKConfiguration);
-
-            Support = new Support(SDKConfiguration);
 
             Transfers = new Transfers(SDKConfiguration);
 

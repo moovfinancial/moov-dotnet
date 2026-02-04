@@ -55,12 +55,6 @@ namespace Moov.Sdk.Models.Components
         public ApplePayResponse? ApplePay { get; set; }
 
         /// <summary>
-        /// Describes payment card details captured with tap or in-person payment.
-        /// </summary>
-        [JsonProperty("terminalCard")]
-        public TerminalCard? TerminalCard { get; set; }
-
-        /// <summary>
         /// Card-specific details about the transaction.
         /// </summary>
         [JsonProperty("cardDetails")]

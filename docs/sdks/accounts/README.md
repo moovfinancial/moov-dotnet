@@ -107,7 +107,7 @@ using Moov.Sdk.Models.Components;
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
-    AccountType = CreateAccountType.Business,
+    AccountType = AccountType.Business,
     Profile = new CreateProfile() {
         Business = new CreateBusinessProfile() {
             LegalBusinessName = "Whole Body Fitness LLC",
@@ -153,11 +153,13 @@ to specify the `/accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listAccounts" method="get" path="/accounts" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
 ListAccountsRequest req = new ListAccountsRequest() {
+    Type = AccountType.Business,
     Skip = 60,
     Count = 20,
 };
@@ -409,12 +411,14 @@ to specify the `/accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listConnectedAccountsForAccount" method="get" path="/accounts/{accountID}/connected-accounts" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
 ListConnectedAccountsForAccountRequest req = new ListConnectedAccountsForAccountRequest() {
     AccountID = "7e09ffc8-e508-4fd4-a54e-21cff90a1824",
+    Type = AccountType.Business,
     Skip = 60,
     Count = 20,
 };
