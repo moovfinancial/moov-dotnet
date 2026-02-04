@@ -169,7 +169,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Bytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;

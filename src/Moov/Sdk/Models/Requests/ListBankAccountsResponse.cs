@@ -24,6 +24,6 @@ namespace Moov.Sdk.Models.Requests
         /// </summary>
         public List<BankAccount>? BankAccounts { get; set; }
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

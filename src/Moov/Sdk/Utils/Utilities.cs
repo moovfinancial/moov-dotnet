@@ -301,6 +301,7 @@ namespace Moov.Sdk.Utils
 
             return $"Bearer {authHeaderValue}";
         }
+
         public static string RemoveSuffix(string inputString, string suffix)
         {
             if (!String.IsNullOrEmpty(suffix) && inputString.EndsWith(suffix))
@@ -309,6 +310,7 @@ namespace Moov.Sdk.Utils
             }
             return inputString;
         }
+
         public static string TemplateUrl(string template, Dictionary<string, string> paramDict)
         {
             foreach(KeyValuePair<string, string> entry in paramDict)
@@ -316,6 +318,20 @@ namespace Moov.Sdk.Utils
                 template = template.Replace('{' + entry.Key + '}', entry.Value);
             }
             return template;
+        }
+
+        public static Dictionary<string, List<string>> CollectHeaders(HttpHeaders headers)
+        {
+            var dict = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
+            foreach (var header in headers)
+            {
+                if (!dict.ContainsKey(header.Key))
+                {
+                    dict[header.Key] = new List<string>();
+                }
+                dict[header.Key].AddRange(header.Value);
+            }
+            return dict;
         }
     }
 }
