@@ -373,7 +373,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.EventTypes = obj;
                     return response;
@@ -503,7 +504,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Webhooks = obj;
                     return response;
@@ -647,7 +649,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Webhook = obj;
                     return response;
@@ -835,7 +838,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Webhook = obj;
                     return response;
@@ -983,7 +987,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Webhook = obj;
                     return response;
@@ -1159,7 +1164,8 @@ namespace Moov.Sdk
                     {
                         Response = httpResponse,
                         Request = httpRequest
-                    }
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(new List<int>{400, 409}.Contains(responseStatusCode))
@@ -1316,7 +1322,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.PingResponse = obj;
                     return response;
@@ -1452,7 +1459,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.WebhookSecret = obj;
                     return response;

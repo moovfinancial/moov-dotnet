@@ -298,7 +298,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Capabilities = obj;
                     return response;
@@ -449,7 +450,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Capabilities = obj;
                     return response;
@@ -647,7 +649,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Capability = obj;
                     return response;
@@ -781,7 +784,8 @@ namespace Moov.Sdk
                     {
                         Response = httpResponse,
                         Request = httpRequest
-                    }
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(new List<int>{400, 409}.Contains(responseStatusCode))

@@ -79,11 +79,6 @@ namespace Moov.Sdk.Models.Requests
             return PaymentMethod != null ? PaymentMethod.CardPresentPaymentPaymentMethod : null;
         }
 
-        public InstantBankCreditPaymentMethod? GetPaymentMethodInstantBankCredit()
-        {
-            return PaymentMethod != null ? PaymentMethod.InstantBankCreditPaymentMethod : null;
-        }
-
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

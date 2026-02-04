@@ -24,6 +24,6 @@ namespace Moov.Sdk.Models.Requests
         /// </summary>
         public EvidenceTextResponse? EvidenceTextResponse { get; set; }
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

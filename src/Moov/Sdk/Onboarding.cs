@@ -283,7 +283,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.OnboardingInvite = obj;
                     return response;
@@ -468,7 +469,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.OnboardingInvites = obj;
                     return response;
@@ -607,7 +609,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.OnboardingInvite = obj;
                     return response;
@@ -732,7 +735,8 @@ namespace Moov.Sdk
                     {
                         Response = httpResponse,
                         Request = httpRequest
-                    }
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
