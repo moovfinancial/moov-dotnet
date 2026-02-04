@@ -1,29 +1,29 @@
-speakeasyVersion: 1.700.2
+speakeasyVersion: 1.703.0
 sources:
     latest:
-        sourceNamespace: api-latest
-        sourceRevisionDigest: sha256:f113bf1bc2313a27d73754c4dde0433801ccc2b0afe5b88a97d53f4ec0776848
-        sourceBlobDigest: sha256:dd5d30466ad3ca0e8cf1b984cf6539ae6170dfca21fb194935a9c2e688bd31fc
+        sourceNamespace: api-v2025.10.00
+        sourceRevisionDigest: sha256:f1afd7f5bae642138e8d8b69d9b6d9e6985235c8d495472f4434a2acd64e7a77
+        sourceBlobDigest: sha256:ec1f0bcf700bfbd854c3e7d1fcee9623305071bde3e2b2f437572fa69049bb51
         tags:
             - latest
-            - speakeasy-sdk-regen-1770079165
+            - speakeasy-sdk-regen-versions-2025.10-1770230724
 targets:
     latest:
         source: latest
-        sourceNamespace: api-latest
-        sourceRevisionDigest: sha256:f113bf1bc2313a27d73754c4dde0433801ccc2b0afe5b88a97d53f4ec0776848
-        sourceBlobDigest: sha256:dd5d30466ad3ca0e8cf1b984cf6539ae6170dfca21fb194935a9c2e688bd31fc
-        codeSamplesNamespace: latest-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:9f7474510c6ebbfb2e64d05cd3975dff70c3103f34af801556e60fdab30e78be
+        sourceNamespace: api-v2025.10.00
+        sourceRevisionDigest: sha256:f1afd7f5bae642138e8d8b69d9b6d9e6985235c8d495472f4434a2acd64e7a77
+        sourceBlobDigest: sha256:ec1f0bcf700bfbd854c3e7d1fcee9623305071bde3e2b2f437572fa69049bb51
+        codeSamplesNamespace: v2025.10.00-csharp-code-samples
+        codeSamplesRevisionDigest: sha256:89981199f87681f9237039d69fe13cdec7d1f510418cebfaebd6c88ba5be8027
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
         latest:
             inputs:
-                - location: registry.speakeasyapi.dev/moov/moov/api-latest
+                - location: registry.speakeasyapi.dev/moov/moov/api-v2025.10.00
             registry:
-                location: registry.speakeasyapi.dev/moov/moov/latest
+                location: registry.speakeasyapi.dev/moov/moov/python-v2025.10.00
     targets:
         latest:
             target: csharp
@@ -33,7 +33,7 @@ workflow:
                     apiKey: $nuget_api_key
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/moov/moov/latest-csharp-code-samples
+                    location: registry.speakeasyapi.dev/moov/moov/v2025.10.00-csharp-code-samples
                 labelOverride:
                     fixedValue: Csharp (SDK)
                 blocking: false

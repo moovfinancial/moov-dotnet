@@ -340,7 +340,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Ticket = obj;
                     return response;
@@ -515,7 +516,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Object = obj;
                     return response;
@@ -661,7 +663,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Ticket = obj;
                     return response;
@@ -819,7 +822,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Ticket = obj;
                     return response;
@@ -1017,7 +1021,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.TicketMessages = obj;
                     return response;

@@ -70,9 +70,3 @@ PaymentMethod.CreateApplePay(/* values here */);
 ```csharp
 PaymentMethod.CreateCardPresentPayment(/* values here */);
 ```
-
-### InstantBankCredit
-
-```csharp
-PaymentMethod.CreateInstantBankCredit(/* values here */);
-```

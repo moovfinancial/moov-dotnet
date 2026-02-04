@@ -187,7 +187,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Statements = obj;
                     return response;
@@ -358,7 +359,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Statement = obj;
                     return response;
@@ -371,7 +373,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Bytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;

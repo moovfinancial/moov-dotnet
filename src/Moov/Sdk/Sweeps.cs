@@ -356,7 +356,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.SweepConfig = obj;
                     return response;
@@ -547,7 +548,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.SweepConfigs = obj;
                     return response;
@@ -690,7 +692,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.SweepConfig = obj;
                     return response;
@@ -845,7 +848,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.SweepConfig = obj;
                     return response;
@@ -1017,7 +1021,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Sweeps = obj;
                     return response;
@@ -1164,7 +1169,8 @@ namespace Moov.Sdk
                         {
                             Response = httpResponse,
                             Request = httpRequest
-                        }
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Sweep = obj;
                     return response;
