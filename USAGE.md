@@ -6,7 +6,7 @@ using Moov.Sdk.Models.Components;
 var sdk = new MoovClient(xMoovVersion: "<value>");
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
-    AccountType = CreateAccountType.Business,
+    AccountType = AccountType.Business,
     Profile = new CreateProfile() {
         Business = new CreateBusinessProfile() {
             LegalBusinessName = "Whole Body Fitness LLC",

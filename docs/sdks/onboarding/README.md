@@ -52,7 +52,7 @@ var res = await sdk.Onboarding.CreateInviteAsync(body: new OnboardingInviteReque
         "merchant-direct",
     },
     Prefill = new CreateAccount() {
-        AccountType = CreateAccountType.Business,
+        AccountType = AccountType.Business,
         Profile = new CreateProfile() {
             Business = new CreateBusinessProfile() {
                 LegalBusinessName = "Whole Body Fitness LLC",

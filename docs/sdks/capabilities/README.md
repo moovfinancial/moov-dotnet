@@ -129,7 +129,7 @@ var sdk = new MoovClient(xMoovVersion: "<value>");
 
 var res = await sdk.Capabilities.GetAsync(
     accountID: "c1697ea6-c984-4ba1-9b81-93e5e18660af",
-    capabilityID: CapabilityID.SendFundsRtp
+    capabilityID: CapabilityID.CardIssuing
 );
 
 // handle response

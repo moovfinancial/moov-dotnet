@@ -29,11 +29,5 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("business")]
         public BusinessProfile? Business { get; set; }
-
-        /// <summary>
-        /// Describes a guest account profile.
-        /// </summary>
-        [JsonProperty("guest")]
-        public GuestProfile? Guest { get; set; }
     }
 }

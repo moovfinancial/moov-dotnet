@@ -9,28 +9,33 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Instantly send funds to a bank account.
+    /// An industry's MCC/SIC/NAICS codes, along with descriptive title.
     /// </summary>
-    public class InstantBankCreditPaymentMethod
+    public class EnrichedIndustry
     {
-        /// <summary>
-        /// ID of the payment method.
-        /// </summary>
-        [JsonProperty("paymentMethodID")]
-        public string PaymentMethodID { get; set; } = default!;
-
-        [JsonProperty("paymentMethodType")]
-        public InstantBankCreditPaymentMethodPaymentMethodType PaymentMethodType { get; set; } = default!;
+        [JsonProperty("title")]
+        public string Title { get; set; } = default!;
 
         /// <summary>
-        /// A bank account as contained within a payment method.
+        /// North American Industry Classification System.
         /// </summary>
-        [JsonProperty("bankAccount")]
-        public PaymentMethodsBankAccount BankAccount { get; set; } = default!;
+        [JsonProperty("naics")]
+        public string Naics { get; set; } = default!;
+
+        /// <summary>
+        /// Standard Industrial Classification.
+        /// </summary>
+        [JsonProperty("sic")]
+        public string Sic { get; set; } = default!;
+
+        /// <summary>
+        /// Merchant Category Code.
+        /// </summary>
+        [JsonProperty("mcc")]
+        public string Mcc { get; set; } = default!;
     }
 }
