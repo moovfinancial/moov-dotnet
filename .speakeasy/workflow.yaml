@@ -3,9 +3,9 @@ speakeasyVersion: latest
 sources:
     latest:
         inputs:
-            - location: registry.speakeasyapi.dev/moov/moov/api-latest
+            - location: registry.speakeasyapi.dev/moov/moov/api-v2025.07.00
         registry:
-            location: registry.speakeasyapi.dev/moov/moov/latest
+            location: registry.speakeasyapi.dev/moov/moov/python-v2025.07.00
 targets:
     latest:
         target: csharp
@@ -15,7 +15,7 @@ targets:
                 apiKey: $nuget_api_key
         codeSamples:
             registry:
-                location: registry.speakeasyapi.dev/moov/moov/latest-csharp-code-samples
+                location: registry.speakeasyapi.dev/moov/moov/v2025.07.00-csharp-code-samples
             labelOverride:
                 fixedValue: Csharp (SDK)
             blocking: false
