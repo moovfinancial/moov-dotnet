@@ -51,8 +51,6 @@ namespace Moov.Sdk
 
         public IImages Images { get; }
 
-        public IInvoices Invoices { get; }
-
         public IPaymentLinks PaymentLinks { get; }
 
         public IPaymentMethods PaymentMethods { get; }
@@ -165,10 +163,6 @@ namespace Moov.Sdk
         /// The Images sub-SDK.
         /// </summary>
         public IImages Images { get; private set; }
-        /// <summary>
-        /// The Invoices sub-SDK.
-        /// </summary>
-        public IInvoices Invoices { get; private set; }
         /// <summary>
         /// The PaymentLinks sub-SDK.
         /// </summary>
@@ -308,8 +302,6 @@ namespace Moov.Sdk
             Files = new Files(SDKConfiguration);
 
             Images = new Images(SDKConfiguration);
-
-            Invoices = new Invoices(SDKConfiguration);
 
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 
@@ -458,8 +450,6 @@ namespace Moov.Sdk
             Files = new Files(SDKConfiguration);
 
             Images = new Images(SDKConfiguration);
-
-            Invoices = new Invoices(SDKConfiguration);
 
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 
