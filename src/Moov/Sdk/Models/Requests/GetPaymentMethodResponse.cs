@@ -74,6 +74,6 @@ namespace Moov.Sdk.Models.Requests
             return PaymentMethod != null ? PaymentMethod.ApplePayPaymentMethod : null;
         }
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }
