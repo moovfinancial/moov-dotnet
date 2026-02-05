@@ -38,7 +38,8 @@ namespace Moov.Sdk.Models.Components
         public int Quantity { get; set; } = default!;
 
         /// <summary>
-        /// Optional unique identifier associating the line item with a product.
+        /// Optional unique identifier associating the line item with a product.<br/>
+        ///   This is for reporting or tracking purposes, and does not populate other details of the line item.
         /// </summary>
         [JsonProperty("productID")]
         public string? ProductID { get; set; }
