@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -44,8 +45,10 @@ namespace Moov.Sdk.Models.Components
         public List<CreatePaymentLinkLineItemOption>? Options { get; set; }
 
         /// <summary>
-        /// Optional list of images associated with this line item.
+        /// Optional list of images associated with this line item.<br/>
+        ///   This field is deprecated and will be ignored. A future release will populate images associated with the given productID.
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("imageIDs")]
         public List<string>? ImageIDs { get; set; }
 
