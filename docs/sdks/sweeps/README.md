@@ -255,9 +255,25 @@ Get details on a specific sweep.
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 
-### Example Usage
+### Example Usage: Accrued sweep
 
-<!-- UsageSnippet language="csharp" operationID="getSweep" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}" -->
+<!-- UsageSnippet language="csharp" operationID="getSweep" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}" example="Accrued sweep" -->
+```csharp
+using Moov.Sdk;
+
+var sdk = new MoovClient(xMoovVersion: "<value>");
+
+var res = await sdk.Sweeps.GetAsync(
+    accountID: "ca23b553-56f5-4cce-9f4b-bd7043749aa5",
+    walletID: "db4f5a49-2f21-46bf-8723-3ecf930091f6",
+    sweepID: "0d89f082-405d-49ed-9a20-e47891c11c8a"
+);
+
+// handle response
+```
+### Example Usage: Paid sweep
+
+<!-- UsageSnippet language="csharp" operationID="getSweep" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}" example="Paid sweep" -->
 ```csharp
 using Moov.Sdk;
 
