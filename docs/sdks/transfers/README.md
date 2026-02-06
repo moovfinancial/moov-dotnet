@@ -138,9 +138,45 @@ Read our [transfers overview guide](https://docs.moov.io/guides/money-movement/o
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
-### Example Usage
+### Example Usage: Created async transfer
 
-<!-- UsageSnippet language="csharp" operationID="createTransfer" method="post" path="/accounts/{accountID}/transfers" -->
+<!-- UsageSnippet language="csharp" operationID="createTransfer" method="post" path="/accounts/{accountID}/transfers" example="Created async transfer" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new MoovClient(xMoovVersion: "<value>");
+
+CreateTransferRequest req = new CreateTransferRequest() {
+    XIdempotencyKey = "6de5561f-5a9f-4bd3-a458-ce0baacae20d",
+    AccountID = "d5696c5b-7106-4093-8a7d-faa71dda002c",
+    Body = new CreateTransfer() {
+        Source = new CreateTransferSource() {
+            PaymentMethodID = "9506dbf6-4208-44c3-ad8a-e4431660e1f2",
+        },
+        Destination = new CreateTransferDestination() {
+            PaymentMethodID = "3f9969cf-a1f3-4d83-8ddc-229a506651cf",
+        },
+        Amount = new Amount() {
+            Currency = "USD",
+            Value = 32945,
+        },
+        Description = "Transfer from card to wallet",
+        Metadata = new Dictionary<string, string>() {
+            { "optional", "metadata" },
+        },
+    },
+};
+
+var res = await sdk.Transfers.CreateAsync(req);
+
+// handle response
+```
+### Example Usage: Created synchronous transfer
+
+<!-- UsageSnippet language="csharp" operationID="createTransfer" method="post" path="/accounts/{accountID}/transfers" example="Created synchronous transfer" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
@@ -350,7 +386,7 @@ var res = await sdk.Transfers.UpdateAsync(
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCancellation" method="post" path="/accounts/{accountID}/transfers/{transferID}/cancellations" -->
+<!-- UsageSnippet language="csharp" operationID="createCancellation" method="post" path="/accounts/{accountID}/transfers/{transferID}/cancellations" example="Created cancellation" -->
 ```csharp
 using Moov.Sdk;
 
@@ -392,7 +428,7 @@ var res = await sdk.Transfers.CreateCancellationAsync(
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="getCancellation" method="get" path="/accounts/{accountID}/transfers/{transferID}/cancellations/{cancellationID}" -->
+<!-- UsageSnippet language="csharp" operationID="getCancellation" method="get" path="/accounts/{accountID}/transfers/{transferID}/cancellations/{cancellationID}" example="Cancellation" -->
 ```csharp
 using Moov.Sdk;
 
@@ -436,9 +472,9 @@ See the [reversals](https://docs.moov.io/guides/money-movement/accept-payments/c
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 
-### Example Usage
+### Example Usage: Successful async refund
 
-<!-- UsageSnippet language="csharp" operationID="initiateRefund" method="post" path="/accounts/{accountID}/transfers/{transferID}/refunds" -->
+<!-- UsageSnippet language="csharp" operationID="initiateRefund" method="post" path="/accounts/{accountID}/transfers/{transferID}/refunds" example="Successful async refund" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
@@ -450,6 +486,29 @@ InitiateRefundRequest req = new InitiateRefundRequest() {
     XIdempotencyKey = "8d9af6b8-67e1-4efa-8188-68039f34097d",
     AccountID = "cb6ae9f9-afab-4f06-9eb0-8abf54a3ada2",
     TransferID = "04022119-95be-4ef4-9dd4-b3782f6aa7b9",
+    Body = new CreateRefund() {
+        Amount = 1000,
+    },
+};
+
+var res = await sdk.Transfers.InitiateRefundAsync(req);
+
+// handle response
+```
+### Example Usage: Successful sync refund
+
+<!-- UsageSnippet language="csharp" operationID="initiateRefund" method="post" path="/accounts/{accountID}/transfers/{transferID}/refunds" example="Successful sync refund" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
+
+var sdk = new MoovClient(xMoovVersion: "<value>");
+
+InitiateRefundRequest req = new InitiateRefundRequest() {
+    XIdempotencyKey = "4e7a906a-e6d1-4bca-9cc5-6246295ef93c",
+    AccountID = "d12ddb6e-0ed9-44e8-92a7-1716ae7cc759",
+    TransferID = "d73be489-9da4-4be7-bc04-147d8552279d",
     Body = new CreateRefund() {
         Amount = 1000,
     },
@@ -572,9 +631,32 @@ to learn more.
 To access this endpoint using a [token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
 to specify the `/accounts/{accountID}/transfers.write` scope.
 
-### Example Usage
+### Example Usage: Reversed by cancellation
 
-<!-- UsageSnippet language="csharp" operationID="createReversal" method="post" path="/accounts/{accountID}/transfers/{transferID}/reversals" -->
+<!-- UsageSnippet language="csharp" operationID="createReversal" method="post" path="/accounts/{accountID}/transfers/{transferID}/reversals" example="Reversed by cancellation" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
+
+var sdk = new MoovClient(xMoovVersion: "<value>");
+
+CreateReversalRequest req = new CreateReversalRequest() {
+    XIdempotencyKey = "93d03831-45c4-49ec-a9b2-88cbd41dfca7",
+    AccountID = "c5fade57-7e5a-4380-ac7b-4abf8b3c24cf",
+    TransferID = "82c6eae7-b7e5-4b20-b24e-5116a4d70bde",
+    Body = new CreateReversal() {
+        Amount = 1000,
+    },
+};
+
+var res = await sdk.Transfers.CreateReversalAsync(req);
+
+// handle response
+```
+### Example Usage: Reversed by refund
+
+<!-- UsageSnippet language="csharp" operationID="createReversal" method="post" path="/accounts/{accountID}/transfers/{transferID}/reversals" example="Reversed by refund" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
