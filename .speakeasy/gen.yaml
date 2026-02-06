@@ -30,7 +30,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 26.1.0
+  version: 26.1.1
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
@@ -60,6 +60,7 @@ csharp:
   outputModelSuffix: output
   packageName: Moov.Sdk
   packageTags: ""
+  respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope-http
   sourceDirectory: src
   useNodatime: false
