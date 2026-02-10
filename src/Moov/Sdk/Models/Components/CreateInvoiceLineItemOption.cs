@@ -44,9 +44,9 @@ namespace Moov.Sdk.Models.Components
         public string? Group { get; set; }
 
         /// <summary>
-        /// Optional list of images associated with this line item.
+        /// Optional list of images associated with this line item option.
         /// </summary>
-        [JsonProperty("imageIDs")]
-        public List<string>? ImageIDs { get; set; }
+        [JsonProperty("images")]
+        public List<CreateInvoiceLineItemImage>? Images { get; set; }
     }
 }

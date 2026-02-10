@@ -53,7 +53,7 @@ namespace Moov.Sdk.Models.Components
         /// <summary>
         /// Optional list of images associated with this line item.
         /// </summary>
-        [JsonProperty("imageIDs")]
-        public List<string>? ImageIDs { get; set; }
+        [JsonProperty("images")]
+        public List<CreateInvoiceLineItemImage>? Images { get; set; }
     }
 }
