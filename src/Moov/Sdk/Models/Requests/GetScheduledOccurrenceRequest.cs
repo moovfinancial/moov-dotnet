@@ -37,9 +37,9 @@ namespace Moov.Sdk.Models.Requests
         /// <summary>
         /// Allows the specification of additional filters beyond the UUID.<br/>
         /// <br/>
-        /// Specifying a UUID string returns the exact occurrence.<br/>
-        /// Specifying a RFC 3339 timestamp returns the latest occurrence at or before that timestamp.<br/>
-        /// Specifying `latest` returns the latest occurrence at or before now.
+        ///   Specifying a UUID string returns the exact occurrence.<br/>
+        ///   Specifying a RFC 3339 timestamp returns the latest occurrence at or before that timestamp.<br/>
+        ///   Specifying `latest` returns the latest occurrence at or before now.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=occurrenceFilter")]
         public string OccurrenceFilter { get; set; } = default!;
