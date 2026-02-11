@@ -198,9 +198,9 @@ namespace Moov.Sdk
         /// <param name="occurrenceFilter">
         /// Allows the specification of additional filters beyond the UUID.<br/>
         /// <br/>
-        /// Specifying a UUID string returns the exact occurrence.<br/>
-        /// Specifying a RFC 3339 timestamp returns the latest occurrence at or before that timestamp.<br/>
-        /// Specifying `latest` returns the latest occurrence at or before now.
+        ///   Specifying a UUID string returns the exact occurrence.<br/>
+        ///   Specifying a RFC 3339 timestamp returns the latest occurrence at or before that timestamp.<br/>
+        ///   Specifying `latest` returns the latest occurrence at or before now.
         /// </param>
         /// <param name="xMoovVersion">
         /// Specify an API version.<br/>
@@ -1084,9 +1084,9 @@ namespace Moov.Sdk
         /// <param name="occurrenceFilter">
         /// Allows the specification of additional filters beyond the UUID.<br/>
         /// <br/>
-        /// Specifying a UUID string returns the exact occurrence.<br/>
-        /// Specifying a RFC 3339 timestamp returns the latest occurrence at or before that timestamp.<br/>
-        /// Specifying `latest` returns the latest occurrence at or before now.
+        ///   Specifying a UUID string returns the exact occurrence.<br/>
+        ///   Specifying a RFC 3339 timestamp returns the latest occurrence at or before that timestamp.<br/>
+        ///   Specifying `latest` returns the latest occurrence at or before now.
         /// </param>
         /// <param name="xMoovVersion">
         /// Specify an API version.<br/>

@@ -31,7 +31,7 @@ namespace Moov.Sdk.Models.Requests
 
         /// <summary>
         /// Identifies a unique request to create a transfer.<br/>
-        /// In order to avoid creating duplicate transfers, the same idempotency key should be reused when retrying a request.
+        ///   In order to avoid creating duplicate transfers, the same idempotency key should be reused when retrying a request.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-idempotency-key")]
         public string XIdempotencyKey { get; set; } = default!;
