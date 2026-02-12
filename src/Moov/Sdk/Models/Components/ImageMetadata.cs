@@ -18,6 +18,9 @@ namespace Moov.Sdk.Models.Components
     /// </summary>
     public class ImageMetadata
     {
+        /// <summary>
+        /// Unique identifier for a image resource.
+        /// </summary>
         [JsonProperty("imageID")]
         public string ImageID { get; set; } = default!;
 
