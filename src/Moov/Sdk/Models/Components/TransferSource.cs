@@ -16,7 +16,7 @@ namespace Moov.Sdk.Models.Components
     public class TransferSource
     {
         /// <summary>
-        /// UUID present only if the transfer is part of a transfer group.
+        /// String present only if the transfer is part of a transfer group.
         /// </summary>
         [JsonProperty("transferID")]
         public string? TransferID { get; set; }
