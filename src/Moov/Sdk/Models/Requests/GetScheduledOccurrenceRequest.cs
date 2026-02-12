@@ -35,9 +35,9 @@ namespace Moov.Sdk.Models.Requests
         public string ScheduleID { get; set; } = default!;
 
         /// <summary>
-        /// Allows the specification of additional filters beyond the UUID.<br/>
+        /// Allows the specification of additional filters beyond the string.<br/>
         /// <br/>
-        ///   Specifying a UUID string returns the exact occurrence.<br/>
+        ///   Specifying a string returns the exact occurrence.<br/>
         ///   Specifying a RFC 3339 timestamp returns the latest occurrence at or before that timestamp.<br/>
         ///   Specifying `latest` returns the latest occurrence at or before now.
         /// </summary>
