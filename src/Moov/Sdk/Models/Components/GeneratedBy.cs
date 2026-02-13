@@ -31,5 +31,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("bankAccountID")]
         public string? BankAccountID { get; set; }
+
+        [JsonProperty("invoiceID")]
+        public string? InvoiceID { get; set; }
     }
 }
