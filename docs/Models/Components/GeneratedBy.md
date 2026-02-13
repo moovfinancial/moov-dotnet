@@ -12,3 +12,4 @@ The entity that generated the fee.
 | `DisputeID`        | *string*           | :heavy_minus_sign: | N/A                |
 | `AccountID`        | *string*           | :heavy_minus_sign: | N/A                |
 | `BankAccountID`    | *string*           | :heavy_minus_sign: | N/A                |
+| `InvoiceID`        | *string*           | :heavy_minus_sign: | N/A                |
