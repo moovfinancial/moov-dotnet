@@ -47,7 +47,7 @@ namespace Moov.Sdk
             ServerUrl = "";
             ServerIndex = 0;
             XMoovVersion = null;
-            UserAgent = "speakeasy-sdk/csharp 25.10.3 2.818.4 v2025.10.00 Moov.Sdk";
+            UserAgent = "speakeasy-sdk/csharp 25.10.4 2.821.8 v2025.10.00 Moov.Sdk";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;
