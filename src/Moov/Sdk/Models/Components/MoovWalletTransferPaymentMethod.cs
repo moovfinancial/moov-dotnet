@@ -12,14 +12,19 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
-    public class TransferOptions
+    public class MoovWalletTransferPaymentMethod
     {
-        [JsonProperty("sourceOptions")]
-        public List<TransferPaymentMethod>? SourceOptions { get; set; }
+        /// <summary>
+        /// ID of the payment method.
+        /// </summary>
+        [JsonProperty("paymentMethodID")]
+        public string PaymentMethodID { get; set; } = default!;
 
-        [JsonProperty("destinationOptions")]
-        public List<TransferPaymentMethod>? DestinationOptions { get; set; }
+        [JsonProperty("paymentMethodType")]
+        public MoovWalletTransferPaymentMethodPaymentMethodType PaymentMethodType { get; set; } = default!;
+
+        [JsonProperty("wallet")]
+        public TransferPaymentMethodsWallet Wallet { get; set; } = default!;
     }
 }
