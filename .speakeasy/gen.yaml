@@ -30,7 +30,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 25.10.4
+  version: 25.10.5
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
