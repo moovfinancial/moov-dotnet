@@ -28,7 +28,7 @@ namespace Moov.Sdk.Models.Components
         /// The payment method type that represents a payment rail and directionality.
         /// </summary>
         [JsonProperty("paymentMethodType")]
-        public PaymentMethodType PaymentMethodType { get; set; } = default!;
+        public TransferPaymentMethodType PaymentMethodType { get; set; } = default!;
 
         [JsonProperty("account")]
         public TransferAccount Account { get; set; } = default!;
@@ -37,16 +37,16 @@ namespace Moov.Sdk.Models.Components
         /// A bank account as contained within a payment method.
         /// </summary>
         [JsonProperty("bankAccount")]
-        public PaymentMethodsBankAccount? BankAccount { get; set; }
+        public TransferPaymentMethodsBankAccount? BankAccount { get; set; }
 
         [JsonProperty("wallet")]
-        public PaymentMethodsWallet? Wallet { get; set; }
+        public TransferPaymentMethodsWallet? Wallet { get; set; }
 
         /// <summary>
         /// A card as contained within a payment method.
         /// </summary>
         [JsonProperty("card")]
-        public PaymentMethodsCard? Card { get; set; }
+        public TransferPaymentMethodsCard? Card { get; set; }
 
         /// <summary>
         /// Describes an Apple Pay token on a Moov account.

@@ -1,0 +1,66 @@
+# TransferPaymentMethod
+
+A method of moving money
+
+
+## Supported Types
+
+### MoovWallet
+
+```csharp
+TransferPaymentMethod.CreateMoovWallet(/* values here */);
+```
+
+### AchDebitFund
+
+```csharp
+TransferPaymentMethod.CreateAchDebitFund(/* values here */);
+```
+
+### AchDebitCollect
+
+```csharp
+TransferPaymentMethod.CreateAchDebitCollect(/* values here */);
+```
+
+### AchCreditStandard
+
+```csharp
+TransferPaymentMethod.CreateAchCreditStandard(/* values here */);
+```
+
+### AchCreditSameDay
+
+```csharp
+TransferPaymentMethod.CreateAchCreditSameDay(/* values here */);
+```
+
+### RtpCredit
+
+```csharp
+TransferPaymentMethod.CreateRtpCredit(/* values here */);
+```
+
+### CardPayment
+
+```csharp
+TransferPaymentMethod.CreateCardPayment(/* values here */);
+```
+
+### PushToCard
+
+```csharp
+TransferPaymentMethod.CreatePushToCard(/* values here */);
+```
+
+### PullFromCard
+
+```csharp
+TransferPaymentMethod.CreatePullFromCard(/* values here */);
+```
+
+### ApplePay
+
+```csharp
+TransferPaymentMethod.CreateApplePay(/* values here */);
+```
