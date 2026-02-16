@@ -1,21 +1,21 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    latest:
+    dev:
         inputs:
-            - location: registry.speakeasyapi.dev/moov/moov/api-latest
+            - location: registry.speakeasyapi.dev/moov/moov/api-dev
         registry:
-            location: registry.speakeasyapi.dev/moov/moov/latest
+            location: registry.speakeasyapi.dev/moov/moov/python-dev
 targets:
     latest:
         target: csharp
-        source: latest
+        source: dev
         publish:
             nuget:
                 apiKey: $nuget_api_key
         codeSamples:
             registry:
-                location: registry.speakeasyapi.dev/moov/moov/latest-csharp-code-samples
+                location: registry.speakeasyapi.dev/moov/moov/dev-csharp-code-samples
             labelOverride:
                 fixedValue: Csharp (SDK)
             blocking: false
