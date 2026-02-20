@@ -19,6 +19,8 @@ namespace Moov.Sdk.Models.Components
         Payment,
         [JsonProperty("payout")]
         Payout,
+        [JsonProperty("invoice-payment")]
+        InvoicePayment,
     }
 
     public static class PaymentLinkTypeExtension
