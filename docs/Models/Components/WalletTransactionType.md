@@ -32,3 +32,4 @@
 | `Adjustment`                   | adjustment                     |
 | `FeeRevenue`                   | fee-revenue                    |
 | `Residual`                     | residual                       |
+| `InstantBankFailure`           | instant-bank-failure           |

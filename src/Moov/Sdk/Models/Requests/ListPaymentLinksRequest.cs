@@ -11,6 +11,7 @@ namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
+    using System.Collections.Generic;
 
     public class ListPaymentLinksRequest
     {
@@ -23,7 +24,7 @@ namespace Moov.Sdk.Models.Requests
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=X-Moov-Version")]
@@ -35,11 +36,11 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=count")]
         public long? Count { get; set; }
 
-        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=type")]
-        public PaymentLinkType? Type { get; set; }
-
-        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=status")]
-        public PaymentLinkStatus? Status { get; set; }
+        /// <summary>
+        /// A comma-separated list of payment link types to filter results.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=types")]
+        public List<PaymentLinkType>? Types { get; set; }
 
         /// <summary>
         /// The merchant account ID.
