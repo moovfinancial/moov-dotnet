@@ -51,6 +51,8 @@ namespace Moov.Sdk
 
         public IImages Images { get; }
 
+        public IInvoices Invoices { get; }
+
         public IPaymentLinks PaymentLinks { get; }
 
         public IPaymentMethods PaymentMethods { get; }
@@ -163,6 +165,10 @@ namespace Moov.Sdk
         /// The Images sub-SDK.
         /// </summary>
         public IImages Images { get; private set; }
+        /// <summary>
+        /// The Invoices sub-SDK.
+        /// </summary>
+        public IInvoices Invoices { get; private set; }
         /// <summary>
         /// The PaymentLinks sub-SDK.
         /// </summary>
@@ -303,6 +309,8 @@ namespace Moov.Sdk
 
             Images = new Images(SDKConfiguration);
 
+            Invoices = new Invoices(SDKConfiguration);
+
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 
             PaymentMethods = new PaymentMethods(SDKConfiguration);
@@ -372,7 +380,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="serverIndex">The index of the server to use from the predefined server list. Must be between 0 and the length of the server list. Defaults to 0 if not specified.</param>
@@ -450,6 +458,8 @@ namespace Moov.Sdk
             Files = new Files(SDKConfiguration);
 
             Images = new Images(SDKConfiguration);
+
+            Invoices = new Invoices(SDKConfiguration);
 
             PaymentLinks = new PaymentLinks(SDKConfiguration);
 
