@@ -65,5 +65,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("rtpDetails")]
         public RTPTransactionDetails? RtpDetails { get; set; }
+
+        /// <summary>
+        /// Instant-bank specific details about the transaction.
+        /// </summary>
+        [JsonProperty("instantBankDetails")]
+        public InstantBankTransactionDetails? InstantBankDetails { get; set; }
     }
 }

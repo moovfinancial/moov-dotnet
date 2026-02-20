@@ -49,11 +49,5 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("options")]
         public List<CreateInvoiceLineItemOption>? Options { get; set; }
-
-        /// <summary>
-        /// Optional list of images associated with this line item.
-        /// </summary>
-        [JsonProperty("images")]
-        public List<CreateInvoiceLineItemImage>? Images { get; set; }
     }
 }

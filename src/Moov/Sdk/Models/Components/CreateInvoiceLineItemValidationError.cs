@@ -30,8 +30,5 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("quantity")]
         public string? Quantity { get; set; }
-
-        [JsonProperty("images")]
-        public Dictionary<string, CreateInvoiceLineItemImageValidationError>? Images { get; set; }
     }
 }

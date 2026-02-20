@@ -3,7 +3,8 @@
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Payment` | payment   |
-| `Payout`  | payout    |
+| Name             | Value            |
+| ---------------- | ---------------- |
+| `Payment`        | payment          |
+| `Payout`         | payout           |
+| `InvoicePayment` | invoice-payment  |

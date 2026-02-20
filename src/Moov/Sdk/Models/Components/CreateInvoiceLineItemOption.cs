@@ -12,7 +12,6 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
     /// <summary>
     /// Represents a modifier or option applied to a line item.
@@ -42,11 +41,5 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("group")]
         public string? Group { get; set; }
-
-        /// <summary>
-        /// Optional list of images associated with this line item option.
-        /// </summary>
-        [JsonProperty("images")]
-        public List<CreateInvoiceLineItemImage>? Images { get; set; }
     }
 }
