@@ -38,7 +38,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="skip">Description not available.</param>
@@ -73,7 +73,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -106,7 +106,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -141,7 +141,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -178,7 +178,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -211,7 +211,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -284,7 +284,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="skip">Description not available.</param>
@@ -429,7 +429,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -630,7 +630,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -775,7 +775,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -982,7 +982,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -1133,7 +1133,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
