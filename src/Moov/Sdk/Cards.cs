@@ -56,7 +56,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="xWaitFor">
@@ -72,6 +72,7 @@ namespace Moov.Sdk
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="DuplicateCardError">Attempted to link card that already exists on the account. Thrown when the API returns a 409 response.</exception>
         /// <exception cref="LinkCardError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<LinkCardResponse> LinkAsync(
@@ -100,7 +101,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -135,7 +136,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -179,7 +180,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -216,7 +217,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -279,7 +280,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="xWaitFor">
@@ -295,6 +296,7 @@ namespace Moov.Sdk
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="DuplicateCardError">Attempted to link card that already exists on the account. Thrown when the API returns a 409 response.</exception>
         /// <exception cref="LinkCardError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<LinkCardResponse> LinkAsync(
@@ -427,6 +429,32 @@ namespace Moov.Sdk
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
+            else if(responseStatusCode == 409)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    DuplicateCardErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<DuplicateCardErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into DuplicateCardErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new DuplicateCardError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
             else if(responseStatusCode == 422)
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -453,7 +481,7 @@ namespace Moov.Sdk
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
-            else if(new List<int>{401, 403, 404, 409, 429}.Contains(responseStatusCode))
+            else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
             {
                 throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
@@ -492,7 +520,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -635,7 +663,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -789,7 +817,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -996,7 +1024,7 @@ namespace Moov.Sdk
         ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
         ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
         /// <br/>
-        /// The `latest` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
+        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
         /// When no version is specified, the API defaults to `v2024.01.00`.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
