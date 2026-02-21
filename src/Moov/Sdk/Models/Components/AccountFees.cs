@@ -31,6 +31,12 @@ namespace Moov.Sdk.Models.Components
         public AmountDecimal MerchantPCIFee { get; set; } = default!;
 
         /// <summary>
+        /// Fees for invoice payments.
+        /// </summary>
+        [JsonProperty("invoicePaymentFee")]
+        public AmountDecimal InvoicePaymentFee { get; set; } = default!;
+
+        /// <summary>
         /// Fees for business verification.
         /// </summary>
         [JsonProperty("kybFee")]
