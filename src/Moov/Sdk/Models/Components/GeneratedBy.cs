@@ -17,21 +17,39 @@ namespace Moov.Sdk.Models.Components
     /// </summary>
     public class GeneratedBy
     {
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("transferID")]
         public string? TransferID { get; set; }
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("cardID")]
         public string? CardID { get; set; }
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("disputeID")]
         public string? DisputeID { get; set; }
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("accountID")]
         public string? AccountID { get; set; }
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("bankAccountID")]
         public string? BankAccountID { get; set; }
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("invoiceID")]
         public string? InvoiceID { get; set; }
     }
