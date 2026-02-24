@@ -17,12 +17,21 @@ namespace Moov.Sdk.Models.Components
 
     public class FeePlanAgreement
     {
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("agreementID")]
         public string AgreementID { get; set; } = default!;
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("planID")]
         public string PlanID { get; set; } = default!;
 
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("accountID")]
         public string? AccountID { get; set; }
 
