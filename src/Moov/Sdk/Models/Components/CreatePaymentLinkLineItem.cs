@@ -46,7 +46,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Optional list of images associated with this line item.<br/>
-        ///   This field is deprecated and will be ignored. A future release will populate images associated with the given productID.
+        ///   This field is being deprecated in favor using the images associated with a productID and will soon be unsupported.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("imageIDs")]
