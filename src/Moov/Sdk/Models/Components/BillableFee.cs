@@ -16,6 +16,9 @@ namespace Moov.Sdk.Models.Components
 
     public class BillableFee
     {
+        /// <summary>
+        /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
+        /// </summary>
         [JsonProperty("billableFeeID")]
         public string? BillableFeeID { get; set; }
 

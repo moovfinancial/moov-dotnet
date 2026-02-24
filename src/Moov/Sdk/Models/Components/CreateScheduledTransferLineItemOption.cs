@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
 
     /// <summary>
@@ -44,8 +45,10 @@ namespace Moov.Sdk.Models.Components
         public string? Group { get; set; }
 
         /// <summary>
-        /// Optional list of images associated with this line item.
+        /// Optional list of images associated with this line item option.<br/>
+        ///   This field is being deprecated in favor using the images associated with a productID and will soon be unsupported.
         /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("imageIDs")]
         public List<string>? ImageIDs { get; set; }
     }
