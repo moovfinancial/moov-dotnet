@@ -10,6 +10,7 @@
 | `CardOther`          | card-other           |
 | `CardPull`           | card-pull            |
 | `CardPush`           | card-push            |
+| `InstantBank`        | instant-bank         |
 | `MonthlyPlatform`    | monthly-platform     |
 | `NetworkPassthrough` | network-passthrough  |
 | `Other`              | other                |

@@ -65,8 +65,8 @@ var res = await sdk.Invoices.CreateInvoiceAsync(
                 },
             },
         },
-        InvoiceDate = System.DateTime.Parse("2026-01-15T00:00:00Z"),
-        DueDate = System.DateTime.Parse("2026-02-15T00:00:00Z"),
+        InvoiceDate = System.DateTime.Parse("2026-01-15T00:00:00Z").ToUniversalTime(),
+        DueDate = System.DateTime.Parse("2026-02-15T00:00:00Z").ToUniversalTime(),
         TaxAmount = new AmountDecimal() {
             Currency = "USD",
             ValueDecimal = "80.00",
@@ -217,8 +217,8 @@ var res = await sdk.Invoices.UpdateInvoiceAsync(
                 },
             },
         },
-        InvoiceDate = System.DateTime.Parse("2026-01-16T00:00:00Z"),
-        DueDate = System.DateTime.Parse("2026-02-16T00:00:00Z"),
+        InvoiceDate = System.DateTime.Parse("2026-01-16T00:00:00Z").ToUniversalTime(),
+        DueDate = System.DateTime.Parse("2026-02-16T00:00:00Z").ToUniversalTime(),
     }
 );
 
@@ -274,7 +274,7 @@ var res = await sdk.Invoices.CreateInvoicePaymentAsync(
             ValueDecimal = "500.00",
         },
         Description = "Payment received via wire transfer",
-        PaymentDate = System.DateTime.Parse("2026-01-20T14:45:00Z"),
+        PaymentDate = System.DateTime.Parse("2026-01-20T14:45:00Z").ToUniversalTime(),
     }
 );
 

@@ -53,7 +53,7 @@ var res = await sdk.Scheduling.CreateAsync(
         Occurrences = new List<Occurrence>() {
             new Occurrence() {
                 OccurrenceID = "c520f1b9-0ba7-42f5-b977-248cdbe41c69",
-                RunOn = System.DateTime.Parse("2009-11-10T23:00:00Z"),
+                RunOn = System.DateTime.Parse("2009-11-10T23:00:00Z").ToUniversalTime(),
                 RunTransfer = new CreateRunTransfer() {
                     Amount = new Amount() {
                         Currency = "USD",
@@ -121,7 +121,7 @@ var res = await sdk.Scheduling.CreateAsync(
                     Items = new List<CreateScheduledTransferLineItem>() {},
                 },
             },
-            Start = System.DateTime.Parse("2009-11-10T23:00:00Z"),
+            Start = System.DateTime.Parse("2009-11-10T23:00:00Z").ToUniversalTime(),
         },
     }
 );
@@ -217,7 +217,7 @@ var res = await sdk.Scheduling.UpdateAsync(
         Occurrences = new List<Occurrence>() {
             new Occurrence() {
                 OccurrenceID = "c520f1b9-0ba7-42f5-b977-248cdbe41c69",
-                RunOn = System.DateTime.Parse("2009-11-10T23:00:00Z"),
+                RunOn = System.DateTime.Parse("2009-11-10T23:00:00Z").ToUniversalTime(),
                 RunTransfer = new CreateRunTransfer() {
                     Amount = new Amount() {
                         Currency = "USD",
@@ -304,7 +304,7 @@ var res = await sdk.Scheduling.UpdateAsync(
                     },
                 },
             },
-            Start = System.DateTime.Parse("2009-11-10T23:00:00Z"),
+            Start = System.DateTime.Parse("2009-11-10T23:00:00Z").ToUniversalTime(),
         },
     }
 );
