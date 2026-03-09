@@ -54,7 +54,8 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// Optional unique identifier associating the line item with a product.<br/>
-        ///   This is for reporting or tracking purposes, and does not populate other details of the line item.
+        ///   When provided, images associated with the product will be included on the line item.<br/>
+        ///   This does not populate other details of the line item.
         /// </summary>
         [JsonProperty("productID")]
         public string? ProductID { get; set; }

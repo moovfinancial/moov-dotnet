@@ -1,6 +1,8 @@
-# RTPTransactionDetails
+# ~~RtpDetails~~
 
-RTP specific details about the transaction.
+DEPRECATED: use `InstantBankTransactionDetails` instead (v2026.04.00 or later). RTP specific details about the transaction.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 
 ## Fields

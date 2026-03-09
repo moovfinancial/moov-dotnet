@@ -1,5 +1,13 @@
 # PaymentLinkStatus
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = PaymentLinkStatus.Active;
+```
+
 
 ## Values
 

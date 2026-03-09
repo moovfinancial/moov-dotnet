@@ -2,6 +2,14 @@
 
 The reason the bank account status changed to the current value.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = BankAccountStatusReason.BankAccountCreated;
+```
+
 
 ## Values
 

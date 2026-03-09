@@ -2,6 +2,14 @@
 
 Status of a transaction within the RTP lifecycle.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = RTPTransactionStatus.Initiated;
+```
+
 
 ## Values
 

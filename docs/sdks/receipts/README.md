@@ -28,7 +28,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Receipts.CreateAsync(body: new List<ReceiptRequest>() {});
 
@@ -65,8 +71,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listReceipts" method="get" path="/receipts" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Receipts.ListAsync(id: "8508cf6c-9ce4-4e35-84c1-4b77320a620b");
 

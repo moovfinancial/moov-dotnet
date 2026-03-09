@@ -37,9 +37,16 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listIssuedCardAuthorizations" method="get" path="/issuing/{accountID}/authorizations" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListIssuedCardAuthorizationsRequest req = new ListIssuedCardAuthorizationsRequest() {
     AccountID = "6465d95a-e945-4a49-8983-d74faa135bb4",
@@ -80,8 +87,15 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getIssuedCardAuthorization" method="get" path="/issuing/{accountID}/authorizations/{authorizationID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.IssuingTransactions.GetAuthorizationAsync(
     accountID: "0ccac2cc-6692-44a9-b0d1-35a1892c2db2",
@@ -121,9 +135,16 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listIssuedCardAuthorizationEvents" method="get" path="/issuing/{accountID}/authorizations/{authorizationID}/events" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListIssuedCardAuthorizationEventsRequest req = new ListIssuedCardAuthorizationEventsRequest() {
     AccountID = "f30f8cb3-64d8-4a5f-a427-965317fa559a",
@@ -165,9 +186,16 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listIssuedCardTransactions" method="get" path="/issuing/{accountID}/card-transactions" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListIssuedCardTransactionsRequest req = new ListIssuedCardTransactionsRequest() {
     AccountID = "4efcb497-f915-4b6e-b973-e5e5bcc1fd34",
@@ -208,8 +236,15 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getIssuedCardTransaction" method="get" path="/issuing/{accountID}/card-transactions/{cardTransactionID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.IssuingTransactions.GetAsync(
     accountID: "b2b6e23c-a5aa-46a9-adb7-d12876e47288",

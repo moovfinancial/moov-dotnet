@@ -31,8 +31,15 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getUnderwriting" method="get" path="/accounts/{accountID}/underwriting" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Underwriting.GetAsync(accountID: "efe07546-f697-4da5-bf73-d9987efd4cdd");
 
@@ -72,7 +79,13 @@ you'll need to specify the `/accounts/{accountID}/profile.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Underwriting.UpsertAsync(
     accountID: "371bf394-45df-4ba8-a615-ad5483b1f963",

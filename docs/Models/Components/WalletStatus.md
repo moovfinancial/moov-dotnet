@@ -4,6 +4,14 @@ Status of a wallet.
   - `active`: The wallet is available for use and has an enabled payment method.
   - `closed`: The wallet is no longer active and the corresponding payment method has been disabled.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = WalletStatus.Active;
+```
+
 
 ## Values
 

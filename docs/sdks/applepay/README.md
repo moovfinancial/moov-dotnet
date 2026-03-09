@@ -57,7 +57,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.ApplePay.RegisterMerchantDomainsAsync(
     accountID: "60825531-8c7e-421c-8014-019c6603250c",
@@ -108,7 +114,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.ApplePay.UpdateMerchantDomainsAsync(
     accountID: "34b1c132-91d4-4676-9864-87e1d961d56d",
@@ -158,8 +170,15 @@ you'll need to specify the `/accounts/{accountID}/apple-pay.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getApplePayMerchantDomains" method="get" path="/accounts/{accountID}/apple-pay/domains" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.ApplePay.GetMerchantDomainsAsync(accountID: "28704d00-d07b-47db-9e54-016a9713d697");
 
@@ -200,7 +219,13 @@ you'll need to specify the `/accounts/{accountID}/apple-pay.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.ApplePay.CreateSessionAsync(
     accountID: "32ab62ca-7afd-4f49-89cb-0bb237258f23",
@@ -250,7 +275,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.ApplePay.LinkTokenAsync(
     accountID: "bf498c07-3852-4060-b561-bf992e26a851",
