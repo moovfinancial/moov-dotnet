@@ -1,5 +1,13 @@
 # FeeCategory
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = FeeCategory.Ach;
+```
+
 
 ## Values
 
@@ -10,6 +18,7 @@
 | `CardOther`          | card-other           |
 | `CardPull`           | card-pull            |
 | `CardPush`           | card-push            |
+| `InstantBank`        | instant-bank         |
 | `MonthlyPlatform`    | monthly-platform     |
 | `NetworkPassthrough` | network-passthrough  |
 | `Other`              | other                |

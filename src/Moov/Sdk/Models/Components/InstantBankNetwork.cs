@@ -14,42 +14,26 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// Status codes for RTP failures.
+    /// The network that the transaction was processed on.
     /// </summary>
-    public enum RTPFailureCode
+    public enum InstantBankNetwork
     {
-        [JsonProperty("processing-error")]
-        ProcessingError,
-        [JsonProperty("invalid-account")]
-        InvalidAccount,
-        [JsonProperty("account-closed")]
-        AccountClosed,
-        [JsonProperty("account-blocked")]
-        AccountBlocked,
-        [JsonProperty("invalid-field")]
-        InvalidField,
-        [JsonProperty("transaction-not-supported")]
-        TransactionNotSupported,
-        [JsonProperty("limit-exceeded")]
-        LimitExceeded,
-        [JsonProperty("invalid-amount")]
-        InvalidAmount,
-        [JsonProperty("customer-deceased")]
-        CustomerDeceased,
-        [JsonProperty("other")]
-        Other,
+        [JsonProperty("fednow")]
+        Fednow,
+        [JsonProperty("rtp")]
+        Rtp,
     }
 
-    public static class RTPFailureCodeExtension
+    public static class InstantBankNetworkExtension
     {
-        public static string Value(this RTPFailureCode value)
+        public static string Value(this InstantBankNetwork value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static RTPFailureCode ToEnum(this string value)
+        public static InstantBankNetwork ToEnum(this string value)
         {
-            foreach(var field in typeof(RTPFailureCode).GetFields())
+            foreach(var field in typeof(InstantBankNetwork).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -62,14 +46,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is RTPFailureCode)
+                    if (enumVal is InstantBankNetwork)
                     {
-                        return (RTPFailureCode)enumVal;
+                        return (InstantBankNetwork)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum RTPFailureCode");
+            throw new Exception($"Unknown value {value} for enum InstantBankNetwork");
         }
     }
 }

@@ -35,8 +35,15 @@ you'll need to specify the `/institutions.read` scope.
 <!-- UsageSnippet language="csharp" operationID="searchInstitutions" method="get" path="/institutions" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Institutions.SearchInstitutionsAsync();
 
@@ -78,9 +85,16 @@ you'll need to specify the `/fed.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listInstitutions" method="get" path="/institutions/ach/search" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListInstitutionsRequest? req = null;
 

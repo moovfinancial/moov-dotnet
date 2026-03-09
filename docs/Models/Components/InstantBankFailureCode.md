@@ -1,6 +1,14 @@
-# RTPFailureCode
+# InstantBankFailureCode
 
-Status codes for RTP failures.
+Status codes for instant-bank failures.
+
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = InstantBankFailureCode.ProcessingError;
+```
 
 
 ## Values
@@ -16,4 +24,5 @@ Status codes for RTP failures.
 | `LimitExceeded`           | limit-exceeded            |
 | `InvalidAmount`           | invalid-amount            |
 | `CustomerDeceased`        | customer-deceased         |
+| `ParticipantNotAvailable` | participant-not-available |
 | `Other`                   | other                     |

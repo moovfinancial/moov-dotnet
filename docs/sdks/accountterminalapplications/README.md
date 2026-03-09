@@ -35,7 +35,13 @@ you'll need to specify the `/accounts/{accountID}/terminal-applications.write` s
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.AccountTerminalApplications.LinkAsync(
     accountID: "76d4c8a0-1f2b-4e3b-8f5c-7a9e1b2c3d4e",
@@ -79,8 +85,15 @@ you'll need to specify the `/accounts/{accountID}/terminal-applications.read` sc
 <!-- UsageSnippet language="csharp" operationID="listAccountTerminalApplications" method="get" path="/accounts/{accountID}/terminal-applications" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.AccountTerminalApplications.ListAsync(accountID: "76d4c8a0-1f2b-4e3b-8f5c-7a9e1b2c3d4e");
 
@@ -116,8 +129,15 @@ you'll need to specify the `/accounts/{accountID}/terminal-applications.read` sc
 <!-- UsageSnippet language="csharp" operationID="getAccountTerminalApplication" method="get" path="/accounts/{accountID}/terminal-applications/{terminalApplicationID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.AccountTerminalApplications.GetAsync(
     accountID: "76d4c8a0-1f2b-4e3b-8f5c-7a9e1b2c3d4e",
@@ -157,8 +177,15 @@ you'll need to specify the `/accounts/{accountID}/terminal-configuration.read` s
 <!-- UsageSnippet language="csharp" operationID="getTerminalConfiguration" method="get" path="/accounts/{accountID}/terminal-applications/{terminalApplicationID}/configuration" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.AccountTerminalApplications.GetConfigurationAsync(
     accountID: "76d4c8a0-1f2b-4e3b-8f5c-7a9e1b2c3d4e",

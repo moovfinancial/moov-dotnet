@@ -2,6 +2,14 @@
 
 Payment methods allowed for collecting a payment.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = CollectionPaymentMethodType.ApplePay;
+```
+
 
 ## Values
 

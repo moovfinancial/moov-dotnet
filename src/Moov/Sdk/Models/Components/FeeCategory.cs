@@ -25,6 +25,8 @@ namespace Moov.Sdk.Models.Components
         CardPull,
         [JsonProperty("card-push")]
         CardPush,
+        [JsonProperty("instant-bank")]
+        InstantBank,
         [JsonProperty("monthly-platform")]
         MonthlyPlatform,
         [JsonProperty("network-passthrough")]

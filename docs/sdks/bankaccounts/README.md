@@ -111,7 +111,13 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.LinkAsync(
     accountID: "b326319d-6118-4921-8d82-d5810d562eef",
@@ -162,8 +168,15 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listBankAccounts" method="get" path="/accounts/{accountID}/bank-accounts" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.ListAsync(accountID: "85539920-22dd-4900-a07e-7a88268456d9");
 
@@ -201,8 +214,15 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getBankAccount" method="get" path="/accounts/{accountID}/bank-accounts/{bankAccountID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.GetAsync(
     accountID: "32ac681d-3244-4673-8541-362e40b7677a",
@@ -242,8 +262,15 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 <!-- UsageSnippet language="csharp" operationID="disableBankAccount" method="delete" path="/accounts/{accountID}/bank-accounts/{bankAccountID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.DisableAsync(
     accountID: "6b6ade5f-0b20-493c-b483-cf1f670a1055",
@@ -295,8 +322,15 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 <!-- UsageSnippet language="csharp" operationID="initiateMicroDeposits" method="post" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/micro-deposits" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.InitiateMicroDepositsAsync(
     accountID: "ced90412-ebb4-43d4-a171-0a929ed5fb37",
@@ -340,7 +374,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.CompleteMicroDepositsAsync(
     accountID: "af0efd2b-a1fa-40fd-998b-2007b8df0766",
@@ -398,8 +438,15 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getBankAccountVerification" method="get" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/verify" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.GetVerificationAsync(
     accountID: "c87bc077-580a-4c2a-b312-2afbd21fc1cd",
@@ -454,8 +501,15 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 <!-- UsageSnippet language="csharp" operationID="initiateBankAccountVerification" method="post" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/verify" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.InitiateVerificationAsync(
     accountID: "9d6d433b-c13a-48d7-849a-1897fa71375b",
@@ -506,7 +560,13 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.BankAccounts.CompleteVerificationAsync(
     accountID: "2116e60b-0ea7-447e-a7af-5d647f92f06a",

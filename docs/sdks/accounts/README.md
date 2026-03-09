@@ -104,7 +104,13 @@ to specify the `/accounts.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
     AccountType = CreateAccountType.Business,
@@ -153,9 +159,16 @@ to specify the `/accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listAccounts" method="get" path="/accounts" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListAccountsRequest req = new ListAccountsRequest() {
     Skip = 60,
@@ -195,8 +208,15 @@ to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getAccount" method="get" path="/accounts/{accountID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.GetAsync(accountID: "2f93a6cf-3b3b-4c17-8d3b-110dfadccea4");
 
@@ -243,7 +263,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.UpdateAsync(
     accountID: "433cb9d1-5943-4fd5-91b4-2aef5b30e2e7",
@@ -367,8 +393,15 @@ you'll need to specify the `/accounts/{accountID}/profile.disconnect` scope.
 <!-- UsageSnippet language="csharp" operationID="disconnectAccount" method="delete" path="/accounts/{accountID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.DisconnectAsync(accountID: "cfdfea7d-f185-4de5-ba90-b09f14fe6683");
 
@@ -409,9 +442,16 @@ to specify the `/accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listConnectedAccountsForAccount" method="get" path="/accounts/{accountID}/connected-accounts" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListConnectedAccountsForAccountRequest req = new ListConnectedAccountsForAccountRequest() {
     AccountID = "7e09ffc8-e508-4fd4-a54e-21cff90a1824",
@@ -453,7 +493,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.ConnectAsync(
     accountID: "456cb5b6-20dc-4585-97b4-745d013adb1f",
@@ -501,8 +547,15 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getAccountCountries" method="get" path="/accounts/{accountID}/countries" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.GetCountriesAsync(accountID: "a2026036-cc26-42c1-beef-950662d13b5d");
 
@@ -543,7 +596,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.AssignCountriesAsync(
     accountID: "46736fa8-4bf7-4144-8e0e-dbea1eb0805b",
@@ -589,8 +648,15 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getMerchantProcessingAgreement" method="get" path="/accounts/{accountID}/merchant-agreement" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.GetMerchantProcessingAgreementAsync(accountID: "6180d9b9-2377-4190-8530-70a99d31a578");
 
@@ -627,8 +693,15 @@ token patched to the account. Read more in our [documentation](https://docs.moov
 <!-- UsageSnippet language="csharp" operationID="getTermsOfServiceToken" method="get" path="/tos-token" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.GetTermsOfServiceTokenAsync();
 

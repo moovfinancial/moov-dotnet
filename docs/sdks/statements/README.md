@@ -27,9 +27,16 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listStatements" method="get" path="/accounts/{accountID}/statements" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListStatementsRequest req = new ListStatementsRequest() {
     Skip = 60,
@@ -73,8 +80,15 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getStatement" method="get" path="/accounts/{accountID}/statements/{statementID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Statements.GetAsync(
     accountID: "5623ff52-0b05-41ea-b7b3-655835064007",

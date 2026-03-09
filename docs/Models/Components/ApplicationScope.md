@@ -2,6 +2,14 @@
 
 A permission that the application requests on another account.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = ApplicationScope.AccountsRead;
+```
+
 
 ## Values
 

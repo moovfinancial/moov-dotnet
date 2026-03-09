@@ -15,15 +15,21 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// RTP specific details about the transaction.
+    /// Instant-bank specific details about the transaction.
     /// </summary>
-    public class RTPTransactionDetails
+    public class InstantBankTransactionDetails
     {
         /// <summary>
-        /// Status of a transaction within the RTP lifecycle.
+        /// The network that the transaction was processed on.
+        /// </summary>
+        [JsonProperty("network")]
+        public InstantBankNetwork Network { get; set; } = default!;
+
+        /// <summary>
+        /// Status of a transaction within the instant-bank lifecycle.
         /// </summary>
         [JsonProperty("status")]
-        public RTPTransactionStatus? Status { get; set; }
+        public InstantBankTransactionStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Response code returned by network on failure.
@@ -32,10 +38,13 @@ namespace Moov.Sdk.Models.Components
         public string? NetworkResponseCode { get; set; }
 
         /// <summary>
-        /// Status codes for RTP failures.
+        /// Status codes for instant-bank failures.
         /// </summary>
         [JsonProperty("failureCode")]
-        public RTPFailureCode? FailureCode { get; set; }
+        public InstantBankFailureCode? FailureCode { get; set; }
+
+        [JsonProperty("endToEndID")]
+        public string? EndToEndID { get; set; }
 
         [JsonProperty("initiatedOn")]
         public DateTime? InitiatedOn { get; set; }

@@ -14,30 +14,44 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// Status of a transaction within the RTP lifecycle.
+    /// Status codes for instant-bank failures.
     /// </summary>
-    public enum RTPTransactionStatus
+    public enum InstantBankFailureCode
     {
-        [JsonProperty("initiated")]
-        Initiated,
-        [JsonProperty("completed")]
-        Completed,
-        [JsonProperty("failed")]
-        Failed,
-        [JsonProperty("accepted-without-posting")]
-        AcceptedWithoutPosting,
+        [JsonProperty("processing-error")]
+        ProcessingError,
+        [JsonProperty("invalid-account")]
+        InvalidAccount,
+        [JsonProperty("account-closed")]
+        AccountClosed,
+        [JsonProperty("account-blocked")]
+        AccountBlocked,
+        [JsonProperty("invalid-field")]
+        InvalidField,
+        [JsonProperty("transaction-not-supported")]
+        TransactionNotSupported,
+        [JsonProperty("limit-exceeded")]
+        LimitExceeded,
+        [JsonProperty("invalid-amount")]
+        InvalidAmount,
+        [JsonProperty("customer-deceased")]
+        CustomerDeceased,
+        [JsonProperty("participant-not-available")]
+        ParticipantNotAvailable,
+        [JsonProperty("other")]
+        Other,
     }
 
-    public static class RTPTransactionStatusExtension
+    public static class InstantBankFailureCodeExtension
     {
-        public static string Value(this RTPTransactionStatus value)
+        public static string Value(this InstantBankFailureCode value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static RTPTransactionStatus ToEnum(this string value)
+        public static InstantBankFailureCode ToEnum(this string value)
         {
-            foreach(var field in typeof(RTPTransactionStatus).GetFields())
+            foreach(var field in typeof(InstantBankFailureCode).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -50,14 +64,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is RTPTransactionStatus)
+                    if (enumVal is InstantBankFailureCode)
                     {
-                        return (RTPTransactionStatus)enumVal;
+                        return (InstantBankFailureCode)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum RTPTransactionStatus");
+            throw new Exception($"Unknown value {value} for enum InstantBankFailureCode");
         }
     }
 }
