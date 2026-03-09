@@ -1,5 +1,13 @@
 # SweepStatus
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = SweepStatus.Accruing;
+```
+
 
 ## Values
 

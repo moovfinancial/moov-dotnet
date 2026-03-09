@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
 
     public class TransferDestination
     {
@@ -60,10 +61,8 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("cardDetails")]
         public CardTransactionDetails? CardDetails { get; set; }
 
-        /// <summary>
-        /// RTP specific details about the transaction.
-        /// </summary>
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("rtpDetails")]
-        public RTPTransactionDetails? RtpDetails { get; set; }
+        public RtpDetails? RtpDetails { get; set; }
     }
 }

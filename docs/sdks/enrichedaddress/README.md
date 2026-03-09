@@ -21,9 +21,16 @@ you'll need to specify the `/profile-enrichment.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getEnrichmentAddress" method="get" path="/enrichment/address" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 GetEnrichmentAddressRequest req = new GetEnrichmentAddressRequest() {
     Search = "<value>",

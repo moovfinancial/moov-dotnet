@@ -21,9 +21,16 @@ List active (non-disabled) products for an account.
 <!-- UsageSnippet language="csharp" operationID="listProducts" method="get" path="/accounts/{accountID}/products" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListProductsRequest req = new ListProductsRequest() {
     AccountID = "cd696219-4308-446c-b0d8-1759254995c2",
@@ -64,7 +71,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Products.CreateAsync(
     accountID: "27cd3181-7c1c-4d81-b020-e7d55c33941f",
@@ -177,8 +190,15 @@ Retrieve a product by ID.
 <!-- UsageSnippet language="csharp" operationID="getProduct" method="get" path="/accounts/{accountID}/products/{productID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Products.GetAsync(
     accountID: "a749d848-5ebc-42a4-9ae6-555804317835",
@@ -218,7 +238,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Products.UpdateAsync(
     accountID: "7a7b55ed-d90d-4e83-a8f6-f146eaebd0cc",
@@ -275,8 +301,15 @@ The product will no longer be available, but will remain in the system for histo
 <!-- UsageSnippet language="csharp" operationID="disableProduct" method="delete" path="/accounts/{accountID}/products/{productID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Products.DisableAsync(
     accountID: "9fbe72c0-abba-4bb7-b1d0-d15ee702fe62",

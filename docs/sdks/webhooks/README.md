@@ -22,8 +22,15 @@ List all available event types that can be subscribed to.
 <!-- UsageSnippet language="csharp" operationID="listEventTypes" method="get" path="/event-types" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.ListEventTypesAsync();
 
@@ -55,8 +62,15 @@ List all webhooks configured for the account.
 <!-- UsageSnippet language="csharp" operationID="listWebhooks" method="get" path="/webhooks" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.ListAsync();
 
@@ -91,7 +105,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.CreateAsync(body: new CreateWebhook() {
     Url = "https://experienced-sailor.biz/",
@@ -131,8 +151,15 @@ Get details of a specific webhook.
 <!-- UsageSnippet language="csharp" operationID="getWebhook" method="get" path="/webhooks/{webhookID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.GetAsync(webhookID: "deeb5a05-74d4-40ad-b4be-a9265fd49428");
 
@@ -168,7 +195,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.UpdateAsync(
     webhookID: "954b566e-0c37-481b-bf92-6cdbd0e47dc0",
@@ -212,8 +245,15 @@ Disable a webhook. Disabled webhooks will no longer receive events.
 <!-- UsageSnippet language="csharp" operationID="disableWebhook" method="delete" path="/webhooks/{webhookID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.DisableAsync(webhookID: "c88929b3-cbb6-4144-923f-e9a5ba645708");
 
@@ -247,8 +287,15 @@ Send a test ping to a webhook to verify it is configured correctly.
 <!-- UsageSnippet language="csharp" operationID="pingWebhook" method="post" path="/webhooks/{webhookID}/ping" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.PingAsync(webhookID: "87e0ecc6-d6c3-4eeb-99e8-6dbe9212a6a2");
 
@@ -281,8 +328,15 @@ Get the secret key for verifying webhook payloads.
 <!-- UsageSnippet language="csharp" operationID="getWebhookSecret" method="get" path="/webhooks/{webhookID}/secret" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Webhooks.GetSecretAsync(webhookID: "1fac81d6-2d5b-4180-8765-81282a450eda");
 

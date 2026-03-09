@@ -2,6 +2,14 @@
 
 Reason for a transfer's failure.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = TransferFailureReason.SourcePaymentError;
+```
+
 
 ## Values
 
