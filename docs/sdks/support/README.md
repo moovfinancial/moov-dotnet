@@ -57,7 +57,13 @@ specify the `/accounts/{partnerAccountID}/tickets.write` and `/accounts/{account
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Support.CreateTicketAsync(
     accountID: "4af4784a-c777-48f6-8211-063d5341f84b",
@@ -108,9 +114,16 @@ specify the `/accounts/{partnerAccountID}/tickets.read` and `/accounts/{accountI
 <!-- UsageSnippet language="csharp" operationID="listTickets" method="get" path="/accounts/{accountID}/tickets" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListTicketsRequest req = new ListTicketsRequest() {
     Count = 20,
@@ -153,8 +166,15 @@ specify the `/accounts/{partnerAccountID}/tickets.read` and `/accounts/{accountI
 <!-- UsageSnippet language="csharp" operationID="getTicket" method="get" path="/accounts/{accountID}/tickets/{ticketID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Support.GetTicketAsync(
     accountID: "873ccb78-88b3-4520-85f2-7cc2aef5704b",
@@ -199,7 +219,13 @@ specify the `/accounts/{partnerAccountID}/tickets.write` and `/accounts/{account
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Support.UpdateTicketAsync(
     accountID: "7cce2b85-37c2-4c76-954c-03dcec2b12f0",
@@ -246,8 +272,15 @@ specify the `/accounts/{partnerAccountID}/tickets.read` and `/accounts/{accountI
 <!-- UsageSnippet language="csharp" operationID="listTicketMessages" method="get" path="/accounts/{accountID}/tickets/{ticketID}/messages" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Support.ListTicketMessagesAsync(
     accountID: "72444918-8529-4986-b10c-41817e45d09e",

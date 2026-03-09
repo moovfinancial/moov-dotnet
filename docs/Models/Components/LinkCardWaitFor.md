@@ -1,5 +1,13 @@
 # LinkCardWaitFor
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = LinkCardWaitFor.PaymentMethod;
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # AchDebitCollectPaymentMethodPaymentMethodType
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = AchDebitCollectPaymentMethodPaymentMethodType.AchDebitCollect;
+```
+
 
 ## Values
 

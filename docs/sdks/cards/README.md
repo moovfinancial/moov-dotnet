@@ -80,7 +80,13 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Cards.LinkAsync(
     accountID: "5593e46f-7936-474b-a52b-96f1da46867b",
@@ -138,8 +144,15 @@ you'll need to specify the `/accounts/{accountID}/cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listCards" method="get" path="/accounts/{accountID}/cards" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Cards.ListAsync(accountID: "b902712f-8ab9-47ba-b39f-5ccfbcac528c");
 
@@ -177,8 +190,15 @@ you'll need to specify the `/accounts/{accountID}/cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getCard" method="get" path="/accounts/{accountID}/cards/{cardID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Cards.GetAsync(
     accountID: "1f590cf9-4db9-4241-8818-30f9c26362e8",
@@ -229,7 +249,13 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Cards.UpdateAsync(
     accountID: "7104688e-8434-482e-9556-4784be3ad3fe",
@@ -275,8 +301,15 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 <!-- UsageSnippet language="csharp" operationID="disableCard" method="delete" path="/accounts/{accountID}/cards/{cardID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Cards.DisableAsync(
     accountID: "bbd12cb2-58f4-46e5-861d-1e6c4617c0c2",

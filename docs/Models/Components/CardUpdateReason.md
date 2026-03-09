@@ -2,6 +2,14 @@
 
 The results of the card update request.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = CardUpdateReason.Unspecified;
+```
+
 
 ## Values
 

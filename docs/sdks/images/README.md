@@ -28,8 +28,15 @@ List metadata for all images in the specified account.
 <!-- UsageSnippet language="csharp" operationID="listImageMetadata" method="get" path="/accounts/{accountID}/images" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Images.ListAsync(
     accountID: "3a4ed2d9-03e1-4b0e-b45f-2a9ca72f8adb",
@@ -71,7 +78,13 @@ var res = await sdk.Images.ListAsync(
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Images.UploadAsync(
     accountID: "c0971a52-1f1c-4511-876a-f45c4cfd6154",
@@ -115,8 +128,15 @@ Retrieve metadata for a specific image by its ID.
 <!-- UsageSnippet language="csharp" operationID="getImageMetadata" method="get" path="/accounts/{accountID}/images/{imageID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Images.GetMetadataAsync(
     accountID: "6cf66a43-31ce-4d27-8dd4-130fa57f0a6f",
@@ -158,7 +178,13 @@ the metadata form section to keep existing metadata. Duplicate images, and reque
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Images.UpdateAsync(
     accountID: "310f4f19-45cf-4429-9aae-8e93827ecb0d",
@@ -207,8 +233,15 @@ var res = await sdk.Images.UpdateAsync(
 <!-- UsageSnippet language="csharp" operationID="deleteImage" method="delete" path="/accounts/{accountID}/images/{imageID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Images.DeleteAsync(
     accountID: "866c32ce-2536-4b21-8e12-f8c474fb2a9b",
@@ -248,7 +281,13 @@ Replace the metadata for an existing image.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Images.UpdateMetadataAsync(
     accountID: "58c3c937-e648-49c5-88be-6225cca35af1",

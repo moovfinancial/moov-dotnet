@@ -2,6 +2,14 @@
 
 The result of an event.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = IssuedCardAuthorizationEventResult.Approved;
+```
+
 
 ## Values
 

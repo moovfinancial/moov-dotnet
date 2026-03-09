@@ -39,7 +39,13 @@ you'll need to specify the `/terminal-applications.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.TerminalApplications.CreateAsync(body: new CreateTerminalApplication() {
     Platform = TerminalApplicationPlatform.Android,
@@ -82,8 +88,15 @@ you'll need to specify the `/terminal-applications.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listTerminalApplications" method="get" path="/terminal-applications" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.TerminalApplications.ListAsync();
 
@@ -118,8 +131,15 @@ you'll need to specify the `/terminal-applications.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getTerminalApplication" method="get" path="/terminal-applications/{terminalApplicationID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.TerminalApplications.GetAsync(terminalApplicationID: "12345678-1234-1234-1234-123456789012");
 
@@ -155,8 +175,15 @@ you'll need to specify the `/terminal-applications.write` scope.
 <!-- UsageSnippet language="csharp" operationID="deleteTerminalApplication" method="delete" path="/terminal-applications/{terminalApplicationID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.TerminalApplications.DeleteAsync(terminalApplicationID: "12345678-1234-1234-1234-123456789012");
 
@@ -195,7 +222,13 @@ you'll need to specify the `/terminal-applications.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.TerminalApplications.CreateVersionAsync(
     terminalApplicationID: "12345678-1234-1234-1234-123456789012",

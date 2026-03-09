@@ -2,6 +2,14 @@
 
 The payment method type that represents a payment rail and directionality
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = TransferPaymentMethodType.MoovWallet;
+```
+
 
 ## Values
 

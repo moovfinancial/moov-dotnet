@@ -31,7 +31,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 26.1.9
+  version: 26.1.10
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
@@ -40,6 +40,7 @@ csharp:
   disableNamespacePascalCasingApr2024: true
   dotnetVersion: net8.0
   enableCancellationToken: true
+  enableFormatting: false
   enableSourceLink: true
   flattenGlobalSecurity: true
   flatteningOrder: parameters-first
