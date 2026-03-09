@@ -2,6 +2,14 @@
 
 Status of the terminal application.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = TerminalApplicationStatus.Undefined;
+```
+
 
 ## Values
 

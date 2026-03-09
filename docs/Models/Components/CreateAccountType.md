@@ -1,5 +1,13 @@
 # CreateAccountType
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = CreateAccountType.Individual;
+```
+
 
 ## Values
 

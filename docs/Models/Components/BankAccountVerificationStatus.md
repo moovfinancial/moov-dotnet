@@ -1,5 +1,13 @@
 # BankAccountVerificationStatus
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = BankAccountVerificationStatus.New;
+```
+
 
 ## Values
 

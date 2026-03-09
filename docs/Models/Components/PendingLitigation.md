@@ -1,5 +1,13 @@
 # PendingLitigation
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = PendingLitigation.BankruptcyOrInsolvency;
+```
+
 
 ## Values
 

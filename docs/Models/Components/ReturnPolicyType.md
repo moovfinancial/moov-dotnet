@@ -1,5 +1,13 @@
 # ReturnPolicyType
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = ReturnPolicyType.None;
+```
+
 
 ## Values
 

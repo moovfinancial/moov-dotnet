@@ -1,5 +1,13 @@
 # RequirementErrorCode
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = RequirementErrorCode.InvalidValue;
+```
+
 
 ## Values
 

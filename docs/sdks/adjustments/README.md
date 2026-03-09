@@ -25,8 +25,15 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listAdjustments" method="get" path="/accounts/{accountID}/adjustments" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Adjustments.ListAsync(accountID: "c054f3a6-d542-4310-a955-830739f800f0");
 
@@ -63,8 +70,15 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getAdjustment" method="get" path="/accounts/{accountID}/adjustments/{adjustmentID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Adjustments.GetAsync(
     accountID: "3ef4e658-8aaa-449f-a7a4-95a6839172a1",

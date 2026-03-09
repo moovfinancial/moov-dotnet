@@ -1,5 +1,13 @@
 # EvidenceType
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = EvidenceType.Receipt;
+```
+
 
 ## Values
 

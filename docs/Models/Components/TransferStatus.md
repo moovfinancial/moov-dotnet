@@ -2,6 +2,14 @@
 
 Status of a transfer.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = TransferStatus.Created;
+```
+
 
 ## Values
 

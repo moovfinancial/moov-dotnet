@@ -59,7 +59,13 @@ you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Representatives.CreateAsync(
     accountID: "5abfe3a5-7cd3-4f92-a8bd-19b64e3ccc10",
@@ -133,8 +139,15 @@ you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listRepresentatives" method="get" path="/accounts/{accountID}/representatives" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Representatives.ListAsync(accountID: "aa071158-7ed6-4c18-af34-4fa37b755e53");
 
@@ -170,8 +183,15 @@ you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 <!-- UsageSnippet language="csharp" operationID="deleteRepresentative" method="delete" path="/accounts/{accountID}/representatives/{representativeID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Representatives.DeleteAsync(
     accountID: "23b950c7-3ccf-4edc-9566-07f765d57c73",
@@ -212,8 +232,15 @@ you'll need to specify the `/accounts/{accountID}/representatives.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getRepresentative" method="get" path="/accounts/{accountID}/representatives/{representativeID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Representatives.GetAsync(
     accountID: "071b8a57-e691-4e4b-9143-75f1a828ce9b",
@@ -268,7 +295,13 @@ you'll need to specify the `/accounts/{accountID}/representatives.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Representatives.UpdateAsync(
     accountID: "76647e2b-97ea-4551-8275-7153219f3317",

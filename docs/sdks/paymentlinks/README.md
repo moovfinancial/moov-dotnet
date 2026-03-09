@@ -46,7 +46,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.PaymentLinks.CreateAsync(
     accountID: "cc1d04a8-03b1-4600-b675-e6180d574074",
@@ -109,9 +115,16 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listPaymentLinks" method="get" path="/accounts/{accountID}/payment-links" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListPaymentLinksRequest req = new ListPaymentLinksRequest() {
     Skip = 60,
@@ -152,8 +165,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getPaymentLink" method="get" path="/accounts/{accountID}/payment-links/{paymentLinkCode}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.PaymentLinks.GetAsync(
     accountID: "323f95b1-3798-4203-8a73-5c8668a9226e",
@@ -195,7 +215,13 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.PaymentLinks.UpdateAsync(
     accountID: "ddad6613-2350-446a-883b-f76abb2cd4ea",
@@ -248,8 +274,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 <!-- UsageSnippet language="csharp" operationID="disablePaymentLink" method="delete" path="/accounts/{accountID}/payment-links/{paymentLinkCode}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.PaymentLinks.DisableAsync(
     accountID: "c1cf000d-0dd9-4dec-bd5e-a88e135adf82",
@@ -291,8 +324,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 <!-- UsageSnippet language="csharp" operationID="getPaymentLinkQRCode" method="get" path="/accounts/{accountID}/payment-links/{paymentLinkCode}/qrcode" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.PaymentLinks.GetQRCodeAsync(
     accountID: "2f01a42a-aa5a-424f-9f47-6f8999ed05dc",
