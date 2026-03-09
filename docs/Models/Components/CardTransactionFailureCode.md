@@ -1,5 +1,13 @@
 # CardTransactionFailureCode
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = CardTransactionFailureCode.CallIssuer;
+```
+
 
 ## Values
 

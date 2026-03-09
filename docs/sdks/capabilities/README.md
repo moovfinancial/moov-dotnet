@@ -37,8 +37,15 @@ you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listCapabilities" method="get" path="/accounts/{accountID}/capabilities" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Capabilities.ListAsync(accountID: "1a50ab1c-1714-49e7-a016-cea17b33511a");
 
@@ -77,7 +84,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Capabilities.RequestAsync(
     accountID: "de140d5c-c78e-4ebb-a001-f51aaf6c814a",
@@ -125,7 +138,13 @@ you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Capabilities.GetAsync(
     accountID: "c1697ea6-c984-4ba1-9b81-93e5e18660af",
@@ -167,7 +186,13 @@ you'll need to specify the `/accounts/{accountID}/capabilities.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Capabilities.DisableAsync(
     accountID: "2be80c4e-d409-49ea-8a8a-76dfa4006d69",

@@ -21,8 +21,15 @@ you'll need to specify the `/ping.read` scope.
 <!-- UsageSnippet language="csharp" operationID="ping" method="get" path="/ping" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Ping.PingAsync();
 

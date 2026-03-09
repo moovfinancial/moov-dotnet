@@ -43,7 +43,13 @@ you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Sweeps.CreateConfigAsync(
     accountID: "02c3d1d1-d847-4eb3-bef3-8caa32a5610b",
@@ -90,8 +96,15 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listSweepConfigs" method="get" path="/accounts/{accountID}/sweep-configs" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Sweeps.ListConfigsAsync(accountID: "ed67e4c8-03d3-4d88-ba38-fcd87de45a92");
 
@@ -127,8 +140,15 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getSweepConfig" method="get" path="/accounts/{accountID}/sweep-configs/{sweepConfigID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Sweeps.GetConfigAsync(
     accountID: "ae1c2e76-3195-4fc8-b922-b7af6dcf1aad",
@@ -170,7 +190,13 @@ you'll need to specify the `/accounts/{accountID}/wallets.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Sweeps.UpdateConfigAsync(
     accountID: "c16d0264-3e93-4d13-b8d8-6e8e98122631",
@@ -216,9 +242,16 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listSweeps" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListSweepsRequest req = new ListSweepsRequest() {
     AccountID = "a227b50c-035d-4b7f-932c-a4b7e02aaf5c",
@@ -260,8 +293,15 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getSweep" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}" example="Accrued sweep" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Sweeps.GetAsync(
     accountID: "ca23b553-56f5-4cce-9f4b-bd7043749aa5",
@@ -276,8 +316,15 @@ var res = await sdk.Sweeps.GetAsync(
 <!-- UsageSnippet language="csharp" operationID="getSweep" method="get" path="/accounts/{accountID}/wallets/{walletID}/sweeps/{sweepID}" example="Paid sweep" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Sweeps.GetAsync(
     accountID: "481bc941-34a2-4c2a-a4f8-feaa9a25d630",

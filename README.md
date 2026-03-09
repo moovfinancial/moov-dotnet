@@ -66,7 +66,13 @@ dotnet add reference src/Moov/Sdk/Moov.Sdk.csproj
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
     AccountType = CreateAccountType.Business,
@@ -1128,7 +1134,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Errors;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 try
 {
@@ -1256,7 +1268,11 @@ using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(
     serverUrl: "https://api.moov.io",
-    xMoovVersion: "<value>"
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
 );
 
 var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {

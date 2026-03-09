@@ -2,6 +2,14 @@
 
 Types of documents that can be uploaded.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = DocumentType.DriversLicense;
+```
+
 
 ## Values
 

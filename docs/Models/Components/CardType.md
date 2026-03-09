@@ -2,6 +2,14 @@
 
 The type of the card.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = CardType.Debit;
+```
+
 
 ## Values
 

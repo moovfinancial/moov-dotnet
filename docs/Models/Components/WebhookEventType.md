@@ -2,6 +2,14 @@
 
 The type of event that occurred.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = WebhookEventType.Wildcard;
+```
+
 
 ## Values
 

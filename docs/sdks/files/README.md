@@ -37,7 +37,13 @@ you'll need to specify the `/accounts/{accountID}/files.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Files.UploadAsync(
     accountID: "221c30bd-2551-4ae4-9a14-07bf6599b728",
@@ -85,8 +91,15 @@ you'll need to specify the `/accounts/{accountID}/files.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listFiles" method="get" path="/accounts/{accountID}/files" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Files.ListAsync(accountID: "d1133bf2-4853-4436-9a03-23739895ab98");
 
@@ -122,8 +135,15 @@ you'll need to specify the `/accounts/{accountID}/files.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getFileDetails" method="get" path="/accounts/{accountID}/files/{fileID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Files.GetAsync(
     accountID: "7f888113-d35a-4536-b9bc-c55076736ab6",

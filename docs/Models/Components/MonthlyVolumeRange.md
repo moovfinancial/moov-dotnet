@@ -2,6 +2,14 @@
 
 The low value in each range is included. The high value in each range is excluded.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = MonthlyVolumeRange.Under10k;
+```
+
 
 ## Values
 
