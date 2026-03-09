@@ -2,6 +2,14 @@
 
 Status codes for RTP failures.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = RTPFailureCode.ProcessingError;
+```
+
 
 ## Values
 

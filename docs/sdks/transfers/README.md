@@ -92,7 +92,13 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Transfers.GenerateOptionsAsync(
     accountID: "deafe3cf-31d4-4dcc-8176-3d6bf8bb4f04",
@@ -147,7 +153,13 @@ using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 CreateTransferRequest req = new CreateTransferRequest() {
     XIdempotencyKey = "6de5561f-5a9f-4bd3-a458-ce0baacae20d",
@@ -183,7 +195,13 @@ using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 CreateTransferRequest req = new CreateTransferRequest() {
     XIdempotencyKey = "d6903402-776f-48d6-8fba-0358959d34e5",
@@ -249,9 +267,16 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listTransfers" method="get" path="/accounts/{accountID}/transfers" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListTransfersRequest req = new ListTransfersRequest() {
     Skip = 60,
@@ -296,8 +321,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getTransfer" method="get" path="/accounts/{accountID}/transfers/{transferID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Transfers.GetAsync(
     transferID: "960cf5a2-50a3-4914-ad86-d54c022bf5df",
@@ -342,7 +374,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Transfers.UpdateAsync(
     transferID: "de30c075-4245-4d62-bfb3-f76d4d7d3b9c",
@@ -389,8 +427,15 @@ var res = await sdk.Transfers.UpdateAsync(
 <!-- UsageSnippet language="csharp" operationID="createCancellation" method="post" path="/accounts/{accountID}/transfers/{transferID}/cancellations" example="Created cancellation" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Transfers.CreateCancellationAsync(
     accountID: "10ae862c-6658-4f87-967d-46e995737204",
@@ -431,8 +476,15 @@ var res = await sdk.Transfers.CreateCancellationAsync(
 <!-- UsageSnippet language="csharp" operationID="getCancellation" method="get" path="/accounts/{accountID}/transfers/{transferID}/cancellations/{cancellationID}" example="Cancellation" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Transfers.GetCancellationAsync(
     accountID: "55cb62c2-22e4-4a36-bd53-3b9adc77ee81",
@@ -480,7 +532,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 InitiateRefundRequest req = new InitiateRefundRequest() {
     XIdempotencyKey = "8d9af6b8-67e1-4efa-8188-68039f34097d",
@@ -503,7 +561,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 InitiateRefundRequest req = new InitiateRefundRequest() {
     XIdempotencyKey = "4e7a906a-e6d1-4bca-9cc5-6246295ef93c",
@@ -550,8 +614,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listRefunds" method="get" path="/accounts/{accountID}/transfers/{transferID}/refunds" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Transfers.ListRefundsAsync(
     accountID: "03f5baaa-f5d8-44bd-90db-868745fe66e8",
@@ -591,8 +662,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getRefund" method="get" path="/accounts/{accountID}/transfers/{transferID}/refunds/{refundID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Transfers.GetRefundAsync(
     transferID: "e90d3386-c5b2-4e2b-b841-efc590eba6c0",
@@ -639,7 +717,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 CreateReversalRequest req = new CreateReversalRequest() {
     XIdempotencyKey = "93d03831-45c4-49ec-a9b2-88cbd41dfca7",
@@ -662,7 +746,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 CreateReversalRequest req = new CreateReversalRequest() {
     XIdempotencyKey = "b91d00b2-4ecb-4eb4-a67f-d6f76c0b7ad8",

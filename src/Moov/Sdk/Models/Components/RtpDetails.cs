@@ -15,9 +15,10 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// RTP specific details about the transaction.
+    /// DEPRECATED: use `InstantBankTransactionDetails` instead (v2026.04.00 or later). RTP specific details about the transaction.
     /// </summary>
-    public class RTPTransactionDetails
+    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
+    public class RtpDetails
     {
         /// <summary>
         /// Status of a transaction within the RTP lifecycle.

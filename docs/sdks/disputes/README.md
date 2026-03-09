@@ -88,9 +88,16 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listDisputes" method="get" path="/accounts/{accountID}/disputes" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListDisputesRequest req = new ListDisputesRequest() {
     AccountID = "6fee8f6c-b2c5-44a4-aebb-718335fe4f8e",
@@ -134,8 +141,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getDispute" method="get" path="/accounts/{accountID}/disputes/{disputeID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.GetAsync(
     accountID: "44d3e9dd-7128-4b00-8cd9-09d3242e5bcf",
@@ -177,8 +191,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="acceptDispute" method="post" path="/accounts/{accountID}/disputes/{disputeID}/accept" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.AcceptAsync(
     accountID: "ef028cdd-49e0-4cd8-9c89-6673e28e226e",
@@ -221,8 +242,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listDisputeEvidence" method="get" path="/accounts/{accountID}/disputes/{disputeID}/evidence" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.ListEvidenceAsync(
     accountID: "efc12040-97af-4720-91c5-14cd1a83877b",
@@ -266,7 +294,13 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.UploadEvidenceFileAsync(
     accountID: "c09fd2f8-75fb-4ed9-be03-f8565d3ddc67",
@@ -320,7 +354,13 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.UploadEvidenceTextAsync(
     accountID: "ed2ca924-e2c4-4f3a-b077-866bb07b0671",
@@ -371,8 +411,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 <!-- UsageSnippet language="csharp" operationID="submitDisputeEvidence" method="post" path="/accounts/{accountID}/disputes/{disputeID}/evidence/submit" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.SubmitEvidenceAsync(
     accountID: "01f79d04-f2de-42de-9e37-23c751edecb4",
@@ -415,8 +462,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getDisputeEvidence" method="get" path="/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.GetEvidenceAsync(
     accountID: "ab59cc9a-6480-40fe-8a06-8c41883e3c79",
@@ -463,7 +517,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 UpdateDisputeEvidenceRequest req = new UpdateDisputeEvidenceRequest() {
     AccountID = "bc2af75d-427a-486d-8580-3adfa9599023",
@@ -508,8 +568,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 <!-- UsageSnippet language="csharp" operationID="deleteDisputeEvidenceFile" method="delete" path="/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.DeleteEvidenceAsync(
     accountID: "b21731c6-3497-46a3-859a-3761a6b8e096",
@@ -554,8 +621,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getDisputeEvidenceData" method="get" path="/accounts/{accountID}/disputes/{disputeID}/evidence/{evidenceID}/data" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Disputes.GetEvidenceDataAsync(
     accountID: "83e6bc61-f894-4cd8-b847-d617383323fb",

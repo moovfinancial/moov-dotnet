@@ -36,7 +36,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Onboarding.CreateInviteAsync(body: new OnboardingInviteRequest() {
     Scopes = new List<ApplicationScope>() {
@@ -95,8 +101,15 @@ you'll need to specify the `/accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listOnboardingInvites" method="get" path="/onboarding-invites" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Onboarding.ListInvitesAsync();
 
@@ -131,8 +144,15 @@ you'll need to specify the `/accounts.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getOnboardingInvite" method="get" path="/onboarding-invites/{code}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Onboarding.GetInviteAsync(code: "N1IA5eWYNh");
 
@@ -168,8 +188,15 @@ you'll need to specify the `/accounts.write` scope.
 <!-- UsageSnippet language="csharp" operationID="revokeOnboardingInvite" method="delete" path="/onboarding-invites/{code}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Onboarding.RevokeInviteAsync(code: "N1IA5eWYNh");
 

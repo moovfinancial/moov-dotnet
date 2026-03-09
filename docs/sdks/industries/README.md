@@ -21,8 +21,15 @@ you'll need to specify the `/profile-enrichment.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listIndustries" method="get" path="/industries" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Industries.ListAsync();
 

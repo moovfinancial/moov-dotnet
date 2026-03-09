@@ -2,6 +2,14 @@
 
 The file's purpose.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = FilePurpose.BusinessVerification;
+```
+
 
 ## Values
 

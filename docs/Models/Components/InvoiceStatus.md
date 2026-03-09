@@ -1,5 +1,13 @@
 # InvoiceStatus
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = InvoiceStatus.Draft;
+```
+
 
 ## Values
 

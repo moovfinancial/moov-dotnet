@@ -2,6 +2,14 @@
 
 Status of a card issuing authorization.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = IssuingAuthorizationStatus.Pending;
+```
+
 
 ## Values
 

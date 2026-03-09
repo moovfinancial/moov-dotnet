@@ -27,8 +27,15 @@ you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listPaymentMethods" method="get" path="/accounts/{accountID}/payment-methods" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.PaymentMethods.ListAsync(accountID: "f5503781-dfe4-4bcd-9487-5b5fe2b4d53b");
 
@@ -66,8 +73,15 @@ you'll need to specify the `/accounts/{accountID}/payment-methods.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getPaymentMethod" method="get" path="/accounts/{accountID}/payment-methods/{paymentMethodID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.PaymentMethods.GetAsync(
     accountID: "56878537-30b0-48ee-9c54-07ab3a8b243d",

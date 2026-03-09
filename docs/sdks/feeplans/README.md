@@ -58,9 +58,16 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listFeePlanAgreements" method="get" path="/accounts/{accountID}/fee-plan-agreements" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListFeePlanAgreementsRequest req = new ListFeePlanAgreementsRequest() {
     Skip = 60,
@@ -103,7 +110,13 @@ you'll need to specify the `/accounts/{accountID}/profile.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.FeePlans.CreateFeePlanAgreementsAsync(
     accountID: "409c6b4b-e622-40c2-9dc4-fb494e555723",
@@ -148,8 +161,15 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listFeePlans" method="get" path="/accounts/{accountID}/fee-plans" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.FeePlans.ListFeePlansAsync(accountID: "b3d59179-f74e-4ee8-b123-33220b3c7d4b");
 
@@ -186,9 +206,16 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listFeeRevenue" method="get" path="/accounts/{accountID}/fee-revenue" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListFeeRevenueRequest req = new ListFeeRevenueRequest() {
     Skip = 60,
@@ -229,9 +256,16 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="retrieveFees" method="get" path="/accounts/{accountID}/fees" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 RetrieveFeesRequest req = new RetrieveFeesRequest() {
     AccountID = "89daf02d-b6b3-4fbf-b20d-5bf967324682",
@@ -272,8 +306,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listFeesFetch" method="post" path="/accounts/{accountID}/fees/.fetch" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.FeePlans.ListFeesFetchAsync(accountID: "55c34e26-269d-4872-8e42-0fa83e3f4b10");
 
@@ -310,9 +351,16 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listPartnerPricingAgreements" method="get" path="/accounts/{accountID}/partner-pricing-agreements" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListPartnerPricingAgreementsRequest req = new ListPartnerPricingAgreementsRequest() {
     Skip = 60,
@@ -353,9 +401,16 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listResiduals" method="get" path="/accounts/{accountID}/residuals" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListResidualsRequest req = new ListResidualsRequest() {
     Skip = 60,
@@ -396,8 +451,15 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getResidual" method="get" path="/accounts/{accountID}/residuals/{residualID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.FeePlans.GetResidualAsync(
     accountID: "4c308842-45d1-49c1-98be-7299848b1e20",
@@ -437,9 +499,16 @@ you'll need to specify the `/accounts/{accountID}/profile.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listResidualFees" method="get" path="/accounts/{accountID}/residuals/{residualID}/fees" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListResidualFeesRequest req = new ListResidualFeesRequest() {
     Skip = 60,

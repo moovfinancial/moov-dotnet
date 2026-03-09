@@ -2,6 +2,14 @@
 
 Payment methods allowed for disbursing funds.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = DisbursementPaymentMethodType.PushToCard;
+```
+
 
 ## Values
 

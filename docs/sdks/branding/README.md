@@ -31,7 +31,13 @@ you'll need to specify the `/accounts/{accountID}/branding.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Branding.CreateAsync(
     accountID: "0a6ae927-b52b-4ef4-86d0-288f27479817",
@@ -84,7 +90,13 @@ you'll need to specify the `/accounts/{accountID}/branding.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Branding.UpsertAsync(
     accountID: "0cd408b1-a57d-477b-825b-12331c2ed00a",
@@ -135,8 +147,15 @@ you'll need to specify the `/accounts/{accountID}/branding.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getBrand" method="get" path="/accounts/{accountID}/branding" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Branding.GetAsync(accountID: "8a4ec43e-d45f-481d-a291-683cb221e3cc");
 
