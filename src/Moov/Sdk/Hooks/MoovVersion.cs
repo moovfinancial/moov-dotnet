@@ -1,13 +1,16 @@
 namespace Moov.Sdk.Hooks
 {
+    using System.Net.Http;
+    using System.Threading.Tasks;
     using Moov.Sdk.Utils;
 
-    public class MoovVersion : ISDKInitHook
+    public class MoovVersion : IBeforeRequestHook
     {
-        public SDKConfig SDKInit(SDKConfig config)
+        public Task<HttpRequestMessage> BeforeRequestAsync(BeforeRequestContext hookCtx, HttpRequestMessage request)
         {
-            config.XMoovVersion = Constants.OpenApiDocVersion;
-            return config;
+            request.Headers.Remove("X-Moov-Version");
+            request.Headers.Add("X-Moov-Version", Constants.OpenApiDocVersion);
+            return Task.FromResult(request);
         }
     }
 }
