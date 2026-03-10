@@ -1400,12 +1400,7 @@ namespace Moov.Sdk
                 httpRequest.Headers.Add("Accept", "image/jpeg;q=1, image/png;q=0.7, image/webp;q=0");
             }
 
-            if (SDKConfiguration.SecuritySource != null)
-            {
-                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
-            }
-
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPublicImage", null, SDKConfiguration.SecuritySource, cancellationToken);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPublicImage", null, null, cancellationToken);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 

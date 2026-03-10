@@ -1,5 +1,13 @@
 # RefundPolicy
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = RefundPolicy.ConditionalRefund;
+```
+
 
 ## Values
 

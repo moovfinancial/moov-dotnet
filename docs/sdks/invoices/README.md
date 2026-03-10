@@ -20,6 +20,16 @@ you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
+* [Delete](#delete) - Delete an invoice. Only invoices in `draft` status can be deleted.
+
+Deleting an invoice indicates it was created by mistake and should be completely disregarded.
+Deleted invoices are hidden from list results by default, but can still be retrieved
+individually through the get invoice endpoint. If you need to void an invoice that was
+already sent or is otherwise part of the invoice history, cancel it instead by updating
+its status to `canceled`.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
 * [CreateInvoicePayment](#createinvoicepayment) - Creates a payment resource to represent that an invoice was paid outside of the Moov platform.
 If a payment link was created for the invoice, the corresponding payment link is canceled, but a receipt is still sent.
 
@@ -46,7 +56,13 @@ using Moov.Sdk.Models.Components;
 using System;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Invoices.CreateInvoiceAsync(
     accountID: "c463fb80-6410-48b7-9e2e-6e9ec58a654f",
@@ -109,9 +125,16 @@ you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listInvoices" method="get" path="/accounts/{accountID}/invoices" example="Invoices" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListInvoicesRequest req = new ListInvoicesRequest() {
     Skip = 60,
@@ -153,8 +176,15 @@ you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getInvoice" method="get" path="/accounts/{accountID}/invoices/{invoiceID}" example="Invoice" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Invoices.GetInvoiceAsync(
     accountID: "3ecce96f-a052-4c96-b389-98e880af1ab4",
@@ -198,7 +228,13 @@ using Moov.Sdk.Models.Components;
 using System;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Invoices.UpdateInvoiceAsync(
     accountID: "fcce46d6-5a85-404a-afa3-f7303401bd08",
@@ -246,6 +282,61 @@ var res = await sdk.Invoices.UpdateInvoiceAsync(
 | Moov.Sdk.Models.Errors.UpdateInvoiceError | 422                                       | application/json                          |
 | Moov.Sdk.Models.Errors.APIException       | 4XX, 5XX                                  | \*/\*                                     |
 
+## Delete
+
+Delete an invoice. Only invoices in `draft` status can be deleted.
+
+Deleting an invoice indicates it was created by mistake and should be completely disregarded.
+Deleted invoices are hidden from list results by default, but can still be retrieved
+individually through the get invoice endpoint. If you need to void an invoice that was
+already sent or is otherwise part of the invoice history, cancel it instead by updating
+its status to `canceled`.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="deleteInvoice" method="delete" path="/accounts/{accountID}/invoices/{invoiceID}" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
+
+var res = await sdk.Invoices.DeleteAsync(
+    accountID: "<id>",
+    invoiceID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AccountID`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `InvoiceID`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | *string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `XMoovVersion`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | *string*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Specify an API version.<br/><br/>API versioning follows the format `vYYYY.QQ.BB`, where <br/>  - `YYYY` is the year<br/>  - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>  - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>    - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/><br/>The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>When no version is specified, the API defaults to `v2024.01.00`. |
+
+### Response
+
+**[DeleteInvoiceResponse](../../Models/Requests/DeleteInvoiceResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
 ## CreateInvoicePayment
 
 Creates a payment resource to represent that an invoice was paid outside of the Moov platform.
@@ -262,7 +353,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Invoices.CreateInvoicePaymentAsync(
     accountID: "e02333e4-a835-46d1-8d02-9af7a405e65f",
@@ -314,8 +411,15 @@ you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listInvoicePayments" method="get" path="/accounts/{accountID}/invoices/{invoiceID}/payments" example="Payments" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Invoices.ListInvoicePaymentsAsync(
     accountID: "dcfbb04d-465e-4dbc-ad14-420961d94d21",

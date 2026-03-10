@@ -2,6 +2,14 @@
 
 The bank account type.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = BankAccountType.Checking;
+```
+
 
 ## Values
 

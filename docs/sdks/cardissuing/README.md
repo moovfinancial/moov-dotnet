@@ -42,7 +42,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.CardIssuing.RequestAsync(
     accountID: "4d9ac71a-efcc-4bdf-bcfe-d710ca654e3e",
@@ -108,9 +114,16 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listIssuedCards" method="get" path="/issuing/{accountID}/issued-cards" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListIssuedCardsRequest req = new ListIssuedCardsRequest() {
     AccountID = "17c958e0-3abe-46e5-8afb-98742f1fb8ac",
@@ -151,8 +164,15 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getIssuedCard" method="get" path="/issuing/{accountID}/issued-cards/{issuedCardID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.CardIssuing.GetAsync(
     accountID: "4fde8da4-b6c5-4379-82a2-4ff6a742e41a",
@@ -194,7 +214,13 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.CardIssuing.UpdateAsync(
     accountID: "44db31bc-2813-424b-9b8c-2d3f5f1300e3",
@@ -248,8 +274,15 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read-secure` scop
 <!-- UsageSnippet language="csharp" operationID="getFullIssuedCard" method="get" path="/issuing/{accountID}/issued-cards/{issuedCardID}/details" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.CardIssuing.GetFullAsync(
     accountID: "512052fb-5e2c-4d24-98dd-fa893c9d8a03",

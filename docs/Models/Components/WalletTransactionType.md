@@ -1,5 +1,13 @@
 # WalletTransactionType
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = WalletTransactionType.AccountFunding;
+```
+
 
 ## Values
 

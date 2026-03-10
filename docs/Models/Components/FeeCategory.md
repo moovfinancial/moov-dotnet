@@ -1,5 +1,13 @@
 # FeeCategory
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = FeeCategory.Ach;
+```
+
 
 ## Values
 

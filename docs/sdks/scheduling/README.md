@@ -45,7 +45,13 @@ using Moov.Sdk.Models.Components;
 using System;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Scheduling.CreateAsync(
     accountID: "8b64fef5-c389-40d5-838f-d6ae10e70162",
@@ -161,9 +167,16 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listSchedules" method="get" path="/accounts/{accountID}/schedules" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListSchedulesRequest req = new ListSchedulesRequest() {
     Skip = 60,
@@ -208,7 +221,13 @@ using Moov.Sdk.Models.Components;
 using System;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Scheduling.UpdateAsync(
     accountID: "7becca38-ec01-4fcf-8cf7-c187c7cf6a7a",
@@ -345,8 +364,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getSchedules" method="get" path="/accounts/{accountID}/schedules/{scheduleID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Scheduling.GetAsync(
     accountID: "31afd98b-eb55-41b3-8a4f-0ee8ea69e4e0",
@@ -386,8 +412,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
 <!-- UsageSnippet language="csharp" operationID="cancelSchedule" method="delete" path="/accounts/{accountID}/schedules/{scheduleID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Scheduling.CancelAsync(
     accountID: "e89edcfc-19ca-40eb-802b-a35100dea24d",
@@ -428,8 +461,15 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getScheduledOccurrence" method="get" path="/accounts/{accountID}/schedules/{scheduleID}/occurrences/{occurrenceFilter}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Scheduling.GetOccurranceAsync(
     accountID: "ea12b5d5-6249-4af2-ae48-6141a5251090",

@@ -22,7 +22,13 @@ Allows clients to notify the authorization server that a previously obtained ref
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Authentication.RevokeAccessTokenAsync(body: new RevokeTokenRequest() {
     Token = "<value>",
@@ -63,7 +69,13 @@ Create or refresh an access token.
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Authentication.CreateAccessTokenAsync(body: new AuthTokenRequest() {
     GrantType = GrantType.ClientCredentials,

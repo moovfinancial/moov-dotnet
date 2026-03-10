@@ -1,5 +1,13 @@
 # FulfillmentTimeframe
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = FulfillmentTimeframe.Immediate;
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # InvoicePaymentType
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = InvoicePaymentType.Transfer;
+```
+
 
 ## Values
 

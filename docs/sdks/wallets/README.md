@@ -46,7 +46,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Wallets.CreateAsync(
     accountID: "b4b3f37c-b73e-4271-b8ec-108a8593c9b9",
@@ -96,9 +102,16 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listWallets" method="get" path="/accounts/{accountID}/wallets" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListWalletsRequest req = new ListWalletsRequest() {
     Skip = 60,
@@ -142,8 +155,15 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getWallet" method="get" path="/accounts/{accountID}/wallets/{walletID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Wallets.GetAsync(
     accountID: "d04dfd44-8194-422f-a666-08d30c183f9a",
@@ -188,7 +208,13 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.Wallets.UpdateAsync(
     walletID: "9f1c6e07-aae8-40e6-b290-502bb1bc486e",

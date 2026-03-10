@@ -36,6 +36,18 @@ namespace Moov.Sdk.Models.Components
         public string CustomerAccountID { get; set; } = default!;
 
         /// <summary>
+        /// Display name of the customer account.
+        /// </summary>
+        [JsonProperty("customerDisplayName")]
+        public string CustomerDisplayName { get; set; } = default!;
+
+        /// <summary>
+        /// Email address of the customer account.
+        /// </summary>
+        [JsonProperty("customerEmail")]
+        public string CustomerEmail { get; set; } = default!;
+
+        /// <summary>
         /// A unique identifier for a Moov resource. Supports UUID format (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) or typed format with base32-encoded UUID and type suffix (e.g., kuoaydiojf7uszaokc2ggnaaaa_xfer).
         /// </summary>
         [JsonProperty("partnerAccountID")]
@@ -112,5 +124,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("canceledOn")]
         public DateTime? CanceledOn { get; set; }
+
+        [JsonProperty("disabledOn")]
+        public DateTime? DisabledOn { get; set; }
     }
 }

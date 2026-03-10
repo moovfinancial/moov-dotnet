@@ -31,9 +31,16 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="listWalletTransactions" method="get" path="/accounts/{accountID}/wallets/{walletID}/transactions" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 ListWalletTransactionsRequest req = new ListWalletTransactionsRequest() {
     AccountID = "69e4529b-baf0-4f00-877b-123cfd9d6116",
@@ -78,8 +85,15 @@ you'll need to specify the `/accounts/{accountID}/wallets.read` scope.
 <!-- UsageSnippet language="csharp" operationID="getWalletTransaction" method="get" path="/accounts/{accountID}/wallets/{walletID}/transactions/{transactionID}" -->
 ```csharp
 using Moov.Sdk;
+using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(xMoovVersion: "<value>");
+var sdk = new MoovClient(
+    xMoovVersion: "<value>",
+    security: new Security() {
+        Username = "",
+        Password = "",
+    }
+);
 
 var res = await sdk.WalletTransactions.GetAsync(
     accountID: "f0b02d73-10dc-42e6-8030-fd78fcbc114f",

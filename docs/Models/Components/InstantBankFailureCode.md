@@ -2,6 +2,14 @@
 
 Status codes for instant-bank failures.
 
+## Example Usage
+
+```csharp
+using Moov.Sdk.Models.Components;
+
+var value = InstantBankFailureCode.ProcessingError;
+```
+
 
 ## Values
 
