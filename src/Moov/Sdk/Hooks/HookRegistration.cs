@@ -26,7 +26,7 @@ namespace Moov.Sdk.Hooks
         public static void InitHooks(IHooks hooks)
         {
             var versionHook = new MoovVersion();
-            hooks.RegisterSDKInitHook(versionHook);
+            hooks.RegisterBeforeRequestHook(versionHook);
         }
     }
 }
