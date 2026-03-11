@@ -61,6 +61,8 @@ namespace Moov.Sdk
 
         public IRepresentatives Representatives { get; }
 
+        public IResolutionLinks ResolutionLinks { get; }
+
         public IScheduling Scheduling { get; }
 
         public IStatements Statements { get; }
@@ -185,6 +187,10 @@ namespace Moov.Sdk
         /// The Representatives sub-SDK.
         /// </summary>
         public IRepresentatives Representatives { get; private set; }
+        /// <summary>
+        /// The ResolutionLinks sub-SDK.
+        /// </summary>
+        public IResolutionLinks ResolutionLinks { get; private set; }
         /// <summary>
         /// The Scheduling sub-SDK.
         /// </summary>
@@ -318,6 +324,8 @@ namespace Moov.Sdk
             Products = new Products(SDKConfiguration);
 
             Representatives = new Representatives(SDKConfiguration);
+
+            ResolutionLinks = new ResolutionLinks(SDKConfiguration);
 
             Scheduling = new Scheduling(SDKConfiguration);
 
@@ -468,6 +476,8 @@ namespace Moov.Sdk
             Products = new Products(SDKConfiguration);
 
             Representatives = new Representatives(SDKConfiguration);
+
+            ResolutionLinks = new ResolutionLinks(SDKConfiguration);
 
             Scheduling = new Scheduling(SDKConfiguration);
 
