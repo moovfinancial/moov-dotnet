@@ -379,18 +379,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="security">The security configuration to use for API requests. If provided, this will be used as a static security configuration.</param>
         /// <param name="securitySource">A function that returns the security configuration dynamically. This takes precedence over the static security parameter if both are provided.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="serverIndex">The index of the server to use from the predefined server list. Must be between 0 and the length of the server list. Defaults to 0 if not specified.</param>
         /// <param name="serverUrl">A custom server URL to use instead of the predefined server list. If provided with urlParams, the URL will be templated with the provided parameters.</param>
         /// <param name="urlParams">A dictionary of parameters to use for templating the serverUrl. Only used when serverUrl is provided.</param>
@@ -400,7 +388,6 @@ namespace Moov.Sdk
         public MoovClient(
             Moov.Sdk.Models.Components.Security? security = null,
             Func<Moov.Sdk.Models.Components.Security>? securitySource = null,
-            string? xMoovVersion = null,
             int? serverIndex = null,
             string? serverUrl = null,
             Dictionary<string, string>? urlParams = null,
@@ -436,7 +423,6 @@ namespace Moov.Sdk
 
             SDKConfiguration = new SDKConfig(client)
             {
-                XMoovVersion = xMoovVersion,
                 ServerIndex = serverIndex == null ? 0 : serverIndex.Value,
                 ServerUrl = serverUrl == null ? "" : serverUrl,
                 SecuritySource = _securitySource,
@@ -563,14 +549,6 @@ namespace Moov.Sdk
                     serverUrl = Utilities.TemplateUrl(serverUrl, serverVariables);
                 }
                 _sdkConfig.ServerUrl = serverUrl;
-                return this;
-            }
-            /// <summary>
-            /// Sets the XMoovVersion global parameter for the SDK.
-            /// </summary>
-            public SDKBuilder WithXMoovVersion(string xMoovVersion)
-            {
-                _sdkConfig.XMoovVersion = xMoovVersion;
                 return this;
             }
 
