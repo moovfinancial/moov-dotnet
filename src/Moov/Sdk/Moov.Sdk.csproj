@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>Moov.Sdk</PackageId>
-    <Version>26.4.0-dev.12</Version>
+    <Version>26.4.0-dev.13</Version>
     <TargetFramework>net8.0</TargetFramework>
     <Authors>Speakeasy</Authors>
     <Copyright>Copyright (c) Speakeasy 2026</Copyright>
