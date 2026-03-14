@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 6094500425cc8ec72b9ef7cb84bf3bb7
+  docChecksum: dcb9870e0b3fa716e45e8246f99b9803
   docVersion: dev
   speakeasyVersion: 1.755.0
   generationVersion: 2.865.2
-  releaseVersion: 0.0.0-dev.9
-  configChecksum: f9ed26f8fa05fce22d1a5f278ff67462
+  releaseVersion: 0.0.0-dev.10
+  configChecksum: cb09f4814086288daaeb86b406f90959
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: 3f92d3e2-4c0f-4c76-bad9-c63cc8863458
-  pristine_commit_hash: 2ebd9655c73addba291d2c08bc3c9a2ead069400
-  pristine_tree_hash: 177468a3233d8978081c5b75b8366e0e9f1c7d60
+  generation_id: b6a9d3f7-0f76-4d9b-b6d8-96c0991508ab
+  pristine_commit_hash: bed15b016aa2954961691a230de6a445bdf5988c
+  pristine_tree_hash: 0b9eb2e38705426519e45565831bdaa27706bf51
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -8749,8 +8749,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:d2d64ea95f23d0e59bb468d7ef7fdf32b039ef2b
-    pristine_git_object: a024d370d9c7da3b607f310660b8f6f05a00665a
+    last_write_checksum: sha1:1b161d396964cf2a2e6b596915a7bd3c513c383f
+    pristine_git_object: d30f46cfad67a603b5d2b06dce638eaba245f29a
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:de50035870d98c95e360ce896860637108976432
@@ -8789,8 +8789,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:c994c2c06310234d4d403be989f4abbc2647d673
-    pristine_git_object: 183fabe08fc77ffb80f4daaa9a53d3a79065daff
+    last_write_checksum: sha1:6c5f2f5ed4c972df3765771a52815ad8e7f3f3ed
+    pristine_git_object: 853f5726d1af8e64eb4e57e79d0d08fd8978a7d0
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -8829,8 +8829,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:1a818b980232ce1e5c5aa95b31207a3818a6ba0a
-    pristine_git_object: c47512de4d60d7b821a1cd70457dd12e8f3c05d5
+    last_write_checksum: sha1:956d5e7990823b60d231cb6416326102666c8828
+    pristine_git_object: c01e4fae219ec7bebb1579e4bcc3b4aba7a49ce2
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
