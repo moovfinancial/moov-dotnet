@@ -13,6 +13,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
 
+    /// <summary>
+    /// The result of a card verification check.
+    /// </summary>
     public enum CardVerificationResult
     {
         [JsonProperty("noMatch")]
