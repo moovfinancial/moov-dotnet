@@ -18,15 +18,27 @@ namespace Moov.Sdk.Models.Components
     /// </summary>
     public class AccountNameVerification
     {
+        /// <summary>
+        /// Verification result of the cardholder's first name.
+        /// </summary>
         [JsonProperty("firstName")]
         public CardVerificationResult? FirstName { get; set; }
 
+        /// <summary>
+        /// Verification result of the cardholder's last name.
+        /// </summary>
         [JsonProperty("lastName")]
         public CardVerificationResult? LastName { get; set; }
 
+        /// <summary>
+        /// Verification result of the cardholder's middle name.
+        /// </summary>
         [JsonProperty("middleName")]
         public CardVerificationResult? MiddleName { get; set; }
 
+        /// <summary>
+        /// Verification result of the cardholder's full name.
+        /// </summary>
         [JsonProperty("fullName")]
         public CardVerificationResult? FullName { get; set; }
     }

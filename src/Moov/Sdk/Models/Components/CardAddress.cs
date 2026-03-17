@@ -14,21 +14,39 @@ namespace Moov.Sdk.Models.Components
 
     public class CardAddress
     {
+        /// <summary>
+        /// Street address line 1.
+        /// </summary>
         [JsonProperty("addressLine1")]
         public string? AddressLine1 { get; set; }
 
+        /// <summary>
+        /// Street address line 2 (e.g., apartment or suite number).
+        /// </summary>
         [JsonProperty("addressLine2")]
         public string? AddressLine2 { get; set; }
 
+        /// <summary>
+        /// City name.
+        /// </summary>
         [JsonProperty("city")]
         public string? City { get; set; }
 
+        /// <summary>
+        /// Two-letter state or province code.
+        /// </summary>
         [JsonProperty("stateOrProvince")]
         public string? StateOrProvince { get; set; }
 
+        /// <summary>
+        /// Postal or ZIP code.
+        /// </summary>
         [JsonProperty("postalCode")]
         public string PostalCode { get; set; } = default!;
 
+        /// <summary>
+        /// Two-letter ISO 3166-1 country code.
+        /// </summary>
         [JsonProperty("country")]
         public string? Country { get; set; }
     }
