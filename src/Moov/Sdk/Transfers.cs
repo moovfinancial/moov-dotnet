@@ -38,18 +38,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="body">A <see cref="CreateTransferOptions"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateTransferOptionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -62,7 +50,6 @@ namespace Moov.Sdk
         public  Task<CreateTransferOptionsResponse> GenerateOptionsAsync(
             string accountID,
             CreateTransferOptions body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -74,10 +61,19 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        /// <param name="request">A <see cref="CreateTransferRequest"/> parameter.</param>
+        /// <param name="xIdempotencyKey">
+        /// Identifies a unique request to create a transfer.<br/>
+        ///   In order to avoid creating duplicate transfers, the same idempotency key should be reused when retrying a request.
+        /// </param>
+        /// <param name="accountID">Your Moov account ID.</param>
+        /// <param name="body">A <see cref="CreateTransfer"/> parameter.</param>
+        /// <param name="xWaitFor">
+        /// Optional header that indicates whether to return a synchronous response that includes full transfer and rail-specific details or an <br/>
+        /// asynchronous response indicating the transfer was created (this is the default response if the header is omitted). A timeout will occur after 15 seconds.
+        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateTransferResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -86,7 +82,10 @@ namespace Moov.Sdk
         /// <exception cref="TransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<CreateTransferResponse> CreateAsync(
-            CreateTransferRequest request,
+            string xIdempotencyKey,
+            string accountID,
+            CreateTransfer body,
+            TransferWaitFor? xWaitFor = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -128,18 +127,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetTransferResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/> or <paramref name="accountID"/> is null.</exception>
@@ -150,7 +137,6 @@ namespace Moov.Sdk
         public  Task<GetTransferResponse> GetAsync(
             string transferID,
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -165,18 +151,6 @@ namespace Moov.Sdk
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="PatchTransfer"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTransferResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -189,7 +163,6 @@ namespace Moov.Sdk
             string transferID,
             string accountID,
             PatchTransfer body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -201,18 +174,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="transferID">The transfer ID to cancel.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
@@ -224,7 +185,6 @@ namespace Moov.Sdk
         public  Task<CreateCancellationResponse> CreateCancellationAsync(
             string accountID,
             string transferID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -237,18 +197,6 @@ namespace Moov.Sdk
         /// <param name="accountID">Moov account ID of the partner or transfer's source or destination.</param>
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="cancellationID">Identifier for the cancellation.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCancellationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="cancellationID"/> is null.</exception>
@@ -260,7 +208,6 @@ namespace Moov.Sdk
             string accountID,
             string transferID,
             string cancellationID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -297,18 +244,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="transferID">Identifier for the transfer.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRefundsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
@@ -319,7 +254,6 @@ namespace Moov.Sdk
         public  Task<ListRefundsResponse> ListRefundsAsync(
             string accountID,
             string transferID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -332,18 +266,6 @@ namespace Moov.Sdk
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="accountID">Description not available.</param>
         /// <param name="refundID">Identifier for the refund.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetRefundResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="refundID"/> is null.</exception>
@@ -355,7 +277,6 @@ namespace Moov.Sdk
             string transferID,
             string accountID,
             string refundID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -367,10 +288,13 @@ namespace Moov.Sdk
         /// To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         /// to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        /// <param name="request">A <see cref="CreateReversalRequest"/> parameter.</param>
+        /// <param name="xIdempotencyKey">Prevents duplicate reversals from being created.</param>
+        /// <param name="accountID">The Moov account ID.</param>
+        /// <param name="transferID">The transfer ID to reverse.</param>
+        /// <param name="body">A <see cref="CreateReversal"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateReversalResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -378,7 +302,10 @@ namespace Moov.Sdk
         /// <exception cref="ReversalValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<CreateReversalResponse> CreateReversalAsync(
-            CreateReversalRequest request,
+            string xIdempotencyKey,
+            string accountID,
+            string transferID,
+            CreateReversal? body = null,
             CancellationToken? cancellationToken = null
         );
     }
@@ -409,18 +336,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="body">A <see cref="CreateTransferOptions"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateTransferOptionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -433,7 +348,6 @@ namespace Moov.Sdk
         public async  Task<CreateTransferOptionsResponse> GenerateOptionsAsync(
             string accountID,
             CreateTransferOptions body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -444,16 +358,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfer-options", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -618,10 +529,19 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        /// <param name="request">A <see cref="CreateTransferRequest"/> parameter.</param>
+        /// <param name="xIdempotencyKey">
+        /// Identifies a unique request to create a transfer.<br/>
+        ///   In order to avoid creating duplicate transfers, the same idempotency key should be reused when retrying a request.
+        /// </param>
+        /// <param name="accountID">Your Moov account ID.</param>
+        /// <param name="body">A <see cref="CreateTransfer"/> parameter.</param>
+        /// <param name="xWaitFor">
+        /// Optional header that indicates whether to return a synchronous response that includes full transfer and rail-specific details or an <br/>
+        /// asynchronous response indicating the transfer was created (this is the default response if the header is omitted). A timeout will occur after 15 seconds.
+        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateTransferResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -630,12 +550,24 @@ namespace Moov.Sdk
         /// <exception cref="TransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<CreateTransferResponse> CreateAsync(
-            CreateTransferRequest request,
+            string xIdempotencyKey,
+            string accountID,
+            CreateTransfer body,
+            TransferWaitFor? xWaitFor = null,
             CancellationToken? cancellationToken = null
         )
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
+            if (xIdempotencyKey == null) throw new ArgumentNullException(nameof(xIdempotencyKey));
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
+            var request = new CreateTransferRequest()
+            {
+                XIdempotencyKey = xIdempotencyKey,
+                AccountID = accountID,
+                Body = body,
+                XWaitFor = xWaitFor,
+            };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers", request, null);
@@ -913,14 +845,12 @@ namespace Moov.Sdk
         )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1056,18 +986,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetTransferResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/> or <paramref name="accountID"/> is null.</exception>
@@ -1078,7 +996,6 @@ namespace Moov.Sdk
         public async  Task<GetTransferResponse> GetAsync(
             string transferID,
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1089,16 +1006,13 @@ namespace Moov.Sdk
             {
                 TransferID = transferID,
                 AccountID = accountID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1208,18 +1122,6 @@ namespace Moov.Sdk
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="PatchTransfer"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateTransferResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -1232,7 +1134,6 @@ namespace Moov.Sdk
             string transferID,
             string accountID,
             PatchTransfer body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1245,16 +1146,13 @@ namespace Moov.Sdk
                 TransferID = transferID,
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1393,18 +1291,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="transferID">The transfer ID to cancel.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
@@ -1416,7 +1302,6 @@ namespace Moov.Sdk
         public async  Task<CreateCancellationResponse> CreateCancellationAsync(
             string accountID,
             string transferID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1427,16 +1312,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 TransferID = transferID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/cancellations", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1570,18 +1452,6 @@ namespace Moov.Sdk
         /// <param name="accountID">Moov account ID of the partner or transfer's source or destination.</param>
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="cancellationID">Identifier for the cancellation.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCancellationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="cancellationID"/> is null.</exception>
@@ -1593,7 +1463,6 @@ namespace Moov.Sdk
             string accountID,
             string transferID,
             string cancellationID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1606,16 +1475,13 @@ namespace Moov.Sdk
                 AccountID = accountID,
                 TransferID = transferID,
                 CancellationID = cancellationID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/cancellations/{cancellationID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1740,7 +1606,6 @@ namespace Moov.Sdk
         )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/refunds", request, null);
@@ -1968,18 +1833,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="transferID">Identifier for the transfer.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListRefundsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
@@ -1990,7 +1843,6 @@ namespace Moov.Sdk
         public async  Task<ListRefundsResponse> ListRefundsAsync(
             string accountID,
             string transferID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -2001,16 +1853,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 TransferID = transferID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/refunds", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -2118,18 +1967,6 @@ namespace Moov.Sdk
         /// <param name="transferID">Identifier for the transfer.</param>
         /// <param name="accountID">Description not available.</param>
         /// <param name="refundID">Identifier for the refund.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetRefundResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="transferID"/>, <paramref name="accountID"/> or <paramref name="refundID"/> is null.</exception>
@@ -2141,7 +1978,6 @@ namespace Moov.Sdk
             string transferID,
             string accountID,
             string refundID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -2154,16 +1990,13 @@ namespace Moov.Sdk
                 TransferID = transferID,
                 AccountID = accountID,
                 RefundID = refundID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/refunds/{refundID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -2270,10 +2103,13 @@ namespace Moov.Sdk
         /// To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         /// to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
-        /// <param name="request">A <see cref="CreateReversalRequest"/> parameter.</param>
+        /// <param name="xIdempotencyKey">Prevents duplicate reversals from being created.</param>
+        /// <param name="accountID">The Moov account ID.</param>
+        /// <param name="transferID">The transfer ID to reverse.</param>
+        /// <param name="body">A <see cref="CreateReversal"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateReversalResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -2281,12 +2117,24 @@ namespace Moov.Sdk
         /// <exception cref="ReversalValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<CreateReversalResponse> CreateReversalAsync(
-            CreateReversalRequest request,
+            string xIdempotencyKey,
+            string accountID,
+            string transferID,
+            CreateReversal? body = null,
             CancellationToken? cancellationToken = null
         )
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
+            if (xIdempotencyKey == null) throw new ArgumentNullException(nameof(xIdempotencyKey));
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (transferID == null) throw new ArgumentNullException(nameof(transferID));
+
+            var request = new CreateReversalRequest()
+            {
+                XIdempotencyKey = xIdempotencyKey,
+                AccountID = accountID,
+                TransferID = transferID,
+                Body = body,
+            };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/transfers/{transferID}/reversals", request, null);

@@ -19,6 +19,9 @@ namespace Moov.Sdk.Models.Components
     /// </summary>
     public class CardAccountUpdater
     {
+        /// <summary>
+        /// Timestamp from the card network indicating when the card update was processed.
+        /// </summary>
         [JsonProperty("updatedOn")]
         public DateTime? UpdatedOn { get; set; }
 

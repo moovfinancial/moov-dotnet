@@ -1,5 +1,7 @@
 # CardVerificationResult
 
+The result of a card verification check.
+
 ## Example Usage
 
 ```csharp

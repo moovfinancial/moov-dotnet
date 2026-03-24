@@ -31,22 +31,10 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
-        /// <param name="body">A <see cref="OnboardingInviteRequest"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
+        /// <param name="request">A <see cref="OnboardingInviteRequest"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateOnboardingInviteResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="body"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -54,8 +42,7 @@ namespace Moov.Sdk
         /// <exception cref="OnboardingInviteError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<CreateOnboardingInviteResponse> CreateInviteAsync(
-            OnboardingInviteRequest body,
-            string? xMoovVersion = null,
+            OnboardingInviteRequest request,
             CancellationToken? cancellationToken = null
         );
 
@@ -65,28 +52,13 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts.read` scope.
         /// </summary>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListOnboardingInvitesResponse"/> response envelope when completed.</returns>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<ListOnboardingInvitesResponse> ListInvitesAsync(
-            string? xMoovVersion = null,
-            CancellationToken? cancellationToken = null
-        );
+        public  Task<ListOnboardingInvitesResponse> ListInvitesAsync(CancellationToken? cancellationToken = null);
 
         /// <summary>
         /// Retrieve details about an onboarding invite.<br/>
@@ -95,18 +67,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts.read` scope.
         /// </summary>
         /// <param name="code">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetOnboardingInviteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="code"/> is null.</exception>
@@ -116,7 +76,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<GetOnboardingInviteResponse> GetInviteAsync(
             string code,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -127,18 +86,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
         /// <param name="code">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="RevokeOnboardingInviteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="code"/> is null.</exception>
@@ -147,7 +94,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<RevokeOnboardingInviteResponse> RevokeInviteAsync(
             string code,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
     }
@@ -171,22 +117,10 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
-        /// <param name="body">A <see cref="OnboardingInviteRequest"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
+        /// <param name="request">A <see cref="OnboardingInviteRequest"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateOnboardingInviteResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="body"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -194,33 +128,24 @@ namespace Moov.Sdk
         /// <exception cref="OnboardingInviteError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<CreateOnboardingInviteResponse> CreateInviteAsync(
-            OnboardingInviteRequest body,
-            string? xMoovVersion = null,
+            OnboardingInviteRequest request,
             CancellationToken? cancellationToken = null
         )
         {
-            if (body == null) throw new ArgumentNullException(nameof(body));
-
-            var request = new CreateOnboardingInviteRequest()
-            {
-                Body = body,
-                XMoovVersion = xMoovVersion,
-            };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
+            if (request == null) throw new ArgumentNullException(nameof(request));
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = baseUrl + "/onboarding-invites";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
                 httpRequest.Headers.Add("Accept", "application/json");
             }
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Body", "json", false, false);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -376,41 +301,19 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts.read` scope.
         /// </summary>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListOnboardingInvitesResponse"/> response envelope when completed.</returns>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<ListOnboardingInvitesResponse> ListInvitesAsync(
-            string? xMoovVersion = null,
-            CancellationToken? cancellationToken = null
-        )
+        public async  Task<ListOnboardingInvitesResponse> ListInvitesAsync(CancellationToken? cancellationToken = null)
         {
-            var request = new ListOnboardingInvitesRequest()
-            {
-                XMoovVersion = xMoovVersion,
-            };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = baseUrl + "/onboarding-invites";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -466,7 +369,7 @@ namespace Moov.Sdk
                     List<OnboardingInvite> obj;
                     try
                     {
-                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<OnboardingInvite>>(httpResponseBody, NullValueHandling.Include);
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<OnboardingInvite>>(httpResponseBody, NullValueHandling.Ignore);
                     }
                     catch (Exception ex)
                     {
@@ -516,18 +419,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts.read` scope.
         /// </summary>
         /// <param name="code">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetOnboardingInviteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="code"/> is null.</exception>
@@ -537,7 +428,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<GetOnboardingInviteResponse> GetInviteAsync(
             string code,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -546,16 +436,13 @@ namespace Moov.Sdk
             var request = new GetOnboardingInviteRequest()
             {
                 Code = code,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/onboarding-invites/{code}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -661,18 +548,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
         /// <param name="code">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="RevokeOnboardingInviteResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="code"/> is null.</exception>
@@ -681,7 +556,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<RevokeOnboardingInviteResponse> RevokeInviteAsync(
             string code,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -690,16 +564,13 @@ namespace Moov.Sdk
             var request = new RevokeOnboardingInviteRequest()
             {
                 Code = code,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/onboarding-invites/{code}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
