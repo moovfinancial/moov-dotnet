@@ -66,22 +66,21 @@ dotnet add reference src/Moov/Sdk/Moov.Sdk.csproj
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(
-    xMoovVersion: "<value>",
-    security: new Security() {
-        Username = "",
-        Password = "",
-    }
-);
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
 
-var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
+CreateAccount req = new CreateAccount() {
     AccountType = AccountType.Business,
     Profile = new CreateProfile() {
         Business = new CreateBusinessProfile() {
             LegalBusinessName = "Whole Body Fitness LLC",
         },
     },
-});
+};
+
+var res = await sdk.Accounts.CreateAsync(req);
 
 // handle response
 ```
@@ -103,22 +102,21 @@ You can set the security parameters through the `security` optional parameter wh
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(
-    security: new Security() {
-        Username = "",
-        Password = "",
-    },
-    xMoovVersion: "<value>"
-);
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
 
-var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
+CreateAccount req = new CreateAccount() {
     AccountType = AccountType.Business,
     Profile = new CreateProfile() {
         Business = new CreateBusinessProfile() {
             LegalBusinessName = "Whole Body Fitness LLC",
         },
     },
-});
+};
+
+var res = await sdk.Accounts.CreateAsync(req);
 
 // handle response
 ```
@@ -1090,24 +1088,23 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Errors;
 
-var sdk = new MoovClient(
-    xMoovVersion: "<value>",
-    security: new Security() {
-        Username = "",
-        Password = "",
-    }
-);
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
 
 try
 {
-    var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
+    CreateAccount req = new CreateAccount() {
         AccountType = AccountType.Business,
         Profile = new CreateProfile() {
             Business = new CreateBusinessProfile() {
                 LegalBusinessName = "Whole Body Fitness LLC",
             },
         },
-    });
+    };
+
+    var res = await sdk.Accounts.CreateAsync(req);
 
     // handle response
 }
@@ -1221,21 +1218,22 @@ using Moov.Sdk.Models.Components;
 
 var sdk = new MoovClient(
     serverUrl: "https://api.moov.io",
-    xMoovVersion: "<value>",
     security: new Security() {
         Username = "",
         Password = "",
     }
 );
 
-var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
+CreateAccount req = new CreateAccount() {
     AccountType = AccountType.Business,
     Profile = new CreateProfile() {
         Business = new CreateBusinessProfile() {
             LegalBusinessName = "Whole Body Fitness LLC",
         },
     },
-});
+};
+
+var res = await sdk.Accounts.CreateAsync(req);
 
 // handle response
 ```

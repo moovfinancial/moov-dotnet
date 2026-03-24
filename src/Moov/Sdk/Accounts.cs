@@ -42,22 +42,10 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> you'll need <br/>
         /// to specify the `/accounts.write` scope.
         /// </summary>
-        /// <param name="body">A <see cref="CreateAccount"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
+        /// <param name="request">A <see cref="CreateAccount"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateAccountResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="body"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -65,8 +53,7 @@ namespace Moov.Sdk
         /// <exception cref="CreateAccountError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<CreateAccountResponse> CreateAsync(
-            CreateAccount body,
-            string? xMoovVersion = null,
+            CreateAccount request,
             CancellationToken? cancellationToken = null
         );
 
@@ -99,18 +86,6 @@ namespace Moov.Sdk
         /// to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -118,11 +93,7 @@ namespace Moov.Sdk
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<GetAccountResponse> GetAsync(
-            string accountID,
-            string? xMoovVersion = null,
-            CancellationToken? cancellationToken = null
-        );
+        public  Task<GetAccountResponse> GetAsync(string accountID, CancellationToken? cancellationToken = null);
 
         /// <summary>
         /// When **can** profile data be updated:<br/>
@@ -140,18 +111,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="PatchAccount"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -164,7 +123,6 @@ namespace Moov.Sdk
         public  Task<UpdateAccountResponse> UpdateAsync(
             string accountID,
             PatchAccount body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -177,18 +135,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.disconnect` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisconnectAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -199,7 +145,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<DisconnectAccountResponse> DisconnectAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -232,18 +177,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="ShareScopes"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ConnectAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -256,7 +189,6 @@ namespace Moov.Sdk
         public  Task<ConnectAccountResponse> ConnectAsync(
             string accountID,
             ShareScopes body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -267,18 +199,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetAccountCountriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -288,7 +208,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<GetAccountCountriesResponse> GetCountriesAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -302,18 +221,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="AccountCountries"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="AssignAccountCountriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -326,7 +233,6 @@ namespace Moov.Sdk
         public  Task<AssignAccountCountriesResponse> AssignCountriesAsync(
             string accountID,
             AccountCountries body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -337,18 +243,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetMerchantProcessingAgreementResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -358,7 +252,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<GetMerchantProcessingAgreementResponse> GetMerchantProcessingAgreementAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -369,18 +262,6 @@ namespace Moov.Sdk
         /// or card issuing capabilities must accept Moov's terms of service, then have the generated terms of service <br/>
         /// token patched to the account. Read more in our <a href="https://docs.moov.io/guides/accounts/requirements/platform-agreement/">documentation</a>.
         /// </summary>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="origin">Indicates the domain from which the request originated. Required if referer header is not present.</param>
         /// <param name="referer">Specifies the URL of the resource from which the request originated. Required if origin header is not present.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -390,7 +271,6 @@ namespace Moov.Sdk
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<GetTermsOfServiceTokenResponse> GetTermsOfServiceTokenAsync(
-            string? xMoovVersion = null,
             string? origin = null,
             string? referer = null,
             CancellationToken? cancellationToken = null
@@ -427,22 +307,10 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> you'll need <br/>
         /// to specify the `/accounts.write` scope.
         /// </summary>
-        /// <param name="body">A <see cref="CreateAccount"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
+        /// <param name="request">A <see cref="CreateAccount"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateAccountResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="body"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
@@ -450,33 +318,24 @@ namespace Moov.Sdk
         /// <exception cref="CreateAccountError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<CreateAccountResponse> CreateAsync(
-            CreateAccount body,
-            string? xMoovVersion = null,
+            CreateAccount request,
             CancellationToken? cancellationToken = null
         )
         {
-            if (body == null) throw new ArgumentNullException(nameof(body));
-
-            var request = new CreateAccountRequest()
-            {
-                Body = body,
-                XMoovVersion = xMoovVersion,
-            };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
+            if (request == null) throw new ArgumentNullException(nameof(request));
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = baseUrl + "/accounts";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
                 httpRequest.Headers.Add("Accept", "application/json");
             }
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Body", "json", false, false);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -648,18 +507,11 @@ namespace Moov.Sdk
             CancellationToken? cancellationToken = null
         )
         {
-            if (request == null)
-            {
-                request = new ListAccountsRequest();
-            }
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
-
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -765,18 +617,6 @@ namespace Moov.Sdk
         /// to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -784,27 +624,20 @@ namespace Moov.Sdk
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<GetAccountResponse> GetAsync(
-            string accountID,
-            string? xMoovVersion = null,
-            CancellationToken? cancellationToken = null
-        )
+        public async  Task<GetAccountResponse> GetAsync(string accountID, CancellationToken? cancellationToken = null)
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
 
             var request = new GetAccountRequest()
             {
                 AccountID = accountID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -919,18 +752,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="PatchAccount"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -943,7 +764,6 @@ namespace Moov.Sdk
         public async  Task<UpdateAccountResponse> UpdateAsync(
             string accountID,
             PatchAccount body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -954,16 +774,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1129,18 +946,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.disconnect` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisconnectAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -1151,7 +956,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<DisconnectAccountResponse> DisconnectAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1160,16 +964,13 @@ namespace Moov.Sdk
             var request = new DisconnectAccountRequest()
             {
                 AccountID = accountID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1300,14 +1101,12 @@ namespace Moov.Sdk
         )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/connected-accounts", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1412,18 +1211,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="ShareScopes"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ConnectAccountResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -1436,7 +1223,6 @@ namespace Moov.Sdk
         public async  Task<ConnectAccountResponse> ConnectAsync(
             string accountID,
             ShareScopes body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1447,16 +1233,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/connections", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1602,18 +1385,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetAccountCountriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -1623,7 +1394,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<GetAccountCountriesResponse> GetCountriesAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1632,16 +1402,13 @@ namespace Moov.Sdk
             var request = new GetAccountCountriesRequest()
             {
                 AccountID = accountID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/countries", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1750,18 +1517,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="AccountCountries"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="AssignAccountCountriesResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -1774,7 +1529,6 @@ namespace Moov.Sdk
         public async  Task<AssignAccountCountriesResponse> AssignCountriesAsync(
             string accountID,
             AccountCountries body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1785,16 +1539,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/countries", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1958,18 +1709,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/profile.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetMerchantProcessingAgreementResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -1979,7 +1718,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<GetMerchantProcessingAgreementResponse> GetMerchantProcessingAgreementAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1988,16 +1726,13 @@ namespace Moov.Sdk
             var request = new GetMerchantProcessingAgreementRequest()
             {
                 AccountID = accountID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/merchant-agreement", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -2092,18 +1827,6 @@ namespace Moov.Sdk
         /// or card issuing capabilities must accept Moov's terms of service, then have the generated terms of service <br/>
         /// token patched to the account. Read more in our <a href="https://docs.moov.io/guides/accounts/requirements/platform-agreement/">documentation</a>.
         /// </summary>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="origin">Indicates the domain from which the request originated. Required if referer header is not present.</param>
         /// <param name="referer">Specifies the URL of the resource from which the request originated. Required if origin header is not present.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
@@ -2113,7 +1836,6 @@ namespace Moov.Sdk
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<GetTermsOfServiceTokenResponse> GetTermsOfServiceTokenAsync(
-            string? xMoovVersion = null,
             string? origin = null,
             string? referer = null,
             CancellationToken? cancellationToken = null
@@ -2121,11 +1843,9 @@ namespace Moov.Sdk
         {
             var request = new GetTermsOfServiceTokenRequest()
             {
-                XMoovVersion = xMoovVersion,
                 Origin = origin,
                 Referer = referer,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = baseUrl + "/tos-token";

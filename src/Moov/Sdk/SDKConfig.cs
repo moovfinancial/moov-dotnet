@@ -32,7 +32,6 @@ namespace Moov.Sdk
         public IMoovClientHttpClient Client;
         public string ServerUrl;
         public int ServerIndex;
-        public string? XMoovVersion;
         public string UserAgent;
         public Func<Moov.Sdk.Models.Components.Security>? SecuritySource;
         public SDKHooks Hooks;
@@ -46,8 +45,7 @@ namespace Moov.Sdk
             Client = client ?? new MoovClientHttpClient();
             ServerUrl = "";
             ServerIndex = 0;
-            XMoovVersion = null;
-            UserAgent = "speakeasy-sdk/csharp 24.1.10 2.856.1 v2024.01.00 Moov.Sdk";
+            UserAgent = "speakeasy-sdk/csharp 24.2.0 2.869.10 v2024.01.00 Moov.Sdk";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;
