@@ -17,9 +17,15 @@ namespace Moov.Sdk.Models.Components
     /// </summary>
     public class CardExpiration
     {
+        /// <summary>
+        /// Two-digit month the card expires.
+        /// </summary>
         [JsonProperty("month")]
         public string Month { get; set; } = default!;
 
+        /// <summary>
+        /// Two-digit year the card expires.
+        /// </summary>
         [JsonProperty("year")]
         public string Year { get; set; } = default!;
     }

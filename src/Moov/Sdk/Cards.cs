@@ -47,18 +47,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="LinkCard"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="xWaitFor">
         /// Optional header to wait for certain events, such as the creation of a payment method, to occur before returning a response.<br/>
         /// <br/>
@@ -78,7 +66,6 @@ namespace Moov.Sdk
         public  Task<LinkCardResponse> LinkAsync(
             string accountID,
             LinkCard body,
-            string? xMoovVersion = null,
             LinkCardWaitFor? xWaitFor = null,
             CancellationToken? cancellationToken = null
         );
@@ -92,18 +79,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/cards.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -111,11 +86,7 @@ namespace Moov.Sdk
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<ListCardsResponse> ListAsync(
-            string accountID,
-            string? xMoovVersion = null,
-            CancellationToken? cancellationToken = null
-        );
+        public  Task<ListCardsResponse> ListAsync(string accountID, CancellationToken? cancellationToken = null);
 
         /// <summary>
         /// Fetch a specific card associated with a Moov account. <br/>
@@ -127,18 +98,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="cardID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="cardID"/> is null.</exception>
@@ -149,7 +108,6 @@ namespace Moov.Sdk
         public  Task<GetCardResponse> GetAsync(
             string accountID,
             string cardID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -171,18 +129,6 @@ namespace Moov.Sdk
         /// <param name="accountID">Description not available.</param>
         /// <param name="cardID">Description not available.</param>
         /// <param name="body">A <see cref="UpdateCard"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="cardID"/> or <paramref name="body"/> is null.</exception>
@@ -196,7 +142,6 @@ namespace Moov.Sdk
             string accountID,
             string cardID,
             UpdateCard body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -208,18 +153,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="cardID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisableCardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="cardID"/> is null.</exception>
@@ -231,7 +164,6 @@ namespace Moov.Sdk
         public  Task<DisableCardResponse> DisableAsync(
             string accountID,
             string cardID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
     }
@@ -271,18 +203,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="LinkCard"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="xWaitFor">
         /// Optional header to wait for certain events, such as the creation of a payment method, to occur before returning a response.<br/>
         /// <br/>
@@ -302,7 +222,6 @@ namespace Moov.Sdk
         public async  Task<LinkCardResponse> LinkAsync(
             string accountID,
             LinkCard body,
-            string? xMoovVersion = null,
             LinkCardWaitFor? xWaitFor = null,
             CancellationToken? cancellationToken = null
         )
@@ -314,10 +233,8 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
                 XWaitFor = xWaitFor,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/cards", request, null);
@@ -516,18 +433,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/cards.read` scope.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListCardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -535,27 +440,20 @@ namespace Moov.Sdk
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<ListCardsResponse> ListAsync(
-            string accountID,
-            string? xMoovVersion = null,
-            CancellationToken? cancellationToken = null
-        )
+        public async  Task<ListCardsResponse> ListAsync(string accountID, CancellationToken? cancellationToken = null)
         {
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
 
             var request = new ListCardsRequest()
             {
                 AccountID = accountID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/cards", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -664,18 +562,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="cardID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="cardID"/> is null.</exception>
@@ -686,7 +572,6 @@ namespace Moov.Sdk
         public async  Task<GetCardResponse> GetAsync(
             string accountID,
             string cardID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -697,16 +582,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 CardID = cardID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/cards/{cardID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -823,18 +705,6 @@ namespace Moov.Sdk
         /// <param name="accountID">Description not available.</param>
         /// <param name="cardID">Description not available.</param>
         /// <param name="body">A <see cref="UpdateCard"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateCardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="cardID"/> or <paramref name="body"/> is null.</exception>
@@ -848,7 +718,6 @@ namespace Moov.Sdk
             string accountID,
             string cardID,
             UpdateCard body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -861,16 +730,13 @@ namespace Moov.Sdk
                 AccountID = accountID,
                 CardID = cardID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/cards/{cardID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1035,18 +901,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="cardID">Description not available.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisableCardResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="cardID"/> is null.</exception>
@@ -1058,7 +912,6 @@ namespace Moov.Sdk
         public async  Task<DisableCardResponse> DisableAsync(
             string accountID,
             string cardID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1069,16 +922,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 CardID = cardID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/cards/{cardID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {

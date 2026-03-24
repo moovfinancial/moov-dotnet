@@ -3,22 +3,21 @@
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 
-var sdk = new MoovClient(
-    xMoovVersion: "<value>",
-    security: new Security() {
-        Username = "",
-        Password = "",
-    }
-);
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
 
-var res = await sdk.Accounts.CreateAsync(body: new CreateAccount() {
+CreateAccount req = new CreateAccount() {
     AccountType = CreateAccountType.Business,
     Profile = new CreateProfile() {
         Business = new CreateBusinessProfile() {
             LegalBusinessName = "Whole Body Fitness LLC",
         },
     },
-});
+};
+
+var res = await sdk.Accounts.CreateAsync(req);
 
 // handle response
 ```
