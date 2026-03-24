@@ -23,9 +23,15 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("e2ee")]
         public E2EEToken? E2ee { get; set; }
 
+        /// <summary>
+        /// The full card number (PAN).
+        /// </summary>
         [JsonProperty("cardNumber")]
         public string CardNumber { get; set; } = default!;
 
+        /// <summary>
+        /// The card's 3- or 4-digit card verification value.
+        /// </summary>
         [JsonProperty("cardCvv")]
         public string CardCvv { get; set; } = default!;
 
@@ -35,18 +41,36 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("expiration")]
         public CardExpiration Expiration { get; set; } = default!;
 
+        /// <summary>
+        /// The name of the cardholder as it appears on the card.
+        /// </summary>
         [JsonProperty("holderName")]
         public string? HolderName { get; set; }
 
+        /// <summary>
+        /// The billing address associated with the card.
+        /// </summary>
         [JsonProperty("billingAddress")]
         public CardAddress BillingAddress { get; set; } = default!;
 
+        /// <summary>
+        /// Indicates cardholder has authorized card to be stored for future payments. (e.g., recurring payments).<br/>
+        /// If true and no `merchantAccountID` is provided, the partner account's ID is used as the merchant account for verification.
+        /// </summary>
         [JsonProperty("cardOnFile")]
         public bool? CardOnFile { get; set; }
 
+        /// <summary>
+        /// Merchant account whose details (statement descriptor, address, etc.) are used for the card verification authorization.<br/>
+        /// If omitted, the partner account's details are used instead.
+        /// </summary>
         [JsonProperty("merchantAccountID")]
         public string? MerchantAccountID { get; set; }
 
+        /// <summary>
+        /// If true, submits the cardholder's name to the card network for verification as part of the $0 authorization.<br/>
+        /// Only supported for Visa and Mastercard; requesting name verification for American Express or Discover will return an error.
+        /// </summary>
         [JsonProperty("verifyName")]
         public bool? VerifyName { get; set; }
     }
