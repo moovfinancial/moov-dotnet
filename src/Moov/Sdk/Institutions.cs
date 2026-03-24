@@ -35,18 +35,6 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/institutions.read` scope.
         /// </summary>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="name">Name of the financial institution. Either `name` or `routingNumber` is required.</param>
         /// <param name="routingNumber">Routing number for a financial institution. Either `routingNumber` or `name` is required.</param>
         /// <param name="limit">Maximum results returned by a search.</param>
@@ -57,7 +45,6 @@ namespace Moov.Sdk
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<SearchInstitutionsResponse> SearchInstitutionsAsync(
-            string? xMoovVersion = null,
             string? name = null,
             string? routingNumber = null,
             long? limit = null,
@@ -72,7 +59,10 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/fed.read` scope.
         /// </summary>
-        /// <param name="request">A <see cref="ListInstitutionsRequest"/> parameter.</param>
+        /// <param name="name">Name of the financial institution. Either `name` or `routingNumber` is required.</param>
+        /// <param name="routingNumber">Routing number for a financial institution. Either `routingNumber` or `name` is required.</param>
+        /// <param name="state">The state where a financial institution is based.</param>
+        /// <param name="limit">Maximum results returned by a search.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListInstitutionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
@@ -82,7 +72,10 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public  Task<ListInstitutionsResponse> SearchAsync(
-            ListInstitutionsRequest? request = null,
+            string? name = null,
+            string? routingNumber = null,
+            string? state = null,
+            long? limit = null,
             CancellationToken? cancellationToken = null
         );
     }
@@ -110,18 +103,6 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/institutions.read` scope.
         /// </summary>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="name">Name of the financial institution. Either `name` or `routingNumber` is required.</param>
         /// <param name="routingNumber">Routing number for a financial institution. Either `routingNumber` or `name` is required.</param>
         /// <param name="limit">Maximum results returned by a search.</param>
@@ -132,7 +113,6 @@ namespace Moov.Sdk
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<SearchInstitutionsResponse> SearchInstitutionsAsync(
-            string? xMoovVersion = null,
             string? name = null,
             string? routingNumber = null,
             long? limit = null,
@@ -141,19 +121,16 @@ namespace Moov.Sdk
         {
             var request = new SearchInstitutionsRequest()
             {
-                XMoovVersion = xMoovVersion,
                 Name = name,
                 RoutingNumber = routingNumber,
                 Limit = limit,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/institutions", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -260,7 +237,10 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/fed.read` scope.
         /// </summary>
-        /// <param name="request">A <see cref="ListInstitutionsRequest"/> parameter.</param>
+        /// <param name="name">Name of the financial institution. Either `name` or `routingNumber` is required.</param>
+        /// <param name="routingNumber">Routing number for a financial institution. Either `routingNumber` or `name` is required.</param>
+        /// <param name="state">The state where a financial institution is based.</param>
+        /// <param name="limit">Maximum results returned by a search.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListInstitutionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
@@ -270,22 +250,26 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         [Obsolete("This method will be removed in a future release, please migrate away from it as soon as possible")]
         public async  Task<ListInstitutionsResponse> SearchAsync(
-            ListInstitutionsRequest? request = null,
+            string? name = null,
+            string? routingNumber = null,
+            string? state = null,
+            long? limit = null,
             CancellationToken? cancellationToken = null
         )
         {
-            if (request == null)
+            var request = new ListInstitutionsRequest()
             {
-                request = new ListInstitutionsRequest();
-            }
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
+                Name = name,
+                RoutingNumber = routingNumber,
+                State = state,
+                Limit = limit,
+            };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/institutions/ach/search", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {

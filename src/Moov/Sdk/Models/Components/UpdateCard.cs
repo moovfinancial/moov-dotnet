@@ -23,24 +23,45 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("e2ee")]
         public E2EETokenUpdate? E2ee { get; set; }
 
+        /// <summary>
+        /// Updated billing address to store on file for the card.
+        /// </summary>
         [JsonProperty("billingAddress")]
         public UpdateCardAddress? BillingAddress { get; set; }
 
         [JsonProperty("expiration")]
         public UpdateCardExpiration? Expiration { get; set; }
 
+        /// <summary>
+        /// The card's 3- or 4-digit card verification value. Providing this triggers a new $0 verification authorization, which performs both CVV and address verification.
+        /// </summary>
         [JsonProperty("cardCvv")]
         public string? CardCvv { get; set; }
 
+        /// <summary>
+        /// Indicates cardholder has authorized card to be stored for future payments (e.g., recurring payments).<br/>
+        /// If true and no `merchantAccountID` is provided, the partner account's ID is automatically used as the merchant account for verification.
+        /// </summary>
         [JsonProperty("cardOnFile")]
         public bool? CardOnFile { get; set; }
 
+        /// <summary>
+        /// Merchant account whose details (statement descriptor, address, etc.) are used for the card verification authorization.<br/>
+        /// If omitted, the partner account's details are used instead.
+        /// </summary>
         [JsonProperty("merchantAccountID")]
         public string? MerchantAccountID { get; set; }
 
+        /// <summary>
+        /// If true, submits the cardholder's name to the card network for verification as part of the $0 authorization.<br/>
+        /// Only supported for Visa and Mastercard; requesting name verification for American Express or Discover will return an error.
+        /// </summary>
         [JsonProperty("verifyName")]
         public bool? VerifyName { get; set; }
 
+        /// <summary>
+        /// Updated name of the cardholder as it appears on the card.
+        /// </summary>
         [JsonProperty("holderName")]
         public string? HolderName { get; set; }
     }

@@ -36,18 +36,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
         /// <param name="body">A <see cref="RegisterApplePayMerchantDomains"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="RegisterApplePayMerchantDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -59,7 +47,6 @@ namespace Moov.Sdk
         public  Task<RegisterApplePayMerchantDomainsResponse> RegisterMerchantDomainsAsync(
             string accountID,
             RegisterApplePayMerchantDomains body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -74,18 +61,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
         /// <param name="body">A <see cref="UpdateApplePayMerchantDomains"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateApplePayMerchantDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -97,7 +72,6 @@ namespace Moov.Sdk
         public  Task<UpdateApplePayMerchantDomainsResponse> UpdateMerchantDomainsAsync(
             string accountID,
             UpdateApplePayMerchantDomains body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -110,18 +84,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/apple-pay.read` scope.
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetApplePayMerchantDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -131,7 +93,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<GetApplePayMerchantDomainsResponse> GetMerchantDomainsAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -146,18 +107,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
         /// <param name="body">A <see cref="CreateApplePaySession"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateApplePaySessionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -169,7 +118,6 @@ namespace Moov.Sdk
         public  Task<CreateApplePaySessionResponse> CreateSessionAsync(
             string accountID,
             CreateApplePaySession body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -184,18 +132,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the cardholder.</param>
         /// <param name="body">A <see cref="LinkApplePay"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="LinkApplePayTokenResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -208,7 +144,6 @@ namespace Moov.Sdk
         public  Task<LinkApplePayTokenResponse> LinkTokenAsync(
             string accountID,
             LinkApplePay body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         );
     }
@@ -237,18 +172,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
         /// <param name="body">A <see cref="RegisterApplePayMerchantDomains"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="RegisterApplePayMerchantDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -260,7 +183,6 @@ namespace Moov.Sdk
         public async  Task<RegisterApplePayMerchantDomainsResponse> RegisterMerchantDomainsAsync(
             string accountID,
             RegisterApplePayMerchantDomains body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -271,16 +193,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/apple-pay/domains", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -422,18 +341,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
         /// <param name="body">A <see cref="UpdateApplePayMerchantDomains"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateApplePayMerchantDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -445,7 +352,6 @@ namespace Moov.Sdk
         public async  Task<UpdateApplePayMerchantDomainsResponse> UpdateMerchantDomainsAsync(
             string accountID,
             UpdateApplePayMerchantDomains body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -456,16 +362,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/apple-pay/domains", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -587,18 +490,6 @@ namespace Moov.Sdk
         /// you'll need to specify the `/accounts/{accountID}/apple-pay.read` scope.
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetApplePayMerchantDomainsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -608,7 +499,6 @@ namespace Moov.Sdk
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<GetApplePayMerchantDomainsResponse> GetMerchantDomainsAsync(
             string accountID,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -617,16 +507,13 @@ namespace Moov.Sdk
             var request = new GetApplePayMerchantDomainsRequest()
             {
                 AccountID = accountID,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/apple-pay/domains", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -736,18 +623,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the merchant.</param>
         /// <param name="body">A <see cref="CreateApplePaySession"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateApplePaySessionResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -759,7 +634,6 @@ namespace Moov.Sdk
         public async  Task<CreateApplePaySessionResponse> CreateSessionAsync(
             string accountID,
             CreateApplePaySession body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -770,16 +644,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/apple-pay/sessions", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -921,18 +792,6 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the cardholder.</param>
         /// <param name="body">A <see cref="LinkApplePay"/> parameter.</param>
-        /// <param name="xMoovVersion">
-        /// Specify an API version.<br/>
-        /// <br/>
-        /// API versioning follows the format `vYYYY.QQ.BB`, where <br/>
-        ///   - `YYYY` is the year<br/>
-        ///   - `QQ` is the two-digit month for the first month of the quarter (e.g., 01, 04, 07, 10)<br/>
-        ///   - `BB` is the build number, starting at `.01`, for subsequent builds in the same quarter. <br/>
-        ///     - For example, `v2024.01.00` is the initial release of the first quarter of 2024.<br/>
-        /// <br/>
-        /// The `dev` version represents the most recent development state. It may include breaking changes and should be treated as a beta release.<br/>
-        /// When no version is specified, the API defaults to `v2024.01.00`.
-        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="LinkApplePayTokenResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
@@ -945,7 +804,6 @@ namespace Moov.Sdk
         public async  Task<LinkApplePayTokenResponse> LinkTokenAsync(
             string accountID,
             LinkApplePay body,
-            string? xMoovVersion = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -956,16 +814,13 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 Body = body,
-                XMoovVersion = xMoovVersion,
             };
-            request.XMoovVersion ??= SDKConfiguration.XMoovVersion;
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/apple-pay/tokens", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
-            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {

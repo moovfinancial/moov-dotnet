@@ -24,13 +24,10 @@ using Moov.Sdk;
 using Moov.Sdk.Models.Components;
 using Moov.Sdk.Models.Requests;
 
-var sdk = new MoovClient(
-    xMoovVersion: "<value>",
-    security: new Security() {
-        Username = "",
-        Password = "",
-    }
-);
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
 
 GetEnrichmentAddressRequest req = new GetEnrichmentAddressRequest() {
     Search = "<value>",
