@@ -18,17 +18,28 @@ namespace Moov.Sdk.Models.Components
     /// </summary>
     public class CardVerification
     {
+        /// <summary>
+        /// Verification result of the card's CVV.
+        /// </summary>
         [JsonProperty("cvv")]
         public CardVerificationResult Cvv { get; set; } = default!;
 
+        /// <summary>
+        /// Verification result of the billing address line 1.<br/>
+        /// Derived from the same AVS code as `postalCode`; the card network returns a single code covering both address fields.
+        /// </summary>
         [JsonProperty("addressLine1")]
         public CardVerificationResult AddressLine1 { get; set; } = default!;
 
+        /// <summary>
+        /// Verification result of the billing address postal code.<br/>
+        /// Derived from the same AVS code as `addressLine1`; the card network returns a single code covering both address fields.
+        /// </summary>
         [JsonProperty("postalCode")]
         public CardVerificationResult PostalCode { get; set; } = default!;
 
         /// <summary>
-        /// The results of submitting cardholder name to a card network for verification.
+        /// Verification results of the cardholder's name, broken down by name component.
         /// </summary>
         [JsonProperty("accountName")]
         public AccountNameVerification? AccountName { get; set; }

@@ -76,6 +76,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("holderName")]
         public string? HolderName { get; set; }
 
+        /// <summary>
+        /// The billing address associated with the card.
+        /// </summary>
         [JsonProperty("billingAddress")]
         public CardAddress BillingAddress { get; set; } = default!;
 
@@ -129,6 +132,10 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("cardOnFile")]
         public bool? CardOnFile { get; set; }
 
+        /// <summary>
+        /// Merchant account whose details (statement descriptor, address, etc.) are used for the card verification authorization.<br/>
+        /// If omitted, the partner account's details are used instead.
+        /// </summary>
         [JsonProperty("merchantAccountID")]
         public string? MerchantAccountID { get; set; }
 
