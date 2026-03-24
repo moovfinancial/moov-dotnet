@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: f70c0c3c72916caeb30864bce46a3cde
+  docChecksum: aaf87e988ac47c8be2d6f450a07e9539
   docVersion: v2026.04.00
-  speakeasyVersion: 1.757.0
-  generationVersion: 2.866.0
-  releaseVersion: 26.4.0-dev.15
-  configChecksum: 921f0e2631604d2edc788b69f6c000e6
+  speakeasyVersion: 1.759.1
+  generationVersion: 2.869.10
+  releaseVersion: 26.4.0-dev.16
+  configChecksum: 40a9ffbb55677ede35ea92893d2f2f22
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: 1f591323-c5ce-4db6-a033-33f235ddc912
-  pristine_commit_hash: c03c71ad5a67b420dc4e08612b205c0184f57e7a
-  pristine_tree_hash: 61214c0d1e1969c6127dc66f2b5aceb00401258e
+  generation_id: 58a174d4-1986-4f82-9a25-f45d2432919f
+  pristine_commit_hash: 13fb1abfa2f0395d2e76a5943c74b2907ff193f7
+  pristine_tree_hash: b93df2ff6a9a793d0ed7ce12c04839f107ba6a2e
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -2445,8 +2445,8 @@ trackedFiles:
     pristine_git_object: 98c689c9d1cec13752f1ff404576f4a340f088a6
   docs/Models/Components/WalletTransactionType.md:
     id: 6ade4e0f94b3
-    last_write_checksum: sha1:238849881a5afcbe9479ebd9409c94e9541fa23d
-    pristine_git_object: 38fe6f0b040d812c7f849b6efc9083b5eea0d3e4
+    last_write_checksum: sha1:4b652ed0f9d9e3079970f291f0e9577fe67824a4
+    pristine_git_object: 57864927642c832c92f0c53164d36017f199faba
   docs/Models/Components/WalletType.md:
     id: 3df41e467fd3
     last_write_checksum: sha1:5a89ba0c43b4a7852986fa11eaab110d54723348
@@ -6917,8 +6917,8 @@ trackedFiles:
     pristine_git_object: d8df0fca8592b34633b6f926ab4bf35606d3de91
   src/Moov/Sdk/Models/Components/WalletTransactionType.cs:
     id: 2da2cc3dca7d
-    last_write_checksum: sha1:38e1c6f27ea1c1749db43574dd60c763a41605ec
-    pristine_git_object: 9f721ac1c1571478e9f027107376a97f45a74a5f
+    last_write_checksum: sha1:4ef897b00568480a40e746d5f975e4efba192cf9
+    pristine_git_object: ec838d180bccb9c62fc0db12d4a583f3725386e3
   src/Moov/Sdk/Models/Components/WalletType.cs:
     id: 0812ac8c9450
     last_write_checksum: sha1:c795b1b17ef5e273b22c0fc0cfbf97e673bf4df9
@@ -8749,8 +8749,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:a1d17a61e25f5d8ff10807814d79032e314fb652
-    pristine_git_object: 6cc23c65481390df8c0f9a77717a8032ddd9d0ae
+    last_write_checksum: sha1:b3b97a8dc340c8b1e975db556c72bddfa8d7161c
+    pristine_git_object: 850e56bc00ff87d6126d012034f6a79582912e92
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:de50035870d98c95e360ce896860637108976432
@@ -8789,8 +8789,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:7b47bc363925a6f6b549ad62a80bda7fd36528c1
-    pristine_git_object: fed00724b7e6d716572ae2bb0189edc118f4ff71
+    last_write_checksum: sha1:c3ca8d063e7b9ca4e0886b8eb7f092d5a71c91ab
+    pristine_git_object: 90c6aa91ad80a35423f26f9877bbe877c9d5b05e
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -8829,8 +8829,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:907881f89f61f14506f71e809139bbf28d3f4894
-    pristine_git_object: 7dd504074ca970220f57f9ec34c57403de3117a2
+    last_write_checksum: sha1:2354fd33f08bdcb3e88971ea6d87c9e554c33c0c
+    pristine_git_object: 786e13e77a96c975dd3e477a5f4d5d0ff8a45019
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -10959,6 +10959,7 @@ examples:
         "400":
           application/json: {"error": "<value>"}
 examplesVersion: 1.0.2
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Sweeps.List()`:  `response.[].Subtotals[].Type.Enum(instantBankFailure)` **Added** (Breaking ⚠️)\n* `MoovClient.Sweeps.Get()`:  `response.subtotals[].Type.Enum(instantBankFailure)` **Added** (Breaking ⚠️)\n* `MoovClient.WalletTransactions.List()`: \n  *  `request` **Changed**\n  *  `response.[].TransactionType.Enum(instantBankFailure)` **Added** (Breaking ⚠️)\n* `MoovClient.WalletTransactions.Get()`:  `response.transactionType.Enum(instantBankFailure)` **Added** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
