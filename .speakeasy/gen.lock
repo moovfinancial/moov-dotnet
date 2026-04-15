@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: b68e373bdce2931787d8fd28401d77c3
+  docChecksum: c5c86ae8fa6084f01d904f28016decb3
   docVersion: v2024.01.00
-  speakeasyVersion: 1.759.1
-  generationVersion: 2.869.10
-  releaseVersion: 24.2.0
-  configChecksum: 3c2ed48db461411ddf87cad67c91f614
+  speakeasyVersion: 1.761.5
+  generationVersion: 2.879.13
+  releaseVersion: 24.2.1
+  configChecksum: 8715ab9cc066e3762527365df50433f8
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: 30e29a2b-0d77-4b0a-b3b1-23cbce34008a
-  pristine_commit_hash: 5b94ed2594a26e6e9ee97f7af3a06b5aac041a01
-  pristine_tree_hash: 0fe69ff6acfde4a8294f34807fbdb395828aabdd
+  generation_id: 629e08f6-c3a9-4f89-83e4-b8ea8afae7ad
+  pristine_commit_hash: 388c36edbc13088a8a6a92351c379ab8a063dd5b
+  pristine_tree_hash: 71b9eab6feb026fe52a06659d24a70cf009bf478
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -22,7 +22,7 @@ features:
     decimal: 0.1.0
     deprecations: 2.81.2
     flattening: 2.81.3
-    globalSecurity: 2.83.10
+    globalSecurity: 2.83.11
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.83.1
     ignores: 2.81.1
@@ -45,8 +45,8 @@ trackedFiles:
     pristine_git_object: 17cd07534a010956957d0508809f8996108ea0f4
   NUGET.md:
     id: f4c8a442a6e5
-    last_write_checksum: sha1:665c6aec5a23fd637b4674b928b303988e739fc3
-    pristine_git_object: 965c71713af478c6bdcce2058259c16d8d9debb6
+    last_write_checksum: sha1:0cef8e88c4b34ac3ab952d6959caa35fd9dfb2e1
+    pristine_git_object: 65885b4188dc1967dfa2a8ebe5a0cfe9def78719
   USAGE.md:
     id: 3aed33ce6e6f
     last_write_checksum: sha1:fcb07de34d26c7e5830ceb2921968ac5eb152581
@@ -367,6 +367,10 @@ trackedFiles:
     id: b94957f64da9
     last_write_checksum: sha1:5c6707b507cb904985f27ab14897a4d9a05cb213
     pristine_git_object: 3483825834da53408f8af0918c8707fc5bed9b86
+  docs/Models/Components/BatchGetTransfersRequest.md:
+    id: c9813d31f7cb
+    last_write_checksum: sha1:102df849e58ff1d227597fdd99fec3a550b608d6
+    pristine_git_object: e398190c39dbaeb86f3a128721d947cb446c0580
   docs/Models/Components/BillableFee.md:
     id: c9c0654db472
     last_write_checksum: sha1:2ec6987a3e762ccb53fcf2464c44ea1f9aefc064
@@ -1123,6 +1127,22 @@ trackedFiles:
     id: c465b951fb38
     last_write_checksum: sha1:288393cd8b9fefdd79d3ac4971edc2d423ffbd49
     pristine_git_object: 1a6cbe3101b9d7492dfb4a7ed0be34ccbc1a2546
+  docs/Models/Components/InstantBankFailureCode.md:
+    id: 2f21f52941e2
+    last_write_checksum: sha1:2ed7453e7a9240c8720778574e15fccd131882b7
+    pristine_git_object: 6da767d52c6e3674f9ccbd2bacafc60c5279a5dd
+  docs/Models/Components/InstantBankNetwork.md:
+    id: c88e0e79da0d
+    last_write_checksum: sha1:82f8f6d5ccc0d1849ce35e9ad01e1f33cb235fa5
+    pristine_git_object: 2b56fa14118824dce6bde26d28d6092e2608a5aa
+  docs/Models/Components/InstantBankTransactionDetails.md:
+    id: f887ee34131b
+    last_write_checksum: sha1:002f5b9429123d452742817ad0c14b631cf55262
+    pristine_git_object: 539fd1de6465cb52c1779b7c4e69b54652e45435
+  docs/Models/Components/InstantBankTransactionStatus.md:
+    id: 56fe1335e057
+    last_write_checksum: sha1:3517e6c5f9f56aeb6c2b663c7885284435dbef58
+    pristine_git_object: 58248af4f2463f4ee4dbd40001f0c1c170d83cda
   docs/Models/Components/InstantPaymentFees.md:
     id: 9583a093d337
     last_write_checksum: sha1:c6606458416eb7dbbb1c0955358d1b370816a872
@@ -1897,8 +1917,8 @@ trackedFiles:
     pristine_git_object: c0258a05d9bce7a65823f9e22776140fc805a39c
   docs/Models/Components/TransferDestination.md:
     id: bad241d995ea
-    last_write_checksum: sha1:7edcb85e5ef6793c1867a90440ee20539c905021
-    pristine_git_object: 8ee851ef74cf670a58313333cb14b808dad0bdad
+    last_write_checksum: sha1:bd954a087c2d76f960d1eb3ab9c8cf8566662934
+    pristine_git_object: 4983bb992f790f746a97143d8653535ad8ff75bd
   docs/Models/Components/TransferFailureReason.md:
     id: ab8f9da09d90
     last_write_checksum: sha1:09cb6976ad8f2a7aeefafc65e6936f8c7ba01cec
@@ -2105,8 +2125,8 @@ trackedFiles:
     pristine_git_object: 194b381dcaae6e277b127d49ad145f89252b96d0
   docs/Models/Components/WebhookBillingStatementCreated.md:
     id: ca161dda34a3
-    last_write_checksum: sha1:aea9b3918bb4b8cb0b659a9127a4355dfa3fac67
-    pristine_git_object: 821dadfc57eb0a4d8eea011836e20a28b111b017
+    last_write_checksum: sha1:a92aca5d0a909ad4bd6e3afb53c696072ead465e
+    pristine_git_object: d5ba9b9c53278943944cafd5b83f205dd61b10e0
   docs/Models/Components/WebhookData.md:
     id: 118e182c9cbd
     last_write_checksum: sha1:f791123d5984f3e229dcf5c53ceb8caa8772f293
@@ -2491,6 +2511,14 @@ trackedFiles:
     id: 1908684c221f
     last_write_checksum: sha1:dc9018c818a762745694862e2b54433ee787c075
     pristine_git_object: c2239b036f4b5062eba307c0a17abd0827a510af
+  docs/Models/Requests/BatchGetTransfersRequest.md:
+    id: 5fcf92ef9607
+    last_write_checksum: sha1:fe05ae0dc51e044d34785f801a1255725212713e
+    pristine_git_object: 60e227ae42168a2f5ff010f3064ac0252468d9d3
+  docs/Models/Requests/BatchGetTransfersResponse.md:
+    id: f8e9311b9e1f
+    last_write_checksum: sha1:000ce2857d5730ddfb0c8d0be9c5cb4d0b316269
+    pristine_git_object: fc113ce393cd9a8643ec0a039604baaa9e1394a8
   docs/Models/Requests/CancelScheduleRequest.md:
     id: 252f92cf9824
     last_write_checksum: sha1:d1048e1456c7d1616fe5fa6838ab4e043b8fa49d
@@ -3625,8 +3653,8 @@ trackedFiles:
     pristine_git_object: 1c9c3dba6cde3584073b26e5c20dd5b499062bb5
   docs/Models/Requests/UpdateIssuedCardResponse.md:
     id: 3fa525e54e4c
-    last_write_checksum: sha1:8e7e14614ae7d2c65c94f23a39bc2cfa496284cc
-    pristine_git_object: 57a7fbd611351990f68ab37f0cfdfd2bdc3bace7
+    last_write_checksum: sha1:3263359611f62f443c40ef43940bacb66cf8efb2
+    pristine_git_object: 270bcfe32e5c8acf3e315b4a03f53ed31a324bbe
   docs/Models/Requests/UpdatePaymentLinkRequest.md:
     id: 8a562d1c4c9b
     last_write_checksum: sha1:59a4100d704a72fdb418b7d739185f41a9e7d436
@@ -3753,8 +3781,8 @@ trackedFiles:
     pristine_git_object: b022cc65c6ab793b12537d62dc980d737cdacd02
   docs/sdks/applepay/README.md:
     id: 54597509fa22
-    last_write_checksum: sha1:3b926c393a4b1b907d0b3f3a2921c4af551e6033
-    pristine_git_object: 066db3a4e9594e3f8532b8f30d8c08c33b915f99
+    last_write_checksum: sha1:7cfb79dc03b418c2b559188d892d412adfe17703
+    pristine_git_object: 8de9fdf11c36d66745fe11b35607eaccde3b75cc
   docs/sdks/authentication/README.md:
     id: 45be241adfc3
     last_write_checksum: sha1:3682a956dfa60935df82174a91a573f87bd1a457
@@ -3869,8 +3897,8 @@ trackedFiles:
     pristine_git_object: 46dc17ce7607119b56c552fb3f7e4f799b21ec95
   docs/sdks/transfers/README.md:
     id: f56918861798
-    last_write_checksum: sha1:c172347946df960744ba11755ae6ebbd55357df3
-    pristine_git_object: 125f757d57d97f7d6b527dd4fb6baddf4b25c37e
+    last_write_checksum: sha1:01162c116301dddd0a5263a5bb66fcfa79cc6ebf
+    pristine_git_object: a429b8943401d65e13dec60060fd9dc2814f8e4a
   docs/sdks/underwriting/README.md:
     id: ef972250826e
     last_write_checksum: sha1:4949c5f421b4a96d6899bdbb52b6a446d2cf41db
@@ -3905,8 +3933,8 @@ trackedFiles:
     pristine_git_object: e1c74367207568c7a65843bf5de53aa9a137eb63
   src/Moov/Sdk/ApplePay.cs:
     id: 9fe79edb7d98
-    last_write_checksum: sha1:9507f0ff728b8603da21888f948e062a9ff85de7
-    pristine_git_object: 9b89b7dcd8acc0af18285a8189e60f0b1ec75ef7
+    last_write_checksum: sha1:7d77bc26958d0363223d353666dc6f6fa769cbc3
+    pristine_git_object: 7c867bb21f8c51fad953a2a29cb618ca26360b2a
   src/Moov/Sdk/Authentication.cs:
     id: 7b18c561fb43
     last_write_checksum: sha1:bcb37f8d1f136890d5cee236c78fffd740e2eca2
@@ -3929,8 +3957,8 @@ trackedFiles:
     pristine_git_object: 27eae86d1eb95331647c10b2907d1d771df71ec5
   src/Moov/Sdk/CardIssuing.cs:
     id: 8f9d808123a0
-    last_write_checksum: sha1:d22245a362e0bb112f2290aa34b8d4da254ff803
-    pristine_git_object: 7a18028248eb89bd3e3b6d8563f4de8e5ea82ee4
+    last_write_checksum: sha1:1e0c64949554bc51b230292f55cba245fdfd5973
+    pristine_git_object: 647c0ddf7bafaf67865e158f57b480302aa074bb
   src/Moov/Sdk/Cards.cs:
     id: 6e02f54d36fc
     last_write_checksum: sha1:d16a773a0f55723a228a5dfbc9bc1f2a13c865b7
@@ -4299,6 +4327,10 @@ trackedFiles:
     id: 6d8d1dfd41b6
     last_write_checksum: sha1:c0f21a434d39f5254abb33920b7c8c8bcd2d0194
     pristine_git_object: 8421058855f79eb9e42088bb8c08cbaca7567b2a
+  src/Moov/Sdk/Models/Components/BatchGetTransfersRequest.cs:
+    id: 5368c2be8700
+    last_write_checksum: sha1:867e0050ea5bd3cc3557900d973e5c3b69313189
+    pristine_git_object: 878b1f79aea128f632cfa6ce92998ece93d984fb
   src/Moov/Sdk/Models/Components/BillableFee.cs:
     id: 3c35cb13d5a2
     last_write_checksum: sha1:ecdd0e0b5ca98c64fb21cf133d78fe8d3f425070
@@ -5055,6 +5087,22 @@ trackedFiles:
     id: 5bd022f572aa
     last_write_checksum: sha1:dfc8e2e2b96b77ae3c32615c26c8b0bf10e1152c
     pristine_git_object: b89e8ed1b50325328ce52163dda987b888a19310
+  src/Moov/Sdk/Models/Components/InstantBankFailureCode.cs:
+    id: c67ea206bf7d
+    last_write_checksum: sha1:80134db6e0c5e5b4b85e4bdf80baabcc65432a33
+    pristine_git_object: 5e1e4b80bf117fcc796140ad4ced96b3bb52d0b8
+  src/Moov/Sdk/Models/Components/InstantBankNetwork.cs:
+    id: 0df82c5a69d0
+    last_write_checksum: sha1:c1583c21005c755a5af9ee4cd88dab26a6fec453
+    pristine_git_object: d40e35312249a628ed13f6084253ea44b78fd937
+  src/Moov/Sdk/Models/Components/InstantBankTransactionDetails.cs:
+    id: bfa3d94caedb
+    last_write_checksum: sha1:5e9844425a617b057b4f83721113dc96c43c6809
+    pristine_git_object: d39e952588faa945255087e46f9f139e7d7f9be1
+  src/Moov/Sdk/Models/Components/InstantBankTransactionStatus.cs:
+    id: 694e42dedf14
+    last_write_checksum: sha1:c7ffb3c106d935c754129ed69f38202cfda14500
+    pristine_git_object: da248e3fdc73d6dc957226782b8d45dd8279a69c
   src/Moov/Sdk/Models/Components/InstantPaymentFees.cs:
     id: 1498c0df066d
     last_write_checksum: sha1:3db68d05cb3a5266b2d3a7c22132336e8667214b
@@ -5829,8 +5877,8 @@ trackedFiles:
     pristine_git_object: 783bb74e3eabaa05f96dafe84e5fa362e67048dc
   src/Moov/Sdk/Models/Components/TransferDestination.cs:
     id: 018ec8289961
-    last_write_checksum: sha1:282d2adb4f95976df595ac3123c8b2ef5281330b
-    pristine_git_object: ebd2ad849591eaae6b3c76fdcb067bc0588c0bc9
+    last_write_checksum: sha1:07f8c9636a85cb796c16629941ad7d859a9ab527
+    pristine_git_object: 0d4cad3a5b512c06324e038ed0e887f90ae5191c
   src/Moov/Sdk/Models/Components/TransferFailureReason.cs:
     id: c070cc855270
     last_write_checksum: sha1:28f78815958957b9e24fd8d038a2417a6f1ee3f8
@@ -6037,12 +6085,12 @@ trackedFiles:
     pristine_git_object: 9e061fbd560c79cdebdc57480bf17b6cb8407094
   src/Moov/Sdk/Models/Components/WebhookBillingStatementCreated.cs:
     id: 53e4a560723f
-    last_write_checksum: sha1:57dbcdcb83a235dbc214505c6100e2738b78c2fe
-    pristine_git_object: ad2d12907454c3c7fa5daa2650fbd8569c2bb1d6
+    last_write_checksum: sha1:c17bef87e1c5bfa10b9b1c7ae6c5da0be0afe25f
+    pristine_git_object: 8ade4815a587b5169176814b0daff9ab82dc8896
   src/Moov/Sdk/Models/Components/WebhookData.cs:
     id: eb3ea5d40287
-    last_write_checksum: sha1:a045d203deae6c79d9c1be0617024f507a40cafc
-    pristine_git_object: 34ec95e8b00f361c62fe5b5709887dc956ac121a
+    last_write_checksum: sha1:de33b753e1c686eb843c2ec1a18461bc064b477a
+    pristine_git_object: 850fd402218701ab0a228d4a9a175645e6b9cbcc
   src/Moov/Sdk/Models/Components/WebhookDataAccountCreated.cs:
     id: 53ee948f5aed
     last_write_checksum: sha1:e3124bea4e8858fd1b03a1de3ad7c418415003f7
@@ -6435,6 +6483,14 @@ trackedFiles:
     id: 5add7acb73a5
     last_write_checksum: sha1:1ab56e3ae2422b43018912c1b54a28c525301098
     pristine_git_object: a80a3587cef6c5a64f6254a9e38ae95754e8b555
+  src/Moov/Sdk/Models/Requests/BatchGetTransfersRequest.cs:
+    id: 09d3b6cd5f3b
+    last_write_checksum: sha1:895264f24792c744ee06bb5b8c26e4f192873589
+    pristine_git_object: f38e00a6bf71834101b884ce770f12d7b27872ed
+  src/Moov/Sdk/Models/Requests/BatchGetTransfersResponse.cs:
+    id: ae5a60d0f767
+    last_write_checksum: sha1:c7ef19ef578234064eac8b4c357f815a697d4959
+    pristine_git_object: 0d9b5099099362d91cf488838d2e68a300e73a67
   src/Moov/Sdk/Models/Requests/CancelScheduleRequest.cs:
     id: 12e9a212a6f4
     last_write_checksum: sha1:07647f9bbfa50cef2df5845ab99a58f128803462
@@ -7569,8 +7625,8 @@ trackedFiles:
     pristine_git_object: b03140ffbbfe64a9d820e16a24034e4d849cfde1
   src/Moov/Sdk/Models/Requests/UpdateIssuedCardResponse.cs:
     id: 96687ec277ac
-    last_write_checksum: sha1:9db0ee5ae7d4d7ae90e8300bf445ed3c0aaf454d
-    pristine_git_object: 21f260ba0f9aa6795da730f0c0fd55697d185634
+    last_write_checksum: sha1:d36ae446cba7ea0c658370b4b536eecb3412e175
+    pristine_git_object: b3603fe445fa2bb00382bd32ea23bef2fa36167b
   src/Moov/Sdk/Models/Requests/UpdatePaymentLinkRequest.cs:
     id: 14ddf3ea5078
     last_write_checksum: sha1:9b68e2837fc2913ec7f9dd3662e380a641d80136
@@ -7685,8 +7741,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:c78cf40261153131048ba76dba118a99b384cb34
-    pristine_git_object: aded8bc1d2eda9fc4a53bd59fee9f092269d3a38
+    last_write_checksum: sha1:1773d6c398779bd68c135ebbb0fa85bec180b0d4
+    pristine_git_object: bd5cd4e47b56fa13c26ddc500d0bbe14ca29fa75
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:87a9d9680a8ac147070ee6d41876fb2ca8380f02
@@ -7721,8 +7777,8 @@ trackedFiles:
     pristine_git_object: ceeb494a9afea852528fb7c2eec79a804d5ee3e8
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:db1e483a8c5ccb6bf7e980c0c2ca1da467985e57
-    pristine_git_object: 68d6e15a0834c46a8dcadd551216465619378c32
+    last_write_checksum: sha1:20c7a7e471beacfe0b93839a7b3e2fb6738e461e
+    pristine_git_object: 4433d5d4ec6aa78d6f340f7bee525026cb777aa8
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -7741,8 +7797,8 @@ trackedFiles:
     pristine_git_object: 77e6979a4f32141ff27009473eb86efec329e9f5
   src/Moov/Sdk/Transfers.cs:
     id: cd6fe1efd358
-    last_write_checksum: sha1:de9d3970895f1bc06670038baa0f26650cbd84d2
-    pristine_git_object: 1f84a4e8f40c1794b37895c2224b78dcb5eaa020
+    last_write_checksum: sha1:fd97a492a791f4ffa2145f64ca0dfcc103157910
+    pristine_git_object: 688e169ae4f91865f8c86a0a1b02927d3c521d34
   src/Moov/Sdk/Underwriting.cs:
     id: 47d3d473eb9c
     last_write_checksum: sha1:2bcfd03f7a07dba603a8946f8ebdb6fac98c9c7c
@@ -7757,8 +7813,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:f6b834ecd3b3cc65a4054cbd9356e0360cb1bd12
-    pristine_git_object: 3d57065f6f85ca4f1dafc180ac578d810ef7de29
+    last_write_checksum: sha1:e6990300611902113225a64c02ea06e7aefd3dfc
+    pristine_git_object: 8e03f3d194ccc2b57ad9b42825cb773e13ca8bbd
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -7809,20 +7865,20 @@ trackedFiles:
     pristine_git_object: 2b09a59e3ff6ce4f70477779401a3ac22274fe6d
   src/Moov/Sdk/Utils/SecurityMetadata.cs:
     id: a2fd35d074db
-    last_write_checksum: sha1:cc4370495838e2a599cf46d01c67aa6fed5294da
-    pristine_git_object: ccb67a04c5841c594d5c2c4d7cc46dc5e50266ee
+    last_write_checksum: sha1:0ebbaa91d9648e6399843a8bb72527c77c3f5238
+    pristine_git_object: a4e61c05149e5c47db7813a7ecefef9df3cb92bd
   src/Moov/Sdk/Utils/SpeakeasyMetadata.cs:
     id: 3dd1e53b5662
-    last_write_checksum: sha1:cb611ecb024e6ba2278d5870f087cd4e22eec04f
-    pristine_git_object: 5ff0164823a4a0f31064585027c9afb47e871fb1
+    last_write_checksum: sha1:5dcaaa274e2d52237d091c6e77ea97f9b7d9c78a
+    pristine_git_object: ea413ee3f0ed69f7142a4e8930e122cb8b9ce278
   src/Moov/Sdk/Utils/URLBuilder.cs:
     id: c5bde4e66b28
     last_write_checksum: sha1:2644df35fa5f3fa7894c8e46ee45687639973b79
     pristine_git_object: 770798aa7230e3a1b6135a918ff1f2a9bbbcf49a
   src/Moov/Sdk/Utils/Utilities.cs:
     id: ebb372695c19
-    last_write_checksum: sha1:b939db94d169a83cbb807a1ef842a10d6ab2e543
-    pristine_git_object: 3fba7b7621828a6b91e9ab47445960b269d94729
+    last_write_checksum: sha1:63eb22ee7ec112871ee5f9ed558bc95e3f4c4101
+    pristine_git_object: 37b6d9889545b74293dc79e2d6b37d8bb51c8830
   src/Moov/Sdk/WalletTransactions.cs:
     id: 1c731236065a
     last_write_checksum: sha1:228fda12f995a018b9f4afc11994deb628cca23e
@@ -9468,6 +9524,8 @@ examples:
           application/json: {"error": "<value>"}
         "422":
           application/json: {}
+        "200":
+          application/json: {"issuedCardID": "<id>", "brand": "Visa", "lastFourCardNumber": "<value>", "expiration": {"month": "01", "year": "21"}, "authorizedUser": {"firstName": "Devan", "lastName": "Stoltenberg"}, "fundingWalletID": "<id>", "state": "pending-verification", "formFactor": "virtual", "controls": {"velocityLimits": [{"amount": 10000, "interval": "per-transaction"}]}, "createdOn": "2024-08-15T00:54:17.318Z"}
   getFullIssuedCard:
     speakeasy-default-get-full-issued-card:
       parameters:
@@ -9839,8 +9897,18 @@ examples:
       responses:
         "200":
           application/json: {"secret": "<value>"}
+  batchGetTransfers:
+    speakeasy-default-batch-get-transfers:
+      parameters:
+        path:
+          accountID: "<id>"
+      requestBody:
+        application/json: {"transferIDs": ["<value 1>", "<value 2>"]}
+      responses:
+        "200":
+          application/json: {"key": {"transferID": "d835gf30-4b19-4850-a9b2-c0624c41ecb3", "createdOn": "2025-01-21T21:32:16Z", "source": {"paymentMethodID": "9506dbf6-4208-44c3-ad8a-e4431660e1f2", "paymentMethodType": "card-payment", "account": {"accountID": "7e4b26c2-b399-49ef-8390-50e1ea44d550", "email": "jules@julesjackson.com", "displayName": "Jules Jackson"}, "card": {"cardID": "aefd5563-93c6-413c-875e-1bd0ebfc116d", "fingerprint": "2f5d782ceef1c3bd31ed5...", "brand": "Visa", "cardType": "credit", "lastFourCardNumber": "2000", "bin": "400020", "expiration": {"month": "01", "year": "28"}, "holderName": "Jules Jackson", "billingAddress": {"postalCode": "80301"}, "cardVerification": {"cvv": "unavailable", "addressLine1": "unavailable", "postalCode": "unavailable", "accountName": {"firstName": "unavailable", "lastName": "unavailable", "middleName": "unavailable", "fullName": "unavailable"}}, "issuer": "Moov Visa Sandbox", "issuerCountry": "US", "cardAccountUpdater": {}, "domesticPushToCard": "standard", "domesticPullFromCard": "supported"}, "cardDetails": {"status": "confirmed", "dynamicDescriptor": "WhlBdy *Yoga 11-12", "confirmedOn": "2025-01-21T21:32:16.799681237Z"}}, "destination": {"paymentMethodID": "3f9969cf-a1f3-4d83-8ddc-229a506651cf", "paymentMethodType": "moov-wallet", "account": {"accountID": "34233b72-780c-4a0d-8b08-cbbe23k878f8", "email": "john@wholebodyfitness.io", "displayName": "Whole Body Fitness"}, "wallet": {"walletID": "744b2e78-8cc8-4a6a-af42-611e3b844503", "partnerAccountID": "65b57f28-49e9-4afb-9bf6-7e4fb6444917", "walletType": "general"}}, "status": "pending", "amount": {"currency": "USD", "value": 32945}, "description": "Transfer from card to wallet", "moovFees": [{"accountID": "7e4b26c2-b399-49ef-8390-50e1ea44d550", "transferParty": "source", "totalAmount": {"currency": "USD", "valueDecimal": "0.1"}, "feeIDs": ["9d957d33-1a9a-47aa-9460-fe1a90f003dd"]}]}}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Accounts.Create()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Accounts.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.Disconnect()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.ListConnected()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.Connect()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.GetCountries()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.AssignCountries()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.GetMerchantProcessingAgreement()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Accounts.GetTermsOfServiceToken()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Adjustments.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Adjustments.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.ApplePay.RegisterMerchantDomains()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.ApplePay.UpdateMerchantDomains()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.ApplePay.GetMerchantDomains()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.ApplePay.CreateSession()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.ApplePay.LinkToken()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.Link()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.Disable()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.InitiateMicroDeposits()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.CompleteMicroDeposits()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.GetVerification()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.InitiateVerification()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.CompleteVerification()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Branding.Create()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Branding.Upsert()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Branding.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Capabilities.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Capabilities.Request()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Capabilities.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Capabilities.Disable()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Cards.Link()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Cards.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Cards.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Cards.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Cards.Disable()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.Accept()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.ListEvidence()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.UploadEvidenceFile()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.UploadEvidenceText()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.SubmitEvidence()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.GetEvidence()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.UpdateEvidence()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Disputes.DeleteEvidence()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Disputes.GetEvidenceData()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.ListFeePlanAgreements()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.CreateFeePlanAgreements()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.ListFeePlans()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.ListFeeRevenue()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.RetrieveFees()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.ListFeesFetch()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.ListPartnerPricingAgreements()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.ListResiduals()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.GetResidual()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.FeePlans.ListResidualFees()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Files.Upload()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Files.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Files.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Images.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Images.Upload()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Images.GetMetadata()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Images.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Images.Delete()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Images.UpdateMetadata()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Create()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.List()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Disable()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.GetQrCode()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentMethods.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentMethods.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Products.List()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Products.Create()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Products.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Products.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Products.Disable()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Representatives.Create()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Representatives.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Representatives.Delete()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Representatives.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Representatives.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Scheduling.Create()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Scheduling.List()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Scheduling.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Scheduling.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Scheduling.Cancel()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Scheduling.GetOccurrance()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Statements.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Statements.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Sweeps.CreateConfig()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Sweeps.ListConfigs()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Sweeps.GetConfig()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Sweeps.UpdateConfig()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Sweeps.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Sweeps.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.AccountTerminalApplications.Link()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.AccountTerminalApplications.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.AccountTerminalApplications.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.AccountTerminalApplications.GetConfiguration()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.GenerateOptions()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.Create()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.CreateCancellation()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.GetCancellation()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.InitiateRefund()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.ListRefunds()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.GetRefund()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.CreateReversal()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Underwriting.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Underwriting.Upsert()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Wallets.Create()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Wallets.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Wallets.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Wallets.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.WalletTransactions.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.WalletTransactions.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Avatars.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.EndToEndEncryption.TestEncryptedToken()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.EndToEndEncryption.GenerateKey()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.EnrichedAddress.Get()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.EnrichedProfile.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Webhooks.ListEventTypes()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Webhooks.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Webhooks.Create()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Webhooks.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Webhooks.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Webhooks.Disable()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Webhooks.Ping()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Webhooks.GetSecret()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Industries.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Institutions.SearchInstitutions()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Institutions.Search()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.IssuingTransactions.ListAuthorizations()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.IssuingTransactions.GetAuthorization()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.IssuingTransactions.ListAuthorizationEvents()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.IssuingTransactions.List()`: \n  *  `request.XMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.IssuingTransactions.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.CardIssuing.Request()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.CardIssuing.List()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.CardIssuing.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.CardIssuing.Update()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.CardIssuing.GetFull()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Authentication.RevokeAccessToken()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Authentication.CreateAccessToken()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Onboarding.CreateInvite()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Onboarding.ListInvites()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Onboarding.GetInvite()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Onboarding.RevokeInvite()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Ping.Ping()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.Receipts.Create()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.Receipts.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.TerminalApplications.Create()`:  `request` **Changed** (Breaking ⚠️)\n* `MoovClient.TerminalApplications.List()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.TerminalApplications.Get()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.TerminalApplications.Delete()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n* `MoovClient.TerminalApplications.CreateVersion()`:  `request.xMoovVersion` **Removed** (Breaking ⚠️)\n"
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.CardIssuing.Update()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.BatchGetTransfers()`: **Added**\n* `MoovClient.Transfers.Create()`: \n  *  `response.destination.InstantBankDetails` **Added**\n  *  `error.destination.InstantBankDetails` **Added**\n* `MoovClient.Transfers.List()`:  `response.[].Destination.InstantBankDetails` **Added**\n* `MoovClient.Transfers.Get()`:  `response.destination.InstantBankDetails` **Added**\n* `MoovClient.Transfers.Update()`:  `response.destination.InstantBankDetails` **Added**\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
