@@ -64,5 +64,11 @@ namespace Moov.Sdk.Models.Components
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("rtpDetails")]
         public RtpDetails? RtpDetails { get; set; }
+
+        /// <summary>
+        /// Instant-bank specific details about the transaction.
+        /// </summary>
+        [JsonProperty("instantBankDetails")]
+        public InstantBankTransactionDetails? InstantBankDetails { get; set; }
     }
 }

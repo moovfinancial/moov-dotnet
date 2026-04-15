@@ -31,12 +31,12 @@ A successful response from this endpoint should be passed through to Apple Pay u
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/apple-pay.write` scope.
-* [LinkToken](#linktoken) - Connect an Apple Pay token to the specified account. 
+* [LinkToken](#linktoken) - Connect an Apple Pay token to the specified account.
 
-Read our [Apple Pay tutorial](https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains) to learn more. 
+Read our [Apple Pay tutorial](https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains) to learn more.
 The `token` data is defined by Apple Pay and should be passed through from Apple Pay's response unmodified.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 ## RegisterMerchantDomains
@@ -243,12 +243,12 @@ var res = await sdk.ApplePay.CreateSessionAsync(
 
 ## LinkToken
 
-Connect an Apple Pay token to the specified account. 
+Connect an Apple Pay token to the specified account.
 
-Read our [Apple Pay tutorial](https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains) to learn more. 
+Read our [Apple Pay tutorial](https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains) to learn more.
 The `token` data is defined by Apple Pay and should be passed through from Apple Pay's response unmodified.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 ### Example Usage
