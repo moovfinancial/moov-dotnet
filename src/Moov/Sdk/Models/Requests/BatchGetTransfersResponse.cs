@@ -14,7 +14,7 @@ namespace Moov.Sdk.Models.Requests
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
-    public class UpdateIssuedCardResponse
+    public class BatchGetTransfersResponse
     {
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -22,7 +22,7 @@ namespace Moov.Sdk.Models.Requests
         /// <summary>
         /// The request completed successfully.
         /// </summary>
-        public IssuedCard? IssuedCard { get; set; }
+        public Dictionary<string, Transfer>? Object { get; set; }
 
         public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }

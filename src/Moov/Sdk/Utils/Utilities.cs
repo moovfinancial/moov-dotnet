@@ -129,11 +129,25 @@ namespace Moov.Sdk.Utils
                 && o.GetType().GetGenericTypeDefinition().IsAssignableFrom(typeof(List<>));
         }
 
+        public static bool IsModelNamespace(string ns)
+        {
+            var modelNamespaces = new[]
+            {
+                "Moov.Sdk.Models.Requests",
+                "Moov.Sdk.Models.Components",
+                "Moov.Sdk.Models.Errors",
+            };
+
+            return modelNamespaces.Contains(ns);
+        }
+
         public static bool IsClass(object? o)
         {
             if (o == null)
                 return false;
-            return o.GetType().IsClass && (o.GetType().FullName ?? "").StartsWith("Moov.Sdk.Models");
+            if (!o.GetType().IsClass)
+                return false;
+            return IsModelNamespace(o.GetType().Namespace ?? "");
         }
 
         // TODO: code review polyfilled for IsAssignableTo

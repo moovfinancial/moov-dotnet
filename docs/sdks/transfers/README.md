@@ -30,6 +30,14 @@ period of time. You can run multiple requests in smaller time window increments 
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+* [BatchGetTransfers](#batchgettransfers) - Retrieve transfer details for multiple transfers in one request. The response is a map from each
+requested transfer ID to its full transfer details when available; IDs that are not found or not
+accessible under this account are omitted from the map.
+
+Read our [transfers overview guide](https://docs.moov.io/guides/money-movement/overview/) to learn more.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 * [Get](#get) - Retrieve full transfer details for an individual transfer of a particular Moov account. 
 
 Payment rail-specific details are included in the source and destination. Read our [transfers overview guide](https://docs.moov.io/guides/money-movement/overview/) 
@@ -289,6 +297,60 @@ var res = await sdk.Transfers.ListAsync(req);
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
 | Moov.Sdk.Models.Errors.ListTransfersValidationError | 422                                                 | application/json                                    |
 | Moov.Sdk.Models.Errors.APIException                 | 4XX, 5XX                                            | \*/\*                                               |
+
+## BatchGetTransfers
+
+Retrieve transfer details for multiple transfers in one request. The response is a map from each
+requested transfer ID to its full transfer details when available; IDs that are not found or not
+accessible under this account are omitted from the map.
+
+Read our [transfers overview guide](https://docs.moov.io/guides/money-movement/overview/) to learn more.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="batchGetTransfers" method="post" path="/accounts/{accountID}/transfers/.fetch" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.BatchGetTransfersAsync(
+    accountID: "<id>",
+    body: new Moov.Sdk.Models.Components.BatchGetTransfersRequest() {
+        TransferIDs = new List<string>() {
+            "<value 1>",
+            "<value 2>",
+        },
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `AccountID`                                                                                       | *string*                                                                                          | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `Body`                                                                                            | [Models.Components.BatchGetTransfersRequest](../../Models/Components/BatchGetTransfersRequest.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |
+
+### Response
+
+**[BatchGetTransfersResponse](../../Models/Requests/BatchGetTransfersResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Get
 
