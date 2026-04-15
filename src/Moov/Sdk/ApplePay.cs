@@ -122,12 +122,12 @@ namespace Moov.Sdk
         );
 
         /// <summary>
-        /// Connect an Apple Pay token to the specified account. <br/>
+        /// Connect an Apple Pay token to the specified account.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more.<br/>
         /// The `token` data is defined by Apple Pay and should be passed through from Apple Pay's response unmodified.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/cards.write` scope.
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the cardholder.</param>
@@ -782,12 +782,12 @@ namespace Moov.Sdk
 
 
         /// <summary>
-        /// Connect an Apple Pay token to the specified account. <br/>
+        /// Connect an Apple Pay token to the specified account.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more.<br/>
         /// The `token` data is defined by Apple Pay and should be passed through from Apple Pay's response unmodified.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/cards.write` scope.
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the cardholder.</param>
