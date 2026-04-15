@@ -22,7 +22,7 @@ namespace Moov.Sdk.Models.Requests
         /// <summary>
         /// The request completed successfully.
         /// </summary>
-        public LinkedApplePayPaymentMethod? LinkedApplePayPaymentMethod { get; set; }
+        public List<LinkedApplePayPaymentMethod>? LinkedApplePayPaymentMethods { get; set; }
 
         public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }

@@ -76,3 +76,15 @@ TransferPaymentMethod.CreateCardPresentPayment(/* values here */);
 ```csharp
 TransferPaymentMethod.CreateInstantBankCredit(/* values here */);
 ```
+
+### PushToApplePay
+
+```csharp
+TransferPaymentMethod.CreatePushToApplePay(/* values here */);
+```
+
+### PullFromApplePay
+
+```csharp
+TransferPaymentMethod.CreatePullFromApplePay(/* values here */);
+```

@@ -48,6 +48,10 @@ namespace Moov.Sdk.Models.Components
 
         public static PaymentMethodUnionType InstantBankCredit { get { return new PaymentMethodUnionType("instant-bank-credit"); } }
 
+        public static PaymentMethodUnionType PushToApplePay { get { return new PaymentMethodUnionType("push-to-apple-pay"); } }
+
+        public static PaymentMethodUnionType PullFromApplePay { get { return new PaymentMethodUnionType("pull-from-apple-pay"); } }
+
         public override string ToString() { return Value; }
         public static implicit operator String(PaymentMethodUnionType v) { return v.Value; }
         public static PaymentMethodUnionType FromString(string v) {
@@ -64,6 +68,8 @@ namespace Moov.Sdk.Models.Components
                 case "apple-pay": return ApplePay;
                 case "card-present-payment": return CardPresentPayment;
                 case "instant-bank-credit": return InstantBankCredit;
+                case "push-to-apple-pay": return PushToApplePay;
+                case "pull-from-apple-pay": return PullFromApplePay;
                 default: throw new ArgumentException("Invalid value for PaymentMethodUnionType");
             }
         }
@@ -128,6 +134,12 @@ namespace Moov.Sdk.Models.Components
 
         [SpeakeasyMetadata("form:explode=true")]
         public InstantBankCreditPaymentMethod? InstantBankCreditPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public PushToApplePayPaymentMethod? PushToApplePayPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public PullFromApplePayPaymentMethod? PullFromApplePayPaymentMethod { get; set; }
 
         public PaymentMethodUnionType Type { get; set; }
 
@@ -251,6 +263,26 @@ namespace Moov.Sdk.Models.Components
             return res;
         }
 
+        public static PaymentMethod CreatePushToApplePay(PushToApplePayPaymentMethod pushToApplePay)
+        {
+            PaymentMethodUnionType typ = PaymentMethodUnionType.PushToApplePay;
+            string typStr = PaymentMethodUnionType.PushToApplePay.ToString();
+            pushToApplePay.PaymentMethodType = PushToApplePayPaymentMethodPaymentMethodTypeExtension.ToEnum(PaymentMethodUnionType.PushToApplePay.ToString());
+            PaymentMethod res = new PaymentMethod(typ);
+            res.PushToApplePayPaymentMethod = pushToApplePay;
+            return res;
+        }
+
+        public static PaymentMethod CreatePullFromApplePay(PullFromApplePayPaymentMethod pullFromApplePay)
+        {
+            PaymentMethodUnionType typ = PaymentMethodUnionType.PullFromApplePay;
+            string typStr = PaymentMethodUnionType.PullFromApplePay.ToString();
+            pullFromApplePay.PaymentMethodType = PullFromApplePayPaymentMethodPaymentMethodTypeExtension.ToEnum(PaymentMethodUnionType.PullFromApplePay.ToString());
+            PaymentMethod res = new PaymentMethod(typ);
+            res.PullFromApplePayPaymentMethod = pullFromApplePay;
+            return res;
+        }
+
         public class PaymentMethodConverter : JsonConverter
         {
             public override bool CanConvert(System.Type objectType) => objectType == typeof(PaymentMethod);
@@ -325,6 +357,16 @@ namespace Moov.Sdk.Models.Components
                 {
                     InstantBankCreditPaymentMethod instantBankCreditPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<InstantBankCreditPaymentMethod>(jo.ToString());
                     return CreateInstantBankCredit(instantBankCreditPaymentMethod);
+                }
+                if (discriminator == PaymentMethodUnionType.PushToApplePay.ToString())
+                {
+                    PushToApplePayPaymentMethod pushToApplePayPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PushToApplePayPaymentMethod>(jo.ToString());
+                    return CreatePushToApplePay(pushToApplePayPaymentMethod);
+                }
+                if (discriminator == PaymentMethodUnionType.PullFromApplePay.ToString())
+                {
+                    PullFromApplePayPaymentMethod pullFromApplePayPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PullFromApplePayPaymentMethod>(jo.ToString());
+                    return CreatePullFromApplePay(pullFromApplePayPaymentMethod);
                 }
 
                 throw new InvalidOperationException("Could not deserialize into any supported types.");
@@ -408,6 +450,18 @@ namespace Moov.Sdk.Models.Components
                 if (res.InstantBankCreditPaymentMethod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.InstantBankCreditPaymentMethod));
+                    return;
+                }
+
+                if (res.PushToApplePayPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.PushToApplePayPaymentMethod));
+                    return;
+                }
+
+                if (res.PullFromApplePayPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.PullFromApplePayPaymentMethod));
                     return;
                 }
             }

@@ -9,6 +9,7 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -19,5 +20,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("dynamicDescriptor")]
         public string? DynamicDescriptor { get; set; }
+
+        /// <summary>
+        /// An optional field to specify the type of card payout, used to route the transfer with the appropriate business application identifier (BAI).
+        /// </summary>
+        [JsonProperty("payoutType")]
+        public CardPayoutType? PayoutType { get; set; }
     }
 }
