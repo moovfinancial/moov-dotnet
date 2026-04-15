@@ -11,13 +11,14 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
-    public class WebhookBillingStatementCreated
+    /// <summary>
+    /// Array of transfer IDs to fetch.
+    /// </summary>
+    public class BatchGetTransfersRequest
     {
-        [JsonProperty("accountID")]
-        public string AccountID { get; set; } = default!;
-
-        [JsonProperty("statementID")]
-        public string StatementID { get; set; } = default!;
+        [JsonProperty("transferIDs")]
+        public List<string> TransferIDs { get; set; } = default!;
     }
 }

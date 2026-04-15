@@ -714,17 +714,35 @@ namespace Moov.Sdk
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode == 204)
+            if(responseStatusCode == 200)
             {
-                return new UpdateIssuedCardResponse()
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    HttpMeta = new Models.Components.HTTPMetadata()
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    IssuedCard obj;
+                    try
                     {
-                        Response = httpResponse,
-                        Request = httpRequest
-                    },
-                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
-                };
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<IssuedCard>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into IssuedCard.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new UpdateIssuedCardResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                    };
+                    response.IssuedCard = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(new List<int>{400, 409}.Contains(responseStatusCode))
             {

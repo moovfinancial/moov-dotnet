@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace Moov.Sdk.Models.Components
+namespace Moov.Sdk.Models.Requests
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
-    using Newtonsoft.Json;
 
-    public class WebhookBillingStatementCreated
+    public class BatchGetTransfersRequest
     {
-        [JsonProperty("accountID")]
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
 
-        [JsonProperty("statementID")]
-        public string StatementID { get; set; } = default!;
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public Models.Components.BatchGetTransfersRequest Body { get; set; } = default!;
     }
 }
