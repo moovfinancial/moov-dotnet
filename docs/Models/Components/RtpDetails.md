@@ -1,0 +1,18 @@
+# ~~RtpDetails~~
+
+DEPRECATED: use `InstantBankTransactionDetails` instead (v2026.04.00 or later). RTP specific details about the transaction.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `Status`                                                                              | [RTPTransactionStatus](../../Models/Components/RTPTransactionStatus.md)               | :heavy_minus_sign:                                                                    | Status of a transaction within the RTP lifecycle.                                     |
+| `NetworkResponseCode`                                                                 | *string*                                                                              | :heavy_minus_sign:                                                                    | Response code returned by network on failure.                                         |
+| `FailureCode`                                                                         | [RTPFailureCode](../../Models/Components/RTPFailureCode.md)                           | :heavy_minus_sign:                                                                    | Status codes for RTP failures.                                                        |
+| `InitiatedOn`                                                                         | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `CompletedOn`                                                                         | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `FailedOn`                                                                            | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `AcceptedWithoutPostingOn`                                                            | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |

@@ -19,6 +19,11 @@ namespace Moov.Sdk.Models.Requests
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
+        /// <summary>
+        /// The request completed successfully.
+        /// </summary>
+        public IssuedCard? IssuedCard { get; set; }
+
         public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

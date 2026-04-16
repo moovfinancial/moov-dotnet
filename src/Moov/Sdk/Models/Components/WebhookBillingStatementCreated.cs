@@ -14,6 +14,9 @@ namespace Moov.Sdk.Models.Components
 
     public class WebhookBillingStatementCreated
     {
+        [JsonProperty("accountID")]
+        public string AccountID { get; set; } = default!;
+
         [JsonProperty("statementID")]
         public string StatementID { get; set; } = default!;
     }

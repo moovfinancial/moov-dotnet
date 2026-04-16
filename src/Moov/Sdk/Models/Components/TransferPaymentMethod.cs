@@ -48,6 +48,10 @@ namespace Moov.Sdk.Models.Components
 
         public static TransferPaymentMethodUnionType InstantBankCredit { get { return new TransferPaymentMethodUnionType("instant-bank-credit"); } }
 
+        public static TransferPaymentMethodUnionType PushToApplePay { get { return new TransferPaymentMethodUnionType("push-to-apple-pay"); } }
+
+        public static TransferPaymentMethodUnionType PullFromApplePay { get { return new TransferPaymentMethodUnionType("pull-from-apple-pay"); } }
+
         public override string ToString() { return Value; }
         public static implicit operator String(TransferPaymentMethodUnionType v) { return v.Value; }
         public static TransferPaymentMethodUnionType FromString(string v) {
@@ -64,6 +68,8 @@ namespace Moov.Sdk.Models.Components
                 case "apple-pay": return ApplePay;
                 case "card-present-payment": return CardPresentPayment;
                 case "instant-bank-credit": return InstantBankCredit;
+                case "push-to-apple-pay": return PushToApplePay;
+                case "pull-from-apple-pay": return PullFromApplePay;
                 default: throw new ArgumentException("Invalid value for TransferPaymentMethodUnionType");
             }
         }
@@ -128,6 +134,12 @@ namespace Moov.Sdk.Models.Components
 
         [SpeakeasyMetadata("form:explode=true")]
         public InstantBankCreditTransferPaymentMethod? InstantBankCreditTransferPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public PushToApplePayTransferPaymentMethod? PushToApplePayTransferPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public PullFromApplePayTransferPaymentMethod? PullFromApplePayTransferPaymentMethod { get; set; }
 
         public TransferPaymentMethodUnionType Type { get; set; }
 
@@ -251,6 +263,26 @@ namespace Moov.Sdk.Models.Components
             return res;
         }
 
+        public static TransferPaymentMethod CreatePushToApplePay(PushToApplePayTransferPaymentMethod pushToApplePay)
+        {
+            TransferPaymentMethodUnionType typ = TransferPaymentMethodUnionType.PushToApplePay;
+            string typStr = TransferPaymentMethodUnionType.PushToApplePay.ToString();
+            pushToApplePay.PaymentMethodType = PushToApplePayTransferPaymentMethodPaymentMethodTypeExtension.ToEnum(TransferPaymentMethodUnionType.PushToApplePay.ToString());
+            TransferPaymentMethod res = new TransferPaymentMethod(typ);
+            res.PushToApplePayTransferPaymentMethod = pushToApplePay;
+            return res;
+        }
+
+        public static TransferPaymentMethod CreatePullFromApplePay(PullFromApplePayTransferPaymentMethod pullFromApplePay)
+        {
+            TransferPaymentMethodUnionType typ = TransferPaymentMethodUnionType.PullFromApplePay;
+            string typStr = TransferPaymentMethodUnionType.PullFromApplePay.ToString();
+            pullFromApplePay.PaymentMethodType = PullFromApplePayTransferPaymentMethodPaymentMethodTypeExtension.ToEnum(TransferPaymentMethodUnionType.PullFromApplePay.ToString());
+            TransferPaymentMethod res = new TransferPaymentMethod(typ);
+            res.PullFromApplePayTransferPaymentMethod = pullFromApplePay;
+            return res;
+        }
+
         public class TransferPaymentMethodConverter : JsonConverter
         {
             public override bool CanConvert(System.Type objectType) => objectType == typeof(TransferPaymentMethod);
@@ -325,6 +357,16 @@ namespace Moov.Sdk.Models.Components
                 {
                     InstantBankCreditTransferPaymentMethod instantBankCreditTransferPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<InstantBankCreditTransferPaymentMethod>(jo.ToString());
                     return CreateInstantBankCredit(instantBankCreditTransferPaymentMethod);
+                }
+                if (discriminator == TransferPaymentMethodUnionType.PushToApplePay.ToString())
+                {
+                    PushToApplePayTransferPaymentMethod pushToApplePayTransferPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PushToApplePayTransferPaymentMethod>(jo.ToString());
+                    return CreatePushToApplePay(pushToApplePayTransferPaymentMethod);
+                }
+                if (discriminator == TransferPaymentMethodUnionType.PullFromApplePay.ToString())
+                {
+                    PullFromApplePayTransferPaymentMethod pullFromApplePayTransferPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PullFromApplePayTransferPaymentMethod>(jo.ToString());
+                    return CreatePullFromApplePay(pullFromApplePayTransferPaymentMethod);
                 }
 
                 throw new InvalidOperationException("Could not deserialize into any supported types.");
@@ -408,6 +450,18 @@ namespace Moov.Sdk.Models.Components
                 if (res.InstantBankCreditTransferPaymentMethod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.InstantBankCreditTransferPaymentMethod));
+                    return;
+                }
+
+                if (res.PushToApplePayTransferPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.PushToApplePayTransferPaymentMethod));
+                    return;
+                }
+
+                if (res.PullFromApplePayTransferPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.PullFromApplePayTransferPaymentMethod));
                     return;
                 }
             }

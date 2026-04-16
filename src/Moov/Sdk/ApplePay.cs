@@ -122,12 +122,12 @@ namespace Moov.Sdk
         );
 
         /// <summary>
-        /// Connect an Apple Pay token to the specified account. <br/>
+        /// Connect an Apple Pay token to the specified account.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more.<br/>
         /// The `token` data is defined by Apple Pay and should be passed through from Apple Pay's response unmodified.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/cards.write` scope.
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the cardholder.</param>
@@ -782,12 +782,12 @@ namespace Moov.Sdk
 
 
         /// <summary>
-        /// Connect an Apple Pay token to the specified account. <br/>
+        /// Connect an Apple Pay token to the specified account.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more. <br/>
+        /// Read our <a href="https://docs.moov.io/guides/sources/cards/apple-pay/#register-your-domains">Apple Pay tutorial</a> to learn more.<br/>
         /// The `token` data is defined by Apple Pay and should be passed through from Apple Pay's response unmodified.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/cards.write` scope.
         /// </summary>
         /// <param name="accountID">ID of the Moov account representing the cardholder.</param>
@@ -879,14 +879,14 @@ namespace Moov.Sdk
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    LinkedApplePayPaymentMethod obj;
+                    List<LinkedApplePayPaymentMethod> obj;
                     try
                     {
-                        obj = ResponseBodyDeserializer.DeserializeNotNull<LinkedApplePayPaymentMethod>(httpResponseBody, NullValueHandling.Ignore);
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<LinkedApplePayPaymentMethod>>(httpResponseBody, NullValueHandling.Ignore);
                     }
                     catch (Exception ex)
                     {
-                        throw new ResponseValidationException("Failed to deserialize response body into LinkedApplePayPaymentMethod.", httpRequest, httpResponse, httpResponseBody, ex);
+                        throw new ResponseValidationException("Failed to deserialize response body into List<LinkedApplePayPaymentMethod>.", httpRequest, httpResponse, httpResponseBody, ex);
                     }
 
                     var response = new LinkApplePayTokenResponse()
@@ -898,7 +898,7 @@ namespace Moov.Sdk
                         },
                         Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
-                    response.LinkedApplePayPaymentMethod = obj;
+                    response.LinkedApplePayPaymentMethods = obj;
                     return response;
                 }
 

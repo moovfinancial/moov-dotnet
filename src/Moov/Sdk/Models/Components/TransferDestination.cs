@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
 
     public class TransferDestination
     {
@@ -59,6 +60,10 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("cardDetails")]
         public CardTransactionDetails? CardDetails { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
+        [JsonProperty("rtpDetails")]
+        public RtpDetails? RtpDetails { get; set; }
 
         /// <summary>
         /// Instant-bank specific details about the transaction.

@@ -84,6 +84,16 @@ namespace Moov.Sdk.Models.Requests
             return PaymentMethod != null ? PaymentMethod.InstantBankCreditPaymentMethod : null;
         }
 
+        public PushToApplePayPaymentMethod? GetPaymentMethodPushToApplePay()
+        {
+            return PaymentMethod != null ? PaymentMethod.PushToApplePayPaymentMethod : null;
+        }
+
+        public PullFromApplePayPaymentMethod? GetPaymentMethodPullFromApplePay()
+        {
+            return PaymentMethod != null ? PaymentMethod.PullFromApplePayPaymentMethod : null;
+        }
+
         public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

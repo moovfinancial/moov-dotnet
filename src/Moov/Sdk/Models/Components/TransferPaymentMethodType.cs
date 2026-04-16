@@ -42,6 +42,10 @@ namespace Moov.Sdk.Models.Components
         CardPresentPayment,
         [JsonProperty("instant-bank-credit")]
         InstantBankCredit,
+        [JsonProperty("push-to-apple-pay")]
+        PushToApplePay,
+        [JsonProperty("pull-from-apple-pay")]
+        PullFromApplePay,
     }
 
     public static class TransferPaymentMethodTypeExtension
