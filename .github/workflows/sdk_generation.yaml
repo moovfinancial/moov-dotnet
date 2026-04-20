@@ -21,6 +21,8 @@ permissions:
     types:
       - labeled
       - unlabeled
+env:
+  SPEAKEASY_BUMP_OVERRIDE: patch
 jobs:
   generate:
     uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
