@@ -5,15 +5,15 @@ management:
   docVersion: v2026.04.00
   speakeasyVersion: 1.761.8
   generationVersion: 2.881.2
-  releaseVersion: 26.4.0-dev.18
-  configChecksum: a4fa4fc29173778fc9b5bd04a5e18242
+  releaseVersion: 26.4.0
+  configChecksum: cfcf39e6089a15470bb56b1d0edf46cc
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: 88e155fa-fa28-42c6-80e2-259989c7ec66
-  pristine_commit_hash: 4b96a86242d00f1bc2948a5c6354a09838fabfe7
-  pristine_tree_hash: 956183d65fdac256a7e3a04b62eb40502a9303dd
+  generation_id: 42fa195b-06fc-461c-9852-af47a784e970
+  pristine_commit_hash: 3ac529a31497f3e37616688b20f1618e5198cd7b
+  pristine_tree_hash: b99a5359279d012bbcf5784a7d078768ab9de2e7
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -9053,8 +9053,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:ba2d16f69262a4fbf37727948a35c8adfb9b2839
-    pristine_git_object: 85dad1dff56a8239c7b6231524b1f6938f0e9682
+    last_write_checksum: sha1:121b2109f708975f5fe1d0414a63a53bfc51034d
+    pristine_git_object: 8e0f969039520a26555665d4b60f55793427bd44
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:7a1b41974ac3010a0b48c16c4f2cf4397c30d231
@@ -9093,8 +9093,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:0cf9670663c7fee9f7d26a95f34aaf9a99d8553d
-    pristine_git_object: 74591b668f364245aa3398dbd8b3afa688f475a8
+    last_write_checksum: sha1:05ecf86bfdf2af7e6043e9d198ece3879e226124
+    pristine_git_object: d3ae67708fd32ad455cfdfa39503d30ad2515876
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -9133,8 +9133,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:916b7e8eba83fd09386151238cb5ff5b6a7afd50
-    pristine_git_object: 57de970ec9cd3bb4621dd8f81a1e18f9148d3888
+    last_write_checksum: sha1:3555bfd309473a1894dbe0bb87879a6ca44a3c35
+    pristine_git_object: 98d6756035d07e2342b323d06e336ef8080b1363
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -11289,7 +11289,6 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.PaymentLinks.Update()`: \n  *  `request.body.Payout.AllowedMethods[]` **Changed**\n  *  `response.payout.AllowedMethods[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Cards.List()`:  `response.[].PaymentMethods[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.Link()`:  `response.paymentMethods[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.List()`:  `response.[].PaymentMethods[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.BankAccounts.Get()`:  `response.paymentMethods[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.Cards.Link()`:  `response.paymentMethods[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Get()`:  `response.payout.AllowedMethods[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Cards.Get()`:  `response.paymentMethods[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.Cards.Update()`:  `response.paymentMethods[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Create()`: \n  *  `request.body.Payout.AllowedMethods[]` **Changed**\n  *  `response.payout.AllowedMethods[]` **Changed** (Breaking ⚠️)\n* `MoovClient.ApplePay.LinkToken()`:  `response.[].PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.List()`:  `response.[].Payout.AllowedMethods[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Update()`:  `response.source.PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.PaymentMethods.List()`: \n  *  `request.paymentMethodType` **Changed**\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `MoovClient.PaymentMethods.Get()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Get()`:  `response.source.PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.BatchGetTransfers()`:  `response.Map<Transfer>.Source.PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.List()`:  `response.[].Source.PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.GenerateOptions()`:  `response.sourceOptions[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Create()`: \n  *  `response.source.PaymentMethodType` **Changed** (Breaking ⚠️)\n  *  `error.source.PaymentMethodType` **Changed** (Breaking ⚠️)\n* `MoovClient.ResolutionLinks.Get()`:  `response.status` **Added**\n* `MoovClient.GooglePay.LinkToken()`: **Added**\n* `MoovClient.ResolutionLinks.Create()`:  `response.status` **Added**\n* `MoovClient.ResolutionLinks.List()`:  `response.[].Status` **Added**\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
