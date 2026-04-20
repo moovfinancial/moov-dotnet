@@ -148,6 +148,12 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("invoiceID")]
         public string? InvoiceID { get; set; }
 
+        /// <summary>
+        /// The card authorization and capture IDs associated with a transfer.
+        /// </summary>
+        [JsonProperty("capture")]
+        public TransferCapture? Capture { get; set; }
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -249,6 +255,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.InvoiceID instead.")]
         public string? InvoiceID { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Capture instead.")]
+        public TransferCapture? Capture { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -291,6 +300,7 @@ namespace Moov.Sdk.Models.Errors
            ForeignID = payload.ForeignID;
            LineItems = payload.LineItems;
            InvoiceID = payload.InvoiceID;
+           Capture = payload.Capture;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

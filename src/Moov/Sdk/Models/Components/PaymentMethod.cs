@@ -52,6 +52,12 @@ namespace Moov.Sdk.Models.Components
 
         public static PaymentMethodUnionType PullFromApplePay { get { return new PaymentMethodUnionType("pull-from-apple-pay"); } }
 
+        public static PaymentMethodUnionType GooglePay { get { return new PaymentMethodUnionType("google-pay"); } }
+
+        public static PaymentMethodUnionType PushToGooglePay { get { return new PaymentMethodUnionType("push-to-google-pay"); } }
+
+        public static PaymentMethodUnionType PullFromGooglePay { get { return new PaymentMethodUnionType("pull-from-google-pay"); } }
+
         public override string ToString() { return Value; }
         public static implicit operator String(PaymentMethodUnionType v) { return v.Value; }
         public static PaymentMethodUnionType FromString(string v) {
@@ -70,6 +76,9 @@ namespace Moov.Sdk.Models.Components
                 case "instant-bank-credit": return InstantBankCredit;
                 case "push-to-apple-pay": return PushToApplePay;
                 case "pull-from-apple-pay": return PullFromApplePay;
+                case "google-pay": return GooglePay;
+                case "push-to-google-pay": return PushToGooglePay;
+                case "pull-from-google-pay": return PullFromGooglePay;
                 default: throw new ArgumentException("Invalid value for PaymentMethodUnionType");
             }
         }
@@ -140,6 +149,15 @@ namespace Moov.Sdk.Models.Components
 
         [SpeakeasyMetadata("form:explode=true")]
         public PullFromApplePayPaymentMethod? PullFromApplePayPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public GooglePayPaymentMethod? GooglePayPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public PushToGooglePayPaymentMethod? PushToGooglePayPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public PullFromGooglePayPaymentMethod? PullFromGooglePayPaymentMethod { get; set; }
 
         public PaymentMethodUnionType Type { get; set; }
 
@@ -283,6 +301,36 @@ namespace Moov.Sdk.Models.Components
             return res;
         }
 
+        public static PaymentMethod CreateGooglePay(GooglePayPaymentMethod googlePay)
+        {
+            PaymentMethodUnionType typ = PaymentMethodUnionType.GooglePay;
+            string typStr = PaymentMethodUnionType.GooglePay.ToString();
+            googlePay.PaymentMethodType = GooglePayPaymentMethodPaymentMethodTypeExtension.ToEnum(PaymentMethodUnionType.GooglePay.ToString());
+            PaymentMethod res = new PaymentMethod(typ);
+            res.GooglePayPaymentMethod = googlePay;
+            return res;
+        }
+
+        public static PaymentMethod CreatePushToGooglePay(PushToGooglePayPaymentMethod pushToGooglePay)
+        {
+            PaymentMethodUnionType typ = PaymentMethodUnionType.PushToGooglePay;
+            string typStr = PaymentMethodUnionType.PushToGooglePay.ToString();
+            pushToGooglePay.PaymentMethodType = PushToGooglePayPaymentMethodPaymentMethodTypeExtension.ToEnum(PaymentMethodUnionType.PushToGooglePay.ToString());
+            PaymentMethod res = new PaymentMethod(typ);
+            res.PushToGooglePayPaymentMethod = pushToGooglePay;
+            return res;
+        }
+
+        public static PaymentMethod CreatePullFromGooglePay(PullFromGooglePayPaymentMethod pullFromGooglePay)
+        {
+            PaymentMethodUnionType typ = PaymentMethodUnionType.PullFromGooglePay;
+            string typStr = PaymentMethodUnionType.PullFromGooglePay.ToString();
+            pullFromGooglePay.PaymentMethodType = PullFromGooglePayPaymentMethodPaymentMethodTypeExtension.ToEnum(PaymentMethodUnionType.PullFromGooglePay.ToString());
+            PaymentMethod res = new PaymentMethod(typ);
+            res.PullFromGooglePayPaymentMethod = pullFromGooglePay;
+            return res;
+        }
+
         public class PaymentMethodConverter : JsonConverter
         {
             public override bool CanConvert(System.Type objectType) => objectType == typeof(PaymentMethod);
@@ -367,6 +415,21 @@ namespace Moov.Sdk.Models.Components
                 {
                     PullFromApplePayPaymentMethod pullFromApplePayPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PullFromApplePayPaymentMethod>(jo.ToString());
                     return CreatePullFromApplePay(pullFromApplePayPaymentMethod);
+                }
+                if (discriminator == PaymentMethodUnionType.GooglePay.ToString())
+                {
+                    GooglePayPaymentMethod googlePayPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<GooglePayPaymentMethod>(jo.ToString());
+                    return CreateGooglePay(googlePayPaymentMethod);
+                }
+                if (discriminator == PaymentMethodUnionType.PushToGooglePay.ToString())
+                {
+                    PushToGooglePayPaymentMethod pushToGooglePayPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PushToGooglePayPaymentMethod>(jo.ToString());
+                    return CreatePushToGooglePay(pushToGooglePayPaymentMethod);
+                }
+                if (discriminator == PaymentMethodUnionType.PullFromGooglePay.ToString())
+                {
+                    PullFromGooglePayPaymentMethod pullFromGooglePayPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PullFromGooglePayPaymentMethod>(jo.ToString());
+                    return CreatePullFromGooglePay(pullFromGooglePayPaymentMethod);
                 }
 
                 throw new InvalidOperationException("Could not deserialize into any supported types.");
@@ -462,6 +525,24 @@ namespace Moov.Sdk.Models.Components
                 if (res.PullFromApplePayPaymentMethod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.PullFromApplePayPaymentMethod));
+                    return;
+                }
+
+                if (res.GooglePayPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.GooglePayPaymentMethod));
+                    return;
+                }
+
+                if (res.PushToGooglePayPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.PushToGooglePayPaymentMethod));
+                    return;
+                }
+
+                if (res.PullFromGooglePayPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.PullFromGooglePayPaymentMethod));
                     return;
                 }
             }

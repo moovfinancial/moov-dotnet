@@ -46,6 +46,12 @@ namespace Moov.Sdk.Models.Components
         PushToApplePay,
         [JsonProperty("pull-from-apple-pay")]
         PullFromApplePay,
+        [JsonProperty("google-pay")]
+        GooglePay,
+        [JsonProperty("push-to-google-pay")]
+        PushToGooglePay,
+        [JsonProperty("pull-from-google-pay")]
+        PullFromGooglePay,
     }
 
     public static class PaymentMethodTypeExtension

@@ -94,6 +94,21 @@ namespace Moov.Sdk.Models.Requests
             return PaymentMethod != null ? PaymentMethod.PullFromApplePayPaymentMethod : null;
         }
 
+        public GooglePayPaymentMethod? GetPaymentMethodGooglePay()
+        {
+            return PaymentMethod != null ? PaymentMethod.GooglePayPaymentMethod : null;
+        }
+
+        public PushToGooglePayPaymentMethod? GetPaymentMethodPushToGooglePay()
+        {
+            return PaymentMethod != null ? PaymentMethod.PushToGooglePayPaymentMethod : null;
+        }
+
+        public PullFromGooglePayPaymentMethod? GetPaymentMethodPullFromGooglePay()
+        {
+            return PaymentMethod != null ? PaymentMethod.PullFromGooglePayPaymentMethod : null;
+        }
+
         public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

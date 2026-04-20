@@ -149,5 +149,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("invoiceID")]
         public string? InvoiceID { get; set; }
+
+        /// <summary>
+        /// The card authorization and capture IDs associated with a transfer.
+        /// </summary>
+        [JsonProperty("capture")]
+        public TransferCapture? Capture { get; set; }
     }
 }

@@ -26,6 +26,10 @@ namespace Moov.Sdk.Models.Components
         AchCreditSameDay,
         [JsonProperty("ach-credit-standard")]
         AchCreditStandard,
+        [JsonProperty("push-to-apple-pay")]
+        PushToApplePay,
+        [JsonProperty("push-to-google-pay")]
+        PushToGooglePay,
     }
 
     public static class DisbursementPaymentMethodTypeExtension
