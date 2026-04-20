@@ -9,6 +9,7 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
@@ -47,6 +48,12 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("url")]
         public string Url { get; set; } = default!;
+
+        /// <summary>
+        /// The current status of the resolution link.
+        /// </summary>
+        [JsonProperty("status")]
+        public ResolutionLinkStatus Status { get; set; } = default!;
 
         /// <summary>
         /// The date and time the resolution link was created.

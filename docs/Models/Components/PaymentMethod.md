@@ -88,3 +88,21 @@ PaymentMethod.CreatePushToApplePay(/* values here */);
 ```csharp
 PaymentMethod.CreatePullFromApplePay(/* values here */);
 ```
+
+### GooglePay
+
+```csharp
+PaymentMethod.CreateGooglePay(/* values here */);
+```
+
+### PushToGooglePay
+
+```csharp
+PaymentMethod.CreatePushToGooglePay(/* values here */);
+```
+
+### PullFromGooglePay
+
+```csharp
+PaymentMethod.CreatePullFromGooglePay(/* values here */);
+```

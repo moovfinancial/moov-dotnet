@@ -49,6 +49,8 @@ namespace Moov.Sdk
 
         public IFiles Files { get; }
 
+        public IGooglePay GooglePay { get; }
+
         public IImages Images { get; }
 
         public IInvoices Invoices { get; }
@@ -163,6 +165,10 @@ namespace Moov.Sdk
         /// The Files sub-SDK.
         /// </summary>
         public IFiles Files { get; private set; }
+        /// <summary>
+        /// The GooglePay sub-SDK.
+        /// </summary>
+        public IGooglePay GooglePay { get; private set; }
         /// <summary>
         /// The Images sub-SDK.
         /// </summary>
@@ -313,6 +319,8 @@ namespace Moov.Sdk
 
             Files = new Files(SDKConfiguration);
 
+            GooglePay = new GooglePay(SDKConfiguration);
+
             Images = new Images(SDKConfiguration);
 
             Invoices = new Invoices(SDKConfiguration);
@@ -450,6 +458,8 @@ namespace Moov.Sdk
             FeePlans = new FeePlans(SDKConfiguration);
 
             Files = new Files(SDKConfiguration);
+
+            GooglePay = new GooglePay(SDKConfiguration);
 
             Images = new Images(SDKConfiguration);
 
