@@ -35,14 +35,25 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("merchantPaymentMethodID")]
         public string MerchantPaymentMethodID { get; set; } = default!;
 
+        /// <summary>
+        /// The fixed amount of the payment link. <br/>
+        /// <br/>
+        /// In API versions before `2026.07.00`, this was a required field.<br/>
+        /// <br/>
+        /// In API version `2026.07.00` and beyond, this field is required for `fixed` payment amount types and omitted <br/>
+        /// for `open` payment amount types.
+        /// </summary>
         [JsonProperty("amount")]
         public Amount Amount { get; set; } = default!;
 
+        /// <summary>
+        /// Optional sales tax amount.
+        /// </summary>
         [JsonProperty("salesTaxAmount")]
         public Amount? SalesTaxAmount { get; set; }
 
         /// <summary>
-        /// An optional limit on the number of times this payment link can be used. <br/>
+        /// An optional limit on the number of times this payment link can be used.<br/>
         /// <br/>
         /// **For payouts, `maxUses` is always 1.**
         /// </summary>
