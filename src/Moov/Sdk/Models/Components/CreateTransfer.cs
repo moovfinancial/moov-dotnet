@@ -49,9 +49,6 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("metadata")]
         public Dictionary<string, string>? Metadata { get; set; }
 
-        /// <summary>
-        /// Optional sales tax amount. `transfer.amount.value` should be inclusive of any sales tax and represents the total amount charged.
-        /// </summary>
         [JsonProperty("salesTaxAmount")]
         public Amount? SalesTaxAmount { get; set; }
 
@@ -67,5 +64,8 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("lineItems")]
         public CreateTransferLineItems? LineItems { get; set; }
+
+        [JsonProperty("amountDetails")]
+        public CreateTransferAmountDetails? AmountDetails { get; set; }
     }
 }

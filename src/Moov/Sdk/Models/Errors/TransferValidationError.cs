@@ -50,6 +50,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("lineItems")]
         public CreateTransferLineItemsValidationError? LineItems { get; set; }
 
+        [JsonProperty("amountDetails")]
+        public CreateTransferAmountDetailsValidationError? AmountDetails { get; set; }
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -94,6 +97,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.LineItems instead.")]
         public CreateTransferLineItemsValidationError? LineItems { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.AmountDetails instead.")]
+        public CreateTransferAmountDetailsValidationError? AmountDetails { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -118,6 +124,7 @@ namespace Moov.Sdk.Models.Errors
            SalesTaxAmount = payload.SalesTaxAmount;
            ForeignID = payload.ForeignID;
            LineItems = payload.LineItems;
+           AmountDetails = payload.AmountDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

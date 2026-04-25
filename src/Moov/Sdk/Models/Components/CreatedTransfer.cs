@@ -114,7 +114,7 @@ namespace Moov.Sdk.Models.Components
         public string? PaymentLinkCode { get; set; }
 
         /// <summary>
-        /// Optional sales tax amount. `transfer.amount.value` should be inclusive of any sales tax and represents the total amount charged.
+        /// Optional sales tax amount.
         /// </summary>
         [JsonProperty("salesTaxAmount")]
         public Amount? SalesTaxAmount { get; set; }
@@ -131,5 +131,8 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }
+
+        [JsonProperty("amountDetails")]
+        public TransferAmountDetails? AmountDetails { get; set; }
     }
 }

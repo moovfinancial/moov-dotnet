@@ -28,6 +28,12 @@ namespace Moov.Sdk.Models.Components
         public bool? RequirePhone { get; set; }
 
         /// <summary>
+        /// If true, tipping is enabled on the payment form. Defaults to false.
+        /// </summary>
+        [JsonProperty("tippingEnabled")]
+        public bool? TippingEnabled { get; set; }
+
+        /// <summary>
         /// Optional free-form metadata for the Moov account that will represent this customer.
         /// </summary>
         [JsonProperty("metadata")]

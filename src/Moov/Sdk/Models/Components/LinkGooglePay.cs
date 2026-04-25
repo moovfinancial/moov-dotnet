@@ -14,20 +14,27 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The encrypted Google Pay payment token (ECv2 format).<br/>
+    /// Links a Google Pay token to a Moov account.<br/>
     /// <br/>
-    ///   Refer to <a href="https://developers.google.com/pay/api/web/guides/resources/payment-data-cryptography#payment-method-token-structure">Google's documentation</a>
-    ///   for more information.
+    ///   The `paymentMethodData` field should contain the `paymentMethodData` property from the<br/>
+    ///   <a href="https://developers.google.com/pay/api/web/reference/response-objects#PaymentData">PaymentData</a> response<br/>
+    ///   returned by Google Pay's client SDK. Pass it through unmodified.
     /// </summary>
     public class LinkGooglePay
     {
         /// <summary>
-        /// Contains the encrypted payment token as returned from Google Pay.<br/>
-        /// <br/>
-        ///   Refer to <a href="https://developers.google.com/pay/api/web/guides/resources/payment-data-cryptography#payment-method-token-structure">Google's documentation</a>
-        ///   for more information.
+        /// The merchant accountID this token was minted for. Must match the `gatewayMerchantId`<br/>
+        ///   value passed to Google Pay when constructing the PaymentDataRequest. card-gateway validates<br/>
+        ///   that the decrypted `gatewayMerchantId` matches this value.
         /// </summary>
-        [JsonProperty("token")]
-        public GooglePayToken Token { get; set; } = default!;
+        [JsonProperty("merchantAccountID")]
+        public string MerchantAccountID { get; set; } = default!;
+
+        /// <summary>
+        /// The `paymentMethodData` object from Google Pay's<br/>
+        ///   <a href="https://developers.google.com/pay/api/web/reference/response-objects#PaymentData">PaymentData</a> response.
+        /// </summary>
+        [JsonProperty("paymentMethodData")]
+        public GooglePayPaymentMethodData PaymentMethodData { get; set; } = default!;
     }
 }

@@ -13,22 +13,31 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
 
-    public enum LinkedGooglePayPaymentMethodPaymentMethodType
+    /// <summary>
+    /// The funding source of the card. One of CREDIT, DEBIT, PREPAID, or UNKNOWN.
+    /// </summary>
+    public enum CardFundingSource
     {
-        [JsonProperty("google-pay")]
-        GooglePay,
+        [JsonProperty("CREDIT")]
+        Credit,
+        [JsonProperty("DEBIT")]
+        Debit,
+        [JsonProperty("PREPAID")]
+        Prepaid,
+        [JsonProperty("UNKNOWN")]
+        Unknown,
     }
 
-    public static class LinkedGooglePayPaymentMethodPaymentMethodTypeExtension
+    public static class CardFundingSourceExtension
     {
-        public static string Value(this LinkedGooglePayPaymentMethodPaymentMethodType value)
+        public static string Value(this CardFundingSource value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static LinkedGooglePayPaymentMethodPaymentMethodType ToEnum(this string value)
+        public static CardFundingSource ToEnum(this string value)
         {
-            foreach(var field in typeof(LinkedGooglePayPaymentMethodPaymentMethodType).GetFields())
+            foreach(var field in typeof(CardFundingSource).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -41,14 +50,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is LinkedGooglePayPaymentMethodPaymentMethodType)
+                    if (enumVal is CardFundingSource)
                     {
-                        return (LinkedGooglePayPaymentMethodPaymentMethodType)enumVal;
+                        return (CardFundingSource)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum LinkedGooglePayPaymentMethodPaymentMethodType");
+            throw new Exception($"Unknown value {value} for enum CardFundingSource");
         }
     }
 }

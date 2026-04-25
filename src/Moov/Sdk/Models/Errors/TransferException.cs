@@ -123,9 +123,6 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("paymentLinkCode")]
         public string? PaymentLinkCode { get; set; }
 
-        /// <summary>
-        /// Optional sales tax amount. `transfer.amount.value` should be inclusive of any sales tax and represents the total amount charged.
-        /// </summary>
         [JsonProperty("salesTaxAmount")]
         public Amount? SalesTaxAmount { get; set; }
 
@@ -147,6 +144,9 @@ namespace Moov.Sdk.Models.Errors
         /// </summary>
         [JsonProperty("invoiceID")]
         public string? InvoiceID { get; set; }
+
+        [JsonProperty("amountDetails")]
+        public TransferAmountDetails? AmountDetails { get; set; }
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -249,6 +249,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.InvoiceID instead.")]
         public string? InvoiceID { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.AmountDetails instead.")]
+        public TransferAmountDetails? AmountDetails { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -291,6 +294,7 @@ namespace Moov.Sdk.Models.Errors
            ForeignID = payload.ForeignID;
            LineItems = payload.LineItems;
            InvoiceID = payload.InvoiceID;
+           AmountDetails = payload.AmountDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

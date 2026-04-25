@@ -55,6 +55,12 @@ namespace Moov.Sdk.Models.Components
         public ApplePayResponse? ApplePay { get; set; }
 
         /// <summary>
+        /// Describes a Google Pay token on a Moov account.
+        /// </summary>
+        [JsonProperty("googlePay")]
+        public GooglePayResponse? GooglePay { get; set; }
+
+        /// <summary>
         /// Describes payment card details captured with tap or in-person payment.
         /// </summary>
         [JsonProperty("terminalCard")]

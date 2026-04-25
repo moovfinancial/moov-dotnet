@@ -21,8 +21,11 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("paymentMethodID")]
         public string PaymentMethodID { get; set; } = default!;
 
+        /// <summary>
+        /// The payment method type that represents a payment rail and directionality.
+        /// </summary>
         [JsonProperty("paymentMethodType")]
-        public LinkedGooglePayPaymentMethodPaymentMethodType PaymentMethodType { get; set; } = default!;
+        public PaymentMethodType PaymentMethodType { get; set; } = default!;
 
         /// <summary>
         /// Describes a Google Pay token on a Moov account.
