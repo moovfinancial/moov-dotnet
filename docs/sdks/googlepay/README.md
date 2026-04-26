@@ -6,7 +6,9 @@
 
 * [LinkToken](#linktoken) - Connect a Google Pay token to the specified account.
 
-The `token` data is defined by Google Pay and should be passed through from Google Pay's response unmodified.
+The `paymentMethodData` field should contain the `paymentMethodData` property from Google Pay's
+[PaymentData](https://developers.google.com/pay/api/web/reference/response-objects#PaymentData) response,
+passed through unmodified.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/cards.write` scope.
@@ -15,7 +17,9 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 Connect a Google Pay token to the specified account.
 
-The `token` data is defined by Google Pay and should be passed through from Google Pay's response unmodified.
+The `paymentMethodData` field should contain the `paymentMethodData` property from Google Pay's
+[PaymentData](https://developers.google.com/pay/api/web/reference/response-objects#PaymentData) response,
+passed through unmodified.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/cards.write` scope.
@@ -26,7 +30,6 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
-using System.Collections.Generic;
 
 var sdk = new MoovClient(security: new Security() {
     Username = "",
@@ -36,18 +39,21 @@ var sdk = new MoovClient(security: new Security() {
 var res = await sdk.GooglePay.LinkTokenAsync(
     accountID: "<id>",
     body: new LinkGooglePay() {
-        Token = new GooglePayToken() {
-            ProtocolVersion = "ECv2",
-            Signature = "<value>",
-            IntermediateSigningKey = new GooglePayIntermediateSigningKey() {
-                SignedKey = "<value>",
-                Signatures = new List<string>() {
-                    "<value 1>",
-                    "<value 2>",
-                    "<value 3>",
+        MerchantAccountID = "c5f78a7e-2fb0-4e4a-bcf0-9e1f8b0e5c7a",
+        PaymentMethodData = new GooglePayPaymentMethodData() {
+            Type = GooglePayPaymentMethodDataType.Card,
+            Info = new GooglePayCardInfo() {
+                CardNetwork = CardNetwork.Visa,
+                CardDetails = "1234",
+                CardFundingSource = CardFundingSource.Debit,
+                BillingAddress = new GooglePayBillingAddress() {
+                    CountryCode = "US",
                 },
             },
-            SignedMessage = "<value>",
+            TokenizationData = new GooglePayTokenizationData() {
+                Type = GooglePayTokenizationDataType.PaymentGateway,
+                Token = "<value>",
+            },
         },
     }
 );

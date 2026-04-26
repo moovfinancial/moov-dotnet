@@ -38,6 +38,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("lineItems")]
         public CreatePaymentLinkLineItemsValidationError? LineItems { get; set; }
 
+        [JsonProperty("amountDetails")]
+        public UpdatePaymentLinkAmountDetailsValidationError? AmountDetails { get; set; }
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -70,6 +73,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdatePaymentLinkError.Payload.LineItems instead.")]
         public CreatePaymentLinkLineItemsValidationError? LineItems { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdatePaymentLinkError.Payload.AmountDetails instead.")]
+        public UpdatePaymentLinkAmountDetailsValidationError? AmountDetails { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdatePaymentLinkError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -90,6 +96,7 @@ namespace Moov.Sdk.Models.Errors
            Payment = payload.Payment;
            Payout = payload.Payout;
            LineItems = payload.LineItems;
+           AmountDetails = payload.AmountDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

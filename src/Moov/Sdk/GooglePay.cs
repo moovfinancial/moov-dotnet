@@ -28,7 +28,9 @@ namespace Moov.Sdk
         /// <summary>
         /// Connect a Google Pay token to the specified account.<br/>
         /// <br/>
-        /// The `token` data is defined by Google Pay and should be passed through from Google Pay's response unmodified.<br/>
+        /// The `paymentMethodData` field should contain the `paymentMethodData` property from Google Pay's<br/>
+        /// <a href="https://developers.google.com/pay/api/web/reference/response-objects#PaymentData">PaymentData</a> response,<br/>
+        /// passed through unmodified.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/cards.write` scope.
@@ -67,7 +69,9 @@ namespace Moov.Sdk
         /// <summary>
         /// Connect a Google Pay token to the specified account.<br/>
         /// <br/>
-        /// The `token` data is defined by Google Pay and should be passed through from Google Pay's response unmodified.<br/>
+        /// The `paymentMethodData` field should contain the `paymentMethodData` property from Google Pay's<br/>
+        /// <a href="https://developers.google.com/pay/api/web/reference/response-objects#PaymentData">PaymentData</a> response,<br/>
+        /// passed through unmodified.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/cards.write` scope.

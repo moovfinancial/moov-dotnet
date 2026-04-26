@@ -27,5 +27,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("amount")]
         public Amount Amount { get; set; } = default!;
+
+        [JsonProperty("amountDetails")]
+        public RefundAmountDetails? AmountDetails { get; set; }
     }
 }

@@ -75,6 +75,8 @@ namespace Moov.Sdk
 
         public ISupport Support { get; }
 
+        public ITransferConfig TransferConfig { get; }
+
         public ITransfers Transfers { get; }
 
         public IUnderwriting Underwriting { get; }
@@ -218,6 +220,10 @@ namespace Moov.Sdk
         /// </summary>
         public ISupport Support { get; private set; }
         /// <summary>
+        /// The TransferConfig sub-SDK.
+        /// </summary>
+        public ITransferConfig TransferConfig { get; private set; }
+        /// <summary>
         /// The Transfers sub-SDK.
         /// </summary>
         public ITransfers Transfers { get; private set; }
@@ -344,6 +350,8 @@ namespace Moov.Sdk
             AccountTerminalApplications = new AccountTerminalApplications(SDKConfiguration);
 
             Support = new Support(SDKConfiguration);
+
+            TransferConfig = new TransferConfig(SDKConfiguration);
 
             Transfers = new Transfers(SDKConfiguration);
 
@@ -484,6 +492,8 @@ namespace Moov.Sdk
             AccountTerminalApplications = new AccountTerminalApplications(SDKConfiguration);
 
             Support = new Support(SDKConfiguration);
+
+            TransferConfig = new TransferConfig(SDKConfiguration);
 
             Transfers = new Transfers(SDKConfiguration);
 

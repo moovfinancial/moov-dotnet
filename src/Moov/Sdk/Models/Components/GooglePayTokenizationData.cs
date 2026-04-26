@@ -9,25 +9,27 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
     /// <summary>
-    /// Contains the intermediate signing key for verification.
+    /// Contains the encrypted payment token from Google Pay.<br/>
+    /// <br/>
+    ///   The `token` field is a JSON-encoded string containing the ECv2 encrypted payment token.
     /// </summary>
-    public class GooglePayIntermediateSigningKey
+    public class GooglePayTokenizationData
     {
         /// <summary>
-        /// A JSON-encoded serialized string containing the signing key data.
+        /// The tokenization type. Always `PAYMENT_GATEWAY`.
         /// </summary>
-        [JsonProperty("signedKey")]
-        public string SignedKey { get; set; } = default!;
+        [JsonProperty("type")]
+        public GooglePayTokenizationDataType Type { get; set; } = default!;
 
         /// <summary>
-        /// Base64-encoded signatures of the `signedKey`.
+        /// The ECv2 encrypted payment token, as a JSON-encoded string.
         /// </summary>
-        [JsonProperty("signatures")]
-        public List<string> Signatures { get; set; } = default!;
+        [JsonProperty("token")]
+        public string Token { get; set; } = default!;
     }
 }

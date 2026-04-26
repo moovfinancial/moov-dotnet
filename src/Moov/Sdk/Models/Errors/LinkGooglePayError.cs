@@ -24,10 +24,16 @@ namespace Moov.Sdk.Models.Errors
         public string? Error { get; set; }
 
         /// <summary>
-        /// Describes an error within the `token` request field.
+        /// Describes an error within the `merchantAccountID` request field.
         /// </summary>
-        [JsonProperty("token")]
-        public string? Token { get; set; }
+        [JsonProperty("merchantAccountID")]
+        public string? MerchantAccountID { get; set; }
+
+        /// <summary>
+        /// Describes an error within the `paymentMethodData` request field.
+        /// </summary>
+        [JsonProperty("paymentMethodData")]
+        public string? PaymentMethodData { get; set; }
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -43,8 +49,11 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use LinkGooglePayError.Payload.Error instead.")]
         public string? Error { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use LinkGooglePayError.Payload.Token instead.")]
-        public string? Token { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use LinkGooglePayError.Payload.MerchantAccountID instead.")]
+        public string? MerchantAccountID { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use LinkGooglePayError.Payload.PaymentMethodData instead.")]
+        public string? PaymentMethodData { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use LinkGooglePayError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -60,7 +69,8 @@ namespace Moov.Sdk.Models.Errors
 
            #pragma warning disable CS0618
            Error = payload.Error;
-           Token = payload.Token;
+           MerchantAccountID = payload.MerchantAccountID;
+           PaymentMethodData = payload.PaymentMethodData;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

@@ -64,8 +64,16 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("link")]
         public string Link { get; set; } = default!;
 
+        /// <summary>
+        /// The fixed amount of the payment link. <br/>
+        /// <br/>
+        /// In API versions before `2026.07.00`, this was a required field.<br/>
+        /// <br/>
+        /// In API version `2026.07.00` and beyond, this field is required for `fixed` payment amount types and omitted <br/>
+        /// for `open` payment amount types.
+        /// </summary>
         [JsonProperty("amount")]
-        public Amount Amount { get; set; } = default!;
+        public Amount? Amount { get; set; }
 
         /// <summary>
         /// Optional sales tax amount.
@@ -80,7 +88,7 @@ namespace Moov.Sdk.Models.Components
         public long Uses { get; set; } = default!;
 
         /// <summary>
-        /// An optional limit on the number of times this payment link can be used. <br/>
+        /// An optional limit on the number of times this payment link can be used.<br/>
         /// <br/>
         /// **For payouts, `maxUses` is always 1.**
         /// </summary>
@@ -132,5 +140,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("disabledOn")]
         public DateTime? DisabledOn { get; set; }
+
+        [JsonProperty("amountDetails")]
+        public PaymentLinkAmountDetails? AmountDetails { get; set; }
     }
 }
