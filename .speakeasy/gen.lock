@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 9c6800cf4751322d7acbe2d968ecfc6f
+  docChecksum: 3d7ac75982fda9e0ba60a09a038aebae
   docVersion: v2025.04.00
-  speakeasyVersion: 1.761.9
-  generationVersion: 2.881.4
-  releaseVersion: 25.5.3
-  configChecksum: 5a7ea8eb11926c960623e2b7cb40a12e
+  speakeasyVersion: 1.761.11
+  generationVersion: 2.881.17
+  releaseVersion: 25.5.4
+  configChecksum: d62bb4a58f31e4c22bb2efdbb68bcae4
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: 52f35b6c-728c-4780-bfdc-46ee2c638eaa
-  pristine_commit_hash: c03dc6d5ca32b48dec3890fbd080d2638bcecba1
-  pristine_tree_hash: 8b9a8bdbaf98b671269d43a71eb5d4821889d309
+  generation_id: 3acc0b83-7c0c-418c-93c0-63743e79875f
+  pristine_commit_hash: 57b9f3c61f7f8b99eea6541891b576c66de66748
+  pristine_tree_hash: 9760bcefa9ee01240237f710fafcd3aa46208004
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -1039,10 +1039,14 @@ trackedFiles:
     id: 135a32819c07
     last_write_checksum: sha1:f8c95195eb57a736b463481641ebce8f158efa7f
     pristine_git_object: feb84d7ce0a6add0c7b6f6679d4b7a5cdf0d0c13
+  docs/Models/Components/FileUploadMetadata.md:
+    id: 2ccadeceebef
+    last_write_checksum: sha1:b857ddb69b2794c0d364ffba2f27bb4dc1f00c15
+    pristine_git_object: c51468064b38af53c84aef016666be9263321d11
   docs/Models/Components/FileUploadRequestMultiPart.md:
     id: 6dc57de43d29
-    last_write_checksum: sha1:fc0f54b3d3a606cf670756034d1506698f7c35bf
-    pristine_git_object: d1fe3067b15c5c455c26a93ffae51bf61a486fab
+    last_write_checksum: sha1:d453dfe9f351602f4fd535a06ab66794533922bc
+    pristine_git_object: 1592b2a87c611af2124a4f2a0bdc71b173e261e4
   docs/Models/Components/FileUploadRequestMultiPartFile.md:
     id: 7197c3ba7e4b
     last_write_checksum: sha1:0ca1e294aac2d71e8f12e66a8db16fd07401c33c
@@ -2181,8 +2185,8 @@ trackedFiles:
     pristine_git_object: bbc8d332d0c63180c9febd49a8f452edc843e871
   docs/Models/Components/WebhookDataBankAccountCreated.md:
     id: 124011d91b83
-    last_write_checksum: sha1:2df2eff5ac8a2496de9c8a83b93da7827e82384f
-    pristine_git_object: 79a86ae0c195b563fe62a3d150a31404879a734e
+    last_write_checksum: sha1:907c0e400500545ecaac45b03fab91be565ac5ca
+    pristine_git_object: 482d7abdbf0c5aac2b33015b4161ef43628c15bb
   docs/Models/Components/WebhookDataBankAccountDeleted.md:
     id: e70f839e755e
     last_write_checksum: sha1:14327ef2de47e85a10f10f3cc48c1f0e4b66e263
@@ -5031,10 +5035,14 @@ trackedFiles:
     id: 7473a5d1ab14
     last_write_checksum: sha1:720abc23c96b6256663ee13fe82f0c9506780410
     pristine_git_object: cb4e233d701f38fd7aec689e11805615a8d92c89
+  src/Moov/Sdk/Models/Components/FileUploadMetadata.cs:
+    id: 20fceb90872b
+    last_write_checksum: sha1:9321334196febb1ce374eecc2e3670b49a1ab8aa
+    pristine_git_object: 29cadab9ebe7aa691382989c9d70742421e5ee3b
   src/Moov/Sdk/Models/Components/FileUploadRequestMultiPart.cs:
     id: b563b9993013
-    last_write_checksum: sha1:9fdb3b88454b233c7b05bbf987f081fd68275dad
-    pristine_git_object: 29aed65f40f1d4a7d06480d804af469f42162f66
+    last_write_checksum: sha1:30b413021a04bafe5abdd6983fa56aad95f31a62
+    pristine_git_object: 06d7957cda2bead12de36866a3121a40727006b5
   src/Moov/Sdk/Models/Components/FileUploadRequestMultiPartFile.cs:
     id: 7c482c5eccc8
     last_write_checksum: sha1:a182e7a3c174b0b28d371cfc124d58b4b21317e5
@@ -6153,8 +6161,8 @@ trackedFiles:
     pristine_git_object: 8ade4815a587b5169176814b0daff9ab82dc8896
   src/Moov/Sdk/Models/Components/WebhookData.cs:
     id: eb3ea5d40287
-    last_write_checksum: sha1:de33b753e1c686eb843c2ec1a18461bc064b477a
-    pristine_git_object: 850fd402218701ab0a228d4a9a175645e6b9cbcc
+    last_write_checksum: sha1:e71f5e493744b1fb3387775e4ca72133964e311b
+    pristine_git_object: 13464ff8bc44344a04de4edfa9da9e9aaf4880dc
   src/Moov/Sdk/Models/Components/WebhookDataAccountCreated.cs:
     id: 53ee948f5aed
     last_write_checksum: sha1:e3124bea4e8858fd1b03a1de3ad7c418415003f7
@@ -6173,8 +6181,8 @@ trackedFiles:
     pristine_git_object: 4898cd0f44851cb36dbc722405153986ee358eb0
   src/Moov/Sdk/Models/Components/WebhookDataBankAccountCreated.cs:
     id: ed3111a249a2
-    last_write_checksum: sha1:7ac92ba0208a70ec4c19fb643bdd257da4dd228d
-    pristine_git_object: 059e08f76088fddc88a6bc9307ab29802ce84116
+    last_write_checksum: sha1:ce5e6e3e92f0dc24bec36c5fe05582ff87003df4
+    pristine_git_object: ffd9d981ec1e2868dc41679dfef8ae68e389bdd0
   src/Moov/Sdk/Models/Components/WebhookDataBankAccountDeleted.cs:
     id: cea813767b9f
     last_write_checksum: sha1:de7ca1dc510c5c14fa34dc50ea0d0643dc4f74b0
@@ -7805,8 +7813,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:5042d30d0cba3f739f42a5d42327b9c79047dc93
-    pristine_git_object: cc290a2c1b7286d8070f2f442e8dbb51b081ec6c
+    last_write_checksum: sha1:b400bcfc2aba4ec0dcdd7f8c31efa46fdffebae4
+    pristine_git_object: 455d2fb8bb37cc61a23053527b5082a3e3e5b8bb
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:87a9d9680a8ac147070ee6d41876fb2ca8380f02
@@ -7841,8 +7849,8 @@ trackedFiles:
     pristine_git_object: ceeb494a9afea852528fb7c2eec79a804d5ee3e8
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:8688904a9e54a501625dae7629fe0bb3e281119a
-    pristine_git_object: 4f009a42e3bd1d7a294972ddeb81ce4b5625bdc8
+    last_write_checksum: sha1:1cab7c7bf043ee9046143b60668bd66e130600bc
+    pristine_git_object: 4c09b5e42bbc243c14f11eb9aa83acf2cf44729f
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -7877,8 +7885,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:2eca7a81a225c9311197cbf704f686e4484bd26f
-    pristine_git_object: 7dd4d4ec4c0b82875a69962cb053a41e262f3e3d
+    last_write_checksum: sha1:6d472ad15fdb1343c5a3283d017bf7bb9d1105f8
+    pristine_git_object: 58219636460763db0b102718ed42aa6ac09a6c77
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -9972,6 +9980,7 @@ examples:
         "200":
           application/json: {"key": {"transferID": "d835gf30-4b19-4850-a9b2-c0624c41ecb3", "createdOn": "2025-01-21T21:32:16Z", "source": {"paymentMethodID": "9506dbf6-4208-44c3-ad8a-e4431660e1f2", "paymentMethodType": "card-payment", "account": {"accountID": "7e4b26c2-b399-49ef-8390-50e1ea44d550", "email": "jules@julesjackson.com", "displayName": "Jules Jackson"}, "card": {"cardID": "aefd5563-93c6-413c-875e-1bd0ebfc116d", "fingerprint": "2f5d782ceef1c3bd31ed5...", "brand": "Visa", "cardType": "credit", "lastFourCardNumber": "2000", "bin": "400020", "expiration": {"month": "01", "year": "28"}, "holderName": "Jules Jackson", "billingAddress": {"postalCode": "80301"}, "cardVerification": {"cvv": "unavailable", "addressLine1": "unavailable", "postalCode": "unavailable", "accountName": {"firstName": "unavailable", "lastName": "unavailable", "middleName": "unavailable", "fullName": "unavailable"}}, "issuer": "Moov Visa Sandbox", "issuerCountry": "US", "cardAccountUpdater": {}, "domesticPushToCard": "standard", "domesticPullFromCard": "supported"}, "cardDetails": {"status": "confirmed", "dynamicDescriptor": "WhlBdy *Yoga 11-12", "confirmedOn": "2025-01-21T21:32:16.799681237Z"}}, "destination": {"paymentMethodID": "3f9969cf-a1f3-4d83-8ddc-229a506651cf", "paymentMethodType": "moov-wallet", "account": {"accountID": "34233b72-780c-4a0d-8b08-cbbe23k878f8", "email": "john@wholebodyfitness.io", "displayName": "Whole Body Fitness"}, "wallet": {"walletID": "744b2e78-8cc8-4a6a-af42-611e3b844503", "partnerAccountID": "65b57f28-49e9-4afb-9bf6-7e4fb6444917", "walletType": "general"}}, "status": "pending", "amount": {"currency": "USD", "value": 32945}, "description": "Transfer from card to wallet", "moovFees": [{"accountID": "7e4b26c2-b399-49ef-8390-50e1ea44d550", "transferParty": "source", "totalAmount": {"currency": "USD", "valueDecimal": "0.1"}, "feeIDs": ["9d957d33-1a9a-47aa-9460-fe1a90f003dd"]}]}}
 examplesVersion: 1.0.2
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Files.Upload()`: \n  *  `request.body.Metadata` **Changed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
