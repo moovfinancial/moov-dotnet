@@ -15,7 +15,7 @@ namespace Moov.Sdk.Models.Components
     public class FileUploadRequestMultiPart
     {
         /// <summary>
-        /// The file to be added. Valid types are `csv`, `png`, `jpeg`, `pdf`.
+        /// The file to upload. Valid types are `csv`, `png`, `jpeg`, `pdf`.
         /// </summary>
         [SpeakeasyMetadata("multipartForm:file,name=file")]
         public FileUploadRequestMultiPartFile File { get; set; } = default!;
@@ -27,11 +27,9 @@ namespace Moov.Sdk.Models.Components
         public FilePurpose FilePurpose { get; set; } = default!;
 
         /// <summary>
-        /// Additional metadata to be stored with the file, formatted as a JSON string.<br/>
-        /// <br/>
-        /// Valid keys are `representative_id`, `comment`, `requirement_id`, `error_code`.
+        /// Additional metadata to be stored with the file.
         /// </summary>
-        [SpeakeasyMetadata("multipartForm:name=metadata")]
-        public string? Metadata { get; set; }
+        [SpeakeasyMetadata("multipartForm:name=metadata,json")]
+        public FileUploadMetadata? Metadata { get; set; }
     }
 }
