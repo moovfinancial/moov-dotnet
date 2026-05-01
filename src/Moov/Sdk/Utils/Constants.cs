@@ -22,12 +22,12 @@ namespace Moov.Sdk.Utils
         /// <summary>
         /// The version of the SDK.
         /// </summary>
-        public const string SdkVersion = "26.4.1";
+        public const string SdkVersion = "26.4.2";
 
         /// <summary>
         /// The version of the SDK generator used to create this SDK.
         /// </summary>
-        public const string SdkGenVersion = "2.881.4";
+        public const string SdkGenVersion = "2.881.17";
 
         /// <summary>
         /// The version of the OpenAPI document used to generate this SDK.
