@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: da6a6f38dbded5f83dcc4c7881d71307
+  docChecksum: b52ca137dea3791c0e2d0a889c39b40e
   docVersion: v2026.04.00
-  speakeasyVersion: 1.761.11
-  generationVersion: 2.881.17
-  releaseVersion: 26.4.2
-  configChecksum: af7f6451727686a663208462ac9ab11e
+  speakeasyVersion: 1.762.0
+  generationVersion: 2.882.0
+  releaseVersion: 26.4.3
+  configChecksum: de70c0adc3360187208a777656526ee4
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: ee14dc18-9050-4370-939f-4ce4d857db47
-  pristine_commit_hash: 5b035c00bcb147ad7a6eddb21e71c5e659241b5f
-  pristine_tree_hash: 9d8db39af14710b9ededee50c8d285c85dba74f8
+  generation_id: 9d372185-1f57-459f-9268-419b2e710cc6
+  pristine_commit_hash: 34c7498cf1a4bd6760acca2d92dada7cb937e778
+  pristine_tree_hash: 068dbf85121cdf625a995017603eb39933457c4b
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -669,8 +669,8 @@ trackedFiles:
     pristine_git_object: 2555f030fa6eb7eb9aba4c9d198f611ad07d943e
   docs/Models/Components/CollectionPaymentMethodType.md:
     id: 9a6da0c29551
-    last_write_checksum: sha1:68ab032b969a12aa695502eac7c78bb6d46e3703
-    pristine_git_object: ba6c6deb2b90373a3d267693cd27aef8a47a8908
+    last_write_checksum: sha1:466d845ab3dbbb4cd9f23592a74547d9817c7a04
+    pristine_git_object: 2bcada3b965857c8574cde843b85ff7f94a61431
   docs/Models/Components/ColorsValidationError.md:
     id: bb1553f7da7f
     last_write_checksum: sha1:f6ea7ecf7ce00e512010a2515454db517cdf9392
@@ -5397,8 +5397,8 @@ trackedFiles:
     pristine_git_object: b9021711e51c3313cfe7b69dd39dcb71b575dda8
   src/Moov/Sdk/Models/Components/CollectionPaymentMethodType.cs:
     id: 43786a323373
-    last_write_checksum: sha1:26687e3aaa835b24b97887842dcba41d2ae0219f
-    pristine_git_object: 6e2187b4a95ac840ab6eedf0b048cc208990c687
+    last_write_checksum: sha1:8c654b6ab6c5d5c0b0a2415ccb5ddf8303aec38c
+    pristine_git_object: 2c5302a671a1bf10cf3b7245c9971785d363bc4a
   src/Moov/Sdk/Models/Components/ColorsValidationError.cs:
     id: 33e6da35c7fc
     last_write_checksum: sha1:7d808d07c3432a5ea8baec5dec41f96005815db9
@@ -9249,8 +9249,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:5d398da87b3e25419a112da17c2b6a02aa2d8cc9
-    pristine_git_object: d93bc84b7f275f5e36d861fa0c2ffa403f848780
+    last_write_checksum: sha1:505d876f5461f09fa99e782fd3d00a904fb3523b
+    pristine_git_object: f0a668a6f86d503a3a967b035d3f3984073ce3d9
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:2a6dc3a47df6d0881256a5bc8b2a6a6411923b57
@@ -9289,8 +9289,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:fc68159af0ee946be79ccdce7d8259177f5e5cd8
-    pristine_git_object: 76f06b8e6d8e6af609c7018ae5aa1c60c9cca041
+    last_write_checksum: sha1:c0262bf8e532615c4748f7c50289e202bf6c4cdc
+    pristine_git_object: bc86b1e1127552d129c5fd9a6921cb7f959ff075
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -9333,8 +9333,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:59f9252e731528b51666f0f57c743e643d5c9dec
-    pristine_git_object: 245e51991283584bac2b6df9ffbaef6ee73da6a5
+    last_write_checksum: sha1:a5026f3b33f5ae376411ad4fcec1040706d56499
+    pristine_git_object: 43c83a0b30043080686dbd1df7dd87a8102d957a
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -11542,7 +11542,7 @@ examples:
         "200":
           application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Files.Upload()`: \n  *  `request.body.Metadata` **Changed** (Breaking ⚠️)\n"
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.PaymentLinks.Create()`: \n  *  `request.body.Payment.AllowedMethods[].Enum(googlePay)` **Added**\n  *  `response.payment.AllowedMethods[].Enum(googlePay)` **Added** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.List()`:  `response.[].Payment.AllowedMethods[].Enum(googlePay)` **Added** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Get()`:  `response.payment.AllowedMethods[].Enum(googlePay)` **Added** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Update()`: \n  *  `request.body.Payment.AllowedMethods[].Enum(googlePay)` **Added**\n  *  `response.payment.AllowedMethods[].Enum(googlePay)` **Added** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
