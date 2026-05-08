@@ -24,6 +24,8 @@ namespace Moov.Sdk.Models.Components
         CardPayment,
         [JsonProperty("ach-debit-collect")]
         AchDebitCollect,
+        [JsonProperty("google-pay")]
+        GooglePay,
     }
 
     public static class CollectionPaymentMethodTypeExtension

@@ -18,3 +18,4 @@ var value = CollectionPaymentMethodType.ApplePay;
 | `ApplePay`        | apple-pay         |
 | `CardPayment`     | card-payment      |
 | `AchDebitCollect` | ach-debit-collect |
+| `GooglePay`       | google-pay        |

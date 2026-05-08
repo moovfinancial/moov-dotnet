@@ -7,24 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace Moov.Sdk.Models.Components
+namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
-    public class CreateReversal
+    public class GetCardMetadataResponse
     {
-        /// <summary>
-        /// Amount to reverse in cents. Partial amounts will automatically trigger a refund instead of a cancellation.
-        /// </summary>
-        [JsonProperty("amount")]
-        public long Amount { get; set; } = default!;
+        [JsonProperty("-")]
+        public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// Breakdown of the reversed amount.
+        /// The request completed successfully.
         /// </summary>
-        [JsonProperty("amountDetails")]
-        public ReversalAmountDetails? AmountDetails { get; set; }
+        public CardMetadata? CardMetadata { get; set; }
+
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

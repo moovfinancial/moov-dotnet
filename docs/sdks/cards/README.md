@@ -51,6 +51,12 @@ you'll need to specify the `/accounts/{accountID}/cards.write` scope.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/cards.write` scope.
+* [GetMetadata](#getmetadata) - Look up metadata for a card without linking it to a Moov account.
+  
+Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/card-metadata.read` scope.
 
 ## Link
 
@@ -317,3 +323,51 @@ var res = await sdk.Cards.DisableAsync(
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
 | Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## GetMetadata
+
+Look up metadata for a card without linking it to a Moov account.
+  
+Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/card-metadata.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getCardMetadata" method="post" path="/card-metadata" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+CardMetadataRequest req = new CardMetadataRequest() {
+    CardNumber = "4111111111111111",
+};
+
+var res = await sdk.Cards.GetMetadataAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [CardMetadataRequest](../../Models/Components/CardMetadataRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+
+### Response
+
+**[GetCardMetadataResponse](../../Models/Requests/GetCardMetadataResponse.md)**
+
+### Errors
+
+| Error Type                                      | Status Code                                     | Content Type                                    |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError             | 400, 409                                        | application/json                                |
+| Moov.Sdk.Models.Errors.CardMetadataRequestError | 422                                             | application/json                                |
+| Moov.Sdk.Models.Errors.APIException             | 4XX, 5XX                                        | \*/\*                                           |

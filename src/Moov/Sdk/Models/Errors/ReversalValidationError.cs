@@ -20,6 +20,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amount")]
         public string? Amount { get; set; }
 
+        [JsonProperty("amountDetails")]
+        public ReversalAmountDetailsValidationError? AmountDetails { get; set; }
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -33,6 +36,9 @@ namespace Moov.Sdk.Models.Errors
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ReversalValidationError.Payload.Amount instead.")]
         public string? Amount { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ReversalValidationError.Payload.AmountDetails instead.")]
+        public ReversalAmountDetailsValidationError? AmountDetails { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ReversalValidationError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -48,6 +54,7 @@ namespace Moov.Sdk.Models.Errors
 
            #pragma warning disable CS0618
            Amount = payload.Amount;
+           AmountDetails = payload.AmountDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

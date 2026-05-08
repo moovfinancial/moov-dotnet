@@ -13,18 +13,12 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
-    public class CreateReversal
+    public class ReversalAmountDetails
     {
         /// <summary>
-        /// Amount to reverse in cents. Partial amounts will automatically trigger a refund instead of a cancellation.
+        /// The amount of surcharge to refund. Should be proportionate to the surcharge on the original transfer. This does not reply if the reversal resulted in a cancellation instead of a refund.
         /// </summary>
-        [JsonProperty("amount")]
-        public long Amount { get; set; } = default!;
-
-        /// <summary>
-        /// Breakdown of the reversed amount.
-        /// </summary>
-        [JsonProperty("amountDetails")]
-        public ReversalAmountDetails? AmountDetails { get; set; }
+        [JsonProperty("surcharge")]
+        public AmountDecimal? Surcharge { get; set; }
     }
 }

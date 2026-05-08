@@ -755,6 +755,12 @@ var res = await sdk.Transfers.CreateReversalAsync(
     transferID: "82c6eae7-b7e5-4b20-b24e-5116a4d70bde",
     body: new CreateReversal() {
         Amount = 1000,
+        AmountDetails = new ReversalAmountDetails() {
+            Surcharge = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+        },
     }
 );
 
@@ -778,6 +784,12 @@ var res = await sdk.Transfers.CreateReversalAsync(
     transferID: "a17b29e2-4af6-4c9d-ad3a-dd0ded2966ad",
     body: new CreateReversal() {
         Amount = 1000,
+        AmountDetails = new ReversalAmountDetails() {
+            Surcharge = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+        },
     }
 );
 
