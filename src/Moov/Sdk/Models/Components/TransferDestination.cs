@@ -67,9 +67,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("cardDetails")]
         public CardTransactionDetails? CardDetails { get; set; }
 
+        /// <summary>
+        /// DEPRECATED: use `InstantBankTransactionDetails` instead (v2026.04.00 or later). RTP specific details about the transaction.
+        /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("rtpDetails")]
-        public RtpDetails? RtpDetails { get; set; }
+        public RTPTransactionDetails? RtpDetails { get; set; }
 
         /// <summary>
         /// Instant-bank specific details about the transaction.
