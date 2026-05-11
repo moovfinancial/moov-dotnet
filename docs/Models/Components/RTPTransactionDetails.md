@@ -1,4 +1,4 @@
-# ~~RtpDetails~~
+# ~~RTPTransactionDetails~~
 
 DEPRECATED: use `InstantBankTransactionDetails` instead (v2026.04.00 or later). RTP specific details about the transaction.
 
