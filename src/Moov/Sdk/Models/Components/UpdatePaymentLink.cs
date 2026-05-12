@@ -45,7 +45,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a payment link.<br/>
-        /// When line items are provided, their total plus sales tax must equal the payment link amount.
+        /// When line items are provided, their total plus tax must equal the payment link amount.
         /// </summary>
         [JsonProperty("lineItems")]
         public CreatePaymentLinkLineItemsUpdate? LineItems { get; set; }
