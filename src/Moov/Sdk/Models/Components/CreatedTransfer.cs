@@ -127,7 +127,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a transfer.<br/>
-        /// When line items are provided, their total plus sales tax must equal the transfer amount.
+        /// When line items are provided, their total plus tax must equal the transfer amount.
         /// </summary>
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }
