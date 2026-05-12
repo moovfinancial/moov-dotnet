@@ -14,30 +14,26 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// Status of a transaction within the RTP lifecycle.
+    /// The authentication method used for the Google Pay token.
     /// </summary>
-    public enum RTPTransactionStatus
+    public enum AuthMethod
     {
-        [JsonProperty("initiated")]
-        Initiated,
-        [JsonProperty("completed")]
-        Completed,
-        [JsonProperty("failed")]
-        Failed,
-        [JsonProperty("accepted-without-posting")]
-        AcceptedWithoutPosting,
+        [JsonProperty("PAN_ONLY")]
+        PanOnly,
+        [JsonProperty("CRYPTOGRAM_3DS")]
+        Cryptogram3Ds,
     }
 
-    public static class RTPTransactionStatusExtension
+    public static class AuthMethodExtension
     {
-        public static string Value(this RTPTransactionStatus value)
+        public static string Value(this AuthMethod value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static RTPTransactionStatus ToEnum(this string value)
+        public static AuthMethod ToEnum(this string value)
         {
-            foreach(var field in typeof(RTPTransactionStatus).GetFields())
+            foreach(var field in typeof(AuthMethod).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -50,14 +46,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is RTPTransactionStatus)
+                    if (enumVal is AuthMethod)
                     {
-                        return (RTPTransactionStatus)enumVal;
+                        return (AuthMethod)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum RTPTransactionStatus");
+            throw new Exception($"Unknown value {value} for enum AuthMethod");
         }
     }
 }

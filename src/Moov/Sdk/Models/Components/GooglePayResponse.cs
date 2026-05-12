@@ -19,16 +19,31 @@ namespace Moov.Sdk.Models.Components
     public class GooglePayResponse
     {
         /// <summary>
+        /// The unique identifier of the Google Pay token.
+        /// </summary>
+        [JsonProperty("tokenID")]
+        public string TokenID { get; set; } = default!;
+
+        /// <summary>
         /// The card brand.
         /// </summary>
         [JsonProperty("brand")]
         public CardBrand Brand { get; set; } = default!;
 
         /// <summary>
-        /// The last four digits of the underlying card number.
+        /// The type of the card.
         /// </summary>
-        [JsonProperty("cardDetails")]
-        public string CardDetails { get; set; } = default!;
+        [JsonProperty("cardType")]
+        public CardType CardType { get; set; } = default!;
+
+        /// <summary>
+        /// User-friendly name of the tokenized card returned by Google Pay.<br/>
+        /// <br/>
+        ///   It usually contains the last four digits of the underlying card.<br/>
+        ///   There is no standard format.
+        /// </summary>
+        [JsonProperty("cardDisplayName")]
+        public string CardDisplayName { get; set; } = default!;
 
         /// <summary>
         /// Uniquely identifies a linked payment card or token.<br/>
@@ -45,9 +60,21 @@ namespace Moov.Sdk.Models.Components
         public CardExpiration Expiration { get; set; } = default!;
 
         /// <summary>
+        /// The last four digits of the Google Pay token, which may differ from the tokenized card's last four digits.
+        /// </summary>
+        [JsonProperty("dynamicLastFour")]
+        public string DynamicLastFour { get; set; } = default!;
+
+        /// <summary>
         /// Country where the underlying card was issued.
         /// </summary>
         [JsonProperty("issuerCountry")]
         public string? IssuerCountry { get; set; }
+
+        /// <summary>
+        /// The authentication method used for the Google Pay token.
+        /// </summary>
+        [JsonProperty("authMethod")]
+        public AuthMethod? AuthMethod { get; set; }
     }
 }
