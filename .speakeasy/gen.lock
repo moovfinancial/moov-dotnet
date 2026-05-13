@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: e5f5c247fd5f746da4ff91c3dc707316
+  docChecksum: 3df58689dfbdfdd3e3c9672bbd44c64c
   docVersion: v2026.07.00
   speakeasyVersion: 1.763.0
   generationVersion: 2.884.0
-  releaseVersion: 26.7.0-dev.0
-  configChecksum: 6707d148fe3bae3bc79ba7cd655640f1
+  releaseVersion: 26.7.0-dev.1
+  configChecksum: 91cbd46eca70ff7791aeb09c4f98339f
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: 3ba306a2-638c-45e6-99f0-ae2a858173db
-  pristine_commit_hash: c211d33f85ddafdbfcc1c9120c48fc259f867904
-  pristine_tree_hash: b5cd659314b967a2fcef6e42c7cb7ca981ab338f
+  generation_id: 4b36b837-eea0-4dab-b53d-2aec1b6bd768
+  pristine_commit_hash: 7513d6bcd59ff36470bce6c9b0f8f76d8eedc825
+  pristine_tree_hash: ba55e8c03ce6a20bf24b7951b0b6cd6919ced96f
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -2717,8 +2717,8 @@ trackedFiles:
     pristine_git_object: 482d7abdbf0c5aac2b33015b4161ef43628c15bb
   docs/Models/Components/WebhookDataBankAccountDeleted.md:
     id: e70f839e755e
-    last_write_checksum: sha1:14327ef2de47e85a10f10f3cc48c1f0e4b66e263
-    pristine_git_object: d393a430296868afd6d45fff60a6354d1e3e8443
+    last_write_checksum: sha1:e5e528864e7a57cce8c317b5d5184a1040c66879
+    pristine_git_object: 69906e76a6337a4a8667f9b3368f1bdd0707b266
   docs/Models/Components/WebhookDataBankAccountUpdated.md:
     id: 534a89c6362d
     last_write_checksum: sha1:eb9b39e87524291d3a690d0d1f5e079f6a0a3c73
@@ -7465,8 +7465,8 @@ trackedFiles:
     pristine_git_object: 8ade4815a587b5169176814b0daff9ab82dc8896
   src/Moov/Sdk/Models/Components/WebhookData.cs:
     id: eb3ea5d40287
-    last_write_checksum: sha1:e71f5e493744b1fb3387775e4ca72133964e311b
-    pristine_git_object: 13464ff8bc44344a04de4edfa9da9e9aaf4880dc
+    last_write_checksum: sha1:aec9080834c896a459fcfb427506b3d0e08fce8c
+    pristine_git_object: 9d1ea21b6a52c8e3a70805ad8133130a72039ffb
   src/Moov/Sdk/Models/Components/WebhookDataAccountCreated.cs:
     id: 53ee948f5aed
     last_write_checksum: sha1:e3124bea4e8858fd1b03a1de3ad7c418415003f7
@@ -7489,8 +7489,8 @@ trackedFiles:
     pristine_git_object: ffd9d981ec1e2868dc41679dfef8ae68e389bdd0
   src/Moov/Sdk/Models/Components/WebhookDataBankAccountDeleted.cs:
     id: cea813767b9f
-    last_write_checksum: sha1:de7ca1dc510c5c14fa34dc50ea0d0643dc4f74b0
-    pristine_git_object: 6dd906f4a7f65fc53e2ae0308d77f826da19773c
+    last_write_checksum: sha1:daa8d7fe54aefbdac69847d2c8704f8680cd38fe
+    pristine_git_object: 31b8161ca2a3e0e73d0790ba125a44cbe18518f3
   src/Moov/Sdk/Models/Components/WebhookDataBankAccountUpdated.cs:
     id: 751cb9b1493b
     last_write_checksum: sha1:96a8226f74ff6fa6e35340b13f448b62a1dafc34
@@ -9337,8 +9337,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:227652a7faebfb874c878f3b22aee9bdd3fa330e
-    pristine_git_object: 1e66c4d0196a17da79cad9594a4b8dccff906874
+    last_write_checksum: sha1:bce71b120b6c22d38fecb90ecb6cabb07b75586d
+    pristine_git_object: 1d6e063599a5b4322eca504450ed3dd822bfa275
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:2a6dc3a47df6d0881256a5bc8b2a6a6411923b57
@@ -9377,8 +9377,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:03c499dfcec57e2c5c9e3ef56fe9344993e24c11
-    pristine_git_object: 425428d2ee31b019fa1fb4c1a7f616aea4ab21eb
+    last_write_checksum: sha1:f6d2492f1c897005eb846e77c24710a136dfb6ad
+    pristine_git_object: 0bfd701520765e91a4d34b5d45ba22c8042b4266
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -9421,8 +9421,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:0ed5cf928f287ed9c6dd90cbf6d84129d422dec9
-    pristine_git_object: 060c3aed1ad0f210f68c64d0430a83423e7459f6
+    last_write_checksum: sha1:78ad729b7b02118c605ec051b50e8c15ce3711c3
+    pristine_git_object: bc4cd74286cd34a8a4a1401a7f11128cc0059b45
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -11641,7 +11641,6 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.PaymentLinks.Create()`: \n  *  `request.body.AmountDetails.Surcharge` **Removed** (Breaking ⚠️)\n  *  `response.amountDetails.Surcharge` **Removed** (Breaking ⚠️)\n  *  `error.amountDetails.Surcharge` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.List()`:  `response.[].AmountDetails.Surcharge` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Get()`:  `response.amountDetails.Surcharge` **Removed** (Breaking ⚠️)\n* `MoovClient.PaymentLinks.Update()`: \n  *  `request.body.AmountDetails.Surcharge` **Removed** (Breaking ⚠️)\n  *  `response.amountDetails.Surcharge` **Removed** (Breaking ⚠️)\n  *  `error.amountDetails.Surcharge` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.Create()`: \n  *  `request.body.AmountDetails.Surcharge` **Removed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.List()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.BatchGetTransfers()`:  `response.Map<Transfer>` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Get()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Update()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.InitiateRefund()`: \n  *  `request.Body.AmountDetails` **Removed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error.amountDetails` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.ListRefunds()`:  `response.[].AmountDetails` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.GetRefund()`:  `response.amountDetails` **Removed** (Breaking ⚠️)\n* `MoovClient.Transfers.CreateReversal()`: \n  *  `request.body.AmountDetails` **Removed** (Breaking ⚠️)\n  *  `response.union(ReversedWithRefund).Refund.AmountDetails` **Removed** (Breaking ⚠️)\n  *  `error.amountDetails` **Removed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
