@@ -9,7 +9,6 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -25,11 +24,5 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("amount")]
         public long? Amount { get; set; }
-
-        /// <summary>
-        /// Breakdown of the refunded amount.
-        /// </summary>
-        [JsonProperty("amountDetails")]
-        public RefundAmountDetails? AmountDetails { get; set; }
     }
 }

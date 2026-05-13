@@ -20,9 +20,6 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amount")]
         public string? Amount { get; set; }
 
-        [JsonProperty("amountDetails")]
-        public RefundAmountDetailsValidationError? AmountDetails { get; set; }
-
         /// <summary>
         /// Used for generic errors when invalid request data isn't attributed to a single request field.
         /// </summary>
@@ -43,9 +40,6 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RefundValidationError.Payload.Amount instead.")]
         public string? Amount { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RefundValidationError.Payload.AmountDetails instead.")]
-        public RefundAmountDetailsValidationError? AmountDetails { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RefundValidationError.Payload.Error instead.")]
         public string? Error { get; set; }
 
@@ -63,7 +57,6 @@ namespace Moov.Sdk.Models.Errors
 
            #pragma warning disable CS0618
            Amount = payload.Amount;
-           AmountDetails = payload.AmountDetails;
            Error = payload.Error;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618

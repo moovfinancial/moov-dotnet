@@ -26,11 +26,5 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("tax")]
         public AmountDecimal? Tax { get; set; }
-
-        /// <summary>
-        /// The amount of surcharge applied to the transfer.
-        /// </summary>
-        [JsonProperty("surcharge")]
-        public AmountDecimal? Surcharge { get; set; }
     }
 }

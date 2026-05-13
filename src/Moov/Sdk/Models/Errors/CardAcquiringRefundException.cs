@@ -35,9 +35,6 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amount")]
         public Amount Amount { get; set; } = default!;
 
-        [JsonProperty("amountDetails")]
-        public RefundAmountDetails? AmountDetails { get; set; }
-
         [JsonProperty("cardDetails")]
         public RefundCardDetails? CardDetails { get; set; }
 
@@ -70,9 +67,6 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.Amount instead.")]
         public Amount Amount { get; set; } = default!;
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.AmountDetails instead.")]
-        public RefundAmountDetails? AmountDetails { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.CardDetails instead.")]
         public RefundCardDetails? CardDetails { get; set; }
 
@@ -94,7 +88,6 @@ namespace Moov.Sdk.Models.Errors
            UpdatedOn = payload.UpdatedOn;
            Status = payload.Status;
            Amount = payload.Amount;
-           AmountDetails = payload.AmountDetails;
            CardDetails = payload.CardDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618

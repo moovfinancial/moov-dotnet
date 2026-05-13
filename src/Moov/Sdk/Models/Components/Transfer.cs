@@ -146,11 +146,5 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("amountDetails")]
         public TransferAmountDetails? AmountDetails { get; set; }
-
-        /// <summary>
-        /// The card authorization and capture IDs associated with a transfer.
-        /// </summary>
-        [JsonProperty("capture")]
-        public TransferCapture? Capture { get; set; }
     }
 }
