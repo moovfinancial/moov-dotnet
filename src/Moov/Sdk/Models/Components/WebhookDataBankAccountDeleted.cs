@@ -9,6 +9,7 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -19,5 +20,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("accountID")]
         public string AccountID { get; set; } = default!;
+
+        [JsonProperty("status")]
+        public BankAccountStatus Status { get; set; } = default!;
     }
 }
