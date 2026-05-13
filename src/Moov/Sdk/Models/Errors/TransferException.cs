@@ -123,9 +123,6 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("paymentLinkCode")]
         public string? PaymentLinkCode { get; set; }
 
-        [JsonProperty("salesTaxAmount")]
-        public Amount? SalesTaxAmount { get; set; }
-
         /// <summary>
         /// Optional alias from a foreign/external system which can be used to reference this resource.
         /// </summary>
@@ -134,7 +131,7 @@ namespace Moov.Sdk.Models.Errors
 
         /// <summary>
         /// An optional collection of line items for a transfer.<br/>
-        /// When line items are provided, their total plus sales tax must equal the transfer amount.
+        /// When line items are provided, their total plus tax must equal the transfer amount.
         /// </summary>
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }
@@ -243,9 +240,6 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.PaymentLinkCode instead.")]
         public string? PaymentLinkCode { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.SalesTaxAmount instead.")]
-        public Amount? SalesTaxAmount { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.ForeignID instead.")]
         public string? ForeignID { get; set; }
 
@@ -299,7 +293,6 @@ namespace Moov.Sdk.Models.Errors
            ScheduleID = payload.ScheduleID;
            OccurrenceID = payload.OccurrenceID;
            PaymentLinkCode = payload.PaymentLinkCode;
-           SalesTaxAmount = payload.SalesTaxAmount;
            ForeignID = payload.ForeignID;
            LineItems = payload.LineItems;
            InvoiceID = payload.InvoiceID;

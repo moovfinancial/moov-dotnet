@@ -47,12 +47,6 @@ namespace Moov.Sdk.Models.Components
         public Amount? Amount { get; set; }
 
         /// <summary>
-        /// Optional sales tax amount.
-        /// </summary>
-        [JsonProperty("salesTaxAmount")]
-        public Amount? SalesTaxAmount { get; set; }
-
-        /// <summary>
         /// An optional limit on the number of times this payment link can be used.<br/>
         /// <br/>
         /// **For payouts, `maxUses` is always 1.**
@@ -86,7 +80,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a payment link.<br/>
-        /// When line items are provided, their total plus sales tax must equal the payment link amount.
+        /// When line items are provided, their total plus tax must equal the payment link amount.
         /// </summary>
         [JsonProperty("lineItems")]
         public CreatePaymentLinkLineItems? LineItems { get; set; }

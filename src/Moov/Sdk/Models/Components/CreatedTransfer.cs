@@ -114,12 +114,6 @@ namespace Moov.Sdk.Models.Components
         public string? PaymentLinkCode { get; set; }
 
         /// <summary>
-        /// Optional sales tax amount.
-        /// </summary>
-        [JsonProperty("salesTaxAmount")]
-        public Amount? SalesTaxAmount { get; set; }
-
-        /// <summary>
         /// Optional alias from a foreign/external system which can be used to reference this resource.
         /// </summary>
         [JsonProperty("foreignID")]
@@ -127,7 +121,7 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// An optional collection of line items for a transfer.<br/>
-        /// When line items are provided, their total plus sales tax must equal the transfer amount.
+        /// When line items are provided, their total plus tax must equal the transfer amount.
         /// </summary>
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }

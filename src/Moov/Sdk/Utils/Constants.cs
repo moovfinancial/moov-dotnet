@@ -22,7 +22,7 @@ namespace Moov.Sdk.Utils
         /// <summary>
         /// The version of the SDK.
         /// </summary>
-        public const string SdkVersion = "0.0.0-dev.18";
+        public const string SdkVersion = "0.0.0-dev.19";
 
         /// <summary>
         /// The version of the SDK generator used to create this SDK.

@@ -26,9 +26,6 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amount")]
         public AmountValidationError? Amount { get; set; }
 
-        [JsonProperty("salesTaxAmount")]
-        public AmountValidationError? SalesTaxAmount { get; set; }
-
         [JsonProperty("maxUses")]
         public string? MaxUses { get; set; }
 
@@ -70,9 +67,6 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.Amount instead.")]
         public AmountValidationError? Amount { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.SalesTaxAmount instead.")]
-        public AmountValidationError? SalesTaxAmount { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.MaxUses instead.")]
         public string? MaxUses { get; set; }
 
@@ -110,7 +104,6 @@ namespace Moov.Sdk.Models.Errors
            PartnerAccountID = payload.PartnerAccountID;
            MerchantPaymentMethodID = payload.MerchantPaymentMethodID;
            Amount = payload.Amount;
-           SalesTaxAmount = payload.SalesTaxAmount;
            MaxUses = payload.MaxUses;
            ExpiresOn = payload.ExpiresOn;
            Display = payload.Display;

@@ -41,9 +41,6 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("metadata")]
         public string? Metadata { get; set; }
 
-        [JsonProperty("salesTaxAmount")]
-        public string? SalesTaxAmount { get; set; }
-
         [JsonProperty("foreignID")]
         public string? ForeignID { get; set; }
 
@@ -88,9 +85,6 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.Metadata instead.")]
         public string? Metadata { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.SalesTaxAmount instead.")]
-        public string? SalesTaxAmount { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferValidationError.Payload.ForeignID instead.")]
         public string? ForeignID { get; set; }
 
@@ -121,7 +115,6 @@ namespace Moov.Sdk.Models.Errors
            FacilitatorFeeTotalDecimal = payload.FacilitatorFeeTotalDecimal;
            FacilitatorFeeMarkupDecimal = payload.FacilitatorFeeMarkupDecimal;
            Metadata = payload.Metadata;
-           SalesTaxAmount = payload.SalesTaxAmount;
            ForeignID = payload.ForeignID;
            LineItems = payload.LineItems;
            AmountDetails = payload.AmountDetails;
