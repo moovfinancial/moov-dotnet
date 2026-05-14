@@ -715,26 +715,6 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
-                    return new WebhookData(WebhookDataType.WebhookDataBankAccountDeleted)
-                    {
-                        WebhookDataBankAccountDeleted = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataBankAccountDeleted>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(WebhookDataBankAccountDeleted), new WebhookData(WebhookDataType.WebhookDataBankAccountDeleted), "WebhookDataBankAccountDeleted"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                try
-                {
                     return new WebhookData(WebhookDataType.WebhookDataTerminalApplicationUpdated)
                     {
                         WebhookDataTerminalApplicationUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataTerminalApplicationUpdated>(json)
@@ -775,14 +755,14 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
-                    return new WebhookData(WebhookDataType.WebhookDataAccountCreated)
+                    return new WebhookData(WebhookDataType.WebhookDataSweepCreated)
                     {
-                        WebhookDataAccountCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataAccountCreated>(json)
+                        WebhookDataSweepCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataSweepCreated>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(WebhookDataAccountCreated), new WebhookData(WebhookDataType.WebhookDataAccountCreated), "WebhookDataAccountCreated"));
+                    fallbackCandidates.Add((typeof(WebhookDataSweepCreated), new WebhookData(WebhookDataType.WebhookDataSweepCreated), "WebhookDataSweepCreated"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -795,14 +775,14 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
-                    return new WebhookData(WebhookDataType.WebhookDataSweepCreated)
+                    return new WebhookData(WebhookDataType.WebhookDataAccountCreated)
                     {
-                        WebhookDataSweepCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataSweepCreated>(json)
+                        WebhookDataAccountCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataAccountCreated>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(WebhookDataSweepCreated), new WebhookData(WebhookDataType.WebhookDataSweepCreated), "WebhookDataSweepCreated"));
+                    fallbackCandidates.Add((typeof(WebhookDataAccountCreated), new WebhookData(WebhookDataType.WebhookDataAccountCreated), "WebhookDataAccountCreated"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -915,6 +895,26 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
+                    return new WebhookData(WebhookDataType.WebhookDataInvoiceUpdated)
+                    {
+                        WebhookDataInvoiceUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataInvoiceUpdated>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(WebhookDataInvoiceUpdated), new WebhookData(WebhookDataType.WebhookDataInvoiceUpdated), "WebhookDataInvoiceUpdated"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
                     return new WebhookData(WebhookDataType.WebhookDataBankAccountCreated)
                     {
                         WebhookDataBankAccountCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataBankAccountCreated>(json)
@@ -983,26 +983,6 @@ namespace Moov.Sdk.Models.Components
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
                     fallbackCandidates.Add((typeof(WebhookDataRefundCreated), new WebhookData(WebhookDataType.WebhookDataRefundCreated), "WebhookDataRefundCreated"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                try
-                {
-                    return new WebhookData(WebhookDataType.WebhookDataInvoiceUpdated)
-                    {
-                        WebhookDataInvoiceUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataInvoiceUpdated>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(WebhookDataInvoiceUpdated), new WebhookData(WebhookDataType.WebhookDataInvoiceUpdated), "WebhookDataInvoiceUpdated"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -1095,14 +1075,14 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
-                    return new WebhookData(WebhookDataType.WebhookDataCancellationCreated)
+                    return new WebhookData(WebhookDataType.WebhookDataBankAccountDeleted)
                     {
-                        WebhookDataCancellationCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataCancellationCreated>(json)
+                        WebhookDataBankAccountDeleted = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataBankAccountDeleted>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(WebhookDataCancellationCreated), new WebhookData(WebhookDataType.WebhookDataCancellationCreated), "WebhookDataCancellationCreated"));
+                    fallbackCandidates.Add((typeof(WebhookDataBankAccountDeleted), new WebhookData(WebhookDataType.WebhookDataBankAccountDeleted), "WebhookDataBankAccountDeleted"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -1115,14 +1095,14 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
-                    return new WebhookData(WebhookDataType.WebhookDataRefundUpdated)
+                    return new WebhookData(WebhookDataType.WebhookDataCancellationCreated)
                     {
-                        WebhookDataRefundUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataRefundUpdated>(json)
+                        WebhookDataCancellationCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataCancellationCreated>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(WebhookDataRefundUpdated), new WebhookData(WebhookDataType.WebhookDataRefundUpdated), "WebhookDataRefundUpdated"));
+                    fallbackCandidates.Add((typeof(WebhookDataCancellationCreated), new WebhookData(WebhookDataType.WebhookDataCancellationCreated), "WebhookDataCancellationCreated"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -1215,6 +1195,26 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
+                    return new WebhookData(WebhookDataType.WebhookDataRefundUpdated)
+                    {
+                        WebhookDataRefundUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataRefundUpdated>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(WebhookDataRefundUpdated), new WebhookData(WebhookDataType.WebhookDataRefundUpdated), "WebhookDataRefundUpdated"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
                     return new WebhookData(WebhookDataType.WebhookDataBankAccountUpdated)
                     {
                         WebhookDataBankAccountUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataBankAccountUpdated>(json)
@@ -1255,6 +1255,26 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
+                    return new WebhookData(WebhookDataType.WebhookDataDisputeUpdated)
+                    {
+                        WebhookDataDisputeUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataDisputeUpdated>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(WebhookDataDisputeUpdated), new WebhookData(WebhookDataType.WebhookDataDisputeUpdated), "WebhookDataDisputeUpdated"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
                     return new WebhookData(WebhookDataType.WebhookDataDisputeCreated)
                     {
                         WebhookDataDisputeCreated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataDisputeCreated>(json)
@@ -1283,26 +1303,6 @@ namespace Moov.Sdk.Models.Components
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
                     fallbackCandidates.Add((typeof(WebhookDataTransferUpdated), new WebhookData(WebhookDataType.WebhookDataTransferUpdated), "WebhookDataTransferUpdated"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                try
-                {
-                    return new WebhookData(WebhookDataType.WebhookDataDisputeUpdated)
-                    {
-                        WebhookDataDisputeUpdated = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<WebhookDataDisputeUpdated>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(WebhookDataDisputeUpdated), new WebhookData(WebhookDataType.WebhookDataDisputeUpdated), "WebhookDataDisputeUpdated"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
