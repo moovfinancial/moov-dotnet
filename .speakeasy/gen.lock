@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 69762ba63a318e349b4b70061a21cc33
+  docChecksum: 7dd42617994709d55d3457b8c0644696
   docVersion: v2026.04.00
-  speakeasyVersion: 1.763.0
-  generationVersion: 2.884.0
-  releaseVersion: 26.4.6
-  configChecksum: c6439b62451a7595b7e8fa63097ccf15
+  speakeasyVersion: 1.770.0
+  generationVersion: 2.893.0
+  releaseVersion: 26.4.7
+  configChecksum: e8a271546e6157d82c0ded7da33f978d
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: f46b0ee1-f8ae-4fd8-bc9b-1339ca0998fb
-  pristine_commit_hash: 3599dc57b03270ae382d8d05fb7e864ddae129f3
-  pristine_tree_hash: f0eca668ebc99708c13392d918f711ba53922b62
+  generation_id: 0d6b9cfa-5ce3-4f24-9ece-803c833f4336
+  pristine_commit_hash: 8921eec073ba8fdadca03da371f8b8ca35c044b5
+  pristine_tree_hash: 2561be20c69894733142d6b460f321689d3e384f
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.3
-    core: 3.15.21
+    core: 3.15.22
     decimal: 0.1.0
     deprecations: 2.81.2
     flattening: 2.81.3
@@ -1397,8 +1397,8 @@ trackedFiles:
     pristine_git_object: d08ffa3d5c07dfd19f088df31e26a0b7b8e82ec0
   docs/Models/Components/Invoice.md:
     id: ba7358ee6e48
-    last_write_checksum: sha1:a3612c039ff008d3f4fce7f14f3aa28a8bcd25c1
-    pristine_git_object: f78fbf8f7acd0679688a38afcaafe6a4fb9a9d43
+    last_write_checksum: sha1:0c15c559c10cddf6c730284acd392421654c0a0b
+    pristine_git_object: 591385d44d0d34dce14f0354bad982f1548b673f
   docs/Models/Components/InvoiceExternalPayment.md:
     id: 355f31d8abd2
     last_write_checksum: sha1:ac6d8289ebe58a72cd706db18a5fc2addb827f7a
@@ -2413,8 +2413,12 @@ trackedFiles:
     pristine_git_object: 313bc07470207d951e489418e3fe577804462082
   docs/Models/Components/TransferConfig.md:
     id: c68b2f2ded58
-    last_write_checksum: sha1:f79cd777b426eb6ca0c152243c0469a8d624f7a6
-    pristine_git_object: 757a6e6554f35724e9413d3ec1517fa35dde72c5
+    last_write_checksum: sha1:d05764c428ad7b3f44c6c78f130177081edb97b4
+    pristine_git_object: f82edac68c30f6b8f228bf22b003f81151fc3de8
+  docs/Models/Components/TransferControls.md:
+    id: 47e3364e54d3
+    last_write_checksum: sha1:0635847dc2cb379686b9bb71696e7b3d82ac6727
+    pristine_git_object: 71c026a3172ac6b28db52ea5811d21e53bbde6cc
   docs/Models/Components/TransferDestination.md:
     id: bad241d995ea
     last_write_checksum: sha1:3104d4d948b4ab20e573056594e222d7d0bc9440
@@ -2517,8 +2521,8 @@ trackedFiles:
     pristine_git_object: 5bd52e84dc165d3a5e3bf2324d6f3d6e2cbaf7cd
   docs/Models/Components/UpdateInvoice.md:
     id: c30d640c401a
-    last_write_checksum: sha1:f17c271ca57923d82a5cb46f578dcbb2b0248033
-    pristine_git_object: 809d27437b0539c16eb0890bb1a65b5a402b4db2
+    last_write_checksum: sha1:51b1718c1bafb88fe496715d6a4683688a123c5f
+    pristine_git_object: e7795a56faefbc212630d62c0dfae72be84d64d7
   docs/Models/Components/UpdateIssuedCard.md:
     id: 720655aa16dc
     last_write_checksum: sha1:eabead58da0f1e77687d5512e56e035e14e3bfdf
@@ -6129,8 +6133,8 @@ trackedFiles:
     pristine_git_object: 9e0e0bcc41edcdbdaa1a901ceff87c7a03af6642
   src/Moov/Sdk/Models/Components/Invoice.cs:
     id: ff39f1e2901b
-    last_write_checksum: sha1:268f6c55c7fc67913c79f6b403e2224bac6e6e4d
-    pristine_git_object: f13348541570d43009620172abcd6b85304af46f
+    last_write_checksum: sha1:3d133cceb3d130819f26d437bfc1e6a621c67c09
+    pristine_git_object: 83c231a41e194abaef3fc35b2cdd74cb9405d042
   src/Moov/Sdk/Models/Components/InvoiceExternalPayment.cs:
     id: 086c018073c9
     last_write_checksum: sha1:370094ab4322baac1fcb544c6b86467b08da1477
@@ -7145,8 +7149,12 @@ trackedFiles:
     pristine_git_object: 9c6ded08c73340f6b2b9f5ba4c4696028baf9065
   src/Moov/Sdk/Models/Components/TransferConfig.cs:
     id: 3edc1b7a37ae
-    last_write_checksum: sha1:c4ab295302f2468e1aa6f946a8b83d7fd8f72f14
-    pristine_git_object: 4eeac5a456483db309a0013ff6624a58285f42d7
+    last_write_checksum: sha1:426652a8c7087ef9f16377f4b780e15293545b27
+    pristine_git_object: 31ea8b7a28fc6dd740c58cb3085e03bc08d0448b
+  src/Moov/Sdk/Models/Components/TransferControls.cs:
+    id: 088d46635ab2
+    last_write_checksum: sha1:88edd89311ac730b6b66e1c3308b46713575f5ae
+    pristine_git_object: 3aa647a3782066849f29fa5f73aa4da9b03254e7
   src/Moov/Sdk/Models/Components/TransferDestination.cs:
     id: 018ec8289961
     last_write_checksum: sha1:09ea60763fa844854207cc2e9443d654fe179e50
@@ -7249,8 +7257,8 @@ trackedFiles:
     pristine_git_object: 0eac825c9bbc93138a01040bc2af79393bfeebca
   src/Moov/Sdk/Models/Components/UpdateInvoice.cs:
     id: 450bc342ac26
-    last_write_checksum: sha1:b8054f83eeb2ba873f136075c6a2ec885b347d36
-    pristine_git_object: e87ecc54486038b896a827da902fa1b39e5122f8
+    last_write_checksum: sha1:1f51a841b84feb742f107d44c8604dbfe6c09270
+    pristine_git_object: b58acccc3a3d8da10465214e237246413784aaa2
   src/Moov/Sdk/Models/Components/UpdateIssuedCard.cs:
     id: 58e67f8ef639
     last_write_checksum: sha1:ef7b3d6a03c03cab83cf78527855f3c08dd821fa
@@ -9257,8 +9265,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:d9a27d6eced196f0be2db4ffd66bc656cde82188
-    pristine_git_object: a2812c65e80c9a2cfa498bc691d36c711ec299e0
+    last_write_checksum: sha1:14926866b544d6c1ccb4d18a90aeb5bbea01ef54
+    pristine_git_object: 0eebd36a9b064c4c952c775dc3e9bee5ccb16c55
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:2a6dc3a47df6d0881256a5bc8b2a6a6411923b57
@@ -9297,8 +9305,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:2a98c37d3db9e6f3214811c408e5892db039ea17
-    pristine_git_object: d4575689f94f6c528d1174b087139c7cb7235bf9
+    last_write_checksum: sha1:6616e33236826c99c0e549162d9db220829c2ddb
+    pristine_git_object: 351dfb1f1c34d6c31be28bea70839937724f80ca
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -9341,8 +9349,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:d9c4f0bed429daea05ac034bf32798889006e098
-    pristine_git_object: fc48e7cd6c03290056a3c8f13d6b07943257e369
+    last_write_checksum: sha1:7d7328c5ac693d86a6a195a8a7d46973f00abade
+    pristine_git_object: 999826b213bd0ea4577cc15fb4e70e697ad5c148
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -11514,7 +11522,7 @@ examples:
         application/json: {"tipPresets": {"fixedAmountOptions": [{"currency": "USD", "valueDecimal": "12.987654321"}]}}
       responses:
         "201":
-          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}}
+          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}, "transferControls": [{"accountID": "01234567-89ab-cdef-0123-456789abcdef", "partnerAccountID": "01234567-89ab-cdef-0123-456789abcdef", "debtRepayment": false, "allowDynamicDescriptor": true, "allowSurcharge": true}]}
   getTransferConfig:
     Fixed amount tip config:
       parameters:
@@ -11529,7 +11537,7 @@ examples:
           accountID: "<id>"
       responses:
         "200":
-          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}}
+          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}, "transferControls": [{"accountID": "01234567-89ab-cdef-0123-456789abcdef", "partnerAccountID": "01234567-89ab-cdef-0123-456789abcdef", "debtRepayment": false, "allowDynamicDescriptor": true, "allowSurcharge": true}]}
   updateTransferConfig:
     Updated fixed amount tip config:
       parameters:
@@ -11548,8 +11556,13 @@ examples:
         application/json: {"tipPresets": {"fixedAmountOptions": [{"currency": "USD", "valueDecimal": "12.987654321"}]}}
       responses:
         "200":
-          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}}
+          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}, "transferControls": [{"accountID": "01234567-89ab-cdef-0123-456789abcdef", "partnerAccountID": "01234567-89ab-cdef-0123-456789abcdef", "debtRepayment": false, "allowDynamicDescriptor": true, "allowSurcharge": true}]}
 examplesVersion: 1.0.2
+releaseNotes: |
+  ## Csharp SDK Changes:
+  * `MoovClient.TransferConfig.Create()`:  `response.transferControls` **Added**
+  * `MoovClient.TransferConfig.Get()`:  `response.transferControls` **Added**
+  * `MoovClient.TransferConfig.Update()`:  `response.transferControls` **Added**
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
