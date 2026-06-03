@@ -16,5 +16,8 @@ namespace Moov.Sdk.Models.Components
     {
         [JsonProperty("tax")]
         public string? Tax { get; set; }
+
+        [JsonProperty("surcharge")]
+        public string? Surcharge { get; set; }
     }
 }

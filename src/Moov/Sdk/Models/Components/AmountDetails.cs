@@ -9,18 +9,22 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
-    public class CreateTransferAmountDetailsValidationError
+    public class AmountDetails
     {
-        [JsonProperty("tip")]
-        public string? Tip { get; set; }
-
+        /// <summary>
+        /// The amount of tax applied to the invoice.
+        /// </summary>
         [JsonProperty("tax")]
-        public string? Tax { get; set; }
+        public AmountDecimal? Tax { get; set; }
 
+        /// <summary>
+        /// The amount of surcharge applied to the invoice.
+        /// </summary>
         [JsonProperty("surcharge")]
-        public string? Surcharge { get; set; }
+        public AmountDecimal? Surcharge { get; set; }
     }
 }

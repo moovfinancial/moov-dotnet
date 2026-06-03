@@ -9,6 +9,7 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -19,5 +20,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("amount")]
         public long Amount { get; set; } = default!;
+
+        /// <summary>
+        /// Breakdown of the reversed amount.
+        /// </summary>
+        [JsonProperty("amountDetails")]
+        public ReversalAmountDetails? AmountDetails { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Configurable options for a transfer.
@@ -23,5 +24,8 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("tipPresets")]
         public TipPresets? TipPresets { get; set; }
+
+        [JsonProperty("transferControls")]
+        public List<TransferControls>? TransferControls { get; set; }
     }
 }

@@ -593,6 +593,12 @@ InitiateRefundRequest req = new InitiateRefundRequest() {
     TransferID = "04022119-95be-4ef4-9dd4-b3782f6aa7b9",
     Body = new CreateRefund() {
         Amount = 1000,
+        AmountDetails = new RefundAmountDetails() {
+            Surcharge = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+        },
     },
 };
 
@@ -619,6 +625,12 @@ InitiateRefundRequest req = new InitiateRefundRequest() {
     TransferID = "d73be489-9da4-4be7-bc04-147d8552279d",
     Body = new CreateRefund() {
         Amount = 1000,
+        AmountDetails = new RefundAmountDetails() {
+            Surcharge = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+        },
     },
 };
 
@@ -763,6 +775,12 @@ var res = await sdk.Transfers.CreateReversalAsync(
     transferID: "82c6eae7-b7e5-4b20-b24e-5116a4d70bde",
     body: new CreateReversal() {
         Amount = 1000,
+        AmountDetails = new ReversalAmountDetails() {
+            Surcharge = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+        },
     }
 );
 
@@ -786,6 +804,12 @@ var res = await sdk.Transfers.CreateReversalAsync(
     transferID: "a17b29e2-4af6-4c9d-ad3a-dd0ded2966ad",
     body: new CreateReversal() {
         Amount = 1000,
+        AmountDetails = new ReversalAmountDetails() {
+            Surcharge = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+        },
     }
 );
 

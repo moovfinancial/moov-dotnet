@@ -9,18 +9,16 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
-    public class CreateTransferAmountDetailsValidationError
+    public class ReversalAmountDetails
     {
-        [JsonProperty("tip")]
-        public string? Tip { get; set; }
-
-        [JsonProperty("tax")]
-        public string? Tax { get; set; }
-
+        /// <summary>
+        /// The amount of surcharge to refund. Should be proportionate to the surcharge on the original transfer. This does not reply if the reversal resulted in a cancellation instead of a refund.
+        /// </summary>
         [JsonProperty("surcharge")]
-        public string? Surcharge { get; set; }
+        public AmountDecimal? Surcharge { get; set; }
     }
 }

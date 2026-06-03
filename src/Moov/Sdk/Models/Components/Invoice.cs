@@ -65,11 +65,11 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("subtotalAmount")]
         public AmountDecimal SubtotalAmount { get; set; } = default!;
 
-        [JsonProperty("taxAmount")]
-        public AmountDecimal TaxAmount { get; set; } = default!;
+        [JsonProperty("amountDetails")]
+        public AmountDetails? AmountDetails { get; set; }
 
         /// <summary>
-        /// Total amount of the invoice, sum of subTotalAmount and taxAmount.
+        /// Total amount of the invoice, including subtotal, tax, and surcharge amounts.
         /// </summary>
         [JsonProperty("totalAmount")]
         public AmountDecimal TotalAmount { get; set; } = default!;

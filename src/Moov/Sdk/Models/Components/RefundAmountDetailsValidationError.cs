@@ -12,14 +12,8 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
-    public class CreateTransferAmountDetailsValidationError
+    public class RefundAmountDetailsValidationError
     {
-        [JsonProperty("tip")]
-        public string? Tip { get; set; }
-
-        [JsonProperty("tax")]
-        public string? Tax { get; set; }
-
         [JsonProperty("surcharge")]
         public string? Surcharge { get; set; }
     }
