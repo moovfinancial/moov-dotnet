@@ -37,7 +37,7 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("dueDate")]
         public DateTime? DueDate { get; set; }
 
-        [JsonProperty("taxAmount")]
-        public AmountDecimal? TaxAmount { get; set; }
+        [JsonProperty("amountDetails")]
+        public AmountDetails? AmountDetails { get; set; }
     }
 }

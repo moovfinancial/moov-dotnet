@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 94ce6e4d32d1af9bf5c4d253a398a5e2
+  docChecksum: 46947a43e12b13d30abe446c8d1f4407
   docVersion: dev
-  speakeasyVersion: 1.763.0
-  generationVersion: 2.884.0
-  releaseVersion: 0.0.0-dev.20
-  configChecksum: c0994aa247b939553e4a05538930ceed
+  speakeasyVersion: 1.770.0
+  generationVersion: 2.893.0
+  releaseVersion: 0.0.0-dev.21
+  configChecksum: cb99331f9aa8ca9e9250454e5513a0d9
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: 71bf27be-40f7-4243-ac04-347c0623012e
-  pristine_commit_hash: 7a08805b2c452ab36e42a43337dac8c77a116174
-  pristine_tree_hash: d215835197c181fc98b99b55309517f7b887198d
+  generation_id: 36c00f08-340c-4951-ad5b-4961c9a4f369
+  pristine_commit_hash: 4155cce0faf1756834c8c2c60c20763d86c1c229
+  pristine_tree_hash: bfb10f7055bf8d6c04a4968af1bd1e498ef60155
 features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.3
-    core: 3.15.21
+    core: 3.15.22
     decimal: 0.1.0
     deprecations: 2.81.2
     flattening: 2.81.3
@@ -251,6 +251,18 @@ trackedFiles:
     id: 9b296c38f3eb
     last_write_checksum: sha1:f2611b39a42acd6dbcfc20fe8cd4a790fd0cbdd6
     pristine_git_object: 97566541840c4a2361980fb13f958118db758959
+  docs/Models/Components/AmountDetails.md:
+    id: 925cc11b686f
+    last_write_checksum: sha1:d80087e45a004d3cc582700430e664e0b78e3c8b
+    pristine_git_object: 6636577eade5d3ef10ee59aad508326394db86d0
+  docs/Models/Components/AmountDetailsUpdate.md:
+    id: e50bad1ed07d
+    last_write_checksum: sha1:76d1a7257d09f7663f118dda61c8e7e0b35dd309
+    pristine_git_object: 69db961875de37aa24ef943827b7b23d76b40c34
+  docs/Models/Components/AmountDetailsValidationError.md:
+    id: 9a9da39f7462
+    last_write_checksum: sha1:39f384457950047c82a38de8d2272fde4f6e1610
+    pristine_git_object: 7bd30e05c73b7fffc5f5229a02f78afe83c0659e
   docs/Models/Components/AmountUpdate.md:
     id: fb9724d9e453
     last_write_checksum: sha1:701bddbd2c7ed8b5cab9863c6bd462f2c7d40da2
@@ -797,8 +809,8 @@ trackedFiles:
     pristine_git_object: 56ae0cb896e8eea07f3f61ae743a3c13b8caaf30
   docs/Models/Components/CreateInvoice.md:
     id: 8a2ed469bf75
-    last_write_checksum: sha1:41ef5457f65f21608518e01c802a1223c7b20b4c
-    pristine_git_object: ae54a9eb502e787e657b4d44c74b4044978785fa
+    last_write_checksum: sha1:4829a10f2d8c9fc58ff440a195d858110608029a
+    pristine_git_object: c2e32473d0d53ae64adaf6224679d3c23db39117
   docs/Models/Components/CreateInvoiceLineItem.md:
     id: 6bf0e99fc44c
     last_write_checksum: sha1:662951837aa8323e7bcc0563e3097f134e5956f9
@@ -1421,8 +1433,8 @@ trackedFiles:
     pristine_git_object: d08ffa3d5c07dfd19f088df31e26a0b7b8e82ec0
   docs/Models/Components/Invoice.md:
     id: ba7358ee6e48
-    last_write_checksum: sha1:a3612c039ff008d3f4fce7f14f3aa28a8bcd25c1
-    pristine_git_object: f78fbf8f7acd0679688a38afcaafe6a4fb9a9d43
+    last_write_checksum: sha1:7ae4289da14b0731c0f0b6fd566ee9a999921ad8
+    pristine_git_object: 8335111582769f1c3c81d87a0ba50a4033fb0321
   docs/Models/Components/InvoiceExternalPayment.md:
     id: 355f31d8abd2
     last_write_checksum: sha1:ac6d8289ebe58a72cd706db18a5fc2addb827f7a
@@ -2457,8 +2469,12 @@ trackedFiles:
     pristine_git_object: 447b5f93e90586f55cbc02a43b2226e62ac566d0
   docs/Models/Components/TransferConfig.md:
     id: c68b2f2ded58
-    last_write_checksum: sha1:f79cd777b426eb6ca0c152243c0469a8d624f7a6
-    pristine_git_object: 757a6e6554f35724e9413d3ec1517fa35dde72c5
+    last_write_checksum: sha1:d05764c428ad7b3f44c6c78f130177081edb97b4
+    pristine_git_object: f82edac68c30f6b8f228bf22b003f81151fc3de8
+  docs/Models/Components/TransferControls.md:
+    id: 47e3364e54d3
+    last_write_checksum: sha1:0635847dc2cb379686b9bb71696e7b3d82ac6727
+    pristine_git_object: 71c026a3172ac6b28db52ea5811d21e53bbde6cc
   docs/Models/Components/TransferDestination.md:
     id: bad241d995ea
     last_write_checksum: sha1:305f68eb743095423f162fc8dcbfa2b3c5e01272
@@ -2561,8 +2577,8 @@ trackedFiles:
     pristine_git_object: 5bd52e84dc165d3a5e3bf2324d6f3d6e2cbaf7cd
   docs/Models/Components/UpdateInvoice.md:
     id: c30d640c401a
-    last_write_checksum: sha1:f17c271ca57923d82a5cb46f578dcbb2b0248033
-    pristine_git_object: 809d27437b0539c16eb0890bb1a65b5a402b4db2
+    last_write_checksum: sha1:cf5cccff9cf66ae8a2be12d5e820471669316449
+    pristine_git_object: 9112b1a559a66dad677d3c86e5fc3384ba8168f7
   docs/Models/Components/UpdateIssuedCard.md:
     id: 720655aa16dc
     last_write_checksum: sha1:eabead58da0f1e77687d5512e56e035e14e3bfdf
@@ -2933,8 +2949,8 @@ trackedFiles:
     pristine_git_object: ca8886552634cebd321d6e72c4ceda65a769f18a
   docs/Models/Errors/CreateInvoiceError.md:
     id: f6beebd9c6da
-    last_write_checksum: sha1:448b37cb8cb74b26c9e40282ca5c0c81c803604a
-    pristine_git_object: aa0299994920f57e4a94240ac93878df7108ec4f
+    last_write_checksum: sha1:8f772b7a35596214ff35f68ab16c6c5bcde23741
+    pristine_git_object: 2a99aceea0740c56e544b8ef367fc9983f44b1fa
   docs/Models/Errors/CreateInvoicePaymentError.md:
     id: e1ed8c3320d6
     last_write_checksum: sha1:f895c75f00a05709df2ffe1ac36de1eda372ddc4
@@ -3097,8 +3113,8 @@ trackedFiles:
     pristine_git_object: 0e60a53673577ab2eefc0d4d404cbf9f02e5c44c
   docs/Models/Errors/UpdateInvoiceError.md:
     id: f1b1da64000a
-    last_write_checksum: sha1:a67056d7f69c3bee6faabe8b50b2c35feaabb1ad
-    pristine_git_object: 7fd23322a1d416bc300a67d4086cc54a51d92d34
+    last_write_checksum: sha1:816582333d75e7afbbbf9da8d93874df548b3fee
+    pristine_git_object: 46509b861574640f923856f88165b903fd4eb556
   docs/Models/Errors/UpdateIssuedCardError.md:
     id: c5c276802358
     last_write_checksum: sha1:5f5d139fbf0c812a273dc5fb54ace0ad5fce6ec6
@@ -4657,8 +4673,8 @@ trackedFiles:
     pristine_git_object: 78ca2c5841c53b7df79b74470443a567d58ddcba
   docs/sdks/invoices/README.md:
     id: a3f76a06eded
-    last_write_checksum: sha1:22eb410fe2c03fe5682ba703f8be0618311094a1
-    pristine_git_object: 03525abd141577458d40e80306d884f0e92e7db0
+    last_write_checksum: sha1:221943e51af9800b33db2c1d1117977edfe348ac
+    pristine_git_object: f3b0cdfa82c6d7357e538c1d3023ee3b7cbbde36
   docs/sdks/issuingtransactions/README.md:
     id: 248409a4a639
     last_write_checksum: sha1:3d8038c3463b9d0f68e53d63515d3510198b5098
@@ -5043,6 +5059,18 @@ trackedFiles:
     id: 9f5c70104f62
     last_write_checksum: sha1:34a82e5a2f83fd07d42b3ccad508ad702a106b99
     pristine_git_object: e9c8cc33b065bf7c5a000ad218e44d2b0319410f
+  src/Moov/Sdk/Models/Components/AmountDetails.cs:
+    id: 28e2779bfd82
+    last_write_checksum: sha1:f84f4e89bc7075a1a2aa0148ffe5ed9170ec67a0
+    pristine_git_object: a49eeddc2d16995752f137d0c481561094dd85f1
+  src/Moov/Sdk/Models/Components/AmountDetailsUpdate.cs:
+    id: e6ec488aec29
+    last_write_checksum: sha1:b9f8437add30c8046e1e5dc1bfcb93b1e2adfa04
+    pristine_git_object: adc6e82dd44a398430922445aa5ed61e67c99191
+  src/Moov/Sdk/Models/Components/AmountDetailsValidationError.cs:
+    id: 7063e79d5181
+    last_write_checksum: sha1:048cdf94815c3a4198873d1e2bf00bd125834387
+    pristine_git_object: 95cae56943644e1ea1cad56fc80f87fd7b89f88e
   src/Moov/Sdk/Models/Components/AmountUpdate.cs:
     id: b1f11ccabb10
     last_write_checksum: sha1:f4cbc219dc253da182854094198a37209ee87097
@@ -5589,8 +5617,8 @@ trackedFiles:
     pristine_git_object: 4cecffb758d885486aeef7f2befcfc174597aa6d
   src/Moov/Sdk/Models/Components/CreateInvoice.cs:
     id: 5f94485686fe
-    last_write_checksum: sha1:8e552febdbd458addff1c274b89330cd70b2f785
-    pristine_git_object: 70b7ee8df1296a7c9b0f4031fa31022bdec4fba4
+    last_write_checksum: sha1:a64f680f21b8766e88542255f162e59962459513
+    pristine_git_object: bb2d39aaa896ff28666a7cc7fe845a737641c137
   src/Moov/Sdk/Models/Components/CreateInvoiceLineItem.cs:
     id: d7c96c86c613
     last_write_checksum: sha1:36ee7007921625719ffb062f6e7f083c435e7c24
@@ -6213,8 +6241,8 @@ trackedFiles:
     pristine_git_object: 9e0e0bcc41edcdbdaa1a901ceff87c7a03af6642
   src/Moov/Sdk/Models/Components/Invoice.cs:
     id: ff39f1e2901b
-    last_write_checksum: sha1:268f6c55c7fc67913c79f6b403e2224bac6e6e4d
-    pristine_git_object: f13348541570d43009620172abcd6b85304af46f
+    last_write_checksum: sha1:2d11508c21b98f6b51ac665329dc4ba9a634726d
+    pristine_git_object: 14da8c1da10804a7cd76eefdcc4a5905c9a95765
   src/Moov/Sdk/Models/Components/InvoiceExternalPayment.cs:
     id: 086c018073c9
     last_write_checksum: sha1:370094ab4322baac1fcb544c6b86467b08da1477
@@ -7249,8 +7277,12 @@ trackedFiles:
     pristine_git_object: 23ab25b0aefa0d70abd7bf525a810dfade206678
   src/Moov/Sdk/Models/Components/TransferConfig.cs:
     id: 3edc1b7a37ae
-    last_write_checksum: sha1:c4ab295302f2468e1aa6f946a8b83d7fd8f72f14
-    pristine_git_object: 4eeac5a456483db309a0013ff6624a58285f42d7
+    last_write_checksum: sha1:426652a8c7087ef9f16377f4b780e15293545b27
+    pristine_git_object: 31ea8b7a28fc6dd740c58cb3085e03bc08d0448b
+  src/Moov/Sdk/Models/Components/TransferControls.cs:
+    id: 088d46635ab2
+    last_write_checksum: sha1:88edd89311ac730b6b66e1c3308b46713575f5ae
+    pristine_git_object: 3aa647a3782066849f29fa5f73aa4da9b03254e7
   src/Moov/Sdk/Models/Components/TransferDestination.cs:
     id: 018ec8289961
     last_write_checksum: sha1:b1817728d6533dd4512a0a7981ce3461b7f29cf6
@@ -7353,8 +7385,8 @@ trackedFiles:
     pristine_git_object: 0eac825c9bbc93138a01040bc2af79393bfeebca
   src/Moov/Sdk/Models/Components/UpdateInvoice.cs:
     id: 450bc342ac26
-    last_write_checksum: sha1:b8054f83eeb2ba873f136075c6a2ec885b347d36
-    pristine_git_object: e87ecc54486038b896a827da902fa1b39e5122f8
+    last_write_checksum: sha1:34575b1a38d4c4e173ef0a6ffaa72213635a34e9
+    pristine_git_object: e43a1673bf169de9539f65ba4c56e8b08ae7acbd
   src/Moov/Sdk/Models/Components/UpdateIssuedCard.cs:
     id: 58e67f8ef639
     last_write_checksum: sha1:ef7b3d6a03c03cab83cf78527855f3c08dd821fa
@@ -7729,8 +7761,8 @@ trackedFiles:
     pristine_git_object: d7298aaf07daf7202a1788a3639182b2df08c25e
   src/Moov/Sdk/Models/Errors/CreateInvoiceError.cs:
     id: 1e281949ab06
-    last_write_checksum: sha1:bc21cf4b25a3eb0513dba47524d7dcb0537d6f87
-    pristine_git_object: 3dbabe88e8b347c2831d41cea4fff3efa55667cb
+    last_write_checksum: sha1:c00735839e01e484f35b8820491b2dfcc328170d
+    pristine_git_object: 182de7d5232a3a1132a9a41745443bc5c1d7ee6a
   src/Moov/Sdk/Models/Errors/CreateInvoicePaymentError.cs:
     id: c5eb47c67d87
     last_write_checksum: sha1:abc3df68bc98bca18f86437725e19ee99c9e2cdd
@@ -7901,8 +7933,8 @@ trackedFiles:
     pristine_git_object: b95b84672434599aa5df7e8a22c2483c063f8532
   src/Moov/Sdk/Models/Errors/UpdateInvoiceError.cs:
     id: 5fa02da84050
-    last_write_checksum: sha1:86ab1b4fbcce102bbed28d1b5286d84dadea1a26
-    pristine_git_object: 49c32286310ae7c090ab16cde3aee9f214bb81ab
+    last_write_checksum: sha1:a9aa3f3e872094729333191bd6121dc129404377
+    pristine_git_object: 86b981e237e14ec7639e0fd021cfa26dba2723f6
   src/Moov/Sdk/Models/Errors/UpdateIssuedCardError.cs:
     id: a45e888f951a
     last_write_checksum: sha1:55401654cdb881f35702eea9555bf25044fb14c0
@@ -9377,8 +9409,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:a64a42e8a7f0053bfc95a79632e821e2dc43f494
-    pristine_git_object: 8ec9ac60a9facf4b888815493821b1fb74c5c654
+    last_write_checksum: sha1:ad014b4a84768d098d60e827071298571c1ee7bd
+    pristine_git_object: 7d06ce301ce00054bff230f4d9a0b077ac021f7e
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:2a6dc3a47df6d0881256a5bc8b2a6a6411923b57
@@ -9417,8 +9449,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:afd4581b83344f2d5d3fcf2bc2db455035c548f3
-    pristine_git_object: 1404d30f74d1abe695e14e32c32365449de475ce
+    last_write_checksum: sha1:093cd446c4c25c019943ef4c853b0da406bea5c0
+    pristine_git_object: a0476af3ac397010a0c203cad69f3060cd3fdec4
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:48410093b5ba9636c97a96df18dcccb810f77339
@@ -9461,8 +9493,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:c049e90763826e0776ca5607935d8dfb9f79f140
-    pristine_git_object: 5aeb1251e772d6c5f694b4b66534bb7bb9b9e3da
+    last_write_checksum: sha1:9629b6948301b01dab9dde0db768cf79cbef11d6
+    pristine_git_object: 2783f49d3f544b769f0023fe35e900ecfe7fe8aa
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -11327,10 +11359,10 @@ examples:
         path:
           accountID: "c463fb80-6410-48b7-9e2e-6e9ec58a654f"
       requestBody:
-        application/json: {"customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "description": "Professional services for Q1 2026", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z", "taxAmount": {"currency": "USD", "valueDecimal": "80.00"}}
+        application/json: {"customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "description": "Professional services for Q1 2026", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z"}
       responses:
         "201":
-          application/json: {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "unpaid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "taxAmount": {"currency": "USD", "valueDecimal": "80.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "0.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z"}
+          application/json: {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "unpaid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "0.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z"}
   listInvoices:
     speakeasy-default-list-invoices:
       parameters:
@@ -11353,7 +11385,7 @@ examples:
           count: 20
       responses:
         "200":
-          application/json: [{"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "unpaid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "taxAmount": {"currency": "USD", "valueDecimal": "80.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "0.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z"}, {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "paid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "taxAmount": {"currency": "USD", "valueDecimal": "80.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "invoicePayments": [{"invoicePaymentID": "a1b2c3d4-e5f6-7890-abcd-ef1234567890", "invoicePaymentType": "transfer", "amount": {"currency": "USD", "valueDecimal": "1080.00"}, "transfer": {"transferID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43"}}], "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z", "sentOn": "2026-01-15T10:30:00Z", "paidOn": "2026-01-20T14:45:00Z"}]
+          application/json: [{"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "unpaid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "0.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z"}, {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "paid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "invoicePayments": [{"invoicePaymentID": "a1b2c3d4-e5f6-7890-abcd-ef1234567890", "invoicePaymentType": "transfer", "amount": {"currency": "USD", "valueDecimal": "1080.00"}, "transfer": {"transferID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43"}}], "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z", "sentOn": "2026-01-15T10:30:00Z", "paidOn": "2026-01-20T14:45:00Z"}]
   getInvoice:
     speakeasy-default-get-invoice:
       parameters:
@@ -11370,7 +11402,7 @@ examples:
           invoiceID: "fc90d016-39ea-4110-b77a-2e1c95827f46"
       responses:
         "200":
-          application/json: {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "paid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "taxAmount": {"currency": "USD", "valueDecimal": "80.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "invoicePayments": [{"invoicePaymentID": "a1b2c3d4-e5f6-7890-abcd-ef1234567890", "invoicePaymentType": "transfer", "amount": {"currency": "USD", "valueDecimal": "1080.00"}, "transfer": {"transferID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43"}}], "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z", "sentOn": "2026-01-15T10:30:00Z", "paidOn": "2026-01-20T14:45:00Z"}
+          application/json: {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "paid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "invoicePayments": [{"invoicePaymentID": "a1b2c3d4-e5f6-7890-abcd-ef1234567890", "invoicePaymentType": "transfer", "amount": {"currency": "USD", "valueDecimal": "1080.00"}, "transfer": {"transferID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43"}}], "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z", "sentOn": "2026-01-15T10:30:00Z", "paidOn": "2026-01-20T14:45:00Z"}
   updateInvoice:
     speakeasy-default-update-invoice:
       parameters:
@@ -11395,7 +11427,7 @@ examples:
         application/json: {"description": "Updated professional services for Q1 2026", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "invoiceDate": "2026-01-16T00:00:00Z", "dueDate": "2026-02-16T00:00:00Z"}
       responses:
         "200":
-          application/json: {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "unpaid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "taxAmount": {"currency": "USD", "valueDecimal": "80.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "0.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z"}
+          application/json: {"invoiceID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43", "invoiceNumber": "INV-1001", "description": "Professional services for Q1 2026", "customerAccountID": "3dfff852-927d-47e8-822c-2fffc57ff6b9", "customerDisplayName": "Acme Corp", "customerEmail": "billing@acmecorp.com", "partnerAccountID": "5dfff852-927d-47e8-822c-2fffc57ff6b8", "status": "unpaid", "lineItems": {"items": [{"name": "Professional Services", "basePrice": {"currency": "USD", "valueDecimal": "1000.00"}, "quantity": 1}]}, "subtotalAmount": {"currency": "USD", "valueDecimal": "1000.00"}, "totalAmount": {"currency": "USD", "valueDecimal": "1080.00"}, "pendingAmount": {"currency": "USD", "valueDecimal": "0.00"}, "paidAmount": {"currency": "USD", "valueDecimal": "0.00"}, "refundedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "disputedAmount": {"currency": "USD", "valueDecimal": "0.00"}, "createdOn": "2024-05-06T12:20:38.184Z", "invoiceDate": "2026-01-15T00:00:00Z", "dueDate": "2026-02-15T00:00:00Z"}
   markPaidInvoice:
     speakeasy-default-mark-paid-invoice:
       parameters:
@@ -11634,7 +11666,7 @@ examples:
         application/json: {"tipPresets": {"fixedAmountOptions": [{"currency": "USD", "valueDecimal": "12.987654321"}]}}
       responses:
         "201":
-          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}}
+          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}, "transferControls": [{"accountID": "01234567-89ab-cdef-0123-456789abcdef", "partnerAccountID": "01234567-89ab-cdef-0123-456789abcdef", "debtRepayment": false, "allowDynamicDescriptor": true, "allowSurcharge": true}]}
   getTransferConfig:
     Fixed amount tip config:
       parameters:
@@ -11649,7 +11681,7 @@ examples:
           accountID: "<id>"
       responses:
         "200":
-          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}}
+          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}, "transferControls": [{"accountID": "01234567-89ab-cdef-0123-456789abcdef", "partnerAccountID": "01234567-89ab-cdef-0123-456789abcdef", "debtRepayment": false, "allowDynamicDescriptor": true, "allowSurcharge": true}]}
   updateTransferConfig:
     Updated fixed amount tip config:
       parameters:
@@ -11668,7 +11700,7 @@ examples:
         application/json: {"tipPresets": {"fixedAmountOptions": [{"currency": "USD", "valueDecimal": "12.987654321"}]}}
       responses:
         "200":
-          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}}
+          application/json: {"tipPresets": {"calculationBasis": "pre-tax", "percentageOptions": [10, 15, 20]}, "transferControls": [{"accountID": "01234567-89ab-cdef-0123-456789abcdef", "partnerAccountID": "01234567-89ab-cdef-0123-456789abcdef", "debtRepayment": false, "allowDynamicDescriptor": true, "allowSurcharge": true}]}
   getCardMetadata:
     speakeasy-default-get-card-metadata:
       requestBody:
@@ -11681,6 +11713,7 @@ examples:
         "422":
           application/json: {}
 examplesVersion: 1.0.2
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Invoices.CreateInvoice()`: \n  *  `request.body` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error` **Changed** (Breaking ⚠️)\n* `MoovClient.Invoices.ListInvoices()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Invoices.GetInvoice()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Invoices.UpdateInvoice()`: \n  *  `request.body` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error` **Changed** (Breaking ⚠️)\n* `MoovClient.TransferConfig.Create()`:  `response.transferControls` **Added**\n* `MoovClient.TransferConfig.Get()`:  `response.transferControls` **Added**\n* `MoovClient.TransferConfig.Update()`:  `response.transferControls` **Added**\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln

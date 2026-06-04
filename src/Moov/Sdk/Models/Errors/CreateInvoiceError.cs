@@ -32,8 +32,8 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("dueDate")]
         public string? DueDate { get; set; }
 
-        [JsonProperty("taxAmount")]
-        public AmountDecimalValidationError? TaxAmount { get; set; }
+        [JsonProperty("amountDetails")]
+        public AmountDetailsValidationError? AmountDetails { get; set; }
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -61,8 +61,8 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.DueDate instead.")]
         public string? DueDate { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.TaxAmount instead.")]
-        public AmountDecimalValidationError? TaxAmount { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.AmountDetails instead.")]
+        public AmountDetailsValidationError? AmountDetails { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -82,7 +82,7 @@ namespace Moov.Sdk.Models.Errors
            LineItems = payload.LineItems;
            InvoiceDate = payload.InvoiceDate;
            DueDate = payload.DueDate;
-           TaxAmount = payload.TaxAmount;
+           AmountDetails = payload.AmountDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

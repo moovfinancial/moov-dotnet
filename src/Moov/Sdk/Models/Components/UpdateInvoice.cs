@@ -33,16 +33,16 @@ namespace Moov.Sdk.Models.Components
 
         /// <summary>
         /// The status can be updated to one of the following values under specific conditions:<br/>
-        /// - `canceled`: Can only be set if the current status is `draft`, `unpaid`, or `overdue`. Canceling an invoice<br/>
-        ///   indicates the invoice is no longer expected to be paid (e.g., the charge was waived or terms changed).<br/>
-        ///   Canceled invoices still appear in list results by default and remain part of the invoice history.<br/>
-        ///   To completely discard an invoice created by mistake, use the delete endpoint instead.<br/>
-        /// - `unpaid`: Can only be set if the current status is `draft`. Setting the status to `unpaid` finalizes the invoice and sends an email with a payment link to the customer.
+        ///   - `canceled`: Can only be set if the current status is `draft`, `unpaid`, or `overdue`. Canceling an invoice<br/>
+        ///     indicates the invoice is no longer expected to be paid (e.g., the charge was waived or terms changed).<br/>
+        ///     Canceled invoices still appear in list results by default and remain part of the invoice history.<br/>
+        ///     To completely discard an invoice created by mistake, use the delete endpoint instead.<br/>
+        ///   - `unpaid`: Can only be set if the current status is `draft`. Setting the status to `unpaid` finalizes the invoice and sends an email with a payment link to the customer.
         /// </summary>
         [JsonProperty("status")]
         public InvoiceStatus? Status { get; set; }
 
-        [JsonProperty("taxAmount")]
-        public AmountDecimalUpdate? TaxAmount { get; set; }
+        [JsonProperty("amountDetails")]
+        public AmountDetailsUpdate? AmountDetails { get; set; }
     }
 }

@@ -12,20 +12,19 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
-    /// <summary>
-    /// Configurable options for a transfer.
-    /// </summary>
-    public class TransferConfig
+    public class AmountDetails
     {
         /// <summary>
-        /// Tip presets when calculating tips for a transfer.
+        /// The amount of tax applied to the invoice.
         /// </summary>
-        [JsonProperty("tipPresets")]
-        public TipPresets? TipPresets { get; set; }
+        [JsonProperty("tax")]
+        public AmountDecimal? Tax { get; set; }
 
-        [JsonProperty("transferControls")]
-        public List<TransferControls>? TransferControls { get; set; }
+        /// <summary>
+        /// The amount of surcharge applied to the invoice.
+        /// </summary>
+        [JsonProperty("surcharge")]
+        public AmountDecimal? Surcharge { get; set; }
     }
 }

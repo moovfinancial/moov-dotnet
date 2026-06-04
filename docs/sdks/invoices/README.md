@@ -80,10 +80,6 @@ var res = await sdk.Invoices.CreateInvoiceAsync(
         },
         InvoiceDate = System.DateTime.Parse("2026-01-15T00:00:00Z").ToUniversalTime(),
         DueDate = System.DateTime.Parse("2026-02-15T00:00:00Z").ToUniversalTime(),
-        TaxAmount = new AmountDecimal() {
-            Currency = "USD",
-            ValueDecimal = "80.00",
-        },
     }
 );
 

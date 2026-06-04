@@ -9,23 +9,15 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
-    /// <summary>
-    /// Configurable options for a transfer.
-    /// </summary>
-    public class TransferConfig
+    public class AmountDetailsValidationError
     {
-        /// <summary>
-        /// Tip presets when calculating tips for a transfer.
-        /// </summary>
-        [JsonProperty("tipPresets")]
-        public TipPresets? TipPresets { get; set; }
+        [JsonProperty("tax")]
+        public string? Tax { get; set; }
 
-        [JsonProperty("transferControls")]
-        public List<TransferControls>? TransferControls { get; set; }
+        [JsonProperty("surcharge")]
+        public string? Surcharge { get; set; }
     }
 }
