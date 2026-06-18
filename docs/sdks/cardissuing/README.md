@@ -36,7 +36,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="requestCard" method="post" path="/issuing/{accountID}/issued-cards" -->
+<!-- UsageSnippet language="csharp" operationID="requestCard" method="post" path="/issuing/{accountID}/cards" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
@@ -50,17 +50,17 @@ var sdk = new MoovClient(security: new Security() {
 var res = await sdk.CardIssuing.RequestAsync(
     accountID: "4d9ac71a-efcc-4bdf-bcfe-d710ca654e3e",
     body: new RequestCard() {
-        FundingWalletID = "fd98e3b2-696f-4f67-9250-17b3474ababf",
-        AuthorizedUser = new CreateAuthorizedUser() {
-            FirstName = "Milton",
-            LastName = "Stiedemann",
-            BirthDate = new BirthDate() {
-                Day = 9,
-                Month = 11,
-                Year = 1989,
-            },
+        Metadata = new Dictionary<string, string>() {
+            { "optional", "metadata" },
         },
-        FormFactor = IssuedCardFormFactor.Virtual,
+        BillingAddress = new Address() {
+            AddressLine1 = "123 Main Street",
+            AddressLine2 = "Apt 302",
+            City = "Boulder",
+            StateOrProvince = "CO",
+            PostalCode = "80301",
+            Country = "US",
+        },
         Expiration = new CardExpiration() {
             Month = "01",
             Year = "21",
@@ -107,7 +107,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="listIssuedCards" method="get" path="/issuing/{accountID}/issued-cards" -->
+<!-- UsageSnippet language="csharp" operationID="listIssuedCards" method="get" path="/issuing/{accountID}/cards" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
@@ -154,7 +154,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="getIssuedCard" method="get" path="/issuing/{accountID}/issued-cards/{issuedCardID}" -->
+<!-- UsageSnippet language="csharp" operationID="getIssuedCard" method="get" path="/issuing/{accountID}/cards/{issuedCardID}" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
@@ -198,10 +198,11 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateIssuedCard" method="patch" path="/issuing/{accountID}/issued-cards/{issuedCardID}" -->
+<!-- UsageSnippet language="csharp" operationID="updateIssuedCard" method="patch" path="/issuing/{accountID}/cards/{issuedCardID}" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
+using System.Collections.Generic;
 
 var sdk = new MoovClient(security: new Security() {
     Username = "",
@@ -212,12 +213,16 @@ var res = await sdk.CardIssuing.UpdateAsync(
     accountID: "44db31bc-2813-424b-9b8c-2d3f5f1300e3",
     issuedCardID: "69ca2a7e-7bbc-4176-9d0c-2a1aa7143006",
     body: new UpdateIssuedCard() {
-        AuthorizedUser = new CreateAuthorizedUserUpdate() {
-            BirthDate = new BirthDateUpdate() {
-                Day = 9,
-                Month = 11,
-                Year = 1989,
-            },
+        Metadata = new Dictionary<string, string>() {
+            { "optional", "metadata" },
+        },
+        BillingAddress = new BillingAddress() {
+            AddressLine1 = "123 Main Street",
+            AddressLine2 = "Apt 302",
+            City = "Boulder",
+            StateOrProvince = "CO",
+            PostalCode = "80301",
+            Country = "US",
         },
     }
 );
@@ -256,7 +261,7 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read-secure` scop
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="getFullIssuedCard" method="get" path="/issuing/{accountID}/issued-cards/{issuedCardID}/details" -->
+<!-- UsageSnippet language="csharp" operationID="getFullIssuedCard" method="get" path="/issuing/{accountID}/cards/{issuedCardID}/details" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;

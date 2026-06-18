@@ -11,16 +11,20 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
 
-    /// <summary>
-    /// Fields for identifying an authorized individual.
-    /// </summary>
-    public class AuthorizedUser
+    public class WebhookDataAuthorizationExpiring
     {
-        [JsonProperty("firstName")]
-        public string FirstName { get; set; } = default!;
+        [JsonProperty("merchantAccountID")]
+        public string MerchantAccountID { get; set; } = default!;
 
-        [JsonProperty("lastName")]
-        public string LastName { get; set; } = default!;
+        [JsonProperty("partnerAccountID")]
+        public string PartnerAccountID { get; set; } = default!;
+
+        [JsonProperty("authorizationID")]
+        public string AuthorizationID { get; set; } = default!;
+
+        [JsonProperty("expiresOn")]
+        public DateTime ExpiresOn { get; set; } = default!;
     }
 }

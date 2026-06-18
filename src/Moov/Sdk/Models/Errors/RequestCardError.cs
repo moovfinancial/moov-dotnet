@@ -17,17 +17,17 @@ namespace Moov.Sdk.Models.Errors
 
     public class RequestCardErrorPayload
     {
-        [JsonProperty("fundingWalletID")]
-        public string? FundingWalletID { get; set; }
+        [JsonProperty("authorizedUserAccountID")]
+        public string? AuthorizedUserAccountID { get; set; }
 
-        [JsonProperty("formFactor")]
-        public string? FormFactor { get; set; }
+        [JsonProperty("nickname")]
+        public string? Nickname { get; set; }
 
-        [JsonProperty("authorizedUser")]
-        public CreateAuthorizedUserError? AuthorizedUser { get; set; }
+        [JsonProperty("metadata")]
+        public string? Metadata { get; set; }
 
-        [JsonProperty("memo")]
-        public string? Memo { get; set; }
+        [JsonProperty("billingAddress")]
+        public AddressError? BillingAddress { get; set; }
 
         [JsonProperty("expiration")]
         public CardExpirationError? Expiration { get; set; }
@@ -46,17 +46,17 @@ namespace Moov.Sdk.Models.Errors
         /// </summary>
         public RequestCardErrorPayload Payload { get; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.FundingWalletID instead.")]
-        public string? FundingWalletID { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.AuthorizedUserAccountID instead.")]
+        public string? AuthorizedUserAccountID { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.FormFactor instead.")]
-        public string? FormFactor { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.Nickname instead.")]
+        public string? Nickname { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.AuthorizedUser instead.")]
-        public CreateAuthorizedUserError? AuthorizedUser { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.Metadata instead.")]
+        public string? Metadata { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.Memo instead.")]
-        public string? Memo { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.BillingAddress instead.")]
+        public AddressError? BillingAddress { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use RequestCardError.Payload.Expiration instead.")]
         public CardExpirationError? Expiration { get; set; }
@@ -77,10 +77,10 @@ namespace Moov.Sdk.Models.Errors
            Payload = payload;
 
            #pragma warning disable CS0618
-           FundingWalletID = payload.FundingWalletID;
-           FormFactor = payload.FormFactor;
-           AuthorizedUser = payload.AuthorizedUser;
-           Memo = payload.Memo;
+           AuthorizedUserAccountID = payload.AuthorizedUserAccountID;
+           Nickname = payload.Nickname;
+           Metadata = payload.Metadata;
+           BillingAddress = payload.BillingAddress;
            Expiration = payload.Expiration;
            Controls = payload.Controls;
            HttpMeta = payload.HttpMeta;
