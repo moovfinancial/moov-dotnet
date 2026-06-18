@@ -12,29 +12,24 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
     public class RequestCard
     {
-        [JsonProperty("fundingWalletID")]
-        public string FundingWalletID { get; set; } = default!;
+        [JsonProperty("authorizedUserAccountID")]
+        public string? AuthorizedUserAccountID { get; set; }
+
+        [JsonProperty("nickname")]
+        public string? Nickname { get; set; }
 
         /// <summary>
-        /// Fields for identifying an authorized individual.
+        /// Free-form key-value pair list. Useful for storing information that is not captured elsewhere.
         /// </summary>
-        [JsonProperty("authorizedUser")]
-        public CreateAuthorizedUser AuthorizedUser { get; set; } = default!;
+        [JsonProperty("metadata")]
+        public Dictionary<string, string>? Metadata { get; set; }
 
-        /// <summary>
-        /// Specifies the type of spend card to be issued. Presently supports virtual only, providing a digital number without a physical card.
-        /// </summary>
-        [JsonProperty("formFactor")]
-        public IssuedCardFormFactor FormFactor { get; set; } = default!;
-
-        /// <summary>
-        /// An optional descriptive name for the card.
-        /// </summary>
-        [JsonProperty("memo")]
-        public string? Memo { get; set; }
+        [JsonProperty("billingAddress")]
+        public Address? BillingAddress { get; set; }
 
         /// <summary>
         /// The expiration date of the card or token.
