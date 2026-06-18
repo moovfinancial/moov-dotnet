@@ -7,23 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace Moov.Sdk.Models.Components
+namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Utils;
-    using Newtonsoft.Json;
 
-    public class WebhookDataSweepCreated
+    public class ListCancellationsRequest
     {
         /// <summary>
-        /// The accountID associated with the wallet being swept.
+        /// Moov account ID of the partner or transfer's source or destination.
         /// </summary>
-        [JsonProperty("accountID")]
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
 
-        [JsonProperty("walletID")]
-        public string WalletID { get; set; } = default!;
-
-        [JsonProperty("sweepID")]
-        public string SweepID { get; set; } = default!;
+        /// <summary>
+        /// Identifier for the transfer.
+        /// </summary>
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=transferID")]
+        public string TransferID { get; set; } = default!;
     }
 }

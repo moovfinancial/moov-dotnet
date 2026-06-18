@@ -189,7 +189,7 @@ namespace Moov.Sdk
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/issued-cards", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/cards", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -385,7 +385,7 @@ namespace Moov.Sdk
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/issued-cards", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/cards", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -518,7 +518,7 @@ namespace Moov.Sdk
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/issued-cards/{issuedCardID}", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/cards/{issuedCardID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -657,7 +657,7 @@ namespace Moov.Sdk
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/issued-cards/{issuedCardID}", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/cards/{issuedCardID}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -850,7 +850,7 @@ namespace Moov.Sdk
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/issued-cards/{issuedCardID}/details", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/cards/{issuedCardID}/details", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);

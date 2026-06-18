@@ -20,11 +20,14 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("state")]
         public string? State { get; set; }
 
-        [JsonProperty("memo")]
-        public string? Memo { get; set; }
+        [JsonProperty("nickname")]
+        public string? Nickname { get; set; }
 
-        [JsonProperty("authorizedUser")]
-        public CreateAuthorizedUserError? AuthorizedUser { get; set; }
+        [JsonProperty("metadata")]
+        public string? Metadata { get; set; }
+
+        [JsonProperty("billingAddress")]
+        public AddressError? BillingAddress { get; set; }
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -40,11 +43,14 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.State instead.")]
         public string? State { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.Memo instead.")]
-        public string? Memo { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.Nickname instead.")]
+        public string? Nickname { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.AuthorizedUser instead.")]
-        public CreateAuthorizedUserError? AuthorizedUser { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.Metadata instead.")]
+        public string? Metadata { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.BillingAddress instead.")]
+        public AddressError? BillingAddress { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -60,8 +66,9 @@ namespace Moov.Sdk.Models.Errors
 
            #pragma warning disable CS0618
            State = payload.State;
-           Memo = payload.Memo;
-           AuthorizedUser = payload.AuthorizedUser;
+           Nickname = payload.Nickname;
+           Metadata = payload.Metadata;
+           BillingAddress = payload.BillingAddress;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

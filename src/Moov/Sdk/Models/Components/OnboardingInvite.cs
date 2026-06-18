@@ -56,7 +56,7 @@ namespace Moov.Sdk.Models.Components
         public List<ApplicationScope>? GrantScopes { get; set; }
 
         /// <summary>
-        /// List of <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities</a> you intend to request for this<br/>
+        /// List of <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities</a> you intend to request for this<br/>
         ///   account. These values are used to determine what information to collect from the user during onboarding.
         /// </summary>
         [JsonProperty("capabilities")]
