@@ -13,6 +13,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// The full details of an issued card, including PAN and CVV.
@@ -38,22 +39,34 @@ namespace Moov.Sdk.Models.Components
         public CardExpiration Expiration { get; set; } = default!;
 
         /// <summary>
-        /// Fields for identifying an authorized individual.
-        /// </summary>
-        [JsonProperty("authorizedUser")]
-        public AuthorizedUser AuthorizedUser { get; set; } = default!;
-
-        /// <summary>
-        /// Optional descriptor for the card.
-        /// </summary>
-        [JsonProperty("memo")]
-        public string? Memo { get; set; }
-
-        /// <summary>
         /// Unique identifier for the wallet funding the card.
         /// </summary>
         [JsonProperty("fundingWalletID")]
         public string FundingWalletID { get; set; } = default!;
+
+        /// <summary>
+        /// Identifier for the account of the card's authorized user.
+        /// </summary>
+        [JsonProperty("authorizedUserAccountID")]
+        public string? AuthorizedUserAccountID { get; set; }
+
+        /// <summary>
+        /// An optional descriptive name for the card.
+        /// </summary>
+        [JsonProperty("nickname")]
+        public string? Nickname { get; set; }
+
+        /// <summary>
+        /// Free-form key-value pair list. Useful for storing information that is not captured elsewhere.
+        /// </summary>
+        [JsonProperty("metadata")]
+        public Dictionary<string, string>? Metadata { get; set; }
+
+        /// <summary>
+        /// Billing address associated with the card.
+        /// </summary>
+        [JsonProperty("billingAddress")]
+        public Address? BillingAddress { get; set; }
 
         /// <summary>
         /// The `state` represents the operational status of an issued card. A card can only approve incoming authorizations if it is in an active state.<br/>
@@ -77,6 +90,9 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("createdOn")]
         public DateTime CreatedOn { get; set; } = default!;
+
+        [JsonProperty("updatedOn")]
+        public DateTime UpdatedOn { get; set; } = default!;
 
         /// <summary>
         /// The issued card's Primary Account Number (PAN).

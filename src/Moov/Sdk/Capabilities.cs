@@ -28,7 +28,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Retrieve all the capabilities an account has requested.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
@@ -44,7 +44,7 @@ namespace Moov.Sdk
         public  Task<ListCapabilitiesResponse> ListAsync(string accountID, CancellationToken? cancellationToken = null);
 
         /// <summary>
-        /// Request capabilities for a specific account. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Request capabilities for a specific account. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.write` scope.
@@ -67,7 +67,7 @@ namespace Moov.Sdk
         );
 
         /// <summary>
-        /// Retrieve a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Retrieve a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
@@ -76,7 +76,13 @@ namespace Moov.Sdk
         /// <param name="capabilityID">
         /// Moov account capabilities.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in your list. These are read-only capabilities that Moov requests and uses for account verification purposes. These capabilities remains active with your account and require no additional action.
+        /// **Deprecated capabilities**<br/>
+        /// <br/>
+        /// The `send-funds`, `collect-funds`, and `wallet` capability IDs are deprecated. Request granular capabilities instead (for example, `send-funds.ach`, `collect-funds.card-payments`, or `wallet.balance`). Deprecated values will be removed in a future API version.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
+        /// <br/>
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCapabilityResponse"/> response envelope when completed.</returns>
@@ -92,7 +98,7 @@ namespace Moov.Sdk
         );
 
         /// <summary>
-        /// Disable a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Disable a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         ///   To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.write` scope.
@@ -101,7 +107,13 @@ namespace Moov.Sdk
         /// <param name="capabilityID">
         /// Moov account capabilities.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in your list. These are read-only capabilities that Moov requests and uses for account verification purposes. These capabilities remains active with your account and require no additional action.
+        /// **Deprecated capabilities**<br/>
+        /// <br/>
+        /// The `send-funds`, `collect-funds`, and `wallet` capability IDs are deprecated. Request granular capabilities instead (for example, `send-funds.ach`, `collect-funds.card-payments`, or `wallet.balance`). Deprecated values will be removed in a future API version.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
+        /// <br/>
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisableCapabilityResponse"/> response envelope when completed.</returns>
@@ -134,7 +146,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Retrieve all the capabilities an account has requested.<br/>
         /// <br/>
-        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
@@ -263,7 +275,7 @@ namespace Moov.Sdk
 
 
         /// <summary>
-        /// Request capabilities for a specific account. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Request capabilities for a specific account. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.write` scope.
@@ -456,7 +468,7 @@ namespace Moov.Sdk
 
 
         /// <summary>
-        /// Retrieve a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Retrieve a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.read` scope.
@@ -465,7 +477,13 @@ namespace Moov.Sdk
         /// <param name="capabilityID">
         /// Moov account capabilities.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in your list. These are read-only capabilities that Moov requests and uses for account verification purposes. These capabilities remains active with your account and require no additional action.
+        /// **Deprecated capabilities**<br/>
+        /// <br/>
+        /// The `send-funds`, `collect-funds`, and `wallet` capability IDs are deprecated. Request granular capabilities instead (for example, `send-funds.ach`, `collect-funds.card-payments`, or `wallet.balance`). Deprecated values will be removed in a future API version.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
+        /// <br/>
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCapabilityResponse"/> response envelope when completed.</returns>
@@ -592,7 +610,7 @@ namespace Moov.Sdk
 
 
         /// <summary>
-        /// Disable a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/">capabilities guide</a> to learn more.<br/>
+        /// Disable a specific capability that an account has requested. Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to learn more.<br/>
         /// <br/>
         ///   To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/capabilities.write` scope.
@@ -601,7 +619,13 @@ namespace Moov.Sdk
         /// <param name="capabilityID">
         /// Moov account capabilities.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in your list. These are read-only capabilities that Moov requests and uses for account verification purposes. These capabilities remains active with your account and require no additional action.
+        /// **Deprecated capabilities**<br/>
+        /// <br/>
+        /// The `send-funds`, `collect-funds`, and `wallet` capability IDs are deprecated. Request granular capabilities instead (for example, `send-funds.ach`, `collect-funds.card-payments`, or `wallet.balance`). Deprecated values will be removed in a future API version.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
+        /// <br/>
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisableCapabilityResponse"/> response envelope when completed.</returns>
