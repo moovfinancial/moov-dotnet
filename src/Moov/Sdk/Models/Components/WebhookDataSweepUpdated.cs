@@ -15,6 +15,12 @@ namespace Moov.Sdk.Models.Components
 
     public class WebhookDataSweepUpdated
     {
+        /// <summary>
+        /// The accountID associated with the wallet being swept.
+        /// </summary>
+        [JsonProperty("accountID")]
+        public string AccountID { get; set; } = default!;
+
         [JsonProperty("walletID")]
         public string WalletID { get; set; } = default!;
 

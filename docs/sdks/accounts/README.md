@@ -4,21 +4,19 @@
 
 ### Available Operations
 
-* [Create](#create) - You can create **business** or **individual** accounts for your users (i.e., customers, merchants) by passing the required
-information to Moov. Requirements differ per account type and requested [capabilities](https://docs.moov.io/guides/accounts/capabilities/requirements/).
+* [Create](#create) - You can create business or individual accounts for your users (i.e., customers, merchants) by passing the required information to Moov. Requirements differ per account type and requested [capabilities](https://docs.moov.io/guides/accounts/capabilities/reference/).
 
-If you're requesting the `wallet`, `send-funds`, `collect-funds`, or `card-issuing` capabilities, you'll need to:
-  + Send Moov the user [platform terms of service agreement](https://docs.moov.io/guides/accounts/requirements/platform-agreement/) acceptance.
-    This can be done upon account creation, or by [patching](https://docs.moov.io/api/moov-accounts/accounts/patch/) the account using the `termsOfService` field.
-If you're creating a business account with the business type `llc`, `partnership`, or `privateCorporation`, you'll need to:
+The `transfers` capability is automatically requested for every account. If you request any capability beyond `transfers` (for example, `send-funds.ach`, `collect-funds.card-payments`), you'll need to:
+  + Send Moov the user's [platform terms of service agreement](https://docs.moov.io/guides/accounts/requirements/platform-agreement/) acceptance. This can be done at account creation, or by [patching](https://docs.moov.io/api/moov-accounts/accounts/patch/) the account using the `termsOfService` field.
+  + Fulfill the [verification and underwriting requirements](https://docs.moov.io/guides/accounts/requirements/) for each requested capability. A capability isn't enabled until its requirements pass — check the capability's status to see what's still outstanding.
+
+If you're creating a business account, depending on the business type, you'll also need to:
   + Provide [business representatives](https://docs.moov.io/api/moov-accounts/representatives/) after creating the account.
   + [Patch](https://docs.moov.io/api/moov-accounts/accounts/patch/) the account to indicate that business representative ownership information is complete.
 
-Visit our documentation to read more about [creating accounts](https://docs.moov.io/guides/accounts/create-accounts/) and [verification requirements](https://docs.moov.io/guides/accounts/requirements/identity-verification/).
-Note that the `mode` field (for production or sandbox) is only required when creating a _facilitator_ account. All non-facilitator account requests will ignore the mode field and be set to the calling facilitator's mode.
+Visit our documentation to read more about [creating accounts](https://docs.moov.io/guides/accounts/create-accounts/) and [verification requirements](https://docs.moov.io/guides/accounts/requirements/identity-verification/). Note that the `mode` field (for production or sandbox) is only required when creating a Partner account. All other account requests will ignore the mode field and be set to the calling Partner account's mode.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
-to specify the `/accounts.write` scope.
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need to specify the `/accounts.write` scope.
 * [List](#list) - List or search accounts to which the caller is connected.
 
 All supported query parameters are optional. If none are provided the response will include all connected accounts.
@@ -81,21 +79,19 @@ token patched to the account. Read more in our [documentation](https://docs.moov
 
 ## Create
 
-You can create **business** or **individual** accounts for your users (i.e., customers, merchants) by passing the required
-information to Moov. Requirements differ per account type and requested [capabilities](https://docs.moov.io/guides/accounts/capabilities/requirements/).
+You can create business or individual accounts for your users (i.e., customers, merchants) by passing the required information to Moov. Requirements differ per account type and requested [capabilities](https://docs.moov.io/guides/accounts/capabilities/reference/).
 
-If you're requesting the `wallet`, `send-funds`, `collect-funds`, or `card-issuing` capabilities, you'll need to:
-  + Send Moov the user [platform terms of service agreement](https://docs.moov.io/guides/accounts/requirements/platform-agreement/) acceptance.
-    This can be done upon account creation, or by [patching](https://docs.moov.io/api/moov-accounts/accounts/patch/) the account using the `termsOfService` field.
-If you're creating a business account with the business type `llc`, `partnership`, or `privateCorporation`, you'll need to:
+The `transfers` capability is automatically requested for every account. If you request any capability beyond `transfers` (for example, `send-funds.ach`, `collect-funds.card-payments`), you'll need to:
+  + Send Moov the user's [platform terms of service agreement](https://docs.moov.io/guides/accounts/requirements/platform-agreement/) acceptance. This can be done at account creation, or by [patching](https://docs.moov.io/api/moov-accounts/accounts/patch/) the account using the `termsOfService` field.
+  + Fulfill the [verification and underwriting requirements](https://docs.moov.io/guides/accounts/requirements/) for each requested capability. A capability isn't enabled until its requirements pass — check the capability's status to see what's still outstanding.
+
+If you're creating a business account, depending on the business type, you'll also need to:
   + Provide [business representatives](https://docs.moov.io/api/moov-accounts/representatives/) after creating the account.
   + [Patch](https://docs.moov.io/api/moov-accounts/accounts/patch/) the account to indicate that business representative ownership information is complete.
 
-Visit our documentation to read more about [creating accounts](https://docs.moov.io/guides/accounts/create-accounts/) and [verification requirements](https://docs.moov.io/guides/accounts/requirements/identity-verification/).
-Note that the `mode` field (for production or sandbox) is only required when creating a _facilitator_ account. All non-facilitator account requests will ignore the mode field and be set to the calling facilitator's mode.
+Visit our documentation to read more about [creating accounts](https://docs.moov.io/guides/accounts/create-accounts/) and [verification requirements](https://docs.moov.io/guides/accounts/requirements/identity-verification/). Note that the `mode` field (for production or sandbox) is only required when creating a Partner account. All other account requests will ignore the mode field and be set to the calling Partner account's mode.
 
-To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
-to specify the `/accounts.write` scope.
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) you'll need to specify the `/accounts.write` scope.
 
 ### Example Usage
 

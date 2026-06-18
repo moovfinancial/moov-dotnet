@@ -94,6 +94,8 @@ namespace Moov.Sdk.Models.Components
         WalletTransactionUpdated,
         [JsonProperty("billingStatement.created")]
         BillingStatementCreated,
+        [JsonProperty("authorization.expiring")]
+        AuthorizationExpiring,
     }
 
     public static class WebhookEventTypeExtension

@@ -1,0 +1,11 @@
+# WebhookDataAuthorizationExpiring
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `MerchantAccountID`                                                                   | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `PartnerAccountID`                                                                    | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `AuthorizationID`                                                                     | *string*                                                                              | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `ExpiresOn`                                                                           | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_check_mark:                                                                    | N/A                                                                                   |

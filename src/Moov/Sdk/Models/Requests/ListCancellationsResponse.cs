@@ -7,24 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace Moov.Sdk.Models.Components
+namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
-    /// <summary>
-    /// Fields for identifying an authorized individual.
-    /// </summary>
-    public class CreateAuthorizedUser
+    public class ListCancellationsResponse
     {
-        [JsonProperty("firstName")]
-        public string FirstName { get; set; } = default!;
+        [JsonProperty("-")]
+        public HTTPMetadata HttpMeta { get; set; } = default!;
 
-        [JsonProperty("lastName")]
-        public string LastName { get; set; } = default!;
+        /// <summary>
+        /// The request completed successfully.
+        /// </summary>
+        public List<Cancellation>? Cancellations { get; set; }
 
-        [JsonProperty("birthDate")]
-        public BirthDate? BirthDate { get; set; }
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }
