@@ -26,24 +26,6 @@ namespace Moov.Sdk.Models.Components
         public List<CollectionPaymentMethodType> AllowedMethods { get; set; } = default!;
 
         /// <summary>
-        /// Indicates whether the payment amount is fixed by the merchant or open for the buyer to choose.
-        /// </summary>
-        [JsonProperty("amountType")]
-        public PaymentLinkPaymentDetailsAmountType? AmountType { get; set; } = Moov.Sdk.Models.Components.PaymentLinkPaymentDetailsAmountType.Fixed;
-
-        /// <summary>
-        /// The minimum and maximum amounts the buyer can specify when `amountType` is `open`.
-        /// </summary>
-        [JsonProperty("amountRange")]
-        public AmountDecimalRange? AmountRange { get; set; }
-
-        /// <summary>
-        /// Optional preset amounts displayed to the buyer when `amountType` is `open`.
-        /// </summary>
-        [JsonProperty("suggestedAmounts")]
-        public List<AmountDecimal>? SuggestedAmounts { get; set; }
-
-        /// <summary>
         /// Options for payment links used to collect a card payment.
         /// </summary>
         [JsonProperty("cardDetails")]

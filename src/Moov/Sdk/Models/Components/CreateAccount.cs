@@ -50,6 +50,13 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("settings")]
         public Settings? Settings { get; set; }
 
+        /// <summary>
+        /// Capabilities to request when the account is created. Request granular capability IDs that match your use case.<br/>
+        /// <br/>
+        /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
+        /// <br/>
+        /// The `send-funds`, `collect-funds`, and `wallet` capability IDs are deprecated. Use granular values such as `send-funds.ach`, `collect-funds.card-payments`, or `wallet.balance` instead.
+        /// </summary>
         [JsonProperty("capabilities")]
         public List<CapabilityID>? Capabilities { get; set; }
 

@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
     public class UpdateIssuedCard
     {
@@ -22,13 +23,13 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("state")]
         public UpdateIssuedCardState? State { get; set; }
 
-        [JsonProperty("memo")]
-        public string? Memo { get; set; }
+        [JsonProperty("nickname")]
+        public string? Nickname { get; set; } = null;
 
-        /// <summary>
-        /// Fields for identifying an authorized individual.
-        /// </summary>
-        [JsonProperty("authorizedUser")]
-        public CreateAuthorizedUserUpdate? AuthorizedUser { get; set; }
+        [JsonProperty("metadata")]
+        public Dictionary<string, string>? Metadata { get; set; } = null;
+
+        [JsonProperty("billingAddress")]
+        public BillingAddress? BillingAddress { get; set; } = null;
     }
 }

@@ -41,6 +41,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("payout")]
         public PayoutDetailsError? Payout { get; set; }
 
+        [JsonProperty("customAmountPayment")]
+        public CustomAmountPaymentDetailsError? CustomAmountPayment { get; set; }
+
         [JsonProperty("lineItems")]
         public CreatePaymentLinkLineItemsValidationError? LineItems { get; set; }
 
@@ -82,6 +85,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.Payout instead.")]
         public PayoutDetailsError? Payout { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.CustomAmountPayment instead.")]
+        public CustomAmountPaymentDetailsError? CustomAmountPayment { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreatePaymentLinkError.Payload.LineItems instead.")]
         public CreatePaymentLinkLineItemsValidationError? LineItems { get; set; }
 
@@ -109,6 +115,7 @@ namespace Moov.Sdk.Models.Errors
            Display = payload.Display;
            Payment = payload.Payment;
            Payout = payload.Payout;
+           CustomAmountPayment = payload.CustomAmountPayment;
            LineItems = payload.LineItems;
            AmountDetails = payload.AmountDetails;
            HttpMeta = payload.HttpMeta;

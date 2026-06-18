@@ -226,3 +226,9 @@ WebhookData.CreateWebhookDataWalletTransactionUpdated(/* values here */);
 ```csharp
 WebhookData.CreateWebhookBillingStatementCreated(/* values here */);
 ```
+
+### WebhookDataAuthorizationExpiring
+
+```csharp
+WebhookData.CreateWebhookDataAuthorizationExpiring(/* values here */);
+```

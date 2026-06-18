@@ -13,6 +13,15 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// A range of values that an AmountDecimal can take.<br/>
+    /// <br/>
+    /// If either `minimum` or `maximum` is omitted, the range is "open" on that end:<br/>
+    /// <br/>
+    /// `minimum` specified: `amt &gt;= minimum`<br/>
+    /// `maximum` specified: `amt &lt;= maximum`<br/>
+    /// both specified: `minimum &lt;= amt &lt;= maximum`
+    /// </summary>
     public class AmountDecimalRangeUpdate
     {
         /// <summary>
