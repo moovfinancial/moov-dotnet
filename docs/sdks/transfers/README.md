@@ -55,6 +55,10 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
   
   To access this endpoint using a [token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
   to specify the `/accounts/{accountID}/transfers.write` scope.
+* [ListCancellations](#listcancellations) -   Get a list of cancellations for a transfer.
+  
+  To access this endpoint using a [token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
+  to specify the `/accounts/{accountID}/transfers.read` scope.
 * [GetCancellation](#getcancellation) -   Get details of a cancellation for a transfer.
   
   To access this endpoint using a [token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
@@ -496,6 +500,50 @@ var res = await sdk.Transfers.CreateCancellationAsync(
 | Error Type                          | Status Code                         | Content Type                        |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## ListCancellations
+
+  Get a list of cancellations for a transfer.
+  
+  To access this endpoint using a [token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
+  to specify the `/accounts/{accountID}/transfers.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listCancellations" method="get" path="/accounts/{accountID}/transfers/{transferID}/cancellations" example="Cancellations" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.ListCancellationsAsync(
+    accountID: "<id>",
+    transferID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `AccountID`                                                         | *string*                                                            | :heavy_check_mark:                                                  | Moov account ID of the partner or transfer's source or destination. |
+| `TransferID`                                                        | *string*                                                            | :heavy_check_mark:                                                  | Identifier for the transfer.                                        |
+
+### Response
+
+**[ListCancellationsResponse](../../Models/Requests/ListCancellationsResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## GetCancellation
