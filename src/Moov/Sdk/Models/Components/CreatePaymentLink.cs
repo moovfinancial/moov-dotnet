@@ -17,7 +17,7 @@ namespace Moov.Sdk.Models.Components
     /// <summary>
     /// Request to create a new payment link.<br/>
     /// <br/>
-    /// A payment link must include either `payment` or `payout` details, but not both. For payout payment links,<br/>
+    /// A payment link must include exactly one of `payment`, `payout`, or `customAmountPayment` details. For payout payment links,<br/>
     /// `maxUses` will automatically be set to 1, as these are intended for a one-time disbursement<br/>
     /// to a specific recipient.
     /// </summary>
@@ -36,12 +36,12 @@ namespace Moov.Sdk.Models.Components
         public string MerchantPaymentMethodID { get; set; } = default!;
 
         /// <summary>
-        /// The fixed amount of the payment link. <br/>
+        /// The fixed amount of the payment link.<br/>
         /// <br/>
         /// In API versions before `2026.07.00`, this was a required field.<br/>
         /// <br/>
-        /// In API version `2026.07.00` and beyond, this field is required for `fixed` payment amount types and omitted <br/>
-        /// for `open` payment amount types.
+        /// In API version `2026.07.00` and beyond, this field is required for `payment` and `payout` links and must be<br/>
+        /// omitted for `customAmountPayment` links, where the payor chooses the amount.
         /// </summary>
         [JsonProperty("amount")]
         public Amount? Amount { get; set; }
@@ -77,6 +77,12 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("payout")]
         public PaymentLinkPayoutDetails? Payout { get; set; }
+
+        /// <summary>
+        /// Options for a custom amount payment link. Mutually exclusive with `payment` and `payout`.
+        /// </summary>
+        [JsonProperty("customAmountPayment")]
+        public PaymentLinkCustomAmountPaymentDetails? CustomAmountPayment { get; set; }
 
         /// <summary>
         /// An optional collection of line items for a payment link.<br/>

@@ -21,3 +21,4 @@ var value = CardTransactionStatus.Initiated;
 | `Settled`   | settled     |
 | `Failed`    | failed      |
 | `Completed` | completed   |
+| `Deferred`  | deferred    |

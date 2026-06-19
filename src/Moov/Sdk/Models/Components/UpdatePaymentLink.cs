@@ -41,6 +41,12 @@ namespace Moov.Sdk.Models.Components
         public PaymentLinkPayoutDetailsUpdate? Payout { get; set; }
 
         /// <summary>
+        /// Options for a custom amount payment link. A payment link's type cannot be changed after creation.
+        /// </summary>
+        [JsonProperty("customAmountPayment")]
+        public PaymentLinkCustomAmountPaymentDetailsUpdate? CustomAmountPayment { get; set; }
+
+        /// <summary>
         /// An optional collection of line items for a payment link.<br/>
         /// When line items are provided, their total plus tax must equal the payment link amount.
         /// </summary>

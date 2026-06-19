@@ -35,6 +35,12 @@ namespace Moov.Sdk.Models.Components
         public string? DynamicDescriptor { get; set; }
 
         /// <summary>
+        /// The scheduled date and time for the transfer to be delivered. This field is only valid for push-to-card transfers. Must be between 24 and 48 hours in the future.
+        /// </summary>
+        [JsonProperty("scheduledDeliveryOn")]
+        public DateTime? ScheduledDeliveryOn { get; set; }
+
+        /// <summary>
         /// Specifies the nature and initiator of a transaction. <br/>
         /// <br/>
         /// Crucial for recurring and merchant-initiated transactions as per card scheme rules. <br/>
