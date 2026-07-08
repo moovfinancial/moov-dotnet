@@ -29,7 +29,7 @@ namespace Moov.Sdk
         /// Link a bank account to an existing Moov account. Read our <a href="https://docs.moov.io/guides/sources/bank-accounts/">bank accounts guide</a> to learn more.<br/>
         /// <br/>
         /// It is strongly recommended that callers include the `X-Wait-For` header, set to `payment-method`, if the newly linked<br/>
-        /// bank-account is intended to be used right away. If this header is not included, the caller will need to poll the <a href="https://docs.moov.io/api/sources/payment-methods/list/">List Payment<br/>
+        /// bank account is intended to be used right away. If this header is not included, the caller will need to poll the <a href="https://docs.moov.io/api/sources/payment-methods/list/">List Payment<br/>
         /// Methods</a>
         /// endpoint to wait for the new payment methods to be available for use.<br/>
         /// <br/>
@@ -42,7 +42,7 @@ namespace Moov.Sdk
         /// Optional header to wait for certain events, such as the creation of a payment method, to occur before returning a response.<br/>
         /// <br/>
         /// When this header is set to `payment-method`, the response will include any payment methods that were created for the newly<br/>
-        /// linked card in the `paymentMethods` field. Otherwise, the `paymentMethods` field will be omitted from the response.
+        /// linked bank account in the `paymentMethods` field. Otherwise, the `paymentMethods` field will be omitted from the response.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="LinkBankAccountResponse"/> response envelope when completed.</returns>
@@ -303,7 +303,7 @@ namespace Moov.Sdk
         /// Link a bank account to an existing Moov account. Read our <a href="https://docs.moov.io/guides/sources/bank-accounts/">bank accounts guide</a> to learn more.<br/>
         /// <br/>
         /// It is strongly recommended that callers include the `X-Wait-For` header, set to `payment-method`, if the newly linked<br/>
-        /// bank-account is intended to be used right away. If this header is not included, the caller will need to poll the <a href="https://docs.moov.io/api/sources/payment-methods/list/">List Payment<br/>
+        /// bank account is intended to be used right away. If this header is not included, the caller will need to poll the <a href="https://docs.moov.io/api/sources/payment-methods/list/">List Payment<br/>
         /// Methods</a>
         /// endpoint to wait for the new payment methods to be available for use.<br/>
         /// <br/>
@@ -316,7 +316,7 @@ namespace Moov.Sdk
         /// Optional header to wait for certain events, such as the creation of a payment method, to occur before returning a response.<br/>
         /// <br/>
         /// When this header is set to `payment-method`, the response will include any payment methods that were created for the newly<br/>
-        /// linked card in the `paymentMethods` field. Otherwise, the `paymentMethods` field will be omitted from the response.
+        /// linked bank account in the `paymentMethods` field. Otherwise, the `paymentMethods` field will be omitted from the response.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="LinkBankAccountResponse"/> response envelope when completed.</returns>

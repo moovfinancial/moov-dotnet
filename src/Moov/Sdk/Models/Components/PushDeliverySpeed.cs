@@ -14,36 +14,26 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// Status of a transaction within the card payment lifecycle.
+    /// Delivery speed options for push-to-card payouts.
     /// </summary>
-    public enum CardTransactionStatus
+    public enum PushDeliverySpeed
     {
-        [JsonProperty("initiated")]
-        Initiated,
-        [JsonProperty("confirmed")]
-        Confirmed,
-        [JsonProperty("canceled")]
-        Canceled,
-        [JsonProperty("settled")]
-        Settled,
-        [JsonProperty("failed")]
-        Failed,
-        [JsonProperty("completed")]
-        Completed,
+        [JsonProperty("instant")]
+        Instant,
         [JsonProperty("deferred")]
         Deferred,
     }
 
-    public static class CardTransactionStatusExtension
+    public static class PushDeliverySpeedExtension
     {
-        public static string Value(this CardTransactionStatus value)
+        public static string Value(this PushDeliverySpeed value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static CardTransactionStatus ToEnum(this string value)
+        public static PushDeliverySpeed ToEnum(this string value)
         {
-            foreach(var field in typeof(CardTransactionStatus).GetFields())
+            foreach(var field in typeof(PushDeliverySpeed).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -56,14 +46,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is CardTransactionStatus)
+                    if (enumVal is PushDeliverySpeed)
                     {
-                        return (CardTransactionStatus)enumVal;
+                        return (PushDeliverySpeed)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum CardTransactionStatus");
+            throw new Exception($"Unknown value {value} for enum PushDeliverySpeed");
         }
     }
 }

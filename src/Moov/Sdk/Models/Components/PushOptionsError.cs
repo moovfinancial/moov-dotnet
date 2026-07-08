@@ -9,22 +9,15 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
-    public class PayoutDetailsError
+    public class PushOptionsError
     {
-        [JsonProperty("allowedMethods")]
-        public string? AllowedMethods { get; set; }
+        [JsonProperty("allowedSpeeds")]
+        public string? AllowedSpeeds { get; set; }
 
-        [JsonProperty("recipient")]
-        public PayoutRecipientError? Recipient { get; set; }
-
-        [JsonProperty("metadata")]
-        public string? Metadata { get; set; }
-
-        [JsonProperty("pushOptions")]
-        public PushOptionsError? PushOptions { get; set; }
+        [JsonProperty("deferredBy")]
+        public string? DeferredBy { get; set; }
     }
 }
