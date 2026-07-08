@@ -122,5 +122,12 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("domesticPullFromCard")]
         public DomesticPullFromCard? DomesticPullFromCard { get; set; }
+
+        /// <summary>
+        /// The category or level of the card defined by the issuer.<br/>
+        /// Examples include, but not limited to, "REWARDS", "TRADITIONAL REWARDS", "CLASSIC", and "CORPORATE PURCHASING".
+        /// </summary>
+        [JsonProperty("cardCategory")]
+        public string? CardCategory { get; set; }
     }
 }

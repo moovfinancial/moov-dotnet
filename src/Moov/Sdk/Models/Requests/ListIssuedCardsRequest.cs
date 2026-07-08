@@ -28,7 +28,7 @@ namespace Moov.Sdk.Models.Requests
         public long? Count { get; set; }
 
         /// <summary>
-        /// Optional, comma-separated states to filter the Moov list issued cards response. For example `active,pending-verification`
+        /// Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed`
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=states")]
         public List<IssuedCardState>? States { get; set; }

@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
 
     public class CreateTransferDestinationCard
     {
@@ -20,6 +21,12 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("dynamicDescriptor")]
         public string? DynamicDescriptor { get; set; }
+
+        /// <summary>
+        /// The scheduled date and time for the transfer to be delivered. This field is only valid for push-to-card transfers. Must be between 24 and 48 hours in the future in production. In sandbox mode, any future time up to 48 hours is accepted so integrations can test deferred delivery using the sandbox test cards with relaxed wait times.
+        /// </summary>
+        [JsonProperty("scheduledDeliveryOn")]
+        public DateTime? ScheduledDeliveryOn { get; set; }
 
         /// <summary>
         /// An optional field to specify the type of card payout, used to route the transfer with the appropriate business application identifier (BAI).

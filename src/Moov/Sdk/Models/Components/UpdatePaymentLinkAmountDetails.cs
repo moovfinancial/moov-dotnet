@@ -19,12 +19,12 @@ namespace Moov.Sdk.Models.Components
         /// The amount of tax applied to the payment link.
         /// </summary>
         [JsonProperty("tax")]
-        public AmountDecimalUpdate? Tax { get; set; }
+        public Tax? Tax { get; set; } = null;
 
         /// <summary>
         /// The amount of surcharge applied to the payment link.
         /// </summary>
         [JsonProperty("surcharge")]
-        public AmountDecimalUpdate? Surcharge { get; set; }
+        public Surcharge? Surcharge { get; set; } = null;
     }
 }

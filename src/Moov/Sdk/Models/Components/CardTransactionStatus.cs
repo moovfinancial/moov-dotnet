@@ -30,6 +30,8 @@ namespace Moov.Sdk.Models.Components
         Failed,
         [JsonProperty("completed")]
         Completed,
+        [JsonProperty("deferred")]
+        Deferred,
     }
 
     public static class CardTransactionStatusExtension
