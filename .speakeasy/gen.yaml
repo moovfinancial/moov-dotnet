@@ -31,7 +31,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 25.11.8
+  version: 25.11.9
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
@@ -65,4 +65,5 @@ csharp:
   respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope-http
   sourceDirectory: src
+  targetFramework: dotnetVersion
   useNodatime: false

@@ -54,6 +54,8 @@ namespace Moov.Sdk.Models.Components
         WalletBalance,
         [JsonProperty("card-issuing")]
         CardIssuing,
+        [JsonProperty("issuing.cardholder")]
+        IssuingCardholder,
         [JsonProperty("production-app")]
         ProductionApp,
         [JsonProperty("platform.production-app")]
