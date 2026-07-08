@@ -36,6 +36,8 @@ namespace Moov.Sdk.Models.Components
         Wallet,
         [JsonProperty("card-issuing")]
         CardIssuing,
+        [JsonProperty("issuing.cardholder")]
+        IssuingCardholder,
         [JsonProperty("production-app")]
         ProductionApp,
     }
