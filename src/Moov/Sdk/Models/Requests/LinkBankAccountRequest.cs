@@ -18,7 +18,7 @@ namespace Moov.Sdk.Models.Requests
         /// Optional header to wait for certain events, such as the creation of a payment method, to occur before returning a response.<br/>
         /// <br/>
         /// When this header is set to `payment-method`, the response will include any payment methods that were created for the newly<br/>
-        /// linked card in the `paymentMethods` field. Otherwise, the `paymentMethods` field will be omitted from the response.
+        /// linked bank account in the `paymentMethods` field. Otherwise, the `paymentMethods` field will be omitted from the response.
         /// </summary>
         [SpeakeasyMetadata("header:style=simple,explode=false,name=x-wait-for")]
         public BankAccountWaitFor? XWaitFor { get; set; }
