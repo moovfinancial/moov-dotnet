@@ -68,10 +68,8 @@ namespace Moov.Sdk.Models.Components
         /// <summary>
         /// The `state` represents the operational status of an issued card. A card can only approve incoming authorizations if it is in an active state.<br/>
         /// <br/>
-        /// - `active`: The card is operational and approves authorizations. Generally becomes active shortly after card creation.<br/>
-        /// - `inactive`: The card cannot approve authorizations. This is currently a temporary state assigned post-creation during the activation process.<br/>
-        /// - `closed`: The card is permanently deactivated and cannot approve authorizations. A card can be closed by request or when it expires.<br/>
-        /// - `pending-verification`: Awaiting additional authorized user verification before the card can be activated.
+        /// - `active`: The card is operational and can approve authorizations.<br/>
+        /// - `closed`: The card is permanently deactivated and cannot approve authorizations. A card can be closed by request or when it expires.
         /// </summary>
         [JsonProperty("state")]
         public IssuedCardState State { get; set; } = default!;

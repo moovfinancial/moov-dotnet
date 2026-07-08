@@ -25,7 +25,7 @@ namespace Moov.Sdk.Models.Components
         public DateTime? AcceptedDate { get; set; }
 
         /// <summary>
-        /// The IP address from which the terms of service were accepted.
+        /// The IP address (IPv4 or IPv6) from which the terms of service were accepted.
         /// </summary>
         [JsonProperty("acceptedIP")]
         public string? AcceptedIP { get; set; }

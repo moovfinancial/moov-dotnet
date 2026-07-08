@@ -21,11 +21,12 @@ var value = CapabilityID.Transfers;
 
 ## Values
 
-| Name            | Value           |
-| --------------- | --------------- |
-| `Transfers`     | transfers       |
-| `SendFunds`     | send-funds      |
-| `CollectFunds`  | collect-funds   |
-| `Wallet`        | wallet          |
-| `CardIssuing`   | card-issuing    |
-| `ProductionApp` | production-app  |
+| Name                | Value               |
+| ------------------- | ------------------- |
+| `Transfers`         | transfers           |
+| `SendFunds`         | send-funds          |
+| `CollectFunds`      | collect-funds       |
+| `Wallet`            | wallet              |
+| `CardIssuing`       | card-issuing        |
+| `IssuingCardholder` | issuing.cardholder  |
+| `ProductionApp`     | production-app      |

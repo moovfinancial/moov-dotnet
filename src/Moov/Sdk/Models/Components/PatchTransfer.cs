@@ -15,6 +15,9 @@ namespace Moov.Sdk.Models.Components
 
     public class PatchTransfer
     {
+        /// <summary>
+        /// Free-form key-value pair list. Useful for storing information that is not captured elsewhere.
+        /// </summary>
         [JsonProperty("metadata")]
         public Dictionary<string, string>? Metadata { get; set; } = null;
 
