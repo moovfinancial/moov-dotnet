@@ -35,7 +35,7 @@ namespace Moov.Sdk.Models.Components
         public string? DynamicDescriptor { get; set; }
 
         /// <summary>
-        /// The scheduled date and time for the transfer to be delivered. This field is only valid for push-to-card transfers. Must be between 24 and 48 hours in the future.
+        /// The scheduled date and time for the transfer to be delivered. This field is only valid for push-to-card transfers. Must be between 24 and 48 hours in the future in production. In sandbox mode, any future time up to 48 hours is accepted so integrations can test deferred delivery using the sandbox test cards with relaxed wait times.
         /// </summary>
         [JsonProperty("scheduledDeliveryOn")]
         public DateTime? ScheduledDeliveryOn { get; set; }
@@ -66,6 +66,9 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("completedOn")]
         public DateTime? CompletedOn { get; set; }
+
+        [JsonProperty("deferredOn")]
+        public DateTime? DeferredOn { get; set; }
 
         /// <summary>
         /// The program assigned by the card network that determines the interchange rate for the transfer.

@@ -246,7 +246,7 @@ var res = await sdk.PaymentLinks.UpdateAsync(
             RequirePhone = true,
         },
         AmountDetails = new UpdatePaymentLinkAmountDetails() {
-            Tax = new AmountDecimalUpdate() {
+            Tax = new Tax() {
                 Currency = "USD",
                 ValueDecimal = "9.25",
             },

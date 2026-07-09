@@ -57,7 +57,7 @@ namespace Moov.Sdk
         /// <param name="accountID">The Moov business account for which the cards have been issued.</param>
         /// <param name="skip">Description not available.</param>
         /// <param name="count">Description not available.</param>
-        /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,pending-verification`</param>
+        /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed`</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -358,7 +358,7 @@ namespace Moov.Sdk
         /// <param name="accountID">The Moov business account for which the cards have been issued.</param>
         /// <param name="skip">Description not available.</param>
         /// <param name="count">Description not available.</param>
-        /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,pending-verification`</param>
+        /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed`</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>

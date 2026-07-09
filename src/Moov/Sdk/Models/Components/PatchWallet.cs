@@ -28,12 +28,9 @@ namespace Moov.Sdk.Models.Components
         public WalletStatus? Status { get; set; }
 
         [JsonProperty("description")]
-        public string? Description { get; set; }
+        public string? Description { get; set; } = null;
 
-        /// <summary>
-        /// Free-form key-value pair list. Useful for storing information that is not captured elsewhere.
-        /// </summary>
         [JsonProperty("metadata")]
-        public Dictionary<string, string>? Metadata { get; set; }
+        public Dictionary<string, string>? Metadata { get; set; } = null;
     }
 }

@@ -23,5 +23,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("metadata")]
         public string? Metadata { get; set; }
+
+        [JsonProperty("pushOptions")]
+        public PushOptionsError? PushOptions { get; set; }
     }
 }

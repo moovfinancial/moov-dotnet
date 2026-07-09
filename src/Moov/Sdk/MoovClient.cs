@@ -112,6 +112,8 @@ namespace Moov.Sdk
         public IReceipts Receipts { get; }
 
         public ITerminalApplications TerminalApplications { get; }
+
+        public IDepositView DepositView { get; }
     }
 
     /// <summary>
@@ -295,6 +297,10 @@ namespace Moov.Sdk
         /// The TerminalApplications sub-SDK.
         /// </summary>
         public ITerminalApplications TerminalApplications { get; private set; }
+        /// <summary>
+        /// The DepositView sub-SDK.
+        /// </summary>
+        public IDepositView DepositView { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the SDK based on a <see cref="SDKConfig"/> configuration object.
@@ -388,6 +394,8 @@ namespace Moov.Sdk
             Receipts = new Receipts(SDKConfiguration);
 
             TerminalApplications = new TerminalApplications(SDKConfiguration);
+
+            DepositView = new DepositView(SDKConfiguration);
         }
 
         /// <summary>
@@ -530,6 +538,8 @@ namespace Moov.Sdk
             Receipts = new Receipts(SDKConfiguration);
 
             TerminalApplications = new TerminalApplications(SDKConfiguration);
+
+            DepositView = new DepositView(SDKConfiguration);
         }
 
         private void InitHooks()
