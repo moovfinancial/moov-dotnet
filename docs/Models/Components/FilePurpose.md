@@ -1,6 +1,6 @@
 # FilePurpose
 
-The file's purpose.
+The purpose of the file being uploaded.
 
 ## Example Usage
 
