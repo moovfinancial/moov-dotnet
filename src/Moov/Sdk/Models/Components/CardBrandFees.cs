@@ -71,6 +71,12 @@ namespace Moov.Sdk.Models.Components
         public BillingCountAndAmount? Refunds { get; set; }
 
         /// <summary>
+        /// Details of card cancellations.
+        /// </summary>
+        [JsonProperty("cardCancellations")]
+        public BillingCountAndAmount? CardCancellations { get; set; }
+
+        /// <summary>
         /// Total fees for this card brand.
         /// </summary>
         [JsonProperty("total")]
