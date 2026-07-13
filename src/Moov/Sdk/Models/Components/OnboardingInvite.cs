@@ -30,7 +30,7 @@ namespace Moov.Sdk.Models.Components
         public string Link { get; set; } = default!;
 
         /// <summary>
-        /// The scopes requested by the inviter.
+        /// Optional URL to redirect the user to after they complete the onboarding process.
         /// </summary>
         [JsonProperty("returnURL")]
         public string? ReturnURL { get; set; }
