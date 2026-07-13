@@ -14,7 +14,7 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// The file's purpose.
+    /// The purpose of the file being uploaded.
     /// </summary>
     public enum FilePurpose
     {
