@@ -62,8 +62,10 @@ csharp:
   outputModelSuffix: output
   packageName: Moov.Sdk
   packageTags: ""
+  presenceAwareJsonSerialization: false
   respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope-http
   sourceDirectory: src
   targetFramework: dotnetVersion
+  unionStrategy: left-to-right
   useNodatime: false

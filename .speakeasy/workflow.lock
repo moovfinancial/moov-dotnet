@@ -1,4 +1,4 @@
-speakeasyVersion: 1.789.0
+speakeasyVersion: 1.790.0
 sources:
     dev:
         sourceNamespace: api-dev
@@ -7,39 +7,38 @@ sources:
         tags:
             - latest
     latest:
-        sourceNamespace: api-latest
-        sourceRevisionDigest: sha256:ed0e1fa3198f116e5672498845c13aabc21bcf12c65005327ce6c7f4ef99aa62
-        sourceBlobDigest: sha256:2d6db05dc85d57ee13fe1322a7cbe7b060af2b1ac37ed5ba626fdf0e4eb8def5
+        sourceNamespace: api-v2026.10.00
+        sourceRevisionDigest: sha256:d967898699bd664715a45f9ec0657d3c7a010dc51d48feb758bc80221ea863f3
+        sourceBlobDigest: sha256:fb4f9ab9ecb8ce5a6e4bec2483aa86e60b6b694006834fe0d1f17c62b515392a
         tags:
             - latest
-            - speakeasy-sdk-regen-1771029532
 targets:
     latest:
-        source: dev
-        sourceNamespace: api-dev
-        sourceRevisionDigest: sha256:2905582f3c66f0f3afe2e91a50c588dbdee2cd4d263b5e9f8e11c7d204d49d4e
-        sourceBlobDigest: sha256:e24f674c8ad1120a34fa5e5cb4593ddd2b25951624448efb65d4d265b74dc299
-        codeSamplesNamespace: dev-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:957d97f4e99aa926f60cfc82f60edfa388344fd8e081591dd566f7424157b725
+        source: latest
+        sourceNamespace: api-v2026.10.00
+        sourceRevisionDigest: sha256:d967898699bd664715a45f9ec0657d3c7a010dc51d48feb758bc80221ea863f3
+        sourceBlobDigest: sha256:fb4f9ab9ecb8ce5a6e4bec2483aa86e60b6b694006834fe0d1f17c62b515392a
+        codeSamplesNamespace: v2026.10.00-csharp-code-samples
+        codeSamplesRevisionDigest: sha256:23587cb736f463b50bdf9fdc97bb9f862bdd268578700ef8f1f383d826e17b4f
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        dev:
+        latest:
             inputs:
-                - location: registry.speakeasyapi.dev/moov/moov/api-dev
+                - location: registry.speakeasyapi.dev/moov/moov/api-v2026.10.00
             registry:
-                location: registry.speakeasyapi.dev/moov/moov/python-dev
+                location: registry.speakeasyapi.dev/moov/moov/python-v2026.10.00
     targets:
         latest:
             target: csharp
-            source: dev
+            source: latest
             publish:
                 nuget:
                     apiKey: $nuget_api_key
             codeSamples:
                 registry:
-                    location: registry.speakeasyapi.dev/moov/moov/dev-csharp-code-samples
+                    location: registry.speakeasyapi.dev/moov/moov/v2026.10.00-csharp-code-samples
                 labelOverride:
                     fixedValue: Csharp (SDK)
                 blocking: false

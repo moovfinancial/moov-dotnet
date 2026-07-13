@@ -145,12 +145,6 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amountDetails")]
         public TransferAmountDetails? AmountDetails { get; set; }
 
-        /// <summary>
-        /// The card authorization and capture IDs associated with a transfer.
-        /// </summary>
-        [JsonProperty("capture")]
-        public TransferCapture? Capture { get; set; }
-
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -252,9 +246,6 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.AmountDetails instead.")]
         public TransferAmountDetails? AmountDetails { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Capture instead.")]
-        public TransferCapture? Capture { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -297,7 +288,6 @@ namespace Moov.Sdk.Models.Errors
            LineItems = payload.LineItems;
            InvoiceID = payload.InvoiceID;
            AmountDetails = payload.AmountDetails;
-           Capture = payload.Capture;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

@@ -13,20 +13,14 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
 
     /// <summary>
-    /// The card authorization and capture IDs associated with a transfer.
+    /// A risk rule that contributed to a transfer's risk decision.
     /// </summary>
-    public class TransferCapture
+    public class ContributingRule
     {
         /// <summary>
-        /// ID of the card authorization associated with this transfer.
+        /// Human-readable name of the contributing risk rule.
         /// </summary>
-        [JsonProperty("authorizationID")]
-        public string AuthorizationID { get; set; } = default!;
-
-        /// <summary>
-        /// ID of the card capture associated with this transfer.
-        /// </summary>
-        [JsonProperty("captureID")]
-        public string CaptureID { get; set; } = default!;
+        [JsonProperty("name")]
+        public string Name { get; set; } = default!;
     }
 }
