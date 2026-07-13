@@ -31,7 +31,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 25.8.9
+  version: 25.8.10
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
@@ -62,8 +62,10 @@ csharp:
   outputModelSuffix: output
   packageName: Moov.Sdk
   packageTags: ""
+  presenceAwareJsonSerialization: false
   respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope-http
   sourceDirectory: src
   targetFramework: dotnetVersion
+  unionStrategy: left-to-right
   useNodatime: false
