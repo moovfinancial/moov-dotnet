@@ -84,6 +84,12 @@ to learn more.
 
 To access this endpoint using a [token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
 to specify the `/accounts/{accountID}/transfers.write` scope.
+* [GetRiskOutcomes](#getriskoutcomes) - Retrieve the risk rules that contributed to a transfer's risk decision.
+
+This endpoint has limited availability and must be enabled for your account by Moov.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 ## GenerateOptions
 
@@ -884,3 +890,46 @@ var res = await sdk.Transfers.CreateReversalAsync(
 | Moov.Sdk.Models.Errors.GenericError            | 400, 409                                       | application/json                               |
 | Moov.Sdk.Models.Errors.ReversalValidationError | 422                                            | application/json                               |
 | Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |
+
+## GetRiskOutcomes
+
+Retrieve the risk rules that contributed to a transfer's risk decision.
+
+This endpoint has limited availability and must be enabled for your account by Moov.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getTransferRiskOutcomes" method="get" path="/transfers/{transferID}/risk-outcomes" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.GetRiskOutcomesAsync(transferID: "<id>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `TransferID`                                                                                             | *string*                                                                                                 | :heavy_check_mark:                                                                                       | Identifier for the transfer.                                                                             |
+| `XAccountID`                                                                                             | *string*                                                                                                 | :heavy_minus_sign:                                                                                       | The account the transfer belongs to. When omitted, the account is resolved<br/>from the calling credentials. |
+
+### Response
+
+**[GetTransferRiskOutcomesResponse](../../Models/Requests/GetTransferRiskOutcomesResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

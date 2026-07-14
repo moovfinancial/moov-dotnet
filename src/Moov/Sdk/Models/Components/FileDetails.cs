@@ -29,7 +29,7 @@ namespace Moov.Sdk.Models.Components
         public string AccountID { get; set; } = default!;
 
         /// <summary>
-        /// The file's purpose.
+        /// The purpose of the file being uploaded.
         /// </summary>
         [JsonProperty("filePurpose")]
         public FilePurpose FilePurpose { get; set; } = default!;
