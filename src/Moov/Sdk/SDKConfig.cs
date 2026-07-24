@@ -45,7 +45,7 @@ namespace Moov.Sdk
             Client = client ?? new MoovClientHttpClient();
             ServerUrl = "";
             ServerIndex = 0;
-            UserAgent = "speakeasy-sdk/csharp 24.2.11 2.917.0 v2024.01.00 Moov.Sdk";
+            UserAgent = "speakeasy-sdk/csharp 24.2.12 2.924.0 v2024.01.00 Moov.Sdk";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;
