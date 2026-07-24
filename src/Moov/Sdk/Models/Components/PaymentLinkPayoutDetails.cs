@@ -45,5 +45,13 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("pushOptions")]
         public PushOptions? PushOptions { get; set; }
+
+        /// <summary>
+        /// Indicates which party bears the fee, keyed by disbursement payment method (`DisbursementPaymentMethodType`).<br/>
+        /// <br/>
+        /// Sparse — include only the methods you want to attribute. Any method left unset defaults to `source`.
+        /// </summary>
+        [JsonProperty("feePaidBy")]
+        public Dictionary<string, FeePaidBy>? FeePaidBy { get; set; }
     }
 }

@@ -72,5 +72,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("residualID")]
         public string? ResidualID { get; set; }
+
+        /// <summary>
+        /// Indicates which party to the money movement bore this fee.
+        /// </summary>
+        [JsonProperty("feePaidBy")]
+        public FeePaidBy? FeePaidBy { get; set; }
     }
 }

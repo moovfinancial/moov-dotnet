@@ -15,6 +15,7 @@ namespace Moov.Sdk
     using Moov.Sdk.Models.Requests;
     using Moov.Sdk.Utils;
     using Moov.Sdk.Utils.Retries;
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
@@ -39,6 +40,62 @@ namespace Moov.Sdk
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<GetAvatarResponse> GetAsync(string uniqueID, CancellationToken? cancellationToken = null);
+
+        /// <summary>
+        /// Upload a user avatar image for an account.<br/>
+        /// <br/>
+        /// The image will be normalized to 512x512 PNG format and stored separately from <br/>
+        /// automatically discovered logos. User-uploaded avatars take precedence over enriched avatars at read time.<br/>
+        /// <br/>
+        /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts.write` scope.
+        /// </summary>
+        /// <param name="security">A <see cref="UploadAvatarSecurity"/> parameter.</param>
+        /// <param name="uniqueID">The accountID to upload the avatar for. Only accountID values are accepted for writes.</param>
+        /// <param name="body">A <see cref="AvatarUploadRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="UploadAvatarResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="security"/>, <paramref name="uniqueID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<UploadAvatarResponse> UploadAsync(
+            UploadAvatarSecurity security,
+            string uniqueID,
+            AvatarUploadRequest body,
+            CancellationToken? cancellationToken = null
+        );
+
+        /// <summary>
+        /// Delete a user-uploaded avatar for an account.<br/>
+        /// <br/>
+        /// After deletion, the avatar endpoint will fall back to the enriched avatar<br/>
+        /// or an account-type-aware fallback icon.<br/>
+        /// <br/>
+        /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts.write` scope.
+        /// </summary>
+        /// <param name="security">A <see cref="DeleteAvatarSecurity"/> parameter.</param>
+        /// <param name="uniqueID">The accountID to delete the avatar for. Only accountID values are accepted for writes.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="DeleteAvatarResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="security"/> or <paramref name="uniqueID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<DeleteAvatarResponse> DeleteAsync(
+            DeleteAvatarSecurity security,
+            string uniqueID,
+            CancellationToken? cancellationToken = null
+        );
     }
 
     public class Avatars: IAvatars
@@ -144,6 +201,310 @@ namespace Moov.Sdk
                     };
                     response.Bytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{500, 504}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Upload a user avatar image for an account.<br/>
+        /// <br/>
+        /// The image will be normalized to 512x512 PNG format and stored separately from <br/>
+        /// automatically discovered logos. User-uploaded avatars take precedence over enriched avatars at read time.<br/>
+        /// <br/>
+        /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts.write` scope.
+        /// </summary>
+        /// <param name="security">A <see cref="UploadAvatarSecurity"/> parameter.</param>
+        /// <param name="uniqueID">The accountID to upload the avatar for. Only accountID values are accepted for writes.</param>
+        /// <param name="body">A <see cref="AvatarUploadRequest"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="UploadAvatarResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="security"/>, <paramref name="uniqueID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<UploadAvatarResponse> UploadAsync(
+            UploadAvatarSecurity security,
+            string uniqueID,
+            AvatarUploadRequest body,
+            CancellationToken? cancellationToken = null
+        )
+        {
+            if (security == null) throw new ArgumentNullException(nameof(security));
+            if (uniqueID == null) throw new ArgumentNullException(nameof(uniqueID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
+            var request = new UploadAvatarRequest()
+            {
+                UniqueID = uniqueID,
+                Body = body,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/avatars/{uniqueID}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "Body", "multipart", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (security == null)
+            {
+                throw new ArgumentNullException(nameof(security), "security cannot be null.");
+            }
+
+            httpRequest = new SecurityMetadata(() => security).Apply(httpRequest);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "uploadAvatar", new List<string> { "/accounts.write" }, () => security, cancellationToken);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 204)
+            {
+                return new UploadAvatarResponse()
+                {
+                    HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                };
+            }
+            else if(responseStatusCode == 400)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    GenericErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<GenericErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into GenericErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new GenericError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{401, 403, 404, 413, 415, 429}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{500, 504}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Delete a user-uploaded avatar for an account.<br/>
+        /// <br/>
+        /// After deletion, the avatar endpoint will fall back to the enriched avatar<br/>
+        /// or an account-type-aware fallback icon.<br/>
+        /// <br/>
+        /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// you'll need to specify the `/accounts.write` scope.
+        /// </summary>
+        /// <param name="security">A <see cref="DeleteAvatarSecurity"/> parameter.</param>
+        /// <param name="uniqueID">The accountID to delete the avatar for. Only accountID values are accepted for writes.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="DeleteAvatarResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="security"/> or <paramref name="uniqueID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<DeleteAvatarResponse> DeleteAsync(
+            DeleteAvatarSecurity security,
+            string uniqueID,
+            CancellationToken? cancellationToken = null
+        )
+        {
+            if (security == null) throw new ArgumentNullException(nameof(security));
+            if (uniqueID == null) throw new ArgumentNullException(nameof(uniqueID));
+
+            var request = new DeleteAvatarRequest()
+            {
+                UniqueID = uniqueID,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/avatars/{uniqueID}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (security == null)
+            {
+                throw new ArgumentNullException(nameof(security), "security cannot be null.");
+            }
+
+            httpRequest = new SecurityMetadata(() => security).Apply(httpRequest);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "deleteAvatar", new List<string> { "/accounts.write" }, () => security, cancellationToken);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 204)
+            {
+                return new DeleteAvatarResponse()
+                {
+                    HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                };
+            }
+            else if(responseStatusCode == 400)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    GenericErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<GenericErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into GenericErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new GenericError(payload, httpRequest, httpResponse, httpResponseBody);
                 }
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());

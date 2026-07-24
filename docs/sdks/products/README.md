@@ -11,6 +11,7 @@
 * [Disable](#disable) - Disable a product by ID.
 
 The product will no longer be available, but will remain in the system for historical and reporting purposes.
+* [ListCategories](#listcategories) - Returns the full, read-only list of product categories from the product taxonomy.
 
 ## List
 
@@ -22,29 +23,29 @@ List active (non-disabled) products for an account.
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(security: new Security() {
     Username = "",
     Password = "",
 });
 
-var res = await sdk.Products.ListAsync(
-    accountID: "cd696219-4308-446c-b0d8-1759254995c2",
-    skip: 60,
-    count: 20
-);
+ListProductsRequest req = new ListProductsRequest() {
+    AccountID = "cd696219-4308-446c-b0d8-1759254995c2",
+    Skip = 60,
+    Count = 20,
+};
+
+var res = await sdk.Products.ListAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `AccountID`                                                                               | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |                                                                                           |
-| `Title`                                                                                   | *string*                                                                                  | :heavy_minus_sign:                                                                        | Allows filtering products by title. This supports partial matches and is case-insensitive |                                                                                           |
-| `Skip`                                                                                    | *long*                                                                                    | :heavy_minus_sign:                                                                        | N/A                                                                                       | 60                                                                                        |
-| `Count`                                                                                   | *long*                                                                                    | :heavy_minus_sign:                                                                        | N/A                                                                                       | 20                                                                                        |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListProductsRequest](../../Models/Requests/ListProductsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
@@ -317,4 +318,35 @@ var res = await sdk.Products.DisableAsync(
 | Error Type                          | Status Code                         | Content Type                        |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## ListCategories
+
+Returns the full, read-only list of product categories from the product taxonomy.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listProductCategories" method="get" path="/product-categories" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Products.ListCategoriesAsync();
+
+// handle response
+```
+
+### Response
+
+**[ListProductCategoriesResponse](../../Models/Requests/ListProductCategoriesResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |

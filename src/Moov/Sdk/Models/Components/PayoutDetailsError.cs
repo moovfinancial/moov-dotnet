@@ -26,5 +26,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("pushOptions")]
         public PushOptionsError? PushOptions { get; set; }
+
+        [JsonProperty("feePaidBy")]
+        public string? FeePaidBy { get; set; }
     }
 }

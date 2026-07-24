@@ -10,6 +10,7 @@
 namespace Moov.Sdk.Hooks
 {
     using Moov.Sdk.Utils;
+    using Moov.Sdk.Hooks.ClientCredentials;
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
@@ -37,6 +38,10 @@ namespace Moov.Sdk.Hooks
             this.beforeRequestHooks = new List<IBeforeRequestHook>();
             this.afterSuccessHooks = new List<IAfterSuccessHook>();
             this.afterErrorHooks = new List<IAfterErrorHook>();
+            ClientCredentialsHook clientCredentialsHook = new ClientCredentialsHook();
+            this.sdkInitHooks.Add(clientCredentialsHook);
+            this.beforeRequestHooks.Add(clientCredentialsHook);
+            this.afterErrorHooks.Add(clientCredentialsHook);
             HookRegistration.InitHooks(this);
         }
 
