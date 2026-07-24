@@ -33,6 +33,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("optionGroups")]
         public Dictionary<string, ProductOptionGroupValidationError>? OptionGroups { get; set; }
 
+        [JsonProperty("categoryID")]
+        public string? CategoryID { get; set; }
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -59,6 +62,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ProductRequestValidationError.Payload.OptionGroups instead.")]
         public Dictionary<string, ProductOptionGroupValidationError>? OptionGroups { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ProductRequestValidationError.Payload.CategoryID instead.")]
+        public string? CategoryID { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ProductRequestValidationError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -77,6 +83,7 @@ namespace Moov.Sdk.Models.Errors
            BasePrice = payload.BasePrice;
            Images = payload.Images;
            OptionGroups = payload.OptionGroups;
+           CategoryID = payload.CategoryID;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }
