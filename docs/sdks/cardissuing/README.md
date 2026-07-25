@@ -224,6 +224,14 @@ var res = await sdk.CardIssuing.UpdateAsync(
             PostalCode = "80301",
             Country = "US",
         },
+        Controls = new UpdateIssuingControls() {
+            VelocityLimits = new List<IssuingVelocityLimit>() {
+                new IssuingVelocityLimit() {
+                    Amount = 10000,
+                    Interval = IssuingIntervalLimit.Daily,
+                },
+            },
+        },
     }
 );
 

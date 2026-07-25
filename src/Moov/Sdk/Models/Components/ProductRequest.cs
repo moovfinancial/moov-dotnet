@@ -49,5 +49,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("optionGroups")]
         public List<CreateProductOptionGroup>? OptionGroups { get; set; }
+
+        /// <summary>
+        /// The ID of a product taxonomy category to associate with the product.
+        /// </summary>
+        [JsonProperty("categoryID")]
+        public string? CategoryID { get; set; }
     }
 }

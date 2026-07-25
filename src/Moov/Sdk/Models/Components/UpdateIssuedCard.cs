@@ -31,5 +31,11 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("billingAddress")]
         public BillingAddress? BillingAddress { get; set; } = null;
+
+        /// <summary>
+        /// Mutable spend controls for the card.
+        /// </summary>
+        [JsonProperty("controls")]
+        public UpdateIssuingControls? Controls { get; set; }
     }
 }

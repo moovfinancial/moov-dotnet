@@ -40,6 +40,8 @@ namespace Moov.Sdk.Models.Components
         SendFundsRtp,
         [JsonProperty("send-funds.instant-bank")]
         SendFundsInstantBank,
+        [JsonProperty("send-funds.wire")]
+        SendFundsWire,
         [JsonProperty("collect-funds")]
         CollectFunds,
         [JsonProperty("collect-funds.card-payments")]

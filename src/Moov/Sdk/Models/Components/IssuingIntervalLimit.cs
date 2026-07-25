@@ -14,12 +14,18 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// Specifies the time frame for the velocity limit. Currently supports only per-transaction limits.
+    /// Specifies the time frame for a velocity limit. `per-transaction` applies to each individual authorization and never resets. Time-based intervals (where supported) reset at midnight ET.
     /// </summary>
     public enum IssuingIntervalLimit
     {
         [JsonProperty("per-transaction")]
         PerTransaction,
+        [JsonProperty("daily")]
+        Daily,
+        [JsonProperty("weekly")]
+        Weekly,
+        [JsonProperty("monthly")]
+        Monthly,
     }
 
     public static class IssuingIntervalLimitExtension

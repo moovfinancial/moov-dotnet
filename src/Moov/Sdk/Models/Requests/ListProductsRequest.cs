@@ -22,6 +22,14 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// Filter products by category. Accepts a category ID at any level of the taxonomy;<br/>
+        /// a product matches when the given category is anywhere in its category's breadcrumb<br/>
+        /// (i.e. filtering by a top-level category returns products in any of its descendants).
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=category")]
+        public string? Category { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=skip")]
         public long? Skip { get; set; }
 

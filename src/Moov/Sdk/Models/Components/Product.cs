@@ -58,6 +58,12 @@ namespace Moov.Sdk.Models.Components
         public List<ProductImageMetadata>? Images { get; set; }
 
         /// <summary>
+        /// The product taxonomy category associated with the product, if any.
+        /// </summary>
+        [JsonProperty("category")]
+        public ProductCategory? Category { get; set; }
+
+        /// <summary>
         /// The date and time when the product was added.
         /// </summary>
         [JsonProperty("createdOn")]

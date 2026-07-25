@@ -12,6 +12,7 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
 
     public class IssuingControls
@@ -27,5 +28,29 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("velocityLimits")]
         public List<IssuingVelocityLimit>? VelocityLimits { get; set; }
+
+        /// <summary>
+        /// Restricts card usage by merchant category. When not set, all categories are allowed.
+        /// </summary>
+        [JsonProperty("merchantCategoryRestrictions")]
+        public MerchantCategoryRestrictions? MerchantCategoryRestrictions { get; set; }
+
+        /// <summary>
+        /// Restricts card usage to specific merchants, or blocks specific merchants.
+        /// </summary>
+        [JsonProperty("merchantRestrictions")]
+        public MerchantRestrictions? MerchantRestrictions { get; set; }
+
+        /// <summary>
+        /// Limits card usage to specific days and times. Set to `null` to remove all schedule restrictions.
+        /// </summary>
+        [JsonProperty("allowedSchedule")]
+        public IssuingControlsAllowedSchedule? AllowedSchedule { get; set; } = null;
+
+        /// <summary>
+        /// A spend cutoff date and time. When set, all authorizations after this datetime are declined regardless of other controls. Set to `null` for no cutoff.
+        /// </summary>
+        [JsonProperty("expiresOn")]
+        public DateTime? ExpiresOn { get; set; } = null;
     }
 }

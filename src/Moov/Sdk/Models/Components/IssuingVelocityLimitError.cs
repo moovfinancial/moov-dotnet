@@ -17,6 +17,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("amount")]
         public string? Amount { get; set; }
 
+        [JsonProperty("count")]
+        public string? Count { get; set; }
+
         [JsonProperty("interval")]
         public string? Interval { get; set; }
     }
