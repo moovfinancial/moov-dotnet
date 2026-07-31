@@ -28,7 +28,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Fetch enriched profile data. Requires a valid email address. This service is offered in collaboration with Clearbit. <br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="email">Description not available.</param>
@@ -58,7 +58,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Fetch enriched profile data. Requires a valid email address. This service is offered in collaboration with Clearbit. <br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="email">Description not available.</param>

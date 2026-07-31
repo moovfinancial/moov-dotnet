@@ -59,10 +59,16 @@ namespace Moov.Sdk.Models.Components
         DestinationOriginated,
         [JsonProperty("destination.confirmed")]
         DestinationConfirmed,
+        [JsonProperty("destination.settled")]
+        DestinationSettled,
         [JsonProperty("destination.failed")]
         DestinationFailed,
+        [JsonProperty("destination.canceled")]
+        DestinationCanceled,
         [JsonProperty("destination.accepted-without-posting")]
         DestinationAcceptedWithoutPosting,
+        [JsonProperty("destination.deferred")]
+        DestinationDeferred,
     }
 
     public static class WebhookDataTransferStatusExtension
