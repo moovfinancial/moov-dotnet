@@ -13,16 +13,20 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Specifies a partial amount to refund. <br/>
-    /// <br/>
-    /// Before v2026.10, this request body may be omitted. In v2026.10 and later, send an empty object to refund the full amount of the original transfer.
+    /// The card authorization and capture IDs associated with a transfer.
     /// </summary>
-    public class CreateRefund
+    public class TransferCapture
     {
         /// <summary>
-        /// Amount to refund. Before v2026.10, specify the amount in integer cents. If omitted, the original transfer's full amount will be refunded.
+        /// ID of the card authorization associated with this transfer.
         /// </summary>
-        [JsonProperty("amount")]
-        public long? Amount { get; set; }
+        [JsonProperty("authorizationID")]
+        public string AuthorizationID { get; set; } = default!;
+
+        /// <summary>
+        /// ID of the card capture associated with this transfer.
+        /// </summary>
+        [JsonProperty("captureID")]
+        public string CaptureID { get; set; } = default!;
     }
 }

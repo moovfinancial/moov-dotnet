@@ -16,7 +16,8 @@ namespace Moov.Sdk.Models.Components
     /// <summary>
     /// Type of a wallet.<br/>
     ///   - `default`: The system-generated wallet automatically created when an account is granted the wallet capability.<br/>
-    ///   - `general`: An additional, user-defined wallet created via API or Dashboard.
+    ///   - `general`: An additional, user-defined wallet created via API or Dashboard.<br/>
+    ///   - `card-issuing`: The system-generated wallet automatically created when an account is granted the card-issuing capability.
     /// </summary>
     public enum WalletType
     {
@@ -24,6 +25,8 @@ namespace Moov.Sdk.Models.Components
         Default,
         [JsonProperty("general")]
         General,
+        [JsonProperty("card-issuing")]
+        CardIssuing,
     }
 
     public static class WalletTypeExtension

@@ -27,7 +27,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Get avatar image for an account using a unique ID.    <br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="uniqueID">Any unique ID associated with an account such as accountID, representativeID, routing number, or userID.</param>
@@ -57,7 +57,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Get avatar image for an account using a unique ID.    <br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="uniqueID">Any unique ID associated with an account such as accountID, representativeID, routing number, or userID.</param>
