@@ -35,5 +35,8 @@ var value = WebhookDataTransferStatus.Created;
 | `DestinationReturned`                | destination.returned                 |
 | `DestinationOriginated`              | destination.originated               |
 | `DestinationConfirmed`               | destination.confirmed                |
+| `DestinationSettled`                 | destination.settled                  |
 | `DestinationFailed`                  | destination.failed                   |
+| `DestinationCanceled`                | destination.canceled                 |
 | `DestinationAcceptedWithoutPosting`  | destination.accepted-without-posting |
+| `DestinationDeferred`                | destination.deferred                 |
