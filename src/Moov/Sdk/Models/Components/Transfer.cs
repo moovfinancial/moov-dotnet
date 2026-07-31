@@ -23,6 +23,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("transferID")]
         public string TransferID { get; set; } = default!;
 
+        /// <summary>
+        /// The rail and direction used to move funds for a transfer.
+        /// </summary>
+        [JsonProperty("transferType")]
+        public TransferType TransferType { get; set; } = default!;
+
         [JsonProperty("createdOn")]
         public DateTime CreatedOn { get; set; } = default!;
 
@@ -48,7 +54,7 @@ namespace Moov.Sdk.Models.Components
         public TransferFailureReason? FailureReason { get; set; }
 
         [JsonProperty("amount")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
 
         /// <summary>
         /// An optional description of the transfer that is used on receipts and for your own internal use.
@@ -72,13 +78,7 @@ namespace Moov.Sdk.Models.Components
         /// Fees charged to your platform account for transfers.
         /// </summary>
         [JsonProperty("moovFee")]
-        public long? MoovFee { get; set; }
-
-        /// <summary>
-        /// Same as `moovFee`, but a decimal-formatted numerical string that represents up to 9 decimal place precision.
-        /// </summary>
-        [JsonProperty("moovFeeDecimal")]
-        public string? MoovFeeDecimal { get; set; }
+        public AmountDecimal? MoovFee { get; set; }
 
         /// <summary>
         /// Processing and pass-through costs that add up to the moovFee.
@@ -95,20 +95,11 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("groupID")]
         public string? GroupID { get; set; }
 
-        [JsonProperty("cancellations")]
-        public List<Cancellation>? Cancellations { get; set; }
-
         [JsonProperty("refundedAmount")]
-        public Amount? RefundedAmount { get; set; }
-
-        [JsonProperty("refunds")]
-        public List<CardAcquiringRefund>? Refunds { get; set; }
+        public AmountDecimal? RefundedAmount { get; set; }
 
         [JsonProperty("disputedAmount")]
-        public Amount? DisputedAmount { get; set; }
-
-        [JsonProperty("disputes")]
-        public List<CardAcquiringDispute>? Disputes { get; set; }
+        public AmountDecimal? DisputedAmount { get; set; }
 
         /// <summary>
         /// ID of the sweep that created this transfer.
@@ -146,5 +137,14 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("amountDetails")]
         public TransferAmountDetails? AmountDetails { get; set; }
+
+        [JsonProperty("authorization")]
+        public TransferAuthorization? Authorization { get; set; }
+
+        [JsonProperty("options")]
+        public TransferRailOptions Options { get; set; } = default!;
+
+        [JsonProperty("processingDetails")]
+        public TransferProcessingDetails ProcessingDetails { get; set; } = default!;
     }
 }

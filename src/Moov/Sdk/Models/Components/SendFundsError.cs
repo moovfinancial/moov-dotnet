@@ -26,5 +26,8 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("instantBank")]
         public SendFundsInstantBankError? InstantBank { get; set; }
+
+        [JsonProperty("wire")]
+        public SendFundsWireError? Wire { get; set; }
     }
 }

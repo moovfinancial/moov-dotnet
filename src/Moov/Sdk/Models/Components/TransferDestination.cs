@@ -16,16 +16,16 @@ namespace Moov.Sdk.Models.Components
     public class TransferDestination
     {
         [JsonProperty("paymentMethodID")]
-        public string PaymentMethodID { get; set; } = default!;
+        public string? PaymentMethodID { get; set; }
 
         /// <summary>
         /// The payment method type that represents a payment rail and directionality.
         /// </summary>
         [JsonProperty("paymentMethodType")]
-        public TransferPaymentMethodType PaymentMethodType { get; set; } = default!;
+        public TransferPaymentMethodType? PaymentMethodType { get; set; }
 
         [JsonProperty("account")]
-        public TransferAccount Account { get; set; } = default!;
+        public TransferAccount? Account { get; set; }
 
         /// <summary>
         /// A bank account as contained within a payment method.
@@ -43,12 +43,6 @@ namespace Moov.Sdk.Models.Components
         public TransferPaymentMethodsCard? Card { get; set; }
 
         /// <summary>
-        /// ACH specific details about the transaction.
-        /// </summary>
-        [JsonProperty("achDetails")]
-        public ACHTransactionDetails? AchDetails { get; set; }
-
-        /// <summary>
         /// Describes an Apple Pay token on a Moov account.
         /// </summary>
         [JsonProperty("applePay")]
@@ -59,17 +53,5 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("googlePay")]
         public GooglePayResponse? GooglePay { get; set; }
-
-        /// <summary>
-        /// Card-specific details about the transaction.
-        /// </summary>
-        [JsonProperty("cardDetails")]
-        public CardTransactionDetails? CardDetails { get; set; }
-
-        /// <summary>
-        /// Instant-bank specific details about the transaction.
-        /// </summary>
-        [JsonProperty("instantBankDetails")]
-        public InstantBankTransactionDetails? InstantBankDetails { get; set; }
     }
 }

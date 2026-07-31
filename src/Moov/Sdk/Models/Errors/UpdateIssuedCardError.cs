@@ -29,6 +29,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("billingAddress")]
         public AddressError? BillingAddress { get; set; }
 
+        [JsonProperty("controls")]
+        public UpdateIssuingControlsError? Controls { get; set; }
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -52,6 +55,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.BillingAddress instead.")]
         public AddressError? BillingAddress { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.Controls instead.")]
+        public UpdateIssuingControlsError? Controls { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateIssuedCardError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -69,6 +75,7 @@ namespace Moov.Sdk.Models.Errors
            Nickname = payload.Nickname;
            Metadata = payload.Metadata;
            BillingAddress = payload.BillingAddress;
+           Controls = payload.Controls;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

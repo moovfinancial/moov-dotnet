@@ -33,6 +33,6 @@ namespace Moov.Sdk.Models.Requests
         public string TransferID { get; set; } = default!;
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public CreateReversal? Body { get; set; }
+        public CreateReversal Body { get; set; } = default!;
     }
 }

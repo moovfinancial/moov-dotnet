@@ -30,6 +30,8 @@ namespace Moov.Sdk.Models.Components
         Reversed,
         [JsonProperty("queued")]
         Queued,
+        [JsonProperty("awaiting-capture")]
+        AwaitingCapture,
         [JsonProperty("canceled")]
         Canceled,
     }

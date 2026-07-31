@@ -9,6 +9,7 @@
 #nullable enable
 namespace Moov.Sdk.Models.Requests
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
 
     public class CreateCancellationRequest
@@ -24,5 +25,8 @@ namespace Moov.Sdk.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=transferID")]
         public string TransferID { get; set; } = default!;
+
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public CreateCancellation Body { get; set; } = default!;
     }
 }

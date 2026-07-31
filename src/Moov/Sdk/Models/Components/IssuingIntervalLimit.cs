@@ -20,6 +20,12 @@ namespace Moov.Sdk.Models.Components
     {
         [JsonProperty("per-transaction")]
         PerTransaction,
+        [JsonProperty("daily")]
+        Daily,
+        [JsonProperty("weekly")]
+        Weekly,
+        [JsonProperty("monthly")]
+        Monthly,
     }
 
     public static class IssuingIntervalLimitExtension

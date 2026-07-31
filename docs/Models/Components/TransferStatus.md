@@ -13,12 +13,13 @@ var value = TransferStatus.Created;
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Created`   | created     |
-| `Pending`   | pending     |
-| `Completed` | completed   |
-| `Failed`    | failed      |
-| `Reversed`  | reversed    |
-| `Queued`    | queued      |
-| `Canceled`  | canceled    |
+| Name              | Value             |
+| ----------------- | ----------------- |
+| `Created`         | created           |
+| `Pending`         | pending           |
+| `Completed`       | completed         |
+| `Failed`          | failed            |
+| `Reversed`        | reversed          |
+| `Queued`          | queued            |
+| `AwaitingCapture` | awaiting-capture  |
+| `Canceled`        | canceled          |

@@ -56,7 +56,7 @@ namespace Moov.Sdk
         /// <br/>
         /// Search for institutions by either their name or routing number.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/fed.read` scope.
         /// </summary>
         /// <param name="name">Name of the financial institution. Either `name` or `routingNumber` is required.</param>
@@ -234,7 +234,7 @@ namespace Moov.Sdk
         /// <br/>
         /// Search for institutions by either their name or routing number.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/fed.read` scope.
         /// </summary>
         /// <param name="name">Name of the financial institution. Either `name` or `routingNumber` is required.</param>

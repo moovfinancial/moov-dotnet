@@ -18,5 +18,17 @@ namespace Moov.Sdk.Models.Components
     {
         [JsonProperty("velocityLimits")]
         public Dictionary<string, IssuingVelocityLimitError>? VelocityLimits { get; set; }
+
+        [JsonProperty("merchantCategoryRestrictions")]
+        public MerchantCategoryRestrictionsError? MerchantCategoryRestrictions { get; set; }
+
+        [JsonProperty("merchantRestrictions")]
+        public MerchantRestrictionsError? MerchantRestrictions { get; set; }
+
+        [JsonProperty("allowedSchedule")]
+        public AllowedScheduleError? AllowedSchedule { get; set; }
+
+        [JsonProperty("expiresOn")]
+        public string? ExpiresOn { get; set; }
     }
 }

@@ -21,6 +21,12 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("transferID")]
         public string TransferID { get; set; } = default!;
 
+        /// <summary>
+        /// The rail and direction used to move funds for a transfer.
+        /// </summary>
+        [JsonProperty("transferType")]
+        public TransferType TransferType { get; set; } = default!;
+
         [JsonProperty("createdOn")]
         public DateTime CreatedOn { get; set; } = default!;
 
@@ -46,7 +52,7 @@ namespace Moov.Sdk.Models.Errors
         public TransferFailureReason? FailureReason { get; set; }
 
         [JsonProperty("amount")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
 
         /// <summary>
         /// An optional description of the transfer that is used on receipts and for your own internal use.
@@ -70,13 +76,7 @@ namespace Moov.Sdk.Models.Errors
         /// Fees charged to your platform account for transfers.
         /// </summary>
         [JsonProperty("moovFee")]
-        public long? MoovFee { get; set; }
-
-        /// <summary>
-        /// Same as `moovFee`, but a decimal-formatted numerical string that represents up to 9 decimal place precision.
-        /// </summary>
-        [JsonProperty("moovFeeDecimal")]
-        public string? MoovFeeDecimal { get; set; }
+        public AmountDecimal? MoovFee { get; set; }
 
         /// <summary>
         /// Processing and pass-through costs that add up to the moovFee.
@@ -93,20 +93,11 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("groupID")]
         public string? GroupID { get; set; }
 
-        [JsonProperty("cancellations")]
-        public List<Cancellation>? Cancellations { get; set; }
-
         [JsonProperty("refundedAmount")]
-        public Amount? RefundedAmount { get; set; }
-
-        [JsonProperty("refunds")]
-        public List<CardAcquiringRefund>? Refunds { get; set; }
+        public AmountDecimal? RefundedAmount { get; set; }
 
         [JsonProperty("disputedAmount")]
-        public Amount? DisputedAmount { get; set; }
-
-        [JsonProperty("disputes")]
-        public List<CardAcquiringDispute>? Disputes { get; set; }
+        public AmountDecimal? DisputedAmount { get; set; }
 
         /// <summary>
         /// ID of the sweep that created this transfer.
@@ -145,6 +136,15 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amountDetails")]
         public TransferAmountDetails? AmountDetails { get; set; }
 
+        [JsonProperty("authorization")]
+        public TransferAuthorization? Authorization { get; set; }
+
+        [JsonProperty("options")]
+        public TransferRailOptions Options { get; set; } = default!;
+
+        [JsonProperty("processingDetails")]
+        public TransferProcessingDetails ProcessingDetails { get; set; } = default!;
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -161,6 +161,9 @@ namespace Moov.Sdk.Models.Errors
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.TransferID instead.")]
         public string TransferID { get; set; } = default!;
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.TransferType instead.")]
+        public TransferType TransferType { get; set; } = default!;
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.CreatedOn instead.")]
         public DateTime CreatedOn { get; set; } = default!;
@@ -181,7 +184,7 @@ namespace Moov.Sdk.Models.Errors
         public TransferFailureReason? FailureReason { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Amount instead.")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Description instead.")]
         public string? Description { get; set; }
@@ -193,10 +196,7 @@ namespace Moov.Sdk.Models.Errors
         public FacilitatorFee? FacilitatorFee { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.MoovFee instead.")]
-        public long? MoovFee { get; set; }
-
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.MoovFeeDecimal instead.")]
-        public string? MoovFeeDecimal { get; set; }
+        public AmountDecimal? MoovFee { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.MoovFeeDetails instead.")]
         public MoovFeeDetails? MoovFeeDetails { get; set; }
@@ -207,20 +207,11 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.GroupID instead.")]
         public string? GroupID { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Cancellations instead.")]
-        public List<Cancellation>? Cancellations { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.RefundedAmount instead.")]
-        public Amount? RefundedAmount { get; set; }
-
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Refunds instead.")]
-        public List<CardAcquiringRefund>? Refunds { get; set; }
+        public AmountDecimal? RefundedAmount { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.DisputedAmount instead.")]
-        public Amount? DisputedAmount { get; set; }
-
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Disputes instead.")]
-        public List<CardAcquiringDispute>? Disputes { get; set; }
+        public AmountDecimal? DisputedAmount { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.SweepID instead.")]
         public string? SweepID { get; set; }
@@ -246,6 +237,15 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.AmountDetails instead.")]
         public TransferAmountDetails? AmountDetails { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Authorization instead.")]
+        public TransferAuthorization? Authorization { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.Options instead.")]
+        public TransferRailOptions Options { get; set; } = default!;
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.ProcessingDetails instead.")]
+        public TransferProcessingDetails ProcessingDetails { get; set; } = default!;
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use TransferException.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -260,6 +260,7 @@ namespace Moov.Sdk.Models.Errors
 
            #pragma warning disable CS0618
            TransferID = payload.TransferID;
+           TransferType = payload.TransferType;
            CreatedOn = payload.CreatedOn;
            Source = payload.Source;
            Destination = payload.Destination;
@@ -271,15 +272,11 @@ namespace Moov.Sdk.Models.Errors
            Metadata = payload.Metadata;
            FacilitatorFee = payload.FacilitatorFee;
            MoovFee = payload.MoovFee;
-           MoovFeeDecimal = payload.MoovFeeDecimal;
            MoovFeeDetails = payload.MoovFeeDetails;
            MoovFees = payload.MoovFees;
            GroupID = payload.GroupID;
-           Cancellations = payload.Cancellations;
            RefundedAmount = payload.RefundedAmount;
-           Refunds = payload.Refunds;
            DisputedAmount = payload.DisputedAmount;
-           Disputes = payload.Disputes;
            SweepID = payload.SweepID;
            ScheduleID = payload.ScheduleID;
            OccurrenceID = payload.OccurrenceID;
@@ -288,6 +285,9 @@ namespace Moov.Sdk.Models.Errors
            LineItems = payload.LineItems;
            InvoiceID = payload.InvoiceID;
            AmountDetails = payload.AmountDetails;
+           Authorization = payload.Authorization;
+           Options = payload.Options;
+           ProcessingDetails = payload.ProcessingDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

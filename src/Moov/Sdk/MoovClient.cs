@@ -99,9 +99,9 @@ namespace Moov.Sdk
 
         public IInstitutions Institutions { get; }
 
-        public IIssuingTransactions IssuingTransactions { get; }
-
         public ICardIssuing CardIssuing { get; }
+
+        public IIssuingTransactions IssuingTransactions { get; }
 
         public IAuthentication Authentication { get; }
 
@@ -270,13 +270,13 @@ namespace Moov.Sdk
         /// </summary>
         public IInstitutions Institutions { get; private set; }
         /// <summary>
-        /// The IssuingTransactions sub-SDK.
-        /// </summary>
-        public IIssuingTransactions IssuingTransactions { get; private set; }
-        /// <summary>
         /// The CardIssuing sub-SDK.
         /// </summary>
         public ICardIssuing CardIssuing { get; private set; }
+        /// <summary>
+        /// The IssuingTransactions sub-SDK.
+        /// </summary>
+        public IIssuingTransactions IssuingTransactions { get; private set; }
         /// <summary>
         /// The Authentication sub-SDK.
         /// </summary>
@@ -381,9 +381,9 @@ namespace Moov.Sdk
 
             Institutions = new Institutions(SDKConfiguration);
 
-            IssuingTransactions = new IssuingTransactions(SDKConfiguration);
-
             CardIssuing = new CardIssuing(SDKConfiguration);
+
+            IssuingTransactions = new IssuingTransactions(SDKConfiguration);
 
             Authentication = new Authentication(SDKConfiguration);
 
@@ -525,9 +525,9 @@ namespace Moov.Sdk
 
             Institutions = new Institutions(SDKConfiguration);
 
-            IssuingTransactions = new IssuingTransactions(SDKConfiguration);
-
             CardIssuing = new CardIssuing(SDKConfiguration);
+
+            IssuingTransactions = new IssuingTransactions(SDKConfiguration);
 
             Authentication = new Authentication(SDKConfiguration);
 

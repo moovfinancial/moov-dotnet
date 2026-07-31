@@ -33,13 +33,19 @@ namespace Moov.Sdk.Models.Errors
         public RefundStatus Status { get; set; } = default!;
 
         [JsonProperty("amount")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
+
+        /// <summary>
+        /// ID of the capture this refund applies to, when applicable.
+        /// </summary>
+        [JsonProperty("captureID")]
+        public string? CaptureID { get; set; }
 
         [JsonProperty("amountDetails")]
         public RefundAmountDetails? AmountDetails { get; set; }
 
-        [JsonProperty("cardDetails")]
-        public RefundCardDetails? CardDetails { get; set; }
+        [JsonProperty("processingDetails")]
+        public RefundProcessingDetails ProcessingDetails { get; set; } = default!;
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -68,13 +74,16 @@ namespace Moov.Sdk.Models.Errors
         public RefundStatus Status { get; set; } = default!;
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.Amount instead.")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.CaptureID instead.")]
+        public string? CaptureID { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.AmountDetails instead.")]
         public RefundAmountDetails? AmountDetails { get; set; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.CardDetails instead.")]
-        public RefundCardDetails? CardDetails { get; set; }
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.ProcessingDetails instead.")]
+        public RefundProcessingDetails ProcessingDetails { get; set; } = default!;
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CardAcquiringRefundException.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -94,8 +103,9 @@ namespace Moov.Sdk.Models.Errors
            UpdatedOn = payload.UpdatedOn;
            Status = payload.Status;
            Amount = payload.Amount;
+           CaptureID = payload.CaptureID;
            AmountDetails = payload.AmountDetails;
-           CardDetails = payload.CardDetails;
+           ProcessingDetails = payload.ProcessingDetails;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }
