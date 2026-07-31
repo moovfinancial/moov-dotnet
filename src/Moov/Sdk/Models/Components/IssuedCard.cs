@@ -80,8 +80,11 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("formFactor")]
         public IssuedCardFormFactor FormFactor { get; set; } = default!;
 
+        /// <summary>
+        /// Spend controls applied to an issued card, including velocity runtime state.
+        /// </summary>
         [JsonProperty("controls")]
-        public IssuingControls? Controls { get; set; }
+        public IssuedControls? Controls { get; set; }
 
         [JsonProperty("createdOn")]
         public DateTime CreatedOn { get; set; } = default!;

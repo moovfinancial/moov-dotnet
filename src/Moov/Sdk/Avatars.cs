@@ -28,7 +28,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Get avatar image for an account using a unique ID.    <br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="uniqueID">Any unique ID associated with an account such as accountID, representativeID, routing number, or userID.</param>
@@ -44,12 +44,12 @@ namespace Moov.Sdk
         /// <summary>
         /// Upload a user avatar image for an account.<br/>
         /// <br/>
-        /// The image will be normalized to 512x512 PNG format and stored separately from <br/>
+        /// The image will be normalized to 512x512 PNG format and stored separately from<br/>
         /// automatically discovered logos. User-uploaded avatars take precedence over enriched avatars at read time.<br/>
         /// <br/>
         /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
         /// <param name="security">A <see cref="UploadAvatarSecurity"/> parameter.</param>
@@ -78,7 +78,7 @@ namespace Moov.Sdk
         /// <br/>
         /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
         /// <param name="security">A <see cref="DeleteAvatarSecurity"/> parameter.</param>
@@ -114,7 +114,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Get avatar image for an account using a unique ID.    <br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="uniqueID">Any unique ID associated with an account such as accountID, representativeID, routing number, or userID.</param>
@@ -229,12 +229,12 @@ namespace Moov.Sdk
         /// <summary>
         /// Upload a user avatar image for an account.<br/>
         /// <br/>
-        /// The image will be normalized to 512x512 PNG format and stored separately from <br/>
+        /// The image will be normalized to 512x512 PNG format and stored separately from<br/>
         /// automatically discovered logos. User-uploaded avatars take precedence over enriched avatars at read time.<br/>
         /// <br/>
         /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
         /// <param name="security">A <see cref="UploadAvatarSecurity"/> parameter.</param>
@@ -391,7 +391,7 @@ namespace Moov.Sdk
         /// <br/>
         /// This endpoint only accepts accountID values for the uniqueID parameter.<br/>
         /// <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts.write` scope.
         /// </summary>
         /// <param name="security">A <see cref="DeleteAvatarSecurity"/> parameter.</param>

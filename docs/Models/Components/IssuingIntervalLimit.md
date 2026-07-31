@@ -16,3 +16,6 @@ var value = IssuingIntervalLimit.PerTransaction;
 | Name             | Value            |
 | ---------------- | ---------------- |
 | `PerTransaction` | per-transaction  |
+| `Daily`          | daily            |
+| `Weekly`         | weekly           |
+| `Monthly`        | monthly          |

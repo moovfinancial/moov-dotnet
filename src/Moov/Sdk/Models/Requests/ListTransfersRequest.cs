@@ -76,6 +76,18 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=foreignID")]
         public string? ForeignID { get; set; }
 
+        /// <summary>
+        /// Optional comma-separated IDs to filter for transfers associated with specific card authorizations.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=authorizationIDs")]
+        public List<string>? AuthorizationIDs { get; set; }
+
+        /// <summary>
+        /// Optional comma-separated IDs to filter for transfers associated with specific card captures.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=captureIDs")]
+        public List<string>? CaptureIDs { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=skip")]
         public long? Skip { get; set; }
 

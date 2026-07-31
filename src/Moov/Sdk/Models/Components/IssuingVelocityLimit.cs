@@ -19,7 +19,13 @@ namespace Moov.Sdk.Models.Components
         /// The maximum amount in cents that can be spent in a given interval.
         /// </summary>
         [JsonProperty("amount")]
-        public long Amount { get; set; } = default!;
+        public long? Amount { get; set; }
+
+        /// <summary>
+        /// The maximum number of transactions allowed in the given interval. At least one of `amount` or `count` must be set.
+        /// </summary>
+        [JsonProperty("count")]
+        public long? Count { get; set; }
 
         /// <summary>
         /// Specifies the time frame for a velocity limit. `per-transaction` applies to each individual authorization and never resets. Time-based intervals (where supported) reset at midnight ET.

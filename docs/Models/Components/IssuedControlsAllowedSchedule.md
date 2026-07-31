@@ -1,0 +1,11 @@
+# IssuedControlsAllowedSchedule
+
+Limits card usage to specific days and times.
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `Timezone`                                                                                    | *string*                                                                                      | :heavy_check_mark:                                                                            | IANA timezone string used to evaluate window boundaries against the authorization time.       |
+| `Windows`                                                                                     | List<[ScheduleWindow](../../Models/Components/ScheduleWindow.md)>                             | :heavy_check_mark:                                                                            | Time windows during which the card may authorize. Any matching window allows the transaction. |

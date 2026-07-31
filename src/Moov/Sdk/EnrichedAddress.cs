@@ -28,7 +28,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Fetch enriched address suggestions. Requires a partial address. <br/>
         ///   <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="request">A <see cref="GetEnrichmentAddressRequest"/> parameter.</param>
@@ -61,7 +61,7 @@ namespace Moov.Sdk
         /// <summary>
         /// Fetch enriched address suggestions. Requires a partial address. <br/>
         ///   <br/>
-        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/profile-enrichment.read` scope.
         /// </summary>
         /// <param name="request">A <see cref="GetEnrichmentAddressRequest"/> parameter.</param>
