@@ -35,12 +35,18 @@ namespace Moov.Sdk.Models.Components
         public RefundStatus Status { get; set; } = default!;
 
         [JsonProperty("amount")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
+
+        /// <summary>
+        /// ID of the capture this refund applies to, when applicable.
+        /// </summary>
+        [JsonProperty("captureID")]
+        public string? CaptureID { get; set; }
 
         [JsonProperty("amountDetails")]
         public RefundAmountDetails? AmountDetails { get; set; }
 
-        [JsonProperty("cardDetails")]
-        public RefundCardDetails? CardDetails { get; set; }
+        [JsonProperty("processingDetails")]
+        public RefundProcessingDetails ProcessingDetails { get; set; } = default!;
     }
 }

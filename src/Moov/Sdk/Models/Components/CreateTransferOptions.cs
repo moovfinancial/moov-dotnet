@@ -22,6 +22,6 @@ namespace Moov.Sdk.Models.Components
         public SourceDestinationOptions Destination { get; set; } = default!;
 
         [JsonProperty("amount")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
     }
 }

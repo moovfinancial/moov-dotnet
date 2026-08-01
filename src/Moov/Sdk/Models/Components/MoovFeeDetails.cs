@@ -9,6 +9,7 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -21,24 +22,24 @@ namespace Moov.Sdk.Models.Components
         /// Card scheme fees accrued during authorization and settlement. String type represents dollars with up to 9 decimal place precision.
         /// </summary>
         [JsonProperty("cardScheme")]
-        public string? CardScheme { get; set; }
+        public AmountDecimal? CardScheme { get; set; }
 
         /// <summary>
         /// Network interchange fee for Visa, Mastercard, or Discover. String type represents dollars with up to 9 decimal place precision.
         /// </summary>
         [JsonProperty("interchange")]
-        public string? Interchange { get; set; }
+        public AmountDecimal? Interchange { get; set; }
 
         /// <summary>
         /// Network discount fee for American Express. String type represents dollars with up to 9 decimal place precision.
         /// </summary>
         [JsonProperty("discount")]
-        public string? Discount { get; set; }
+        public AmountDecimal? Discount { get; set; }
 
         /// <summary>
         /// Moov processing fee. String type represents dollars with up to 9 decimal place precision.
         /// </summary>
         [JsonProperty("moovProcessing")]
-        public string MoovProcessing { get; set; } = default!;
+        public AmountDecimal MoovProcessing { get; set; } = default!;
     }
 }

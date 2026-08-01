@@ -40,6 +40,6 @@ namespace Moov.Sdk.Models.Requests
         public string TransferID { get; set; } = default!;
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public CreateRefund? Body { get; set; }
+        public CreateRefund Body { get; set; } = default!;
     }
 }

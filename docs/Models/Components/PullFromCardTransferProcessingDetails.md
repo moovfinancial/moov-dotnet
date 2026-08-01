@@ -1,0 +1,11 @@
+# PullFromCardTransferProcessingDetails
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `AuthorizationCode`                                                                 | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `NetworkTransactionID`                                                              | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `NetworkResponseCode`                                                               | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `FailureCode`                                                                       | [CardTransactionFailureCode](../../Models/Components/CardTransactionFailureCode.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |

@@ -63,6 +63,18 @@ you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
   
   To access this endpoint using a [token](https://docs.moov.io/api/authentication/access-tokens/) you'll need 
   to specify the `/accounts/{accountID}/transfers.read` scope.
+* [CreateCapture](#createcapture) - Create a capture against an authorized transfer.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
+* [ListCaptures](#listcaptures) - Get a list of captures for a transfer.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+* [GetCapture](#getcapture) - Get details of a capture for a transfer.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 * [InitiateRefund](#initiaterefund) - Initiate a refund for a card transfer.
 
 **Use the [Cancel or refund a card transfer](https://docs.moov.io/api/money-movement/refunds/cancel/) endpoint for more comprehensive cancel and refund options.**    
@@ -120,9 +132,9 @@ var res = await sdk.Transfers.GenerateOptionsAsync(
     body: new CreateTransferOptions() {
         Source = new SourceDestinationOptions() {},
         Destination = new SourceDestinationOptions() {},
-        Amount = new Amount() {
+        Amount = new AmountDecimal() {
             Currency = "USD",
-            Value = 1204,
+            ValueDecimal = "12.987654321",
         },
     }
 );
@@ -181,9 +193,9 @@ var res = await sdk.Transfers.CreateAsync(
         Destination = new CreateTransferDestination() {
             PaymentMethodID = "3f9969cf-a1f3-4d83-8ddc-229a506651cf",
         },
-        Amount = new Amount() {
+        Amount = new AmountDecimal() {
             Currency = "USD",
-            Value = 32945,
+            ValueDecimal = "329.45",
         },
         Description = "Transfer from card to wallet",
         Metadata = new Dictionary<string, string>() {
@@ -227,9 +239,9 @@ var res = await sdk.Transfers.CreateAsync(
         Destination = new CreateTransferDestination() {
             PaymentMethodID = "3f9969cf-a1f3-4d83-8ddc-229a506651cf",
         },
-        Amount = new Amount() {
+        Amount = new AmountDecimal() {
             Currency = "USD",
-            Value = 32945,
+            ValueDecimal = "329.45",
         },
         Description = "Transfer from card to wallet",
         Metadata = new Dictionary<string, string>() {
@@ -253,12 +265,12 @@ var res = await sdk.Transfers.CreateAsync(
 
 ### Parameters
 
-| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                          | Type                                                                                                                                                                                                                                                                                                                                                                                                                               | Required                                                                                                                                                                                                                                                                                                                                                                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                        | Example                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `XIdempotencyKey`                                                                                                                                                                                                                                                                                                                                                                                                                  | *string*                                                                                                                                                                                                                                                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                 |   Identifies a unique request to create a transfer.<br/>  In order to avoid creating duplicate transfers, the same idempotency key should be reused when retrying a request.                                                                                                                                                                                                                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `AccountID`                                                                                                                                                                                                                                                                                                                                                                                                                        | *string*                                                                                                                                                                                                                                                                                                                                                                                                                           | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                 | Your Moov account ID.                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `Body`                                                                                                                                                                                                                                                                                                                                                                                                                             | [CreateTransfer](../../Models/Components/CreateTransfer.md)                                                                                                                                                                                                                                                                                                                                                                        | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                | {<br/>"source": {<br/>"paymentMethodID": "9506dbf6-4208-44c3-ad8a-e4431660e1f2"<br/>},<br/>"destination": {<br/>"paymentMethodID": "3f9969cf-a1f3-4d83-8ddc-229a506651cf"<br/>},<br/>"amount": {<br/>"currency": "USD",<br/>"value": 32945<br/>},<br/>"amountDetails": {<br/>"tip": {<br/>"currency": "USD",<br/>"valueDecimal": "3.50"<br/>},<br/>"tax": {<br/>"currency": "USD",<br/>"valueDecimal": "8.25"<br/>}<br/>},<br/>"description": "Transfer from card to wallet",<br/>"metadata": {<br/>"optional": "metadata"<br/>}<br/>} |
-| `XWaitFor`                                                                                                                                                                                                                                                                                                                                                                                                                         | [TransferWaitFor](../../Models/Components/TransferWaitFor.md)                                                                                                                                                                                                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                 | Optional header that indicates whether to return a synchronous response that includes full transfer and rail-specific details or an <br/>asynchronous response indicating the transfer was created (this is the default response if the header is omitted). A timeout will occur after 15 seconds.                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                    | Type                                                                                                                                                                                                                                                                                                                                                                                                                                         | Required                                                                                                                                                                                                                                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                  | Example                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `XIdempotencyKey`                                                                                                                                                                                                                                                                                                                                                                                                                            | *string*                                                                                                                                                                                                                                                                                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                           |   Identifies a unique request to create a transfer.<br/>  In order to avoid creating duplicate transfers, the same idempotency key should be reused when retrying a request.                                                                                                                                                                                                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `AccountID`                                                                                                                                                                                                                                                                                                                                                                                                                                  | *string*                                                                                                                                                                                                                                                                                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                           | Your Moov account ID.                                                                                                                                                                                                                                                                                                                                                                                                                        |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `Body`                                                                                                                                                                                                                                                                                                                                                                                                                                       | [CreateTransfer](../../Models/Components/CreateTransfer.md)                                                                                                                                                                                                                                                                                                                                                                                  | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                           | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                          | {<br/>"source": {<br/>"paymentMethodID": "9506dbf6-4208-44c3-ad8a-e4431660e1f2"<br/>},<br/>"destination": {<br/>"paymentMethodID": "3f9969cf-a1f3-4d83-8ddc-229a506651cf"<br/>},<br/>"amount": {<br/>"currency": "USD",<br/>"valueDecimal": "329.45"<br/>},<br/>"amountDetails": {<br/>"tip": {<br/>"currency": "USD",<br/>"valueDecimal": "3.50"<br/>},<br/>"tax": {<br/>"currency": "USD",<br/>"valueDecimal": "8.25"<br/>}<br/>},<br/>"description": "Transfer from card to wallet",<br/>"metadata": {<br/>"optional": "metadata"<br/>}<br/>} |
+| `XWaitFor`                                                                                                                                                                                                                                                                                                                                                                                                                                   | [TransferWaitFor](../../Models/Components/TransferWaitFor.md)                                                                                                                                                                                                                                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                           | Optional header that indicates whether to return a synchronous response that includes full transfer and rail-specific details or an <br/>asynchronous response indicating the transfer was created (this is the default response if the header is omitted). A timeout will occur after 15 seconds.                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ### Response
 
@@ -394,7 +406,7 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="getTransfer" method="get" path="/accounts/{accountID}/transfers/{transferID}" -->
+<!-- UsageSnippet language="csharp" operationID="getTransfer" method="get" path="/accounts/{accountID}/transfers/{transferID}" example="Awaiting capture card authorization transfer" -->
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
@@ -405,8 +417,8 @@ var sdk = new MoovClient(security: new Security() {
 });
 
 var res = await sdk.Transfers.GetAsync(
-    transferID: "960cf5a2-50a3-4914-ad86-d54c022bf5df",
-    accountID: "31113f7b-9f68-44e9-9338-6d8e655c7c96"
+    transferID: "<id>",
+    accountID: "<id>"
 );
 
 // handle response
@@ -504,7 +516,13 @@ var sdk = new MoovClient(security: new Security() {
 
 var res = await sdk.Transfers.CreateCancellationAsync(
     accountID: "10ae862c-6658-4f87-967d-46e995737204",
-    transferID: "36c80a6c-ceb2-4e5d-a437-8a39afdfdc58"
+    transferID: "36c80a6c-ceb2-4e5d-a437-8a39afdfdc58",
+    body: new CreateCancellation() {
+        Amount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "25.00",
+        },
+    }
 );
 
 // handle response
@@ -512,10 +530,11 @@ var res = await sdk.Transfers.CreateCancellationAsync(
 
 ### Parameters
 
-| Parameter                      | Type                           | Required                       | Description                    |
-| ------------------------------ | ------------------------------ | ------------------------------ | ------------------------------ |
-| `AccountID`                    | *string*                       | :heavy_check_mark:             | The partner's Moov account ID. |
-| `TransferID`                   | *string*                       | :heavy_check_mark:             | The transfer ID to cancel.     |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `AccountID`                                                         | *string*                                                            | :heavy_check_mark:                                                  | The partner's Moov account ID.                                      |
+| `TransferID`                                                        | *string*                                                            | :heavy_check_mark:                                                  | The transfer ID to cancel.                                          |
+| `Body`                                                              | [CreateCancellation](../../Models/Components/CreateCancellation.md) | :heavy_check_mark:                                                  | N/A                                                                 |
 
 ### Response
 
@@ -618,6 +637,178 @@ var res = await sdk.Transfers.GetCancellationAsync(
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
+## CreateCapture
+
+Create a capture against an authorized transfer.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.write` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createCapture" method="post" path="/accounts/{accountID}/transfers/{transferID}/captures" example="Created capture" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.CreateCaptureAsync(
+    xIdempotencyKey: "<value>",
+    accountID: "<id>",
+    transferID: "<id>",
+    body: new CreateCapture() {
+        DestinationPaymentMethodID = "<id>",
+        Amount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "12.987654321",
+        },
+        Description = "Pay Instructor for May 15 Class",
+        Metadata = new Dictionary<string, string>() {
+            { "optional", "metadata" },
+        },
+        LineItems = new CreateTransferLineItems() {
+            Items = new List<CreateTransferLineItem>() {},
+        },
+        AmountDetails = new CreateTransferAmountDetails() {
+            Tip = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+            Tax = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+            Surcharge = new AmountDecimal() {
+                Currency = "USD",
+                ValueDecimal = "12.987654321",
+            },
+        },
+        FacilitatorFeeAmount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "12.987654321",
+        },
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `XIdempotencyKey`                                         | *string*                                                  | :heavy_check_mark:                                        | Prevents duplicate captures from being created.           |
+| `AccountID`                                               | *string*                                                  | :heavy_check_mark:                                        | The merchant's Moov account ID.                           |
+| `TransferID`                                              | *string*                                                  | :heavy_check_mark:                                        | Identifier for the transfer.                              |
+| `Body`                                                    | [CreateCapture](../../Models/Components/CreateCapture.md) | :heavy_check_mark:                                        | N/A                                                       |
+
+### Response
+
+**[CreateCaptureResponse](../../Models/Requests/CreateCaptureResponse.md)**
+
+### Errors
+
+| Error Type                                    | Status Code                                   | Content Type                                  |
+| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError           | 400, 409                                      | application/json                              |
+| Moov.Sdk.Models.Errors.CaptureValidationError | 422                                           | application/json                              |
+| Moov.Sdk.Models.Errors.APIException           | 4XX, 5XX                                      | \*/\*                                         |
+
+## ListCaptures
+
+Get a list of captures for a transfer.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listCaptures" method="get" path="/accounts/{accountID}/transfers/{transferID}/captures" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.ListCapturesAsync(
+    accountID: "<id>",
+    transferID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                       | Type                            | Required                        | Description                     |
+| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
+| `AccountID`                     | *string*                        | :heavy_check_mark:              | The merchant's Moov account ID. |
+| `TransferID`                    | *string*                        | :heavy_check_mark:              | Identifier for the transfer.    |
+
+### Response
+
+**[ListCapturesResponse](../../Models/Requests/ListCapturesResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## GetCapture
+
+Get details of a capture for a transfer.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getCapture" method="get" path="/accounts/{accountID}/transfers/{transferID}/captures/{captureID}" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.GetCaptureAsync(
+    accountID: "<id>",
+    transferID: "<id>",
+    captureID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                       | Type                            | Required                        | Description                     |
+| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
+| `AccountID`                     | *string*                        | :heavy_check_mark:              | The merchant's Moov account ID. |
+| `TransferID`                    | *string*                        | :heavy_check_mark:              | Identifier for the transfer.    |
+| `CaptureID`                     | *string*                        | :heavy_check_mark:              | Identifier for the capture.     |
+
+### Response
+
+**[GetCaptureResponse](../../Models/Requests/GetCaptureResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
 ## InitiateRefund
 
 Initiate a refund for a card transfer.
@@ -646,7 +837,10 @@ InitiateRefundRequest req = new InitiateRefundRequest() {
     AccountID = "cb6ae9f9-afab-4f06-9eb0-8abf54a3ada2",
     TransferID = "04022119-95be-4ef4-9dd4-b3782f6aa7b9",
     Body = new CreateRefund() {
-        Amount = 1000,
+        Amount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "12.987654321",
+        },
         AmountDetails = new RefundAmountDetails() {
             Surcharge = new AmountDecimal() {
                 Currency = "USD",
@@ -678,7 +872,10 @@ InitiateRefundRequest req = new InitiateRefundRequest() {
     AccountID = "d12ddb6e-0ed9-44e8-92a7-1716ae7cc759",
     TransferID = "d73be489-9da4-4be7-bc04-147d8552279d",
     Body = new CreateRefund() {
-        Amount = 1000,
+        Amount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "12.987654321",
+        },
         AmountDetails = new RefundAmountDetails() {
             Surcharge = new AmountDecimal() {
                 Currency = "USD",
@@ -828,7 +1025,10 @@ var res = await sdk.Transfers.CreateReversalAsync(
     accountID: "c5fade57-7e5a-4380-ac7b-4abf8b3c24cf",
     transferID: "82c6eae7-b7e5-4b20-b24e-5116a4d70bde",
     body: new CreateReversal() {
-        Amount = 1000,
+        Amount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "12.987654321",
+        },
         AmountDetails = new ReversalAmountDetails() {
             Surcharge = new AmountDecimal() {
                 Currency = "USD",
@@ -857,7 +1057,10 @@ var res = await sdk.Transfers.CreateReversalAsync(
     accountID: "f225b49d-911b-440b-baed-6065968b69cb",
     transferID: "a17b29e2-4af6-4c9d-ad3a-dd0ded2966ad",
     body: new CreateReversal() {
-        Amount = 1000,
+        Amount = new AmountDecimal() {
+            Currency = "USD",
+            ValueDecimal = "12.987654321",
+        },
         AmountDetails = new ReversalAmountDetails() {
             Surcharge = new AmountDecimal() {
                 Currency = "USD",
@@ -877,7 +1080,7 @@ var res = await sdk.Transfers.CreateReversalAsync(
 | `XIdempotencyKey`                                           | *string*                                                    | :heavy_check_mark:                                          | Prevents duplicate reversals from being created.            |
 | `AccountID`                                                 | *string*                                                    | :heavy_check_mark:                                          | The Moov account ID.                                        |
 | `TransferID`                                                | *string*                                                    | :heavy_check_mark:                                          | The transfer ID to reverse.                                 |
-| `Body`                                                      | [CreateReversal](../../Models/Components/CreateReversal.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| `Body`                                                      | [CreateReversal](../../Models/Components/CreateReversal.md) | :heavy_check_mark:                                          | N/A                                                         |
 
 ### Response
 

@@ -29,13 +29,13 @@ namespace Moov.Sdk.Models.Components
         public CreateTransferDestination Destination { get; set; } = default!;
 
         [JsonProperty("amount")]
-        public Amount Amount { get; set; } = default!;
+        public AmountDecimal Amount { get; set; } = default!;
 
         /// <summary>
-        /// Total or markup fee.
+        /// Total or markup fee to apply when creating a transfer.
         /// </summary>
         [JsonProperty("facilitatorFee")]
-        public FacilitatorFee? FacilitatorFee { get; set; }
+        public CreateTransferFacilitatorFee? FacilitatorFee { get; set; }
 
         /// <summary>
         /// An optional description of the transfer that is used on receipts and for your own internal use.
