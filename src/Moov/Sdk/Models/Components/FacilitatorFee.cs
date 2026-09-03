@@ -18,7 +18,7 @@ namespace Moov.Sdk.Models.Components
     public class FacilitatorFee
     {
         /// <summary>
-        /// Total facilitator fee in cents. Only either `total` or `totalDecimal` can be set.
+        /// Total facilitator fee.
         /// </summary>
         [JsonProperty("total")]
         public long? Total { get; set; }
@@ -32,7 +32,7 @@ namespace Moov.Sdk.Models.Components
         public string? TotalDecimal { get; set; }
 
         /// <summary>
-        /// Markup facilitator fee in cents. Only either `markup` or `markupDecimal` can be set.
+        /// Markup facilitator fee.
         /// </summary>
         [JsonProperty("markup")]
         public long? Markup { get; set; }

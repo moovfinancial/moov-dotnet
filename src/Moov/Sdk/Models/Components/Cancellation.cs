@@ -14,6 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
 
+    /// <summary>
+    /// Cancellation of a transfer.
+    /// </summary>
     public class Cancellation
     {
         [JsonProperty("cancellationID")]

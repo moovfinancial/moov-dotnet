@@ -9,28 +9,26 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System;
+    using System.Collections.Generic;
 
     /// <summary>
-    /// The total amount of adjustment fees. This field is deprecated and will be removed in a future release.
+    /// A detailed breakdown of adjustment (correction) fees by fee name.
     /// </summary>
-    [Obsolete("This will be removed in a future release, please migrate away from it as soon as possible")]
     public class AdjustmentFees
     {
         /// <summary>
-        /// A 3-letter ISO 4217 currency code.
+        /// Adjustment fees grouped by fee name.
         /// </summary>
-        [JsonProperty("currency")]
-        public string Currency { get; set; } = default!;
+        [JsonProperty("items")]
+        public List<BillingAdjustment> Items { get; set; } = default!;
 
         /// <summary>
-        /// A decimal-formatted numerical string that represents up to 9 decimal place precision. <br/>
-        /// <br/>
-        /// For example, $12.987654321 is '12.987654321'.
+        /// Total adjustment fees.
         /// </summary>
-        [JsonProperty("valueDecimal")]
-        public string ValueDecimal { get; set; } = default!;
+        [JsonProperty("total")]
+        public BillingCountAndAmount Total { get; set; } = default!;
     }
 }
