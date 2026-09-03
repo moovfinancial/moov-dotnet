@@ -1,6 +1,6 @@
 # IssuingControlsAllowedSchedule
 
-Limits card usage to specific days and times. Set to `null` to remove all schedule restrictions.
+Limits card usage to specific days and times.
 
 
 ## Fields

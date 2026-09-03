@@ -14,6 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Options for payout links used to send a payout.
+    /// </summary>
     public class PaymentLinkPayoutDetails
     {
         /// <summary>
@@ -38,18 +41,16 @@ namespace Moov.Sdk.Models.Components
         public Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// Delivery options for push-to-card payouts. Only applies when `allowedMethods` includes `push-to-card`.<br/>
-        /// <br/>
-        /// The `deferred` speed and `deferredBy` apply to `push-to-card` only. Other push methods<br/>
-        /// (`push-to-apple-pay`, `push-to-google-pay`) are always delivered instantly regardless of these options.
+        /// Delivery options for `push-to-card` and `push-to-apple-pay` payouts.
         /// </summary>
         [JsonProperty("pushOptions")]
         public PushOptions? PushOptions { get; set; }
 
         /// <summary>
-        /// Indicates which party bears the fee, keyed by disbursement payment method (`DisbursementPaymentMethodType`).<br/>
+        /// Indicates which party pays the fee, keyed by `PayoutFeePaidByKey`. If keys are not set,<br/>
+        /// the default is `source`.<br/>
         /// <br/>
-        /// Sparse — include only the methods you want to attribute. Any method left unset defaults to `source`.
+        /// Possible `PayoutFeePaidByKey` keys: `instant-push-to-card`, `deferred-push-to-card`, `instant-push-to-apple-pay`, `deferred-push-to-apple-pay`, `instant-bank-credit` (API v2026.01.00 and later), `rtp-credit`, `ach-credit-same-day`, `ach-credit-standard`, `push-to-google-pay`
         /// </summary>
         [JsonProperty("feePaidBy")]
         public Dictionary<string, FeePaidBy>? FeePaidBy { get; set; }

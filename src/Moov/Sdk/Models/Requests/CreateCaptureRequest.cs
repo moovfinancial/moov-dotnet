@@ -21,13 +21,13 @@ namespace Moov.Sdk.Models.Requests
         public string XIdempotencyKey { get; set; } = default!;
 
         /// <summary>
-        /// The merchant's Moov account ID.
+        /// Moov account ID of the partner for the transfer.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
 
         /// <summary>
-        /// Identifier for the transfer.
+        /// Identifier for the auth-capture `card-payment` transfer.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=transferID")]
         public string TransferID { get; set; } = default!;

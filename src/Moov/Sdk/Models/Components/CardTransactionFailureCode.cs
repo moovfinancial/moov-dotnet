@@ -61,6 +61,38 @@ namespace Moov.Sdk.Models.Components
         CouldNotRoute,
         [JsonProperty("cardholder-account-closed")]
         CardholderAccountClosed,
+        [JsonProperty("account-closed")]
+        AccountClosed,
+        [JsonProperty("account-not-activated")]
+        AccountNotActivated,
+        [JsonProperty("authentication-failed")]
+        AuthenticationFailed,
+        [JsonProperty("authentication-required")]
+        AuthenticationRequired,
+        [JsonProperty("cardholder-action-required")]
+        CardholderActionRequired,
+        [JsonProperty("format-error")]
+        FormatError,
+        [JsonProperty("invalid-pin")]
+        InvalidPin,
+        [JsonProperty("offline-approved")]
+        OfflineApproved,
+        [JsonProperty("offline-declined")]
+        OfflineDeclined,
+        [JsonProperty("partial-approval")]
+        PartialApproval,
+        [JsonProperty("payment-stopped")]
+        PaymentStopped,
+        [JsonProperty("pin-required")]
+        PinRequired,
+        [JsonProperty("record-not-found")]
+        RecordNotFound,
+        [JsonProperty("surcharge-not-permitted")]
+        SurchargeNotPermitted,
+        [JsonProperty("transaction-reversed")]
+        TransactionReversed,
+        [JsonProperty("verification-failed")]
+        VerificationFailed,
         [JsonProperty("unknown-issue")]
         UnknownIssue,
         [JsonProperty("duplicate-transaction")]

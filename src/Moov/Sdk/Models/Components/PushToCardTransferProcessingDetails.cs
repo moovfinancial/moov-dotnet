@@ -15,6 +15,12 @@ namespace Moov.Sdk.Models.Components
 
     public class PushToCardTransferProcessingDetails
     {
+        /// <summary>
+        /// Status of a push-to-card transaction.
+        /// </summary>
+        [JsonProperty("status")]
+        public PushToCardTransactionStatus Status { get; set; } = default!;
+
         [JsonProperty("authorizationCode")]
         public string? AuthorizationCode { get; set; }
 

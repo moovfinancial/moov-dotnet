@@ -37,6 +37,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("payment")]
         public PaymentLinkPaymentDetailsUpdate? Payment { get; set; }
 
+        /// <summary>
+        /// Options for payout links used to send a payout.
+        /// </summary>
         [JsonProperty("payout")]
         public PaymentLinkPayoutDetailsUpdate? Payout { get; set; }
 

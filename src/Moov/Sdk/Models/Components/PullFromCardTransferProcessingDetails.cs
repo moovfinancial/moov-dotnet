@@ -15,6 +15,12 @@ namespace Moov.Sdk.Models.Components
 
     public class PullFromCardTransferProcessingDetails
     {
+        /// <summary>
+        /// Status of a pull-from-card transaction.
+        /// </summary>
+        [JsonProperty("status")]
+        public PullFromCardTransactionStatus Status { get; set; } = default!;
+
         [JsonProperty("authorizationCode")]
         public string? AuthorizationCode { get; set; }
 

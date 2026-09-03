@@ -1,7 +1,5 @@
 # FeePaidBy
 
-Indicates which party to a money movement bears an incurred fee.
-
 ## Example Usage
 
 ```csharp

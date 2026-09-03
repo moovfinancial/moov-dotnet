@@ -58,8 +58,8 @@ namespace Moov.Sdk.Models.Components
         IssuedCardsRead,
         [JsonProperty("issued-cards.write")]
         IssuedCardsWrite,
-        [JsonProperty("issued-cards.read-secure")]
-        IssuedCardsReadSecure,
+        [JsonProperty("issued-cards.read-private")]
+        IssuedCardsReadPrivate,
         [JsonProperty("payment-methods.read")]
         PaymentMethodsRead,
         [JsonProperty("ping.read")]

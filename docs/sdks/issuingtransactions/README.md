@@ -152,7 +152,7 @@ var res = await sdk.IssuingTransactions.ListAuthorizationEventsAsync(
 | `AccountID`                                                 | *string*                                                    | :heavy_check_mark:                                          | The Moov business account for which cards have been issued. |                                                             |
 | `AuthorizationID`                                           | *string*                                                    | :heavy_check_mark:                                          | N/A                                                         |                                                             |
 | `Skip`                                                      | *long*                                                      | :heavy_minus_sign:                                          | N/A                                                         | 60                                                          |
-| `Count`                                                     | *long*                                                      | :heavy_minus_sign:                                          | N/A                                                         | 20                                                          |
+| `Count`                                                     | *long*                                                      | :heavy_minus_sign:                                          | Page size. When omitted, the server defaults to `200`.      | 20                                                          |
 
 ### Response
 

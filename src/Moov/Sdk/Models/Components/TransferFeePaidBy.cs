@@ -19,7 +19,7 @@ namespace Moov.Sdk.Models.Components
     public class TransferFeePaidBy
     {
         /// <summary>
-        /// For payouts, indicates which party bears the fee. Defaults to `source`.
+        /// Defaults to `source`.
         /// </summary>
         [JsonProperty("payout")]
         public FeePaidBy? Payout { get; set; }

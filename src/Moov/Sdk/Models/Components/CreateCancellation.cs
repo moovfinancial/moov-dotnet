@@ -13,8 +13,16 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Cancellation request.
+    /// </summary>
     public class CreateCancellation
     {
+        /// <summary>
+        /// Amount to void. This field can only be set for an auth-capture `card-payment` transfer.<br/>
+        /// This cannot exceed `capturableAmount`.<br/>
+        /// Omit this field to void the entire `capturableAmount`.
+        /// </summary>
         [JsonProperty("amount")]
         public AmountDecimal? Amount { get; set; }
     }

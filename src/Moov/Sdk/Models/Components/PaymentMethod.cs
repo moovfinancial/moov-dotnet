@@ -58,6 +58,8 @@ namespace Moov.Sdk.Models.Components
 
         public static PaymentMethodUnionType PullFromGooglePay { get { return new PaymentMethodUnionType("pull-from-google-pay"); } }
 
+        public static PaymentMethodUnionType WireCredit { get { return new PaymentMethodUnionType("wire-credit"); } }
+
         public override string ToString() { return Value; }
         public static implicit operator String(PaymentMethodUnionType v) { return v.Value; }
         public static PaymentMethodUnionType FromString(string v) {
@@ -79,6 +81,7 @@ namespace Moov.Sdk.Models.Components
                 case "google-pay": return GooglePay;
                 case "push-to-google-pay": return PushToGooglePay;
                 case "pull-from-google-pay": return PullFromGooglePay;
+                case "wire-credit": return WireCredit;
                 default: throw new ArgumentException("Invalid value for PaymentMethodUnionType");
             }
         }
@@ -158,6 +161,9 @@ namespace Moov.Sdk.Models.Components
 
         [SpeakeasyMetadata("form:explode=true")]
         public PullFromGooglePayPaymentMethod? PullFromGooglePayPaymentMethod { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public WireCreditPaymentMethod? WireCreditPaymentMethod { get; set; }
 
         public PaymentMethodUnionType Type { get; set; }
 
@@ -331,6 +337,16 @@ namespace Moov.Sdk.Models.Components
             return res;
         }
 
+        public static PaymentMethod CreateWireCredit(WireCreditPaymentMethod wireCredit)
+        {
+            PaymentMethodUnionType typ = PaymentMethodUnionType.WireCredit;
+            string typStr = PaymentMethodUnionType.WireCredit.ToString();
+            wireCredit.PaymentMethodType = WireCreditPaymentMethodPaymentMethodTypeExtension.ToEnum(PaymentMethodUnionType.WireCredit.ToString());
+            PaymentMethod res = new PaymentMethod(typ);
+            res.WireCreditPaymentMethod = wireCredit;
+            return res;
+        }
+
         public class PaymentMethodConverter : JsonConverter
         {
             public override bool CanConvert(System.Type objectType) => objectType == typeof(PaymentMethod);
@@ -430,6 +446,11 @@ namespace Moov.Sdk.Models.Components
                 {
                     PullFromGooglePayPaymentMethod pullFromGooglePayPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<PullFromGooglePayPaymentMethod>(jo.ToString());
                     return CreatePullFromGooglePay(pullFromGooglePayPaymentMethod);
+                }
+                if (discriminator == PaymentMethodUnionType.WireCredit.ToString())
+                {
+                    WireCreditPaymentMethod wireCreditPaymentMethod = ResponseBodyDeserializer.DeserializeNotNull<WireCreditPaymentMethod>(jo.ToString());
+                    return CreateWireCredit(wireCreditPaymentMethod);
                 }
 
                 throw new InvalidOperationException("Could not deserialize into any supported types.");
@@ -543,6 +564,12 @@ namespace Moov.Sdk.Models.Components
                 if (res.PullFromGooglePayPaymentMethod != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.PullFromGooglePayPaymentMethod));
+                    return;
+                }
+
+                if (res.WireCreditPaymentMethod != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.WireCreditPaymentMethod));
                     return;
                 }
 

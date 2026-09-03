@@ -66,7 +66,7 @@ namespace Moov.Sdk.Models.Components
         public CreateTransferAmountDetails? AmountDetails { get; set; }
 
         /// <summary>
-        /// Indicates which party bears fees for the transfer, keyed by fee type.
+        /// Indicates which party bears fees for a transfer, keyed by fee type.
         /// </summary>
         [JsonProperty("feePaidBy")]
         public TransferFeePaidBy? FeePaidBy { get; set; }

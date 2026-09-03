@@ -15,8 +15,6 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
 
     /// <summary>
-    /// Options for custom amount payment links.<br/>
-    /// <br/>
     /// A custom amount payment link shares all the options of a `payment` link, but the payor chooses how much to<br/>
     /// pay rather than the merchant fixing the amount. The amount may optionally be constrained to a range.
     /// </summary>

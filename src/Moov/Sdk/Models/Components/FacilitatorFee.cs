@@ -9,6 +9,7 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -18,30 +19,15 @@ namespace Moov.Sdk.Models.Components
     public class FacilitatorFee
     {
         /// <summary>
-        /// Total facilitator fee in cents. Only either `total` or `totalDecimal` can be set.
+        /// Total facilitator fee.
         /// </summary>
         [JsonProperty("total")]
-        public long? Total { get; set; }
+        public AmountDecimal? Total { get; set; }
 
         /// <summary>
-        /// Same as `total`, but a decimal-formatted numerical string that represents up to 9 decimal place precision.<br/>
-        /// <br/>
-        /// Only either `total` or `totalDecimal` can be set. Set this field if you expect the fee to be in fractions of a cent.
-        /// </summary>
-        [JsonProperty("totalDecimal")]
-        public string? TotalDecimal { get; set; }
-
-        /// <summary>
-        /// Markup facilitator fee in cents. Only either `markup` or `markupDecimal` can be set.
+        /// Markup facilitator fee.
         /// </summary>
         [JsonProperty("markup")]
-        public long? Markup { get; set; }
-
-        /// <summary>
-        /// Same as `markup`, but a decimal-formatted numerical string that represents up to 9 decimal place precision.<br/>
-        /// Only either `markup` or `markupDecimal` can be set. Set this field if you expect the fee to be in fractions of a cent.
-        /// </summary>
-        [JsonProperty("markupDecimal")]
-        public string? MarkupDecimal { get; set; }
+        public AmountDecimal? Markup { get; set; }
     }
 }

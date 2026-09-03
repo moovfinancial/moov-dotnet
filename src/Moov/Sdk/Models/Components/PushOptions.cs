@@ -14,20 +14,18 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
-    /// <summary>
-    /// Delivery options for push-to-card payouts.
-    /// </summary>
     public class PushOptions
     {
         /// <summary>
-        /// Delivery speeds the recipient may choose from for `push-to-card`. Include `instant` to allow immediate<br/>
-        /// delivery, `deferred` to allow delayed delivery, or both to let the recipient choose at checkout.
+        /// Delivery speeds the recipient may choose from for `push-to-card` and `push-to-apple-pay`.<br/>
+        /// Include `instant` to allow immediate delivery, `deferred` to allow delayed delivery, or both<br/>
+        /// to let the recipient choose at checkout.
         /// </summary>
         [JsonProperty("allowedSpeeds")]
         public List<PushDeliverySpeed> AllowedSpeeds { get; set; } = default!;
 
         /// <summary>
-        /// Delay before delivering a deferred `push-to-card` payout. Required when `allowedSpeeds` includes `deferred`.<br/>
+        /// Delay before delivering a deferred payout. Required when `allowedSpeeds` includes `deferred`.<br/>
         /// Accepted values are `24h` or `48h`.
         /// </summary>
         [JsonProperty("deferredBy")]

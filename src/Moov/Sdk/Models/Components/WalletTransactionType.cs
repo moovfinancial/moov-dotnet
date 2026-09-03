@@ -71,6 +71,8 @@ namespace Moov.Sdk.Models.Components
         Residual,
         [JsonProperty("instant-bank-failure")]
         InstantBankFailure,
+        [JsonProperty("wire-failure")]
+        WireFailure,
     }
 
     public static class WalletTransactionTypeExtension

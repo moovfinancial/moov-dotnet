@@ -1,0 +1,12 @@
+# WireCreditPaymentMethod
+
+Send funds to a bank account by wire transfer.
+
+
+## Fields
+
+| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `PaymentMethodID`                                                                                               | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the payment method.                                                                                       |
+| `PaymentMethodType`                                                                                             | [WireCreditPaymentMethodPaymentMethodType](../../Models/Components/WireCreditPaymentMethodPaymentMethodType.md) | :heavy_check_mark:                                                                                              | N/A                                                                                                             |
+| `BankAccount`                                                                                                   | [PaymentMethodsBankAccount](../../Models/Components/PaymentMethodsBankAccount.md)                               | :heavy_check_mark:                                                                                              | A bank account as contained within a payment method.                                                            |

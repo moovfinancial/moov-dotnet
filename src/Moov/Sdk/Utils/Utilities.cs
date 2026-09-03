@@ -141,11 +141,15 @@ namespace Moov.Sdk.Utils
             return modelNamespaces.Contains(ns);
         }
 
+        public static bool IsOpenEnum(object? o) => o is IOpenEnum;
+
         public static bool IsClass(object? o)
         {
             if (o == null)
                 return false;
             if (!o.GetType().IsClass)
+                return false;
+            if (IsOpenEnum(o))
                 return false;
             return IsModelNamespace(o.GetType().Namespace ?? "");
         }
@@ -216,7 +220,7 @@ namespace Moov.Sdk.Utils
                     ?.GetMethod("Value");
                 if (method == null)
                 {
-                    return Convert.ChangeType(value, Enum.GetUnderlyingType(value.GetType()))?.ToString() ?? "";
+                    return Convert.ChangeType(value, System.Enum.GetUnderlyingType(value.GetType()))?.ToString() ?? "";
                 }
                 return (string)(method.Invoke(null, new[] { value }) ?? "");
             }
@@ -235,7 +239,7 @@ namespace Moov.Sdk.Utils
                 return "";
             }
 
-            if (IsString(obj))
+            if (IsString(obj) || IsOpenEnum(obj))
             {
                 return obj.ToString() ?? "";
             }

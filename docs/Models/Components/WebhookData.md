@@ -47,6 +47,12 @@ WebhookData.CreateWebhookDataBankAccountUpdated(/* values here */);
 WebhookData.CreateWebhookDataBankAccountDeleted(/* values here */);
 ```
 
+### WebhookDataCaptureUpdated
+
+```csharp
+WebhookData.CreateWebhookDataCaptureUpdated(/* values here */);
+```
+
 ### WebhookDataCancellationCreated
 
 ```csharp

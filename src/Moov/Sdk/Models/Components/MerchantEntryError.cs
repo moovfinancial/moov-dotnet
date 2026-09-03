@@ -14,8 +14,8 @@ namespace Moov.Sdk.Models.Components
 
     public class MerchantEntryError
     {
-        [JsonProperty("mid")]
-        public string? Mid { get; set; }
+        [JsonProperty("networkID")]
+        public string? NetworkID { get; set; }
 
         [JsonProperty("descriptorPattern")]
         public string? DescriptorPattern { get; set; }

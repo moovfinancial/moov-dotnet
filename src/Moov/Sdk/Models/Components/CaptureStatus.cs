@@ -17,10 +17,6 @@ namespace Moov.Sdk.Models.Components
     {
         [JsonProperty("pending")]
         Pending,
-        [JsonProperty("submitted")]
-        Submitted,
-        [JsonProperty("settled")]
-        Settled,
         [JsonProperty("completed")]
         Completed,
         [JsonProperty("failed")]

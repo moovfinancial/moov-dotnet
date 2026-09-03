@@ -34,6 +34,8 @@ namespace Moov.Sdk.Models.Components
         BankAccountUpdated,
         [JsonProperty("bankAccount.deleted")]
         BankAccountDeleted,
+        [JsonProperty("capture.updated")]
+        CaptureUpdated,
         [JsonProperty("cancellation.created")]
         CancellationCreated,
         [JsonProperty("cancellation.updated")]
