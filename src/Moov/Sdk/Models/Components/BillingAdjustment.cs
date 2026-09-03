@@ -12,23 +12,28 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
     /// <summary>
-    /// Mutable spend controls for the card.
+    /// An adjustment (correction) fee grouped by its statement line-item name.
     /// </summary>
-    public class IssuingControls
+    public class BillingAdjustment
     {
         /// <summary>
-        /// Indicates if the card is single-use. If true, the card closes after the first authorization.
+        /// The name of the adjustment fee, shown as the statement line item.
         /// </summary>
-        [JsonProperty("singleUse")]
-        public bool? SingleUse { get; set; }
+        [JsonProperty("feeName")]
+        public string FeeName { get; set; } = default!;
 
         /// <summary>
-        /// Sets the spending limit per time interval. Only one limit per interval is supported.
+        /// The number of adjustments with this fee name.
         /// </summary>
-        [JsonProperty("velocityLimits")]
-        public List<IssuingVelocityLimit>? VelocityLimits { get; set; }
+        [JsonProperty("count")]
+        public long Count { get; set; } = default!;
+
+        /// <summary>
+        /// The total amount for this fee name. May be negative for a credit/refund.
+        /// </summary>
+        [JsonProperty("amount")]
+        public AmountDecimal Amount { get; set; } = default!;
     }
 }
