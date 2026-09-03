@@ -37,6 +37,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("expiration")]
         public CardExpiration? Expiration { get; set; }
 
+        /// <summary>
+        /// Mutable spend controls for the card.
+        /// </summary>
         [JsonProperty("controls")]
         public IssuingControls? Controls { get; set; }
     }

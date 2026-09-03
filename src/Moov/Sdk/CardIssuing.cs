@@ -56,7 +56,7 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The Moov business account for which the cards have been issued.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed`</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardsResponse"/> response envelope when completed.</returns>
@@ -125,7 +125,7 @@ namespace Moov.Sdk
         /// Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you'll need to specify the `/accounts/{accountID}/issued-cards.read-secure` scope.
+        /// you'll need to specify the `/accounts/{accountID}/issued-cards.read-private` scope.
         /// </summary>
         /// <param name="accountID">The Moov business account for which the card was issued.</param>
         /// <param name="issuedCardID">Description not available.</param>
@@ -357,7 +357,7 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The Moov business account for which the cards have been issued.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed`</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardsResponse"/> response envelope when completed.</returns>
@@ -823,7 +823,7 @@ namespace Moov.Sdk
         /// Only use this endpoint if you have provided Moov with a copy of your PCI attestation of compliance.<br/>
         /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
-        /// you'll need to specify the `/accounts/{accountID}/issued-cards.read-secure` scope.
+        /// you'll need to specify the `/accounts/{accountID}/issued-cards.read-private` scope.
         /// </summary>
         /// <param name="accountID">The Moov business account for which the card was issued.</param>
         /// <param name="issuedCardID">Description not available.</param>

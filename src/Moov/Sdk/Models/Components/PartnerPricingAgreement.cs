@@ -75,9 +75,21 @@ namespace Moov.Sdk.Models.Components
         public MonthlyPlatformFee MonthlyPlatformFee { get; set; } = default!;
 
         /// <summary>
+        /// The agreement this one replaced. Only set when the agreement was created by replacing another.
+        /// </summary>
+        [JsonProperty("priorAgreementID")]
+        public string? PriorAgreementID { get; set; }
+
+        /// <summary>
+        /// The date and time the prior agreement was terminated.
+        /// </summary>
+        [JsonProperty("priorAgreementTerminatedOn")]
+        public DateTime? PriorAgreementTerminatedOn { get; set; }
+
+        /// <summary>
         /// The decimal-formatted numerical string of the revenue split for partner.<br/>
-        ///   <br/>
-        ///   For example, 2.25% is '2.25'.
+        /// <br/>
+        /// For example, 2.25% is '2.25'.
         /// </summary>
         [JsonProperty("revenueShare")]
         public string RevenueShare { get; set; } = default!;

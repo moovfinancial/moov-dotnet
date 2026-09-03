@@ -15,7 +15,10 @@ namespace Moov.Sdk.Models.Components
     public class CreateReversal
     {
         /// <summary>
-        /// Amount to reverse. Before v2026.10, specify the amount in integer cents. Partial amounts automatically trigger a refund instead of a cancellation.
+        /// Amount to reverse.<br/>
+        /// Before v2026.10, specify the amount in integer cents.<br/>
+        /// For supported auth-capture `card-payment` reversals in v2026.10 and later, a transfer with no captures uses the full `capturableAmount`.<br/>
+        /// For those transfers with one final capture, a cancellation uses the full capture amount, while a refund may be partial.
         /// </summary>
         [JsonProperty("amount")]
         public long Amount { get; set; } = default!;

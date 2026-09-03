@@ -589,3 +589,13 @@ Based on:
 - [csharp v24.2.13] .
 ### Releases
 - [NuGet v24.2.13] https://www.nuget.org/packages/Moov.Sdk/24.2.13 - .
+
+## 2026-09-03 13:06:38
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.796.4 (2.935.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v24.3.0] .
+### Releases
+- [NuGet v24.3.0] https://www.nuget.org/packages/Moov.Sdk/24.3.0 - .
