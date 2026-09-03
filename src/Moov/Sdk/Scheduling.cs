@@ -56,7 +56,7 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="hydrate">A <see cref="Hydrate"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSchedulesResponse"/> response envelope when completed.</returns>
@@ -385,7 +385,7 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="hydrate">A <see cref="Hydrate"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListSchedulesResponse"/> response envelope when completed.</returns>

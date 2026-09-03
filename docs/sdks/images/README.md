@@ -6,7 +6,7 @@
 
 * [List](#list) - List metadata for all images in the specified account.
 * [Upload](#upload) -   Upload a new PNG, JPEG, or WebP image with optional metadata. 
-  Duplicate images, and requests larger than 16MB will be rejected.
+  Duplicate images return the existing image's metadata with a 409 status. Requests larger than 16MB will be rejected.
 * [GetMetadata](#getmetadata) - Retrieve metadata for a specific image by its ID.
 * [Update](#update) - Replace an existing image and, optionally, its metadata.
 
@@ -65,7 +65,7 @@ var res = await sdk.Images.ListAsync(
 ## Upload
 
   Upload a new PNG, JPEG, or WebP image with optional metadata. 
-  Duplicate images, and requests larger than 16MB will be rejected.
+  Duplicate images return the existing image's metadata with a 409 status. Requests larger than 16MB will be rejected.
 
 ### Example Usage
 

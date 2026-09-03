@@ -194,6 +194,9 @@ namespace Moov.Sdk
         /// <summary>
         /// Initiate a cancellation for a card, ACH, or queued transfer.<br/>
         ///   <br/>
+        ///   In v2026.10 and later, an auth-capture `card-payment` transfer can be canceled before any captures exist.<br/>
+        ///   For these transfers, a successful cancellation reduces `capturableAmount` without changing `authorizedAmount`.<br/>
+        ///   For these transfers, a partial cancellation leaves the remaining `capturableAmount` available for capture.<br/>
         ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
@@ -205,7 +208,7 @@ namespace Moov.Sdk
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
-        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400, 409 or 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<CreateCancellationResponse> CreateCancellationAsync(
             string accountID,
@@ -215,7 +218,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Get a list of cancellations for a transfer.<br/>
-        ///   <br/>
+        /// <br/>
         ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
@@ -327,7 +330,10 @@ namespace Moov.Sdk
         );
 
         /// <summary>
-        /// Reverses a card transfer by initiating a cancellation or refund depending on the transaction status. <br/>
+        /// Reverses a card transfer by initiating a cancellation or refund depending on the transaction status.<br/>
+        /// In v2026.10 and later, reversing an auth-capture `card-payment` transfer with no captures cancels the entire `capturableAmount`.<br/>
+        /// In those API versions, an auth-capture `card-payment` transfer with one final capture is canceled or refunded depending on its processing state.<br/>
+        /// Auth-capture `card-payment` transfers with a non-final capture or multiple captures are not supported in those API versions.<br/>
         /// Read our <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals guide</a> <br/>
         /// to learn more.<br/>
         /// <br/>
@@ -1475,6 +1481,9 @@ namespace Moov.Sdk
         /// <summary>
         /// Initiate a cancellation for a card, ACH, or queued transfer.<br/>
         ///   <br/>
+        ///   In v2026.10 and later, an auth-capture `card-payment` transfer can be canceled before any captures exist.<br/>
+        ///   For these transfers, a successful cancellation reduces `capturableAmount` without changing `authorizedAmount`.<br/>
+        ///   For these transfers, a partial cancellation leaves the remaining `capturableAmount` available for capture.<br/>
         ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
@@ -1486,7 +1495,7 @@ namespace Moov.Sdk
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
-        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400, 409 or 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<CreateCancellationResponse> CreateCancellationAsync(
             string accountID,
@@ -1585,7 +1594,7 @@ namespace Moov.Sdk
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
-            else if(responseStatusCode == 400)
+            else if(new List<int>{400, 409, 422}.Contains(responseStatusCode))
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
@@ -1634,7 +1643,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Get a list of cancellations for a transfer.<br/>
-        ///   <br/>
+        /// <br/>
         ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.read` scope.
         /// </summary>
@@ -1744,7 +1753,7 @@ namespace Moov.Sdk
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
-            else if(new List<int>{401, 403, 429}.Contains(responseStatusCode))
+            else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
             {
                 throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
@@ -2259,7 +2268,7 @@ namespace Moov.Sdk
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
-            else if(new List<int>{401, 403, 429}.Contains(responseStatusCode))
+            else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
             {
                 throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
@@ -2418,7 +2427,10 @@ namespace Moov.Sdk
 
 
         /// <summary>
-        /// Reverses a card transfer by initiating a cancellation or refund depending on the transaction status. <br/>
+        /// Reverses a card transfer by initiating a cancellation or refund depending on the transaction status.<br/>
+        /// In v2026.10 and later, reversing an auth-capture `card-payment` transfer with no captures cancels the entire `capturableAmount`.<br/>
+        /// In those API versions, an auth-capture `card-payment` transfer with one final capture is canceled or refunded depending on its processing state.<br/>
+        /// Auth-capture `card-payment` transfers with a non-final capture or multiple captures are not supported in those API versions.<br/>
         /// Read our <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals guide</a> <br/>
         /// to learn more.<br/>
         /// <br/>
