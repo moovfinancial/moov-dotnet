@@ -12,23 +12,28 @@ namespace Moov.Sdk.Models.Components
     using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
-    using System.Collections.Generic;
 
     /// <summary>
-    /// Restricts card usage to specific merchants, independent of merchant category.
+    /// An adjustment (correction) fee grouped by its statement line-item name.
     /// </summary>
-    public class MerchantRestrictions
+    public class BillingAdjustment
     {
         /// <summary>
-        /// Whether the listed items should be allowed (`allow`) or blocked (`block`).
+        /// The name of the adjustment fee, shown as the statement line item.
         /// </summary>
-        [JsonProperty("mode")]
-        public IssuingControlsRestrictionMode Mode { get; set; } = default!;
+        [JsonProperty("feeName")]
+        public string FeeName { get; set; } = default!;
 
         /// <summary>
-        /// The merchants to allow or block.
+        /// The number of adjustments with this fee name.
         /// </summary>
-        [JsonProperty("merchants")]
-        public List<MerchantEntry> Merchants { get; set; } = default!;
+        [JsonProperty("count")]
+        public long Count { get; set; } = default!;
+
+        /// <summary>
+        /// The total amount for this fee name. May be negative for a credit/refund.
+        /// </summary>
+        [JsonProperty("amount")]
+        public AmountDecimal Amount { get; set; } = default!;
     }
 }

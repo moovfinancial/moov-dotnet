@@ -15,6 +15,9 @@ namespace Moov.Sdk.Models.Components
     using System;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Mutable spend controls for the card.
+    /// </summary>
     public class IssuingControls
     {
         /// <summary>
@@ -36,14 +39,11 @@ namespace Moov.Sdk.Models.Components
         public MerchantCategoryRestrictions? MerchantCategoryRestrictions { get; set; }
 
         /// <summary>
-        /// Restricts card usage to specific merchants, or blocks specific merchants.
+        /// Restricts card usage to specific merchants, independent of merchant category.
         /// </summary>
         [JsonProperty("merchantRestrictions")]
         public MerchantRestrictions? MerchantRestrictions { get; set; }
 
-        /// <summary>
-        /// Limits card usage to specific days and times. Set to `null` to remove all schedule restrictions.
-        /// </summary>
         [JsonProperty("allowedSchedule")]
         public IssuingControlsAllowedSchedule? AllowedSchedule { get; set; } = null;
 

@@ -15,12 +15,12 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
 
     /// <summary>
-    /// Restricts card usage by merchant category.
+    /// Restricts card usage by merchant category. When not set, all categories are allowed.
     /// </summary>
     public class MerchantCategoryRestrictions
     {
         /// <summary>
-        /// Whether the listed categories are the only ones allowed, or the ones to block.
+        /// Whether the listed items should be allowed (`allow`) or blocked (`block`).
         /// </summary>
         [JsonProperty("mode")]
         public IssuingControlsRestrictionMode Mode { get; set; } = default!;

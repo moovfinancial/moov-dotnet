@@ -39,14 +39,11 @@ namespace Moov.Sdk.Models.Components
         public MerchantCategoryRestrictions? MerchantCategoryRestrictions { get; set; }
 
         /// <summary>
-        /// Restricts card usage to specific merchants, or blocks specific merchants.
+        /// Restricts card usage to specific merchants, independent of merchant category.
         /// </summary>
         [JsonProperty("merchantRestrictions")]
         public MerchantRestrictions? MerchantRestrictions { get; set; }
 
-        /// <summary>
-        /// Limits card usage to specific days and times.
-        /// </summary>
         [JsonProperty("allowedSchedule")]
         public IssuedControlsAllowedSchedule? AllowedSchedule { get; set; } = null;
 

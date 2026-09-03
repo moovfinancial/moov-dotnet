@@ -208,6 +208,34 @@ namespace Moov.Sdk.Models.Components
         UnderwritingSendFundsPushToCardFulfillment,
         [JsonProperty("underwriting.sendFunds.pushToCard.refundPolicy")]
         UnderwritingSendFundsPushToCardRefundPolicy,
+        [JsonProperty("underwriting.sendFunds.instantBank.cardAcceptanceMethods")]
+        UnderwritingSendFundsInstantBankCardAcceptanceMethods,
+        [JsonProperty("underwriting.sendFunds.instantBank.currentlyAcceptsCards")]
+        UnderwritingSendFundsInstantBankCurrentlyAcceptsCards,
+        [JsonProperty("underwriting.sendFunds.instantBank.estimatedActivity.averageTransactionAmount")]
+        UnderwritingSendFundsInstantBankEstimatedActivityAverageTransactionAmount,
+        [JsonProperty("underwriting.sendFunds.instantBank.estimatedActivity.maximumTransactionAmount")]
+        UnderwritingSendFundsInstantBankEstimatedActivityMaximumTransactionAmount,
+        [JsonProperty("underwriting.sendFunds.instantBank.estimatedActivity.monthlyVolumeRange")]
+        UnderwritingSendFundsInstantBankEstimatedActivityMonthlyVolumeRange,
+        [JsonProperty("underwriting.sendFunds.instantBank.fulfillment")]
+        UnderwritingSendFundsInstantBankFulfillment,
+        [JsonProperty("underwriting.sendFunds.instantBank.refundPolicy")]
+        UnderwritingSendFundsInstantBankRefundPolicy,
+        [JsonProperty("underwriting.sendFunds.wire.cardAcceptanceMethods")]
+        UnderwritingSendFundsWireCardAcceptanceMethods,
+        [JsonProperty("underwriting.sendFunds.wire.currentlyAcceptsCards")]
+        UnderwritingSendFundsWireCurrentlyAcceptsCards,
+        [JsonProperty("underwriting.sendFunds.wire.estimatedActivity.averageTransactionAmount")]
+        UnderwritingSendFundsWireEstimatedActivityAverageTransactionAmount,
+        [JsonProperty("underwriting.sendFunds.wire.estimatedActivity.maximumTransactionAmount")]
+        UnderwritingSendFundsWireEstimatedActivityMaximumTransactionAmount,
+        [JsonProperty("underwriting.sendFunds.wire.estimatedActivity.monthlyVolumeRange")]
+        UnderwritingSendFundsWireEstimatedActivityMonthlyVolumeRange,
+        [JsonProperty("underwriting.sendFunds.wire.fulfillment")]
+        UnderwritingSendFundsWireFulfillment,
+        [JsonProperty("underwriting.sendFunds.wire.refundPolicy")]
+        UnderwritingSendFundsWireRefundPolicy,
         [JsonProperty("underwriting.moneyTransfer.pullFromCard.cardAcceptanceMethods")]
         UnderwritingMoneyTransferPullFromCardCardAcceptanceMethods,
         [JsonProperty("underwriting.moneyTransfer.pullFromCard.currentlyAcceptsCards")]

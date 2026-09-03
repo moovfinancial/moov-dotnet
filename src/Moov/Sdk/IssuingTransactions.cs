@@ -74,7 +74,7 @@ namespace Moov.Sdk
         /// <param name="accountID">The Moov business account for which cards have been issued.</param>
         /// <param name="authorizationID">Description not available.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardAuthorizationEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="authorizationID"/> is null.</exception>
@@ -410,7 +410,7 @@ namespace Moov.Sdk
         /// <param name="accountID">The Moov business account for which cards have been issued.</param>
         /// <param name="authorizationID">Description not available.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardAuthorizationEventsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="authorizationID"/> is null.</exception>

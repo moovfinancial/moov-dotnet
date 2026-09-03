@@ -23,6 +23,9 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=skip")]
         public long? Skip { get; set; }
 
+        /// <summary>
+        /// Page size. When omitted, the server defaults to `200`.
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=count")]
         public long? Count { get; set; }
 
@@ -31,6 +34,12 @@ namespace Moov.Sdk.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=issuedCardID")]
         public string? IssuedCardID { get; set; }
+
+        /// <summary>
+        /// Optional case-insensitive substring match on the merchant name to filter results.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=merchantName")]
+        public string? MerchantName { get; set; }
 
         /// <summary>
         /// Optional date-time which inclusively filters all card transactions created after this date-time.

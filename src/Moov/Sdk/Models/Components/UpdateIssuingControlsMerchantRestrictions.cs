@@ -15,12 +15,12 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
 
     /// <summary>
-    /// Replaces the merchant restrictions. Set to `null` to remove.
+    /// Restricts card usage to specific merchants, independent of merchant category. Set to `null` to remove merchant restrictions.
     /// </summary>
     public class UpdateIssuingControlsMerchantRestrictions
     {
         /// <summary>
-        /// Whether the listed merchants are the only ones allowed, or the ones to block.
+        /// Whether the listed items should be allowed (`allow`) or blocked (`block`).
         /// </summary>
         [JsonProperty("mode")]
         public IssuingControlsRestrictionMode? Mode { get; set; }
