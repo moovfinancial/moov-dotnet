@@ -52,7 +52,7 @@ namespace Moov.Sdk
         );
 
         /// <summary>
-        /// This endpoint has been deprecated and will be removed in a future release. Use <a href="https://docs.moov.io/api/enrichment/form-shortening/institutions/get/">/institutions</a>.<br/>
+        /// This endpoint has been deprecated and will be removed in a future release. Use <a href="https://docs.moov.io/api/enrichment/institutions/get/">/institutions</a>.<br/>
         /// <br/>
         /// Search for institutions by either their name or routing number.<br/>
         /// <br/>
@@ -230,7 +230,7 @@ namespace Moov.Sdk
 
 
         /// <summary>
-        /// This endpoint has been deprecated and will be removed in a future release. Use <a href="https://docs.moov.io/api/enrichment/form-shortening/institutions/get/">/institutions</a>.<br/>
+        /// This endpoint has been deprecated and will be removed in a future release. Use <a href="https://docs.moov.io/api/enrichment/institutions/get/">/institutions</a>.<br/>
         /// <br/>
         /// Search for institutions by either their name or routing number.<br/>
         /// <br/>

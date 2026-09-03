@@ -56,7 +56,7 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The merchant account ID.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="types">A comma-separated list of payment link types to filter results.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentLinksResponse"/> response envelope when completed.</returns>
@@ -377,7 +377,7 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The merchant account ID.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="types">A comma-separated list of payment link types to filter results.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListPaymentLinksResponse"/> response envelope when completed.</returns>

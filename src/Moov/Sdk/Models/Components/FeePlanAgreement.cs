@@ -73,5 +73,17 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("monthlyPlatformFee")]
         public MonthlyPlatformFee MonthlyPlatformFee { get; set; } = default!;
+
+        /// <summary>
+        /// The agreement this one replaced. Only set when the agreement was created by replacing another.
+        /// </summary>
+        [JsonProperty("priorAgreementID")]
+        public string? PriorAgreementID { get; set; }
+
+        /// <summary>
+        /// The date and time the prior agreement was terminated.
+        /// </summary>
+        [JsonProperty("priorAgreementTerminatedOn")]
+        public DateTime? PriorAgreementTerminatedOn { get; set; }
     }
 }

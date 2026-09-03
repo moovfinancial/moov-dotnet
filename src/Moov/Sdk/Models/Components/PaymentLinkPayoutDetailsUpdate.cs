@@ -14,6 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Options for payout links used to send a payout.
+    /// </summary>
     public class PaymentLinkPayoutDetailsUpdate
     {
         /// <summary>
@@ -38,10 +41,7 @@ namespace Moov.Sdk.Models.Components
         public Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// Delivery options for push-to-card payouts. Only applies when `allowedMethods` includes `push-to-card`.<br/>
-        /// <br/>
-        /// The `deferred` speed and `deferredBy` apply to `push-to-card` only. Other push methods<br/>
-        /// (`push-to-apple-pay`, `push-to-google-pay`) are always delivered instantly regardless of these options.
+        /// Delivery options for `push-to-card` and `push-to-apple-pay` payouts.
         /// </summary>
         [JsonProperty("pushOptions")]
         public PushOptionsUpdate? PushOptions { get; set; }
