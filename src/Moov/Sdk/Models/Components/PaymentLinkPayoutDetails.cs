@@ -14,6 +14,9 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Options for payout links used to send a payout.
+    /// </summary>
     public class PaymentLinkPayoutDetails
     {
         /// <summary>

@@ -47,7 +47,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Upload a new PNG, JPEG, or WebP image with optional metadata. <br/>
-        ///   Duplicate images, and requests larger than 16MB will be rejected.
+        ///   Duplicate images return the existing image's metadata with a 409 status. Requests larger than 16MB will be rejected.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="ImageUploadRequestMultiPart"/> parameter.</param>
@@ -327,7 +327,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Upload a new PNG, JPEG, or WebP image with optional metadata. <br/>
-        ///   Duplicate images, and requests larger than 16MB will be rejected.
+        ///   Duplicate images return the existing image's metadata with a 409 status. Requests larger than 16MB will be rejected.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="ImageUploadRequestMultiPart"/> parameter.</param>

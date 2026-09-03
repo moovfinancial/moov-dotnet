@@ -1,5 +1,7 @@
 # PaymentLinkPayoutDetails
 
+Options for payout links used to send a payout.
+
 
 ## Fields
 

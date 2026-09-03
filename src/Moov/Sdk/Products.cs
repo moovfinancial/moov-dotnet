@@ -31,7 +31,7 @@ namespace Moov.Sdk
         /// <param name="accountID">Description not available.</param>
         /// <param name="title">Allows filtering products by title. This supports partial matches and is case-insensitive.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListProductsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
@@ -148,7 +148,7 @@ namespace Moov.Sdk
         /// <param name="accountID">Description not available.</param>
         /// <param name="title">Allows filtering products by title. This supports partial matches and is case-insensitive.</param>
         /// <param name="skip">Description not available.</param>
-        /// <param name="count">Description not available.</param>
+        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListProductsResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
