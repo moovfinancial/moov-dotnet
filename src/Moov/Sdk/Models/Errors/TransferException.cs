@@ -51,6 +51,12 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("failureReason")]
         public TransferFailureReason? FailureReason { get; set; }
 
+        /// <summary>
+        /// Amount associated with this transfer.<br/>
+        /// In v2026.10 and later, an auth-capture `card-payment` transfer reports the approved authorization amount until a final capture is created.<br/>
+        /// For these transfers, when a final capture is created, this is updated to the cumulative captured amount.<br/>
+        /// For other transfer types, this is the transfer amount.
+        /// </summary>
         [JsonProperty("amount")]
         public AmountDecimal Amount { get; set; } = default!;
 
@@ -136,6 +142,10 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("amountDetails")]
         public TransferAmountDetails? AmountDetails { get; set; }
 
+        /// <summary>
+        /// Authorization amounts.<br/>
+        /// This field is present only for an auth-capture `card-payment` transfer.
+        /// </summary>
         [JsonProperty("authorization")]
         public TransferAuthorization? Authorization { get; set; }
 

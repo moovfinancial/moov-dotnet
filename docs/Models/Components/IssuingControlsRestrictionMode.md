@@ -1,6 +1,6 @@
 # IssuingControlsRestrictionMode
 
-Whether the listed items are the only ones allowed (`allow`) or the ones to block (`block`).
+Whether the listed items should be allowed (`allow`) or blocked (`block`).
 
 ## Example Usage
 

@@ -32,5 +32,11 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("instantBankCredit")]
         public InstantBankCreditTransferProcessingDetails? InstantBankCredit { get; set; }
+
+        /// <summary>
+        /// Wire-specific processing details returned on a transfer.
+        /// </summary>
+        [JsonProperty("wire")]
+        public WireTransferProcessingDetails? Wire { get; set; }
     }
 }

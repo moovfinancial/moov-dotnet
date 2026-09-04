@@ -47,7 +47,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Upload a new PNG, JPEG, or WebP image with optional metadata. <br/>
-        ///   Duplicate images, and requests larger than 16MB will be rejected.
+        ///   Duplicate images return the existing image's metadata with a 409 status. Requests larger than 16MB will be rejected.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="ImageUploadRequestMultiPart"/> parameter.</param>
@@ -57,7 +57,8 @@ namespace Moov.Sdk
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
-        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="ImageMetadataException">The resource was successfully created. Thrown when the API returns a 409 response.</exception>
         /// <exception cref="ImageRequestValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<UploadImageResponse> UploadAsync(
@@ -327,7 +328,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Upload a new PNG, JPEG, or WebP image with optional metadata. <br/>
-        ///   Duplicate images, and requests larger than 16MB will be rejected.
+        ///   Duplicate images return the existing image's metadata with a 409 status. Requests larger than 16MB will be rejected.
         /// </summary>
         /// <param name="accountID">Description not available.</param>
         /// <param name="body">A <see cref="ImageUploadRequestMultiPart"/> parameter.</param>
@@ -337,7 +338,8 @@ namespace Moov.Sdk
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
-        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="ImageMetadataException">The resource was successfully created. Thrown when the API returns a 409 response.</exception>
         /// <exception cref="ImageRequestValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<UploadImageResponse> UploadAsync(
@@ -443,7 +445,7 @@ namespace Moov.Sdk
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
-            else if(new List<int>{400, 409}.Contains(responseStatusCode))
+            else if(responseStatusCode == 400)
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
@@ -465,6 +467,32 @@ namespace Moov.Sdk
                     };
 
                     throw new GenericError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 409)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    ImageMetadataExceptionPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<ImageMetadataExceptionPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into ImageMetadataExceptionPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new ImageMetadataException(payload, httpRequest, httpResponse, httpResponseBody);
                 }
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());

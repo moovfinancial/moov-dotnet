@@ -14,23 +14,44 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
 
+    /// <summary>
+    /// Authorization and capture amounts for an auth-capture `card-payment` transfer.
+    /// </summary>
     public class TransferAuthorization
     {
+        /// <summary>
+        /// Identifier for the authorization.
+        /// </summary>
         [JsonProperty("authorizationID")]
         public string AuthorizationID { get; set; } = default!;
 
+        /// <summary>
+        /// Amount submitted for authorization.
+        /// </summary>
         [JsonProperty("requestedAmount")]
         public AmountDecimal RequestedAmount { get; set; } = default!;
 
+        /// <summary>
+        /// Hold approved by the issuer.
+        /// </summary>
         [JsonProperty("authorizedAmount")]
         public AmountDecimal AuthorizedAmount { get; set; } = default!;
 
+        /// <summary>
+        /// Cumulative amount of captures that have not failed or been canceled.
+        /// </summary>
         [JsonProperty("capturedAmount")]
         public AmountDecimal CapturedAmount { get; set; } = default!;
 
+        /// <summary>
+        /// Amount of the authorization still available after captures and authorization cancellations.
+        /// </summary>
         [JsonProperty("capturableAmount")]
         public AmountDecimal CapturableAmount { get; set; } = default!;
 
+        /// <summary>
+        /// Expiration time for the approved authorization, when available.
+        /// </summary>
         [JsonProperty("expiresOn")]
         public DateTime? ExpiresOn { get; set; }
     }

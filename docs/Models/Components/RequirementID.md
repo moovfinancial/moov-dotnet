@@ -110,6 +110,20 @@ var value = RequirementID.AccountTosAcceptance;
 | `UnderwritingSendFundsPushToCardEstimatedActivityMonthlyVolumeRange`               | underwriting.sendFunds.pushToCard.estimatedActivity.monthlyVolumeRange             |
 | `UnderwritingSendFundsPushToCardFulfillment`                                       | underwriting.sendFunds.pushToCard.fulfillment                                      |
 | `UnderwritingSendFundsPushToCardRefundPolicy`                                      | underwriting.sendFunds.pushToCard.refundPolicy                                     |
+| `UnderwritingSendFundsInstantBankCardAcceptanceMethods`                            | underwriting.sendFunds.instantBank.cardAcceptanceMethods                           |
+| `UnderwritingSendFundsInstantBankCurrentlyAcceptsCards`                            | underwriting.sendFunds.instantBank.currentlyAcceptsCards                           |
+| `UnderwritingSendFundsInstantBankEstimatedActivityAverageTransactionAmount`        | underwriting.sendFunds.instantBank.estimatedActivity.averageTransactionAmount      |
+| `UnderwritingSendFundsInstantBankEstimatedActivityMaximumTransactionAmount`        | underwriting.sendFunds.instantBank.estimatedActivity.maximumTransactionAmount      |
+| `UnderwritingSendFundsInstantBankEstimatedActivityMonthlyVolumeRange`              | underwriting.sendFunds.instantBank.estimatedActivity.monthlyVolumeRange            |
+| `UnderwritingSendFundsInstantBankFulfillment`                                      | underwriting.sendFunds.instantBank.fulfillment                                     |
+| `UnderwritingSendFundsInstantBankRefundPolicy`                                     | underwriting.sendFunds.instantBank.refundPolicy                                    |
+| `UnderwritingSendFundsWireCardAcceptanceMethods`                                   | underwriting.sendFunds.wire.cardAcceptanceMethods                                  |
+| `UnderwritingSendFundsWireCurrentlyAcceptsCards`                                   | underwriting.sendFunds.wire.currentlyAcceptsCards                                  |
+| `UnderwritingSendFundsWireEstimatedActivityAverageTransactionAmount`               | underwriting.sendFunds.wire.estimatedActivity.averageTransactionAmount             |
+| `UnderwritingSendFundsWireEstimatedActivityMaximumTransactionAmount`               | underwriting.sendFunds.wire.estimatedActivity.maximumTransactionAmount             |
+| `UnderwritingSendFundsWireEstimatedActivityMonthlyVolumeRange`                     | underwriting.sendFunds.wire.estimatedActivity.monthlyVolumeRange                   |
+| `UnderwritingSendFundsWireFulfillment`                                             | underwriting.sendFunds.wire.fulfillment                                            |
+| `UnderwritingSendFundsWireRefundPolicy`                                            | underwriting.sendFunds.wire.refundPolicy                                           |
 | `UnderwritingMoneyTransferPullFromCardCardAcceptanceMethods`                       | underwriting.moneyTransfer.pullFromCard.cardAcceptanceMethods                      |
 | `UnderwritingMoneyTransferPullFromCardCurrentlyAcceptsCards`                       | underwriting.moneyTransfer.pullFromCard.currentlyAcceptsCards                      |
 | `UnderwritingMoneyTransferPullFromCardEstimatedActivityAverageTransactionAmount`   | underwriting.moneyTransfer.pullFromCard.estimatedActivity.averageTransactionAmount |
@@ -124,3 +138,4 @@ var value = RequirementID.AccountTosAcceptance;
 | `UnderwritingMoneyTransferPushToCardEstimatedActivityMonthlyVolumeRange`           | underwriting.moneyTransfer.pushToCard.estimatedActivity.monthlyVolumeRange         |
 | `UnderwritingMoneyTransferPushToCardFulfillment`                                   | underwriting.moneyTransfer.pushToCard.fulfillment                                  |
 | `UnderwritingMoneyTransferPushToCardRefundPolicy`                                  | underwriting.moneyTransfer.pushToCard.refundPolicy                                 |
+| `UnderwritingCardIssuingEstimatedActivityMonthlyVolumeRange`                       | underwriting.cardIssuing.estimatedActivity.monthlyVolumeRange                      |

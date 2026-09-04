@@ -15,7 +15,7 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
 
     /// <summary>
-    /// Request to capture funds against an authorized transfer.
+    /// Request to capture funds against an authorization.
     /// </summary>
     public class CreateCapture
     {
@@ -26,13 +26,15 @@ namespace Moov.Sdk.Models.Components
         public string DestinationPaymentMethodID { get; set; } = default!;
 
         /// <summary>
-        /// Amount to capture. If omitted, the remaining authorized amount is captured.
+        /// Amount to capture.<br/>
+        /// If omitted, the remaining capturable amount is captured.
         /// </summary>
         [JsonProperty("amount")]
         public AmountDecimal? Amount { get; set; }
 
         /// <summary>
-        /// Indicates whether this is the final capture against the authorization. When `true`, any remaining authorized amount is voided.
+        /// Indicates whether this is intended to be the final capture.<br/>
+        /// When `true`, any remaining capturable amount is voided.
         /// </summary>
         [JsonProperty("isFinal")]
         public bool? IsFinal { get; set; }
@@ -66,7 +68,8 @@ namespace Moov.Sdk.Models.Components
         public CreateTransferAmountDetails? AmountDetails { get; set; }
 
         /// <summary>
-        /// The facilitator fee amount applied to the capture.
+        /// The facilitator fee applied to this capture.<br/>
+        /// The transfer's facilitator fee is the sum of its capture fees.
         /// </summary>
         [JsonProperty("facilitatorFeeAmount")]
         public AmountDecimal? FacilitatorFeeAmount { get; set; }

@@ -34,6 +34,8 @@ namespace Moov.Sdk.Models.Components
         InstantBankCredit,
         [JsonProperty("wallet")]
         Wallet,
+        [JsonProperty("wire-credit")]
+        WireCredit,
     }
 
     public static class TransferTypeExtension

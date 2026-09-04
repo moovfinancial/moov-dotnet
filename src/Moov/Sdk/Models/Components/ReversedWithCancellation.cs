@@ -15,6 +15,9 @@ namespace Moov.Sdk.Models.Components
 
     public class ReversedWithCancellation
     {
+        /// <summary>
+        /// Cancellation of a transfer.
+        /// </summary>
         [JsonProperty("cancellation")]
         public Cancellation Cancellation { get; set; } = default!;
     }

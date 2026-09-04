@@ -20,7 +20,7 @@ namespace Moov.Sdk.Models.Components
     public class MerchantRestrictions
     {
         /// <summary>
-        /// Whether the listed merchants are the only ones allowed, or the ones to block.
+        /// Whether the listed items should be allowed (`allow`) or blocked (`block`).
         /// </summary>
         [JsonProperty("mode")]
         public IssuingControlsRestrictionMode Mode { get; set; } = default!;

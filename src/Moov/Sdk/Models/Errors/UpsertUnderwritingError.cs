@@ -38,6 +38,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("sendFunds")]
         public SendFundsError? SendFunds { get; set; }
 
+        [JsonProperty("cardIssuing")]
+        public CardIssuingError? CardIssuing { get; set; }
+
         [JsonProperty("averageMonthlyTransactionVolume")]
         public string? AverageMonthlyTransactionVolume { get; set; }
 
@@ -91,6 +94,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpsertUnderwritingError.Payload.SendFunds instead.")]
         public SendFundsError? SendFunds { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpsertUnderwritingError.Payload.CardIssuing instead.")]
+        public CardIssuingError? CardIssuing { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpsertUnderwritingError.Payload.AverageMonthlyTransactionVolume instead.")]
         public string? AverageMonthlyTransactionVolume { get; set; }
 
@@ -132,6 +138,7 @@ namespace Moov.Sdk.Models.Errors
            CollectFunds = payload.CollectFunds;
            MoneyTransfer = payload.MoneyTransfer;
            SendFunds = payload.SendFunds;
+           CardIssuing = payload.CardIssuing;
            AverageMonthlyTransactionVolume = payload.AverageMonthlyTransactionVolume;
            Error = payload.Error;
            AverageTransactionSize = payload.AverageTransactionSize;

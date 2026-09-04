@@ -16,7 +16,7 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
 
     /// <summary>
-    /// Mutable spend controls. Each field replaces the entire corresponding value.
+    /// Each field replaces the entire corresponding value.
     /// </summary>
     public class UpdateIssuingControls
     {
@@ -27,25 +27,25 @@ namespace Moov.Sdk.Models.Components
         public List<IssuingVelocityLimit>? VelocityLimits { get; set; }
 
         /// <summary>
-        /// Replaces the merchant category restrictions. Set to `null` to remove.
+        /// Restricts card usage by merchant category. Set to `null` to remove all category restrictions.
         /// </summary>
         [JsonProperty("merchantCategoryRestrictions")]
         public UpdateIssuingControlsMerchantCategoryRestrictions? MerchantCategoryRestrictions { get; set; } = null;
 
         /// <summary>
-        /// Replaces the merchant restrictions. Set to `null` to remove.
+        /// Restricts card usage to specific merchants, independent of merchant category. Set to `null` to remove merchant restrictions.
         /// </summary>
         [JsonProperty("merchantRestrictions")]
         public UpdateIssuingControlsMerchantRestrictions? MerchantRestrictions { get; set; } = null;
 
         /// <summary>
-        /// Replaces the allowed schedule. Set to `null` to remove all schedule restrictions.
+        /// Limits card usage to specific days and times. Set to `null` to remove all schedule restrictions.
         /// </summary>
         [JsonProperty("allowedSchedule")]
         public UpdateIssuingControlsAllowedSchedule? AllowedSchedule { get; set; } = null;
 
         /// <summary>
-        /// A spend cutoff date and time. Set to `null` to remove the cutoff.
+        /// A spend cutoff date and time. Set to `null` to remove the spend cutoff.
         /// </summary>
         [JsonProperty("expiresOn")]
         public DateTime? ExpiresOn { get; set; } = null;

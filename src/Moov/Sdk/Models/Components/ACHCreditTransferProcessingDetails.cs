@@ -15,6 +15,12 @@ namespace Moov.Sdk.Models.Components
 
     public class ACHCreditTransferProcessingDetails
     {
+        /// <summary>
+        /// Status of a transaction within the ACH lifecycle.
+        /// </summary>
+        [JsonProperty("status")]
+        public ACHTransactionStatus Status { get; set; } = default!;
+
         [JsonProperty("traceNumber")]
         public string TraceNumber { get; set; } = default!;
 

@@ -1,7 +1,5 @@
 # PaymentLinkCustomAmountPaymentDetailsUpdate
 
-Options for custom amount payment links.
-
 A custom amount payment link shares all the options of a `payment` link, but the payor chooses how much to
 pay rather than the merchant fixing the amount. The amount may optionally be constrained to a range.
 

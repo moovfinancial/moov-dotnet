@@ -52,6 +52,8 @@ namespace Moov.Sdk.Models.Components
         PushToGooglePay,
         [JsonProperty("pull-from-google-pay")]
         PullFromGooglePay,
+        [JsonProperty("wire-credit")]
+        WireCredit,
     }
 
     public static class PaymentMethodTypeExtension

@@ -29,6 +29,27 @@ you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/bank-accounts.write` scope.
+* [CreateAttestation](#createattestation) -   Submit a new authorization attestation for a bank account in an `errored` status due to an R29 ACH return (`Corporate Customer Advises Not Authorized`).
+
+  After obtaining new authorization from the receiver, submit an attestation with the date the authorization was obtained and a brief description of how the authorization was obtained. If the attestation is accepted, the bank account transitions from `errored` to `verified`.
+
+  Constraints
+
+  - The bank account's current errored status must be the result of an R29 return.
+  - `attestedAt` must be on or after the date of the bank account's most recent R29 return and cannot be a future date.
+  - Only one attestation may be submitted for a bank account. Use the [Get attestation eligibility](https://docs.moov.io/api/sources/bank-accounts/attestation-eligibility/) endpoint to confirm eligibility before submitting an attestation.
+
+  This endpoint is available only to allowlisted partners. Contact Moov Support for more information.
+* [ListAttestations](#listattestations) - List the attestations submitted for a bank account.
+* [GetAttestationEligibility](#getattestationeligibility) - Check whether a bank account is currently eligible for a new authorization attestation without submitting one.
+
+- `enabled` indicates whether the calling account has access to the attestations feature. If `enabled` is `false`, `eligible` is always `false`.
+- When `enabled` is `true`, `eligible` indicates whether the bank account currently meets the eligibility requirements for a new attestation: the bank account must be `errored` due to an R29 return, with no prior attestations.
+
+This endpoint always returns `200`, including when the bank account is not eligible. Check the `eligible` field to determine eligibility.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
 * [InitiateMicroDeposits](#initiatemicrodeposits) - Micro-deposits help confirm bank account ownership, helping reduce fraud and the risk of unauthorized activity. 
 Use this method to initiate the micro-deposit verification, sending two small credit transfers to the bank account 
 you want to confirm.
@@ -281,6 +302,157 @@ var res = await sdk.BankAccounts.DisableAsync(
 | Error Type                          | Status Code                         | Content Type                        |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## CreateAttestation
+
+  Submit a new authorization attestation for a bank account in an `errored` status due to an R29 ACH return (`Corporate Customer Advises Not Authorized`).
+
+  After obtaining new authorization from the receiver, submit an attestation with the date the authorization was obtained and a brief description of how the authorization was obtained. If the attestation is accepted, the bank account transitions from `errored` to `verified`.
+
+  Constraints
+
+  - The bank account's current errored status must be the result of an R29 return.
+  - `attestedAt` must be on or after the date of the bank account's most recent R29 return and cannot be a future date.
+  - Only one attestation may be submitted for a bank account. Use the [Get attestation eligibility](https://docs.moov.io/api/sources/bank-accounts/attestation-eligibility/) endpoint to confirm eligibility before submitting an attestation.
+
+  This endpoint is available only to allowlisted partners. Contact Moov Support for more information.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createBankAccountAttestation" method="post" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/attestations" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+using System;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.BankAccounts.CreateAttestationAsync(
+    accountID: "<id>",
+    bankAccountID: "<id>",
+    body: new CreateBankAccountAttestation() {
+        AttestedAt = DateOnly.Parse("2026-05-15"),
+        Description = "each duh famously athwart",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `AccountID`                                                                             | *string*                                                                                | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `BankAccountID`                                                                         | *string*                                                                                | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `Body`                                                                                  | [CreateBankAccountAttestation](../../Models/Components/CreateBankAccountAttestation.md) | :heavy_check_mark:                                                                      | N/A                                                                                     |
+
+### Response
+
+**[CreateBankAccountAttestationResponse](../../Models/Requests/CreateBankAccountAttestationResponse.md)**
+
+### Errors
+
+| Error Type                                                   | Status Code                                                  | Content Type                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Moov.Sdk.Models.Errors.GenericError                          | 400, 409                                                     | application/json                                             |
+| Moov.Sdk.Models.Errors.BankAccountAttestationValidationError | 422                                                          | application/json                                             |
+| Moov.Sdk.Models.Errors.APIException                          | 4XX, 5XX                                                     | \*/\*                                                        |
+
+## ListAttestations
+
+List the attestations submitted for a bank account.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listBankAccountAttestations" method="get" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/attestations" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.BankAccounts.ListAttestationsAsync(
+    accountID: "<id>",
+    bankAccountID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `AccountID`        | *string*           | :heavy_check_mark: | N/A                |
+| `BankAccountID`    | *string*           | :heavy_check_mark: | N/A                |
+
+### Response
+
+**[ListBankAccountAttestationsResponse](../../Models/Requests/ListBankAccountAttestationsResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## GetAttestationEligibility
+
+Check whether a bank account is currently eligible for a new authorization attestation without submitting one.
+
+- `enabled` indicates whether the calling account has access to the attestations feature. If `enabled` is `false`, `eligible` is always `false`.
+- When `enabled` is `true`, `eligible` indicates whether the bank account currently meets the eligibility requirements for a new attestation: the bank account must be `errored` due to an R29 return, with no prior attestations.
+
+This endpoint always returns `200`, including when the bank account is not eligible. Check the `eligible` field to determine eligibility.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getBankAccountAttestationEligibility" method="get" path="/accounts/{accountID}/bank-accounts/{bankAccountID}/attestations-eligibility" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.BankAccounts.GetAttestationEligibilityAsync(
+    accountID: "<id>",
+    bankAccountID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                   | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `AccountID`                                                                                                                 | *string*                                                                                                                    | :heavy_check_mark:                                                                                                          | N/A                                                                                                                         |
+| `BankAccountID`                                                                                                             | *string*                                                                                                                    | :heavy_check_mark:                                                                                                          | N/A                                                                                                                         |
+| `AttestedAt`                                                                                                                | [DateOnly](https://learn.microsoft.com/en-us/dotnet/api/system.dateonly?view=net-6.0)                                       | :heavy_minus_sign:                                                                                                          | Date to check eligibility against, as if it were the `attestedAt` value of a new attestation. Defaults<br/>to the current date. |
+
+### Response
+
+**[GetBankAccountAttestationEligibilityResponse](../../Models/Requests/GetBankAccountAttestationEligibilityResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400                                 | application/json                    |
 | Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## InitiateMicroDeposits

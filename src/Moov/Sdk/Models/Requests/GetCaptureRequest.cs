@@ -14,13 +14,13 @@ namespace Moov.Sdk.Models.Requests
     public class GetCaptureRequest
     {
         /// <summary>
-        /// The merchant's Moov account ID.
+        /// Moov account ID of an authorized partner or the transfer's source or destination.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
 
         /// <summary>
-        /// Identifier for the transfer.
+        /// Identifier for the auth-capture `card-payment` transfer.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=transferID")]
         public string TransferID { get; set; } = default!;

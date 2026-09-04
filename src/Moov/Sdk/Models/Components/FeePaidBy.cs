@@ -13,9 +13,6 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
     using System;
 
-    /// <summary>
-    /// Indicates which party to a money movement bears an incurred fee.
-    /// </summary>
     public enum FeePaidBy
     {
         [JsonProperty("source")]

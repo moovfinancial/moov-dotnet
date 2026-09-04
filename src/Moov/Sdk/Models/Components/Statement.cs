@@ -112,6 +112,12 @@ namespace Moov.Sdk.Models.Components
         public PartnerFees? PartnerFees { get; set; }
 
         /// <summary>
+        /// A detailed breakdown of adjustment (correction) fees by fee name.
+        /// </summary>
+        [JsonProperty("adjustments")]
+        public AdjustmentFees? Adjustments { get; set; }
+
+        /// <summary>
         /// The date and time the statement was created.
         /// </summary>
         [JsonProperty("createdOn")]

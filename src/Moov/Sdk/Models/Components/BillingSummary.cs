@@ -51,11 +51,11 @@ namespace Moov.Sdk.Models.Components
         public BillingSummaryDetails? AccountFees { get; set; }
 
         /// <summary>
-        /// The total amount of adjustment fees. This field is deprecated and will be removed in a future release.
+        /// The total amount of adjustment fees. This field is deprecated and will be removed in a future release. Use adjustments.total.
         /// </summary>
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible")]
         [JsonProperty("adjustmentFees")]
-        public AdjustmentFees? AdjustmentFees { get; set; }
+        public BillingSummaryAdjustmentFees? AdjustmentFees { get; set; }
 
         /// <summary>
         /// The total amount of other card fees. This field is deprecated and will be removed in a future release. Use summary.otherCardFees.
@@ -105,5 +105,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("netPartnerPayment")]
         public AmountDecimal? NetPartnerPayment { get; set; }
+
+        /// <summary>
+        /// Final partner payment after deducting monthlyPartnerCosts and any adjustments.
+        /// </summary>
+        [JsonProperty("totalNetPartnerPayment")]
+        public AmountDecimal? TotalNetPartnerPayment { get; set; }
     }
 }

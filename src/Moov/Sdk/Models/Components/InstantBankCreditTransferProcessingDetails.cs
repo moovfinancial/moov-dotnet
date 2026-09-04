@@ -16,6 +16,12 @@ namespace Moov.Sdk.Models.Components
     public class InstantBankCreditTransferProcessingDetails
     {
         /// <summary>
+        /// Status of a transaction within the instant-bank lifecycle.
+        /// </summary>
+        [JsonProperty("status")]
+        public InstantBankTransactionStatus Status { get; set; } = default!;
+
+        /// <summary>
         /// The network that the transaction was processed on.
         /// </summary>
         [JsonProperty("network")]

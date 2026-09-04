@@ -21,13 +21,13 @@ namespace Moov.Sdk.Models.Components
     public class CreateRefund
     {
         /// <summary>
-        /// Amount to refund. Before v2026.10, specify the amount in integer cents. If omitted, the original transfer's full amount will be refunded.
+        /// Amount to refund. If omitted, the original transfer's full amount will be refunded.
         /// </summary>
         [JsonProperty("amount")]
         public AmountDecimal? Amount { get; set; }
 
         /// <summary>
-        /// ID of the capture to refund. Required for multi-capture card payment transfers.
+        /// ID of the capture to refund. This field is only relevant for an auth-capture `card-payment` transfer.
         /// </summary>
         [JsonProperty("captureID")]
         public string? CaptureID { get; set; }

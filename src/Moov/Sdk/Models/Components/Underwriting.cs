@@ -61,5 +61,13 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("sendFunds")]
         public SendFunds? SendFunds { get; set; }
+
+        /// <summary>
+        /// Underwriting data for the `card-issuing` capability.<br/>
+        /// <br/>
+        /// Issued cards are funded from the account's card-issuing wallet before they can be spent, so estimated activity is the only data collected.
+        /// </summary>
+        [JsonProperty("cardIssuing")]
+        public Models.Components.CardIssuing? CardIssuing { get; set; }
     }
 }

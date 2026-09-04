@@ -15,16 +15,25 @@ namespace Moov.Sdk.Models.Components
 
     public class CardPaymentTransferProcessingDetails
     {
+        /// <summary>
+        /// Status of a card payment transaction.
+        /// </summary>
+        [JsonProperty("status")]
+        public CardPaymentTransactionStatus? Status { get; set; }
+
         [JsonProperty("authorizationCode")]
         public string? AuthorizationCode { get; set; }
 
         [JsonProperty("networkTransactionID")]
         public string? NetworkTransactionID { get; set; }
 
-        [JsonProperty("networkResponseCode")]
-        public string? NetworkResponseCode { get; set; }
-
         [JsonProperty("failureCode")]
         public CardTransactionFailureCode? FailureCode { get; set; }
+
+        /// <summary>
+        /// The retrieval reference number assigned by the card network to the card payment.
+        /// </summary>
+        [JsonProperty("retrievalReferenceNumber")]
+        public string? RetrievalReferenceNumber { get; set; }
     }
 }

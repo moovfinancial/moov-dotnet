@@ -77,16 +77,10 @@ namespace Moov.Sdk.Models.Requests
         public string? ForeignID { get; set; }
 
         /// <summary>
-        /// Optional comma-separated IDs to filter for transfers associated with specific card authorizations.
+        /// Optional comma-separated authorization IDs.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=authorizationIDs")]
         public List<string>? AuthorizationIDs { get; set; }
-
-        /// <summary>
-        /// Optional comma-separated IDs to filter for transfers associated with specific card captures.
-        /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=captureIDs")]
-        public List<string>? CaptureIDs { get; set; }
 
         /// <summary>
         /// Optional, comma-separated transfer types by which the response is filtered.
@@ -97,6 +91,9 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=skip")]
         public long? Skip { get; set; }
 
+        /// <summary>
+        /// Page size. When omitted, the server defaults to `200`.
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=count")]
         public long? Count { get; set; }
 

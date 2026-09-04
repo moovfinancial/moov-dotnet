@@ -29,7 +29,7 @@ namespace Moov.Sdk.Models.Components
         public AmountDecimal Amount { get; set; } = default!;
 
         /// <summary>
-        /// ID of the capture this refund applies to, when applicable.
+        /// ID of the capture refunded for an auth-capture `card-payment` transfer.
         /// </summary>
         [JsonProperty("captureID")]
         public string? CaptureID { get; set; }

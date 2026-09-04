@@ -124,6 +124,88 @@ namespace Moov.Sdk
         );
 
         /// <summary>
+        /// Submit a new authorization attestation for a bank account in an `errored` status due to an R29 ACH return (`Corporate Customer Advises Not Authorized`).<br/>
+        /// <br/>
+        ///   After obtaining new authorization from the receiver, submit an attestation with the date the authorization was obtained and a brief description of how the authorization was obtained. If the attestation is accepted, the bank account transitions from `errored` to `verified`.<br/>
+        /// <br/>
+        ///   Constraints<br/>
+        /// <br/>
+        ///   - The bank account's current errored status must be the result of an R29 return.<br/>
+        ///   - `attestedAt` must be on or after the date of the bank account's most recent R29 return and cannot be a future date.<br/>
+        ///   - Only one attestation may be submitted for a bank account. Use the <a href="https://docs.moov.io/api/sources/bank-accounts/attestation-eligibility/">Get attestation eligibility</a> endpoint to confirm eligibility before submitting an attestation.<br/>
+        /// <br/>
+        ///   This endpoint is available only to allowlisted partners. Contact Moov Support for more information.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="bankAccountID">Description not available.</param>
+        /// <param name="body">A <see cref="CreateBankAccountAttestation"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateBankAccountAttestationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="bankAccountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="BankAccountAttestationValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateBankAccountAttestationResponse> CreateAttestationAsync(
+            string accountID,
+            string bankAccountID,
+            CreateBankAccountAttestation body,
+            CancellationToken? cancellationToken = null
+        );
+
+        /// <summary>
+        /// List the attestations submitted for a bank account.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="bankAccountID">Description not available.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListBankAccountAttestationsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="bankAccountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListBankAccountAttestationsResponse> ListAttestationsAsync(
+            string accountID,
+            string bankAccountID,
+            CancellationToken? cancellationToken = null
+        );
+
+        /// <summary>
+        /// Check whether a bank account is currently eligible for a new authorization attestation without submitting one.<br/>
+        /// <br/>
+        /// - `enabled` indicates whether the calling account has access to the attestations feature. If `enabled` is `false`, `eligible` is always `false`.<br/>
+        /// - When `enabled` is `true`, `eligible` indicates whether the bank account currently meets the eligibility requirements for a new attestation: the bank account must be `errored` due to an R29 return, with no prior attestations.<br/>
+        /// <br/>
+        /// This endpoint always returns `200`, including when the bank account is not eligible. Check the `eligible` field to determine eligibility.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="bankAccountID">Description not available.</param>
+        /// <param name="attestedAt">
+        /// Date to check eligibility against, as if it were the `attestedAt` value of a new attestation. Defaults<br/>
+        /// to the current date.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetBankAccountAttestationEligibilityResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="bankAccountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetBankAccountAttestationEligibilityResponse> GetAttestationEligibilityAsync(
+            string accountID,
+            string bankAccountID,
+            DateOnly? attestedAt = null,
+            CancellationToken? cancellationToken = null
+        );
+
+        /// <summary>
         /// Micro-deposits help confirm bank account ownership, helping reduce fraud and the risk of unauthorized activity. <br/>
         /// Use this method to initiate the micro-deposit verification, sending two small credit transfers to the bank account <br/>
         /// you want to confirm.<br/>
@@ -894,6 +976,511 @@ namespace Moov.Sdk
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{500, 504}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Submit a new authorization attestation for a bank account in an `errored` status due to an R29 ACH return (`Corporate Customer Advises Not Authorized`).<br/>
+        /// <br/>
+        ///   After obtaining new authorization from the receiver, submit an attestation with the date the authorization was obtained and a brief description of how the authorization was obtained. If the attestation is accepted, the bank account transitions from `errored` to `verified`.<br/>
+        /// <br/>
+        ///   Constraints<br/>
+        /// <br/>
+        ///   - The bank account's current errored status must be the result of an R29 return.<br/>
+        ///   - `attestedAt` must be on or after the date of the bank account's most recent R29 return and cannot be a future date.<br/>
+        ///   - Only one attestation may be submitted for a bank account. Use the <a href="https://docs.moov.io/api/sources/bank-accounts/attestation-eligibility/">Get attestation eligibility</a> endpoint to confirm eligibility before submitting an attestation.<br/>
+        /// <br/>
+        ///   This endpoint is available only to allowlisted partners. Contact Moov Support for more information.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="bankAccountID">Description not available.</param>
+        /// <param name="body">A <see cref="CreateBankAccountAttestation"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateBankAccountAttestationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="bankAccountID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="BankAccountAttestationValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateBankAccountAttestationResponse> CreateAttestationAsync(
+            string accountID,
+            string bankAccountID,
+            CreateBankAccountAttestation body,
+            CancellationToken? cancellationToken = null
+        )
+        {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
+            var request = new CreateBankAccountAttestationRequest()
+            {
+                AccountID = accountID,
+                BankAccountID = bankAccountID,
+                Body = body,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/bank-accounts/{bankAccountID}/attestations", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "Body", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createBankAccountAttestation", null, SDKConfiguration.SecuritySource, cancellationToken);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    BankAccountAttestation obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<BankAccountAttestation>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into BankAccountAttestation.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new CreateBankAccountAttestationResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                    };
+                    response.BankAccountAttestation = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{400, 409}.Contains(responseStatusCode))
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    GenericErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<GenericErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into GenericErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new GenericError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 422)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    BankAccountAttestationValidationErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<BankAccountAttestationValidationErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into BankAccountAttestationValidationErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new BankAccountAttestationValidationError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{500, 504}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// List the attestations submitted for a bank account.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="bankAccountID">Description not available.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListBankAccountAttestationsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="bankAccountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListBankAccountAttestationsResponse> ListAttestationsAsync(
+            string accountID,
+            string bankAccountID,
+            CancellationToken? cancellationToken = null
+        )
+        {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+
+            var request = new ListBankAccountAttestationsRequest()
+            {
+                AccountID = accountID,
+                BankAccountID = bankAccountID,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/bank-accounts/{bankAccountID}/attestations", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listBankAccountAttestations", null, SDKConfiguration.SecuritySource, cancellationToken);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<BankAccountAttestationSummary> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<BankAccountAttestationSummary>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<BankAccountAttestationSummary>.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListBankAccountAttestationsResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                    };
+                    response.BankAccountAttestationSummaries = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{500, 504}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Check whether a bank account is currently eligible for a new authorization attestation without submitting one.<br/>
+        /// <br/>
+        /// - `enabled` indicates whether the calling account has access to the attestations feature. If `enabled` is `false`, `eligible` is always `false`.<br/>
+        /// - When `enabled` is `true`, `eligible` indicates whether the bank account currently meets the eligibility requirements for a new attestation: the bank account must be `errored` due to an R29 return, with no prior attestations.<br/>
+        /// <br/>
+        /// This endpoint always returns `200`, including when the bank account is not eligible. Check the `eligible` field to determine eligibility.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/bank-accounts.read` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="bankAccountID">Description not available.</param>
+        /// <param name="attestedAt">
+        /// Date to check eligibility against, as if it were the `attestedAt` value of a new attestation. Defaults<br/>
+        /// to the current date.
+        /// </param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetBankAccountAttestationEligibilityResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="bankAccountID"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetBankAccountAttestationEligibilityResponse> GetAttestationEligibilityAsync(
+            string accountID,
+            string bankAccountID,
+            DateOnly? attestedAt = null,
+            CancellationToken? cancellationToken = null
+        )
+        {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (bankAccountID == null) throw new ArgumentNullException(nameof(bankAccountID));
+
+            var request = new GetBankAccountAttestationEligibilityRequest()
+            {
+                AccountID = accountID,
+                BankAccountID = bankAccountID,
+                AttestedAt = attestedAt,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/bank-accounts/{bankAccountID}/attestations-eligibility", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getBankAccountAttestationEligibility", null, SDKConfiguration.SecuritySource, cancellationToken);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    BankAccountAttestationEligibility obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<BankAccountAttestationEligibility>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into BankAccountAttestationEligibility.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new GetBankAccountAttestationEligibilityResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                    };
+                    response.BankAccountAttestationEligibility = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 400)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    GenericErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<GenericErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into GenericErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new GenericError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{401, 403, 404}.Contains(responseStatusCode))
             {
                 throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
