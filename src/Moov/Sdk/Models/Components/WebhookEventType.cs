@@ -98,6 +98,8 @@ namespace Moov.Sdk.Models.Components
         BillingStatementCreated,
         [JsonProperty("authorization.expiring")]
         AuthorizationExpiring,
+        [JsonProperty("event.test")]
+        EventTest,
     }
 
     public static class WebhookEventTypeExtension
