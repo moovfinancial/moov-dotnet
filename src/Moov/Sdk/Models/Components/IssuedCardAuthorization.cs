@@ -23,6 +23,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("issuedCardID")]
         public string IssuedCardID { get; set; } = default!;
 
+        /// <summary>
+        /// Last four digits of the card number. Omitted for authorizations recorded before this was captured.
+        /// </summary>
+        [JsonProperty("lastFourCardNumber")]
+        public string? LastFourCardNumber { get; set; }
+
         [JsonProperty("fundingWalletID")]
         public string FundingWalletID { get; set; } = default!;
 

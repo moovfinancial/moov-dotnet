@@ -54,3 +54,4 @@ var value = WebhookEventType.Wildcard;
 | `WalletTransactionUpdated`   | walletTransaction.updated    |
 | `BillingStatementCreated`    | billingStatement.created     |
 | `AuthorizationExpiring`      | authorization.expiring       |
+| `EventTest`                  | event.test                   |
