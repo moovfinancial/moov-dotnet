@@ -13,12 +13,13 @@ var value = CardTransactionStatus.Initiated;
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Initiated` | initiated   |
-| `Confirmed` | confirmed   |
-| `Canceled`  | canceled    |
-| `Settled`   | settled     |
-| `Failed`    | failed      |
-| `Completed` | completed   |
-| `Deferred`  | deferred    |
+| Name              | Value             |
+| ----------------- | ----------------- |
+| `Initiated`       | initiated         |
+| `Confirmed`       | confirmed         |
+| `Canceled`        | canceled          |
+| `Settled`         | settled           |
+| `Failed`          | failed            |
+| `Completed`       | completed         |
+| `ClearedExternal` | cleared-external  |
+| `Deferred`        | deferred          |

@@ -25,6 +25,8 @@ namespace Moov.Sdk.Models.Components
         Failed,
         [JsonProperty("completed")]
         Completed,
+        [JsonProperty("cleared-external")]
+        ClearedExternal,
     }
 
     public static class RefundCardStatusExtension
