@@ -30,8 +30,8 @@ namespace Moov.Sdk.Models.Components
         Failed,
         [JsonProperty("completed")]
         Completed,
-        [JsonProperty("cleared-external")]
-        ClearedExternal,
+        [JsonProperty("cleared-externally")]
+        ClearedExternally,
         [JsonProperty("deferred")]
         Deferred,
     }
