@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 620a092d16b1e218a895d7b5b7406b67
+  docChecksum: 72c41e32be17c57526027cb31ba4855f
   docVersion: v2026.01.00
-  speakeasyVersion: 1.796.4
-  generationVersion: 2.935.1
-  releaseVersion: 26.3.2
-  configChecksum: ebf64b860210c0337394418910e110ff
+  speakeasyVersion: 1.797.0
+  generationVersion: 2.937.18
+  releaseVersion: 26.3.3
+  configChecksum: b4bb7af28f8c86a2b7dbb37a9c2d0fa3
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: be5e9be9-123e-4349-9819-89af137dd5c0
-  pristine_commit_hash: 85f9a28a09060ec781413cfbc1a0d7fc10420642
-  pristine_tree_hash: bfa202f9be3c035f4534f3e6edf9c792e2a40a50
+  generation_id: dff55526-c3e5-4445-ae05-a071933a85a4
+  pristine_commit_hash: 1f23e793709b8b6ab96295c845a2b8aaa08e8e39
+  pristine_tree_hash: d0b19d6be8b6988db7f235eace1535fd8ab14180
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -609,8 +609,8 @@ trackedFiles:
     pristine_git_object: fc8960b9ef029a6ee2df813cd6ed3077c5e7f327
   docs/Models/Components/CardTransactionStatus.md:
     id: 8726682a48a7
-    last_write_checksum: sha1:c767e47273fc8894be32f0c364f72d26ba9ff5bc
-    pristine_git_object: 069894dcff7033a87d33b8d669aef7d99c63967a
+    last_write_checksum: sha1:c458fa7f9114af807abd01e64cb66c3b36238a9a
+    pristine_git_object: 1a019f2d6108e1e6b8e7c34c2030e13fce4ca50d
   docs/Models/Components/CardType.md:
     id: fc1f89a53483
     last_write_checksum: sha1:cb4cb70804381d14c2e85e6dc84c87f6acef3c8d
@@ -1809,8 +1809,8 @@ trackedFiles:
     pristine_git_object: ce761691ae56def02de576256441ae8de49d6638
   docs/Models/Components/RefundCardStatus.md:
     id: 369055e7f589
-    last_write_checksum: sha1:059f6951531679b9bb0897b9b60bcfd71b51258d
-    pristine_git_object: 532cd0e161fee1d86b0f7b615cd68b7c89c1a435
+    last_write_checksum: sha1:92aad91b0ef2ae63e4f2e710df02e092b940435b
+    pristine_git_object: c3bf3236258596770aeda3c3d3f9211dde554bbb
   docs/Models/Components/RefundPolicy.md:
     id: 5841fe1459e4
     last_write_checksum: sha1:d2a73102ac7535b4dd13d7ddc8a41b9d581ec027
@@ -4901,8 +4901,8 @@ trackedFiles:
     pristine_git_object: ddf670066b62c651544a2a013ba697e0efe15a01
   src/Moov/Sdk/Models/Components/CardTransactionStatus.cs:
     id: bead4e5065aa
-    last_write_checksum: sha1:85226fb0c3e0592fb46a9dbc8dc3df951d123542
-    pristine_git_object: db191e9265507b70a52fd892d623e71bfdf7ad49
+    last_write_checksum: sha1:0bca18ce5a09d051f922a8c1c8a2d2672dd7cdac
+    pristine_git_object: e0a0f738526090feb510e947084f3b6f7de908bc
   src/Moov/Sdk/Models/Components/CardType.cs:
     id: 34d2c0c489e0
     last_write_checksum: sha1:a042ae843e4ca702ee857fe3d11a3e2bb0991ce3
@@ -6101,8 +6101,8 @@ trackedFiles:
     pristine_git_object: 1b44da544575d4379d5ec68df2e5a231b6af7563
   src/Moov/Sdk/Models/Components/RefundCardStatus.cs:
     id: d203e99ece2f
-    last_write_checksum: sha1:3c15cebc7aa59754969a54ca325fe9c8c43767b3
-    pristine_git_object: 99c6cd921fa3dae9e7bfd62bd34a5a067c4b8660
+    last_write_checksum: sha1:584f8b5f3a9efa5f57dffa43b6aed617fdc0b4c6
+    pristine_git_object: 153ab4855bff73041e2574bbf69b8728ace7fe49
   src/Moov/Sdk/Models/Components/RefundPolicy.cs:
     id: 626ae815638f
     last_write_checksum: sha1:754a5537ae84284a68903108e87b9c37a155ba6d
@@ -8401,8 +8401,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:4134c6ffaedbc7cebff2f1943655c88f1890c35a
-    pristine_git_object: 45a6651a9b30339534e5afc7f7eecda08aa3e2ac
+    last_write_checksum: sha1:de9387c29d558f2c5a1d5de28e6a53c9cea857f1
+    pristine_git_object: c34676b285b746ba9129c025183534a762d2e25f
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:8c950bd6906bc29e5ca1827b7a8655552744ccf4
@@ -8437,8 +8437,8 @@ trackedFiles:
     pristine_git_object: ceeb494a9afea852528fb7c2eec79a804d5ee3e8
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:2fe9fd44b299c6d7d4e5aab5a40a70d81f9ed5f5
-    pristine_git_object: 24149958c8530b1a51807937da9747497dca33c4
+    last_write_checksum: sha1:2b8b55fad71792ec728574ce1f98c2787befc6de
+    pristine_git_object: b66f0eaf242ef442543dce6999f1070da8ff1b41
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:479eaa684fbf6c50600545302ea160160558c4f3
@@ -8477,8 +8477,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:d58e9f7d441646bdc05fff184a82ed5caa464299
-    pristine_git_object: a5b50c648eabe023b40f4b221263241e73acdc00
+    last_write_checksum: sha1:4d9dfa89be47c23213bcee502cee25bca0c10754
+    pristine_git_object: 36ef31956481619c0a499dc829dda05c43b086bc
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -10583,7 +10583,7 @@ examples:
         "200":
           application/json: [{"cancellationID": "89ca7f54-13ba-4714-b9af-17163eae2057", "status": "completed", "createdOn": "2025-01-19T03:02:43.255309588Z"}]
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Transfers.Create()`: \n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.List()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.BatchGetTransfers()`:  `response.Map<Transfer>` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Get()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Update()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.InitiateRefund()`: \n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error.cardDetails.Status.Enum(clearedExternal)` **Added** (Breaking ⚠️)\n* `MoovClient.Transfers.ListRefunds()`:  `response.[].CardDetails.Status.Enum(clearedExternal)` **Added** (Breaking ⚠️)\n* `MoovClient.Transfers.GetRefund()`:  `response.cardDetails.Status.Enum(clearedExternal)` **Added** (Breaking ⚠️)\n* `MoovClient.Transfers.CreateReversal()`:  `response.union(ReversedWithRefund).Refund.CardDetails.Status.Enum(clearedExternal)` **Added** (Breaking ⚠️)\n"
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Transfers.Create()`: \n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.List()`:  `response.[]` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.BatchGetTransfers()`:  `response.Map<Transfer>` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Get()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.Update()`:  `response` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.InitiateRefund()`: \n  *  `response` **Changed** (Breaking ⚠️)\n  *  `error.cardDetails.Status` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.ListRefunds()`:  `response.[].CardDetails.Status` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.GetRefund()`:  `response.cardDetails.Status` **Changed** (Breaking ⚠️)\n* `MoovClient.Transfers.CreateReversal()`:  `response.union(ReversedWithRefund).Refund.CardDetails.Status` **Changed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
