@@ -42,5 +42,12 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("createdOn")]
         public DateTime CreatedOn { get; set; } = default!;
+
+        /// <summary>
+        /// The reason an authorization or authorization event was declined. Only present if the<br/>
+        /// authorization or event has been declined.
+        /// </summary>
+        [JsonProperty("declineReason")]
+        public IssuingDeclineReason? DeclineReason { get; set; }
     }
 }
