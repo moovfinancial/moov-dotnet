@@ -61,5 +61,12 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("cardTransactions")]
         public List<string>? CardTransactions { get; set; }
+
+        /// <summary>
+        /// The reason an authorization or authorization event was declined. Only present if the<br/>
+        /// authorization or event has been declined.
+        /// </summary>
+        [JsonProperty("declineReason")]
+        public IssuingDeclineReason? DeclineReason { get; set; }
     }
 }
