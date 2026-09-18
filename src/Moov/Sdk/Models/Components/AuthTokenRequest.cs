@@ -52,5 +52,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("refresh_token")]
         [SpeakeasyMetadata("form:name=refresh_token")]
         public string? RefreshToken { get; set; }
+
+        /// <summary>
+        /// The client type requesting a token. `device` and `service` clients do not require browser origin binding. Defaults to `web` when omitted. This field applies to the `client_credentials` grant; refreshed tokens keep the original client type.
+        /// </summary>
+        [JsonProperty("client_type")]
+        [SpeakeasyMetadata("form:name=client_type")]
+        public OAuth2ClientType? ClientType { get; set; }
     }
 }
