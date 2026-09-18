@@ -46,6 +46,12 @@ namespace Moov.Sdk.Models.Components
         public AmountDecimal BasePrice { get; set; } = default!;
 
         /// <summary>
+        /// Whether applicable tax rules may be applied to this product. True does not guarantee tax is charged; false excludes the product from tax calculation. This setting does not determine jurisdiction-specific taxability.
+        /// </summary>
+        [JsonProperty("isTaxable")]
+        public bool IsTaxable { get; set; } = default!;
+
+        /// <summary>
         /// Optional configuration options for a product, such as size or color.
         /// </summary>
         [JsonProperty("optionGroups")]
