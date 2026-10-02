@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 2c47497b-2580-4320-930c-bd1e7d5a83cb
 management:
-  docChecksum: 930f5da515626b0e962229166175ef82
+  docChecksum: f353fb5e1e216c27453458f62c1dc5b6
   docVersion: v2026.04.00
-  speakeasyVersion: 1.798.0
-  generationVersion: 2.938.0
-  releaseVersion: 26.5.4
-  configChecksum: 991153bb88e9eafeb1dd80304fb395a6
+  speakeasyVersion: 1.800.1
+  generationVersion: 2.943.0
+  releaseVersion: 26.5.5
+  configChecksum: 2b00bdc894f511c808c36a9410762b06
   repoURL: https://github.com/moovfinancial/moov-dotnet.git
   installationURL: https://github.com/moovfinancial/moov-dotnet
   published: true
 persistentEdits:
-  generation_id: f0ec3bb2-755b-4d8a-8b5d-31bf07d32127
-  pristine_commit_hash: 7233a09db25c22621df79fcfaa90cf6809bb4b38
-  pristine_tree_hash: c9e813179438c97462f091214946a1542fed4396
+  generation_id: b037f7e1-7752-4a3b-8e57-1d469eb17dd4
+  pristine_commit_hash: 477877f86c737d6b67d11ea342442ff28b8bb2e5
+  pristine_tree_hash: 3d222d5d448269878a3583cf4c1a4c3e05318224
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -33,7 +33,7 @@ features:
     nullables: 0.1.1
     responseFormat: 0.0.4
     sdkHooks: 0.3.0
-    unions: 1.2.1
+    unions: 1.2.3
 trackedFiles:
   .gitattributes:
     id: 24139dae6567
@@ -777,8 +777,8 @@ trackedFiles:
     pristine_git_object: 56ae0cb896e8eea07f3f61ae743a3c13b8caaf30
   docs/Models/Components/CreateInvoice.md:
     id: 8a2ed469bf75
-    last_write_checksum: sha1:41ef5457f65f21608518e01c802a1223c7b20b4c
-    pristine_git_object: ae54a9eb502e787e657b4d44c74b4044978785fa
+    last_write_checksum: sha1:541286fad49dd95afebcf4bf5ee80705752331c3
+    pristine_git_object: 3fa1df90164e16981aae9e4404b0435e3cbfa606
   docs/Models/Components/CreateInvoiceLineItem.md:
     id: 6bf0e99fc44c
     last_write_checksum: sha1:662951837aa8323e7bcc0563e3097f134e5956f9
@@ -997,8 +997,8 @@ trackedFiles:
     pristine_git_object: 7cc1083219367dd835df4425b19141add1eaf677
   docs/Models/Components/CreatedTransfer.md:
     id: be59306a1485
-    last_write_checksum: sha1:492fa4ac3f2b8f22e1c9e1989e61f5f88efcf272
-    pristine_git_object: 23896fbccf56c0a0f38b1453a88deaf62c97249e
+    last_write_checksum: sha1:d8e7176adcd91d0a70d4ae56e9567d061ddf1407
+    pristine_git_object: e40c73de6fc47b2b3eff9c5ec6517d04214a348c
   docs/Models/Components/CustomerSupport.md:
     id: 3126ce9def83
     last_write_checksum: sha1:7a537cef1aad6fcd26e3a1fe3fa1e7a7a731e5ce
@@ -2417,8 +2417,8 @@ trackedFiles:
     pristine_git_object: 978331743d13c6f7e78a6b07865089eeb22b34e8
   docs/Models/Components/Transfer.md:
     id: 477890c615c4
-    last_write_checksum: sha1:d5613d442c69a067ef9178b91eadfe7ea686e6b9
-    pristine_git_object: 7cc200a1cd6eef74c323d67ec37f24357f6ccaf3
+    last_write_checksum: sha1:d0615dc3eb2fc0d0b4d61cd5586ee3b06ef3865b
+    pristine_git_object: d915c298057385a34e50bf5650984ca591d7f157
   docs/Models/Components/TransferACHAddendaRecord.md:
     id: c6e5c77f125d
     last_write_checksum: sha1:bf85d938d6dfd0c75a25743dc0744fc1972d1731
@@ -2829,8 +2829,8 @@ trackedFiles:
     pristine_git_object: 64f4d948cbeb4423c9b9c58bf885a7c8ef1c8b9c
   docs/Models/Components/WebhookDataTransferStatus.md:
     id: de9daf682380
-    last_write_checksum: sha1:63433c95fb608981d9b4e33cd7f5643e845a4b18
-    pristine_git_object: 0e404e6399946d3a619b8af2374e241ba907b99e
+    last_write_checksum: sha1:9b62820e304a38e248451b4af9c95c56fa167d04
+    pristine_git_object: 3a40c73aeab8dae36df909c0a77fa498c28b4580
   docs/Models/Components/WebhookDataTransferUpdated.md:
     id: ce5b14a3ae84
     last_write_checksum: sha1:d3839e236e078fa5373c7436d849c6f8ca5dcab2
@@ -2913,8 +2913,8 @@ trackedFiles:
     pristine_git_object: ca8886552634cebd321d6e72c4ceda65a769f18a
   docs/Models/Errors/CreateInvoiceError.md:
     id: f6beebd9c6da
-    last_write_checksum: sha1:448b37cb8cb74b26c9e40282ca5c0c81c803604a
-    pristine_git_object: aa0299994920f57e4a94240ac93878df7108ec4f
+    last_write_checksum: sha1:ef920c2ca1b5b8bb5d69b44f4d96541ac0ca33e0
+    pristine_git_object: 3bf567722aeb22080179b2243a7acbca117af35b
   docs/Models/Errors/CreateInvoicePaymentError.md:
     id: e1ed8c3320d6
     last_write_checksum: sha1:f895c75f00a05709df2ffe1ac36de1eda372ddc4
@@ -3061,8 +3061,8 @@ trackedFiles:
     pristine_git_object: be95bc0449cb289f3aaa657115747d6e58070760
   docs/Models/Errors/TransferException.md:
     id: a3383813ecaa
-    last_write_checksum: sha1:62b13710885af35c1745f33f4e0ddaf8c5136a05
-    pristine_git_object: c7ce5b6773af58a41bdbf43646bf301d7c53b1f2
+    last_write_checksum: sha1:0cfbe7c6a90027e703c51ed83d10c58320cd6119
+    pristine_git_object: 86a569ea1124a0e6d4ff3b8cb71feaffc998d122
   docs/Models/Errors/TransferOptionsValidationError.md:
     id: 600112fc5b2d
     last_write_checksum: sha1:259ed74eabed461e5ad6b60c6b230e185fab4f5a
@@ -4253,8 +4253,8 @@ trackedFiles:
     pristine_git_object: 28d603a71227f1155dfc999097e08483f2174aa6
   docs/Models/Requests/ListTransfersRequest.md:
     id: 39b5511c9895
-    last_write_checksum: sha1:96af00e7ae8c2b22aa67d298db6242c099d2b597
-    pristine_git_object: 58cc04ac341ad8f64669c7bff7323ef9d9158ab5
+    last_write_checksum: sha1:3facf194ffe971cc8301066a827ab2832b67b62e
+    pristine_git_object: 120caf13ee35440953da1e8ed35b9958abd41193
   docs/Models/Requests/ListTransfersResponse.md:
     id: f2d711efbe42
     last_write_checksum: sha1:baaf8b9a229bea4905cf630fde4878fd25c8d390
@@ -5553,8 +5553,8 @@ trackedFiles:
     pristine_git_object: 4cecffb758d885486aeef7f2befcfc174597aa6d
   src/Moov/Sdk/Models/Components/CreateInvoice.cs:
     id: 5f94485686fe
-    last_write_checksum: sha1:8e552febdbd458addff1c274b89330cd70b2f785
-    pristine_git_object: 70b7ee8df1296a7c9b0f4031fa31022bdec4fba4
+    last_write_checksum: sha1:d26b94562f9caedc185bc22c109220db5061b1e7
+    pristine_git_object: eafb69f92c1e727018e7f50fdf158b4f7696f095
   src/Moov/Sdk/Models/Components/CreateInvoiceLineItem.cs:
     id: d7c96c86c613
     last_write_checksum: sha1:36ee7007921625719ffb062f6e7f083c435e7c24
@@ -5773,8 +5773,8 @@ trackedFiles:
     pristine_git_object: 9aa10127d6cfb296b984993a7711ed0d91fa2bc8
   src/Moov/Sdk/Models/Components/CreatedTransfer.cs:
     id: 9692abfef0d6
-    last_write_checksum: sha1:3496ba07e635664492dde717a74cbe35cc7f0c87
-    pristine_git_object: bb704a4f9915976a5261f5e1f71e8dfb3379539c
+    last_write_checksum: sha1:acb2fa045b3e4112ef0e26c2409471f0c2e9abdb
+    pristine_git_object: 35f90583e617ba25630164a44d82318990365c6e
   src/Moov/Sdk/Models/Components/CustomerSupport.cs:
     id: 4224b4d72598
     last_write_checksum: sha1:280d74ee0b2fc535c3f42e486d1dbd203220a4b6
@@ -7193,8 +7193,8 @@ trackedFiles:
     pristine_git_object: 69d873e805aafda1cbdd8fb911794a33b244fe65
   src/Moov/Sdk/Models/Components/Transfer.cs:
     id: c38f4a53dd5d
-    last_write_checksum: sha1:25fbf5f26dc9aa4a4386671ab4fc1fef41c47574
-    pristine_git_object: 99a91621c5cf827db367449f6435b89863a34f48
+    last_write_checksum: sha1:75ec37230685c40c3f329e2c778f4ec4a472fa46
+    pristine_git_object: 341c116a1c297fb41d046e779d271d50bcafe6a2
   src/Moov/Sdk/Models/Components/TransferACHAddendaRecord.cs:
     id: d14992402cdf
     last_write_checksum: sha1:f7dead88487d6ae81e6cdaa386c799c87da0378f
@@ -7605,8 +7605,8 @@ trackedFiles:
     pristine_git_object: 1f01ee29437f541b3b157728b1713d9a35f56f9c
   src/Moov/Sdk/Models/Components/WebhookDataTransferStatus.cs:
     id: 50a203658abe
-    last_write_checksum: sha1:3651e5b3a0e94cd69c4c31bde5d2e5c1e34c5a70
-    pristine_git_object: 0f7a296d6351a2a28bea40e9a32dec0bd7823746
+    last_write_checksum: sha1:92f9deb9885f8cfdee180c6a69a423a3adcba8b9
+    pristine_git_object: e3990b2377fc9111896a082c81c59707f6bb8429
   src/Moov/Sdk/Models/Components/WebhookDataTransferUpdated.cs:
     id: 85d687d85eb2
     last_write_checksum: sha1:ec99e0979578e4d2770045a0d4ea1d72c0edb9d3
@@ -7693,8 +7693,8 @@ trackedFiles:
     pristine_git_object: d7298aaf07daf7202a1788a3639182b2df08c25e
   src/Moov/Sdk/Models/Errors/CreateInvoiceError.cs:
     id: 1e281949ab06
-    last_write_checksum: sha1:bc21cf4b25a3eb0513dba47524d7dcb0537d6f87
-    pristine_git_object: 3dbabe88e8b347c2831d41cea4fff3efa55667cb
+    last_write_checksum: sha1:e6d82ea6f040215161a3cfe45000efc41a154c02
+    pristine_git_object: af9abab48260c512fdcf2d6223506505bd235e14
   src/Moov/Sdk/Models/Errors/CreateInvoicePaymentError.cs:
     id: c5eb47c67d87
     last_write_checksum: sha1:abc3df68bc98bca18f86437725e19ee99c9e2cdd
@@ -7849,8 +7849,8 @@ trackedFiles:
     pristine_git_object: dddcec96f00f1ef93ede2bc3abc614b26b7ea8c8
   src/Moov/Sdk/Models/Errors/TransferException.cs:
     id: a90f2444f872
-    last_write_checksum: sha1:9c89ff1d106876f731607e36bdee3c31e1afc5c5
-    pristine_git_object: f2a7cefd1c935312ccd29a764a20d7b659881a0c
+    last_write_checksum: sha1:a9793bcd5a24bb6eaa22b0944ef36aad41ccee1c
+    pristine_git_object: 55bac99791d0d5ee8a0b8aece61de871fc91ee18
   src/Moov/Sdk/Models/Errors/TransferOptionsValidationError.cs:
     id: 94e58d825386
     last_write_checksum: sha1:a4ca75fbd18e55b0d6355b906251357ca815d097
@@ -9041,8 +9041,8 @@ trackedFiles:
     pristine_git_object: dbedc2699c0945cc594021d5e06fd1e11e9698f4
   src/Moov/Sdk/Models/Requests/ListTransfersRequest.cs:
     id: a374530853de
-    last_write_checksum: sha1:d0ccaffab21ba3409ad0ba2f433bf0f899d16aba
-    pristine_git_object: 19d01b8e8251f8da6a7baef96c4ceb030aac9533
+    last_write_checksum: sha1:aa84b725ced5b43a0b375caf12bd588ef5de7345
+    pristine_git_object: 0683fe666efa8477cb2975a0bf70d68244438233
   src/Moov/Sdk/Models/Requests/ListTransfersResponse.cs:
     id: 7822674c168b
     last_write_checksum: sha1:88b7a2d412e5de2d85f68d43629c92b0d4cced04
@@ -9345,8 +9345,8 @@ trackedFiles:
     pristine_git_object: 2ee113cddb5fcb8658f71ca35e30bf56f0e15390
   src/Moov/Sdk/Moov.Sdk.csproj:
     id: d9da7dada37b
-    last_write_checksum: sha1:fe08e4a2933f103862cfbf72657c4e7924434fc7
-    pristine_git_object: 14721ba40bb17c8db0a5b13275d2813f2777a230
+    last_write_checksum: sha1:a0ecf618dba38848726930750c99dbb648c822bd
+    pristine_git_object: 345e164151736dc27dcc1fd866a6ad39bf4bfa81
   src/Moov/Sdk/MoovClient.cs:
     id: 574b79697f7c
     last_write_checksum: sha1:2a6dc3a47df6d0881256a5bc8b2a6a6411923b57
@@ -9385,8 +9385,8 @@ trackedFiles:
     pristine_git_object: d632de4b7455b7786fb6015643b1feef97ad12c3
   src/Moov/Sdk/SDKConfig.cs:
     id: 9f34dfa7c5b8
-    last_write_checksum: sha1:f327c8156f6b8d63634cc65228e639f62ee494b0
-    pristine_git_object: e59662a29a296a6378f10f571be5ff03734589db
+    last_write_checksum: sha1:68b233a607a0d87cd360f40a6eafb06adf01834e
+    pristine_git_object: 00886fab90a4eddbb0ea263d6901de4f2dce2ab2
   src/Moov/Sdk/Scheduling.cs:
     id: ceb49d958cf6
     last_write_checksum: sha1:479eaa684fbf6c50600545302ea160160558c4f3
@@ -9429,8 +9429,8 @@ trackedFiles:
     pristine_git_object: 448281c7e392343bea6233496f56fe8d72a9ee5b
   src/Moov/Sdk/Utils/Constants.cs:
     id: fe23a4eff400
-    last_write_checksum: sha1:b68c4a2696d09a95b4d176b268ee37260294fa85
-    pristine_git_object: 381212faa64de29aaa57964b8afa851c510f9b2a
+    last_write_checksum: sha1:0ff2239d7e8b3047f9cc408e25e52b0afd5d0801
+    pristine_git_object: c7dabb4309162adc8be922bf8f8e1b77212dd6a8
   src/Moov/Sdk/Utils/DecimalStrConverter.cs:
     id: 1c6ca7ce02fc
     last_write_checksum: sha1:db9a561e0b0d8ed80394917d5a9a0e3eb317629c
@@ -11651,7 +11651,7 @@ examples:
         "200":
           application/json: [{"cancellationID": "89ca7f54-13ba-4714-b9af-17163eae2057", "status": "completed", "createdOn": "2025-01-19T03:02:43.255309588Z"}]
 examplesVersion: 1.0.2
-releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.IssuingTransactions.ListAuthorizations()`:  `response.[].DeclineReason` **Added**\n* `MoovClient.IssuingTransactions.GetAuthorization()`:  `response.declineReason` **Added**\n* `MoovClient.IssuingTransactions.ListAuthorizationEvents()`:  `response.[].DeclineReason` **Added**\n* `MoovClient.Authentication.CreateAccessToken()`: \n  *  `request.ClientType` **Added**\n"
+releaseNotes: "## Csharp SDK Changes:\n* `MoovClient.Invoices.CreateInvoice()`: \n  *  `request.body.CustomerEmail` **Added**\n  *  `error.customerEmail` **Added**\n* `MoovClient.Transfers.List()`: \n  *  `request.InvoiceIDs` **Added**\n"
 generatedFiles:
   - .gitattributes
   - Moov.Sdk.sln
