@@ -47,6 +47,8 @@ namespace Moov.Sdk.Models.Components
         SourceFailed,
         [JsonProperty("source.canceled")]
         SourceCanceled,
+        [JsonProperty("source.cleared-externally")]
+        SourceClearedExternally,
         [JsonProperty("destination.completed")]
         DestinationCompleted,
         [JsonProperty("destination.corrected")]
