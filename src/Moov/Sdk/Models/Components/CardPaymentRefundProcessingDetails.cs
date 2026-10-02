@@ -15,6 +15,9 @@ namespace Moov.Sdk.Models.Components
 
     public class CardPaymentRefundProcessingDetails
     {
+        [JsonProperty("networkTransactionID")]
+        public string? NetworkTransactionID { get; set; }
+
         [JsonProperty("failureCode")]
         public CardTransactionFailureCode? FailureCode { get; set; }
     }

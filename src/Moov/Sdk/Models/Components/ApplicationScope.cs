@@ -50,6 +50,8 @@ namespace Moov.Sdk.Models.Components
         DocumentsWrite,
         [JsonProperty("fed.read")]
         FedRead,
+        [JsonProperty("files.download")]
+        FilesDownload,
         [JsonProperty("files.read")]
         FilesRead,
         [JsonProperty("files.write")]

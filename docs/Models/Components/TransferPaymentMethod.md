@@ -106,9 +106,3 @@ TransferPaymentMethod.CreatePushToGooglePay(/* values here */);
 ```csharp
 TransferPaymentMethod.CreatePullFromGooglePay(/* values here */);
 ```
-
-### WireCredit
-
-```csharp
-TransferPaymentMethod.CreateWireCredit(/* values here */);
-```

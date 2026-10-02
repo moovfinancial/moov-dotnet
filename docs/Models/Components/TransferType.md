@@ -23,4 +23,3 @@ var value = TransferType.CardPayment;
 | `AchDebitToAchCredit`   | ach-debit-to-ach-credit |
 | `InstantBankCredit`     | instant-bank-credit     |
 | `Wallet`                | wallet                  |
-| `WireCredit`            | wire-credit             |

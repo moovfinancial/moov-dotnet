@@ -29,11 +29,5 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("achCredit")]
         public ACHCreditOptions? AchCredit { get; set; }
-
-        /// <summary>
-        /// Wire-specific options returned on a transfer.
-        /// </summary>
-        [JsonProperty("wire")]
-        public WireOptions? Wire { get; set; }
     }
 }

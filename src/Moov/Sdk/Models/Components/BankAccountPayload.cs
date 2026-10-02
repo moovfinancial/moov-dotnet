@@ -20,5 +20,12 @@ namespace Moov.Sdk.Models.Components
     {
         [JsonProperty("account")]
         public BankAccountIntegration Account { get; set; } = default!;
+
+        /// <summary>
+        /// Requests a synchronous risk-verification attempt on create or re-link. Only honored for<br/>
+        /// allowlisted calling accounts; ignored otherwise.
+        /// </summary>
+        [JsonProperty("requestRiskVerification")]
+        public bool? RequestRiskVerification { get; set; }
     }
 }

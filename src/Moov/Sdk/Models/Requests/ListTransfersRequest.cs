@@ -83,6 +83,12 @@ namespace Moov.Sdk.Models.Requests
         public List<string>? AuthorizationIDs { get; set; }
 
         /// <summary>
+        /// Optional comma-separated invoice IDs.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=invoiceIDs")]
+        public List<string>? InvoiceIDs { get; set; }
+
+        /// <summary>
         /// Optional, comma-separated transfer types by which the response is filtered.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=transferTypes")]

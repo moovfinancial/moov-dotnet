@@ -32,4 +32,3 @@ var value = PaymentMethodType.MoovWallet;
 | `GooglePay`          | google-pay           |
 | `PushToGooglePay`    | push-to-google-pay   |
 | `PullFromGooglePay`  | pull-from-google-pay |
-| `WireCredit`         | wire-credit          |

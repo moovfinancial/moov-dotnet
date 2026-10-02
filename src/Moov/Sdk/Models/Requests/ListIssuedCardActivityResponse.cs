@@ -7,20 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace Moov.Sdk.Models.Components
+namespace Moov.Sdk.Models.Requests
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System.Collections.Generic;
 
-    /// <summary>
-    /// Wire-specific options supplied when creating a transfer.
-    /// </summary>
-    public class CreateTransferDestinationWire
+    public class ListIssuedCardActivityResponse
     {
+        [JsonProperty("-")]
+        public HTTPMetadata HttpMeta { get; set; } = default!;
+
         /// <summary>
-        /// Optional beneficiary reference for the wire transfer. Maximum 15 characters.
+        /// The request completed successfully.
         /// </summary>
-        [JsonProperty("beneficiaryReference")]
-        public string? BeneficiaryReference { get; set; }
+        public List<IssuedCardActivity>? IssuedCardActivities { get; set; }
+
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

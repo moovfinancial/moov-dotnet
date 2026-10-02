@@ -14,30 +14,30 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// Status of a transaction within the wire lifecycle.
+    /// The outcome of a bank account risk-verification attempt.
     /// </summary>
-    public enum WireTransactionStatus
+    public enum RiskVerificationOutcome
     {
-        [JsonProperty("initiated")]
-        Initiated,
-        [JsonProperty("completed")]
-        Completed,
-        [JsonProperty("failed")]
-        Failed,
-        [JsonProperty("returned")]
-        Returned,
+        [JsonProperty("notAttempted")]
+        NotAttempted,
+        [JsonProperty("success")]
+        Success,
+        [JsonProperty("inconclusive")]
+        Inconclusive,
+        [JsonProperty("decline")]
+        Decline,
     }
 
-    public static class WireTransactionStatusExtension
+    public static class RiskVerificationOutcomeExtension
     {
-        public static string Value(this WireTransactionStatus value)
+        public static string Value(this RiskVerificationOutcome value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static WireTransactionStatus ToEnum(this string value)
+        public static RiskVerificationOutcome ToEnum(this string value)
         {
-            foreach(var field in typeof(WireTransactionStatus).GetFields())
+            foreach(var field in typeof(RiskVerificationOutcome).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -50,14 +50,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is WireTransactionStatus)
+                    if (enumVal is RiskVerificationOutcome)
                     {
-                        return (WireTransactionStatus)enumVal;
+                        return (RiskVerificationOutcome)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum WireTransactionStatus");
+            throw new Exception($"Unknown value {value} for enum RiskVerificationOutcome");
         }
     }
 }

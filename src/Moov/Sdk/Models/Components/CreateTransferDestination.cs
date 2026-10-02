@@ -26,11 +26,5 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("achDetails")]
         public CreateTransferDestinationACH? AchDetails { get; set; }
-
-        /// <summary>
-        /// Wire-specific options supplied when creating a transfer.
-        /// </summary>
-        [JsonProperty("wireDetails")]
-        public CreateTransferDestinationWire? WireDetails { get; set; }
     }
 }

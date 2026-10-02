@@ -81,5 +81,12 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("paymentMethods")]
         public List<BasicPaymentMethod>? PaymentMethods { get; set; }
+
+        /// <summary>
+        /// The outcome of a requested risk-verification attempt. `notAttempted` when<br/>
+        /// `requestRiskVerification` was not set, or the calling account was not allowlisted.
+        /// </summary>
+        [JsonProperty("riskVerificationOutcome")]
+        public RiskVerificationOutcome? RiskVerificationOutcome { get; set; }
     }
 }

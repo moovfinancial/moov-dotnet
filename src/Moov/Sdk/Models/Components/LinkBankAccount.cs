@@ -130,26 +130,6 @@ namespace Moov.Sdk.Models.Components
 
                 try
                 {
-                    return new LinkBankAccount(LinkBankAccountType.BankAccountPayload)
-                    {
-                        BankAccountPayload = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<BankAccountPayload>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(BankAccountPayload), new LinkBankAccount(LinkBankAccountType.BankAccountPayload), "BankAccountPayload"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                try
-                {
                     return new LinkBankAccount(LinkBankAccountType.PlaidPayload)
                     {
                         PlaidPayload = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<PlaidPayload>(json)
@@ -198,6 +178,26 @@ namespace Moov.Sdk.Models.Components
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
                     fallbackCandidates.Add((typeof(MxPayload), new LinkBankAccount(LinkBankAccountType.MxPayload), "MxPayload"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new LinkBankAccount(LinkBankAccountType.BankAccountPayload)
+                    {
+                        BankAccountPayload = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<BankAccountPayload>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(BankAccountPayload), new LinkBankAccount(LinkBankAccountType.BankAccountPayload), "BankAccountPayload"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {

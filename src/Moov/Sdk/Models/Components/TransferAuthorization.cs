@@ -50,6 +50,15 @@ namespace Moov.Sdk.Models.Components
         public AmountDecimal CapturableAmount { get; set; } = default!;
 
         /// <summary>
+        /// The tip, tax, and surcharge authorized by the card network.<br/>
+        /// <br/>
+        /// These describe the authorized amount and are fixed.<br/>
+        /// They can differ from the transfer's `amountDetails`, which is the aggregate of all captures' `amountDetails`.
+        /// </summary>
+        [JsonProperty("amountDetails")]
+        public TransferAmountDetails? AmountDetails { get; set; }
+
+        /// <summary>
         /// Expiration time for the approved authorization, when available.
         /// </summary>
         [JsonProperty("expiresOn")]

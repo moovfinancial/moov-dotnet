@@ -109,11 +109,6 @@ namespace Moov.Sdk.Models.Requests
             return PaymentMethod != null ? PaymentMethod.PullFromGooglePayPaymentMethod : null;
         }
 
-        public WireCreditPaymentMethod? GetPaymentMethodWireCredit()
-        {
-            return PaymentMethod != null ? PaymentMethod.WireCreditPaymentMethod : null;
-        }
-
         public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }
 }

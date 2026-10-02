@@ -7,20 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace Moov.Sdk.Models.Components
+namespace Moov.Sdk.Models.Requests
 {
     using Moov.Sdk.Utils;
-    using Newtonsoft.Json;
 
-    /// <summary>
-    /// Wire-specific options returned on a transfer.
-    /// </summary>
-    public class WireOptions
+    public class DownloadFileRequest
     {
-        /// <summary>
-        /// Optional beneficiary reference for the wire transfer. Maximum 15 characters.
-        /// </summary>
-        [JsonProperty("beneficiaryReference")]
-        public string? BeneficiaryReference { get; set; }
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
+        public string AccountID { get; set; } = default!;
+
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=fileID")]
+        public string FileID { get; set; } = default!;
     }
 }

@@ -123,6 +123,10 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("lineItems")]
         public TransferLineItems? LineItems { get; set; }
 
+        /// <summary>
+        /// The tip, tax, and surcharge portion of the transfer amount.<br/>
+        /// For an auth-capture `card-payment` transfer, this is the aggregate of all captures' `amountDetails`.
+        /// </summary>
         [JsonProperty("amountDetails")]
         public TransferAmountDetails? AmountDetails { get; set; }
 

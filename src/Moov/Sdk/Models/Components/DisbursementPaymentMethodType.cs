@@ -30,6 +30,8 @@ namespace Moov.Sdk.Models.Components
         PushToApplePay,
         [JsonProperty("push-to-google-pay")]
         PushToGooglePay,
+        [JsonProperty("instant-bank-credit")]
+        InstantBankCredit,
     }
 
     public static class DisbursementPaymentMethodTypeExtension

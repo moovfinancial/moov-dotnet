@@ -20,6 +20,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("customerAccountID")]
         public string? CustomerAccountID { get; set; }
 
+        [JsonProperty("customerEmail")]
+        public string? CustomerEmail { get; set; }
+
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -48,6 +51,9 @@ namespace Moov.Sdk.Models.Errors
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.CustomerAccountID instead.")]
         public string? CustomerAccountID { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.CustomerEmail instead.")]
+        public string? CustomerEmail { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.Description instead.")]
         public string? Description { get; set; }
@@ -78,6 +84,7 @@ namespace Moov.Sdk.Models.Errors
 
            #pragma warning disable CS0618
            CustomerAccountID = payload.CustomerAccountID;
+           CustomerEmail = payload.CustomerEmail;
            Description = payload.Description;
            LineItems = payload.LineItems;
            InvoiceDate = payload.InvoiceDate;
