@@ -19,6 +19,11 @@ you'll need to specify the `/accounts/{accountID}/files.read` scope.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/files.read` scope.
+* [Download](#download) - Download the contents of a file associated with a specific Moov account. Files reserved for
+internal Moov use are not available through this endpoint.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/files.download` scope.
 
 ## Upload
 
@@ -152,6 +157,51 @@ var res = await sdk.Files.GetAsync(
 ### Response
 
 **[GetFileDetailsResponse](../../Models/Requests/GetFileDetailsResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## Download
+
+Download the contents of a file associated with a specific Moov account. Files reserved for
+internal Moov use are not available through this endpoint.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/files.download` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="downloadFile" method="get" path="/accounts/{accountID}/files/{fileID}/contents" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Files.DownloadAsync(
+    accountID: "<id>",
+    fileID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `AccountID`        | *string*           | :heavy_check_mark: | N/A                |
+| `FileID`           | *string*           | :heavy_check_mark: | N/A                |
+
+### Response
+
+**[DownloadFileResponse](../../Models/Requests/DownloadFileResponse.md)**
 
 ### Errors
 

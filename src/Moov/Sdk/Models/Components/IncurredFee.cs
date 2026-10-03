@@ -68,6 +68,12 @@ namespace Moov.Sdk.Models.Components
         public string? FeeGroup { get; set; }
 
         /// <summary>
+        /// The program assigned by the card network that determines the interchange rate for the fee. Present only for interchange or discount fees.
+        /// </summary>
+        [JsonProperty("feeProgram")]
+        public string? FeeProgram { get; set; }
+
+        /// <summary>
         /// Unique identifier for this residual payment calculation.
         /// </summary>
         [JsonProperty("residualID")]

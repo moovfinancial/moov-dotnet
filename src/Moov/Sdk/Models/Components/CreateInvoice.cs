@@ -22,6 +22,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("customerAccountID")]
         public string CustomerAccountID { get; set; } = default!;
 
+        /// <summary>
+        /// Email address to use for invoice checkout OTP verification instead of the customer account email.
+        /// </summary>
+        [JsonProperty("customerEmail")]
+        public string? CustomerEmail { get; set; }
+
         [JsonProperty("description")]
         public string? Description { get; set; }
 

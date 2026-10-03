@@ -79,6 +79,12 @@ you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+* [ListTransferEvents](#listtransferevents) - Retrieve the complete ordered event timeline for a Transfer.
+
+Events are returned oldest to newest by occurrence time, with deterministic ordering when multiple events have the same occurrence time. An existing Transfer with no stored events returns an empty list.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
 * [InitiateRefund](#initiaterefund) - Initiate a refund for a card transfer.
 
 **Use the [Cancel or refund a card transfer](https://docs.moov.io/api/money-movement/refunds/cancel/) endpoint for more comprehensive cancel and refund options.**    
@@ -832,6 +838,109 @@ var res = await sdk.Transfers.GetCaptureAsync(
 ### Response
 
 **[GetCaptureResponse](../../Models/Requests/GetCaptureResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## ListTransferEvents
+
+Retrieve the complete ordered event timeline for a Transfer.
+
+Events are returned oldest to newest by occurrence time, with deterministic ordering when multiple events have the same occurrence time. An existing Transfer with no stored events returns an empty list.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/transfers.read` scope.
+
+### Example Usage: Auth-capture card payment
+
+<!-- UsageSnippet language="csharp" operationID="listTransferEvents" method="get" path="/accounts/{accountID}/transfers/{transferID}/events" example="Auth-capture card payment" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.ListTransferEventsAsync(
+    accountID: "<id>",
+    transferID: "<id>"
+);
+
+// handle response
+```
+### Example Usage: Bank-to-bank transfer with source-wallet reversal
+
+<!-- UsageSnippet language="csharp" operationID="listTransferEvents" method="get" path="/accounts/{accountID}/transfers/{transferID}/events" example="Bank-to-bank transfer with source-wallet reversal" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.ListTransferEventsAsync(
+    accountID: "<id>",
+    transferID: "<id>"
+);
+
+// handle response
+```
+### Example Usage: Card-to-wallet transfer with refund
+
+<!-- UsageSnippet language="csharp" operationID="listTransferEvents" method="get" path="/accounts/{accountID}/transfers/{transferID}/events" example="Card-to-wallet transfer with refund" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.ListTransferEventsAsync(
+    accountID: "<id>",
+    transferID: "<id>"
+);
+
+// handle response
+```
+### Example Usage: Wallet-to-bank RTP transfer
+
+<!-- UsageSnippet language="csharp" operationID="listTransferEvents" method="get" path="/accounts/{accountID}/transfers/{transferID}/events" example="Wallet-to-bank RTP transfer" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.Transfers.ListTransferEventsAsync(
+    accountID: "<id>",
+    transferID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `AccountID`                                                             | *string*                                                                | :heavy_check_mark:                                                      | Moov account ID of the partner or the Transfer's source or destination. |
+| `TransferID`                                                            | *string*                                                                | :heavy_check_mark:                                                      | Identifier for the Transfer.                                            |
+
+### Response
+
+**[ListTransferEventsResponse](../../Models/Requests/ListTransferEventsResponse.md)**
 
 ### Errors
 

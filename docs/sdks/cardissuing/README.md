@@ -10,6 +10,21 @@ the merchant category codes (MCCs) each group covers. Use these category names i
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/),
 you'll need to specify the `/issued-cards.read` scope.
+* [CreateAuthorization](#createauthorization) - Create a simulated authorization for an issued card in test mode. See our [test mode](https://docs.moov.io/guides/get-started/test-mode)
+guide for more information.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
+* [CreateClearing](#createclearing) - Create a simulated clearing for an authorization on an issued card in test mode. See our [test mode](https://docs.moov.io/guides/get-started/test-mode)
+guide for more information.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
+* [CreateReversal](#createreversal) - Create a simulated reversal for an authorization on an issued card in test mode. See our [test mode](https://docs.moov.io/guides/get-started/test-mode)
+guide for more information.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
 * [Request](#request) - Request a virtual card be issued.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
@@ -67,6 +82,162 @@ var res = await sdk.CardIssuing.ListMerchantCategoriesAsync();
 
 | Error Type                          | Status Code                         | Content Type                        |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## CreateAuthorization
+
+Create a simulated authorization for an issued card in test mode. See our [test mode](https://docs.moov.io/guides/get-started/test-mode)
+guide for more information.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createAuthorizationSimulation" method="post" path="/issuing/simulations/{accountID}/authorizations" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.CardIssuing.CreateAuthorizationAsync(
+    accountID: "<id>",
+    body: new CreateAuthorizationSimulation() {
+        IssuedCardID = "<id>",
+        Amount = "-14.89",
+        MerchantData = new IssuingMerchantData() {
+            NetworkID = "<id>",
+            Name = "Whole Body Fitness",
+            City = "San Francisco",
+            Country = "US",
+            PostalCode = "94107",
+            State = "CA",
+            Mcc = "7298",
+        },
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `AccountID`                                                                               | *string*                                                                                  | :heavy_check_mark:                                                                        | The Moov business account for which the card was issued.                                  |
+| `Body`                                                                                    | [CreateAuthorizationSimulation](../../Models/Components/CreateAuthorizationSimulation.md) | :heavy_check_mark:                                                                        | N/A                                                                                       |
+
+### Response
+
+**[CreateAuthorizationSimulationResponse](../../Models/Requests/CreateAuthorizationSimulationResponse.md)**
+
+### Errors
+
+| Error Type                                                    | Status Code                                                   | Content Type                                                  |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                           | 400, 409                                                      | application/json                                              |
+| Moov.Sdk.Models.Errors.AuthorizationSimulationValidationError | 422                                                           | application/json                                              |
+| Moov.Sdk.Models.Errors.APIException                           | 4XX, 5XX                                                      | \*/\*                                                         |
+
+## CreateClearing
+
+Create a simulated clearing for an authorization on an issued card in test mode. See our [test mode](https://docs.moov.io/guides/get-started/test-mode)
+guide for more information.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createClearingSimulation" method="post" path="/issuing/simulations/{accountID}/authorizations/{authorizationID}/clearings" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.CardIssuing.CreateClearingAsync(
+    accountID: "<id>",
+    authorizationID: "<id>",
+    body: new CreateClearingSimulation() {
+        Amount = "-14.89",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `AccountID`                                                                     | *string*                                                                        | :heavy_check_mark:                                                              | The Moov business account for which the card was issued.                        |
+| `AuthorizationID`                                                               | *string*                                                                        | :heavy_check_mark:                                                              | The ID of the authorization to clear.                                           |
+| `Body`                                                                          | [CreateClearingSimulation](../../Models/Components/CreateClearingSimulation.md) | :heavy_check_mark:                                                              | N/A                                                                             |
+
+### Response
+
+**[CreateClearingSimulationResponse](../../Models/Requests/CreateClearingSimulationResponse.md)**
+
+### Errors
+
+| Error Type                                               | Status Code                                              | Content Type                                             |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError                      | 400, 409                                                 | application/json                                         |
+| Moov.Sdk.Models.Errors.ClearingSimulationValidationError | 422                                                      | application/json                                         |
+| Moov.Sdk.Models.Errors.APIException                      | 4XX, 5XX                                                 | \*/\*                                                    |
+
+## CreateReversal
+
+Create a simulated reversal for an authorization on an issued card in test mode. See our [test mode](https://docs.moov.io/guides/get-started/test-mode)
+guide for more information.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
+you'll need to specify the `/accounts/{accountID}/issued-cards.write` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createReversalSimulation" method="post" path="/issuing/simulations/{accountID}/authorizations/{authorizationID}/reversals" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.CardIssuing.CreateReversalAsync(
+    accountID: "<id>",
+    authorizationID: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `AccountID`                                              | *string*                                                 | :heavy_check_mark:                                       | The Moov business account for which the card was issued. |
+| `AuthorizationID`                                        | *string*                                                 | :heavy_check_mark:                                       | The ID of the authorization to reverse.                  |
+
+### Response
+
+**[CreateReversalSimulationResponse](../../Models/Requests/CreateReversalSimulationResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError | 400, 409                            | application/json                    |
 | Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
 
 ## Request
