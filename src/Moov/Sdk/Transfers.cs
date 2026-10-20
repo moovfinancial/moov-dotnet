@@ -202,6 +202,10 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="transferID">The transfer ID to cancel.</param>
+        /// <param name="xIdempotencyKey">
+        /// Prevents duplicate cancellations from being created.<br/>
+        /// In v2026.10 and later, this header is required, and reusing a key returns a `409` response with the original cancellation.
+        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
@@ -213,6 +217,7 @@ namespace Moov.Sdk
         public  Task<CreateCancellationResponse> CreateCancellationAsync(
             string accountID,
             string transferID,
+            string? xIdempotencyKey = null,
             CancellationToken? cancellationToken = null
         );
 
@@ -262,6 +267,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Initiate a refund for a card transfer.<br/>
+        /// The `accountID` must identify the partner account for the transfer.<br/>
         /// <br/>
         /// **Use the <a href="https://docs.moov.io/api/money-movement/refunds/cancel/">Cancel or refund a card transfer</a> endpoint for more comprehensive cancel and refund options.**    <br/>
         /// See the <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals</a> guide for more information. <br/>
@@ -1489,6 +1495,10 @@ namespace Moov.Sdk
         /// </summary>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="transferID">The transfer ID to cancel.</param>
+        /// <param name="xIdempotencyKey">
+        /// Prevents duplicate cancellations from being created.<br/>
+        /// In v2026.10 and later, this header is required, and reusing a key returns a `409` response with the original cancellation.
+        /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/> or <paramref name="transferID"/> is null.</exception>
@@ -1500,6 +1510,7 @@ namespace Moov.Sdk
         public async  Task<CreateCancellationResponse> CreateCancellationAsync(
             string accountID,
             string transferID,
+            string? xIdempotencyKey = null,
             CancellationToken? cancellationToken = null
         )
         {
@@ -1510,6 +1521,7 @@ namespace Moov.Sdk
             {
                 AccountID = accountID,
                 TransferID = transferID,
+                XIdempotencyKey = xIdempotencyKey,
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1517,6 +1529,7 @@ namespace Moov.Sdk
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1913,6 +1926,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Initiate a refund for a card transfer.<br/>
+        /// The `accountID` must identify the partner account for the transfer.<br/>
         /// <br/>
         /// **Use the <a href="https://docs.moov.io/api/money-movement/refunds/cancel/">Cancel or refund a card transfer</a> endpoint for more comprehensive cancel and refund options.**    <br/>
         /// See the <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals</a> guide for more information. <br/>
