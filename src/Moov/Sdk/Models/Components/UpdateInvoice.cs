@@ -42,6 +42,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("status")]
         public InvoiceStatus? Status { get; set; }
 
+        /// <summary>
+        /// Payment options to update on the invoice.
+        /// </summary>
+        [JsonProperty("payment")]
+        public InvoicePaymentOptionsUpdate? Payment { get; set; }
+
         [JsonProperty("taxAmount")]
         public AmountDecimalUpdate? TaxAmount { get; set; }
     }

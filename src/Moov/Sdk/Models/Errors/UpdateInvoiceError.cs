@@ -32,6 +32,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("status")]
         public string? Status { get; set; }
 
+        [JsonProperty("payment")]
+        public InvoicePaymentOptionsError? Payment { get; set; }
+
         [JsonProperty("taxAmount")]
         public AmountDecimalValidationError? TaxAmount { get; set; }
 
@@ -61,6 +64,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateInvoiceError.Payload.Status instead.")]
         public string? Status { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateInvoiceError.Payload.Payment instead.")]
+        public InvoicePaymentOptionsError? Payment { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use UpdateInvoiceError.Payload.TaxAmount instead.")]
         public AmountDecimalValidationError? TaxAmount { get; set; }
 
@@ -82,6 +88,7 @@ namespace Moov.Sdk.Models.Errors
            InvoiceDate = payload.InvoiceDate;
            DueDate = payload.DueDate;
            Status = payload.Status;
+           Payment = payload.Payment;
            TaxAmount = payload.TaxAmount;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618

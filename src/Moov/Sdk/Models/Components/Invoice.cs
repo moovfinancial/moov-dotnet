@@ -108,6 +108,12 @@ namespace Moov.Sdk.Models.Components
         public string? PaymentLinkURL { get; set; }
 
         /// <summary>
+        /// Payment options for the invoice.
+        /// </summary>
+        [JsonProperty("payment")]
+        public InvoicePaymentOptions? Payment { get; set; }
+
+        /// <summary>
         /// Payment made towards an invoice, will be either a transfer or an external payment.
         /// </summary>
         [JsonProperty("invoicePayments")]

@@ -23,6 +23,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("customerEmail")]
         public string? CustomerEmail { get; set; }
 
+        [JsonProperty("invoiceNumber")]
+        public string? InvoiceNumber { get; set; }
+
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -34,6 +37,9 @@ namespace Moov.Sdk.Models.Errors
 
         [JsonProperty("dueDate")]
         public string? DueDate { get; set; }
+
+        [JsonProperty("payment")]
+        public InvoicePaymentOptionsError? Payment { get; set; }
 
         [JsonProperty("taxAmount")]
         public AmountDecimalValidationError? TaxAmount { get; set; }
@@ -55,6 +61,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.CustomerEmail instead.")]
         public string? CustomerEmail { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.InvoiceNumber instead.")]
+        public string? InvoiceNumber { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.Description instead.")]
         public string? Description { get; set; }
 
@@ -66,6 +75,9 @@ namespace Moov.Sdk.Models.Errors
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.DueDate instead.")]
         public string? DueDate { get; set; }
+
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.Payment instead.")]
+        public InvoicePaymentOptionsError? Payment { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CreateInvoiceError.Payload.TaxAmount instead.")]
         public AmountDecimalValidationError? TaxAmount { get; set; }
@@ -85,10 +97,12 @@ namespace Moov.Sdk.Models.Errors
            #pragma warning disable CS0618
            CustomerAccountID = payload.CustomerAccountID;
            CustomerEmail = payload.CustomerEmail;
+           InvoiceNumber = payload.InvoiceNumber;
            Description = payload.Description;
            LineItems = payload.LineItems;
            InvoiceDate = payload.InvoiceDate;
            DueDate = payload.DueDate;
+           Payment = payload.Payment;
            TaxAmount = payload.TaxAmount;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618

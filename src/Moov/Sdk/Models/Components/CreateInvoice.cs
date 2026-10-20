@@ -28,6 +28,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("customerEmail")]
         public string? CustomerEmail { get; set; }
 
+        /// <summary>
+        /// Optional merchant-defined invoice number, up to 64 characters. Must be unique for the account. If omitted, empty, or whitespace-only, the next number in the INV-&lt;n&gt; sequence is assigned automatically.
+        /// </summary>
+        [JsonProperty("invoiceNumber")]
+        public string? InvoiceNumber { get; set; }
+
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -42,6 +48,12 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("dueDate")]
         public DateTime? DueDate { get; set; }
+
+        /// <summary>
+        /// Payment options for the invoice.
+        /// </summary>
+        [JsonProperty("payment")]
+        public InvoicePaymentOptions? Payment { get; set; }
 
         [JsonProperty("taxAmount")]
         public AmountDecimal? TaxAmount { get; set; }
