@@ -28,7 +28,7 @@ namespace Moov.Sdk.Models.Requests
         public TransferWaitFor? XWaitFor { get; set; }
 
         /// <summary>
-        /// The merchant's Moov account ID.
+        /// Moov account ID of the partner for the transfer.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
