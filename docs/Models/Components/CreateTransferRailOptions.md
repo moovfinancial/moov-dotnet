@@ -1,0 +1,14 @@
+# CreateTransferRailOptions
+
+Rail-specific options for a new transfer. Set only the key that matches the transfer's rail.
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `CardPayment`                                                                             | [CreateTransferSourceCard](../../Models/Components/CreateTransferSourceCard.md)           | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `PushToCard`                                                                              | [CreateTransferDestinationCard](../../Models/Components/CreateTransferDestinationCard.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `PullFromCard`                                                                            | [CreateTransferSourceCard](../../Models/Components/CreateTransferSourceCard.md)           | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `AchDebit`                                                                                | [CreateTransferSourceACH](../../Models/Components/CreateTransferSourceACH.md)             | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `AchCredit`                                                                               | [CreateTransferDestinationACH](../../Models/Components/CreateTransferDestinationACH.md)   | :heavy_minus_sign:                                                                        | N/A                                                                                       |

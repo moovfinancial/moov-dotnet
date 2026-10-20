@@ -72,7 +72,7 @@ namespace Moov.Sdk
         /// asynchronous response indicating the transfer was created (this is the default response if the header is omitted). A timeout will occur after 15 seconds.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
-        /// <returns>An awaitable task that returns a <see cref="CreateTransferResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="Models.Requests.CreateTransferResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
@@ -81,7 +81,7 @@ namespace Moov.Sdk
         /// <exception cref="TransferException">The transfer was created, but rail-specific details may not be available within the 15 second timeout window. Thrown when the API returns a 409 response.</exception>
         /// <exception cref="TransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<CreateTransferResponse> CreateAsync(
+        public  Task<Models.Requests.CreateTransferResponse> CreateAsync(
             string xIdempotencyKey,
             string accountID,
             CreateTransfer body,
@@ -200,18 +200,24 @@ namespace Moov.Sdk
         ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
+        /// <param name="xIdempotencyKey">
+        /// Prevents duplicate cancellations from being created.<br/>
+        /// In v2026.10 and later, this header is required, and reusing a key returns a `409` response with the original cancellation.
+        /// </param>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="transferID">The transfer ID to cancel.</param>
         /// <param name="body">A <see cref="CreateCancellation"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="body"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
-        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400, 409 or 422 response.</exception>
+        /// <exception cref="Conflict">The request conflicted with the current state of the target resource. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<CreateCancellationResponse> CreateCancellationAsync(
+            string xIdempotencyKey,
             string accountID,
             string transferID,
             CreateCancellation body,
@@ -336,6 +342,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Initiate a refund for a card transfer.<br/>
+        /// The `accountID` must identify the partner account for the transfer.<br/>
         /// <br/>
         /// **Use the <a href="https://docs.moov.io/api/money-movement/refunds/cancel/">Cancel or refund a card transfer</a> endpoint for more comprehensive cancel and refund options.**    <br/>
         /// See the <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals</a> guide for more information. <br/>
@@ -692,7 +699,7 @@ namespace Moov.Sdk
         /// asynchronous response indicating the transfer was created (this is the default response if the header is omitted). A timeout will occur after 15 seconds.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
-        /// <returns>An awaitable task that returns a <see cref="CreateTransferResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="Models.Requests.CreateTransferResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/> or <paramref name="body"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
@@ -701,7 +708,7 @@ namespace Moov.Sdk
         /// <exception cref="TransferException">The transfer was created, but rail-specific details may not be available within the 15 second timeout window. Thrown when the API returns a 409 response.</exception>
         /// <exception cref="TransferValidationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<CreateTransferResponse> CreateAsync(
+        public async  Task<Models.Requests.CreateTransferResponse> CreateAsync(
             string xIdempotencyKey,
             string accountID,
             CreateTransfer body,
@@ -785,17 +792,17 @@ namespace Moov.Sdk
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-                    CreatedTransfer obj;
+                    Models.Components.CreateTransferResponse obj;
                     try
                     {
-                        obj = ResponseBodyDeserializer.DeserializeNotNull<CreatedTransfer>(httpResponseBody, NullValueHandling.Ignore);
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<Models.Components.CreateTransferResponse>(httpResponseBody, NullValueHandling.Ignore);
                     }
                     catch (Exception ex)
                     {
-                        throw new ResponseValidationException("Failed to deserialize response body into CreatedTransfer.", httpRequest, httpResponse, httpResponseBody, ex);
+                        throw new ResponseValidationException("Failed to deserialize response body into Models.Components.CreateTransferResponse.", httpRequest, httpResponse, httpResponseBody, ex);
                     }
 
-                    var response = new CreateTransferResponse()
+                    var response = new Models.Requests.CreateTransferResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
                         {
@@ -804,7 +811,7 @@ namespace Moov.Sdk
                         },
                         Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
-                    response.CreatedTransfer = obj;
+                    response.CreateTransferResponseValue = obj;
                     return response;
                 }
 
@@ -825,7 +832,7 @@ namespace Moov.Sdk
                         throw new ResponseValidationException("Failed to deserialize response body into AsyncTransfer.", httpRequest, httpResponse, httpResponseBody, ex);
                     }
 
-                    var response = new CreateTransferResponse()
+                    var response = new Models.Requests.CreateTransferResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
                         {
@@ -855,7 +862,7 @@ namespace Moov.Sdk
                         throw new ResponseValidationException("Failed to deserialize response body into Transfer.", httpRequest, httpResponse, httpResponseBody, ex);
                     }
 
-                    var response = new CreateTransferResponse()
+                    var response = new Models.Requests.CreateTransferResponse()
                     {
                         HttpMeta = new Models.Components.HTTPMetadata()
                         {
@@ -1587,30 +1594,38 @@ namespace Moov.Sdk
         ///   To access this endpoint using a <a href="https://docs.moov.io/api/authentication/access-tokens/">token</a> you'll need <br/>
         ///   to specify the `/accounts/{accountID}/transfers.write` scope.
         /// </summary>
+        /// <param name="xIdempotencyKey">
+        /// Prevents duplicate cancellations from being created.<br/>
+        /// In v2026.10 and later, this header is required, and reusing a key returns a `409` response with the original cancellation.
+        /// </param>
         /// <param name="accountID">The partner's Moov account ID.</param>
         /// <param name="transferID">The transfer ID to cancel.</param>
         /// <param name="body">A <see cref="CreateCancellation"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateCancellationResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">One of <paramref name="xIdempotencyKey"/>, <paramref name="accountID"/>, <paramref name="transferID"/> or <paramref name="body"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
-        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400, 409 or 422 response.</exception>
+        /// <exception cref="Conflict">The request conflicted with the current state of the target resource. Thrown when the API returns a 409 response.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 422 response.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<CreateCancellationResponse> CreateCancellationAsync(
+            string xIdempotencyKey,
             string accountID,
             string transferID,
             CreateCancellation body,
             CancellationToken? cancellationToken = null
         )
         {
+            if (xIdempotencyKey == null) throw new ArgumentNullException(nameof(xIdempotencyKey));
             if (accountID == null) throw new ArgumentNullException(nameof(accountID));
             if (transferID == null) throw new ArgumentNullException(nameof(transferID));
             if (body == null) throw new ArgumentNullException(nameof(body));
 
             var request = new CreateCancellationRequest()
             {
+                XIdempotencyKey = xIdempotencyKey,
                 AccountID = accountID,
                 TransferID = transferID,
                 Body = body,
@@ -1621,6 +1636,7 @@ namespace Moov.Sdk
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+            HeaderSerializer.PopulateHeaders(ref httpRequest, request);
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
@@ -1704,7 +1720,51 @@ namespace Moov.Sdk
 
                 throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
-            else if(new List<int>{400, 409, 422}.Contains(responseStatusCode))
+            else if(responseStatusCode == 409)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    Conflict obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<Conflict>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into Conflict.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    var httpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+                    switch (obj.Type.ToString()) {
+                        case "GenericError":
+                            var genericErrorPayload = obj.GenericErrorPayload;
+                            if (genericErrorPayload == null)
+                            {
+                                throw new ResponseValidationException("Failed to deserialize error payload.", httpRequest, httpResponse, httpResponseBody, new NullReferenceException("GenericErrorPayload is null."));
+                            }
+                            genericErrorPayload!.HttpMeta = httpMeta;
+                            throw new GenericError(genericErrorPayload, httpRequest, httpResponse, httpResponseBody);
+                        case "Cancellation_exception":
+                            var cancellationExceptionPayload = obj.CancellationExceptionPayload;
+                            if (cancellationExceptionPayload == null)
+                            {
+                                throw new ResponseValidationException("Failed to deserialize error payload.", httpRequest, httpResponse, httpResponseBody, new NullReferenceException("CancellationExceptionPayload is null."));
+                            }
+                            cancellationExceptionPayload!.HttpMeta = httpMeta;
+                            throw new CancellationException(cancellationExceptionPayload, httpRequest, httpResponse, httpResponseBody);
+                        default:
+                            throw new InvalidOperationException("Unknown error type.");
+                    };
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{400, 422}.Contains(responseStatusCode))
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
@@ -2496,6 +2556,7 @@ namespace Moov.Sdk
 
         /// <summary>
         /// Initiate a refund for a card transfer.<br/>
+        /// The `accountID` must identify the partner account for the transfer.<br/>
         /// <br/>
         /// **Use the <a href="https://docs.moov.io/api/money-movement/refunds/cancel/">Cancel or refund a card transfer</a> endpoint for more comprehensive cancel and refund options.**    <br/>
         /// See the <a href="https://docs.moov.io/guides/money-movement/accept-payments/card-acceptance/reversals/">reversals</a> guide for more information. <br/>

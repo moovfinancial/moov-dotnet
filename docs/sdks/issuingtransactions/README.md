@@ -10,6 +10,10 @@ Activity includes authorizations and settlements in a single list.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
 you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
+* [GetActivity](#getactivity) - Retrieve a single issued card activity associated with a Moov account.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 * [ListAuthorizations](#listauthorizations) - List issued card authorizations associated with a Moov account.
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
@@ -73,6 +77,50 @@ var res = await sdk.IssuingTransactions.ListActivityAsync(req);
 ### Response
 
 **[ListIssuedCardActivityResponse](../../Models/Requests/ListIssuedCardActivityResponse.md)**
+
+### Errors
+
+| Error Type                          | Status Code                         | Content Type                        |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| Moov.Sdk.Models.Errors.APIException | 4XX, 5XX                            | \*/\*                               |
+
+## GetActivity
+
+Retrieve a single issued card activity associated with a Moov account.
+
+To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/)
+you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getIssuedCardActivity" method="get" path="/issuing/{accountID}/activity/{id}" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+var res = await sdk.IssuingTransactions.GetActivityAsync(
+    accountID: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `AccountID`                                                                        | *string*                                                                           | :heavy_check_mark:                                                                 | The Moov business account for which cards have been issued.                        |
+| `Id`                                                                               | *string*                                                                           | :heavy_check_mark:                                                                 | The identifier for the activity item, either authorizationID or cardTransactionID. |
+
+### Response
+
+**[GetIssuedCardActivityResponse](../../Models/Requests/GetIssuedCardActivityResponse.md)**
 
 ### Errors
 

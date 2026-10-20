@@ -15,6 +15,8 @@ namespace Moov.Sdk.Models.Components
 
     public enum CaptureStatus
     {
+        [JsonProperty("created")]
+        Created,
         [JsonProperty("pending")]
         Pending,
         [JsonProperty("completed")]
