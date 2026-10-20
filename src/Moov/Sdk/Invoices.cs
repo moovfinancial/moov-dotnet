@@ -143,6 +143,40 @@ namespace Moov.Sdk
         );
 
         /// <summary>
+        /// Create a notification for an invoice, which resends the invoice email to the customer. The required<br/>
+        /// `channels` body lists the channels to notify on; today only `email` is supported. Returns a 409<br/>
+        /// if the invoice is not in `unpaid` or `overdue` status, or if the merchant or customer account has no<br/>
+        /// email set.<br/>
+        /// <br/>
+        /// The request is all-or-nothing: if any requested channel is rate limited, nothing is sent. Each channel<br/>
+        /// can be sent at most once every 24 hours, and not within 24 hours of the invoice being sent. A 429<br/>
+        /// response lists the limited channels with `availableOn` and lists the `availableChannels` that can be<br/>
+        /// sent in a new request.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="invoiceID">Description not available.</param>
+        /// <param name="body">A <see cref="CreateInvoiceNotification"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateInvoiceNotificationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="invoiceID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="InvoiceNotificationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="InvoiceNotificationRateLimitedError">The request was refused because at least one requested channel is rate limited. No notification was sent. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateInvoiceNotificationResponse> CreateInvoiceNotificationAsync(
+            string accountID,
+            string invoiceID,
+            CreateInvoiceNotification body,
+            CancellationToken? cancellationToken = null
+        );
+
+        /// <summary>
         /// Creates a payment resource to represent that an invoice was paid outside of the Moov platform.<br/>
         /// If a payment link was created for the invoice, the corresponding payment link is canceled, but a receipt is still sent.<br/>
         /// <br/>
@@ -1007,6 +1041,220 @@ namespace Moov.Sdk
             else if(new List<int>{401, 403, 404, 429}.Contains(responseStatusCode))
             {
                 throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{500, 504}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.APIException("Unknown status code received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Create a notification for an invoice, which resends the invoice email to the customer. The required<br/>
+        /// `channels` body lists the channels to notify on; today only `email` is supported. Returns a 409<br/>
+        /// if the invoice is not in `unpaid` or `overdue` status, or if the merchant or customer account has no<br/>
+        /// email set.<br/>
+        /// <br/>
+        /// The request is all-or-nothing: if any requested channel is rate limited, nothing is sent. Each channel<br/>
+        /// can be sent at most once every 24 hours, and not within 24 hours of the invoice being sent. A 429<br/>
+        /// response lists the limited channels with `availableOn` and lists the `availableChannels` that can be<br/>
+        /// sent in a new request.<br/>
+        /// <br/>
+        /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
+        /// you'll need to specify the `/accounts/{accountID}/invoices.write` scope.
+        /// </summary>
+        /// <param name="accountID">Description not available.</param>
+        /// <param name="invoiceID">Description not available.</param>
+        /// <param name="body">A <see cref="CreateInvoiceNotification"/> parameter.</param>
+        /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateInvoiceNotificationResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountID"/>, <paramref name="invoiceID"/> or <paramref name="body"/> is null.</exception>
+        /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="GenericError">The server could not understand the request due to invalid syntax. Thrown when the API returns a 400 or 409 response.</exception>
+        /// <exception cref="InvoiceNotificationError">The request was well-formed, but the contents failed validation. Check the request for missing or invalid fields. Thrown when the API returns a 422 response.</exception>
+        /// <exception cref="InvoiceNotificationRateLimitedError">The request was refused because at least one requested channel is rate limited. No notification was sent. Thrown when the API returns a 429 response.</exception>
+        /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateInvoiceNotificationResponse> CreateInvoiceNotificationAsync(
+            string accountID,
+            string invoiceID,
+            CreateInvoiceNotification body,
+            CancellationToken? cancellationToken = null
+        )
+        {
+            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
+            if (invoiceID == null) throw new ArgumentNullException(nameof(invoiceID));
+            if (body == null) throw new ArgumentNullException(nameof(body));
+
+            var request = new CreateInvoiceNotificationRequest()
+            {
+                AccountID = accountID,
+                InvoiceID = invoiceID,
+                Body = body,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounts/{accountID}/invoices/{invoiceID}/notifications", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "Body", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createInvoiceNotification", null, SDKConfiguration.SecuritySource, cancellationToken);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest, cancellationToken);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 204)
+            {
+                return new CreateInvoiceNotificationResponse()
+                {
+                    HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    },
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                };
+            }
+            else if(new List<int>{401, 403, 404}.Contains(responseStatusCode))
+            {
+                throw new Models.Errors.APIException("API error occurred", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(new List<int>{400, 409}.Contains(responseStatusCode))
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    GenericErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<GenericErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into GenericErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new GenericError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 422)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    InvoiceNotificationErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<InvoiceNotificationErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into InvoiceNotificationErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new InvoiceNotificationError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode == 429)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    InvoiceNotificationRateLimitedErrorPayload payload;
+                    try
+                    {
+                        payload = ResponseBodyDeserializer.DeserializeNotNull<InvoiceNotificationRateLimitedErrorPayload>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into InvoiceNotificationRateLimitedErrorPayload.", httpRequest, httpResponse, httpResponseBody, ex);
+                    }
+
+                    payload.HttpMeta = new Models.Components.HTTPMetadata()
+                    {
+                        Response = httpResponse,
+                        Request = httpRequest
+                    };
+
+                    throw new InvoiceNotificationRateLimitedError(payload, httpRequest, httpResponse, httpResponseBody);
+                }
+
+                throw new Models.Errors.APIException("Unknown content type received", httpRequest, httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(new List<int>{500, 504}.Contains(responseStatusCode))
             {
