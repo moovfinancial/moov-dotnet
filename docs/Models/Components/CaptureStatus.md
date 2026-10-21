@@ -5,7 +5,7 @@
 ```csharp
 using Moov.Sdk.Models.Components;
 
-var value = CaptureStatus.Pending;
+var value = CaptureStatus.Created;
 ```
 
 
@@ -13,6 +13,7 @@ var value = CaptureStatus.Pending;
 
 | Name        | Value       |
 | ----------- | ----------- |
+| `Created`   | created     |
 | `Pending`   | pending     |
 | `Completed` | completed   |
 | `Failed`    | failed      |

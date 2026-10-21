@@ -25,6 +25,6 @@ namespace Moov.Sdk.Models.Components
         public string Amount { get; set; } = default!;
 
         [JsonProperty("merchantData")]
-        public IssuingMerchantData? MerchantData { get; set; }
+        public SimulationIssuingMerchantData? MerchantData { get; set; }
     }
 }

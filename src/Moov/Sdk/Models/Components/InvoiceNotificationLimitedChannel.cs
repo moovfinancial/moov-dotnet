@@ -9,15 +9,20 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
 
-    public class CardExpirationError
+    public class InvoiceNotificationLimitedChannel
     {
-        [JsonProperty("month")]
-        public string? Month { get; set; }
+        [JsonProperty("channel")]
+        public NotificationChannel Channel { get; set; } = default!;
 
-        [JsonProperty("year")]
-        public string? Year { get; set; }
+        /// <summary>
+        /// When a notification to the channel can be sent again.
+        /// </summary>
+        [JsonProperty("availableOn")]
+        public DateTime AvailableOn { get; set; } = default!;
     }
 }

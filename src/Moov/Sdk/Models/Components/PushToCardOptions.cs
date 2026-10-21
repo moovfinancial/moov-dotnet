@@ -11,6 +11,7 @@ namespace Moov.Sdk.Models.Components
 {
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
+    using System;
 
     public class PushToCardOptions
     {
@@ -19,5 +20,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("dynamicDescriptor")]
         public string? DynamicDescriptor { get; set; }
+
+        /// <summary>
+        /// The scheduled date and time for the push-to-card transfer to be delivered, as set when the transfer was created.
+        /// </summary>
+        [JsonProperty("scheduledDeliveryOn")]
+        public DateTime? ScheduledDeliveryOn { get; set; }
     }
 }

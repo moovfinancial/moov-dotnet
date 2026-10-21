@@ -109,7 +109,7 @@ var res = await sdk.CardIssuing.CreateAuthorizationAsync(
     body: new CreateAuthorizationSimulation() {
         IssuedCardID = "<id>",
         Amount = "-14.89",
-        MerchantData = new IssuingMerchantData() {
+        MerchantData = new SimulationIssuingMerchantData() {
             NetworkID = "<id>",
             Name = "Whole Body Fitness",
             City = "San Francisco",
@@ -273,10 +273,6 @@ var res = await sdk.CardIssuing.RequestAsync(
             StateOrProvince = "CO",
             PostalCode = "80301",
             Country = "US",
-        },
-        Expiration = new CardExpiration() {
-            Month = "01",
-            Year = "21",
         },
         Controls = new IssuingControls() {
             VelocityLimits = new List<IssuingVelocityLimit>() {

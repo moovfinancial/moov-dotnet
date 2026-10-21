@@ -32,12 +32,6 @@ namespace Moov.Sdk.Models.Components
         public Address? BillingAddress { get; set; }
 
         /// <summary>
-        /// The expiration date of the card or token.
-        /// </summary>
-        [JsonProperty("expiration")]
-        public CardExpiration? Expiration { get; set; }
-
-        /// <summary>
         /// Mutable spend controls for the card.
         /// </summary>
         [JsonProperty("controls")]

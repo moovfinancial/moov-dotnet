@@ -9,7 +9,6 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -30,11 +29,5 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("paymentToken")]
         public string? PaymentToken { get; set; }
-
-        [JsonProperty("cardDetails")]
-        public CreateTransferSourceCard? CardDetails { get; set; }
-
-        [JsonProperty("achDetails")]
-        public CreateTransferSourceACH? AchDetails { get; set; }
     }
 }

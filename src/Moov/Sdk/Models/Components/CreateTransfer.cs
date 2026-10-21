@@ -28,6 +28,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("destination")]
         public CreateTransferDestination Destination { get; set; } = default!;
 
+        /// <summary>
+        /// Rail-specific options for a new transfer. Set only the key that matches the transfer's rail.
+        /// </summary>
+        [JsonProperty("options")]
+        public CreateTransferRailOptions? Options { get; set; }
+
         [JsonProperty("amount")]
         public AmountDecimal Amount { get; set; } = default!;
 

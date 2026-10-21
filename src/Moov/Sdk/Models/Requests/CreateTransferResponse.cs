@@ -22,7 +22,7 @@ namespace Moov.Sdk.Models.Requests
         /// <summary>
         /// The request completed successfully.
         /// </summary>
-        public CreatedTransfer? CreatedTransfer { get; set; }
+        public Models.Components.CreateTransferResponse? CreateTransferResponseValue { get; set; }
 
         /// <summary>
         /// A transfer was successfully created but an error occurred while generating the synchronous response. The asynchronous response object will be returned.

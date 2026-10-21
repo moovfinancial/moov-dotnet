@@ -15,6 +15,13 @@ namespace Moov.Sdk.Models.Requests
     public class CreateCancellationRequest
     {
         /// <summary>
+        /// Prevents duplicate cancellations from being created.<br/>
+        /// In v2026.10 and later, this header is required, and reusing a key returns a `409` response with the original cancellation.
+        /// </summary>
+        [SpeakeasyMetadata("header:style=simple,explode=false,name=x-idempotency-key")]
+        public string XIdempotencyKey { get; set; } = default!;
+
+        /// <summary>
         /// The partner's Moov account ID.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]

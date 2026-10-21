@@ -20,14 +20,11 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("issuedCardID")]
         public string? IssuedCardID { get; set; }
 
-        /// <summary>
-        /// A decimal-formatted numerical string that represents up to 2 decimal place precision. In USD for example, 12.34 is $12.34 and 0.99 is $0.99.
-        /// </summary>
         [JsonProperty("amount")]
         public string? Amount { get; set; }
 
         [JsonProperty("merchantData")]
-        public IssuingMerchantDataValidationError? MerchantData { get; set; }
+        public SimulationIssuingMerchantDataValidationError? MerchantData { get; set; }
 
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
@@ -47,7 +44,7 @@ namespace Moov.Sdk.Models.Errors
         public string? Amount { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use AuthorizationSimulationValidationError.Payload.MerchantData instead.")]
-        public IssuingMerchantDataValidationError? MerchantData { get; set; }
+        public SimulationIssuingMerchantDataValidationError? MerchantData { get; set; }
 
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use AuthorizationSimulationValidationError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;

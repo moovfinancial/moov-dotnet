@@ -9,7 +9,6 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
-    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
@@ -20,17 +19,5 @@ namespace Moov.Sdk.Models.Components
     {
         [JsonProperty("paymentMethodID")]
         public string PaymentMethodID { get; set; } = default!;
-
-        [JsonProperty("cardDetails")]
-        public CreateTransferDestinationCard? CardDetails { get; set; }
-
-        [JsonProperty("achDetails")]
-        public CreateTransferDestinationACH? AchDetails { get; set; }
-
-        /// <summary>
-        /// Wire-specific options supplied when creating a transfer.
-        /// </summary>
-        [JsonProperty("wireDetails")]
-        public CreateTransferDestinationWire? WireDetails { get; set; }
     }
 }
