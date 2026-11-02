@@ -54,22 +54,16 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
         /// </summary>
-        /// <param name="accountID">The Moov business account for which the cards have been issued.</param>
-        /// <param name="skip">Description not available.</param>
-        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
-        /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed`</param>
+        /// <param name="request">A <see cref="ListIssuedCardsRequest"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardsResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<ListIssuedCardsResponse> ListAsync(
-            string accountID,
-            long? skip = null,
-            long? count = null,
-            List<IssuedCardState>? states = null,
+            ListIssuedCardsRequest request,
             CancellationToken? cancellationToken = null
         );
 
@@ -355,34 +349,20 @@ namespace Moov.Sdk
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a> <br/>
         /// you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
         /// </summary>
-        /// <param name="accountID">The Moov business account for which the cards have been issued.</param>
-        /// <param name="skip">Description not available.</param>
-        /// <param name="count">Page size. When omitted, the server defaults to `200`.</param>
-        /// <param name="states">Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed`</param>
+        /// <param name="request">A <see cref="ListIssuedCardsRequest"/> parameter.</param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="ListIssuedCardsResponse"/> response envelope when completed.</returns>
-        /// <exception cref="ArgumentNullException">The required parameter <paramref name="accountID"/> is null.</exception>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="OperationCanceledException">The operation was aborted via the provided cancellation token.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="APIException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public async  Task<ListIssuedCardsResponse> ListAsync(
-            string accountID,
-            long? skip = null,
-            long? count = null,
-            List<IssuedCardState>? states = null,
+            ListIssuedCardsRequest request,
             CancellationToken? cancellationToken = null
         )
         {
-            if (accountID == null) throw new ArgumentNullException(nameof(accountID));
-
-            var request = new ListIssuedCardsRequest()
-            {
-                AccountID = accountID,
-                Skip = skip,
-                Count = count,
-                States = states,
-            };
+            if (request == null) throw new ArgumentNullException(nameof(request));
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/issuing/{accountID}/cards", request, null);
