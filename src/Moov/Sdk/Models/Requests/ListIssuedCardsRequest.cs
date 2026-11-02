@@ -35,5 +35,11 @@ namespace Moov.Sdk.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=states")]
         public List<IssuedCardState>? States { get; set; }
+
+        /// <summary>
+        /// Optional identifier for the account of the card's authorized user.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=authorizedUserAccountID")]
+        public string? AuthorizedUserAccountID { get; set; }
     }
 }
