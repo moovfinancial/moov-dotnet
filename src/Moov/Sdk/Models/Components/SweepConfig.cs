@@ -53,6 +53,12 @@ namespace Moov.Sdk.Models.Components
         public string? StatementDescriptor { get; set; }
 
         /// <summary>
+        /// A configured wallet-level override of the time of day the sweep runs.
+        /// </summary>
+        [JsonProperty("schedule")]
+        public SweepConfigSchedule? Schedule { get; set; }
+
+        /// <summary>
         /// An array of fields that are locked. To request updates, please contact Moov support.
         /// </summary>
         [JsonProperty("lockedFields")]
