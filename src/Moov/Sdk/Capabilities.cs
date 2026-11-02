@@ -82,7 +82,9 @@ namespace Moov.Sdk
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.<br/>
+        /// <br/>
+        /// Starting in v2026.10.00, the `platform.moov-money` capability might appear in the list for accounts enrolled in Moov Money. This is a read-only capability that Moov requests. It requires no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCapabilityResponse"/> response envelope when completed.</returns>
@@ -113,7 +115,9 @@ namespace Moov.Sdk
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.<br/>
+        /// <br/>
+        /// Starting in v2026.10.00, the `platform.moov-money` capability might appear in the list for accounts enrolled in Moov Money. This is a read-only capability that Moov requests. It requires no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisableCapabilityResponse"/> response envelope when completed.</returns>
@@ -483,7 +487,9 @@ namespace Moov.Sdk
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.<br/>
+        /// <br/>
+        /// Starting in v2026.10.00, the `platform.moov-money` capability might appear in the list for accounts enrolled in Moov Money. This is a read-only capability that Moov requests. It requires no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="GetCapabilityResponse"/> response envelope when completed.</returns>
@@ -625,7 +631,9 @@ namespace Moov.Sdk
         /// <br/>
         /// Read our <a href="https://docs.moov.io/guides/accounts/capabilities/reference/">capabilities reference</a> to choose the right capabilities for your integration.<br/>
         /// <br/>
-        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.
+        /// The `production-app`, `platform.production-app`, and / or `platform.wallet-transfers` capabilities might appear in the list for your Partner account. These are read-only capabilities that Moov requests. These capabilities remain active with your account and require no additional action.<br/>
+        /// <br/>
+        /// Starting in v2026.10.00, the `platform.moov-money` capability might appear in the list for accounts enrolled in Moov Money. This is a read-only capability that Moov requests. It requires no additional action.
         /// </param>
         /// <param name="cancellationToken">An optional cancellation token to signal when the operation should be aborted.</param>
         /// <returns>An awaitable task that returns a <see cref="DisableCapabilityResponse"/> response envelope when completed.</returns>

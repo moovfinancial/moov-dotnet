@@ -29,5 +29,11 @@ namespace Moov.Sdk.Models.Components
 
         [JsonProperty("minimumBalance")]
         public string? MinimumBalance { get; set; } = null;
+
+        /// <summary>
+        /// Overrides the time of day this wallet's sweep runs. Sweeps only run on US banking days.
+        /// </summary>
+        [JsonProperty("schedule")]
+        public Schedule? Schedule { get; set; } = null;
     }
 }
