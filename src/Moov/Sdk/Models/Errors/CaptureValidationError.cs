@@ -17,9 +17,6 @@ namespace Moov.Sdk.Models.Errors
 
     public class CaptureValidationErrorPayload
     {
-        [JsonProperty("destinationPaymentMethodID")]
-        public string? DestinationPaymentMethodID { get; set; }
-
         [JsonProperty("amount")]
         public AmountDecimalValidationError? Amount { get; set; }
 
@@ -58,9 +55,6 @@ namespace Moov.Sdk.Models.Errors
         /// </summary>
         public CaptureValidationErrorPayload Payload { get; }
 
-        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CaptureValidationError.Payload.DestinationPaymentMethodID instead.")]
-        public string? DestinationPaymentMethodID { get; set; }
-
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use CaptureValidationError.Payload.Amount instead.")]
         public AmountDecimalValidationError? Amount { get; set; }
 
@@ -98,7 +92,6 @@ namespace Moov.Sdk.Models.Errors
            Payload = payload;
 
            #pragma warning disable CS0618
-           DestinationPaymentMethodID = payload.DestinationPaymentMethodID;
            Amount = payload.Amount;
            IsFinal = payload.IsFinal;
            Description = payload.Description;

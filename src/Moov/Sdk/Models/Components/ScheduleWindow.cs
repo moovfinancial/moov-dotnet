@@ -15,7 +15,7 @@ namespace Moov.Sdk.Models.Components
     using System.Collections.Generic;
 
     /// <summary>
-    /// A window of time during which the card may authorize.
+    /// A window of time during which authorizations on the card can be approved.
     /// </summary>
     public class ScheduleWindow
     {

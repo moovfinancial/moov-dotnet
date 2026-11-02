@@ -35,6 +35,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("count")]
         public string? Count { get; set; }
 
+        [JsonProperty("cursor")]
+        public string? Cursor { get; set; }
+
         [JsonProperty("groupID")]
         public string? GroupID { get; set; }
 
@@ -82,6 +85,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListTransfersValidationError.Payload.Count instead.")]
         public string? Count { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListTransfersValidationError.Payload.Cursor instead.")]
+        public string? Cursor { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use ListTransfersValidationError.Payload.GroupID instead.")]
         public string? GroupID { get; set; }
 
@@ -119,6 +125,7 @@ namespace Moov.Sdk.Models.Errors
            EndDateTime = payload.EndDateTime;
            Skip = payload.Skip;
            Count = payload.Count;
+           Cursor = payload.Cursor;
            GroupID = payload.GroupID;
            ForeignID = payload.ForeignID;
            ScheduleID = payload.ScheduleID;
