@@ -32,6 +32,9 @@ namespace Moov.Sdk.Models.Errors
         [JsonProperty("minimumBalance")]
         public string? MinimumBalance { get; set; }
 
+        [JsonProperty("schedule")]
+        public SweepConfigScheduleError? Schedule { get; set; }
+
         [JsonProperty("-")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
     }
@@ -58,6 +61,9 @@ namespace Moov.Sdk.Models.Errors
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use PatchSweepConfigError.Payload.MinimumBalance instead.")]
         public string? MinimumBalance { get; set; }
 
+        [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use PatchSweepConfigError.Payload.Schedule instead.")]
+        public SweepConfigScheduleError? Schedule { get; set; }
+
         [Obsolete("This field will be removed in a future release, please migrate away from it as soon as possible. Use PatchSweepConfigError.Payload.HttpMeta instead.")]
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
@@ -76,6 +82,7 @@ namespace Moov.Sdk.Models.Errors
            PullPaymentMethodID = payload.PullPaymentMethodID;
            StatementDescriptor = payload.StatementDescriptor;
            MinimumBalance = payload.MinimumBalance;
+           Schedule = payload.Schedule;
            HttpMeta = payload.HttpMeta;
            #pragma warning restore CS0618
         }

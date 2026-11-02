@@ -14,11 +14,13 @@ namespace Moov.Sdk.Models.Components
     using System;
 
     /// <summary>
-    /// The `state` represents the operational status of an issued card. A card can only approve incoming authorizations if it is in an active state.<br/>
+    /// The `state` represents the operational status of an issued card.<br/>
     /// <br/>
-    /// - `active`: The card is operational and can approve authorizations.<br/>
-    /// - `frozen`: The card is temporarily suspended and cannot approve authorizations. A frozen card can be reactivated by setting its state back to `active`.<br/>
-    /// - `closed`: The card is permanently deactivated and cannot approve authorizations. A card can be closed by request or when it expires.
+    /// Authorizations can only be approved while the card is `active`:<br/>
+    /// <br/>
+    /// - `active`: The card is operational and authorizations can be approved.<br/>
+    /// - `frozen`: The card is temporarily suspended and authorizations cannot be approved. Set the state back to `active` to reactivate it. A card can move between `frozen` and `active` as often as needed.<br/>
+    /// - `closed`: The card is permanently deactivated. A card is closed by request or when it expires, and cannot be reopened.
     /// </summary>
     public enum IssuedCardState
     {
