@@ -36,6 +36,12 @@ namespace Moov.Sdk.Models.Requests
         public string? IssuedCardID { get; set; }
 
         /// <summary>
+        /// Optional identifier for the account of the card's authorized user.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=authorizedUserAccountID")]
+        public string? AuthorizedUserAccountID { get; set; }
+
+        /// <summary>
         /// Optional case-insensitive substring match on the merchant name to filter results.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=merchantName")]

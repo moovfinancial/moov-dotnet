@@ -20,7 +20,7 @@ namespace Moov.Sdk.Models.Requests
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// The request completed successfully.
+        /// Transfers were successfully listed matching the provided filter parameters and returned.
         /// </summary>
         public List<Transfer>? Transfers { get; set; }
 

@@ -153,29 +153,29 @@ you'll need to specify the `/accounts/{accountID}/issued-cards.read` scope.
 ```csharp
 using Moov.Sdk;
 using Moov.Sdk.Models.Components;
+using Moov.Sdk.Models.Requests;
 
 var sdk = new MoovClient(security: new Security() {
     Username = "",
     Password = "",
 });
 
-var res = await sdk.CardIssuing.ListAsync(
-    accountID: "17c958e0-3abe-46e5-8afb-98742f1fb8ac",
-    skip: 60,
-    count: 20
-);
+ListIssuedCardsRequest req = new ListIssuedCardsRequest() {
+    AccountID = "17c958e0-3abe-46e5-8afb-98742f1fb8ac",
+    Skip = 60,
+    Count = 20,
+};
+
+var res = await sdk.CardIssuing.ListAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 | Example                                                                                                     |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `AccountID`                                                                                                 | *string*                                                                                                    | :heavy_check_mark:                                                                                          | The Moov business account for which the cards have been issued.                                             |                                                                                                             |
-| `Skip`                                                                                                      | *long*                                                                                                      | :heavy_minus_sign:                                                                                          | N/A                                                                                                         | 60                                                                                                          |
-| `Count`                                                                                                     | *long*                                                                                                      | :heavy_minus_sign:                                                                                          | Page size. When omitted, the server defaults to `200`.                                                      | 20                                                                                                          |
-| `States`                                                                                                    | List<[IssuedCardState](../../Models/Components/IssuedCardState.md)>                                         | :heavy_minus_sign:                                                                                          | Optional, comma-separated states to filter the Moov list issued cards response. For example `active,closed` |                                                                                                             |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListIssuedCardsRequest](../../Models/Requests/ListIssuedCardsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
