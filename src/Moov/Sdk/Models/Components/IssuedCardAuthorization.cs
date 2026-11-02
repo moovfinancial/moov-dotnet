@@ -29,6 +29,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("lastFourCardNumber")]
         public string? LastFourCardNumber { get; set; }
 
+        /// <summary>
+        /// Identifier for the account of the card's authorized user.
+        /// </summary>
+        [JsonProperty("authorizedUserAccountID")]
+        public string? AuthorizedUserAccountID { get; set; }
+
         [JsonProperty("fundingWalletID")]
         public string FundingWalletID { get; set; } = default!;
 

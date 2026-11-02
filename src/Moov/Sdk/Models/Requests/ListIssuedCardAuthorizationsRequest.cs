@@ -38,6 +38,12 @@ namespace Moov.Sdk.Models.Requests
         public string? IssuedCardID { get; set; }
 
         /// <summary>
+        /// Optional identifier for the account of the card's authorized user.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=authorizedUserAccountID")]
+        public string? AuthorizedUserAccountID { get; set; }
+
+        /// <summary>
         /// Optional date-time which inclusively filters all authorizations created after this date-time.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=startDateTime")]

@@ -18,9 +18,9 @@ namespace Moov.Sdk.Models.Components
     {
         /// <summary>
         /// Updates the state of a Moov issued card.<br/>
-        /// - `active`: Reactivates a frozen card so it can approve authorizations again.<br/>
-        /// - `frozen`: Temporarily suspends the card so it cannot approve authorizations. A card can be moved between `frozen` and `active` at will until it is `closed`, which is a terminal state.<br/>
-        /// - `closed`: The card is permanently deactivated and cannot approve authorizations. A card can be closed by request or when it expires.
+        /// - `active`: The card is operational and authorizations can be approved.<br/>
+        /// - `frozen`: The card is temporarily suspended and authorizations cannot be approved. Set the state back to `active` to reactivate it. A card can move between `frozen` and `active` as often as needed.<br/>
+        /// - `closed`: The card is permanently deactivated. A card is closed by request or when it expires, and cannot be reopened.
         /// </summary>
         [JsonProperty("state")]
         public UpdateIssuedCardState? State { get; set; }
