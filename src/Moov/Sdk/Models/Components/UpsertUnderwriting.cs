@@ -44,6 +44,9 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("cardIssuing")]
         public Models.Components.CardIssuing? CardIssuing { get; set; }
 
+        /// <summary>
+        /// For most use cases, you can omit `submissionIntent`. Set it to `wait` to pause the account's underwriting approval process until you send a subsequent request with `submissionIntent` set to `submit`.
+        /// </summary>
         [JsonProperty("submissionIntent")]
         public SubmissionIntent? SubmissionIntent { get; set; }
     }

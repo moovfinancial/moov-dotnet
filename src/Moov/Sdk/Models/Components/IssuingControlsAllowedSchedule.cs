@@ -26,7 +26,7 @@ namespace Moov.Sdk.Models.Components
         public string Timezone { get; set; } = default!;
 
         /// <summary>
-        /// Time windows during which the card may authorize. Any matching window allows the transaction.
+        /// Time windows during which authorizations on the card can be approved. Any matching window allows the transaction.
         /// </summary>
         [JsonProperty("windows")]
         public List<ScheduleWindow> Windows { get; set; } = default!;

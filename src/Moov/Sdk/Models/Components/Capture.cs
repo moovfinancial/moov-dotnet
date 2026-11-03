@@ -42,12 +42,6 @@ namespace Moov.Sdk.Models.Components
         public DateTime CreatedOn { get; set; } = default!;
 
         /// <summary>
-        /// Payment method of the merchant account the funds were captured into. For card-acquiring transfers, this must be a moov-wallet payment method.
-        /// </summary>
-        [JsonProperty("destinationPaymentMethodID")]
-        public string DestinationPaymentMethodID { get; set; } = default!;
-
-        /// <summary>
         /// An optional description of the capture that is used on receipts and for your own internal use.
         /// </summary>
         [JsonProperty("description")]

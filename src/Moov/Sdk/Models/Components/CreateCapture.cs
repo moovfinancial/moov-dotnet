@@ -20,12 +20,6 @@ namespace Moov.Sdk.Models.Components
     public class CreateCapture
     {
         /// <summary>
-        /// Payment method of the merchant account to capture funds into. For card-acquiring transfers, this must be a moov-wallet payment method.
-        /// </summary>
-        [JsonProperty("destinationPaymentMethodID")]
-        public string DestinationPaymentMethodID { get; set; } = default!;
-
-        /// <summary>
         /// Amount to capture.<br/>
         /// If omitted, the remaining capturable amount is captured.
         /// </summary>

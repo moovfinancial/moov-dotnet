@@ -103,6 +103,13 @@ namespace Moov.Sdk.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=false,name=count")]
         public long? Count { get; set; }
 
+        /// <summary>
+        /// Opaque cursor from a previous response's `X-Next-Cursor` header. Reuse the same filters and `count` between pages.<br/>
+        /// Cannot be combined with a nonzero `skip`.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=false,name=cursor")]
+        public string? Cursor { get; set; }
+
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=accountID")]
         public string AccountID { get; set; } = default!;
     }
