@@ -20,9 +20,14 @@ namespace Moov.Sdk.Models.Requests
         public HTTPMetadata HttpMeta { get; set; } = default!;
 
         /// <summary>
-        /// The request completed successfully.
+        /// The request has succeeded.
         /// </summary>
         public Invoice? Invoice { get; set; }
+
+        /// <summary>
+        /// The request has succeeded.
+        /// </summary>
+        public byte[]? Bytes { get; set; }
 
         public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
     }

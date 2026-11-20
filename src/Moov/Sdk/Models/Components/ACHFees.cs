@@ -61,6 +61,12 @@ namespace Moov.Sdk.Models.Components
         public BillingCountAndAmount BankAccountVerification { get; set; } = default!;
 
         /// <summary>
+        /// Fees for bank account risk verifications.
+        /// </summary>
+        [JsonProperty("bankAccountRiskVerification")]
+        public BillingCountAndAmount? BankAccountRiskVerification { get; set; }
+
+        /// <summary>
         /// Total ACH fees.
         /// </summary>
         [JsonProperty("total")]

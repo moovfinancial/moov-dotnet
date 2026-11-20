@@ -63,5 +63,11 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("expiresOn")]
         public DateTime? ExpiresOn { get; set; }
+
+        /// <summary>
+        /// Whether the card network granted the extended authorization hold. Returned only when `options.cardPayment.isExtendedAuthorizationRequested` is `true`.
+        /// </summary>
+        [JsonProperty("isExtendedAuthorizationGranted")]
+        public bool? IsExtendedAuthorizationGranted { get; set; }
     }
 }

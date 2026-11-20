@@ -18,8 +18,11 @@ namespace Moov.Sdk.Models.Components
     /// </summary>
     public class CreateTransferRailOptions
     {
+        /// <summary>
+        /// Options for a new `card-payment` transfer.
+        /// </summary>
         [JsonProperty("cardPayment")]
-        public CreateTransferSourceCard? CardPayment { get; set; }
+        public CreateCardPaymentOptions? CardPayment { get; set; }
 
         [JsonProperty("pushToCard")]
         public CreateTransferDestinationCard? PushToCard { get; set; }

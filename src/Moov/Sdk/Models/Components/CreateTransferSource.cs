@@ -13,7 +13,7 @@ namespace Moov.Sdk.Models.Components
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Where funds for a transfer originate. For the source, you must include either a `paymentMethodID` or a `transferID`.
+    /// Where funds for a transfer originate. For the source, you must include exactly one of `paymentMethodID`, `paymentToken`, or `transferID`.
     /// </summary>
     public class CreateTransferSource
     {

@@ -29,5 +29,23 @@ namespace Moov.Sdk.Models.Components
         /// </summary>
         [JsonProperty("transactionSource")]
         public TransactionSource? TransactionSource { get; set; }
+
+        /// <summary>
+        /// When funds for a `card-payment` transfer are captured.
+        /// </summary>
+        [JsonProperty("captureMethod")]
+        public CaptureMethod? CaptureMethod { get; set; }
+
+        /// <summary>
+        /// Whether an extended authorization hold was requested.
+        /// </summary>
+        [JsonProperty("isExtendedAuthorizationRequested")]
+        public bool? IsExtendedAuthorizationRequested { get; set; }
+
+        /// <summary>
+        /// Whether the authorization was flagged as an estimate.
+        /// </summary>
+        [JsonProperty("isEstimatedAuthorization")]
+        public bool? IsEstimatedAuthorization { get; set; }
     }
 }

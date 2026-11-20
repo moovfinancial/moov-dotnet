@@ -40,7 +40,7 @@ namespace Moov.Sdk.Models.Components
         ///   - `unpaid`: Can only be set if the current status is `draft`. Setting the status to `unpaid` finalizes the invoice and sends an email with a payment link to the customer.
         /// </summary>
         [JsonProperty("status")]
-        public InvoiceStatus? Status { get; set; }
+        public UpdateInvoiceStatus? Status { get; set; }
 
         /// <summary>
         /// Payment options to update on the invoice.
