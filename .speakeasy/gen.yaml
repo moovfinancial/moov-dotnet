@@ -32,10 +32,11 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 csharp:
-  version: 25.3.7
+  version: 25.3.8
   additionalDependencies: []
   author: Speakeasy
   baseErrorName: MoovException
+  bodyVariantOverloads: false
   clientServerStatusCodesAsErrors: true
   defaultErrorName: APIException
   disableNamespacePascalCasingApr2024: true
@@ -62,14 +63,17 @@ csharp:
   maxMethodParams: 4
   methodArguments: infer-optional-args
   multipartArrayFormat: legacy
+  optionalNullableScope: all
   outputModelSuffix: output
   packageName: Moov.Sdk
   packageTags: ""
+  partialTypes: false
   presenceAwareJsonSerialization: false
   respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope-http
   schemaValidation: strict
   sourceDirectory: src
   targetFramework: dotnetVersion
+  unionImplicitConversions: false
   unionStrategy: left-to-right
   useNodatime: false
