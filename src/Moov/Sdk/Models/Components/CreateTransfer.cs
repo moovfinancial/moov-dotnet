@@ -17,7 +17,7 @@ namespace Moov.Sdk.Models.Components
     public class CreateTransfer
     {
         /// <summary>
-        /// Where funds for a transfer originate. For the source, you must include either a `paymentMethodID` or a `transferID`.
+        /// Where funds for a transfer originate. For the source, you must include exactly one of `paymentMethodID`, `paymentToken`, or `transferID`.
         /// </summary>
         [JsonProperty("source")]
         public CreateTransferSource Source { get; set; } = default!;
