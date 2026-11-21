@@ -71,6 +71,8 @@ namespace Moov.Sdk
         /// <summary>
         /// Retrieve an invoice by ID.<br/>
         /// <br/>
+        /// Use the `Accept` header to specify the format of the response. Supported formats are `application/json` and `application/pdf`. The PDF does not include the payment link or QR code.<br/>
+        /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
         /// </summary>
@@ -584,6 +586,8 @@ namespace Moov.Sdk
         /// <summary>
         /// Retrieve an invoice by ID.<br/>
         /// <br/>
+        /// Use the `Accept` header to specify the format of the response. Supported formats are `application/json` and `application/pdf`. The PDF does not include the payment link or QR code.<br/>
+        /// <br/>
         /// To access this endpoint using an <a href="https://docs.moov.io/api/authentication/access-tokens/">access token</a>
         /// you'll need to specify the `/accounts/{accountID}/invoices.read` scope.
         /// </summary>
@@ -619,7 +623,7 @@ namespace Moov.Sdk
 
             if (!httpRequest.Headers.Contains("Accept"))
             {
-                httpRequest.Headers.Add("Accept", "application/json");
+                httpRequest.Headers.Add("Accept", "application/json;q=1, application/pdf;q=0");
             }
 
             if (SDKConfiguration.SecuritySource != null)
@@ -688,6 +692,20 @@ namespace Moov.Sdk
                         Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.Invoice = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/pdf", contentType))
+                {
+                    var response = new GetInvoiceResponse()
+                    {
+                        HttpMeta = new Models.Components.HTTPMetadata()
+                        {
+                            Response = httpResponse,
+                            Request = httpRequest
+                        },
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                    };
+                    response.Bytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 

@@ -75,6 +75,6 @@ namespace Moov.Sdk.Models.Components
         /// The authentication method used for the Google Pay token.
         /// </summary>
         [JsonProperty("authMethod")]
-        public AuthMethod? AuthMethod { get; set; }
+        public GooglePayResponseAuthMethod? AuthMethod { get; set; }
     }
 }

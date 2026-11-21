@@ -9,11 +9,12 @@
 #nullable enable
 namespace Moov.Sdk.Models.Components
 {
+    using Moov.Sdk.Models.Components;
     using Moov.Sdk.Utils;
     using Newtonsoft.Json;
 
     /// <summary>
-    /// Where funds for a transfer originate. For the source, you must include either a `paymentMethodID` or a `transferID`.
+    /// Where funds for a transfer originate. For the source, you must include exactly one of `paymentMethodID`, `paymentToken`, or `transferID`.
     /// </summary>
     public class CreateTransferSource
     {
@@ -27,7 +28,12 @@ namespace Moov.Sdk.Models.Components
         [JsonProperty("paymentMethodID")]
         public string? PaymentMethodID { get; set; }
 
+        /// <summary>
+        /// A single-use payment token to use as the transfer's source.<br/>
+        /// <br/>
+        /// The payment is authorized when the transfer is created.
+        /// </summary>
         [JsonProperty("paymentToken")]
-        public string? PaymentToken { get; set; }
+        public CreateTransferPaymentToken? PaymentToken { get; set; }
     }
 }

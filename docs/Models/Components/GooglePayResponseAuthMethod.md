@@ -1,4 +1,4 @@
-# AuthMethod
+# GooglePayResponseAuthMethod
 
 The authentication method used for the Google Pay token.
 
@@ -7,7 +7,7 @@ The authentication method used for the Google Pay token.
 ```csharp
 using Moov.Sdk.Models.Components;
 
-var value = AuthMethod.PanOnly;
+var value = GooglePayResponseAuthMethod.PanOnly;
 ```
 
 

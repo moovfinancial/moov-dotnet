@@ -49,16 +49,16 @@ namespace Moov.Sdk.Models.Components
         public TransferPaymentMethodsCard? Card { get; set; }
 
         /// <summary>
-        /// Describes an Apple Pay token on a Moov account.
+        /// Describes the Apple Pay token used as a transfer's source.
         /// </summary>
         [JsonProperty("applePay")]
-        public ApplePayResponse? ApplePay { get; set; }
+        public TransferApplePay? ApplePay { get; set; }
 
         /// <summary>
-        /// Describes a Google Pay token on a Moov account.
+        /// Describes the Google Pay token used as a transfer's source.
         /// </summary>
         [JsonProperty("googlePay")]
-        public GooglePayResponse? GooglePay { get; set; }
+        public TransferGooglePay? GooglePay { get; set; }
 
         /// <summary>
         /// Describes payment card details captured with tap or in-person payment.

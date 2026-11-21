@@ -57,6 +57,13 @@ Only use this endpoint if you have provided Moov with a copy of your PCI attesta
 
 To access this endpoint using an [access token](https://docs.moov.io/api/authentication/access-tokens/) 
 you'll need to specify the `/card-metadata.read` scope.
+* [Tokenize](#tokenize) - Exchange card data for a single-use payment token. Use the token as `source.paymentToken.token` when
+[creating a transfer](https://docs.moov.io/api/money-movement/transfers/create/).
+
+Tokenizing does not link the card to an account, verify the card, or contact the card networks.
+The card is authorized when the transfer is created.
+
+Call this endpoint directly from the browser using Moov's card Drop, so card data never reaches your servers.
 
 ## Link
 
@@ -371,3 +378,68 @@ var res = await sdk.Cards.GetMetadataAsync(req);
 | Moov.Sdk.Models.Errors.GenericError             | 400, 409                                        | application/json                                |
 | Moov.Sdk.Models.Errors.CardMetadataRequestError | 422                                             | application/json                                |
 | Moov.Sdk.Models.Errors.APIException             | 4XX, 5XX                                        | \*/\*                                           |
+
+## Tokenize
+
+Exchange card data for a single-use payment token. Use the token as `source.paymentToken.token` when
+[creating a transfer](https://docs.moov.io/api/money-movement/transfers/create/).
+
+Tokenizing does not link the card to an account, verify the card, or contact the card networks.
+The card is authorized when the transfer is created.
+
+Call this endpoint directly from the browser using Moov's card Drop, so card data never reaches your servers.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createPaymentToken" method="post" path="/tokenize" -->
+```csharp
+using Moov.Sdk;
+using Moov.Sdk.Models.Components;
+
+var sdk = new MoovClient(security: new Security() {
+    Username = "",
+    Password = "",
+});
+
+CreatePaymentToken req = new CreatePaymentToken() {
+    Card = new CreatePaymentTokenCard() {
+        CardNumber = "4111111111111111",
+        CardCvv = "123",
+        Expiration = new CardExpiration() {
+            Month = "01",
+            Year = "21",
+        },
+        HolderName = "Jules Jackson",
+        BillingAddress = new CardAddress() {
+            AddressLine1 = "123 Main Street",
+            AddressLine2 = "Apt 302",
+            City = "Boulder",
+            StateOrProvince = "CO",
+            PostalCode = "80301",
+            Country = "US",
+        },
+    },
+};
+
+var res = await sdk.Cards.TokenizeAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [CreatePaymentToken](../../Models/Components/CreatePaymentToken.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+
+### Response
+
+**[CreatePaymentTokenResponse](../../Models/Requests/CreatePaymentTokenResponse.md)**
+
+### Errors
+
+| Error Type                                     | Status Code                                    | Content Type                                   |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| Moov.Sdk.Models.Errors.GenericError            | 400, 409                                       | application/json                               |
+| Moov.Sdk.Models.Errors.CreatePaymentTokenError | 422                                            | application/json                               |
+| Moov.Sdk.Models.Errors.APIException            | 4XX, 5XX                                       | \*/\*                                          |

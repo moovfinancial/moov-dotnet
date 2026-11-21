@@ -16,7 +16,7 @@ namespace Moov.Sdk.Models.Components
     /// <summary>
     /// The authentication method used for the Google Pay token.
     /// </summary>
-    public enum AuthMethod
+    public enum TransferGooglePayAuthMethod
     {
         [JsonProperty("PAN_ONLY")]
         PanOnly,
@@ -24,16 +24,16 @@ namespace Moov.Sdk.Models.Components
         Cryptogram3Ds,
     }
 
-    public static class AuthMethodExtension
+    public static class TransferGooglePayAuthMethodExtension
     {
-        public static string Value(this AuthMethod value)
+        public static string Value(this TransferGooglePayAuthMethod value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static AuthMethod ToEnum(this string value)
+        public static TransferGooglePayAuthMethod ToEnum(this string value)
         {
-            foreach(var field in typeof(AuthMethod).GetFields())
+            foreach(var field in typeof(TransferGooglePayAuthMethod).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -46,14 +46,14 @@ namespace Moov.Sdk.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is AuthMethod)
+                    if (enumVal is TransferGooglePayAuthMethod)
                     {
-                        return (AuthMethod)enumVal;
+                        return (TransferGooglePayAuthMethod)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum AuthMethod");
+            throw new Exception($"Unknown value {value} for enum TransferGooglePayAuthMethod");
         }
     }
 }

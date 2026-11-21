@@ -1,0 +1,10 @@
+# CreatePaymentTokenError
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `Error`                                                                               | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `Card`                                                                                | [CreatePaymentTokenCardError](../../Models/Components/CreatePaymentTokenCardError.md) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `HttpMeta`                                                                            | [HTTPMetadata](../../Models/Components/HTTPMetadata.md)                               | :heavy_check_mark:                                                                    | N/A                                                                                   |
