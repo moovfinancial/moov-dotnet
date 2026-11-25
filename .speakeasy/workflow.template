@@ -12,7 +12,8 @@ targets:
         source: latest
         publish:
             nuget:
-                apiKey: $nuget_api_key
+                username: $nuget_username
+                useTrustedPublishing: true
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/moov/moov/{{API_VERSION}}-csharp-code-samples
